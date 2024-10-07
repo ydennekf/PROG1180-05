@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Crossfire - Login</title>
+</head>
+<body>
+
+    <header>
+        <h1>Login to NCR Report system</h1>
+    </header>
+    <main id="root">
+        
+    </main>
+    <section aria-labelledby="errorPanel" id="errorPanel" role="alert">
+        
+    </section>
+    <section aria-labelledby="accessibilityControlPanel" id="accessibilityControls"  role="region">
+        <h2 id="accessibilityControllsTitle">Accessibility Controls</h2>
+        <div>
+            <label for="darkModeToggle">Enable Dark Mode</label>
+            <input type="radio" id="darkModeToggle" aria-label="Dark Mode Toggle" />
+        </div>
+
+        <div>
+            <label for="languageSelect">Language Select</label>
+            <select id="languageSelect" name="language" aria-label="Language Select">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+            </select>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Crossfire NCR. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Atlas 5 meeting minutes
+
+meeting start: 2:30pm
+Location: study room 4 Library welland campus
+Attendance: Fraser Kennedy, Jeff Holdich, Stefan Nzene, Zach Leich
+Absent: Jennie Jeong(excused with reason)
+
+Meeting notes:
+
+Team presented their drawings for ideation boards and worked together to agree upon a design
+for the login page and the index view of the ncr reports.
+login page design was close to universal among team members.
+all team members had very different designes for index view, after discussion we chose zach's framework and modified it slightly to fit the rest of the teams inputs.
+
+Team discussed and agreed upon general flow of the User expereince.
+
+Fraser and Zach split the first portion of the coding work into two parts which will be due on tuesday so that stefan and jennie can begin design work. Idea being the css classes should be close to universal across the project so once they have any framework they will be able to begin their work.
+
+Jeff asked to work on the code side of the project along side fraser and jeff.
+fraser agreed to work with jeff in building the json object models to be used in populating the UI as the first step. likely second step will be to create a function call to seed the UI with the data.

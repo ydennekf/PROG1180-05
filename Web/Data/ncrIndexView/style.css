@@ -1,0 +1,53 @@
+
+
+* {
+    margin:0;
+    padding:0;
+    list-style: none
+}
+
+
+html, body, .ncr-list{height:100%;}
+
+
+/* Reset */
+
+
+nav {
+    display:flex;
+    flex-direction:row;
+    border-bottom:1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 3px;
+    margin-bottom:15px;
+    gap:5px;
+}
+nav ul li{display:inline}
+
+
+.ncr-list th, .ncr-list tr, .ncr-list td {
+
+    min-width:10%;
+
+}
+
+
+.ncr-list th{
+    text-align:left;
+}
+
+
+.ncr-list tr{
+    display: grid;
+    grid-template-columns:5% repeat(8, 1fr);
+    margin-bottom:10px;
+    border:1px solid black;
+    justify-items: center;
+    align-content: center;;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 3px;
+}
+
+
+.ncr-list td{
+    height:fit-content;
+}

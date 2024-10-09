@@ -11,7 +11,7 @@ import { reportData } from './Data/reportData.js';
 
 let RedirectToIndex = (employee, reports) => {
     console.log("redirect to index");
-    ReportList(employee, reports);
+    ReportList('root', employee, reports);
 }
 
 let getEmployeeByUserName = (username) => {

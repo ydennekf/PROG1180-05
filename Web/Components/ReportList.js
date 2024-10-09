@@ -12,7 +12,7 @@ export function ReportList(targetID, user, reports){
     </table>
     `
 
-    document.getElementById('targetID').innerHTML = ReportList;
+    document.getElementById(targetID).innerHTML = ReportList;
 
 }
 

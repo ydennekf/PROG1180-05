@@ -1,6 +1,6 @@
-export function reportPreview  (reportData, b, c) {
-    console.log(b+c)
-    return `
+export function reportPreview  (reportData) {
+   
+    return`
         <tr>
             <td>
                 ${reportData.id}
@@ -33,7 +33,8 @@ export function reportPreview  (reportData, b, c) {
                 </div>
             </td>
         </tr>
-    `
+    `;
+    
 }   
 
 // export  function reportPreview(

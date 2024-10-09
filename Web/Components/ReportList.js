@@ -1,8 +1,9 @@
 import { mapComponents } from "./utils/utils.js"
 import { reportPreview } from "./ReportPreview.js"
 
-export function ReportList(user, reports){
-    return `
+export function ReportList(targetID, user, reports){
+    
+    let ReportList = `
     <table>
         ${reportListHeader()}
         <tbody>
@@ -10,6 +11,8 @@ export function ReportList(user, reports){
         </tbody>
     </table>
     `
+
+    document.getElementById('targetID').innerHTML = ReportList;
 
 }
 
@@ -28,5 +31,7 @@ function reportListHeader(){ // !TODO  filtering func's
             <th>Description</th>
         </tr>
         </tbody>
-    `
+    `;
+
+    
 }

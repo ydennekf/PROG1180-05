@@ -8,6 +8,9 @@ import { ReportList } from './Components/ReportList.js';
 import { employees } from './Data/employeeData.js';
 import { reportData } from './Data/reportData.js';
 
+// import utility functions
+import { resetForm } from './Components/utils/utils.js';
+
 
 let RedirectToIndex = (employee, reports) => {
     
@@ -17,6 +20,8 @@ let RedirectToIndex = (employee, reports) => {
 let getEmployeeByUserName = (username) => {
     return employees.find(e => e.username == username);
 }
+
+
 
 let handleLogin = (event) => {
     event.preventDefault(); // prevents the login from submitting
@@ -38,17 +43,17 @@ let handleLogin = (event) => {
         else {
             //wrong pass
             console.log("wrong pass!");
-            createModal("errorPanel", "Login Error", "Incorrect password", () => createLogin("root", handleLogin));
+            createModal("errorPanel", "Login Error", "Incorrect password", () => resetForm("loginForm"));
         }
     }
     else {
         // wrong username
         console.log("User not found");
-        createModal("errorPanel", "Login Error", "Username not found", () => createLogin("root", handleLogin));
+        createModal("errorPanel", "Login Error", "Username not found", () => resetForm("loginForm"));
     }
 }
 
-// set keyboard shortcuts here.
+
 
 
 window.onload = () => {

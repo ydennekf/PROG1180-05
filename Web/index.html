@@ -4,10 +4,31 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Crossfire - Login</title>
-   
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav id="navbar" role="navigation" aria-label="main navigation">
+        <div>
+            <span id="user-info">
+                <span id="user-name-label">Logged in as: <strong id="user-name">Username</strong></span>
+                <span id="user-department">- Department</span>
+            </span>
+        </div>
+        <div>
+            <button id="create-report-btn" aria-label="create New Report">New Report</button>
+            <label for="report-search">Search NCR Reports</label>
+            <input
+                type="text"
+                id="report-search"
+                placeholder="search ncr reports ..."
+                aria-labelledby="search-description"
+                aria-autocomplete="list"
+                aria-controls="search-listbox"
+                aria-expanded="false">
+                <div id="search-listbox" role="listbox" aria-live="polite"></div>
+        </div>   
+    </nav>
 
     <header>
         <h1>Login to NCR Report system</h1>
@@ -38,7 +59,10 @@
         <p>&copy; 2024 Crossfire NCR. All rights reserved.</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="module" src="app.js"></script>
+    <script type="module" src="./Components/utils/JqueryAutoComplete.js"></script>
     
 </body>
 </html>

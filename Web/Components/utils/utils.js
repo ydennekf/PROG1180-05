@@ -3,6 +3,9 @@ export function mapComponents(
     component, // component ( each component is passed an object from the data array )
     additionalArgs=[] 
 ){
+    if(!data || data.length === 0){
+        return "<tr><td>No results found</td></tr>"
+    }
     return data.reduce((prev, cur)=> {
         return prev + component(cur, ...additionalArgs)
     }, "")
@@ -61,9 +64,4 @@ export function trapFocus(target) {
 export function resetForm(target) {
     document.getElementById('errorPanel').innerHTML = '';
     document.getElementById(target).reset();
-}
-
-
-export function sortTable(table, column, order){
-    
 }

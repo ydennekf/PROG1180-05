@@ -62,3 +62,8 @@ export function resetForm(target) {
     document.getElementById('errorPanel').innerHTML = '';
     document.getElementById(target).reset();
 }
+
+
+export function sortTable(table, column, order){
+    
+}

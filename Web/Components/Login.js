@@ -1,7 +1,9 @@
+import { trapFocus } from "./utils/utils.js";
 
 export let createLogin = (targetID, onLogin) => {
 
-    const login =
+    
+    let login =
         `
         <figure>
             <img src="company-logo.png" alt="Crossfire's company logo" id="companyLogo" />
@@ -32,6 +34,8 @@ export let createLogin = (targetID, onLogin) => {
         </div>`;
 
     document.getElementById(targetID).innerHTML = login;
+    let component = document.getElementById(targetID);
+    trapFocus(component);
 
     document.getElementById('loginForm').addEventListener('submit', (event) => onLogin(event));
 

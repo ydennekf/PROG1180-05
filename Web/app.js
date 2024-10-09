@@ -10,7 +10,7 @@ import { reportData } from './Data/reportData.js';
 
 
 let RedirectToIndex = (employee, reports) => {
-    console.log("redirect to index");
+    
     ReportList('root', employee, reports);
 }
 
@@ -32,26 +32,26 @@ let handleLogin = (event) => {
         if (employeeData.password == passwordInput) {
             // success
             
-            createModal("root", `Welcome back ${employeeData.firstName}!`, `Logged in as ${employeeData.department}`, 4000 , () => RedirectToIndex(employeeData, reportData));
+            createModal("root", `Welcome back ${employeeData.firstName}!`, `Logged in as ${employeeData.department}`, 400000 , () => RedirectToIndex(employeeData, reportData));
             // fire methods to display the index view of the NCR reports.
         }
         else {
             //wrong pass
             console.log("wrong pass!");
-            createModal("alert", "Login Error", "Incorrect password", () => createLogin("root", handleLogin));
+            createModal("errorPanel", "Login Error", "Incorrect password", () => createLogin("root", handleLogin));
         }
     }
     else {
         // wrong username
         console.log("User not found");
-        createModal("alert", "Login Error", "Username not found", () => createLogin("root", handleLogin));
+        createModal("errorPanel", "Login Error", "Username not found", () => createLogin("root", handleLogin));
     }
 }
 
-
-
+// set keyboard shortcuts here.
 
 
 window.onload = () => {
+    
     createLogin("root", handleLogin);
 }

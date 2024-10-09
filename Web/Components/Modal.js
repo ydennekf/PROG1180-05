@@ -1,3 +1,5 @@
+import { trapFocus } from "./utils/utils.js";
+
 export let createModal = (targetID, title, message, autoCloseDelay = null ,onClose) => {
     const modal = `
     <div id="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true" style="display: block;">
@@ -11,7 +13,6 @@ export let createModal = (targetID, title, message, autoCloseDelay = null ,onClo
     let ResetErrorPanel = (delay) => {
         
             setTimeout(() => {
-                document.getElementById(targetID).innerHTML = '';
                 if (onClose){
                     onClose();
                 }
@@ -19,27 +20,18 @@ export let createModal = (targetID, title, message, autoCloseDelay = null ,onClo
  
     }
 
-    let trapFocus = () => {
-        document.getElementById('closeModal').focus();
-
-    }
-    
-
-    
-
     if(autoCloseDelay){
         ResetErrorPanel(autoCloseDelay);
     }
 
     document.getElementById(targetID).innerHTML = modal;
-    trapFocus();
+    let component = document.getElementById(targetID);
+    trapFocus(component);
 
     document.getElementById('closeModal').addEventListener('click', () => { onClose(); });
     document.getElementById('closeModal').addEventListener('keydown', (event) => {
-        if(event.key === 'Escape' || (event.key === 'Enter' && document.activeElement === closeModalButton)){
+        if(event.key === 'Escape' || (event.key === 'Enter' && document.activeElement === document.getElementById('closeModal'))){
             onClose();
-        } else if (event.key === 'Tab') {
-            trapFocus();
         }
     })
 }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <!-- TODO put on the proper aria labels -->
+    <main>
+
+        <form>
+            <div>
+                <label name="ncr-non-conforming" for="ncr-non-conforming-checkbox">Document Title</label>
+                <input type="text" placeholder="insert title"/>
+            </div>
+
+            <div>
+                <label name="ncr-non-conforming" for="ncr-non-conforming-checkbox">Rec Insp</label>
+                <input type="checkbox" aria-labelledby="ncr-non-conforming" name="ncr-non-conforming-checkbox"/>
+            </div>
+            <div>
+                <label name="ncr-non-conforming" for="ncr-non-conforming-checkbox">Prod Order?</label>
+                <input type="checkbox" aria-labelledby="ncr-non-conforming" name="ncr-non-conforming-checkbox"/>
+            </div>
+
+            <div>
+                <label name="ncr-number" for="ncr-number-input">NCR Number</label>
+                <input type="text" aria-labelledby="ncr-number" name="ncr-number-input"/>
+            </div>
+            <div>
+                <label name="ncr-number" for="ncr-number-input">Prod Number</label>
+                <input type="text" aria-labelledby="ncr-number" name="ncr-number-input"/>
+            </div>
+            <div>
+                <label name="ncr-number" for="ncr-number-input">Order Number</label>
+                <input type="text" aria-labelledby="ncr-number" name="ncr-number-input"/>
+            </div>
+            <div>
+                <label name="ncr-number" for="ncr-number-input">Quantity Receieved</label>
+                <input type="text" aria-labelledby="ncr-number" name="ncr-number-input"/>
+            </div>
+            
+            <div>
+                <label name="ncr-supplier" for="ncr-supplier-input">Qty Defective</label>
+                <input type="text" aria-labelledby="ncr-supplier" name="ncr-supplier-input"/>
+            </div>
+
+            <div>
+                <label name="ncr-supplier" for="ncr-supplier-input">Supplier Name</label>
+                <input type="text" aria-labelledby="ncr-supplier" name="ncr-supplier-input"/>
+            </div>
+        
+
+            <div>
+                <label>Description Of Defect</label>
+                <textarea></textarea>
+            </div>
+
+            <div>
+                <label>Description Of Item</label>
+                <textarea></textarea>
+            </div>
+
+            <div>
+                <label name="ncr-non-conforming" for="ncr-non-conforming-checkbox">Item Non-conforming?</label>
+                <input type="checkbox" aria-labelledby="ncr-non-conforming" name="ncr-non-conforming-checkbox"/>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

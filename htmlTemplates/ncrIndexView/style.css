@@ -38,10 +38,9 @@ nav ul li{display:inline}
 
 .ncr-list tr{
     display: grid;
-    grid-template-columns:5% repeat(8, 1fr);
+    grid-template-columns:repeat(9, 1fr);
     margin-bottom:10px;
     border:1px solid black;
-    justify-items: center;
     align-content: center;;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 3px;

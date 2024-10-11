@@ -65,3 +65,28 @@ export function resetForm(target) {
     document.getElementById('errorPanel').innerHTML = '';
     document.getElementById(target).reset();
 }
+
+
+export function safeOr(value, _default){
+    // or that accepts empty strings and numbers <= 0
+    // made because report?.ncrNumber ( 0 ) || '' will always return the empty string
+    if(value === null || value === false || value === undefined){
+        return _default;
+    }
+
+    return value;
+
+
+}
+
+
+export function injectOrReturn(html, targetID=null,){
+    // Made this, so you can just return the HTML string from functions and not supply a targetID when convenient
+    if(targetID){
+        if(typeof targetID=== 'string' && !['', ' '].includes(targetID)){ // TODO empty/' ' string throws error
+            document.getElementById(targetID).innerHTML = html;
+        }
+    }else{
+        return html;
+    }
+}

@@ -1,5 +1,5 @@
 import { mapComponents } from "./utils/utils.js"
-import { reportPreview } from "./ReportPreview.js"
+import { previewBindings, reportPreview } from "./ReportPreview.js"
 
 export function ReportList(targetID, user, reports){
     let sortOrder = {
@@ -37,7 +37,8 @@ export function ReportList(targetID, user, reports){
                 sortOrder[column] = newOrder;             
 
                 let sortedReports = sortReports(currentReports, column, newOrder);
-                renderTable(sortedReports);            
+                renderTable(sortedReports);      
+                previewBindings()      
             });
         });
     };
@@ -75,6 +76,7 @@ export function ReportList(targetID, user, reports){
     }
 
     renderTable(reports);
+    previewBindings() // Makes buttons redirect to their respective reports edit/details views.
 
 }
 
@@ -83,7 +85,7 @@ function reportListHeader(sortOrder){ // !TODO  filtering func's
     return `
         <thead>
         <tr>
-            <th data-column="id" data-order="${sortOrder.id}">Report #</th>
+            <th data-column="ncrNumber" data-order="${sortOrder.ncrNumber}">Report #</th>
             <th data-column="title" data-order="${sortOrder.title}">Title</th>
             <th data-column="status" data-order="${sortOrder.status}">Status</th>
             <th data-column="itemName" data-order="${sortOrder.itemName}">Item Name</th>

@@ -55,7 +55,7 @@ function openReportEditor(ncrNumber){
     ModifyNcrView('root', {}, getReport(parseInt(ncrNumber)))
 }
 
-export function previewBindings(){ // Called after mapComponents completes
+export function previewBindings(){ // Called after mapComponents completes on reportPreviews
     // The class names can be changed to whatever stefan & jennie decide to call these buttons.
     // for now this works though.
     const viewBtns = document.querySelectorAll('.view-report');

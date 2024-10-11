@@ -45,3 +45,8 @@ export let employees = [
         }
     }
 ];
+
+
+export function getEmployeeByUsername(username){
+    return employees.find(e => e.username === username)
+}

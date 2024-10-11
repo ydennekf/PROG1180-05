@@ -13,7 +13,7 @@ export function updateReport(ncrNumber, updatedReport){ // returns old report
     const idx = reportData.findIndex(i => i.ncrNumber === ncrNumber)
     const oldReport = {...reportData[idx]}
 
-    reportData[idx] = updatedReport
+    reportData.splice(idx, 1, updatedReport)
     console.log(reportData)
 
     return oldReport;

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
     <title>Crossfire - Login</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav id="navbar" role="navigation" aria-label="main navigation">
         <div>
@@ -18,37 +20,63 @@
         <div>
             <button id="create-report-btn" aria-label="create New Report">New Report</button>
             <label for="report-search">Search NCR Reports</label>
-            <input
-                type="text"
-                id="report-search"
-                placeholder="search ncr reports ..."
-                aria-labelledby="search-description"
-                aria-autocomplete="list"
-                aria-controls="search-listbox"
+            <input type="text" id="report-search" placeholder="search ncr reports ..."
+                aria-labelledby="search-description" aria-autocomplete="list" aria-controls="search-listbox"
                 aria-expanded="false">
-                <div id="search-listbox" role="listbox" aria-live="polite"></div>
-        </div>   
+            <div id="search-listbox" role="listbox" aria-live="polite"></div>
+        </div>
     </nav>
 
     <header>
         <h1>Login to NCR Report system</h1>
     </header>
     <main id="root">
-        
+        <div class="bg_1">
+            <h2>Cross Fire</h2>
+            <!-- Form starts here -->
+            <form class="login-form">
+                <div class="col-1 input-effect">
+                    <!-- Username Section -->
+                    <div class="input-wrapper">
+                        <input class="effect-1" type="text" placeholder="" required>
+                        <label>User Name</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <!-- Password Section -->
+                    <div class="input-wrapper">
+                        <input class="effect-1" type="password" placeholder="" required>
+                        <label>Password</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <!-- Remember Me Section -->
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember Me</label>
+                    </div>
+                    <!-- Login Button -->
+                    <button type="submit" class="login-btn">LOG IN</button>
+                    <!-- Forgot Password Link -->
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+            </form>
+            <!-- Form ends here -->
+        </div>
     </main>
     <section aria-labelledby="errorPanel" id="errorPanel" role="alert">
-        
+
     </section>
-    <section aria-labelledby="accessibilityControlPanel" id="accessibilityControls"  role="region">
-        <h2 id="accessibilityControllsTitle">Accessibility Controls</h2>
-        <div>
+    <section aria-labelledby="accessibilityControlPanel" id="accessibilityControls" role="region">
+        <h3 id="accessibilityControllsTitle">Accessibility Controls</h3>
+        <div class="chkBox">
             <label for="darkModeToggle">Enable Dark Mode</label>
             <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle" />
         </div>
 
-        <div>
+        <div class="select-container">
             <label for="languageSelect">Language Select</label>
-            <select id="languageSelect" name="language" aria-label="Language Select">
+            <select class="select-box" id="languageSelect" name="language" aria-label="Language Select">
                 <option value="en">English</option>
                 <option value="es">Spanish</option>
                 <option value="fr">French</option>
@@ -63,6 +91,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="module" src="app.js"></script>
     <script type="module" src="./Components/utils/JqueryAutoComplete.js"></script>
-    
+
 </body>
+
 </html>

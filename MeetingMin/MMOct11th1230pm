@@ -1,0 +1,34 @@
+Meeting Minutes October 11th 12:30pm
+
+Location: Online Teams.
+
+Attendance:
+Fraser Kennedy, Jeff Holditch, Stefan Nzene, Jennie Jeong
+
+notes:
+
+Jeff opened the meeting to review the updated datamodel
+    - data model looks good only major fixes are to the status table
+    - the rest of the changes are more noting that we might be over complicating our process.
+
+Stefan presented his progress on the CSS, design looks good but plenty of work still to be done.
+    -still need to see dark mode color scheme and some more work on the other pages.
+    -stefan needs some help with GIT, zach volenteers.
+
+Jennie had to leave part way through the meeting for work but her updates are similar to Stefans.
+    - team still needs to review BDD documents.
+
+Fraser gave a walk through of the site in its current state. items to work on.
+    - need a back button or work on some logic with the browser's back.
+    - some bug fixes with the login screen still
+    -need keyboard shortcuts implemented to help with navigation. we have a logic that traps the keyboard focus into a component need to be able to cycle the components.
+    - sorting functions finished and working, filtering search bar working might need slight tweaks and add more fields.
+
+Zach has finished the index view, detail view edit view and create view for the NCR reports. currently working now on a bread crumb list for navigation.
+
+
+team notes on the whole
+
+    we will likely all need to help with CSS and logic work.
+    talked about adding an admin view to the nav bar. but since it required use roles we have held it off.
+    

@@ -1,0 +1,164 @@
+[
+    {
+        "statNo": "1",
+        "statNCRNo": "2024-012",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "01/12/2024 10:30:21",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "2",
+        "statNCRNo": "2024-012",
+        "statRole": "Engineering",
+        "statRepName":"J. Smith",
+        "statDatetime": "01/13/2024 12:21:10",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "3",
+        "statNCRNo": "2024-012",
+        "statRole": "Operations",
+        "statRepName":"F. Kennedy",
+        "statDatetime": "01/13/2024 14:50:33",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "4",
+        "statNCRNo": "2024-012",
+        "statRole": "Procurement",
+        "statRepName":"C. Stuff",
+        "statDatetime": "01/13/2024 15:35:52",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "5",
+        "statNCRNo": "2024-012",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "01/13/2024 16:22:15",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "6",
+        "statNCRNo": "2024-013",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "03/20/2024 8:42:47",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "7",
+        "statNCRNo": "2024-013",
+       "statRole": "Engineering",
+        "statRepName":"J. Smith",
+        "statDatetime": "03/20/2024 9:12:04",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "8",
+        "statNCRNo": "2024-013",
+        "statRole": "Operations",
+        "statRepName":"F. Kennedy",
+        "statDatetime": "03/20/2024 9:56:56",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "9",
+        "statNCRNo": "2024-013",
+        "statRole": "Procurement",
+        "statRepName":"C. Stuff",
+        "statDatetime": "03/20/2024 10:14:46",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "10",
+        "statNCRNo": "2024-013",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "03/20/2024 11:49:17",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "11",
+        "statNCRNo": "2024-014",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "04/17/2024 9:36:06",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "12",
+        "statNCRNo": "2024-014",
+        "statRole": "Engineering",
+        "statRepName":"J. Smith",
+        "statDatetime": "04/17/2024 09:56:40",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "13",
+        "statNCRNo": "2024-014",
+        "statRole": "Operations",
+        "statRepName":"F. Kennedy",
+        "statDatetime": "04/17/2024 11:01:09",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "14",
+        "statNCRNo": "2024-014",
+        "statRole": "Procurement",
+        "statRepName":"C. Stuff",
+       "statDatetime": "04/17/2024 13:11:23",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "15",
+        "statNCRNo": "2024-014",
+        "statRole": "Administrator",
+        "statRepName":"M. Big",
+        "statDatetime": "04/17/2024 14:33:51",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "16",
+        "statNCRNo": "2024-014",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "04/17/2024 15:18:43",
+        "statStatus": "Closed"
+    },
+
+    {
+        "statNo": "17",
+        "statNCRNo": "2024-015",
+        "statRole": "Quality",
+        "statRepName":"J. Holditch",
+        "statDatetime": "04/28/2024 11:26:36",
+        "statStatus": "Open"
+    },
+
+    {
+        "statNo": "18",
+        "statNCRNo": "2024-015",
+        "statRole": "Administrator",
+        "statRepName":"M. Big",
+        "statDatetime": "04/28/2024 11:43:05",
+        "statStatus": "Open"
+    }
+
+]

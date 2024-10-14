@@ -48,6 +48,7 @@ export function createQAReport(employee){
 
 export function validateQualityAssuranceForm(){
     // TODO better validators like min char-length
+    // TODO before tuesday add labels under the fields that show the error 
     const data = getReportFormData();
     const validNcr = parseInt(data.ncrNumber.value);
     const validQuantityRec = parseInt(data.quantityReceived.value)

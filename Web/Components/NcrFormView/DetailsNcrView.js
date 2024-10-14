@@ -1,7 +1,9 @@
 import { getEmployeeByUsername } from "../../Data/employeeData.js";
+import { _history } from "../../globals.js";
 import {injectOrReturn} from "../utils/utils.js";
 
-export function DetailsNcrView(targetID, report){
+export function DetailsNcrView(targetID, report, push =true){
+    push && _history.push({component:"DetailsNcrView", data:[targetID, report]})
 
     const html = `
         ${DetailsHeader(report)}

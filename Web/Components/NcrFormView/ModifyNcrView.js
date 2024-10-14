@@ -2,9 +2,11 @@ import {trapFocus} from "../utils/utils.js";
 import {createQAReport, validateQualityAssuranceForm} from "./utils.js";
 import {qualityAssuranceForm} from "./QualityAssuranceForm.js";
 import {getReport, reportData, updateReport} from "../../Data/reportData.js";
+import { _history } from "../../globals.js";
 
 
-export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH EDITING AND CREATING NEW
+export function ModifyNcrView(targetID, employee, report=null, push=true){ // HANDLES BOTH EDITING AND CREATING NEW
+    push && _history.push({component:"ModifyNcrView", data:[targetID, employee, report]})
     /*
         Just a general plan I have in my head:
         Each piece of the form will be its own component ( QA portion, engineering portion etc.)

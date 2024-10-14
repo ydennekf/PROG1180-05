@@ -90,3 +90,16 @@ export function injectOrReturn(html, targetID=null,){
         return html;
     }
 }
+
+
+
+
+
+export function insert(targetID, html){
+    document.getElementById(targetID).innerHTML = html;
+}
+
+
+export function append(targetID, html){
+    document.getElementById(targetID).innerHTML += html;
+}

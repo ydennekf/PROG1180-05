@@ -449,7 +449,7 @@ export const reportData = [
         "productionOrder": true,
         "itemDescription": "Car Paint",
         "sapNumber": 21
-    }
+    },
 
     {
         "ncrNumber": 22,
@@ -640,7 +640,7 @@ export const reportData = [
         "productionOrder": true,
         "itemDescription": "Fabric",
         "sapNumber": 31
-    }
+    },
 
     {
         "ncrNumber": 32,

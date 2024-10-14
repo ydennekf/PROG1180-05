@@ -1,4 +1,29 @@
-[
+
+export class ReportStatus{
+    static AwaitingEngineering = "Awaiting Engineering"
+    static Closed = "Closed"
+}
+
+export function getReport(ncrNumber){
+    return reportData.find(i => i.ncrNumber === ncrNumber)
+}
+
+export function updateReport(ncrNumber, updatedReport){ // returns old report
+    // can implement some sort of rollback feature with this
+    const idx = reportData.findIndex(i => i.ncrNumber === ncrNumber)
+    const oldReport = {...reportData[idx]}
+
+    reportData.splice(idx, 1, updatedReport)
+    console.log(reportData)
+
+    return oldReport;
+}
+
+// Eventually I want to reformat the reports so that each respective field is in a nested object
+// eg: {qualityAssurance : { itemName, defectDescription, supplierName, etc } }.
+
+
+export const reportData = [
     {
         "ncrNumber": 0,
         "title": "Broken Bike",

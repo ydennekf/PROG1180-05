@@ -2,6 +2,8 @@ import { getReport } from "../Data/reportData.js";
 import { DetailsNcrView } from "./NcrFormView/DetailsNcrView.js";
 import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 import { injectOrReturn } from "./utils/utils.js";
+import { app } from "../AppState.js";
+
 
 export function reportPreview  (reportData) {
 
@@ -46,13 +48,25 @@ export function reportPreview  (reportData) {
 
 
 function openReportDetails(ncrNumber){
-    console.log("loading details for Report numbered: " + ncrNumber)
+    if(app === undefined){
+        // user not logged in
+        return;
+    }
+    console.log("loading details for Report numbered: " + ncrNumber)  
+    
     DetailsNcrView('root', getReport(parseInt(ncrNumber)))
+    app.history.flush()
+    app.history.newPath({component:'DetailsNcrView', data:['root', getReport(parseInt(ncrNumber))]})
 }
 
 function openReportEditor(ncrNumber){
+    if(app === undefined){
+        // user not logged in
+        return;
+    }
     console.log("loading editor for report numbered: " + ncrNumber)
-    ModifyNcrView('root', {}, getReport(parseInt(ncrNumber)))
+    ModifyNcrView('root', app.employee, getReport(parseInt(ncrNumber)))
+    app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, getReport(parseInt(ncrNumber))]})
 }
 
 export function previewBindings(){ // Called after mapComponents completes on reportPreviews

@@ -80,7 +80,7 @@ export function ReportList(targetID, user, reports){
 
 }
 
-function reportListHeader(sortOrder){ // !TODO  filtering func's
+function reportListHeader(sortOrder){ 
 
     return `
         <thead>

@@ -1,16 +1,18 @@
 import { getEmployeeByUsername } from "../../Data/employeeData.js";
-import { _history } from "../../globals.js";
 import {injectOrReturn} from "../utils/utils.js";
+import { ModifyNcrView } from "./ModifyNcrView.js";
+import { app } from "../../AppState.js";
 
-export function DetailsNcrView(targetID, report, push =true){
-    push && _history.push({component:"DetailsNcrView", data:[targetID, report]})
+export function DetailsNcrView(targetID, report){
 
     const html = `
+        <button id="edit-report">Edit Report</button>
         ${DetailsHeader(report)}
         ${QualityAssuranceNcrView(report)}
     `
 
     document.getElementById(targetID).innerHTML = html;
+    document.getElementById('edit-report').addEventListener('click', ()=>GoToEdit(report))
 }
 
 function QualityAssuranceNcrView(report, targetID=null){
@@ -75,4 +77,10 @@ function DetailsHeader(report, targetID=null){
     `
 
     return injectOrReturn(html, targetID)
+}
+
+function GoToEdit(report){
+
+    app.history.push({component:"ModifyNcrView", data:['root', app.employee, report]})
+    ModifyNcrView('root', app.employee, report)
 }

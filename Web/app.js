@@ -10,11 +10,12 @@ import { reportData } from './Data/reportData.js';
 
 // import utility functions
 import { resetForm } from './Components/utils/utils.js';
+import { initApp } from './AppState.js';
 
 
 let RedirectToIndex = (employee, reports) => {
-    
-    ReportList('root', employee, reports);
+    initApp(employee, ReportList, ['root', getEmployeeByUserName('btaylor'), reports])
+   
 }
 
 let getEmployeeByUserName = (username) => {
@@ -56,4 +57,5 @@ let handleLogin = (event) => {
 window.onload = () => {
     
     createLogin("root", handleLogin);
+    
 }

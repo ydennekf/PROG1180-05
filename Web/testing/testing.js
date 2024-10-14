@@ -6,6 +6,8 @@ import { DetailsNcrView } from "../Components/NcrFormView/DetailsNcrView.js";
 import { injectOrReturn } from "../Components/utils/utils.js";
 import { getReport } from "../Data/new_reportData.js";
 import { _HistoryContext } from "../Components/context/historyContext.js";
+import { initApp, app } from "../AppState.js";
+import '../../node_modules/popstate-direction/index.js'
 
 
 //DetailsNcrView('root', reportData[0])
@@ -25,37 +27,37 @@ function LocationTesting(targetID =null){
     return injectOrReturn(html, targetID)
 }
 
-_HistoryContext('root')
+initApp(getEmployeeByUsername('btaylor'), ReportList, ['root', getEmployeeByUsername('btaylor'), reportData])
 
 
-
-function click(){
-    const data = ['root', getReport(17)]
-    DetailsNcrView(...data)
-    history.pushState({component:'DetailsNcrView', data:data}, '')
+// function click(){
+//     const data = ['root', getReport(17)]
+//     DetailsNcrView(...data)
+//     app.history.push({component:'DetailsNcrView', data})
+    
    
-}
+// }
 
-function clickAgain(){
-    const data = ['root', getEmployeeByUsername('btaylor'), getReport(17)]
-    ModifyNcrView(...data)
-    history.pushState({component:'ModifyNcrView', data:['root', getEmployeeByUsername('btaylor'), getReport(17)]}, '')
+// function clickAgain(){
+//     const data = ['root', getEmployeeByUsername('btaylor'), getReport(17)]
+//     ModifyNcrView(...data)
+//     app.history.push({component:'ModifyNcrView', data:['root', getEmployeeByUsername('btaylor'), getReport(17)]})
     
-}
+// }
 
-function clickerAgain(){
-    const data = ['root', getEmployeeByUsername('btaylor'), getReport(12)]
-    ModifyNcrView(...data)
-    history.pushState({component:'ModifyNcrView', data:['root', getEmployeeByUsername('btaylor'), getReport(12)]}, '')
+// function clickerAgain(){
+//     const data = ['root', getEmployeeByUsername('btaylor'), getReport(12)]
+//     ModifyNcrView(...data)
+//     app.history.push({component:'ModifyNcrView', data:['root', getEmployeeByUsername('btaylor'), getReport(12)]})
     
-}
+// }
 
-function clickererAgain(){
-    const data = ['root', getReport(12)]
-    DetailsNcrView(...data)
-    history.pushState({component:'DetailsNcrView', data:data}, '')
+// function clickererAgain(){
+//     const data = ['root', getReport(12)]
+//     DetailsNcrView(...data)
+//     app.history.push({component:'DetailsNcrView', data})
     
-}
+// }
 
 
 function bindLocationClicker(){
@@ -68,9 +70,9 @@ function bindLocationClicker(){
 
 
 
-LocationTesting('nav')
+//LocationTesting('nav')
 
-bindLocationClicker()
+//bindLocationClicker()
 
 export class Views{
     static toBreadCrumbText(){

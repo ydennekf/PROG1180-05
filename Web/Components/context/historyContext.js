@@ -1,52 +1,71 @@
 import { insert, injectOrReturn } from "../utils/utils.js";
 import { ModifyNcrView } from "../NcrFormView/ModifyNcrView.js";
 import { DetailsNcrView } from "../NcrFormView/DetailsNcrView.js";
-import  "../../../node_modules/popstate-direction/index.js";
+import '../../../node_modules/popstate-direction/index.js'
+import { ReportList } from "../ReportList.js";
 
-/*
-    If you want your view to function with History you must:
-    1. include a _history.push() call to your function;
-    2. pass the function ALL its arguments don't leave any out ( pass their defaults )
-*/
-export function _HistoryContext(){ // For now just using this as a global state
-    // TODO pass an initial state for the starting viewpoint 
-    const state = []
-    let currentIDX = 0
 
+// If we're on idx view or any other view
+// 
+
+export function _HistoryContext(){ 
+    let currentIDX = 0;
+    let state=[]
+  
     // Inject the breadcrumb component
     // Return an object with a method to update the breadcrumbs whenever we move to a new view ( Called at the top of all view functions )
     window.addEventListener('forward', () => {
+       
         if(currentIDX < state.length -1){
             currentIDX++;
+            console.log('forward ' + currentIDX + ' ' + state.length)
             const s = state[currentIDX]
             const component= viewMap[s.component];
-            component(...s.data, false) // pass false to prevent recursively adding a to history
+            component(...s.data) 
+            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
         }
         
     }) 
     window.addEventListener('back', () => { 
-        console.log(state.length + 'back')
+        
         if(currentIDX > 0){
             currentIDX--;
+            console.log('back ' + currentIDX + ' ' + state.length)
             const s = state[currentIDX]
             const component= viewMap[s.component];
-            component(...s.data, false) // pass false to prevent recursively adding a to history
+            component(...s.data) 
+            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
         }
     })
 
-    return {
-        push:(s) => { // Refreshes ( This is called each time we move to a new view )
-            if(state.length === 0){
-                state.push(s);
-                insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
-                return;
-            }
+    return { // not using lambdas because you cannot access this with lambdas ( shit language )
+        setInitialView:function (view) { // called once to set the index
+            state.push(view);      
+            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
+        },
+        push:function (s){ // Refreshes ( This is called each time we move to a new view )
             state.push(s);
+            history.pushState(s, '')
             currentIDX++;
             insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
         },
+        flush:function (){ // clears the history state besides the initial view
+            state = [state[0]]
+            currentIDX = 0;
+        },
+        newPath:function (s){ // combines flush and push to create a new path from the index
+            // use example: 
+            // select a report preview detail view.
+            // go back to the report index
+            // select a new report detail view ( we want this one to be the new path so the history
+            // will lead to the proper report if the forward command is called from the index view again)
+            this.flush();
+            this.push(s)
+        }
     }
 }
+
+
 
 function BreadCrumbs(data, current, targetID=null){
 
@@ -67,5 +86,10 @@ function BreadCrumbs(data, current, targetID=null){
 
 const viewMap = {
     'ModifyNcrView':ModifyNcrView,
-    "DetailsNcrView":DetailsNcrView
+    "DetailsNcrView":DetailsNcrView,
+    'ReportList':ReportList
+}
+
+function breadCrumbText(historyState){
+    
 }

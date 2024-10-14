@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<nav id="navbar" role="navigation" aria-label="main navigation">
+    <div>
+  
+        <span id="user-info">
+            <span id="user-name-label">Logged in as: <strong id="user-name">${app?.employee.username}</strong></span>
+            <span id="user-department">- ${app?.employee.department}</span>
+        </span>
+    </div>
+    <div>
+        <button id="create-report-btn" aria-label="create New Report">New Report</button>
+        <label for="report-search">Search NCR Reports</label>
+        <input type="text" id="report-search" placeholder="search ncr reports ..."
+            aria-labelledby="search-description" aria-autocomplete="list" aria-controls="search-listbox"
+            aria-expanded="false">
+        <div id="search-listbox" role="listbox" aria-live="polite"></div>
+    </div>
+</nav>
+<body>
+    <div id="bread-crumbs"></div>
+    <div id="nav"></div>
+    <div id="root">
+        <table>
+            <thead>
+                <tr>
+                    <th data-column="ncrNumber" data-order="${sortOrder.ncrNumber}">Report #</th>
+                    <th data-column="title" data-order="${sortOrder.title}">Title</th>
+                    <th data-column="status" data-order="${sortOrder.status}">Status</th>
+                    <th data-column="itemName" data-order="${sortOrder.itemName}">Item Name</th>
+                    <th data-column="date" data-order="${sortOrder.date}">Date</th>
+                    <th data-column="supplierName" data-order="${sortOrder.supplierName}">Supplier</th>
+                    <th data-column="startedBy" data-order="${sortOrder.startedBy}">Started By</th>
+                    <th data-column="description" data-order="${sortOrder.description}">Description</th>
+                </tr>
+                </thead>
+            <tbody>
+            <tr>
+                <td>
+                    ${reportData.ncrNumber}
+                </td>
+                <td>
+                    ${reportData.title}
+                </td>
+                <td>
+                    ${reportData.status}
+                </td>
+                <td>
+                    ${reportData.itemName}
+                </td>
+                <td>
+                    ${reportData.date}
+                </td>
+                <td>
+                    ${reportData.supplierName}
+                </td>
+                <td>
+                    ${reportData.startedBy}
+                </td>
+                <td>
+                    ${reportData.defectDescription}
+                </td>
+                <td>
+                    <div>
+                        <button class="view-report" data-ncr-number="${reportData.ncrNumber}">View Report</button>
+                        <button class="edit-report" data-ncr-number="${reportData.ncrNumber}">Edit</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ${reportData.ncrNumber}
+                </td>
+                <td>
+                    ${reportData.title}
+                </td>
+                <td>
+                    ${reportData.status}
+                </td>
+                <td>
+                    ${reportData.itemName}
+                </td>
+                <td>
+                    ${reportData.date}
+                </td>
+                <td>
+                    ${reportData.supplierName}
+                </td>
+                <td>
+                    ${reportData.startedBy}
+                </td>
+                <td>
+                    ${reportData.defectDescription}
+                </td>
+                <td>
+                    <div>
+                        <button class="view-report" data-ncr-number="${reportData.ncrNumber}">View Report</button>
+                        <button class="edit-report" data-ncr-number="${reportData.ncrNumber}">Edit</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+            
+        </table>
+
+    </div>
+    
+    <script src="testing.js" type="module"></script>
+</body>
+</html>

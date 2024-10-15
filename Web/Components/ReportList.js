@@ -1,11 +1,10 @@
 import { mapComponents } from "./utils/utils.js"
 import { previewBindings, reportPreview } from "./ReportPreview.js"
+import { NavBar } from "./NavBar.js";
 
 export function ReportList(targetID, user, reports){
-
-    document.getElementById('create-report-btn').addEventListener('click', () => {
-        
-    })
+    
+    
     let sortOrder = {
         id: 'desc',
         title: 'desc',
@@ -19,13 +18,18 @@ export function ReportList(targetID, user, reports){
 
     let renderTable = (sortedReports) => {
         let ReportList = `
-    <table>
+    <table class ="ncr-list">
         ${reportListHeader(sortOrder)}
-        <tbody>
+        <tbody class="report-view">
         ${mapComponents(sortedReports, reportPreview)}
         </tbody>
     </table>
     `
+    
+    
+    if(!document.getElementById(targetID).classList.contains("ncr-view")){
+        document.getElementById(targetID).setAttribute("class","ncr-view");
+    }
 
     document.getElementById(targetID).innerHTML = ReportList;
     applySortListeners(sortedReports);
@@ -81,6 +85,10 @@ export function ReportList(targetID, user, reports){
 
     renderTable(reports);
     previewBindings() // Makes buttons redirect to their respective reports edit/details views.
+    
+    NavBar("navbar");
+    
+    
 
 }
 
@@ -97,6 +105,7 @@ function reportListHeader(sortOrder){
             <th data-column="supplierName" tabindex="4" data-order="${sortOrder.supplierName}">Supplier</th>
             <th data-column="startedBy" tabindex="4" data-order="${sortOrder.startedBy}">Started By</th>
             <th data-column="description" tabindex="4" data-order="${sortOrder.description}">Description</th>
+            <th></th>
         </tr>
         </thead>
     `;

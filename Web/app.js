@@ -6,7 +6,7 @@ import { ReportList } from './Components/ReportList.js';
 
 // import data
 import { employees } from './Data/employeeData.js';
-import { reportData } from './Data/reportData.js';
+import { reportData } from './Data/new_reportData.js';
 
 // import utility functions
 import { resetForm } from './Components/utils/utils.js';

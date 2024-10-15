@@ -9,72 +9,18 @@
     </head>
 <body>
     <nav id="navbar" role="navigation" aria-label="main navigation">
-        <div>
-            <span id="user-info">
-                <span id="user-name-label">Logged in as: <strong id="user-name">Username</strong></span>
-                <span id="user-department">- Department</span>
-            </span>
-        </div>
-        <div>
-            <button id="create-report-btn" aria-label="create New Report">New Report</button>
-            <label for="report-search">Search NCR Reports</label>
-            <input type="text" id="report-search" placeholder="search ncr reports ..."
-                aria-labelledby="search-description" aria-autocomplete="list" aria-controls="search-listbox"
-                aria-expanded="false">
-            <div id="search-listbox" role="listbox" aria-live="polite"></div>
-        </div>
+
     </nav>
 
-    <header>
-        <h1>Login to NCR Report system</h1>
-    </header>
-    <main id="root">
-        <div class="bg_1">
-            <img src="image/Crossfire Logo - no bkgd.png" alt="Logo" class="logo">
-            <h2>Cross Fire</h2>
-
-            <!-- Form starts here -->
-            <form class="login-form">
-                <div class="col-1 input-effect">
-                    <!-- Username Section -->
-                    <div class="input-wrapper">
-                        <input class="effect-1" type="text" required>
-                        <label>User Name</label>
-                        <span class="focus-border"></span>
-                    </div>
-            
-                    <!-- Password Section -->
-                    <div class="input-wrapper">
-                        <input class="effect-1" type="password" required>
-                        <label>Password</label>
-                        <span class="focus-border"></span>
-                    </div>
-
-                    <!-- Remember Me Section -->
-                    <div class="remember-me">
-                        <input type="checkbox" id="rememberMe">
-                        <label for="rememberMe">Remember Me</label>
-                    </div>
-
-                    <!-- Login Button -->
-                    <button type="submit" class="login-btn">LOG IN</button>
-
-                    <!-- Forgot Password Link -->
-                    <div class="forgot-password">
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                </div>
-            </form>
-            <!-- Form ends here -->
-
-        </div>
+    
+    <main id="root">   
     </main>
     
-    <div aria-labelledby="errorPanel" id="errorPanel" role="alert">
+    <section aria-labelledby="errorPanel" id="errorPanel" role="alert">
         <!-- Error content here -->
-    </div>
+    <section>
     
-    <div aria-labelledby="accessibilityControllsTitle" id="accessibilityControls" role="region">
+    <section aria-labelledby="accessibilityControllsTitle" id="accessibilityControls" role="region">
         <h3 id="accessibilityControllsTitle">Accessibility Controls</h3>
         <div class="chkBox">
             <label for="darkModeToggle">Enable Dark Mode</label>
@@ -89,13 +35,14 @@
                 <option value="fr">French</option>
             </select>
         </div>
-    </div>
+    <section>
 
     <footer>
         <div id="bread-crumbs"></div>
         <p>&copy; 2024 Crossfire NCR. All rights reserved.</p>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="module" src="app.js"></script>
 </body>
 </html>

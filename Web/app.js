@@ -11,6 +11,8 @@ import { reportData } from './Data/new_reportData.js';
 // import utility functions
 import { resetForm } from './Components/utils/utils.js';
 import { initApp } from './AppState.js';
+import { ModifyNcrView } from './Components/NcrFormView/ModifyNcrView.js';
+import { app } from './AppState.js';
 
 
 let RedirectToIndex = (employee, reports) => {
@@ -57,5 +59,11 @@ let handleLogin = (event) => {
 window.onload = () => {
     
     createLogin("root", handleLogin);
-    
+    document.getElementById('create-report-btn').addEventListener('click', () => {
+        if(!app){
+            return;
+        }
+        ModifyNcrView('root', app.employee)
+        app.history.newPath({component:'ModifyNcrView', data:['root', app.employee]})
+    })
 }

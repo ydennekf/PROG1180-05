@@ -1,4 +1,4 @@
-import {ReportStatus} from "../../Data/new_reportData.js";
+import {ReportStatus, getReport} from "../../Data/new_reportData.js";
 
 export function getReportFormData(){
     return {
@@ -15,10 +15,13 @@ export function getReportFormData(){
         supplierOrRec : document.getElementById("chk-supplier-or-rec"),
         nonConforming : document.getElementById('chk-non-conforming'),
         productionOrder:  document.getElementById("chk-production-order"),
-        sapNumber: document.getElementById('txt-sap-number')
+        sapNumber: document.getElementById('txt-sap-number'),
+        engineeringRequired:document.getElementById('chk-engineering-required')
     }
 
 }
+
+
 
 export function createQAReport(employee){
     // DOESN'T VALIDATE USE THE VALIDATORS BEFORE CREATING THE REPORT
@@ -37,100 +40,126 @@ export function createQAReport(employee){
         productionOrder:formData.productionOrder.checked,
         supplierOrRec:formData.supplierOrRec.checked,
         startedBy:employee.username,
-        status:ReportStatus.AwaitingEngineering,
+        status:formData.engineeringRequired.checked ? ReportStatus.AwaitingEngineering : ReportStatus.Closed, // defualts to closed cuz we aren't at the next stage
         date:new Date(Date.now()).toDateString(),
         itemName:formData.itemName.value,
         sapNumber:formData.sapNumber.value
     }
 }
 
-// TODO change order when design portion is released so the errors are displayed correctly
 
-export function validateQualityAssuranceForm(){
-    // TODO better validators like min char-length
-    // TODO before tuesday add labels under the fields that show the error 
-    const data = getReportFormData();
+export function errorLog(){
     const errors = []
+
+    return {
+        push:(targetID, errorTarget, msg)=>{
+            errors.push({targetID, errorTarget, msg})
+        },
+        get:() => errors,
+        expose:() => {
+            errors.forEach(error => {
+                document.getElementById(error.targetID).ariaInvalid = true;
+                document.getElementById(error.errorTarget).innerText = error.msg;
+            });
+        }
+    }
+}
+
+
+export function validateQualityAssuranceForm(updating=false){
+    const data = getReportFormData();
+    const errors = errorLog()
     const validNcr = parseInt(data.ncrNumber.value);
+
+
+    validateNcrNumber(validNcr, errors, updating)
+
+    validateNumberInputs(errors)
+
+    if(data.title.value === ""){
+        data.title.ariaInvalid = true;
+    }
+
+    if(data.itemName.value === ""){
+        data.itemName.ariaInvalid = true;
+    }
+
+    if(data.supplier.value === ""){
+        data.ncrNumber.ariaInvalid = true;
+    }
+
+  
+    if(data.defectDescription.value === ""){
+        data.defectDescription.ariaInvalid = true;
+    }
+
+    if(data.itemDescription.value === ""){
+        data.itemDescription.ariaInvalid = true;
+    }
+
+
+    
+    return errors
+
+}
+
+
+
+function validateNcrNumber(ncrNumber, errorList, updating=false){
+    const validNumber = parseInt(ncrNumber)
+    const e = 'ncr-number-error'
+    if(isNaN(validNumber)){
+        errorList.push('txt-ncr-number',e,  "A non numeric value was submitted.")
+        return;
+    }
+    if(validNumber < 0){
+        errorList.push('txt-ncr-number', e,  "Please submit a positive number.")
+        return;
+    }
+    const number = getReport(parseInt(ncrNumber))
+    if(number && !updating){
+        errorList.push('txt-ncr-number',e, "There is already a report with the NCR Number provided")
+        return;
+    }
+
+}
+
+function validateNumberInputs(errorList){
+    const data = getReportFormData()
     const validQuantityRec = parseInt(data.quantityReceived.value)
     const validQuantityDef = parseInt(data.quantityDefective.value)
     const validProdNum = parseInt(data.prodNumber.value)
     const validSalesNumber = parseInt(data.salesNumber.value)
 
-    if(data.ncrNumber.value === "" || isNaN(validNcr)){
-        data.ncrNumber.ariaInvalid = true;
-    }
-
-
-    if(data.title.value === ""){
-        data.title.ariaInvalid = true;
-        errors.push('')
-    }
-
-    if(data.itemName.value === ""){
-        data.itemName.ariaInvalid = true;
-        errors.push('')
-    }
-
-    if(data.supplier.value === ""){
-        data.ncrNumber.ariaInvalid = true;
-        errors.push('')
-    }
-
-    if(data.salesNumber.value === "" || isNaN(validSalesNumber)){
+    
+    if(isNaN(validSalesNumber) || validSalesNumber <0){
         data.salesNumber.ariaInvalid = true;
-        errors.push('')
+        errorList.push('txt-sales-number', 'sales-number-error', "Please submit a positive number.")
     }
 
 
-    if(data.quantityReceived.value === "" || isNaN(validQuantityRec)){
+    if(isNaN(validQuantityRec) || validQuantityRec <= 0){
         data.quantityReceived.ariaInvalid = true;
-        errors.push('')
+        errorList.push('txt-quantity-received', 'quantity-received-error', "Please submit a positive number.")
     }
 
-    if(data.sapNumber.value === "" || isNaN(data.sapNumber.value)){
+    if(isNaN(data.sapNumber.value) || data.sapNumber.value <= 0) {
         data.sapNumber.ariaInvalid = true;
-        errors.push('')
+        errorList.push('txt-sap-number', 'sap-number-error', "Please submit a positive number.")
     }
 
-    if(data.quantityDefective.value === "" || isNaN(validQuantityDef)){
+    if(isNaN(validQuantityDef) || validQuantityDef <= 0){
         data.quantityDefective.ariaInvalid = true;
-        errors.push('')
+        errorList.push('txt-quantity-defective', 'quantity-defective-error', "Please submit a positive number.")
     }
 
-    if(data.defectDescription.value === ""){
-        data.defectDescription.ariaInvalid = true;
-        errors.push('')
-    }
-
-    if(data.itemDescription.value === ""){
-        data.itemDescription.ariaInvalid = true;
-        errors.push('')
-    }
-
-    if(data.prodNumber.value === "" || isNaN(validProdNum)){
-        data.prodNumber.ariaInvalid = true; 
-    
-        errors.push('')
-    }
-    return !errors.length > 0
-
-}
-
-
-function validateQualityForm(){
-    const data = getReportFormData()
-    const errors = [] // if anything is pushed to this array the forms invalid
-
-    
-}
-
-function validateNcrNumber(ncrNumber, errorList){
-    var number = getReport(parseInt(ncrNumber))
-    if(number){
-        errorList.push({target:'ncr-number-error', msg:"There is already a report with the NCR Number provided"})
+    if(isNaN(validProdNum) || validProdNum <= 0){
+        data.prodNumber.ariaInvalid = true;
+        errorList.push('txt-prod-number', 'prod-number-error', "Please submit a positive number.")
     }
 }
+
+
 
 
 

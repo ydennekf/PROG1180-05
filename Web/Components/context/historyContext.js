@@ -3,6 +3,7 @@ import { ModifyNcrView } from "../NcrFormView/ModifyNcrView.js";
 import { DetailsNcrView } from "../NcrFormView/DetailsNcrView.js";
 import '../../../node_modules/popstate-direction/index.js'
 import { ReportList } from "../ReportList.js";
+import { app } from "../../AppState.js";
 
 
 
@@ -33,7 +34,7 @@ export function _HistoryContext(){
             const s = state[currentIDX]
             const component= viewMap[s.component];
             component(...s.data) 
-            BreadCrumbs(state, currentIDX, 'bread-crumbs')
+            BreadCrumbs(state.slice(0, currentIDX+1), currentIDX, 'bread-crumbs') // slicing the state array so the bredcrumbs only create a trail behind
         }
     })
 
@@ -41,12 +42,15 @@ export function _HistoryContext(){
         setInitialView:function (view) { // called once to set the index
             state.push(view);      
             BreadCrumbs(state, currentIDX, 'bread-crumbs')
+            bindBreadCrumbs()
         },
         push:function (s){ // Refreshes ( This is called each time we move to a new view )
             state.push(s);
             history.pushState(s, '')
             currentIDX++;
             BreadCrumbs(state, currentIDX, 'bread-crumbs')
+            bindBreadCrumbs()
+           
         },
         flush:function (){ // clears the history state besides the initial view
             state = [state[0]]
@@ -60,6 +64,21 @@ export function _HistoryContext(){
             // will lead to the proper report if the forward command is called from the index view again)
             this.flush();
             this.push(s)
+        },
+        goBack: function (idx){
+                // go back to the idx given.
+                // remove all previous
+                if(idx <= 0){
+                    idx = 0;
+                }
+                state = state.slice(0, idx+1)
+                currentIDX = idx;
+                const s = state[currentIDX]
+                const component= viewMap[s.component];
+
+                component(...s.data)
+                BreadCrumbs(state, currentIDX, 'bread-crumbs')
+                bindBreadCrumbs()
         }
     }
 }
@@ -70,7 +89,8 @@ function BreadCrumbs(data, current, targetID=null){
 
     let mapped = ""
     data.forEach((element, idx) => {
-        mapped += idx === current ? `<li className="selected-view">${breadCrumbText(element)}</li>` : `<li>${breadCrumbText(element)}</li>`
+        mapped += idx === current ? `<li><a class="bread-crumb selected-view" data-view-id="${idx}" href="#">${breadCrumbText(element)}</li></a>` :
+         `<li><a class="bread-crumb" data-view-id="${idx}" href="#">${breadCrumbText(element)}</a></li>`
     });
 
     const html = `
@@ -81,6 +101,20 @@ function BreadCrumbs(data, current, targetID=null){
 
     return injectOrReturn(html, targetID)
 }
+
+
+function bindBreadCrumbs(){
+    const li = document.querySelectorAll('.bread-crumb')
+    li.forEach(e =>{
+        e.addEventListener('click', () => {
+            const value =parseInt(e.dataset.viewId)
+                app.history.goBack(value)
+        
+        })
+    })
+}
+
+
 
 
 const viewMap = {

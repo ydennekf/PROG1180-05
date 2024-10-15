@@ -37,8 +37,8 @@ let handleLogin = (event) => {
     if (employeeData != null) {
         if (employeeData.password == passwordInput) {
             // success
+            RedirectToIndex(employeeData, reportData)
             
-            createModal("root", `Welcome back ${employeeData.firstName}!`, `Logged in as ${employeeData.department}`, 400000 , () => RedirectToIndex(employeeData, reportData));
             // fire methods to display the index view of the NCR reports.
         }
         else {

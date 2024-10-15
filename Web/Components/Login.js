@@ -8,7 +8,7 @@ export let createLogin = (targetID, onLogin) => {
         <figure>
             <img src="company-logo.png" alt="Crossfire's company logo" id="companyLogo" />
         </figure>
-        <form id="loginForm" action="#" method="post" aria-label="loginForm" role="form" class="">
+        <form id="loginForm" action="#" method="post" aria-label="loginForm" role="form" class="login-form">
             <fieldset>
                 <legend id="loginFormLabel">Login</legend>
 

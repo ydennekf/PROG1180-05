@@ -6,7 +6,7 @@ export let createModal = (targetID, title, message, autoCloseDelay = null ,onClo
         <div>
             <h2 id="modalTitle">${title}</h2>
             <p>${message}</p>
-            <button id="closeModal">Close</button>
+            <button id="closeModal" tabindex="3">Close</button>
         </div>
     </div>
     `;

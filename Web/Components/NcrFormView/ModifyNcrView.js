@@ -1,7 +1,7 @@
 import {trapFocus} from "../utils/utils.js";
 import {createQAReport, validateQualityAssuranceForm} from "./utils.js";
 import {qualityAssuranceForm} from "./QualityAssuranceForm.js";
-import {getReport, reportData, updateReport} from "../../Data/reportData.js";
+import {getReport, reportData, updateReport} from "../../Data/new_reportData.js";
 
 
 export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH EDITING AND CREATING NEW

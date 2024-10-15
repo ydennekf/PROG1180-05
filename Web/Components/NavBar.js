@@ -10,13 +10,13 @@ export function NavBar(targetID=null){
                 <span id="user-name-label">Logged in as: <strong id="user-name">${app?.employee.username}</strong></span>
                 <span id="user-department">- ${app?.employee.department}</span>
             </span>
-         iv>
+         <div>
         <div>
             <button id="create-report-btn" aria-label="create New Report">New Report</button>
             <label for="report-search">Search NCR Reports</label>
             <input type="text" id="report-search" placeholder="search ncr reports ..."
                 aria-labelledby="search-description" aria-autocomplete="list" aria-controls="search-listbox"
-                aria-expanded="false">
+                aria-expanded="false" tabindex="1">
             <div id="search-listbox" role="listbox" aria-live="polite"></div>
         </div>
     </nav>

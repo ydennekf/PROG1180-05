@@ -85,14 +85,14 @@ function reportListHeader(sortOrder){
     return `
         <thead>
         <tr>
-            <th data-column="ncrNumber" data-order="${sortOrder.ncrNumber}">Report #</th>
-            <th data-column="title" data-order="${sortOrder.title}">Title</th>
-            <th data-column="status" data-order="${sortOrder.status}">Status</th>
-            <th data-column="itemName" data-order="${sortOrder.itemName}">Item Name</th>
-            <th data-column="date" data-order="${sortOrder.date}">Date</th>
-            <th data-column="supplierName" data-order="${sortOrder.supplierName}">Supplier</th>
-            <th data-column="startedBy" data-order="${sortOrder.startedBy}">Started By</th>
-            <th data-column="description" data-order="${sortOrder.description}">Description</th>
+            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">Report #</th>
+            <th data-column="title" tabindex="4" data-order="${sortOrder.title}">Title</th>
+            <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
+            <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>
+            <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>
+            <th data-column="supplierName" tabindex="4" data-order="${sortOrder.supplierName}">Supplier</th>
+            <th data-column="startedBy" tabindex="4" data-order="${sortOrder.startedBy}">Started By</th>
+            <th data-column="description" tabindex="4" data-order="${sortOrder.description}">Description</th>
         </tr>
         </thead>
     `;

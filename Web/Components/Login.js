@@ -14,13 +14,13 @@ export let createLogin = (targetID, onLogin) => {
 
                 <div>
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Username" required aria-required="true" aria-describedby="usernameHelp" />
+                    <input type="text" id="username" name="username" placeholder="Username" required aria-required="true" aria-describedby="usernameHelp" tabindex="2"/>
 
                 </div>
 
                 <div>
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required aria-required="true" aria-describedby="passwordHelp" />
+                    <input type="password" id="password" name="password" required aria-required="true" aria-describedby="passwordHelp" tabindex="2"/>
 
                 </div>
 

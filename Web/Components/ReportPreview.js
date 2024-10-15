@@ -1,4 +1,4 @@
-import { getReport } from "../Data/reportData.js";
+import { getReport } from "../Data/new_reportData.js";
 import { DetailsNcrView } from "./NcrFormView/DetailsNcrView.js";
 import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 import { injectOrReturn } from "./utils/utils.js";
@@ -37,8 +37,8 @@ export function reportPreview  (reportData) {
             </td>
             <td>
                 <div>
-                    <button class="view-report" data-ncr-number="${reportData.ncrNumber}">View Report</button>
-                    <button class="edit-report" data-ncr-number="${reportData.ncrNumber}">Edit</button>
+                    <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">View Report</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
                 </div>
             </td>
         </tr>

@@ -1,4 +1,4 @@
-import {ReportStatus} from "../../Data/reportData.js";
+import {ReportStatus} from "../../Data/new_reportData.js";
 
 export function getReportFormData(){
     return {

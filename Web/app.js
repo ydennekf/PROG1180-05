@@ -42,7 +42,7 @@ let handleLogin = (event) => {
         if (employeeData.password == passwordInput) {
             // success
             RedirectToIndex(employeeData, reportData)
-            createModal("errorPanel", "Success!", employeeData.lastName + ", " + employeeData.firstName + "logged in.")
+           
             // fire methods to display the index view of the NCR reports.
         }
         else {

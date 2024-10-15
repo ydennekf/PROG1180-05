@@ -40,30 +40,24 @@ let handleLogin = (event) => {
         if (employeeData.password == passwordInput) {
             // success
             RedirectToIndex(employeeData, reportData)
-            
+            createModal("errorPanel", "Success!", employeeData.lastName + ", " + employeeData.firstName + "logged in.")
             // fire methods to display the index view of the NCR reports.
         }
         else {
             //wrong pass
             console.log("wrong pass!");
-            createModal("errorPanel", "Login Error", "Incorrect password", () => resetForm("loginForm"));
+            createModal("errorPanel", "Login Error", "Incorrect password",5000);
         }
     }
     else {
         // wrong username
         console.log("User not found");
-        createModal("errorPanel", "Login Error", "Username not found", () => resetForm("loginForm"));
+        createModal("errorPanel", "Login Error", "Username not found", 5000);
     }
 }
 
 window.onload = () => {
     
     createLogin("root", handleLogin);
-    document.getElementById('create-report-btn').addEventListener('click', () => {
-        if(!app){
-            return;
-        }
-        ModifyNcrView('root', app.employee)
-        app.history.newPath({component:'ModifyNcrView', data:['root', app.employee]})
-    })
+   
 }

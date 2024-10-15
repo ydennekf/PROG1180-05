@@ -61,9 +61,9 @@ export function trapFocus(target) {
 }
 
 // simple function to reset a form as a callback function from an error message
-export function resetForm(target) {
+export function resetForm() {
     document.getElementById('errorPanel').innerHTML = '';
-    document.getElementById(target).reset();
+    document.getElementById("loginForm").reset();
 }
 
 

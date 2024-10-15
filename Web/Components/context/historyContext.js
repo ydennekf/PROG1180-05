@@ -55,6 +55,8 @@ export function _HistoryContext(){
         flush:function (){ // clears the history state besides the initial view
             state = [state[0]]
             currentIDX = 0;
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
+            bindBreadCrumbs()
         },
         newPath:function (s){ // combines flush and push to create a new path from the index
             // use example: 
@@ -79,6 +81,9 @@ export function _HistoryContext(){
                 component(...s.data)
                 BreadCrumbs(state, currentIDX, 'bread-crumbs')
                 bindBreadCrumbs()
+        },
+        length:() =>{
+            return state.length
         }
     }
 }
@@ -108,8 +113,9 @@ function bindBreadCrumbs(){
     li.forEach(e =>{
         e.addEventListener('click', () => {
             const value =parseInt(e.dataset.viewId)
+            if(value !== app.history.length() -1){
                 app.history.goBack(value)
-        
+            }
         })
     })
 }
@@ -126,7 +132,7 @@ const viewMap = {
 function breadCrumbText(historyState){
     switch(historyState.component){
         case 'ModifyNcrView':
-            if(!historyState.data[2]){ // because this component handles both creating and editing
+            if(!historyState.data[1]){ // because this component handles both creating and editing
                 return "Start New Report" 
             }else{
                 return "Edit NCR #" + historyState.data[2].ncrNumber
@@ -138,4 +144,15 @@ function breadCrumbText(historyState){
         case "ReportList":
             return "Index | Report View"
     }
+}
+
+
+export function redirect(view, args){ // view should be a function or string
+    if(!app){
+        console.log('Error Redirecting before login ' + view.name)
+        return;
+    }
+
+    app.newPath({component:view.name || view, data:args})
+
 }

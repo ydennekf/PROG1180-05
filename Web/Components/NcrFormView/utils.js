@@ -106,7 +106,7 @@ export function validateQualityAssuranceForm(updating=false){
 
 
 function validateNcrNumber(ncrNumber, errorList, updating=false){
-    const validNumber = parseInt(ncrNumber)
+    const validNumber = ncrNumber
     const e = 'ncr-number-error'
     if(isNaN(validNumber)){
         errorList.push('txt-ncr-number',e,  "A non numeric value was submitted.")
@@ -116,7 +116,8 @@ function validateNcrNumber(ncrNumber, errorList, updating=false){
         errorList.push('txt-ncr-number', e,  "Please submit a positive number.")
         return;
     }
-    const number = getReport(parseInt(ncrNumber))
+    const number = getReport(ncrNumber)
+    console.log(number, updating)
     if(number && !updating){
         errorList.push('txt-ncr-number',e, "There is already a report with the NCR Number provided")
         return;
@@ -143,7 +144,7 @@ function validateNumberInputs(errorList){
         errorList.push('txt-quantity-received', 'quantity-received-error', "Please submit a positive number.")
     }
 
-    if(isNaN(data.sapNumber.value) || data.sapNumber.value <= 0) {
+    if(isNaN(data.sapNumber.value) || data.sapNumber.value < 0) {
         data.sapNumber.ariaInvalid = true;
         errorList.push('txt-sap-number', 'sap-number-error', "Please submit a positive number.")
     }
@@ -153,7 +154,7 @@ function validateNumberInputs(errorList){
         errorList.push('txt-quantity-defective', 'quantity-defective-error', "Please submit a positive number.")
     }
 
-    if(isNaN(validProdNum) || validProdNum <= 0){
+    if(isNaN(validProdNum) || validProdNum < 0){
         data.prodNumber.ariaInvalid = true;
         errorList.push('txt-prod-number', 'prod-number-error', "Please submit a positive number.")
     }

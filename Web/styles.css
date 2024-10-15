@@ -18,6 +18,13 @@ nav .logo {
     width: auto;
 }
 
+.bread-crumb{
+    color:inherit !important;
+    text-decoration:none !important;
+}
+
+
+
 nav {
     display: flex;
     justify-content: flex-end;
@@ -199,7 +206,7 @@ button:hover {
 }
 
 a.selected-view {
-    color:inherit;
+    color:black !important;
     text-decoration:none;
     cursor:not-allowed;
 }
@@ -428,3 +435,25 @@ label{
         transform: rotate(45deg) scale(0);
     }
 }
+
+
+/* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/
+
+.ncr-details, .ncr-details-header dl{
+    display:grid;
+    grid-template-columns:1fr 1fr 
+}
+
+.ncr-details-header{
+    margin-bottom:25px;
+}
+
+.ncr-details dd, .ncr-details dt, .ncr-details-header dd, .ncr-details-header dt{
+    border:1px solid black;
+    padding:5px;
+}
+
+.ncr-details dt, .ncr-details-header dt{
+    font-weight:bold;
+}
+/* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/

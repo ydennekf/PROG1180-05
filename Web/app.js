@@ -16,12 +16,14 @@ import { app } from './AppState.js';
 
 
 let RedirectToIndex = (employee, reports) => {
-    initApp(employee, ReportList, ['root', getEmployeeByUserName('btaylor'), reports])
+    initApp(employee, ReportList, ['root', employee, reports])
    
 }
 
 let getEmployeeByUserName = (username) => {
-    return employees.find(e => e.username == username);
+    const e= employees.find(e => e.username == username);
+    console.log(e)
+    return e;
 }
 
 
@@ -59,5 +61,5 @@ let handleLogin = (event) => {
 window.onload = () => {
     
     createLogin("root", handleLogin);
-   
+
 }

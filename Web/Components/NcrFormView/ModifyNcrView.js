@@ -17,18 +17,18 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
     // If a report is passed an additional toolbar should be added with functionality like closing the report etc.
     function validateForm(e) {
         e.preventDefault();
-        const formData = validateQualityAssuranceForm(report !== null); // if there is a report given we're not updating the report
+        const formData = validateQualityAssuranceForm(report === null); // if there is a report given we're not updating the report
        // For now it's just the QA portion being validated
         if(formData.get().length === 0){
             console.log("QA Form is valid.")
             if(!report) { // create new TODO auto-increment ncr-number?
-                const newReport = createQAReport(employee)
+                const newReport = createQAReport(app.employee)
                 reportData.push(newReport)
                 // redirect with a success message 
                 ReportList('root', app.employee, reportData)
                 app.history.flush()
             } else{ // edit existing
-                const newReport = createQAReport(employee)
+                const newReport = createQAReport(app.employee)
                 updateReport(report.ncrNumber, newReport)
                 // TODO redirect with a success message 
                 ReportList('root', app.employee, reportData)
@@ -52,7 +52,7 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
 
 
     document.getElementById(targetID).innerHTML = html;
-    document.getElementById('ncr-create-form').addEventListener('submit', (e)=>validateForm(e));
+    document.getElementById('ncr-create-form').addEventListener('submit', (e)=>{validateForm(e); console.log("awesome")});
     trapFocus(document.getElementById(targetID));
 
 }

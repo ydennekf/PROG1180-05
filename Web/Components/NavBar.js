@@ -5,6 +5,7 @@ import { qualityAssuranceForm } from "./NcrFormView/QualityAssuranceForm.js";
 import { reportData } from "./../Data/new_reportData.js";
 
 import { ReportList } from "./ReportList.js";
+import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 
 export function NavBar(targetID){ 
 
@@ -42,7 +43,8 @@ export function NavBar(targetID){
 
     document.getElementById(targetID).innerHTML = html;
     document.getElementById("create-report-btn").addEventListener("click", () => {
-        qualityAssuranceForm("root",true);
+        app.history.newPath({component:'ModifyNcrView', data:['root', null, true]})
+        ModifyNcrView("root",null, true);
     })  
 
     $(function () {

@@ -16,7 +16,7 @@ export function DetailsNcrView(targetID, report){
 }
 
 function QualityAssuranceNcrView(report, targetID=null){
-    const html = `<dl>
+    const html = `<dl class="ncr-details">
                 <dt>Supplier Name</dt>
                 <dd>${report.supplierName}</dd>
 
@@ -61,7 +61,7 @@ function QualityAssuranceNcrView(report, targetID=null){
 
 function DetailsHeader(report, targetID=null){
     const html = `
-        <div>
+        <div class="ncr-details-header">
             <h2>${report.title}</h2>
             <dl>
                 <dt>Date</dt>

@@ -456,4 +456,18 @@ label{
 .ncr-details dt, .ncr-details-header dt{
     font-weight:bold;
 }
+
+.error-label{
+    color:red;
+    font-size:12px;
+}
+
+.required:after{
+
+        content:'*';
+        color:red;
+
+}
+
+
 /* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/

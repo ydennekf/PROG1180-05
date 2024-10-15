@@ -94,7 +94,7 @@ function BreadCrumbs(data, current, targetID=null){
 
     let mapped = ""
     data.forEach((element, idx) => {
-        mapped += idx === current ? `<li><a class="bread-crumb selected-view" data-view-id="${idx}" href="#">${breadCrumbText(element)}</li></a>` :
+        mapped += idx === current ? `<li><a aria-current="page" class="bread-crumb selected-view" data-view-id="${idx}" href="#">${breadCrumbText(element)}</li></a>` :
          `<li><a class="bread-crumb" data-view-id="${idx}" href="#">${breadCrumbText(element)}</a></li>`
     });
 

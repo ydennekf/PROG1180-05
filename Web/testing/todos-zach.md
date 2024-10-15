@@ -1,0 +1,5 @@
+-- [] finish makign QA portion accessible
+-- [] add labels to show validation error messages 
+-- [] apply existing css clsses to login
+-- [] make ul breadcrumbs clickable and selectable
+-- [] wire up create report button

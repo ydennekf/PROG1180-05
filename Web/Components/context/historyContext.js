@@ -21,7 +21,7 @@ export function _HistoryContext(){
             const s = state[currentIDX]
             const component= viewMap[s.component];
             component(...s.data) 
-            insert('bread-crumbs', BreadCrumbs(state, currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         }
         
     }) 
@@ -33,20 +33,20 @@ export function _HistoryContext(){
             const s = state[currentIDX]
             const component= viewMap[s.component];
             component(...s.data) 
-            insert('bread-crumbs', BreadCrumbs(state, currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         }
     })
 
     return { // not using lambdas because you cannot access this with lambdas ( shit language )
         setInitialView:function (view) { // called once to set the index
             state.push(view);      
-            insert('bread-crumbs', BreadCrumbs(state, currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         },
         push:function (s){ // Refreshes ( This is called each time we move to a new view )
             state.push(s);
             history.pushState(s, '')
             currentIDX++;
-            insert('bread-crumbs', BreadCrumbs(state, currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         },
         flush:function (){ // clears the history state besides the initial view
             state = [state[0]]
@@ -92,7 +92,7 @@ const viewMap = {
 function breadCrumbText(historyState){
     switch(historyState.component){
         case 'ModifyNcrView':
-            if(!historyState.data[2]){
+            if(!historyState.data[2]){ // because this component handles both creating and editing
                 return "Start New Report" 
             }else{
                 return "Edit NCR #" + historyState.data[2].ncrNumber

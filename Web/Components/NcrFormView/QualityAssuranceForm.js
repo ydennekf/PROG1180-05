@@ -64,14 +64,15 @@ export function qualityAssuranceForm(targetID=null,
                 
                 <div>
                     <label for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
-                    <input name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
+                    <input aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                      value="${safeOr(report?.sapNumber, '')}"/>
+                     <label id="sap-number-error"></label>
                 </div>
                 
                 <div>
                     <label for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
-                    <textarea required  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
-                    
+                    <textarea required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
+                    <label id="item-defect-error"></label>
                 </div>
                 
                 <div>

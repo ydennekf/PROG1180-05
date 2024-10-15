@@ -11,55 +11,64 @@ export function qualityAssuranceForm(targetID=null,
             <legend>Quality Assurance</legend>
                 <div>
                     <label for="txt-ncr-number" id="lbl-ncr-number">Report Number</label>
-                    <input name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
+                    <input aria-errormessage="ncr-number-error" name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                      value="${safeOr(report?.ncrNumber, '')}"/>
+                     <label id="ncr-number-error"></label>
                 </div>
                 
                  <div>
                     <label for="txt-ncr-title" id="lbl-ncr-title">Title</label>
-                    <input name="title" required type="text" aria-describedby="lbl-ncr-title" id="txt-ncr-title"
+                    <input aria-errormessage="title-error" name="title" required type="text" aria-describedby="lbl-ncr-title" id="txt-ncr-title"
                      value="${report?.title || ''}"/>
+                     <label id="title-error"></label>
                 </div>
                 
                 <div>
                     <label for="txt-supplier" id="lbl-supplier">Supplier Name</label>
-                    <input name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
+                    <input aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                      value="${report?.supplierName || ''}"/>
+                     <label id="supplier-error"></label>
                 </div>
                 
                 <div>
                     <label for="txt-prod-number" id="lbl-prod-number">Prod Number</label>
-                    <input name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
+                    <input aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                      value="${safeOr(report?.prodNumber, '')}"/>
+                     <label id="prod-number-error"></label>
                 </div>
                 
                 <div>
                     <label for="txt-sales-number" id="lbl-sales-number">Sales Order Number</label>
-                    <input name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
+                    <input aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                      value="${safeOr(report?.salesNumber, '')}"/>
+                     <label id="sales-number-error"></label>
                 </div>
                 
                 <div>
-                    <label for="txt-quantity-received" id="lbl-quantity-received">Quantity Received</label>
-                    <input name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
+                    <label  for="txt-quantity-received" id="lbl-quantity-received">Quantity Received</label>
+                    <input aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                      value="${safeOr(report?.qtyReceived, '')}"/>
+                     <label id="quantity-received-error"></label>
                 </div>
                 
                 <div>
                     <label for="txt-quantity-defective" id="lbl-quantity-defective">Quantity Defective</label>
-                    <input name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
+                    <input aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                      value="${safeOr(report?.qtyDefective, '')}"/>
+                     <label id="quantity-defective-error"></label>
                 </div>
                 
                 <div>
                     <label for="txt-item-name" id="lbl-item-name">Item Name</label>
-                    <input name="item-name" type="text" required  id="txt-item-name" aria-describedby="lbl-item-name"
+                    <input name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
                     value="${report?.itemName || ''}"/>
+                    <label id="item-name-error"></label>
                 </div>
                 
-                <div>
+                <div> 
                     <label id="lbl-item-description" for="txt-item-description">Description of Item</label>
-                    <textarea name="item-description" required  id="txt-item-description" aria-describedby="lbl-item-description">${report?.itemDescription || ''}</textarea>
+                    <textarea name="item-description" aria-errormessage="item-description-error" required  id="txt-item-description" aria-describedby="lbl-item-description">${report?.itemDescription || ''}</textarea>
+                    <label id="item-description-error"></label>
                 </div>
                 
                 <div>
@@ -109,6 +118,18 @@ export function qualityAssuranceForm(targetID=null,
                         '',
                         null,
                         report?.nonConforming || false)}
+                </div>
+
+                <div>
+                ${labeledCheckbox(
+                    'chk-engineering-required', 
+                    'engineering-required', 
+                    '', 
+                    'lbl-engineering-required', 
+                    'Engineering Required?', 
+                    '',
+                    null,
+                    report?.engineeringRequired || false)}
                 </div>
                 ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : ''}
             </fieldset>

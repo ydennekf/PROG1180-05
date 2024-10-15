@@ -1,5 +1,6 @@
--- [] finish makign QA portion accessible
--- [] add labels to show validation error messages 
+-- [x] finish makign QA portion accessible / 50
+-- [x] add labels to show validation error messages / 59
 -- [] apply existing css clsses to login
 -- [] make ul breadcrumbs clickable and selectable
--- [] wire up create report button
+-- [x] wire up create report button
+-- [] REDIRECT WITH SUCCESS MESSAGE AFTER SUCCESSFULLY CREATING/EDITING A REPORT 

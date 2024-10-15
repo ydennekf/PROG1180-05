@@ -1,4 +1,4 @@
-import { reportData } from "../../Data/reportData.js";
+import { reportData } from "../../Data/new_reportData.js";
 import { ReportList } from "../ReportList.js";
 
 $(function () {
@@ -13,8 +13,8 @@ $(function () {
             matcher.test(report.status) ||
             matcher.test(report.description)
         ));
-        
-        ReportList("root",null, filteredReports);
+        // this is where the reports are rendered through will need to figure out pagination over the break.
+        ReportList("root",null, filteredReports.slice(0,10));
     }
 
 
@@ -34,6 +34,7 @@ $(function () {
                 {category: "Description", label: report.description, value: report.description}
             ]).filter(item => matcher.test(item.label));
 
+            
             response(filteredSuggestions.slice(0,5));
         },
         minLength: 0,
@@ -42,14 +43,10 @@ $(function () {
             console.log("selected:" + ui.item.label);
         },
         open: function () {
-            $("#report-search").attr("aria-expanded" , "true");
+            // $("#report-search").attr("aria-expanded" , "true");
         },
         close: function () {
-            $("#report-search").attr("aria-expanded" , "false");
+            //$("#report-search").attr("aria-expanded" , "false");
         }
-    }).autocomplete("instance")._renderItem = function (ul, item) {
-        return $("<li>")
-            .append("<div> " + item.label + " <small>(" + item.category + ")</small></div>")
-            .appendTo(ul)
-    };
+    })
 });

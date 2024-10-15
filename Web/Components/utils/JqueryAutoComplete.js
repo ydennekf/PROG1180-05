@@ -35,7 +35,7 @@ $(function () {
             ]).filter(item => matcher.test(item.label));
 
             
-            response(filteredSuggestions.slice(0,5));
+            response(filteredSuggestions.slice(0,0));
         },
         minLength: 0,
         select: function (event, ui) {

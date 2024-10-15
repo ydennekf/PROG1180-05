@@ -50,6 +50,7 @@ export function validateQualityAssuranceForm(){
     // TODO better validators like min char-length
     // TODO before tuesday add labels under the fields that show the error 
     const data = getReportFormData();
+    const errors = []
     const validNcr = parseInt(data.ncrNumber.value);
     const validQuantityRec = parseInt(data.quantityReceived.value)
     const validQuantityDef = parseInt(data.quantityDefective.value)
@@ -57,61 +58,84 @@ export function validateQualityAssuranceForm(){
     const validSalesNumber = parseInt(data.salesNumber.value)
 
     if(data.ncrNumber.value === "" || isNaN(validNcr)){
-        data.ncrNumber.focus();
-        return false;
+        data.ncrNumber.ariaInvalid = true;
     }
 
 
     if(data.title.value === ""){
-        data.title.focus();
-        return false;
+        data.title.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.itemName.value === ""){
-        data.itemName.focus()
-        return false;
+        data.itemName.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.supplier.value === ""){
-        data.ncrNumber.focus();
-        return false
+        data.ncrNumber.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.salesNumber.value === "" || isNaN(validSalesNumber)){
-        data.salesNumber.focus();
-        return false;
+        data.salesNumber.ariaInvalid = true;
+        errors.push('')
     }
 
 
     if(data.quantityReceived.value === "" || isNaN(validQuantityRec)){
-        data.quantityReceived.focus();
-        return false;
+        data.quantityReceived.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.sapNumber.value === "" || isNaN(data.sapNumber.value)){
-        data.sapNumber.focus();
-        return false;
+        data.sapNumber.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.quantityDefective.value === "" || isNaN(validQuantityDef)){
-        data.quantityDefective.focus();
-        return false;
+        data.quantityDefective.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.defectDescription.value === ""){
-        data.defectDescription.focus();
-        return false;
+        data.defectDescription.ariaInvalid = true;
+        errors.push('')
     }
 
     if(data.itemDescription.value === ""){
-        data.itemDescription.focus();
-        return false;
+        data.itemDescription.ariaInvalid = true;
+        errors.push('')
     }
 
-    if(data.prodNumber.value === ""){
-        data.prodNumber.focus();
-        return false;
+    if(data.prodNumber.value === "" || isNaN(validProdNum)){
+        data.prodNumber.ariaInvalid = true; 
+    
+        errors.push('')
     }
-    return true;
+    return !errors.length > 0
 
 }
+
+
+function validateQualityForm(){
+    const data = getReportFormData()
+    const errors = [] // if anything is pushed to this array the forms invalid
+
+    
+}
+
+function validateNcrNumber(ncrNumber, errorList){
+    var number = getReport(parseInt(ncrNumber))
+    if(number){
+        errorList.push({target:'ncr-number-error', msg:"There is already a report with the NCR Number provided"})
+    }
+}
+
+
+
+/* TODOS
+    error-message aria attributes to element
+    add invalid aria to the element 
+    insert a new label under the element (APPEND ig)
+*/

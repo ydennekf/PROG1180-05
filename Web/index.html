@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Crossfire - Login</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Crossfire - Login</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
 <body>
     <nav id="navbar" role="navigation" aria-label="main navigation">
         <div>
@@ -32,29 +30,35 @@
     </header>
     <main id="root">
         <div class="bg_1">
+            <img src="image/Crossfire Logo - no bkgd.png" alt="Logo" class="logo">
             <h2>Cross Fire</h2>
+
             <!-- Form starts here -->
             <form class="login-form">
                 <div class="col-1 input-effect">
                     <!-- Username Section -->
                     <div class="input-wrapper">
-                        <input class="effect-1" type="text" placeholder="" required>
+                        <input class="effect-1" type="text" required>
                         <label>User Name</label>
                         <span class="focus-border"></span>
                     </div>
+            
                     <!-- Password Section -->
                     <div class="input-wrapper">
-                        <input class="effect-1" type="password" placeholder="" required>
+                        <input class="effect-1" type="password" required>
                         <label>Password</label>
                         <span class="focus-border"></span>
                     </div>
+
                     <!-- Remember Me Section -->
                     <div class="remember-me">
                         <input type="checkbox" id="rememberMe">
                         <label for="rememberMe">Remember Me</label>
                     </div>
+
                     <!-- Login Button -->
                     <button type="submit" class="login-btn">LOG IN</button>
+
                     <!-- Forgot Password Link -->
                     <div class="forgot-password">
                         <a href="#">Forgot Password?</a>
@@ -62,16 +66,19 @@
                 </div>
             </form>
             <!-- Form ends here -->
+
         </div>
     </main>
-    <section aria-labelledby="errorPanel" id="errorPanel" role="alert">
-
-    </section>
-    <section aria-labelledby="accessibilityControlPanel" id="accessibilityControls" role="region">
+    
+    <div aria-labelledby="errorPanel" id="errorPanel" role="alert">
+        <!-- Error content here -->
+    </div>
+    
+    <div aria-labelledby="accessibilityControllsTitle" id="accessibilityControls" role="region">
         <h3 id="accessibilityControllsTitle">Accessibility Controls</h3>
         <div class="chkBox">
             <label for="darkModeToggle">Enable Dark Mode</label>
-            <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle" />
+            <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle">
         </div>
 
         <div class="select-container">
@@ -82,17 +89,13 @@
                 <option value="fr">French</option>
             </select>
         </div>
-    </section>
+    </div>
+
     <footer>
         <div id="bread-crumbs"></div>
         <p>&copy; 2024 Crossfire NCR. All rights reserved.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script type="module" src="app.js"></script>
-    <script type="module" src="./Components/utils/JqueryAutoComplete.js"></script>
-
 </body>
-
 </html>

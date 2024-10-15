@@ -2,6 +2,10 @@ import { mapComponents } from "./utils/utils.js"
 import { previewBindings, reportPreview } from "./ReportPreview.js"
 
 export function ReportList(targetID, user, reports){
+
+    document.getElementById('create-report-btn').addEventListener('click', () => {
+        
+    })
     let sortOrder = {
         id: 'desc',
         title: 'desc',

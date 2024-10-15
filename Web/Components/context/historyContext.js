@@ -5,15 +5,14 @@ import '../../../node_modules/popstate-direction/index.js'
 import { ReportList } from "../ReportList.js";
 
 
-// If we're on idx view or any other view
-// 
 
 export function _HistoryContext(){ 
     let currentIDX = 0;
     let state=[]
   
-    // Inject the breadcrumb component
-    // Return an object with a method to update the breadcrumbs whenever we move to a new view ( Called at the top of all view functions )
+    // Injects the breadcrumb component
+    // Returns an object with a method to update the breadcrumbs whenever we move to a new view ( Called at the top of all view functions )
+    // Also listens for back/forward button clicks and returns the user to their previous/next view.
     window.addEventListener('forward', () => {
        
         if(currentIDX < state.length -1){
@@ -22,7 +21,7 @@ export function _HistoryContext(){
             const s = state[currentIDX]
             const component= viewMap[s.component];
             component(...s.data) 
-            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         }
         
     }) 
@@ -34,20 +33,20 @@ export function _HistoryContext(){
             const s = state[currentIDX]
             const component= viewMap[s.component];
             component(...s.data) 
-            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         }
     })
 
     return { // not using lambdas because you cannot access this with lambdas ( shit language )
         setInitialView:function (view) { // called once to set the index
             state.push(view);      
-            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         },
         push:function (s){ // Refreshes ( This is called each time we move to a new view )
             state.push(s);
             history.pushState(s, '')
             currentIDX++;
-            insert('bread-crumbs', BreadCrumbs(state.map(s => s.component), currentIDX))
+            BreadCrumbs(state, currentIDX, 'bread-crumbs')
         },
         flush:function (){ // clears the history state besides the initial view
             state = [state[0]]
@@ -71,7 +70,7 @@ function BreadCrumbs(data, current, targetID=null){
 
     let mapped = ""
     data.forEach((element, idx) => {
-        mapped += idx === current ? `<li className="selected-view">${element}</li>` : `<li>${element}</li>`
+        mapped += idx === current ? `<li className="selected-view">${breadCrumbText(element)}</li>` : `<li>${breadCrumbText(element)}</li>`
     });
 
     const html = `
@@ -91,5 +90,18 @@ const viewMap = {
 }
 
 function breadCrumbText(historyState){
-    
+    switch(historyState.component){
+        case 'ModifyNcrView':
+            if(!historyState.data[2]){ // because this component handles both creating and editing
+                return "Start New Report" 
+            }else{
+                return "Edit NCR #" + historyState.data[2].ncrNumber
+            }
+
+        case "DetailsNcrView":
+            return "View NCR #" + historyState.data[1].ncrNumber;
+
+        case "ReportList":
+            return "Index | Report View"
+    }
 }

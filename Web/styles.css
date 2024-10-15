@@ -1,4 +1,3 @@
-/* Body and default font styles remain unchanged */
 body {
     background-color: #fff;
     color: #000;
@@ -8,6 +7,8 @@ body {
     margin: 0;
 }
 
+
+
 /* Form Styles */
 .login-form {
     max-width: 400px;
@@ -16,6 +17,15 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 100px; 
+    height: auto; 
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    z-index: 10; 
 }
 
 
@@ -47,6 +57,66 @@ input[type="text"], input[type="password"] {
     letter-spacing: 1px;
 }
 
+/* New effect-16 animation */
+.effect-1 {
+    border: 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Focus border animation */
+.effect-1 ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #5897c9; 
+    transition: width 0.4s ease;
+}
+
+/* When input is focused or contains content, expand the focus border */
+.effect-1:focus ~ .focus-border,
+.has-content.effect-1 ~ .focus-border {
+    width: 100%;
+    transition: width 0.4s ease;
+}
+
+/* Label animation */
+.effect-1 ~ label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 9px;
+    color: #aaa;
+    transition: 0.3s ease;
+    z-index: 1;
+    letter-spacing: 0.5px;
+}
+
+/* When input is focused or contains content, move the label */
+.effect-1:focus ~ label,
+.has-content.effect-1 ~ label {
+    top: -16px;
+    font-size: 12px;
+    color: #5897c9; /* Same green color as focus border */
+    transition: 0.3s ease;
+}
+
+/* Input wrapper to handle relative positioning */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 30px; /* Spacing between the input fields */
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Custom Checkbox Style */
 input[type="checkbox"] {
     position: relative;
     width: 28px;
@@ -79,8 +149,6 @@ input[type="checkbox"]:checked:before{
     animation: checkAnim .5s ease;
 }
 
-/* Custom Check Box */
-
 .chkBox{
     display: flex;
     justify-content: center;
@@ -93,8 +161,7 @@ footer {
     background-color: #5897c9; 
     color: #fff; 
     text-align: center; 
-    padding: 15
-    10px 0; 
+    padding: 15px 10px 0; 
     position: fixed; 
     bottom: 0;
     width: 100%; 
@@ -109,26 +176,24 @@ label{
 }
 
 
-/* Language Select, Custom dropdown*/
 
-
+/* Language Select, Custom dropdown */
 .select-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 200px;
-    /* margin: 10px; */
     position: relative;
 }
 
 .select-container label {
     margin-right: 10px;
-    /* font-size: 14px; */
     color: #333;
 }
 
 .select-box {
-    border: 1px solid #ccc;
+    border: 1px solid #ccc
+    ;
     appearance: none;
     padding: 5px 10px;
     width: auto; 
@@ -142,55 +207,6 @@ label{
     outline: none;
     border-color: #007bff;
 }
-
-.input-wrapper {
-    position: relative;
-    margin-bottom: 30px; /* Spacing between the input fields */
-}
-
-.effect-1 ~ .focus-border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #5897c9;
-    transition: 0.4s;
-}
-
-.effect-1:focus ~ .focus-border,
-.has-content.effect-1 ~ .focus-border {
-    width: 100%;
-    transition: 0.4s;
-}
-
-.effect-1 ~ label {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    top: 9px;
-    color: #aaa;
-    transition: 0.3s;
-    z-index: 1;
-    letter-spacing: 0.5px;
-}
-
-.effect-1:focus ~ label,
-.has-content.effect-1 ~ label {
-    top: -16px;
-    font-size: 12px;
-    color: #5897c9;
-    transition: 0.3s;
-}
-
-.effect-1 {
-    border: 0;
-    padding: 4px 0;
-    border-bottom: 1px solid #ccc;
-    background-color: transparent;
-}
-
-
 
 .remember-me {
     display: flex;
@@ -237,4 +253,3 @@ label{
         transform: rotate(45deg) scale(0);
     }
 }
-

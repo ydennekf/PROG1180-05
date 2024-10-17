@@ -41,7 +41,7 @@ nav {
     background-position: left center; 
     height: 100px;
     padding-left: 150px; 
-    color: #5897c9;
+    color: var(--color-lightblue);
     background-color: #fff; 
 }
 
@@ -74,13 +74,13 @@ main.ncr-view {
 }
 
 button:hover {
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
 }
 
 button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -131,7 +131,7 @@ table.ncr-list a:hover {
 td div a {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
     color: white;
     border-radius: 4px;
     text-decoration: none;
@@ -139,7 +139,7 @@ td div a {
 }
 
 td div a:hover {
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
 }
 
 /* Search Form */
@@ -184,7 +184,7 @@ button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
     color: white;
     border: none;
     border-radius: 4px;
@@ -192,7 +192,7 @@ button {
 }
 
 button:hover {
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
 }
 
 

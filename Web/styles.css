@@ -4,10 +4,22 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-darkblue: #173451;
+    --color-lightblue: var(--color-lightblue);
+    --color-offblack: #222222;
+    --color-offwhite: #f8f4f4;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-red: red;
+
+    --font-primary: 'Poppins', sans-serif;
+}
+
 body {
-    background-color: #fff;
-    color: #000;
-    font-family: 'Poppins', sans-serif;
+    background-color: var( --color-white);
+    color: var(--color-black);
+    font-family: var(--font-primary);
     font-weight: 400;
     font-style: normal;
     margin: 0;
@@ -35,8 +47,8 @@ nav {
     background-position: left center; 
     height: 100px;
     padding-left: 150px; 
-    color: #5897c9;
-    background-color: #fff; 
+    color: var(--color-lightblue);
+    background-color: var( --color-white); 
 }
 
 nav ul {
@@ -49,7 +61,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: var( --color-white);
     text-decoration: none;
 }
 
@@ -62,20 +74,20 @@ main.ncr-view {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var( --color-white);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 button:hover {
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
 }
 
 button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #5897c9;
-    color: #fff;
+    background-color: var(--color-lightblue);
+    color:var( --color-white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -112,7 +124,7 @@ table.ncr-list tr:hover {
 }
 
 table.ncr-list a {
-    color: #fff;
+    color: var( --color-white);
     text-decoration: none;
     margin-right: 10px;
 }
@@ -173,15 +185,15 @@ button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #5897c9;
-    color: white;
+    background-color: var(--color-lightblue);
+    color: var( --color-white);
     border: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #5897c9;
+    background-color: var(--color-lightblue);
 }
 
 
@@ -219,13 +231,13 @@ h1{
 
 h2 {
     text-align: center;
-    color: #5897c9;
+    color: var(--color-lightblue);
 }
 
 h3{
     font-family: "Montserrat", cursive;
     font-weight: 400;
-    color: #5897c9;
+    color: var(--color-lightblue);
     font-size: 35px;
     text-align: center;
     position: relative;
@@ -256,7 +268,7 @@ input[type="text"], input[type="password"] {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #5897c9; 
+    background-color: var(--color-lightblue); 
     transition: width 0.4s ease;
 }
 
@@ -284,7 +296,7 @@ input[type="text"], input[type="password"] {
 .has-content.effect-1 ~ label {
     top: -16px;
     font-size: 12px;
-    color: #5897c9; /* Same green color as focus border */
+    color: var(--color-lightblue); /* Same green color as focus border */
     transition: 0.3s ease;
 }
 
@@ -327,7 +339,7 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"]:checked:before{
-    border-color: #fff;
+    border-color: var( --color-white);
     animation: checkAnim .5s ease;
 }
 
@@ -340,8 +352,8 @@ input[type="checkbox"]:checked:before{
 }
 
 footer {
-    background-color: #5897c9; 
-    color: #fff; 
+    background-color: var(--color-lightblue); 
+    color: var( --color-white);
     text-align: center; 
     padding: 15px 10px 0; 
     position: fixed; 
@@ -402,8 +414,8 @@ label{
 
 .login-btn {
     width: 100%;
-    background-color: #5897c9;
-    color: white;
+    background-color: var(--color-lightblue);
+    color: var( --color-white);
     border: none;
     padding: 10px;
     font-size: 16px;
@@ -422,7 +434,7 @@ label{
 }
 
 .forgot-password a {
-    color: #5897c9;
+    color: var(--color-lightblue);
     text-decoration: none;
 }
 
@@ -458,14 +470,14 @@ label{
 }
 
 .error-label{
-    color:red;
+    color: var(--color-red);
     font-size:12px;
 }
 
 .required:after{
 
         content:'*';
-        color:red;
+        color: var(--color-red);
 
 }
 

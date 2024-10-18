@@ -1,7 +1,7 @@
 import { insert, injectOrReturn } from "../utils/utils.js";
 import { ModifyNcrView } from "../NcrFormView/ModifyNcrView.js";
 import { DetailsNcrView } from "../NcrFormView/DetailsNcrView.js";
-import '../../../node_modules/popstate-direction/index.js'
+import '../../node_modules/popstate-direction/index.js'
 import { ReportList } from "../ReportList.js";
 import { app } from "../../AppState.js";
 

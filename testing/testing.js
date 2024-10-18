@@ -7,7 +7,7 @@ import { injectOrReturn } from "../Components/utils/utils.js";
 import { getReport } from "../Data/new_reportData.js";
 import { _HistoryContext } from "../Components/context/historyContext.js";
 import { initApp, app } from "../AppState.js";
-import '../../node_modules/popstate-direction/index.js'
+import 'popstate-direction'
 
 
 //DetailsNcrView('root', reportData[0])

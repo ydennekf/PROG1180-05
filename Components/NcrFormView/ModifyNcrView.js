@@ -17,7 +17,8 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
     // If a report is passed an additional toolbar should be added with functionality like closing the report etc.
     function validateForm(e) {
         e.preventDefault();
-        const formData = validateQualityAssuranceForm(report === null); // if there is a report given we're not updating the report
+        console.log(report)
+        const formData = validateQualityAssuranceForm(report !== null, report); // if there is a report given we're not updating the report
        // For now it's just the QA portion being validated
         if(formData.get().length === 0){
             console.log("QA Form is valid.")

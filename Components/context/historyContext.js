@@ -132,10 +132,11 @@ const viewMap = {
 function breadCrumbText(historyState){
     switch(historyState.component){
         case 'ModifyNcrView':
-            if(!historyState.data[1]){ // because this component handles both creating and editing
+            console.log(historyState.data)
+            if(!historyState.data[2]){ // because this component handles both creating and editing
                 return "Start New Report" 
             }else{
-                return "Edit NCR #" + historyState.data[2].ncrNumber
+                return "Edit NCR #" + historyState.data[1].ncrNumber
             }
 
         case "DetailsNcrView":

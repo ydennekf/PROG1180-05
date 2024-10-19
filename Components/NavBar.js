@@ -43,8 +43,8 @@ export function NavBar(targetID){
 
     document.getElementById(targetID).innerHTML = html;
     document.getElementById("create-report-btn").addEventListener("click", () => {
-        app.history.newPath({component:'ModifyNcrView', data:['root', null, true]})
-        ModifyNcrView("root",null, true);
+        app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, null]})
+        ModifyNcrView("root",app.employee, null);
     })  
 
     $(function () {

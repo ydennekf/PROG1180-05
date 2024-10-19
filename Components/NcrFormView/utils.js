@@ -66,13 +66,13 @@ export function errorLog(){
 }
 
 
-export function validateQualityAssuranceForm(updating=false){
+export function validateQualityAssuranceForm(updating=false, report=undefined){
     const data = getReportFormData();
     const errors = errorLog()
     const validNcr = parseInt(data.ncrNumber.value);
 
 
-    validateNcrNumber(validNcr, errors, updating)
+    validateNcrNumber(validNcr, errors, updating, report)
 
     validateNumberInputs(errors)
 
@@ -105,9 +105,19 @@ export function validateQualityAssuranceForm(updating=false){
 
 
 
-function validateNcrNumber(ncrNumber, errorList, updating=false){
+function validateNcrNumber(ncrNumber, errorList, updating=false, report=undefined){
     const validNumber = ncrNumber
     const e = 'ncr-number-error'
+    if(updating){
+        if(report){
+            console.log(report)
+            if(ncrNumber !== report.ncrNumber && getReport(ncrNumber) !== undefined){
+                
+                errorList.push('txt-ncr-number',e, "There is already a report with the NCR Number provided")
+                return;
+            }
+        }
+    }
     if(isNaN(validNumber)){
         errorList.push('txt-ncr-number',e,  "A non numeric value was submitted.")
         return;

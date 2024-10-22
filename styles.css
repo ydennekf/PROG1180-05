@@ -450,14 +450,14 @@ label{
     }
 }
 
-div.grid {
+.grid {
 	list-style: none;
     display: grid;
 height: 180px;
 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 
-	/* grid-template-columns: 1fr 1fr 1fr fr; */
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     /* grid-template-columns: repeat(auto-fit, minmax(350px, 5fr)); */
     grid-gap: 5px;
     text-align: center;
@@ -465,101 +465,39 @@ height: 180px;
 
 
 .head { 
-    grid-area: head; 
+    /* grid-area: head;  */
+    display: grid;
+    grid-template-columns: 1fr;
     background-color: chartreuse;
     text-align: center;
 }
 
 .main1 { 
-    grid-area: main1; 
+    /* grid-area: main1;  */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color:aqua;
 }
-.main1b { 
-    grid-area: main1b; 
-    background-color:aqua;
-}
+
 
 .main2 { 
-    grid-area: main2; 
-    background-color:#ccc;
-}
-.main2b { 
-    grid-area: main2b; 
+    /* grid-area: main2;  */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color:#ccc;
 }
 
 .main3 { 
-    grid-area: main3; 
+    /* grid-area: main3;  */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color:blueviolet;
-}
-
-.main3 { 
-    grid-area: main3; 
-    background-color:blueviolet;
-}
-
-.main4 { 
-    grid-area: main4; 
-    background-color:crimson;
-}
-
-.main5 { 
-    grid-area: main5; 
-    background-color:#407bbf;
-}
-
-.main6 { 
-    grid-area: main6; 
-    background-color:orange;
-}
-
-.main7 { 
-    grid-area: main7; 
-    background-color:aqua;
-}
-
-.main8 { 
-    grid-area: main8; 
-    background-color:green;
-}
-
-.main9 { 
-    grid-area: main9; 
-    background-color:aqua;
-}
-
-.main10 { 
-    grid-area: main10; 
-    background-color:gold;
-}
-
-.main11 { 
-    grid-area: main11; 
-    background-color:aqua;
-}
-
-.main12 { 
-    grid-area: main12; 
-    background-color:fuchsia;
-}
-
-.main13 { 
-    grid-area: main13; 
-    background-color:aqua;
-}
-
-.main14 { 
-    grid-area: main14; 
-    background-color:cadetblue;
-}
-
-.main15 { 
-    grid-area: main15; 
-    background-color:aqua;
 }
 
 .foot { 
-    grid-area: foot; 
+    /* grid-area: foot;  */
+    display: grid;
+    grid-template-columns: 5fr;
     background-color: coral;
 }
 
@@ -568,20 +506,9 @@ height: 180px;
     display: grid;
 
     grid:
-		'head head head head'
-		'main1 main1 main2 main2'
-        'main1b main1b main2b main2b'
-        'main3 main3b main3b main3b'
-        'main4 main4b main11 main11'
-        'main5 main5b main11b main11b'
-        'main6 main6b main11b main11b'
-        'main7 main7b main11b main11b'
-        'main10 main10b main11b main11b'
-        'main9 main9b main11b main11b'
-        'main12 main12 main11b main11b'
-        'main13 main13 main11b main11b'
-        'main14 main14 main11b main11b'
-        'main15 main15 main11b main11b'
+		'head head head head head'
+		'main1 main1 main2 main2 main2'
+        'main3 main3 main2 main2 main2'
 		'foot foot foot foot';
 
     list-style: none;

@@ -9,7 +9,31 @@ export function qualityAssuranceForm(targetID=null,
     const html = `
             <div class= "grid">
 
-                <div class= "head">Quality Assurance</div>
+                <div class= "head">
+
+                    <label id="lbl-ncr-doc-no">Document No.:</label>
+                    <p>OPS-00011</p>
+
+                    <label id="lbl-ncr-doc-title">Document Title:</label>
+                    <p>Non-Conformance Report</p>
+
+                    <label id="lbl-ncr-doc-auth">Document Author:</label>
+                    <p>L. Nicholls</p>
+
+                    <label id="lbl-ncr-doc-date">Document Date:</label>
+                    <p>August 12, 2023</p>
+
+                    <label id="lbl-ncr-approve">Approved By:</label>
+                    <p>L. Pentland, Operations Manager</p>
+
+                    <label id="lbl-ncr-rev-date">Revision Date:</label>
+                    <p>July 14, 2020</p>
+
+                    <label id="lbl-ncr-rev-no">Revision No:</label>
+                    <p>013</p>
+                
+                </div>
+                
 
                 <div class= "main1">
                     <div>

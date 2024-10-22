@@ -1,6 +1,7 @@
 import { mapComponents } from "./utils/utils.js"
 import { previewBindings, reportPreview } from "./ReportPreview.js"
 import { NavBar } from "./NavBar.js";
+import { app } from "../AppState.js";
 
 export function ReportList(targetID, user, reports){
     

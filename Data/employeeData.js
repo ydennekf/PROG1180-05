@@ -9,7 +9,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": false,
             "preferredLanguage": "en"
-        }
+        },
+        "recentReports":[]
     },
     {
         "username": "asmith",
@@ -20,7 +21,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": true,
             "preferredLanguage": "es"
-        }
+        },
+        "recentReports":[]
     },
     {
         "username": "btaylor",
@@ -31,7 +33,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": false,
             "preferredLanguage": "fr"
-        }
+        },
+        "recentReports":[]
     },
     {
         "username": "lwhite",
@@ -42,7 +45,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": true,
             "preferredLanguage": "en"
-        }
+        },
+        "recentReports":[]
     }
 ];
 

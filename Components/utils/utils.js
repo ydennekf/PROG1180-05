@@ -67,7 +67,7 @@ export function resetForm() {
 }
 
 
-export function safeOr(value, _default){
+export function safeTruthy(value, _default){
     // or that accepts empty strings and numbers <= 0
     // made because report?.ncrNumber ( 0 ) || '' will always return the empty string
     if(value === null || value === false || value === undefined){

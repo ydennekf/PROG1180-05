@@ -14,6 +14,10 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
         to fill out.
      */
 
+        if(report){
+            app.storage.pushRecentReport(report.ncrNumber)
+            app.storage.print()
+        }
     // If a report is passed an additional toolbar should be added with functionality like closing the report etc.
     function validateForm(e) {
         e.preventDefault();

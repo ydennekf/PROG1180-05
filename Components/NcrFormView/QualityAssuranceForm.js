@@ -1,4 +1,4 @@
-import {safeOr} from "../utils/utils.js";
+import {safeTruthy} from "../utils/utils.js";
 
 
 export function qualityAssuranceForm(targetID=null,
@@ -15,35 +15,35 @@ export function qualityAssuranceForm(targetID=null,
                     <div>
                         <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No</label>
                         <input aria-errormessage="ncr-number-error" name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
-                        value="${safeOr(report?.ncrNumber, '')}"/>
+                        value="${safeTruthy(report?.ncrNumber, '')}"/>
                         <label id="ncr-number-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-prod-number" id="lbl-prod-number">Prod Number</label>
                         <input aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
-                        value="${safeOr(report?.prodNumber, '')}"/>
+                        value="${safeTruthy(report?.prodNumber, '')}"/>
                         <label id="prod-number-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order Number</label>
                         <input aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
-                        value="${safeOr(report?.salesNumber, '')}"/>
+                        value="${safeTruthy(report?.salesNumber, '')}"/>
                         <label id="sales-number-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Quantity Received</label>
                         <input aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
-                        value="${safeOr(report?.qtyReceived, '')}"/>
+                        value="${safeTruthy(report?.qtyReceived, '')}"/>
                         <label id="quantity-received-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Quantity Defective</label>
                         <input aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
-                        value="${safeOr(report?.qtyDefective, '')}"/>
+                        value="${safeTruthy(report?.qtyDefective, '')}"/>
                         <label id="quantity-defective-error" class="error-label"></label>
                     </div>
 
@@ -74,7 +74,7 @@ export function qualityAssuranceForm(targetID=null,
                     <div>
                         <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
                         <input aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
-                        value="${safeOr(report?.sapNumber, '')}"/>
+                        value="${safeTruthy(report?.sapNumber, '')}"/>
                         <label id="sap-number-error" class="error-label"></label>
                     </div>
                     

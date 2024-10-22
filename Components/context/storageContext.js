@@ -2,6 +2,7 @@
 
 import { employees } from "../../Data/employeeData.js"
 import { getReport } from "../../Data/new_reportData.js"
+import { safeTruthy } from "../utils/utils.js"
 
 
 export default function _StorageContext(employee){ // stored as {employeeUsername:preferencesObj}
@@ -16,6 +17,7 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
     }else{
         empPreferences = JSON.parse(empPreferences)
     }
+    
 
     function getPreferences(){ // Get current employees preferences 
         return empPreferences;
@@ -23,39 +25,53 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
 
 
     function toggleDarkMode(){
-        empPreferences[employee.username].accessibilityPreferences.darkMode =
-         !empPreferences.accessibilityPreferences.darkMode;
-        
+        empPreferences[employee.username].darkMode =
+         !empPreferences.darkMode;
+        localStorage.setItem("preferences", empPreferences)
+    }
+
+    function setLangPreference(lang){
+        const e = empPreferences[employee.username]
+        const cur = e.preferredLanguage
+        if(cur === lang){return;}
+        empPreferences[employee.username].preferredLanguage = lang;
+        save()
+
     }
 
     function pushRecentReport(reportNumber){
-        const reports =empPreferences[employee.username].recentReports
+        let reports =empPreferences[employee.username].recentReports
        const curTotal = reports.length
-       reports.unshift(getReport(reportNumber))
+       const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
+       if(safeTruthy(idx, false)){ // if the reports already in recent it removes the report and then pushes it to the front
+        reports = reports.filter(r => r.ncrNumber !== reportNumber)
+       }
+       
+       reports.unshift(getReport(reportNumber)) // add to front
        if(curTotal === 5){
            reports.pop()
        }
+       empPreferences[employee.username].recentReports = reports;
+       save()
+
     }
+
+    function save(){
+        localStorage.setItem('preferences', JSON.stringify(empPreferences))
+    }
+
+  
 
 
     return {
         getPreferences,
         toggleDarkMode,
-        pushRecentReport
+        setLangPreference,
+        pushRecentReport,
+        print:() => console.log(empPreferences),
+        getRecentReports:() => empPreferences[employee.username].recentReports,
+        getLangPreference:() => empPreferences[employee.username].preferredLanguage
     }
     
 }
 
-/*
- {
-        "username": "asmith",
-        "firstName": "Alice",
-        "lastName": "Smith",
-        "department": "engineering",
-        "password": "eningeer123",
-        "accessibilityPreferences": {
-            "darkMode": true,
-            "preferredLanguage": "es"
-        }
-    },
-*/

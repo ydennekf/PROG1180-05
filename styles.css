@@ -467,7 +467,7 @@ label{
     display: grid;
     grid-column: 1/6;
     background-color: chartreuse;
-    text-align: center;
+    text-align: left;
 
     grid-auto-columns: repeat(8) 1fr;
 }

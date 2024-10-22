@@ -10,28 +10,45 @@ export function qualityAssuranceForm(targetID=null,
             <div class= "grid">
 
                 <div class= "head">
+                    <div class= "box">                        
+                        <label id="lbl-ncr-doc-no">Document No.:</label>
+                        <p>OPS-00011</p>
+                    </div>
 
-                    <label id="lbl-ncr-doc-no">Document No.:</label>
-                    <p>OPS-00011</p>
+                    <div class= "box">
+                        <label id="lbl-ncr-doc-title">Document Title:</label>
+                        <p>Non-Conformance Report</p>
+                    </div>
+                    
+                    <div class= "box">
+                        <label id="lbl-ncr-doc-qa"></label>
+                        <p>Quality Assurance Section</p>
+                    </div>
 
-                    <label id="lbl-ncr-doc-title">Document Title:</label>
-                    <p>Non-Conformance Report</p>
+                    <div class= "box">
+                        <label id="lbl-ncr-doc-auth">Document Author:</label>
+                        <p>L. Nicholls</p>
+                    </div>
 
-                    <label id="lbl-ncr-doc-auth">Document Author:</label>
-                    <p>L. Nicholls</p>
+                    <div class= "box">
+                        <label id="lbl-ncr-doc-date">Document Date:</label>
+                        <p>August 12, 2023</p>
+                    </div>
 
-                    <label id="lbl-ncr-doc-date">Document Date:</label>
-                    <p>August 12, 2023</p>
+                    <div class= "box">
+                        <label id="lbl-ncr-approve">Approved By:</label>
+                        <p>L. Pentland, Operations Manager</p>
+                    </div>
 
-                    <label id="lbl-ncr-approve">Approved By:</label>
-                    <p>L. Pentland, Operations Manager</p>
+                    <div class= "box">
+                        <label id="lbl-ncr-rev-date">Revision Date:</label>
+                        <p>July 14, 2020</p>
+                    </div>
 
-                    <label id="lbl-ncr-rev-date">Revision Date:</label>
-                    <p>July 14, 2020</p>
-
-                    <label id="lbl-ncr-rev-no">Revision No:</label>
-                    <p>013</p>
-                
+                    <div class= "box">
+                        <label id="lbl-ncr-rev-no">Revision No:</label>
+                        <p>013</p>
+                    </div>
                 </div>
                 
 

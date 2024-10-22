@@ -453,21 +453,19 @@ label{
 .grid {
 	list-style: none;
     display: grid;
-height: 180px;
 
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    /* grid-template-columns: repeat(auto-fit, minmax(350px, 5fr)); */
-    grid-gap: 5px;
-    text-align: center;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
 }
 
 
 .head { 
     /* grid-area: head;  */
     display: grid;
-    grid-template-columns: 1fr;
+    grid-column: 1/6;
     background-color: chartreuse;
     text-align: center;
 }
@@ -475,7 +473,7 @@ height: 180px;
 .main1 { 
     /* grid-area: main1;  */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-column: 1/3;
     background-color:aqua;
 }
 
@@ -483,21 +481,21 @@ height: 180px;
 .main2 { 
     /* grid-area: main2;  */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-column: 1/3;
     background-color:#ccc;
 }
 
 .main3 { 
     /* grid-area: main3;  */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-column: 3/6;
     background-color:blueviolet;
 }
 
 .foot { 
     /* grid-area: foot;  */
     display: grid;
-    grid-template-columns: 5fr;
+    grid-column: 1/6;
     background-color: coral;
 }
 
@@ -508,8 +506,16 @@ height: 180px;
     grid:
 		'head head head head head'
 		'main1 main1 main2 main2 main2'
+        'main1 main1 main2 main2 main2'
+        'main1 main1 main2 main2 main2'
+        'main1 main1 main2 main2 main2'
+        'main1 main1 main2 main2 main2'
+        'main1 main1 main2 main2 main2'
         'main3 main3 main2 main2 main2'
-		'foot foot foot foot';
+        'main3 main3 main2 main2 main2'
+        'main3 main3 main2 main2 main2'
+        'main3 main3 main2 main2 main2'
+		'foot foot foot foot foot';
 
     list-style: none;
     gap: 5px;

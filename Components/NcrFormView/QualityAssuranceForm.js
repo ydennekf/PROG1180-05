@@ -19,10 +19,10 @@ export function qualityAssuranceForm(targetID=null,
                         <label id="lbl-ncr-doc-title">Document Title:</label>
                         <p>Non-Conformance Report</p>
                     </div>
-                    
+
                     <div class= "box">
                         <label id="lbl-ncr-doc-qa"></label>
-                        <p>Quality Assurance Section</p>
+                        <p>Quality Assurance <br>Section</br></p>
                     </div>
 
                     <div class= "box">

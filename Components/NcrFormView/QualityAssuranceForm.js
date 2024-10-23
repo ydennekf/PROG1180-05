@@ -3,7 +3,8 @@ import {safeTruthy} from "../utils/utils.js";
 
 export function qualityAssuranceForm(targetID=null,
                                      report=null,
-                                     includeSubmit=true) {
+                                     includeSubmit=true,
+                                     readonly=false) {
     // Can be passed a report to load its details ( for edit view)
     // If a report is passed it assumes we are editing a report.
     const html = `
@@ -55,35 +56,35 @@ export function qualityAssuranceForm(targetID=null,
                 <div class= "main1">
                     <div>
                         <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No</label>
-                        <input aria-errormessage="ncr-number-error" name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="ncr-number-error" name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                         value="${safeTruthy(report?.ncrNumber, '')}"/>
                         <label id="ncr-number-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-prod-number" id="lbl-prod-number">Prod Number</label>
-                        <input aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                         value="${safeTruthy(report?.prodNumber, '')}"/>
                         <label id="prod-number-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order Number</label>
-                        <input aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                         value="${safeTruthy(report?.salesNumber, '')}"/>
                         <label id="sales-number-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Quantity Received</label>
-                        <input aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                         value="${safeTruthy(report?.qtyReceived, '')}"/>
                         <label id="quantity-received-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Quantity Defective</label>
-                        <input aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                         value="${safeTruthy(report?.qtyDefective, '')}"/>
                         <label id="quantity-defective-error" class="error-label"></label>
                     </div>
@@ -91,7 +92,7 @@ export function qualityAssuranceForm(targetID=null,
                     
                     <div>
                         <label class="required" for="txt-ncr-title" id="lbl-ncr-title">Title</label>
-                        <input aria-errormessage="title-error" name="title" required type="text" aria-describedby="lbl-ncr-title" id="txt-ncr-title"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="title-error" name="title" required type="text" aria-describedby="lbl-ncr-title" id="txt-ncr-title"
                         value="${report?.title || ''}"/>
                         <label id="title-error" class="error-label"></label>
                     </div>
@@ -100,34 +101,34 @@ export function qualityAssuranceForm(targetID=null,
                 <div class="main3">                    
                     <div>
                         <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
-                        <input aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                         value="${report?.supplierName || ''}"/>
                         <label id="supplier-error" class="error-label"></label>
                     </div>
 
                     <div>
                         <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
-                        <input name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
+                        <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
                         value="${report?.itemName || ''}"/>
                         <label id="item-name-error" class="error-label"></label>
                     </div>
 
                     <div>
                         <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
-                        <input aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                         value="${safeTruthy(report?.sapNumber, '')}"/>
                         <label id="sap-number-error" class="error-label"></label>
                     </div>
                     
                     <div> 
                         <label class="required" id="lbl-item-description" for="txt-item-description">Description of Item</label>
-                        <textarea name="item-description" aria-errormessage="item-description-error" required  id="txt-item-description" aria-describedby="lbl-item-description">${report?.itemDescription || ''}</textarea>
+                        <textarea ${readonly ? "readonly" : ''} name="item-description" aria-errormessage="item-description-error" required  id="txt-item-description" aria-describedby="lbl-item-description">${report?.itemDescription || ''}</textarea>
                         <label id="item-description-error" class="error-label"></label>
                     </div>
                     
                     <div>
                         <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
-                        <textarea required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
+                        <textarea ${readonly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
                 </div>
@@ -142,7 +143,8 @@ export function qualityAssuranceForm(targetID=null,
                             'Item Non-Conforming?', 
                             '',
                             null,
-                            report?.nonConforming || false)}
+                            report?.nonConforming || false,
+                            readonly)}
                     </div>
                     
                     <div>
@@ -154,7 +156,8 @@ export function qualityAssuranceForm(targetID=null,
                             'Supplier or Rec-Insp', 
                             '',
                             null,
-                            report?.nonConforming || false)}
+                            report?.nonConforming || false,
+                            readonly)}
                     </div>
                     
                     <div>
@@ -166,7 +169,8 @@ export function qualityAssuranceForm(targetID=null,
                             'WIP (Production Order)', 
                             '',
                             null,
-                            report?.nonConforming || false)}
+                            report?.nonConforming || false,
+                            readonly)}
                     </div>
 
                     <div>
@@ -178,7 +182,8 @@ export function qualityAssuranceForm(targetID=null,
                         'Engineering Required?', 
                         '',
                         null,
-                        report?.engineeringRequired || false)}
+                        report?.engineeringRequired || false,
+                        readonly)}
                     </div>
                 </div> 
 
@@ -204,13 +209,14 @@ function labeledCheckbox( // prob going to delete this thought it might make the
     labelContent,
     labelClass,
     targetID= null,
-    checked = false
+    checked = false,
+    readonly = false
 
 ){
 
     const html = `
         <label class="${labelClass}" id="${labelID}" for="${inputID}">${labelContent}</label>
-        <input name="${inputName}" aria-describedby="${labelID}" type="checkbox" id="${inputID}" 
+        <input ${readonly ? "disabled" : ''} name="${inputName}" aria-describedby="${labelID}" type="checkbox" id="${inputID}" 
             ${checked ? 'checked' : ''}/>
     `
 

@@ -463,10 +463,9 @@ label{
 
 
 .head { 
-    /* grid-area: head;  */
     display: grid;
     grid-column: 1/6;
-    background-color: chartreuse;
+    background-color: var(--color-lightblue);
     text-align: center;   
 }
 
@@ -479,24 +478,18 @@ label{
 }
 
 .box:first-child {
-    background-color:cadetblue;
     grid-column: 1/2;
 }
 
 .box:nth-child(2) {
-
-    background-color:rgb(239, 243, 10);
     grid-column: 2/8;
 }
 
 .box:nth-child(3) {
-    background-color:cadetblue;
     grid-column: 8/9;
 }
 
 .box:nth-child(6) {
-
-    background-color:rgb(239, 243, 10);
     grid-column: 3/7;
 }
 

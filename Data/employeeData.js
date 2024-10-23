@@ -9,7 +9,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": false,
             "preferredLanguage": "en",
-            "recentReports":[]
+            "recentReports":[],
+            "pageLength": 10
         },
         
     },
@@ -22,7 +23,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": true,
             "preferredLanguage": "es",
-            "recentReports":[]
+            "recentReports":[],
+            "pageLength": 10
         },
     },
     {
@@ -34,7 +36,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": false,
             "preferredLanguage": "fr",
-            "recentReports":[]
+            "recentReports":[],
+            "pageLength": 10
         },
     
     },
@@ -47,7 +50,8 @@ export let employees = [
         "accessibilityPreferences": {
             "darkMode": true,
             "preferredLanguage": "en",
-            "recentReports":[]
+            "recentReports":[],
+            "pageLength": 10
         },
     }
 ];

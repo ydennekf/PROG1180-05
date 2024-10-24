@@ -90,12 +90,6 @@ export function qualityAssuranceForm(targetID=null,
                     </div>
 
                     
-                    <div>
-                        <label class="required" for="txt-ncr-title" id="lbl-ncr-title">Title</label>
-                        <input ${readonly ? "readonly" : ''} aria-errormessage="title-error" name="title" required type="text" aria-describedby="lbl-ncr-title" id="txt-ncr-title"
-                        value="${report?.title || ''}"/>
-                        <label id="title-error" class="error-label"></label>
-                    </div>
                 </div>
                 
                 <div class="main3">                    
@@ -120,11 +114,6 @@ export function qualityAssuranceForm(targetID=null,
                         <label id="sap-number-error" class="error-label"></label>
                     </div>
                     
-                    <div> 
-                        <label class="required" id="lbl-item-description" for="txt-item-description">Description of Item</label>
-                        <textarea ${readonly ? "readonly" : ''} name="item-description" aria-errormessage="item-description-error" required  id="txt-item-description" aria-describedby="lbl-item-description">${report?.itemDescription || ''}</textarea>
-                        <label id="item-description-error" class="error-label"></label>
-                    </div>
                     
                     <div>
                         <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>

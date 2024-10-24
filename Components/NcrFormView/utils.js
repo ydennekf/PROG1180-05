@@ -4,13 +4,13 @@ export function getReportFormData(){
     return {
         itemName:document.getElementById('txt-item-name'),
         ncrNumber: document.getElementById("txt-ncr-number"),
-        title : document.getElementById("txt-ncr-title"),
+        //title : document.getElementById("txt-ncr-title"),
         supplier : document.getElementById("txt-supplier"),
         prodNumber : document.getElementById("txt-prod-number"),
         salesNumber : document.getElementById('txt-sales-number'),
         quantityReceived : document.getElementById("txt-quantity-received"),
         quantityDefective : document.getElementById("txt-quantity-defective"),
-        itemDescription : document.getElementById('txt-item-description'),
+        //itemDescription : document.getElementById('txt-item-description'),
         defectDescription : document.getElementById('txt-item-defect'),
         supplierOrRec : document.getElementById("chk-supplier-or-rec"),
         nonConforming : document.getElementById('chk-non-conforming'),
@@ -28,14 +28,14 @@ export function createQAReport(employee){
     const formData = getReportFormData()
     return {
         ncrNumber: parseInt(formData.ncrNumber.value),
-        title:formData.title.value,
+        //title:formData.title.value,
         supplierName:formData.supplier.value,
         prodNumber:parseInt(formData.prodNumber.value),
-        defectDescription:formData.itemDescription.value,
+        defectDescription:formData.defectDescription.value,
         salesNumber:parseInt(formData.salesNumber.value),
         qtyReceived:parseInt(formData.quantityReceived.value),
         qtyDefective:parseInt(formData.quantityDefective.value),
-        itemDescription: formData.itemDescription.value,
+        //itemDescription: formData.itemDescription.value,
         nonConforming:formData.nonConforming.checked,
         productionOrder:formData.productionOrder.checked,
         supplierOrRec:formData.supplierOrRec.checked,
@@ -76,9 +76,9 @@ export function validateQualityAssuranceForm(updating=false, report=undefined){
 
     validateNumberInputs(errors)
 
-    if(data.title.value === ""){
-        data.title.ariaInvalid = true;
-    }
+    // if(data.title.value === ""){
+    //     data.title.ariaInvalid = true;
+    // }
 
     if(data.itemName.value === ""){
         data.itemName.ariaInvalid = true;
@@ -93,9 +93,9 @@ export function validateQualityAssuranceForm(updating=false, report=undefined){
         data.defectDescription.ariaInvalid = true;
     }
 
-    if(data.itemDescription.value === ""){
-        data.itemDescription.ariaInvalid = true;
-    }
+    // if(data.itemDescription.value === ""){
+    //     data.itemDescription.ariaInvalid = true;
+    // }
 
 
     

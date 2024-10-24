@@ -450,32 +450,35 @@ label{
     }
 }
 
+
+
+
+
+/* This section is for layout of the Quality Assurance input form*/
 .grid {
 	list-style: none;
     display: grid;
-
-
-
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 1em;
+    grid-auto-rows: minmax(130px, auto);
+    grid-gap: 2px;
+    background-color: var(--color-darkblue);
 }
 
 
 .head { 
     display: grid;
     grid-column: 1/6;
-    background-color: black;
+    background-color: var(--color-darkblue);
     gap: 2px;
-    text-align: center;   
+    text-align: center; 
+     
 }
 
 .box{
     grid-auto-columns: repeat(8, 1fr);
     text-align: left;
     background-color: var(--color-lightblue);
+    padding: 5px;
 }
 
 .box:first-child {

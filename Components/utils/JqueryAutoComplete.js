@@ -1,7 +1,14 @@
 import { reportData } from "../../Data/new_reportData.js";
 import { ReportList } from "../ReportList.js";
 
+
+
+
+
+
 $(function () {
+
+   
 
     function filterReports(term) {
         let matcher = new RegExp($.ui.autocomplete.escapeRegex(term), "i");
@@ -13,8 +20,12 @@ $(function () {
             matcher.test(report.status) ||
             matcher.test(report.description)
         ));
+
+        
+        // any time you filter or sort it will re-render the table at page 1.
+       
         // this is where the reports are rendered through will need to figure out pagination over the break.
-        ReportList("root",null, filteredReports.slice(0,10));
+        ReportList("root",null, filteredReports, 1);
     }
 
 

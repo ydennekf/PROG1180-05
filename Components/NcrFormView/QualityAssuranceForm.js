@@ -54,35 +54,35 @@ export function qualityAssuranceForm(targetID=null,
                 
 
                 <div class= "main1">
-                    <div>
+                    <div class= "box1">
                         <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="ncr-number-error" name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                         value="${safeTruthy(report?.ncrNumber, '')}"/>
                         <label id="ncr-number-error" class="error-label"></label>
                     </div>
                     
-                    <div>
+                    <div class= "box1">
                         <label class="required" for="txt-prod-number" id="lbl-prod-number">Prod Number</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                         value="${safeTruthy(report?.prodNumber, '')}"/>
                         <label id="prod-number-error" class="error-label"></label>
                     </div>
                     
-                    <div>
+                    <div class= "box1">
                         <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order Number</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                         value="${safeTruthy(report?.salesNumber, '')}"/>
                         <label id="sales-number-error" class="error-label"></label>
                     </div>
                     
-                    <div>
+                    <div class= "box1">
                         <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Quantity Received</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                         value="${safeTruthy(report?.qtyReceived, '')}"/>
                         <label id="quantity-received-error" class="error-label"></label>
                     </div>
                     
-                    <div>
+                    <div class= "box1">
                         <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Quantity Defective</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                         value="${safeTruthy(report?.qtyDefective, '')}"/>
@@ -93,21 +93,21 @@ export function qualityAssuranceForm(targetID=null,
                 </div>
                 
                 <div class="main3">                    
-                    <div>
+                    <div class= "box3">
                         <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                         value="${report?.supplierName || ''}"/>
                         <label id="supplier-error" class="error-label"></label>
                     </div>
 
-                    <div>
+                    <div class= "box3">
                         <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
                         <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
                         value="${report?.itemName || ''}"/>
                         <label id="item-name-error" class="error-label"></label>
                     </div>
 
-                    <div>
+                    <div class= "box3">
                         <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                         value="${safeTruthy(report?.sapNumber, '')}"/>
@@ -115,7 +115,7 @@ export function qualityAssuranceForm(targetID=null,
                     </div>
                     
                     
-                    <div>
+                    <div class= "box3">
                         <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
                         <textarea ${readonly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
@@ -123,7 +123,7 @@ export function qualityAssuranceForm(targetID=null,
                 </div>
 
                 <div class= "main2">    
-                    <div>
+                    <div class= "box2">
                         ${labeledCheckbox(
                             'chk-non-conforming', 
                             'non-conforming', 
@@ -136,7 +136,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
                     
-                    <div>
+                    <div class= "box2">
                         ${labeledCheckbox(
                             'chk-supplier-or-rec', 
                             'supplier-or-rec', 
@@ -149,7 +149,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
                     
-                    <div>
+                    <div class= "box2">
                         ${labeledCheckbox(
                             'chk-production-order', 
                             'production-order', 
@@ -162,7 +162,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
 
-                    <div>
+                    <div class= "box2">
                     ${labeledCheckbox(
                         'chk-engineering-required', 
                         'engineering-required', 

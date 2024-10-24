@@ -454,6 +454,8 @@ label{
 	list-style: none;
     display: grid;
 
+
+
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -465,16 +467,15 @@ label{
 .head { 
     display: grid;
     grid-column: 1/6;
-    background-color: var(--color-lightblue);
+    background-color: black;
+    gap: 2px;
     text-align: center;   
 }
 
 .box{
     grid-auto-columns: repeat(8, 1fr);
-    row-gap: 4em;
     text-align: left;
-    border-width: 3px;
-    border-color: black;
+    background-color: var(--color-lightblue);
 }
 
 .box:first-child {
@@ -498,13 +499,19 @@ label{
 }
 .box p{
     font-weight: bold;
+    justify-content: center;
     text-align: center;
 }
 .main1 { 
     /* grid-area: main1;  */
     display: grid;
     grid-column: 1/3;
-    background-color:aqua;
+    background-color: black;
+    gap: 2px;
+}
+
+.box1 {
+    background-color: var(--color-lightblue);
 }
 
 
@@ -512,14 +519,14 @@ label{
     /* grid-area: main2;  */
     display: grid;
     grid-column: 1/3;
-    background-color:#ccc;
+    background-color: var(--color-lightblue);
 }
 
 .main3 { 
     /* grid-area: main3;  */
     display: grid;
     grid-column: 3/6;
-    background-color:blueviolet;
+    background-color: var(--color-lightblue);
 }
 
 .foot { 

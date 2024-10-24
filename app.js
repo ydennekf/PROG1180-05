@@ -16,7 +16,7 @@ import { app } from './AppState.js';
 
 
 let RedirectToIndex = (employee, reports) => {
-    initApp(employee, ReportList, ['root', employee, reports])
+    initApp(employee, ReportList, ['root', employee, reports, 1])
    
 }
 

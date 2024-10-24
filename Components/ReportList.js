@@ -8,7 +8,16 @@ import { NavBar } from "./NavBar.js";
 
 let reportsPerPage = 10;
 let currentPage = 1
-let sortOrder = {};
+const sortOrder = {
+    id: 'desc',
+    title: 'desc',
+    status: 'desc',
+    itemName: 'desc',
+    date: 'desc',
+    supplierName: 'desc',
+    startedBy: 'desc',
+    description: 'desc',
+};
 
 
 
@@ -16,7 +25,7 @@ export function ReportList(targetID, user, Reports, page = 1){
     
     currentPage = page;
     let totalPages = Math.ceil(reportData.length / reportsPerPage);  
-    console.log(Reports);
+    
     if(Reports.length > 10){
         Reports = getReportsForPage(page, reportData);
     }
@@ -69,21 +78,28 @@ let sortReports = (reports, column, order) => {
     return reports.sort((a,b) => {
         let valA = a[column];
         let valB = b[column];
-
+        
         if(column === 'date'){
-            valA = new Date(valA);
-            valB = new Date(valB);
+            
+            valA = new Date(valA).getTime();
+            valB = new Date(valB).getTime();
+            
         }
 
-        if(!isNaN(valA) && !isNaN(valB)){
+        if(column === 'ncrNumber'){
             
-            valA = parseFloat(valA);
-            valB = parseFloat(valB);
+            valA = valA.split('-').join('');
+            valB = valB.split('-').join('');
+
+            valA = parseInt(valA);
+            valB = parseInt(valB);
         }
 
         if(order === 'asc'){
-            if(valA > valB)return 1;
-            if(valA < valB)return -1;
+            
+            if(valA > valB) return 1;
+            if(valA < valB) return -1;
+            
             return 0;
         }
         else{
@@ -165,14 +181,14 @@ function reportListHeader(){
     return `
         <thead>
         <tr>
-            <th data-column="ncrNumber" tabindex="4" data-order="asc">Report #</th>
-            <th data-column="title" tabindex="4" data-order="asc">Title</th>
-            <th data-column="status" tabindex="4" data-order="asc">Status</th>
-            <th data-column="itemName" tabindex="4" data-order="asc">Item Name</th>
-            <th data-column="date" tabindex="4" data-order="asc">Date</th>
-            <th data-column="supplierName" tabindex="4" data-order="asc">Supplier</th>
-            <th data-column="startedBy" tabindex="4" data-order="asc">Started By</th>
-            <th data-column="description" tabindex="4" data-order="asc">Description</th>
+            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.id}">Report #</th>
+            <th data-column="title" tabindex="4" data-order="${sortOrder.title}">Title</th>
+            <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
+            <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>
+            <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>
+            <th data-column="supplierName" tabindex="4" data-order="${sortOrder.supplierName}">Supplier</th>
+            <th data-column="startedBy" tabindex="4" data-order="${sortOrder.startedBy}">Started By</th>
+            <th data-column="description" tabindex="4" data-order="${sortOrder.description}">Description</th>
             <th></th>
         </tr>
         </thead>

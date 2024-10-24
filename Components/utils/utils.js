@@ -3,7 +3,7 @@ export function mapComponents(
     component, // component ( each component is passed an object from the data array )
     additionalArgs=[] 
 ){
-   console.log(data);
+   
     if(!data || data.length === 0){
         return "<tr><td>No results found</td></tr>"
     }

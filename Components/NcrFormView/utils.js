@@ -1,4 +1,4 @@
-import {ReportStatus, getReport} from "../../Data/new_reportData.js";
+import {ReportStatus, getReport, reportData} from "../../Data/new_reportData.js";
 
 export function getReportFormData(){
     return {
@@ -19,6 +19,19 @@ export function getReportFormData(){
         engineeringRequired:document.getElementById('chk-engineering-required')
     }
 
+}
+
+export function generateNcrNumber(){
+    const num = reportData.length +1
+    let s = ""
+    if(num < 10){
+        s += `00${num}`
+    } else if(num < 100 && num > 10){
+        s+=`0${num}`
+    }else{
+        s+=`${num}`
+    }
+    return new Date().getFullYear() + "-" + s;
 }
 
 
@@ -72,13 +85,9 @@ export function validateQualityAssuranceForm(updating=false, report=undefined){
     const validNcr = parseInt(data.ncrNumber.value);
 
 
-    validateNcrNumber(validNcr, errors, updating, report)
+    //validateNcrNumber(validNcr, errors, updating, report)
 
     validateNumberInputs(errors)
-
-    // if(data.title.value === ""){
-    //     data.title.ariaInvalid = true;
-    // }
 
     if(data.itemName.value === ""){
         data.itemName.ariaInvalid = true;
@@ -91,14 +100,7 @@ export function validateQualityAssuranceForm(updating=false, report=undefined){
   
     if(data.defectDescription.value === ""){
         data.defectDescription.ariaInvalid = true;
-    }
-
-    // if(data.itemDescription.value === ""){
-    //     data.itemDescription.ariaInvalid = true;
-    // }
-
-
-    
+    }   
     return errors
 
 }
@@ -172,10 +174,3 @@ function validateNumberInputs(errorList){
 
 
 
-
-
-/* TODOS
-    error-message aria attributes to element
-    add invalid aria to the element 
-    insert a new label under the element (APPEND ig)
-*/

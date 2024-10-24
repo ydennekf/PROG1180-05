@@ -1,4 +1,5 @@
 import {safeTruthy} from "../utils/utils.js";
+import { generateNcrNumber } from "./utils.js";
 
 
 export function qualityAssuranceForm(targetID=null,
@@ -56,8 +57,8 @@ export function qualityAssuranceForm(targetID=null,
                 <div class= "main1">
                     <div class= "box1">
                         <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No</label>
-                        <input ${readonly ? "readonly" : ''} aria-errormessage="ncr-number-error" name="ncr-number" required type="number" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
-                        value="${safeTruthy(report?.ncrNumber, '')}"/>
+                        <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
+                        value="${report?.ncrNumber || generateNcrNumber()}"/>
                         <label id="ncr-number-error" class="error-label"></label>
                     </div>
                     

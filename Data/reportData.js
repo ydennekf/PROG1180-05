@@ -25,7 +25,7 @@ export function updateReport(ncrNumber, updatedReport){ // returns old report
 
 export const reportData = [
     {
-        ncrNumber:0,
+        ncrNumber:2024001,
         title:"Broken Bike",
         itemName:"Bicycle",
         status:ReportStatus.Closed,
@@ -44,7 +44,7 @@ export const reportData = [
         sapNumber:0
     },
     {
-        ncrNumber:1,
+        ncrNumber:2024002,
         title:"Broken Trampoline",
         itemName:"Trampoline",
         status:ReportStatus.AwaitingEngineering,
@@ -63,7 +63,7 @@ export const reportData = [
         sapNumber:1
     },
     {
-        ncrNumber:2,
+        ncrNumber:2024003,
         title:"Broken Generator",
         itemName:"Generator",
         status:ReportStatus.Closed,
@@ -82,7 +82,7 @@ export const reportData = [
         sapNumber:2
     },
     {
-        ncrNumber:3,
+        ncrNumber:2024004,
         title:"Broken Fishing Rods",
         itemName:"Fishing Rod",
         status:ReportStatus.AwaitingEngineering,
@@ -101,7 +101,7 @@ export const reportData = [
         sapNumber:3
     },
     {
-        ncrNumber:4,
+        ncrNumber:2024005,
         title:"Tent Missing Poles",
         itemName:"Tent",
         status:ReportStatus.Closed,

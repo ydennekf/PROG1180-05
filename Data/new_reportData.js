@@ -25,7 +25,7 @@ export function updateReport(ncrNumber, updatedReport){ // returns old report
 
 export const reportData = [
     {
-        "ncrNumber": 0,
+        "ncrNumber": 2024001,
         "title": "Broken Bike",
         "itemName": "Bicycle",
         "status": "Closed",
@@ -45,7 +45,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 1,
+        "ncrNumber": 2024002,
         "title": "Broken Trampoline",
         "itemName": "Trampoline",
         "status": "AwaitingEngineering",
@@ -65,7 +65,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 2,
+        "ncrNumber": 2024003,
         "title": "Broken Generator",
         "itemName": "Generator",
         "status": "Closed",
@@ -85,7 +85,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 3,
+        "ncrNumber": 2024004,
         "title": "Broken Fishing Rods",
         "itemName": "Fishing Rod",
         "status": "AwaitingEngineering",
@@ -105,7 +105,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 4,
+        "ncrNumber": 2024005,
         "title": "Tent Missing Poles",
         "itemName": "Tent",
         "status": "Closed",
@@ -125,7 +125,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 5,
+        "ncrNumber": 2024006,
         "title": "Cracked Mirror",
         "itemName": "Mirror",
         "status": "Closed",
@@ -145,7 +145,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 6,
+        "ncrNumber": 2024007,
         "title": "Loose Screws",
         "itemName": "Chair",
         "status": "Open",
@@ -165,7 +165,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 7,
+        "ncrNumber": 2024008,
         "title": "Missing Bolts",
         "itemName": "Desk",
         "status": "AwaitingEngineering",
@@ -184,7 +184,7 @@ export const reportData = [
         "sapNumber": 7
     },
     {
-        "ncrNumber": 8,
+        "ncrNumber": 2024009,
         "title": "Leaking Pipe",
         "itemName": "Pipe",
         "status": "Closed",
@@ -203,7 +203,7 @@ export const reportData = [
         "sapNumber": 8
     },
     {
-        "ncrNumber": 9,
+        "ncrNumber": 2024010,
         "title": "Defective Batteries",
         "itemName": "Battery",
         "status": "AwaitingEngineering",
@@ -222,7 +222,7 @@ export const reportData = [
         "sapNumber": 9
     },
     {
-        "ncrNumber": 10,
+        "ncrNumber": 2024011,
         "title": "Bent Frames",
         "itemName": "Picture Frame",
         "status": "Closed",
@@ -241,7 +241,7 @@ export const reportData = [
         "sapNumber": 10
     },
     {
-        "ncrNumber": 11,
+        "ncrNumber": 2024012,
         "title": "Stained Cushions",
         "itemName": "Cushion",
         "status": "Open",
@@ -261,7 +261,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 12,
+        "ncrNumber": 2024013,
         "title": "Ripped Netting",
         "itemName": "Net",
         "status": "AwaitingEngineering",
@@ -280,7 +280,7 @@ export const reportData = [
         "sapNumber": 12
     },
     {
-        "ncrNumber": 13,
+        "ncrNumber": 2024014,
         "title": "Broken Lamp Shades",
         "itemName": "Lamp Shade",
         "status": "Closed",
@@ -299,7 +299,7 @@ export const reportData = [
         "sapNumber": 13
     },
     {
-        "ncrNumber": 14,
+        "ncrNumber": 2024015,
         "title": "Defective Laptop Charger",
         "itemName": "Laptop Charger",
         "status": "AwaitingEngineering",
@@ -318,7 +318,7 @@ export const reportData = [
         "sapNumber": 14
     },
     {
-        "ncrNumber": 15,
+        "ncrNumber": 2024016,
         "title": "Damaged Speakers",
         "itemName": "Speakers",
         "status": "Open",
@@ -337,7 +337,7 @@ export const reportData = [
         "sapNumber": 15
     },
     {
-        "ncrNumber": 16,
+        "ncrNumber": 2024017,
         "title": "Unstable Table",
         "itemName": "Table",
         "status": "Closed",
@@ -356,7 +356,7 @@ export const reportData = [
         "sapNumber": 16
     },
     {
-        "ncrNumber": 17,
+        "ncrNumber": 2024018,
         "title": "Incorrect Wiring",
         "itemName": "Electric Fan",
         "status": "AwaitingEngineering",
@@ -375,7 +375,7 @@ export const reportData = [
         "sapNumber": 17
     },
     {
-        "ncrNumber": 18,
+        "ncrNumber": 2024019,
         "title": "Scratched Glasses",
         "itemName": "Wine Glass",
         "status": "Closed",
@@ -394,7 +394,7 @@ export const reportData = [
         "sapNumber": 18
     },
     {
-        "ncrNumber": 19,
+        "ncrNumber": 2024020,
         "title": "Leaking Water Bottles",
         "itemName": "Water Bottle",
         "status": "AwaitingEngineering",
@@ -413,7 +413,7 @@ export const reportData = [
         "sapNumber": 19
     },
     {
-        "ncrNumber": 20,
+        "ncrNumber": 2024021,
         "title": "Torn Jackets",
         "itemName": "Jacket",
         "status": "Open",
@@ -432,7 +432,7 @@ export const reportData = [
         "sapNumber": 20
     },
     {
-        "ncrNumber": 21,
+        "ncrNumber": 2024022,
         "title": "Faded Paint",
         "itemName": "Car Paint",
         "status": "AwaitingEngineering",
@@ -452,7 +452,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 22,
+        "ncrNumber": 2024023,
         "title": "Loose Zippers",
         "itemName": "Backpack",
         "status": "Open",
@@ -471,7 +471,7 @@ export const reportData = [
         "sapNumber": 22
     },
     {
-        "ncrNumber": 23,
+        "ncrNumber": 2024024,
         "title": "Bent Tent Poles",
         "itemName": "Tent",
         "status": "AwaitingEngineering",
@@ -490,7 +490,7 @@ export const reportData = [
         "sapNumber": 23
     },
     {
-        "ncrNumber": 24,
+        "ncrNumber": 2024025,
         "title": "Cracked Screen",
         "itemName": "Monitor",
         "status": "Closed",
@@ -509,7 +509,7 @@ export const reportData = [
         "sapNumber": 24
     },
     {
-        "ncrNumber": 25,
+        "ncrNumber": 2024026,
         "title": "Unstable Bed Frame",
         "itemName": "Bed Frame",
         "status": "Open",
@@ -528,7 +528,7 @@ export const reportData = [
         "sapNumber": 25
     },
     {
-        "ncrNumber": 26,
+        "ncrNumber": 2024027,
         "title": "Overheating Fan Motors",
         "itemName": "Electric Fan",
         "status": "AwaitingEngineering",
@@ -547,7 +547,7 @@ export const reportData = [
         "sapNumber": 26
     },
     {
-        "ncrNumber": 27,
+        "ncrNumber": 2024028,
         "title": "Chipped Mugs",
         "itemName": "Ceramic Mug",
         "status": "Closed",
@@ -566,7 +566,7 @@ export const reportData = [
         "sapNumber": 27
     },
     {
-        "ncrNumber": 28,
+        "ncrNumber": 2024029,
         "title": "Broken Fishing Lines",
         "itemName": "Fishing Line",
         "status": "Open",
@@ -585,7 +585,7 @@ export const reportData = [
         "sapNumber": 28
     },
     {
-        "ncrNumber": 29,
+        "ncrNumber": 2024030,
         "title": "Cracked Helmets",
         "itemName": "Bicycle Helmet",
         "status": "Closed",
@@ -604,7 +604,7 @@ export const reportData = [
         "sapNumber": 29
     },
     {
-        "ncrNumber": 30,
+        "ncrNumber": 2024031,
         "title": "Leaky Water Coolers",
         "itemName": "Water Cooler",
         "status": "AwaitingEngineering",
@@ -623,7 +623,7 @@ export const reportData = [
         "sapNumber": 30
     },
     {
-        "ncrNumber": 31,
+        "ncrNumber": 2024032,
         "title": "Faded Fabrics",
         "itemName": "Fabric",
         "status": "Closed",
@@ -643,7 +643,7 @@ export const reportData = [
     },
 
     {
-        "ncrNumber": 32,
+        "ncrNumber": 2024033,
         "title": "Broken Tent Stakes",
         "itemName": "Tent Stakes",
         "status": "Closed",
@@ -662,7 +662,7 @@ export const reportData = [
         "sapNumber": 32
     },
     {
-        "ncrNumber": 33,
+        "ncrNumber": 2024034,
         "title": "Defective Power Cords",
         "itemName": "Power Cord",
         "status": "AwaitingEngineering",
@@ -681,7 +681,7 @@ export const reportData = [
         "sapNumber": 33
     },
     {
-        "ncrNumber": 34,
+        "ncrNumber": 2024035,
         "title": "Cracked Water Bottles",
         "itemName": "Water Bottle",
         "status": "Closed",
@@ -700,7 +700,7 @@ export const reportData = [
         "sapNumber": 34
     },
     {
-        "ncrNumber": 35,
+        "ncrNumber": 2024036,
         "title": "Faded Fishing Nets",
         "itemName": "Fishing Net",
         "status": "AwaitingEngineering",
@@ -719,7 +719,7 @@ export const reportData = [
         "sapNumber": 35
     },
     {
-        "ncrNumber": 36,
+        "ncrNumber": 2024037,
         "title": "Dented Generators",
         "itemName": "Generator",
         "status": "Open",
@@ -738,7 +738,7 @@ export const reportData = [
         "sapNumber": 36
     },
     {
-        "ncrNumber": 37,
+        "ncrNumber": 2024038,
         "title": "Uneven Chair Legs",
         "itemName": "Chair",
         "status": "Closed",
@@ -757,7 +757,7 @@ export const reportData = [
         "sapNumber": 37
     },
     {
-        "ncrNumber": 38,
+        "ncrNumber": 2024039,
         "title": "Bent Bike Rims",
         "itemName": "Bicycle Rim",
         "status": "AwaitingEngineering",
@@ -776,7 +776,7 @@ export const reportData = [
         "sapNumber": 38
     },
     {
-        "ncrNumber": 39,
+        "ncrNumber": 2024040,
         "title": "Leaking Water Jugs",
         "itemName": "Water Jug",
         "status": "Open",
@@ -795,7 +795,7 @@ export const reportData = [
         "sapNumber": 39
     },
     {
-        "ncrNumber": 40,
+        "ncrNumber": 2024041,
         "title": "Scratched Lenses",
         "itemName": "Sunglasses",
         "status": "Closed",
@@ -814,7 +814,7 @@ export const reportData = [
         "sapNumber": 40
     },
     {
-        "ncrNumber": 41,
+        "ncrNumber": 2024042,
         "title": "Torn Hammocks",
         "itemName": "Hammock",
         "status": "AwaitingEngineering",

@@ -13,6 +13,7 @@
     --color-white: #fff;
     --color-black: #000;
     --color-red: red;
+    --color-midblue:#2f6ba7;
 
     --font-primary: 'Poppins', sans-serif;
 }
@@ -31,10 +32,7 @@ nav .logo {
     width: auto;
 }
 
-.bread-crumb{
-    color:inherit !important;
-    text-decoration:none !important;
-}
+
 
 
 
@@ -369,7 +367,7 @@ input[type="checkbox"]:checked:before{
 }
 
 footer {
-    background-color: var(--color-secondary); 
+    background-color: var(--color-lightblue); 
     color: var( --color-white);
     text-align: center; 
     padding: 15px 10px 0; 
@@ -585,8 +583,45 @@ label{
     display: grid;
     grid-column: 1/6;
     grid-row: 12/13;
-    background-color: var(--color-form);
+    background-color: var(--color-offwhite);
 }
+
+
+
+/* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/
+
+/* .ncr-details, .ncr-details-header dl{
+    display:grid;
+    grid-template-columns:1fr 1fr 
+}
+
+.ncr-details-header{
+    margin-bottom:25px;
+}
+ */
+/* .ncr-details dd, .ncr-details dt, .ncr-details-header dd, .ncr-details-header dt{
+    border:1px solid black;
+    padding:5px;
+}
+
+.ncr-details dt, .ncr-details-header dt{
+    font-weight:bold;
+}
+
+.error-label{
+    color: var(--color-red);
+    font-size:12px;
+}
+
+.required:after{
+
+        content:'*';
+        color: var(--color-red);
+
+}
+ */
+
+/* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/
 
 
 
@@ -596,11 +631,11 @@ label{
 */
 
 #bread-crumbs{
-    background: var(--color-primary) !important;
+    background: var(--color-darkblue) !important;
     position: absolute;
-    m: ;
-    top: 80%;
-    left: 6%;
+    top: 70%;
+    left: 8%;
+   padding:2px;
 }
 
 a.selected-view {
@@ -610,5 +645,5 @@ a.selected-view {
 }
 
 #bread-crumbs a{
-    color:var(--color-primary)
+    color:var(--color-darkblue)
 }

@@ -10,7 +10,7 @@ import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 export function NavBar(targetID){ 
 
     if(document.getElementById("report-search")){
-        // its a messy fix but it disables the continuous rerender of the
+        // its a messy fix but it disables the continuous rerender of the search bar
         return;
     }
 
@@ -18,6 +18,12 @@ export function NavBar(targetID){
     
         <ul>
             <li>
+                <img src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
+            </li>
+            <li class='new-report-container'>
+                <button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button>
+            </li>
+            <li class='search-container'>
                     
                     <label for="report-search">Search NCR Reports</label>
                     <input type="text" id="report-search" placeholder="search ncr reports ..."
@@ -31,9 +37,7 @@ export function NavBar(targetID){
                     <span id="user-department">- ${app?.employee.department}</span>
                 </span>
             </li>
-            <li>
-                <button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button>
-            </li>
+            
             
         </ul>
         <div id="bread-crumbs" aria-label="Bread-Crumbs"></div>

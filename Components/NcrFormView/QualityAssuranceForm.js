@@ -89,41 +89,8 @@ export function qualityAssuranceForm(targetID=null,
                         value="${safeTruthy(report?.qtyDefective, '')}"/>
                         <label id="quantity-defective-error" class="error-label"></label>
                     </div>
-
-                    
-                </div>
-                
-                <div class="main3">                    
-                    <div class= "box3">
-                        <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
-                        <input ${readonly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
-                        value="${report?.supplierName || ''}"/>
-                        <label id="supplier-error" class="error-label"></label>
-                    </div>
-
-                    <div class= "box3">
-                        <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
-                        <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
-                        value="${safeTruthy(report?.sapNumber, '')}"/>
-                        <label id="sap-number-error" class="error-label"></label>
-                    </div>
-
-                    <div class= "box3">
-                        <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
-                        <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
-                        value="${report?.itemName || ''}"/>
-                        <label id="item-name-error" class="error-label"></label>
-                    </div>
-                    
-                    <div class= "box3">
-                        <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
-                        <textarea ${readonly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
-                        <label id="item-defect-error" class="error-label"></label>
-                    </div>
-                </div>
-
-                <div class= "main2">    
-                    <div class= "box2">
+   
+                    <div class= "box1">
                         ${labeledCheckbox(
                             'chk-non-conforming', 
                             'non-conforming', 
@@ -136,7 +103,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
                     
-                    <div class= "box2">
+                    <div class= "box1">
                         ${labeledCheckbox(
                             'chk-supplier-or-rec', 
                             'supplier-or-rec', 
@@ -149,7 +116,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
                     
-                    <div class= "box2">
+                    <div class= "box1">
                         ${labeledCheckbox(
                             'chk-production-order', 
                             'production-order', 
@@ -162,7 +129,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
 
-                    <div class= "box2">
+                    <div class= "box1">
                     ${labeledCheckbox(
                         'chk-engineering-required', 
                         'engineering-required', 
@@ -175,6 +142,39 @@ export function qualityAssuranceForm(targetID=null,
                         readonly)}
                     </div>
                 </div> 
+
+
+                
+                <div class="main2">                    
+                    <div class= "box2">
+                        <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
+                        value="${report?.supplierName || ''}"/>
+                        <label id="supplier-error" class="error-label"></label>
+                    </div>
+
+                    <div class= "box2">
+                        <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
+                        <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
+                        value="${safeTruthy(report?.sapNumber, '')}"/>
+                        <label id="sap-number-error" class="error-label"></label>
+                    </div>
+
+                    <div class= "box2">
+                        <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
+                        <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
+                        value="${report?.itemName || ''}"/>
+                        <label id="item-name-error" class="error-label"></label>
+                    </div>
+                    
+                    <div class= "box2">
+                        <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
+                        <textarea ${readonly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
+                        <label id="item-defect-error" class="error-label"></label>
+                    </div>
+                </div>
+
+                
 
                 <div class= "foot">
                 ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : ''}

@@ -588,50 +588,10 @@ label{
 
 
 
-/* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/
 
-/* .ncr-details, .ncr-details-header dl{
-    display:grid;
-    grid-template-columns:1fr 1fr 
-}
-
-.ncr-details-header{
-    margin-bottom:25px;
-}
- */
-/* .ncr-details dd, .ncr-details dt, .ncr-details-header dd, .ncr-details-header dt{
-    border:1px solid black;
-    padding:5px;
-}
-
-.ncr-details dt, .ncr-details-header dt{
-    font-weight:bold;
-}
-
-.error-label{
-    color: var(--color-red);
-    font-size:12px;
-}
-
-.required:after{
-
-        content:'*';
-        color: var(--color-red);
-
-}
- */
-
-/* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/
-
-
-
-
-/*
- 
-*/
+/*Bread crumb stuff*/
 
 #bread-crumbs{
-    background: var(--color-darkblue) !important;
     position: absolute;
     top: 70%;
     left: 8%;
@@ -645,5 +605,32 @@ a.selected-view {
 }
 
 #bread-crumbs a{
-    color:var(--color-darkblue)
+   font-size:14px;
 }
+
+.bread-crumb{
+    color:var(--color-midblue) !important;
+    text-decoration:none !important;
+}
+
+#bread-crumbs ul li:first-child{
+    margin-left:0;
+}
+
+#bread-crumbs ul li:last-child:after{
+    content:""
+}
+
+#bread-crumbs ul li{
+    margin-left:4px;
+}
+
+#bread-crumbs ul li:after{
+    content:" /"
+}
+
+#bread-crumbs ul li:after{
+    content:" /";
+    color: black;
+}
+/*Bread crumb stuff*/

@@ -628,6 +628,7 @@ a.selected-view {
 }
 
 #bread-crumbs ul li:after{
-    content:" /"
+    content:" /";
+    color: black;
 }
 /*Bread crumb stuff*/

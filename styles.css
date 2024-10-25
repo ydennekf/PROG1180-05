@@ -366,7 +366,7 @@ input[type="checkbox"]:checked:before{
 }
 
 footer {
-    background-color: var(--color-lightblue); 
+    background-color: var(--color-darkblue); 
     color: var( --color-white);
     text-align: center; 
     padding: 15px 10px 0; 

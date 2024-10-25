@@ -10,7 +10,7 @@ import { RecentReports } from "./RecentReports.js";
 let reportsPerPage = 10;
 let currentPage = 1
 const sortOrder = {
-    id: 'desc',
+    ncrNumber: 'desc',
     title: 'desc',
     status: 'desc',
     itemName: 'desc',
@@ -30,11 +30,11 @@ export function ReportList(targetID, user, Reports, page = 1){
     if(Reports.length > 10){
         Reports = getReportsForPage(page, reportData);
     }
-    // ${RecentReports()}
+
     let ReportList = `
     <table class ="ncr-list">
         ${reportListHeader()}
-        
+       
         <tbody class="report-view">
         ${mapComponents(Reports, reportPreview)}
         </tbody>
@@ -69,7 +69,7 @@ let applySortListeners = (currentReports, targetID) => {
 
             let sortedReports = sortReports(currentReports, column, newOrder);
             currentPage = 1;   
-           ReportList("root", null, sortedReports, 1);
+           ReportList("root", null, sortedReports, currentPage);
                   
         });
     });
@@ -87,14 +87,12 @@ let sortReports = (reports, column, order) => {
             valB = new Date(valB).getTime();
             
         }
-
-        if(column === 'ncrNumber'){
+        
+         if(column === 'ncrNumber'){
             
-            valA = valA.split('-').join('');
-            valB = valB.split('-').join('');
-
-            valA = parseInt(valA);
-            valB = parseInt(valB);
+            valA = typeof(valA) === 'string' ? parseInt(valA.replace(/-/g, '')) : valA;
+            valB = typeof(valB) === 'string' ? parseInt(valB.replace(/-/g, '')) : valB;
+            
         }
 
         if(order === 'asc'){
@@ -183,7 +181,7 @@ function reportListHeader(){
     return `
         <thead>
         <tr>
-            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.id}">Report #</th>
+            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">Report #</th>
             <th data-column="title" tabindex="4" data-order="${sortOrder.title}">Title</th>
             <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
             <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>

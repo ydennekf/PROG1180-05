@@ -57,6 +57,7 @@ function openReportDetails(ncrNumber){
     DetailsNcrView('root', getReport(ncrNumber))
     app.history.flush()
     app.history.newPath({component:'DetailsNcrView', data:['root', getReport(ncrNumber)]})
+    app.storage.pushRecentReport(ncrNumber)
 }
 
 function openReportEditor(ncrNumber){
@@ -67,6 +68,7 @@ function openReportEditor(ncrNumber){
     console.log("loading editor for report numbered: " + ncrNumber)
     ModifyNcrView('root', app.employee, getReport(ncrNumber))
     app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, getReport(ncrNumber)]})
+    app.storage.pushRecentReport(ncrNumber)
 }
 
 export function previewBindings(){ // Called after mapComponents completes on reportPreviews

@@ -36,8 +36,8 @@ export function reportPreview  (reportData) {
                 ${reportData.defectDescription}
             </td>
             <td>
-                <div>
-                    <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">View Report</button>
+                <div class='index-view-table-buttons'>
+                    <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">View</button>
                     <button class="edit-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
                 </div>
             </td>

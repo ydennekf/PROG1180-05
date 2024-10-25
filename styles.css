@@ -133,6 +133,24 @@ table.ncr-list a:hover {
     text-decoration: underline;
 }
 
+.index-view-table-buttons {
+    display: inline-flex;
+    
+}
+
+.index-view-table-buttons button { 
+    margin: 5px;
+}
+
+.pagination-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    
+}
+
 /* Form Styles */
 .login-form {
     max-width: 400px;
@@ -185,7 +203,7 @@ button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: var(--color-lightblue);
+    background-color: var(--color-darkblue);
     color: var( --color-white);
     border: none;
     border-radius: 4px;

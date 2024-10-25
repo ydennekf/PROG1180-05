@@ -40,7 +40,7 @@ export function createQAReport(employee){
     // DOESN'T VALIDATE USE THE VALIDATORS BEFORE CREATING THE REPORT
     const formData = getReportFormData()
     return {
-        ncrNumber: parseInt(formData.ncrNumber.value),
+        ncrNumber: formData.ncrNumber.value,
         //title:formData.title.value,
         supplierName:formData.supplier.value,
         prodNumber:parseInt(formData.prodNumber.value),

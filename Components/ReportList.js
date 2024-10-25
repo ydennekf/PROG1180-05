@@ -30,11 +30,11 @@ export function ReportList(targetID, user, Reports, page = 1){
     if(Reports.length > 10){
         Reports = getReportsForPage(page, reportData);
     }
-    // ${RecentReports()}
+
     let ReportList = `
     <table class ="ncr-list">
         ${reportListHeader()}
-        
+       
         <tbody class="report-view">
         ${mapComponents(Reports, reportPreview)}
         </tbody>

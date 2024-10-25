@@ -2,6 +2,7 @@ import { mapComponents } from "./utils/utils.js"
 import { reportData } from "../Data/new_reportData.js";
 import { previewBindings, reportPreview } from "./ReportPreview.js"
 import { NavBar } from "./NavBar.js";
+import { RecentReports } from "./RecentReports.js";
 
 
 
@@ -29,10 +30,11 @@ export function ReportList(targetID, user, Reports, page = 1){
     if(Reports.length > 10){
         Reports = getReportsForPage(page, reportData);
     }
-
+    // ${RecentReports()}
     let ReportList = `
     <table class ="ncr-list">
         ${reportListHeader()}
+        
         <tbody class="report-view">
         ${mapComponents(Reports, reportPreview)}
         </tbody>

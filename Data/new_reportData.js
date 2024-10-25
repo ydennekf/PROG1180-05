@@ -23,7 +23,7 @@ export function updateReport(ncrNumber, updatedReport){ // returns old report
 // eg: {qualityAssurance : { itemName, defectDescription, supplierName, etc } }.
 
 
-export const reportData = [
+export let reportData = [
     {
         "ncrNumber": 2024001,
         "title": "Broken Bike",
@@ -833,3 +833,6 @@ export const reportData = [
         "sapNumber": 41
     }
 ]
+
+
+reportData = reportData.map(r => {return {...r, ncrNumber:r.ncrNumber.toString().substring(0, 4) + "-" + r.ncrNumber.toString().substring(4, 7)}})

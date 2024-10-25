@@ -18,7 +18,10 @@ export function NavBar(targetID){
     
         <ul class='nav-list'>
             <li>
-                <img src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
+                <img class='logo' src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
+            </li>
+            <li>
+                <div id="bread-crumbs" aria-label="Bread-Crumbs"></div>
             </li>
             <li class='new-report-container'>
                 <button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button>
@@ -40,7 +43,7 @@ export function NavBar(targetID){
             
             
         </ul>
-        <div id="bread-crumbs" aria-label="Bread-Crumbs"></div>
+        
     `
     
 

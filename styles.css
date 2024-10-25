@@ -49,6 +49,7 @@ nav {
     padding-left: 150px; 
     color: var(--color-lightblue);
     background-color: var( --color-white); 
+    position:relative; /*Bandage fix for breadcrumbs in header*/
 }
 
 nav ul {
@@ -219,11 +220,6 @@ button:hover {
     z-index: 10; 
 }
 
-a.selected-view {
-    color:black !important;
-    text-decoration:none;
-    cursor:not-allowed;
-}
 
 h1{
     margin-top: 0;
@@ -612,3 +608,28 @@ label{
  */
 
 /* THIS PORTION IS JUST TEMPORARY TO MAKE THE DETAILS LOOK SLIGHTLY BETTER FOR THIS TUESDAY CLASS WE NEED TO CHANGE THIS*/
+
+
+
+
+/*
+ 
+*/
+
+#bread-crumbs{
+    background: var(--color-darkblue) !important;
+    position: absolute;
+    m: ;
+    top: 80%;
+    left: 6%;
+}
+
+a.selected-view {
+    color:black !important;
+    text-decoration:none;
+    cursor:not-allowed;
+}
+
+#bread-crumbs a{
+    color:var(--color-darkblue)
+}

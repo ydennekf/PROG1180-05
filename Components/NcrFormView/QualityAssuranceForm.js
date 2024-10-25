@@ -102,19 +102,18 @@ export function qualityAssuranceForm(targetID=null,
                     </div>
 
                     <div class= "box3">
-                        <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
-                        <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
-                        value="${report?.itemName || ''}"/>
-                        <label id="item-name-error" class="error-label"></label>
-                    </div>
-
-                    <div class= "box3">
                         <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                         value="${safeTruthy(report?.sapNumber, '')}"/>
                         <label id="sap-number-error" class="error-label"></label>
                     </div>
-                    
+
+                    <div class= "box3">
+                        <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
+                        <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
+                        value="${report?.itemName || ''}"/>
+                        <label id="item-name-error" class="error-label"></label>
+                    </div>
                     
                     <div class= "box3">
                         <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>

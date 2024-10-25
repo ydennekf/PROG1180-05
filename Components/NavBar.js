@@ -16,7 +16,7 @@ export function NavBar(targetID){
 
     let html = `
     
-        <ul>
+        <ul class='nav-list'>
             <li>
                 <img src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
             </li>

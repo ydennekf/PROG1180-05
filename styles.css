@@ -43,10 +43,10 @@ nav {
     position:relative; /*Bandage fix for breadcrumbs in header*/
 }
 
-nav ul {
+.nav-list {
     list-style: none;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2.5fr;
+    grid-template-columns: 2fr 1fr 2.5fr 1fr;
     grid-gap: 2px;
 }
 
@@ -63,7 +63,7 @@ nav ul li:hover {
 nav ul li img {
     
     height: auto;
-    width: 150px;
+    width: 5vw;
 }
 nav ul li button{
     margin-top: 3vh;
@@ -77,6 +77,9 @@ nav ul li button{
 .search-container{
     margin-top: 2vh;
     
+}
+.search-container input{
+    max-width: 210px;
 }
 #user-info{
     
@@ -611,8 +614,8 @@ label{
 
 #bread-crumbs{
     position: absolute;
-    top: 75%;
-    left: 27.5%;
+    top: 60%;
+    left: 8%;
    padding:2px;
 }
 

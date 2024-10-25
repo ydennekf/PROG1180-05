@@ -43,8 +43,18 @@ export let createLogin = (targetID, onLogin) => {
     document.getElementById(targetID).innerHTML = login;
     let component = document.getElementById(targetID);
     trapFocus(component);
+    document.querySelectorAll('.effect-1').forEach(input => {
+        input.addEventListener('input', () => {
+            if(input.value.trim() !== ''){
+                input.classList.add('has-content');
+            } else {
+                input.classList.remove('has-content');
+            }
+        });
+    });
 
     document.getElementById('loginForm').addEventListener('submit', (event) => onLogin(event));
+    
 
    
 }

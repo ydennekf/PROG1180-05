@@ -173,17 +173,32 @@ export function qualityAssuranceForm(targetID=null,
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
                 </div>
-
-                
-                <div class= "foot">
-                    <div class= "box3">
-                        ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : ''}
+   
+            </div>
+            <div class= "foot">
+                    
+                    <div class="box3">
+                        <button name='QA-button' id='btn-QA-ncr'> QA </button>
                     </div>
                     <div class="box3">
+                        <button name='engineer-button' id='btn-engineer'> Engineering </button>
                     </div>
-                </div>     
-            </div>
+                    <div class="box3">
+                         <button name='files-button' id='btn-files'> Files </button>
+                    </div>
+                    <div class="box3">
+                         <button name='export-button' id='btn-export'> Export </button>
+                    </div>
+                    <div class= "box3">
+                        ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : '<button name="edit-report" id="edit-report">Edit Report</button>'}
+                    </div>
+                </div> 
     `
+
+   if(document.getElementById('edit-report')!== null){
+    document.getElementById('edit-report').addEventListener('click', ()=>GoToEdit(report))}
+
+
     document.getElementById('create-report-btn').style.display = 'none';
     document.getElementById('report-search').style.display = 'none';
     if(targetID) {
@@ -191,6 +206,13 @@ export function qualityAssuranceForm(targetID=null,
     }
     return html
 }
+
+function GoToEdit(report){
+
+    app.history.push({component:"ModifyNcrView", data:['root', app.employee, report]})
+    ModifyNcrView('root', app.employee, report)
+}
+
 
 function labeledCheckbox( // prob going to delete this thought it might make the html cleaner but, it makes it uglier
     // and I don't think it's overly necessary

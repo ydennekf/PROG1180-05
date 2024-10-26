@@ -621,6 +621,11 @@ label{
     width: 150px;
 }
 
+.checkbox {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .checkbox input {
     width: 30px;
     background-color: var(--color-secondary);

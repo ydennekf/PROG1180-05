@@ -175,11 +175,13 @@ export function qualityAssuranceForm(targetID=null,
                 </div>
 
                 
-
                 <div class= "foot">
-                ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : ''}
-                </div>
-                   
+                    <div class= "box3">
+                        ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : ''}
+                    </div>
+                    <div class="box3>
+                    </div>
+                </div>     
             </div>
     `
     document.getElementById('create-report-btn').style.display = 'none';

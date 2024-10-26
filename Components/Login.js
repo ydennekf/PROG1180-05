@@ -7,7 +7,7 @@ export let createLogin = (targetID, onLogin) => {
         `
         <figure>
             
-            <h2>Cross Fire</h2>
+            <img class='login-logo' src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
         </figure>
         <form id="loginForm" action="#" method="post" aria-label="loginForm" role="form" class="login-form">
             <div class="col-1 input-effect">

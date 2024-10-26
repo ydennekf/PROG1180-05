@@ -624,8 +624,9 @@ label{
 
 .checkbox {
     display: flex;
-  justify-content: space-between;
-  align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4lvw;
 }
 .checkbox input {
     width: 30px;

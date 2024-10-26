@@ -29,8 +29,17 @@ body {
 
 /* Nav Bar */
 
+
+
+nav span{
+    font-size: 12px;
+   
+}
+
+
+
 nav .logo {
-    height: 80px; 
+    height: 35px; 
     width: auto;
 }
 
@@ -46,7 +55,7 @@ nav {
 .nav-list {
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2.5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 2.5fr 1.5fr;
     grid-gap: 2px;
 }
 
@@ -62,8 +71,8 @@ nav ul li:hover {
 
 
 nav ul li button{
-    margin-top: 3vh;
- 
+    margin-top: 1.5vh;
+    padding: 10px 15px;
 }
 
 .new-report-container{
@@ -94,7 +103,7 @@ a.selected-view {
 }
 
 #bread-crumbs a{
-   font-size:14px;
+   font-size:10px;
 }
 
 #bread-crumbs ul {
@@ -267,7 +276,7 @@ input[type="search"]:focus {
 
 button {
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     background-color: var(--color-primary);
     color: var( --color-white);
@@ -641,12 +650,38 @@ label{
 
 /* Media Queries */
 
-@media (max-width: 1024px) {
-  
+@media (min-width: 1024px) {
+ 
+
+  .nav-list{
+    grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;
+  }
+
+  #bread-crumbs a{
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+
+  }
+
+  nav span {
+    font-size: 14px;
+  }
 }
 
-@media (max-width: 1440px){
-    
+@media (min-width: 1440px){
+   nav {
+    justify-self: center;
+    width: 1440px;
+   }
+
+   .user-info{
+    justify-self: end;
+   }
 }
+
+
 
 

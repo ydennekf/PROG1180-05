@@ -53,7 +53,8 @@ export function ReportList(targetID, user, Reports, page = 1){
 
     NavBar("navbar");
     
-
+    document.getElementById('create-report-btn').style.display = 'block';
+    document.getElementById('report-search').style.display = 'block';
 }
 
 

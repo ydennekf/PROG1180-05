@@ -135,16 +135,16 @@ function breadCrumbText(historyState){
             console.log(historyState.data)
             if(!historyState.data[2]){ // because this component handles both creating and editing
                 console.log("wow")
-                return "Start New Report" 
+                return "New NCR" 
             }else{
-                return "Edit NCR #" + historyState.data[2].ncrNumber
+                return "Edit NCR";
             }
 
         case "DetailsNcrView":
-            return "View NCR #" + historyState.data[1].ncrNumber;
+            return "View NCR";
 
         case "ReportList":
-            return "Index | Report View"
+            return "NCR List"
     }
 }
 

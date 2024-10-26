@@ -55,7 +55,8 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
     `
 
 
-
+    document.getElementById('create-report-btn').style.display = 'none';
+    document.getElementById('report-search').style.display = 'none';
     document.getElementById(targetID).innerHTML = html;
     document.getElementById('ncr-create-form').addEventListener('submit', (e)=>{validateForm(e); console.log("awesome")});
     trapFocus(document.getElementById(targetID));

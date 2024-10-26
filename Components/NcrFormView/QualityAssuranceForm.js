@@ -176,7 +176,9 @@ export function qualityAssuranceForm(targetID=null,
    
             </div>
             <div class= "foot">
-                    
+                    <div class="box3">
+                         <button name='cancel-button' id='btn-cancel'> Cancel </button>
+                    </div>
                     <div class="box3">
                         <button name='QA-button' id='btn-QA-ncr'> QA </button>
                     </div>

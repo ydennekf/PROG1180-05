@@ -43,7 +43,7 @@ let handleLogin = (event) => {
         if (employeeData.password == passwordInput) {
             // success
             RedirectToIndex(employeeData, reportData)
-           AccessibilityPanel()
+           
             // fire methods to display the index view of the NCR reports.
         }
         else {
@@ -64,5 +64,5 @@ let handleLogin = (event) => {
 window.onload = () => {
     
     createLogin("root", handleLogin);
-
+    AccessibilityPanel()
 }

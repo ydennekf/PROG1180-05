@@ -9,10 +9,11 @@ import { employees } from './Data/employeeData.js';
 import { reportData } from './Data/new_reportData.js';
 
 // import utility functions
-import { resetForm } from './Components/utils/utils.js';
+import { append, insert, resetForm } from './Components/utils/utils.js';
 import { initApp } from './AppState.js';
 import { ModifyNcrView } from './Components/NcrFormView/ModifyNcrView.js';
 import { app } from './AppState.js';
+import { AccessibilityPanel } from './Components/AccesibilityPanel.js';
 
 
 let RedirectToIndex = (employee, reports) => {
@@ -63,5 +64,5 @@ let handleLogin = (event) => {
 window.onload = () => {
     
     createLogin("root", handleLogin);
-
+    AccessibilityPanel()
 }

@@ -90,7 +90,7 @@ export function qualityAssuranceForm(targetID=null,
                         <label id="quantity-defective-error" class="error-label"></label>
                     </div>
    
-                    <div class= "box1">
+                    <div class= "box1 checkbox">
                         ${labeledCheckbox(
                             'chk-non-conforming', 
                             'non-conforming', 
@@ -103,7 +103,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
                     
-                    <div class= "box1">
+                    <div class= "box1 checkbox">
                         ${labeledCheckbox(
                             'chk-supplier-or-rec', 
                             'supplier-or-rec', 
@@ -116,7 +116,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
                     
-                    <div class= "box1">
+                    <div class= "box1 checkbox">
                         ${labeledCheckbox(
                             'chk-production-order', 
                             'production-order', 
@@ -129,7 +129,7 @@ export function qualityAssuranceForm(targetID=null,
                             readonly)}
                     </div>
 
-                    <div class= "box1">
+                    <div class= "box1 checkbox">
                     ${labeledCheckbox(
                         'chk-engineering-required', 
                         'engineering-required', 

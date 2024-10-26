@@ -579,13 +579,11 @@ label{
     text-align: center;
 }
 .main1 { 
-    /* grid-area: main1;  */
     display: grid;
     grid-column: 1/3;
     grid-row: 3/12;
     background-color: var(--color-form);
-    /* column-gap: 2px; */
-    padding: 10px;
+    padding: 13px 10px 10px 10px;
     border: 0 0 0 2px;
     border-color: var(--color-primary);
 }
@@ -596,8 +594,13 @@ label{
 }
 
 .box1 input {
-    height:30px;
+    height: 30px;
     width: 150px;
+}
+
+.checkbox input {
+    width: 30px;
+    background-color: var(--color-secondary);
 }
 
 .box2 input {
@@ -618,6 +621,7 @@ label{
 
 .box2 label{
     display: block;
+    padding: 3px 0;
 }
 
 .box2:first-child {
@@ -644,7 +648,7 @@ label{
     display: block;
 
     height: 90%;
-    width: 95%;
+    width: 100%;
 }
 
 .foot { 

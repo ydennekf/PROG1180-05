@@ -195,8 +195,7 @@ export function qualityAssuranceForm(targetID=null,
                 </div> 
     `
 
-   if(document.getElementById('edit-report')!== null){
-    document.getElementById('edit-report').addEventListener('click', ()=>GoToEdit(report))}
+  
 
 
     document.getElementById('create-report-btn').style.display = 'none';

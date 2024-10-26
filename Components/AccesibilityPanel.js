@@ -39,8 +39,23 @@ export function AccessibilityPanel(){
         } catch{
             // this only happens on startup since the div has never been created yet
         }
-    }
     
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+   let toggle = document.getElementById("darkModeToggle");
+
+   toggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); // Save preference
+});
+
     swapListener()
 }
 

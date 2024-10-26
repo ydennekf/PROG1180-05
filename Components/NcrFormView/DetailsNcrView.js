@@ -7,7 +7,7 @@ import { qualityAssuranceForm } from "./QualityAssuranceForm.js";
 export function DetailsNcrView(targetID, report){
     //app.storage.pushRecentReport(report)
     const html = `
-        <button id="edit-report">Edit Report</button>
+       
         ${QualityAssuranceNcrView(report)}
     `
 

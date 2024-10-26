@@ -182,7 +182,8 @@ export function qualityAssuranceForm(targetID=null,
                    
             </div>
     `
-
+    document.getElementById('create-report-btn').style.display = 'none';
+    document.getElementById('report-search').style.display = 'none';
     if(targetID) {
         document.getElementById(targetID).innerHTML = html;
     }

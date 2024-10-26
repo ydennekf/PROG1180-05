@@ -7,6 +7,8 @@ import { app } from "../AppState.js";
 
 export function reportPreview  (reportData) {
 
+    let startDate = new Date(reportData.date);
+
     if (window.innerWidth <= 768) {
         return`
         <tr>
@@ -23,7 +25,7 @@ export function reportPreview  (reportData) {
                 ${reportData.itemName}
             </td>
             <td>
-                ${reportData.date}
+            ${startDate.getFullYear()}/${startDate.getMonth()}/${startDate.getDate()}
             </td>
             <td>
                 ${reportData.supplierName}
@@ -55,7 +57,7 @@ export function reportPreview  (reportData) {
                 ${reportData.itemName}
             </td>
             <td>
-                ${reportData.date}
+            ${startDate.getFullYear()}/${startDate.getMonth()}/${startDate.getDate()}
             </td>
             <td>
                 ${reportData.supplierName}

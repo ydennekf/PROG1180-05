@@ -3,6 +3,7 @@ import {injectOrReturn} from "../utils/utils.js";
 import { ModifyNcrView } from "./ModifyNcrView.js";
 import { app } from "../../AppState.js";
 import { qualityAssuranceForm } from "./QualityAssuranceForm.js";
+import { redirectHome } from "../../redirection/redirect.js";
 
 export function DetailsNcrView(targetID, report){
     //app.storage.pushRecentReport(report)
@@ -13,6 +14,7 @@ export function DetailsNcrView(targetID, report){
 
     document.getElementById(targetID).innerHTML = html;
     document.getElementById('edit-report').addEventListener('click', ()=>GoToEdit(report))
+    document.getElementById('btn-cancel').addEventListener('click', redirectHome)
 }
 
 function QualityAssuranceNcrView(report, targetID=null){
@@ -61,25 +63,7 @@ function QualityAssuranceNcrView(report, targetID=null){
     return injectOrReturn(qualityAssuranceForm(null, report, false, true), targetID)
 }
 
-function DetailsHeader(report, targetID=null){
-    const html = `
-        <div class="ncr-details-header">
-            <h2>${report.title}</h2>
-            <dl>
-                <dt>Date</dt>
-                <dd>${report.date}</dd>
-                <dt>NCR Number</dt>
-                <dd>${report.ncrNumber}</dd>
-                <dt>Status</dt>
-                <dd>${report.status}</dd>
-                <dt>Started By</dt>
-                <dd>${report.startedBy}</dd>
-            </dl>
-        </div>
-    `
 
-    return injectOrReturn(html, targetID)
-}
 
 function GoToEdit(report){
 

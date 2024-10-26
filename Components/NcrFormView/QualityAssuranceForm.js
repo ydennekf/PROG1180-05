@@ -176,30 +176,30 @@ export function qualityAssuranceForm(targetID=null,
    
             </div>
             <div class= "foot">
-                    <div class="box3">
+                    
                          <button name='cancel-button' id='btn-cancel'> Cancel </button>
-                    </div>
-                    <div class="box3">
+                   
+                    
                         <button name='QA-button' id='btn-QA-ncr'> QA </button>
-                    </div>
-                    <div class="box3">
+                
+                    
                         <button name='engineer-button' id='btn-engineer'> Engineering </button>
-                    </div>
-                    <div class="box3">
+                   
+                   
                          <button name='files-button' id='btn-files'> Files </button>
-                    </div>
-                    <div class="box3">
+                   
+                  
                          <button name='export-button' id='btn-export'> Export </button>
-                    </div>
-                    <div class= "box3">
+                 
+                    
                         ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : '<button name="edit-report" id="edit-report">Edit Report</button>'}
-                    </div>
+                  
                 </div> 
     `
 
   
 
-
+    // removing search bar
     document.getElementById('create-report-btn').style.display = 'none';
     document.getElementById('report-search').style.display = 'none';
     if(targetID) {

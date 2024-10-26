@@ -11,7 +11,7 @@ let reportsPerPage = 10;
 let currentPage = 1
 const sortOrder = {
     ncrNumber: 'desc',
-    title: 'desc',
+    sapNum: 'desc',
     status: 'desc',
     itemName: 'desc',
     date: 'desc',
@@ -183,7 +183,7 @@ function reportListHeader(){
         <thead>
         <tr>
             <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">Report</th>
-            <th data-column="title" tabindex="4" data-order="${sortOrder.title}">Title</th>
+            <th data-column="sapNum" tabindex="4" data-order="${sortOrder.sapNum}">SAP</th>
             <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
             <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>
             <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>
@@ -199,7 +199,7 @@ function reportListHeader(){
         <thead>
         <tr>
             <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">Report</th>
-            <th data-column="title" tabindex="4" data-order="${sortOrder.title}">Title</th>
+            <th data-column="sapNum" tabindex="4" data-order="${sortOrder.sapNum}">SAP</th>
             <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
             <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>
             <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>

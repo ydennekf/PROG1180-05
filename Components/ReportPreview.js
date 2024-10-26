@@ -16,7 +16,7 @@ export function reportPreview  (reportData) {
                 ${reportData.ncrNumber}
             </td>
             <td>
-                ${reportData.title}
+                ${reportData.sapNumber}
             </td>
             <td>
                 ${reportData.status}
@@ -48,7 +48,7 @@ export function reportPreview  (reportData) {
                 ${reportData.ncrNumber}
             </td>
             <td>
-                ${reportData.title}
+                ${reportData.sapNumber}
             </td>
             <td>
                 ${reportData.status}

@@ -17,7 +17,7 @@ export function initApp(employee, initialView, initialArgs=[]){ // call after lo
     app["storage"] = storage;
 
     initialView(...initialArgs)
-    AccessibilityPanel()
+  
     app.history.setInitialView({component:initialView.name, data:initialArgs})
 }
 

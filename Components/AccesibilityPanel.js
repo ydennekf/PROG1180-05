@@ -34,7 +34,11 @@ export function AccessibilityPanel(){
         </section>`
         append('accessibility-menu', html)
     }else{
-        document.getElementById("accessibilityControls").remove()
+        try{
+            document.getElementById("accessibilityControls").remove()
+        } catch{
+            // this only happens on startup since the div has never been created yet
+        }
     }
     
     swapListener()

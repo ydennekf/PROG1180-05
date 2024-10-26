@@ -7,9 +7,8 @@ import { app } from "../AppState.js";
 
 export function reportPreview  (reportData) {
 
-
-   
-    return`
+    if (window.innerWidth <= 768) {
+        return`
         <tr>
             <td>
                 ${reportData.ncrNumber}
@@ -33,6 +32,38 @@ export function reportPreview  (reportData) {
                 ${reportData.startedBy}
             </td>
             <td>
+                <div class='index-view-table-buttons'>
+                    <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
+                </div>
+            </td>
+        </tr>
+    `;
+    } else {
+        return`
+        <tr>
+            <td>
+                ${reportData.ncrNumber}
+            </td>
+            <td>
+                ${reportData.title}
+            </td>
+            <td>
+                ${reportData.status}
+            </td>
+            <td>
+                ${reportData.itemName}
+            </td>
+            <td>
+                ${reportData.date}
+            </td>
+            <td>
+                ${reportData.supplierName}
+            </td>
+            <td>
+                ${reportData.startedBy}
+            </td>
+            <td class='ncr-description'>
                 ${reportData.defectDescription}
             </td>
             <td>
@@ -43,6 +74,9 @@ export function reportPreview  (reportData) {
             </td>
         </tr>
     `;
+    }
+   
+  
     
 }   
 
@@ -86,3 +120,4 @@ export function previewBindings(){ // Called after mapComponents completes on re
     })
 
 }
+

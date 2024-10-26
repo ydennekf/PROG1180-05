@@ -56,35 +56,35 @@ export function qualityAssuranceForm(targetID=null,
 
                 <div class= "main1">
                     <div class= "box1">
-                        <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No</label>
+                        <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label>
                         <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                         value="${report?.ncrNumber || generateNcrNumber()}"/>
                         <label id="ncr-number-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-prod-number" id="lbl-prod-number">Prod Number</label>
+                        <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                         value="${safeTruthy(report?.prodNumber, '')}"/>
                         <label id="prod-number-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order Number</label>
+                        <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                         value="${safeTruthy(report?.salesNumber, '')}"/>
                         <label id="sales-number-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Quantity Received</label>
+                        <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                         value="${safeTruthy(report?.qtyReceived, '')}"/>
                         <label id="quantity-received-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Quantity Defective</label>
+                        <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                         value="${safeTruthy(report?.qtyDefective, '')}"/>
                         <label id="quantity-defective-error" class="error-label"></label>
@@ -154,7 +154,7 @@ export function qualityAssuranceForm(targetID=null,
                     </div>
 
                     <div class= "box2">
-                        <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP Number</label>
+                        <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP No</label>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                         value="${safeTruthy(report?.sapNumber, '')}"/>
                         <label id="sap-number-error" class="error-label"></label>

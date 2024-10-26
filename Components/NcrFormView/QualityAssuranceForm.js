@@ -179,7 +179,7 @@ export function qualityAssuranceForm(targetID=null,
                     <div class= "box3">
                         ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : ''}
                     </div>
-                    <div class="box3>
+                    <div class="box3">
                     </div>
                 </div>     
             </div>

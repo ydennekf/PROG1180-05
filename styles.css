@@ -581,6 +581,10 @@ label{
     background-color: var(--color-form);
 }
 
+.box1 input, .box2 input {
+    height:30px;
+    width: 50 px;
+}
 
 .main2 { 
     /* grid-area: main3;  */

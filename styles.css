@@ -583,7 +583,8 @@ label{
 
 .box1 input, .box2 input {
     height:30px;
-    width: 50 px;
+    width: 150px;
+    align-items: right;
 }
 
 .main2 { 

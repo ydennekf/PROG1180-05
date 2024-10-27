@@ -31,9 +31,7 @@
         background-color: #4379b3;
     } */
 
-    table.ncr-list tr:hover {
-        background-color: #f1f1f1;
-    }
+    
 }
 
 /* Dark Theme */
@@ -229,7 +227,7 @@ table.ncr-list tr:nth-child(even) {
 }
 
 table.ncr-list tr:hover {
-    background-color: #f1f1f1;
+    background-color: var(--color-secondary);
 }
 
 table.ncr-list a {

@@ -4,6 +4,7 @@ import {qualityAssuranceForm} from "./QualityAssuranceForm.js";
 import {getReport, reportData, updateReport} from "../../Data/new_reportData.js";
 import { ReportList } from "../ReportList.js";
 import { app } from "../../AppState.js";
+import { redirectHome } from "../../redirection/redirect.js";
 
 
 export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH EDITING AND CREATING NEW
@@ -19,8 +20,7 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
             app.storage.print()
         }
     // If a report is passed an additional toolbar should be added with functionality like closing the report etc.
-    function validateForm(e) {
-        e.preventDefault();
+    function validateForm() {
         console.log(report)
         const formData = validateQualityAssuranceForm(report !== null, report); // if there is a report given we're not updating the report
        // For now it's just the QA portion being validated
@@ -58,9 +58,19 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
     document.getElementById('create-report-btn').style.display = 'none';
     document.getElementById('report-search').style.display = 'none';
     document.getElementById(targetID).innerHTML = html;
-    document.getElementById('ncr-create-form').addEventListener('submit', (e)=>{validateForm(e); console.log("awesome")});
+    
+    document.getElementById('ncr-create-form').addEventListener('submit', (e)=>{e.preventDefault()});
+    document.getElementById('btn-submit-ncr').addEventListener('click', (e)=>{validateForm(e)})
+    document.getElementById('btn-cancel').addEventListener('click', redirectHome)
+
     trapFocus(document.getElementById(targetID));
 
 }
 
+
+function cancelEdit(){
+    ReportList('root', app.employee, reportData)
+    app.history.flush()
+    console.log("Cancelling and redirecting to home page.")
+}
 

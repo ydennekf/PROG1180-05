@@ -42,8 +42,13 @@ export function AccessibilityPanel(){
     
     }
 
+    let currentImage = document.getElementById('crossfire-logo');
+    
+
     if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
+        currentImage.src = '../image/crossfire-logo-no-bkg-darkmode.png';
+        
     }
 
    let toggle = document.getElementById("darkModeToggle");
@@ -51,7 +56,9 @@ export function AccessibilityPanel(){
    toggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
+    currentImage.src = newTheme ==='dark' ? '../image/crossfire-logo-no-bkg-darkmode.png' :  '../image/crossfire-logo-no-bkg.png';
+    
+    
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme); // Save preference
 });

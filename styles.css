@@ -5,7 +5,7 @@
 }
 
 :root {
-    --color-primary: #173451;
+    --color-primary: #204d7a;
     --color-secondary: #5897c9;
     --color-offblack: #222222;
     --color-form: #f8f4f4;
@@ -16,20 +16,24 @@
     --color-midblue:#2f6ba7;
 
     --font-primary: 'Poppins', sans-serif;
+
+   
 }
 
 
 /* Dark Theme */
 [data-theme='dark'] {
-    --color-primary: #0d1b2a;
-    --color-secondary: #1b263b;
+    --color-primary: #1b3b5e;
+    --color-secondary: #275586; /**/
     --color-offblack: #f8f4f4;
-    --color-form: #2d3142;
+    --color-form: #1b3b5e;
     --color-background: #222;
     --color-white: #f8f4f4;
     --color-black: #fff;
     --color-red: #ff4c4c;
     --color-midblue: #3d5a80;
+
+  
 }
 
 body {
@@ -199,14 +203,14 @@ table.ncr-list td {
 }
 
 table.ncr-list th {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1b3b5e;
+    color: #fff;
     text-transform: uppercase;
     font-size: 14px;
 }
 
 table.ncr-list tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--color-primary);
 }
 
 table.ncr-list tr:hover {
@@ -228,8 +232,11 @@ table.ncr-list a:hover {
     
 }
 
+
+
 .index-view-table-buttons button { 
     margin: 5px;
+    border: 2px solid var(--color-white);
 }
 
 .pagination-container {

@@ -18,7 +18,7 @@ export function NavBar(targetID){
     
         <ul class='nav-list'>
             <li>
-                <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
+                <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
             </li>
             <li>
                 <div id="bread-crumbs" aria-label="Bread-Crumbs"></div>

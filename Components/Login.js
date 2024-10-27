@@ -31,10 +31,11 @@ export let createLogin = (targetID, onLogin) => {
                         <input type="checkbox" id="rememberMe">
                         <label for="rememberMe">Remember Me</label>
                     </div>
-                <div>
+                
+          </div>
+            <div class="login-btn-container">
                     <button type="submit" class="login-btn">LOG IN</button>
-                </div>
-          </div>  
+            </div>  
         </form>
         <div class="forgot-password">
             <a href="#">Forgot Password?</a>

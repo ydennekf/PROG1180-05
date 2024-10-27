@@ -27,9 +27,9 @@
         background-color: #3a699c;
     }
 
-    table.ncr-list tr:nth-child(even) {
+  /*   table.ncr-list tr:nth-child(even) {
         background-color: #4379b3;
-    }
+    } */
 
     table.ncr-list tr:hover {
         background-color: #f1f1f1;
@@ -66,7 +66,7 @@ body {
 
 
 nav span{
-    font-size: 12px;
+    font-size: 10px;
    
 }
 
@@ -80,9 +80,9 @@ nav .logo {
 nav {
      
     height: 8vh;
-    
-    color: var(--color-secondary);
-    background-color: var( --color-white); 
+    margin-bottom: 20px;
+    color: var(--color-white);
+    background-color: var( --color-primary); 
     position:relative; /*Bandage fix for breadcrumbs in header*/
 }
 
@@ -106,7 +106,7 @@ nav ul li:hover {
 
 nav ul li button{
     margin-top: 1.5vh;
-    padding: 10px 15px;
+    min-width: 100px;
 }
 
 .new-report-container{
@@ -131,7 +131,7 @@ nav ul li button{
 
 
 a.selected-view {
-    color:black !important;
+    color:var(--color-white) !important;
     text-decoration:none;
     cursor:not-allowed;
 }
@@ -145,7 +145,7 @@ a.selected-view {
 }
 
 .bread-crumb{
-    color:var(--color-midblue) !important;
+    color:var(--color-white) !important;
     text-decoration:none !important;
 }
 
@@ -225,7 +225,7 @@ table.ncr-list th {
 }
 
 table.ncr-list tr:nth-child(even) {
-    background-color: var(--color-primary);
+    background-color: var(--color-form);
 }
 
 table.ncr-list tr:hover {
@@ -267,7 +267,7 @@ table.ncr-list a:hover {
 .login-form {
     max-width: 400px;
     margin: 0 auto;
-    background: #f9f9f9;
+    background: var(--color-form);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -325,7 +325,7 @@ button {
     cursor: pointer;
     background-color: var(--color-primary);
     color: var( --color-white);
-    border: none;
+    border: solid 1px var(--color-white);
     border-radius: 4px;
     transition: background-color 0.3s ease;
     max-width: 150px;
@@ -424,6 +424,7 @@ input:focus {
 
 /* Custom Checkbox Style */
 input[type="checkbox"] {
+    border: solid 1px var(--color-offblack);
     position: relative;
     width: 28px;
     height: 28px;
@@ -486,7 +487,7 @@ footer {
 
 label{
     color: var(--color-black);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     user-select: none;
 }
 
@@ -534,15 +535,20 @@ label{
 }
 
 .login-btn {
+    
     width: 100%;
     background-color: var(--color-secondary);
     color: var( --color-white);
-    border: none;
+    border: solid 1px var(--color-white);
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+}
+.login-btn-container{
+    display: flex;
+    justify-content: center;
 }
 
 .login-btn:hover {
@@ -637,19 +643,24 @@ label{
 
 
 .box1 {
+    
     background-color: var(--color-form);
+}
+.box1 label{
+    width:200px;
 }
 
 .box1 input {
+    
     height: 30px;
     width: 150px;
 }
 
 .checkbox {
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
-    padding-right: 4lvw;
+    
 }
 .checkbox input {
     width: 30px;
@@ -714,9 +725,11 @@ label{
     padding: 2px;
 }
 
-.foot button {
-    width: 6vw;
+.foot #btn-cancel {
+    margin-right: 200px;
 }
+
+
 
 .box3 {
     display:block;
@@ -778,6 +791,9 @@ label{
    .user-info{
     justify-self: end;
    }
+   .foot #btn-cancel {
+    margin-right: 500px;
+}
 }
 
 
@@ -787,5 +803,9 @@ label{
     footer{
         margin-top:30px;
         position:static;
+    }
+
+    .foot #btn-cancel {
+        margin-right: 400px;
     }
 }

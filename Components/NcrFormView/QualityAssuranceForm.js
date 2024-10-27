@@ -56,35 +56,35 @@ export function qualityAssuranceForm(targetID=null,
 
                 <div class= "main1">
                     <div class= "box1">
-                        <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label>
+                        <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label><br>
                         <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                         value="${report?.ncrNumber || generateNcrNumber()}"/>
                         <label id="ncr-number-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label>
+                        <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label><br>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                         value="${safeTruthy(report?.prodNumber, '')}"/>
                         <label id="prod-number-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label>
+                        <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label><br>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                         value="${safeTruthy(report?.salesNumber, '')}"/>
                         <label id="sales-number-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label>
+                        <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label><br>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                         value="${safeTruthy(report?.qtyReceived, '')}"/>
                         <label id="quantity-received-error" class="error-label"></label>
                     </div>
                     
                     <div class= "box1">
-                        <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label>
+                        <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label><br>
                         <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                         value="${safeTruthy(report?.qtyDefective, '')}"/>
                         <label id="quantity-defective-error" class="error-label"></label>
@@ -177,9 +177,10 @@ export function qualityAssuranceForm(targetID=null,
             </div>
             <div class= "foot">
                     
-                         <button name='cancel-button' id='btn-cancel'> Cancel </button>
+                         
                    
-                    
+                        <button name='cancel-button' id='btn-cancel'> Cancel </button>            
+
                         <button name='QA-button' id='btn-QA-ncr'> QA </button>
                 
                     
@@ -190,8 +191,9 @@ export function qualityAssuranceForm(targetID=null,
                    
                   
                          <button name='export-button' id='btn-export'> Export </button>
-                 
-                    
+
+                         
+                                     
                         ${includeSubmit ? '<button name="submit-report" id="btn-submit-ncr">Save Report</button>' : '<button name="edit-report" id="edit-report">Edit Report</button>'}
                   
                 </div> 

@@ -20,6 +20,21 @@
    
 }
 
+/* Light Theme */
+[data-theme='light'] {
+    /* Lighter blue for table rows in light mode */
+    table.ncr-list th {
+        background-color: #3a699c;
+    }
+
+    table.ncr-list tr:nth-child(even) {
+        background-color: #4379b3;
+    }
+
+    table.ncr-list tr:hover {
+        background-color: #f1f1f1;
+    }
+}
 
 /* Dark Theme */
 [data-theme='dark'] {

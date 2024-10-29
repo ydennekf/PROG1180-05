@@ -5,16 +5,15 @@ export let createLogin = (targetID, onLogin) => {
     
     let login =
         `
-        <figure>
             
-            <img id='login-logo' class='login-logo' src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
-        </figure>
-        <form id="loginForm" action="#" method="post" aria-label="loginForm" role="form" class="login-form">
+        <img id='login-logo' class='login-logo' src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
+
+        <form id="loginForm" action="#" method="post" aria-label="loginForm"  class="login-form">
             <div class="col-1 input-effect">
                 
 
                 <div class="input-wrapper">
-                    <input type="text" id="username" name="username" required aria-required="true" aria-describedby="usernameHelp" tabindex="2" class="effect-1"/>
+                    <input type="text" id="username" name="username" required aria-required="true" tabindex="2" class="effect-1"/>
                     <label for="username">Username</label>
                     <span class="focus-border"></span>
 
@@ -22,7 +21,7 @@ export let createLogin = (targetID, onLogin) => {
 
                 <div class="input-wrapper">
                     
-                    <input type="password" id="password" name="password" required aria-required="true" aria-describedby="passwordHelp" tabindex="2" class="effect-1"/>
+                    <input type="password" id="password" name="password" required aria-required="true" tabindex="2" class="effect-1"/>
                     <label for="password">Password</label>
                     <span class="focus-border"></span>
 

@@ -18,7 +18,7 @@ export function AccessibilityPanel(){
     <section id="accessibilityControls" role="region">
             <h3 id="accessibilityControllsTitle">Accessibility Controls</h3>
             <div class="chkBox">
-                <label for="darkModeToggle">Enable Dark Mode</label>
+                <label class="white" for="darkModeToggle">Enable Dark Mode</label>
                 <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle">
             </div>
     

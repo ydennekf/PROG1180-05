@@ -13,6 +13,8 @@ export function NavBar(targetID){
         // its a messy fix but it disables the continuous rerender of the search bar
         return;
     }
+    
+
 
     let html = `
     
@@ -21,7 +23,7 @@ export function NavBar(targetID){
                 <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
             </li>
             <li>
-                <div id="bread-crumbs" aria-label="Bread-Crumbs"></div>
+                <div id="bread-crumbs"></div>
             </li>
             <li id='new-report-container' class='new-report-container'>
                 <button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button>
@@ -29,10 +31,11 @@ export function NavBar(targetID){
             <li id='search-container' class='search-container'>
                     
                     
-                    <input type="text" id="report-search" placeholder="search ncr reports ..."
-                        aria-labelledby="search-description" aria-autocomplete="list" aria-controls="search-listbox"
-                        aria-expanded="false" tabindex="1">
-                    <div id="search-listbox" role="listbox" aria-live="polite"></div>
+                    <input type="text"  id="report-search" placeholder="search ncr reports ..."
+                        aria-label="search-description" aria-autocomplete="list" 
+                         tabindex="1">
+                        <label for="report-search" style="display:inline;" id="lbl-search">Find a report</label>
+                    
             </li>
             <li class='user-info'>
                 <span id="user-info">

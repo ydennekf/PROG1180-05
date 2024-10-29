@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Crossfire - NCR</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <nav id="navbar" aria-label="main navigation">
+    
+        <ul class="nav-list">
+            <li>
+                <img id="crossfire-logo" class="logo" src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo">
+            </li>
+            <li>
+                <div id="bread-crumbs">
+        <ul>
+            <li><a aria-current="page" class="bread-crumb selected-view" data-view-id="0" href="#">List</a></li>
+        </ul>
+    </div>
+            </li>
+            <li id="new-report-container" class="new-report-container">
+                <button id="create-report-btn" aria-label="create New Report" tabindex="1" style="display: block;">New Report</button>
+            </li>
+            <li id="search-container" class="search-container">
+                    
+                    
+                    <input type="text" id="report-search" placeholder="search ncr reports ..." aria-label="search-description" aria-autocomplete="list"  tabindex="1" style="display: block;" class="ui-autocomplete-input" autocomplete="off">
+                        <label for="report-search" style="display:inline;" id="lbl-search">Find a report</label>
+                    
+            </li>
+            <li class="user-info">
+                <span id="user-info">
+                    <span id="user-name-label">Logged in as: <strong id="user-name">jdoe</strong></span>
+                    <span id="user-department">- admin</span>
+                </span>
+            </li>
+            
+            
+        </ul>
+        
+    </nav>
+
+    
+    <main id="root" class="ncr-view">
+    <table class="ncr-list">
+        
+        <thead>
+        <tr>
+            <th data-column="ncrNumber" tabindex="4" data-order="desc">Report</th>
+            <th data-column="sapNum" tabindex="4" data-order="desc">SAP</th>
+            <th data-column="status" tabindex="4" data-order="desc">Status</th>
+            <th data-column="itemName" tabindex="4" data-order="desc">Item Name</th>
+            <th data-column="date" tabindex="4" data-order="desc">Date</th>
+            <th data-column="supplierName" tabindex="4" data-order="desc">Supplier</th>
+            <th data-column="startedBy" tabindex="4" data-order="desc">Started</th>
+            <th data-column="description" tabindex="4" data-order="desc">Description</th>
+            <th></th>
+        </tr>
+        </thead>
+    
+       
+        <tbody class="report-view">
+        
+        <tr>
+            <td>
+                2024-001
+            </td>
+            <td>
+                0
+            </td>
+            <td>
+                Closed
+            </td>
+            <td>
+                Bicycle
+            </td>
+            <td>
+            2023/10/13
+            </td>
+            <td>
+                Mountain inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The bike is broken, it has no seat, the wheels don't have rubber, and the gears are cut in half.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-001">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-001">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-002
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                Awaiting Engineering
+            </td>
+            <td>
+                Trampoline
+            </td>
+            <td>
+            2024/9/24
+            </td>
+            <td>
+                Trampoline inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The trampoline is missing 3 of its poles.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-002">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-002">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-003
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                Closed
+            </td>
+            <td>
+                Generator
+            </td>
+            <td>
+            2022/0/24
+            </td>
+            <td>
+                Generator inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The generator won't turn on even after charging.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-003">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-003">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-004
+            </td>
+            <td>
+                3
+            </td>
+            <td>
+                Awaiting Engineering
+            </td>
+            <td>
+                Fishing Rod
+            </td>
+            <td>
+            2024/5/24
+            </td>
+            <td>
+                Fishing inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                All the fishing rods are broken. You cannot reel in on any of them, not suitable for fishing.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-004">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-004">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-005
+            </td>
+            <td>
+                4
+            </td>
+            <td>
+                Closed
+            </td>
+            <td>
+                Tent
+            </td>
+            <td>
+            2024/2/1
+            </td>
+            <td>
+                Mountain inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                One of the tents is missing all of its poles, it's just a sheet.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-005">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-005">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-006
+            </td>
+            <td>
+                5
+            </td>
+            <td>
+                Closed
+            </td>
+            <td>
+                Mirror
+            </td>
+            <td>
+            2023/7/10
+            </td>
+            <td>
+                GlassWorks inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The mirror is cracked in two places.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-006">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-006">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-007
+            </td>
+            <td>
+                6
+            </td>
+            <td>
+                Open
+            </td>
+            <td>
+                Chair
+            </td>
+            <td>
+            2023/8/22
+            </td>
+            <td>
+                Furniture inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The chair screws are loose, not stable for sitting.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-007">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-007">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-008
+            </td>
+            <td>
+                7
+            </td>
+            <td>
+                Awaiting Engineering
+            </td>
+            <td>
+                Desk
+            </td>
+            <td>
+            2024/4/14
+            </td>
+            <td>
+                Furniture inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The desk is missing bolts for assembly.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-008">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-008">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-009
+            </td>
+            <td>
+                8
+            </td>
+            <td>
+                Closed
+            </td>
+            <td>
+                Pipe
+            </td>
+            <td>
+            2024/6/18
+            </td>
+            <td>
+                PipeWorks inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The pipe has a small hole, causing leaks.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-009">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-009">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                2024-010
+            </td>
+            <td>
+                9
+            </td>
+            <td>
+                Awaiting Engineering
+            </td>
+            <td>
+                Battery
+            </td>
+            <td>
+            2024/1/2
+            </td>
+            <td>
+                Battery inc
+            </td>
+            <td>
+                btaylor
+            </td>
+            <td class="ncr-description">
+                The batteries do not hold a charge.
+            </td>
+            <td>
+                <div class="index-view-table-buttons">
+                    <button class="view-report" tabindex="5" data-ncr-number="2024-010">View</button>
+                    <button class="edit-report" tabindex="5" data-ncr-number="2024-010">Edit</button>
+                </div>
+            </td>
+        </tr>
+    
+        </tbody>
+    </table><div id="pagination-controls" class="pagination-container">
+        <button id="previous-page" disabled="">Previous</button>
+    
+            <button class="page-btn active" data-page="1">
+                1
+            </button>
+        
+            <button class="page-btn " data-page="2">
+                2
+            </button>
+        
+            <button class="page-btn " data-page="3">
+                3
+            </button>
+        
+            <button class="page-btn " data-page="4">
+                4
+            </button>
+        
+            <button class="page-btn " data-page="5">
+                5
+            </button>
+        
+        <button id="next-page">Next</button>
+    </div>
+    </main>
+    
+    <div aria-labelledby="errorPanel" id="errorPanel" role="alert">
+        <!-- Error content here -->
+    </div>
+    
+    
+    <footer id="footer" class="">
+        
+        <p>© 2024 Crossfire. All rights reserved.</p>
+
+        <button id="accessibility-toggle" aria-label="Open-Accesibility-Menu">Accessibility</button>
+        <div id="accessibility-menu">
+
+        </div>
+        
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="module" src="app.js"></script>
+
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body>
+</html>

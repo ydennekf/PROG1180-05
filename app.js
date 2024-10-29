@@ -42,6 +42,7 @@ let handleLogin = (event) => {
     if (employeeData != null) {
         if (employeeData.password == passwordInput) {
             // success
+            document.getElementById('footer').classList.remove('abs-btm') // another bandage fix for the footer :(
             RedirectToIndex(employeeData, reportData)
            
             // fire methods to display the index view of the NCR reports.

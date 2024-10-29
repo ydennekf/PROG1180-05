@@ -91,15 +91,18 @@ export function validateQualityAssuranceForm(updating=false, report=undefined){
 
     if(data.itemName.value === ""){
         data.itemName.ariaInvalid = true;
+        errors.push('txt-item-name',"item-name-error", "Please submit the name of the supplier")
     }
 
     if(data.supplier.value === ""){
         data.ncrNumber.ariaInvalid = true;
+        errors.push('txt-supplier',"supplier-error", "Please submit the name of the supplier")
     }
 
   
     if(data.defectDescription.value === ""){
         data.defectDescription.ariaInvalid = true;
+        errors.push('txt-item-defect',"item-defect-error", "Please submit a description of the problem")
     }   
     return errors
 
@@ -169,6 +172,11 @@ function validateNumberInputs(errorList){
     if(isNaN(validProdNum) || validProdNum < 0){
         data.prodNumber.ariaInvalid = true;
         errorList.push('txt-prod-number', 'prod-number-error', "Please submit a positive number.")
+    }
+
+    if(validQuantityDef > validQuantityRec){
+        data.quantityDefective.ariaInvalid = true;
+        errorList.push('txt-quantity-defective', 'quantity-defective-error', "The defective amount cannot be greater than the received amount.")
     }
 }
 

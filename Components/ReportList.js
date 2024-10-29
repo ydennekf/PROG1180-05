@@ -55,6 +55,7 @@ export function ReportList(targetID, user, Reports, page = 1){
     
     document.getElementById('create-report-btn').style.display = 'block';
     document.getElementById('report-search').style.display = 'block';
+    document.getElementById('lbl-search').style.display = "inline";
 }
 
 

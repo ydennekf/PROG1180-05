@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Crossfire - NCR</title>
+        
+        
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?_cacheOverride=1730218996664"><link rel="stylesheet" href="http://127.0.0.1:5501/styles.css?_cacheOverride=1730218996664"></head>
+    <body>
+    <nav id="navbar" aria-label="main navigation">
+    
+        <ul class="nav-list">
+            <li>
+                <img id="crossfire-logo" class="logo" src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo">
+            </li>
+            <li>
+                <div id="bread-crumbs">
+        <ul>
+            <li><a class="bread-crumb" data-view-id="0" href="#">List</a></li><li><a aria-current="page" class="bread-crumb selected-view" data-view-id="1" href="#">Edit</a></li>
+        </ul>
+    </div>
+            </li>
+            <li id="new-report-container" class="new-report-container">
+                <button id="create-report-btn" aria-label="create New Report" tabindex="1" style="display: none;">New Report</button>
+            </li>
+            <li id="search-container" class="search-container">
+                    
+                    
+                    <input type="text" id="report-search" placeholder="search ncr reports ..." aria-label="search-description" aria-autocomplete="list" tabindex="1" style="display: none;" class="ui-autocomplete-input" autocomplete="off">
+                        <label for="report-search" style="display: none;" id="lbl-search">Find a report</label>
+                    
+            </li>
+            <li class="user-info">
+                <span id="user-info">
+                    <span id="user-name-label">Logged in as: <strong id="user-name">jdoe</strong></span>
+                    <span id="user-department">- admin</span>
+                </span>
+            </li>
+            
+            
+        </ul>
+        
+    </nav>
+    
+    
+    <main id="root" class="ncr-view">
+        <form id="ncr-create-form">
+            
+            <div class="grid">
+    
+                <div class="head">
+                    <div class="box">                        
+                        <label id="lbl-ncr-doc-no">Document No.:</label>
+                        <p>OPS-00011</p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-doc-title">Document Title:</label>
+                        <p>Non-Conformance Report</p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-doc-qa"></label>
+                        <p>Quality Assurance <br>Section<br></p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-doc-auth">Document Author:</label>
+                        <p>L. Nicholls</p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-doc-date">Document Date:</label>
+                        <p>August 12, 2023</p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-approve">Approved By:</label>
+                        <p>L. Pentland, Operations Manager</p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-rev-date">Revision Date:</label>
+                        <p>July 14, 2020</p>
+                    </div>
+    
+                    <div class="box">
+                        <label id="lbl-ncr-rev-no">Revision No:</label>
+                        <p>013</p>
+                    </div>
+                </div>
+                
+    
+                <div class="main1">
+                    <div class="box1">
+                        <label class="required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label><br>
+                        <input readonly="" aria-errormessage="ncr-number-error" name="ncr-number" required="" type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number" value="2024-002">
+                        <label id="ncr-number-error" class="error-label"></label>
+                    </div>
+                    
+                    <div class="box1">
+                        <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label><br>
+                        <input aria-errormessage="prod-number-error" name="prod-number" required="" type="number" aria-describedby="lbl-prod-number" id="txt-prod-number" value="10001">
+                        <label id="prod-number-error" class="error-label"></label>
+                    </div>
+                    
+                    <div class="box1">
+                        <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label><br>
+                        <input aria-errormessage="sales-number-error" name="sales-number" required="" type="number" aria-describedby="lbl-sales-number" id="txt-sales-number" value="101">
+                        <label id="sales-number-error" class="error-label"></label>
+                    </div>
+                    
+                    <div class="box1">
+                        <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label><br>
+                        <input aria-errormessage="quantity-received-error" name="quantity-received" required="" type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received" value="100">
+                        <label id="quantity-received-error" class="error-label"></label>
+                    </div>
+                    
+                    <div class="box1">
+                        <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label><br>
+                        <input aria-errormessage="quantity-defective-error" name="quantity-defective" required="" type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective" value="1">
+                        <label id="quantity-defective-error" class="error-label"></label>
+                    </div>
+    
+                    <div class="box1 checkbox">
+                        
+        <label class="" id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
+        <input name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" checked="">
+    
+                    </div>
+                    
+                    <div class="box1 checkbox">
+                        
+        <label class="" id="lbl-supplier-or-rec" for="chk-supplier-or-rec">Supplier or Rec-Insp</label>
+        <input name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="checkbox" id="chk-supplier-or-rec" checked="">
+    
+                    </div>
+                    
+                    <div class="box1 checkbox">
+                        
+        <label class="" id="lbl-production-order" for="chk-production-order">WIP (Production Order)</label>
+        <input name="production-order" aria-describedby="lbl-production-order" type="checkbox" id="chk-production-order" checked="">
+    
+                    </div>
+    
+                    <div class="box1 checkbox">
+                    
+        <label class="" id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>
+        <input name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required">
+    
+                    </div>
+                </div> 
+    
+    
+                
+                <div class="main2">                    
+                    <div class="box2">
+                        <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
+                        <input aria-errormessage="supplier-error" name="supplier-name" required="" type="text" aria-describedby="lbl-supplier" id="txt-supplier" value="Trampoline inc">
+                        <label id="supplier-error" class="error-label"></label>
+                    </div>
+    
+                    <div class="box2">
+                        <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP No</label>
+                        <input aria-errormessage="sap-number-error" name="sap-number" required="" type="number" aria-describedby="lbl-sap-number" id="txt-sap-number" value="1">
+                        <label id="sap-number-error" class="error-label"></label>
+                    </div>
+    
+                    <div class="box2">
+                        <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
+                        <input name="item-name" type="text" required="" id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name" value="Trampoline">
+                        <label id="item-name-error" class="error-label"></label>
+                    </div>
+                    
+                    <div class="box2">
+                        <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
+                        <textarea required="" aria-errormessage="item-defect-error" aria-describedby="lbl-item-defect" id="txt-item-defect">The trampoline is missing 3 of its poles.</textarea>
+                        <label id="item-defect-error" class="error-label"></label>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="foot">
+                    
+                         
+                   
+                        <button name="cancel-button" id="btn-cancel"> Cancel </button>            
+    
+                        <button name="QA-button" id="btn-QA-ncr"> QA </button>
+                
+                    
+                        <button name="engineer-button" id="btn-engineer"> Engineering </button>
+                   
+                   
+                         <button name="files-button" id="btn-files"> Files </button>
+                   
+                  
+                         <button name="export-button" id="btn-export"> Export </button>
+    
+                         
+                                     
+                        <button name="submit-report" id="btn-submit-ncr">Save Report</button>
+                  
+                </div> 
+    
+        </form>
+    </main>
+    
+    <div aria-labelledby="errorPanel" id="errorPanel" role="alert">
+        <!-- Error content here -->
+    </div>
+    
+    
+    <footer id="footer" class="">
+        
+        <p>© 2024 Crossfire. All rights reserved.</p>
+    
+        <button id="accessibility-toggle" aria-label="Open-Accesibility-Menu">Accessibility</button>
+        <div id="accessibility-menu">
+    
+        </div>
+        
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="module" src="app.js"></script>
+    <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body>
+</html>

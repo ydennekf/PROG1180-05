@@ -204,6 +204,7 @@ export function qualityAssuranceForm(targetID=null,
     // removing search bar
     document.getElementById('create-report-btn').style.display = 'none';
     document.getElementById('report-search').style.display = 'none';
+    document.getElementById('lbl-search').style.display = "none";
     if(targetID) {
         document.getElementById(targetID).innerHTML = html;
     }

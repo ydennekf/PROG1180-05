@@ -14,8 +14,10 @@
     --color-black: #000;
     --color-red: red;
     --color-midblue:#2f6ba7;
-
+    --color-warning:#993333;
     --font-primary: 'Poppins', sans-serif;
+    --color-bread-crumb-after:black;
+    --color-login-input:#333
 
    
 }
@@ -45,6 +47,9 @@
     --color-black: #fff;
     --color-red: #ff4c4c;
     --color-midblue: #3d5a80;
+    --color-warning:#fff29e;
+    --color-bread-crumb-after:white;
+    --color-login-input:#fff;
 
   
 }
@@ -112,8 +117,20 @@ nav ul li button{
 }
 
 .search-container{
-    margin-top: 2vh;
     
+    display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  gap: 5px;
+  
+    
+}
+
+.search-container label{
+    color:white !important;
+    font-size:12px;
+    margin-left:5px;
 }
 .search-container input{
     max-width: 210px;
@@ -167,7 +184,7 @@ a.selected-view {
 
 #bread-crumbs ul li:after{
     content:" /";
-    color: black;
+    color: #acddf1;
 }
 /*Bread crumb stuff*/
 
@@ -355,10 +372,14 @@ h3{
 
 input[type="text"], input[type="password"] {
     font: 15px/24px 'Lato', Arial, sans-serif;
-    color: #333;
+    
     width: 100%;
     box-sizing: border-box;
     letter-spacing: 1px;
+}
+
+input[type="password"], #username{
+    color: var(--color-login-input);
 }
 
 /* New effect-16 animation */
@@ -395,7 +416,7 @@ input[type="text"], input[type="password"] {
     left: 0;
     width: 100%;
     top: 9px;
-    color: #aaa;
+    color: var(--color-login-input);
     transition: 0.3s ease;
     z-index: 1;
     letter-spacing: 0.5px;
@@ -406,7 +427,7 @@ input[type="text"], input[type="password"] {
 .has-content.effect-1 ~ label {
     top: -16px;
     font-size: 12px;
-    color: var(--color-secondary); /* Same green color as focus border */
+    color: var(--color-primary); /* Same green color as focus border */
     transition: 0.3s ease;
 }
 
@@ -473,12 +494,12 @@ footer {
     color: var( --color-white);
     text-align: center; 
     padding: 15px 10px 0; 
-    position: fixed; 
-    bottom: 0;
+    /* position: fixed; 
+    bottom: 0; */
     width: 100%; 
     font-size: 14px; 
     font-family: 'Lato', sans-serif; 
-    margin-top:30px; /*This isn't responsive*/
+    margin-top:120px; /*This isn't responsive but its a bandage for today*/
 }
 
 
@@ -535,7 +556,7 @@ label{
 .login-btn {
     
     width: 100%;
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     color: var( --color-white);
     border: solid 1px var(--color-white);
     padding: 10px;
@@ -559,7 +580,7 @@ label{
 }
 
 .forgot-password a {
-    color: var(--color-secondary);
+    color: var(--color-login-input);
     text-decoration: none;
 }
 
@@ -783,7 +804,7 @@ label{
 @media screen and (min-width: 1440px){
    nav {
     justify-self: center;
-    width: 1440px;
+    width: 100%;
    }
 
    .user-info{
@@ -806,4 +827,27 @@ label{
     .foot #btn-cancel {
         margin-right: 400px;
     }
+}
+
+.error-label{
+    color:var(--color-warning) !important;
+    font-size:75%;
+    display:block;
+}
+
+.abs-btm{
+    position:absolute;
+    bottom:0;
+}
+
+#create-report-btn {
+    margin-top:2.35vh
+}
+
+#accessibilityControls chkbox label{
+    color:white !important;
+}
+
+.white{
+    color:white !important; /*ANOTHER BANDAGE FIX :D*/
 }

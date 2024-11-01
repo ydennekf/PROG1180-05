@@ -1,9 +1,11 @@
+/*Global Styles*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+ 
+/*Variables*/
 :root {
     --color-primary: #204d7a;
     --color-secondary: #5897c9;
@@ -18,24 +20,17 @@
     --font-primary: 'Poppins', sans-serif;
     --color-bread-crumb-after:black;
     --color-login-input:#333
-
+ 
    
 }
-
+ 
 /* Light Theme */
 [data-theme='light'] {
-    /* Lighter blue for table rows in light mode */
     table.ncr-list th {
         background-color: #3a699c;
     }
-
-  /*   table.ncr-list tr:nth-child(even) {
-        background-color: #4379b3;
-    } */
-
-    
 }
-
+ 
 /* Dark Theme */
 [data-theme='dark'] {
     --color-primary: #1b3b5e;
@@ -50,148 +45,118 @@
     --color-warning:#fff29e;
     --color-bread-crumb-after:white;
     --color-login-input:#fff;
-
-  
+ 
+ 
 }
-
+ 
+/* Body Styles */
 body {
     background-color: var( --color-background);
     color: var(--color-black);
     font-family: var(--font-primary);
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
     transition: all 0.3s ease-in-out;
 }
-
+ 
 /* Nav Bar */
-
-
-
-nav span{
-    font-size: 10px;
-   
-}
-
-
-
-nav .logo {
-    height: 7vh; 
-    width: auto;
-}
-
 nav {
-     
     height: 8vh;
     margin-bottom: 20px;
     color: var(--color-white);
-    background-color: var( --color-primary); 
+    background-color: var( --color-primary);
     position:relative; /*Bandage fix for breadcrumbs in header*/
 }
-
+ 
+nav .logo {
+    height: 7vh;
+}
+ 
+nav span{
+    font-size: 10px;
+}
+ 
 .nav-list {
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2.5fr 1.5fr;
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 2px;
 }
-
-
+ 
 nav ul li a {
     color: var( --color-white);
     text-decoration: none;
 }
-
+ 
 nav ul li:hover {
     text-decoration: underline;
 }
-
-
+ 
 nav ul li button{
     margin-top: 1.5vh;
     min-width: 100px;
 }
-
+ 
 .new-report-container{
     justify-self: right;
 }
-
+ 
+/* Search Container */
 .search-container{
-    
-    display: flex;
-  flex-direction: row;
-  align-content: center;
+  display: flex;
   align-items: center;
-  gap: 5px;
-  
-    
+  gap: 5px;  
 }
-
+ 
 .search-container label{
     color:white !important;
     font-size:12px;
-    margin-left:5px;
 }
+ 
 .search-container input{
     max-width: 210px;
 }
-
-
+ 
+ 
 /*Bread crumb stuff*/
-
-#bread-crumbs{
-        
+#bread-crumbs{    
    padding:2px;
 }
-
-
+ 
+#bread-crumbs a{
+    font-size:10px;
+ }
+ 
+ #bread-crumbs ul {
+    display: inline-flex;
+}
+ 
+.bread-crumb{
+    color:var(--color-white) !important;
+    text-decoration:none !important;
+}
+ 
+#bread-crumbs ul li{
+    margin-left:4px;
+    list-style-type: none;
+}
+ 
 a.selected-view {
     color:var(--color-white) !important;
     text-decoration:none;
     cursor:not-allowed;
 }
-
-#bread-crumbs a{
-   font-size:10px;
-}
-
-#bread-crumbs ul {
-    display: inline-flex;
-}
-
-.bread-crumb{
-    color:var(--color-white) !important;
-    text-decoration:none !important;
-}
-
+ 
 #bread-crumbs ul li:first-child{
     margin-left:0;
 }
-
-#bread-crumbs ul li:last-child:after{
-    content:""
-}
-
-#bread-crumbs ul li{
-    margin-left:4px;
-    list-style-type: none;
-    
-}
-
-#bread-crumbs ul li:after{
-    content:" /"
-}
-
+ 
 #bread-crumbs ul li:after{
     content:" /";
     color: #acddf1;
 }
-/*Bread crumb stuff*/
-
-
+ 
+ 
+ 
 /* Main content */
-
-
 main.ncr-view {
     max-width: 1200px;
     margin: 0 auto;
@@ -200,84 +165,74 @@ main.ncr-view {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
-
-/* button:hover {
-    background-color: var(--color-secondary);
-}
-
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: var(--color-secondary);
-    color:var( --color-white);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-} */
-
+ 
+ 
 /* NCR Index View */
-
+ 
 table.ncr-list {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0px;
 }
-
-table.ncr-list th, 
+ 
+table.ncr-list th,
 table.ncr-list td {
     padding: 5px 5px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
+ 
 table.ncr-list th {
-    background-color: #1b3b5e;
+    background-color: var(--color-primary);
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;
 }
-
+ 
 table.ncr-list tr:nth-child(even) {
     background-color: var(--color-form);
 }
-
+ 
 table.ncr-list tr:hover {
     background-color: var(--color-secondary);
 }
-
+ 
+ 
+/* NCR Index View Links */
+ 
 table.ncr-list a {
     color: var( --color-white);
     text-decoration: none;
     margin-right: 10px;
 }
-
+ 
 table.ncr-list a:hover {
     text-decoration: underline;
 }
-
+ 
+ 
+ 
+/* Index View Table Buttons */
 .index-view-table-buttons {
     display: inline-flex;
-    
 }
-
-
-
-.index-view-table-buttons button { 
+ 
+.index-view-table-buttons button {
     margin: 5px;
     border: 2px solid var(--color-white);
 }
-
+ 
+ 
+/* Pagination Container */
 .pagination-container {
-    align-items: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5px;
     margin-bottom: 70px;
-    
 }
-
+ 
+ 
 /* Form Styles */
 .login-form {
     max-width: 400px;
@@ -287,15 +242,15 @@ table.ncr-list a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
+ 
 .login-logo {
     display: block;
     justify-self: center;
-    height: 8vh; 
+    height: 8vh;
     width: auto;
     padding-bottom: 2vh;
 }
-
+ 
 /* Search Form */
 .search-record {
     display: flex;
@@ -303,85 +258,86 @@ table.ncr-list a:hover {
     gap: 10px;
     margin-bottom: 20px;
 }
-
+ 
 input[type="search"] {
     position: relative;
-    padding: 10px;
-    padding-left: 35px;
+    padding: 10px 10px 10px 35px; /* Combined padding */
     width: 200px;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     transition: border-color 0.3s ease;
 }
-
+ 
 input[type="search"]::before {
     content: '';
     position: absolute;
     left: 10px;
     top: 50%;
-    transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) rotate(-45deg);
     width: 15px;
     height: 15px;
     border: 2px solid #888;
     border-radius: 50%;
     border-right: none;
     border-bottom: none;
-    transform: rotate(-45deg);
 }
-
+ 
 input[type="search"]:focus {
     border-color: #888;
 }
-
+ 
+/* Buttons */
 button {
     padding: 10px 15px;
     font-size: 12px;
     cursor: pointer;
     background-color: var(--color-primary);
-    color: var( --color-white);
+    color: var(--color-white);
     border: solid 1px var(--color-white);
     border-radius: 4px;
     transition: background-color 0.3s ease;
     max-width: 150px;
 }
-
+ 
 button:hover {
     background-color: var(--color-secondary);
 }
-
-h1{
+ 
+/* Headings */
+h1 {
     margin-top: 0;
     text-align: center;
-    position: relative; 
 }
-
+ 
 h2 {
     text-align: center;
     color: var(--color-secondary);
 }
-
-h3{
+ 
+h3 {
     font-family: "Montserrat", cursive;
     font-weight: 400;
-    /* color: var(--color-secondary); */
     font-size: 35px;
     text-align: center;
-    position: relative;
 }
-
-input[type="text"], input[type="password"] {
+ 
+/* Input Styles */
+input[type="text"],
+input[type="password"] {
     font: 15px/24px 'Lato', Arial, sans-serif;
-    
     width: 100%;
     box-sizing: border-box;
     letter-spacing: 1px;
 }
-
+ 
 input[type="password"], #username{
     color: var(--color-login-input);
 }
-
+/* =========================
+   Animation Styles (Global)
+   ========================= */
+ 
 /* New effect-16 animation */
 .effect-1 {
     border: 0;
@@ -391,7 +347,7 @@ input[type="password"], #username{
     width: 100%;
     font-size: 16px;
 }
-
+ 
 /* Focus border animation */
 .effect-1 ~ .focus-border {
     position: absolute;
@@ -399,17 +355,17 @@ input[type="password"], #username{
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-secondary); 
+    background-color: var(--color-secondary);
     transition: width 0.4s ease;
 }
-
+ 
 /* When input is focused or contains content, expand the focus border */
 .effect-1:focus ~ .focus-border,
 .has-content.effect-1 ~ .focus-border {
     width: 100%;
     transition: width 0.4s ease;
 }
-
+ 
 /* Label animation */
 .effect-1 ~ label {
     position: absolute;
@@ -421,7 +377,7 @@ input[type="password"], #username{
     z-index: 1;
     letter-spacing: 0.5px;
 }
-
+ 
 /* When input is focused or contains content, move the label */
 .effect-1:focus ~ label,
 .has-content.effect-1 ~ label {
@@ -430,17 +386,21 @@ input[type="password"], #username{
     color: var(--color-primary); /* Same green color as focus border */
     transition: 0.3s ease;
 }
-
+ 
+/* =========================
+   Input and Checkbox Styles
+   ========================= */
+ 
 /* Input wrapper to handle relative positioning */
 .input-wrapper {
     position: relative;
     margin-bottom: 30px; /* Spacing between the input fields */
 }
-
+ 
 input:focus {
     outline: none;
 }
-
+ 
 /* Custom Checkbox Style */
 input[type="checkbox"] {
     border: solid 1px var(--color-offblack);
@@ -452,11 +412,13 @@ input[type="checkbox"] {
     appearance: none;
     cursor: pointer;
 }
-
+ 
 input[type="checkbox"]:checked{
-    background-color: #334b63 
+    background-color: #334b63
 }
-
+ 
+/* Checkbox icon */
+ 
 input[type="checkbox"]::before {
     content: '';
     position: absolute;
@@ -469,12 +431,13 @@ input[type="checkbox"]::before {
     border-top: none ;
     transform: rotate(45deg) scale(1);
 }
-
+ 
 input[type="checkbox"]:checked:before{
     border-color: var( --color-white);
     animation: checkAnim .5s ease;
 }
-
+ 
+/* Checkbox label container */
 .chkBox{
     display: flex;
     justify-content: center;
@@ -482,37 +445,40 @@ input[type="checkbox"]:checked:before{
     gap: .5rem;
     margin-bottom: 1rem;
     color:inherit;
-    
+   
 }
-
+ 
 .chkBox label{
     color: var(--color-secondary);
 }
-
+ 
+/* Footer Styling */
+ 
 footer {
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary);
     color: var( --color-white);
-    text-align: center; 
-    padding: 15px 10px 0; 
-    /* position: fixed; 
+    text-align: center;
+    padding: 15px 10px 0;
+    /* position: fixed;
     bottom: 0; */
-    width: 100%; 
-    font-size: 14px; 
-    font-family: 'Lato', sans-serif; 
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
     margin-top:120px; /*This isn't responsive but its a bandage for today*/
 }
-
-
-
+ 
+/* General Label Styling */
+ 
 label{
     color: var(--color-black);
     font-size: 1.1rem;
     user-select: none;
 }
-
-
-
-/* Language Select, Custom dropdown */
+ 
+/* =========================
+   Dropdown & Select Styling
+   ========================= */
+ 
 .select-container {
     display: flex;
     justify-content: center;
@@ -520,41 +486,45 @@ label{
     min-width: 200px;
     position: relative;
 }
-
+ 
 .select-container label {
     margin-right: 10px;
     color: #fff;
 }
-
+ 
 .select-box {
     border: 1px solid #ccc
     ;
     appearance: none;
     padding: 5px 10px;
-    width: auto; 
+    width: auto;
     color: #173451;
     background-color: #f1f1f1;
     border-radius: 5px;
     font-family: "Montserrat", sans-serif;
 }
-
+ 
 .select-box:focus {
     outline: none;
     border-color: #007bff;
 }
-
+ 
+/* =========================
+   Login Form Styles
+   ========================= */
+ 
 .remember-me {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-
+ 
 .remember-me input {
     margin-right: 10px;
 }
-
+ 
 .login-btn {
-    
+   
     width: 100%;
     background-color: var(--color-primary);
     color: var( --color-white);
@@ -569,79 +539,84 @@ label{
     display: flex;
     justify-content: center;
 }
-
+ 
 .login-btn:hover {
     background-color: #407bbf;
 }
-
+ 
 .forgot-password {
     text-align: center;
     margin-top: 10px;
 }
-
+ 
 .forgot-password a {
     color: var(--color-login-input);
     text-decoration: none;
 }
-
+ 
 .forgot-password a:hover {
     text-decoration: underline;
 }
-
+ 
+/* =========================
+   Animations (Global)
+   ========================= */
+ 
 @keyframes checkAnim {
     from {
         transform: rotate(45deg) scale(0);
     }
 }
-
-
-
-
-
+ 
+/* =========================
+   Quality Assurance (QA) Form Layout
+   ========================= */
+ 
+ 
 /* This section is for layout of the Quality Assurance input form*/
 .grid {
-	list-style: none;
+    list-style: none;
     display: grid;
-	grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(11, 1fr) ;
     /* grid-auto-rows: minmax(10px, auto); */
     background-color: var(--color-primary);
 }
-
-
-.head { 
+ 
+ 
+.head {
     display: grid;
     grid-column: 1/7;
     grid-row: 1/3;
     background-color: var(--color-primary);
     padding: 2px;
     gap: 2px;
-    text-align: center; 
+    text-align: center;
 }
-
+ 
 .box{
     grid-auto-columns: repeat(8, 1fr);
     text-align: left;
     background-color: var(--color-secondary);
     padding: 5px;
 }
-
+ 
 .box:first-child {
     grid-column: 1/2;
 }
-
+ 
 .box:nth-child(2) {
     grid-column: 2/8;
 }
-
+ 
 .box:nth-child(3) {
     grid-column: 8/9;
 }
-
+ 
 .box:nth-child(6) {
     grid-column: 3/7;
 }
-
+ 
 .box label{
     font-size: small;
 }
@@ -650,7 +625,10 @@ label{
     justify-content: center;
     text-align: center;
 }
-.main1 { 
+ 
+/* Main content area for QA form */
+ 
+.main1 {
     display: grid;
     grid-column: 1/3;
     grid-row: 3/12;
@@ -659,38 +637,43 @@ label{
     border: 0 0 0 2px;
     border-color: var(--color-primary);
 }
-
-
+ 
+/* Box1 styling in QA form */
+ 
 .box1 {
-    
+   
     background-color: var(--color-form);
 }
 .box1 label{
     width:200px;
 }
-
+ 
 .box1 input {
-    
+   
     height: 30px;
     width: 150px;
 }
-
+ 
+/* Checkbox in QA form */
+ 
 .checkbox {
     display: flex;
-    
+   
     align-items: center;
-    
+   
 }
 .checkbox input {
     width: 30px;
     background-color: var(--color-secondary);
 }
-
+ 
+/* Box2 styling in QA form */
+ 
 .box2 input {
     height:30px;
 }
-
-.main2 { 
+ 
+.main2 {
     /* grid-area: main3;  */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -701,27 +684,27 @@ label{
     column-gap: 2px;
     padding: 10px;
 }
-
+ 
 .box2 label{
     display: block;
     padding: 3px 0;
 }
-
+ 
 .box2:first-child {
     grid-column: 1/5;
     grid-row: 1/2;
 }
-
+ 
 .box2:nth-child(2) {
     grid-column: 1/2;
     grid-row: 2/3;
 }
-
+ 
 .box2:nth-child(3) {
     grid-column: 2/5;
     grid-row: 2/3;
 }
-
+ 
 .box2:nth-child(4) {
     grid-column: 1/5;
     grid-row: 3/10;
@@ -729,59 +712,62 @@ label{
 .box2:nth-child(4) textarea{
     margin: auto;
     display: block;
-
+ 
     height: 90%;
     width: 100%;
 }
-
-.foot { 
+ 
+/* Footer area in QA form */
+.foot {
     /* grid-area: foot;  */
     /* display: grid;
     grid-template-columns: repeat(5, 1fr); */
-    
+   
     /* background-color: var(--color-primary); */
-
+ 
     padding: 2px;
 }
-
+ 
 .foot #btn-cancel {
     margin-right: 200px;
 }
-
-
-
+ 
+ 
+ 
 .box3 {
     display:block;
     /* background-color: var(--color-secondary); */
     /* grid-column: 1/9; */
 }
-
+ 
 /* .box3:nth-child(1) {
     grid-column: 8/9;
 }
 .box3:nth-child(2) {
     grid-column: 1/8;
 } */
-
+ 
 /* .box3:first-child {
     grid-column: 8/9;
 }
-
+ 
 .box3:nth-child(2) {
-    grid-column: 1/8; 
+    grid-column: 1/8;
     background-color: var(--color-secondary);
 }
-
+ 
 .box3:first-child button {
-    
+   
     width: 125px;
     height: 40px;
     text-align: center;
 } */
-
-
-/* Media Queries */
-
+ 
+ 
+/* =========================
+   Media Queries
+   ========================= */
+ 
 @media screen and (min-width: 1024px) {
  
     nav .logo{
@@ -790,23 +776,23 @@ label{
   .nav-list{
     grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;
   }
-
+ 
   #bread-crumbs a{
     font-size: 14px;
   }
-
-
+ 
+ 
   nav span {
     font-size: 14px;
   }
 }
-
+ 
 @media screen and (min-width: 1440px){
    nav {
     justify-self: center;
     width: 100%;
    }
-
+ 
    .user-info{
     justify-self: end;
    }
@@ -814,40 +800,58 @@ label{
     margin-right: 500px;
 }
 }
-
-
-
-
+ 
+ 
+/* =========================
+   Responsive Layout Adjustments (Medium Screens)
+   ========================= */
+ 
 @media screen and (min-width:768px) and (max-width:1024px){
     footer{
         margin-top:30px;
         position:static;
     }
-
+ 
     .foot #btn-cancel {
         margin-right: 400px;
     }
 }
-
+ 
+/* =========================
+   Error Label Styling
+   ========================= */
+ 
 .error-label{
     color:var(--color-warning) !important;
     font-size:75%;
     display:block;
 }
-
+ 
+/* =========================
+   Positioning Utilities
+   ========================= */
+ 
 .abs-btm{
     position:absolute;
     bottom:0;
 }
-
+ 
+/* =========================
+   Button and Accessibility Controls
+   ========================= */
+ 
 #create-report-btn {
     margin-top:2.35vh
 }
-
+ 
 #accessibilityControls chkbox label{
     color:white !important;
 }
-
+ 
+/* =========================
+   Utility Class for White Text
+   ========================= */
+   
 .white{
     color:white !important; /*ANOTHER BANDAGE FIX :D*/
 }

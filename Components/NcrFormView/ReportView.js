@@ -24,7 +24,7 @@ export function ReportView(report){
             purchaseReadOnly === true;
             exportReadOnly === true;
 
-            $( "#accordion" ).accordion("option", "active", 0)
+            $( "#accordion" ).accordion({ active: 0})
         }
 
         if(app.employee.department === "engineering"){
@@ -33,7 +33,7 @@ export function ReportView(report){
             purchaseReadOnly === true;
             exportReadOnly === true;
 
-            $( "#accordion" ).accordion( "option", "active", 1)
+            $( "#accordion" ).accordion({ active: 1})
         }
         if(app.employee.department === "sales"){
             QAReadOnly === true;
@@ -41,7 +41,7 @@ export function ReportView(report){
             purchaseReadOnly === false;
             exportReadOnly === true;
 
-            $( "#accordion" ).accordion( "option", "active", 2)
+            $( "#accordion" ).accordion({ active: 2})
         }
         if(app.employee.department === "admin"){
              QAReadOnly === false;
@@ -49,7 +49,7 @@ export function ReportView(report){
             purchaseReadOnly === false;
             exportReadOnly === false;
 
-            $( "#accordion" ).accordion( "option", "active", 0)
+            $( "#accordion" ).accordion({ active: 0})
         }
 
 
@@ -168,7 +168,7 @@ export function ReportView(report){
                 <div class="engi-left-container">
                     
                     
-                        <H3>Review by CF Engineering</H3>
+                        <label>Review by CF Engineering</label>
                         
                         <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
                         <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
@@ -232,14 +232,14 @@ export function ReportView(report){
                             <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
                             <label id="Engineering-disposition-error" class="error-label"></label>
                         </div>
-                   
+                   </div>
             </div>
         
     <h2>Purchasing</h2>
-        <div>
+        
             <div class="purchasing-inputs">
                 <div class="purchasing-left-container">
-                    <h3>Purchasing's Preliminary Decision</h3>
+                    <label>Purchasing's Preliminary Decision</label>
                     <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label>
                         <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
                         ${report.engineeringReview === "Rework"? 'checked' : ''}>
@@ -262,13 +262,15 @@ export function ReportView(report){
                 
                 </div>
                 <div class="purchasing-right-container">
-                
+                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition">Disposition</label>
+                            <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
+                            <label id="Engineering-disposition-error" class="error-label"></label>
                 </div>     
             </div>
-        </div>
+        
     <h2>Export</h2>
         <div>
-        
+            <p>placeholder content</p>
         </div>
         
 </div>
@@ -278,7 +280,7 @@ export function ReportView(report){
     
     `;
 
-    $( function() {
+    $(document).ready( function() {
         $( "#accordion" ).accordion({
             collapsible: true
         });

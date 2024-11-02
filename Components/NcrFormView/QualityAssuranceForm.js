@@ -29,7 +29,7 @@ export function qualityAssuranceForm(targetID=null,
 
                     <div class= "box">
                         <label id="lbl-ncr-doc-auth">Document Author:</label>
-                        <p>L. Nicholls</p>
+                        <p>J. Snow</p>
                     </div>
 
                     <div class= "box">
@@ -39,7 +39,7 @@ export function qualityAssuranceForm(targetID=null,
 
                     <div class= "box">
                         <label id="lbl-ncr-approve">Approved By:</label>
-                        <p>L. Pentland, Operations Manager</p>
+                        <p>W. Green, Operations Manager</p>
                     </div>
 
                     <div class= "box">

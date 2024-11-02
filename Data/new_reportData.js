@@ -41,7 +41,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Bike",
-        "sapNumber": 0
+        "sapNumber": 0,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -61,7 +71,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Trampoline",
-        "sapNumber": 1
+        "sapNumber": 1,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -81,7 +101,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Generator",
-        "sapNumber": 2
+        "sapNumber": 2,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -101,7 +131,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Fishing Rods",
-        "sapNumber": 3
+        "sapNumber": 3,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -121,7 +161,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Tent",
-        "sapNumber": 4
+        "sapNumber": 4,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -141,7 +191,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Mirror",
-        "sapNumber": 5
+        "sapNumber": 5,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -161,7 +221,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Chair",
-        "sapNumber": 6
+        "sapNumber": 6,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -181,7 +251,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Desk",
-        "sapNumber": 7
+        "sapNumber": 7,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024009,
@@ -200,7 +280,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Pipe",
-        "sapNumber": 8
+        "sapNumber": 8,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024010,
@@ -219,7 +309,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Battery",
-        "sapNumber": 9
+        "sapNumber": 9,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024011,
@@ -238,7 +338,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Picture Frame",
-        "sapNumber": 10
+        "sapNumber": 10,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024012,
@@ -257,7 +367,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Cushion",
-        "sapNumber": 11
+        "sapNumber": 11,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -277,7 +397,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Sports Net",
-        "sapNumber": 12
+        "sapNumber": 12,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024014,
@@ -296,7 +426,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Lamp Shade",
-        "sapNumber": 13
+        "sapNumber": 13,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024015,
@@ -315,7 +455,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Laptop Charger",
-        "sapNumber": 14
+        "sapNumber": 14,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024016,
@@ -334,7 +484,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Speakers",
-        "sapNumber": 15
+        "sapNumber": 15,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024017,
@@ -353,7 +513,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Table",
-        "sapNumber": 16
+        "sapNumber": 16,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024018,
@@ -372,7 +542,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Electric Fan",
-        "sapNumber": 17
+        "sapNumber": 17,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024019,
@@ -391,7 +571,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Wine Glass",
-        "sapNumber": 18
+        "sapNumber": 18,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024020,
@@ -410,7 +600,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Water Bottle",
-        "sapNumber": 19
+        "sapNumber": 19,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024021,
@@ -429,7 +629,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Jacket",
-        "sapNumber": 20
+        "sapNumber": 20,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024022,
@@ -448,7 +658,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Car Paint",
-        "sapNumber": 21
+        "sapNumber": 21,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -468,7 +688,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Backpack",
-        "sapNumber": 22
+        "sapNumber": 22,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024024,
@@ -487,7 +717,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Tent",
-        "sapNumber": 23
+        "sapNumber": 23,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024025,
@@ -506,7 +746,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Monitor",
-        "sapNumber": 24
+        "sapNumber": 24,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024026,
@@ -525,7 +775,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Bed Frame",
-        "sapNumber": 25
+        "sapNumber": 25,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024027,
@@ -544,7 +804,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Electric Fan",
-        "sapNumber": 26
+        "sapNumber": 26,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024028,
@@ -563,7 +833,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Ceramic Mug",
-        "sapNumber": 27
+        "sapNumber": 27,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024029,
@@ -582,7 +862,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Fishing Line",
-        "sapNumber": 28
+        "sapNumber": 28,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024030,
@@ -601,7 +891,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Bicycle Helmet",
-        "sapNumber": 29
+        "sapNumber": 29,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024031,
@@ -620,7 +920,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Water Cooler",
-        "sapNumber": 30
+        "sapNumber": 30,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024032,
@@ -639,7 +949,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Fabric",
-        "sapNumber": 31
+        "sapNumber": 31,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
 
     {
@@ -659,7 +979,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Tent Stakes",
-        "sapNumber": 32
+        "sapNumber": 32,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024034,
@@ -678,7 +1008,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Power Cord",
-        "sapNumber": 33
+        "sapNumber": 33,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024035,
@@ -697,7 +1037,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Water Bottle",
-        "sapNumber": 34
+        "sapNumber": 34,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024036,
@@ -716,7 +1066,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Fishing Net",
-        "sapNumber": 35
+        "sapNumber": 35,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024037,
@@ -735,7 +1095,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Generator",
-        "sapNumber": 36
+        "sapNumber": 36,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024038,
@@ -754,7 +1124,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Chair",
-        "sapNumber": 37
+        "sapNumber": 37,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024039,
@@ -773,7 +1153,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Bicycle Rim",
-        "sapNumber": 38
+        "sapNumber": 38,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024040,
@@ -792,7 +1182,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Water Jug",
-        "sapNumber": 39
+        "sapNumber": 39,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024041,
@@ -811,7 +1211,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Sunglasses",
-        "sapNumber": 40
+        "sapNumber": 40,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     },
     {
         "ncrNumber": 2024042,
@@ -830,7 +1240,17 @@ export let reportData = [
         "supplierOrRec": true,
         "productionOrder": true,
         "itemDescription": "Hammock",
-        "sapNumber": 41
+        "sapNumber": 41,
+        "engineeringReview": "Repair",
+        customerNotification: true,
+        drawingToUpdate: true,
+        origRevNum: 8,
+        NameOfEngineer: "Jack B. Skelly",
+        UpdatedRev: null,
+        RevisionDate: "july 4 2022",
+        engineeringSignoff: null,
+        Date: "Nov 1st 2024",
+        Disposition: "this is the work that was done for this item"
     }
 ]
 

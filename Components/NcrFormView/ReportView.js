@@ -4,24 +4,55 @@ import { generateNcrNumber } from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
 
 
-export function ReportView(report, viewIndex, role){
+export function ReportView(report){
     // take the employee's role to determine what sections are editable and what is read only
 
+    let QAReadOnly = false;
+    let engiReadOnly = false;
+    let purchaseReadOnly = false;
+    let exportReadOnly = false;
+
+
+
     let DisplayView = () => {
-        // takes the desired view and ensures that is open first.
-        if(role === "QA") return 0;
-        if(role === "engi")return 1;
-        if(role === "purchase")return 2;
-        if(role === "admin")return 0;
-        if(role === null)return 0;
+        // uses the app.employee to determine a role and sets appropriate sections to but readonly
 
 
-    }
+        if(app.employee.department === "QA"){
+            QAReadOnly === false;
+            engiReadOnly === true;
+            purchaseReadOnly === true;
+            exportReadOnly === true;
 
-    let ReadOnly = () => {
-        if(role === "QA") return 0;
-        if(role === "engi")return 1;
-        if(role === "purchase")return 2;
+            $( "#accordion" ).accordion("option", "active", 0)
+        }
+
+        if(app.employee.department === "engineering"){
+            QAReadOnly === true;
+            engiReadOnly === false;
+            purchaseReadOnly === true;
+            exportReadOnly === true;
+
+            $( "#accordion" ).accordion( "option", "active", 1)
+        }
+        if(app.employee.department === "sales"){
+            QAReadOnly === true;
+            engiReadOnly === true;
+            purchaseReadOnly === false;
+            exportReadOnly === true;
+
+            $( "#accordion" ).accordion( "option", "active", 2)
+        }
+        if(app.employee.department === "admin"){
+             QAReadOnly === false;
+            engiReadOnly === false;
+            purchaseReadOnly === false;
+            exportReadOnly === false;
+
+            $( "#accordion" ).accordion( "option", "active", 0)
+        }
+
+
     }
 
 
@@ -42,7 +73,8 @@ export function ReportView(report, viewIndex, role){
         <div><label>Revision No:</label><p>013</p></div>
     </div>
 
-</div>    
+</div>
+<form>    
 <div id="accordion">
     <h2>Quality Assurance</h2>
                    
@@ -58,42 +90,42 @@ export function ReportView(report, viewIndex, role){
                         
                         <li>
                             <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label><br>
-                            <input ${readonly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                             value="${safeTruthy(report?.prodNumber, '')}"/>
                             <label id="prod-number-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label><br>
-                            <input ${readonly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                             value="${safeTruthy(report?.salesNumber, '')}"/>
                             <label id="sales-number-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label><br>
-                            <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                             value="${safeTruthy(report?.qtyReceived, '')}"/>
                             <label id="quantity-received-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label><br>
-                            <input ${readonly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                             value="${safeTruthy(report?.qtyDefective, '')}"/>
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
                         <li>
                             <label id="lbl-supplier-or-rec" for="chk-supplier-or-rec">Supplier or Rec-Insp</label>
-                            <input ${readonly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="checkbox" id="chk-supplier-or-rec" 
-                            ${ checked 'checked' : ''}/>
+                            <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="checkbox" id="chk-supplier-or-rec" 
+                            ${ report.supplierOrRec? 'checked' : ''}/>
                         </li>
                         <li>
-                            <label class="${labelClass}" id="${labelID}" for="${inputID}">${labelContent}</label>
-                            <input ${readonly ? "disabled" : ''} name="${inputName}" aria-describedby="${labelID}" type="checkbox" id="${inputID}" 
-                               ${checked ? 'checked' : ''}/>
+                            <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
+                            <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
+                               ${report.nonConforming ? 'checked' : ''}/>
                         </li>
                         <li>
-                            <label class="${labelClass}" id="${labelID}" for="${inputID}">${labelContent}</label>
-                            <input ${readonly ? "disabled" : ''} name="${inputName}" aria-describedby="${labelID}" type="checkbox" id="${inputID}" 
-                                ${checked ? 'checked' : ''}/>
+                            <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>
+                            <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
+                                ${report.productionOrder ? 'checked' : ''}/>
                         </li>                    
                     </ul>
                         
@@ -103,20 +135,20 @@ export function ReportView(report, viewIndex, role){
                     <div>
                         <div>
                             <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
-                            <input ${readonly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                             value="${report?.supplierName || ''}"/>
                             <label id="supplier-error" class="error-label"></label>
                         </div>
                         <div>
                             <div>
                                 <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP No</label>
-                                <input ${readonly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
+                                <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                                 value="${safeTruthy(report?.sapNumber, '')}"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                             <div>
                                 <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
-                                <input ${readonly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
+                                <input ${QAReadOnly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
                                 value="${report?.itemName || ''}"/>
                                 <label id="item-name-error" class="error-label"></label>
                             </div>
@@ -124,7 +156,7 @@ export function ReportView(report, viewIndex, role){
                     </div>
                     <div>
                         <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
-                        <textarea ${readonly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
+                        <textarea ${QAReadOnly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
                 
@@ -135,10 +167,70 @@ export function ReportView(report, viewIndex, role){
             <div class="engineering-inputs">
                 <div class="engi-left-container">
                     
+                    
+                        <H3>Review by CF Engineering</H3>
+                        
+                        <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
+                        <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
+                        ${report.engineeringReview === "useAsIs"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <label for="rad-repair" id="lbl-repair">Repair</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
+                        ${report.engineeringReview === "Repair"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <label for="rad-rework" id="lbl-rework">Rework</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
+                        ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <label for="rad-scrap" id="lbl-scrap">Scrap</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
+                        ${report.engineeringReview === "Scrap"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
+             
+                        <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
+                        <input ${engiReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
+                        ${report.customerNotification ? 'checked' : ''}/>
+                    
                 
                 </div>
                 <div class="engi-right-container">
-                
+                        <div>
+                            <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
+                            <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
+                            ${report.drawingToUpdate ? 'checked' : ''}/>
+                            <div>
+                                <label class="required" for="txt-orig-rev-number" id="lbl-orig-rev-number">Orig Rev. Number</label>
+                                <input readonly aria-errormessage="orig-rev-number-error" name="orig-rev-number" required type="number" aria-describedby="lbl-orig-rev-number" id="txt-orig-rev-number"
+                                value="${report?.origRevNum || 1 }"/>
+                                <label id="sap-number-error" class="error-label"></label>
+                            </div>
+                            <div>
+                                <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
+                                <input readonly aria-errormessage="name-engineer-error" name="name-engineer" required type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
+                                value="${safeTruthy(report?.NameOfEngineer, app.employee.name)}"/>
+                                <label id="sap-number-error" class="error-label"></label>
+                            </div>
+                            <div>
+                                <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
+                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" required type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
+                                value="${safeTruthy(report?.UpdatedRev, '')}"/>
+                                <label id="updated-rev-error" class="error-label"></label>
+                            </div>
+                            <div>
+                                <label class="required" for="txt-revision-date" id="lbl-revision-date">Revision Date</label>
+                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" required type="datetime-local" aria-describedby="lbl-revision-date" id="txt-revision-date"
+                                value="${safeTruthy(report?.RevisionDate, Date.now())}"/>
+                                <label id="sap-number-error" class="error-label"></label>
+                            </div>
+                            
+                        <div>
+                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition">Disposition</label>
+                            <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
+                            <label id="Engineering-disposition-error" class="error-label"></label>
+                        </div>
                 </div>     
             </div>
         
@@ -160,6 +252,7 @@ export function ReportView(report, viewIndex, role){
         </div>
         
 </div>
+</form>
     
     
     
@@ -167,11 +260,11 @@ export function ReportView(report, viewIndex, role){
 
     $( function() {
         $( "#accordion" ).accordion({
-            collapsible: true,
-            active: DisplayView()
+            collapsible: true
         });
-    })
+    });
 
 // add event listeners
 document.getElementById("root").innerHTML = html;
+DisplayView();
 }

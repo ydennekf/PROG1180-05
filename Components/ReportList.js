@@ -2,7 +2,7 @@ import { mapComponents } from "./utils/utils.js"
 import { reportData } from "../Data/new_reportData.js";
 import { previewBindings, reportPreview } from "./ReportPreview.js"
 import { SearchBar } from "./NavBar.js";
-import { RecentReports } from "./RecentReports.js";
+
 
 
 

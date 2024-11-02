@@ -4,6 +4,7 @@ import { DetailsNcrView } from "../NcrFormView/DetailsNcrView.js";
 import '../../node_modules/popstate-direction/index.js'
 import { ReportList } from "../ReportList.js";
 import { app } from "../../AppState.js";
+import Index from "../Views/Index.js";
 
 
 
@@ -65,7 +66,8 @@ export function _HistoryContext(){
             // select a new report detail view ( we want this one to be the new path so the history
             // will lead to the proper report if the forward command is called from the index view again)
             this.flush();
-            this.push(s)
+            this.push(s);
+            bindBreadCrumbs()
         },
         goBack: function (idx){
                 // go back to the idx given.
@@ -126,7 +128,8 @@ function bindBreadCrumbs(){
 const viewMap = {
     'ModifyNcrView':ModifyNcrView,
     "DetailsNcrView":DetailsNcrView,
-    'ReportList':ReportList
+    'ReportList':ReportList,
+    "Index": Index
 }
 
 function breadCrumbText(historyState){
@@ -143,7 +146,7 @@ function breadCrumbText(historyState){
         case "DetailsNcrView":
             return "View";
 
-        case "ReportList":
+        case "ReportList", "Index":
             return "List"
     }
 }

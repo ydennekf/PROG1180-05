@@ -7,7 +7,7 @@ import { reportData } from "./../Data/new_reportData.js";
 import { ReportList } from "./ReportList.js";
 import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 
-export function RealNav(){
+export function NavBar(){
     const html = `
     <nav>
             <ul class='nav-list'>

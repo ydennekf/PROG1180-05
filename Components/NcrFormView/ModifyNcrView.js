@@ -55,9 +55,9 @@ export function ModifyNcrView(targetID, employee, report=null){ // HANDLES BOTH 
     `
 
 
-    document.getElementById('create-report-btn').style.display = 'none';
-    document.getElementById('report-search').style.display = 'none';
-    document.getElementById('lbl-search').style.display = "none";
+    // document.getElementById('create-report-btn').style.display = 'none';
+    // document.getElementById('report-search').style.display = 'none';
+    // document.getElementById('lbl-search').style.display = "none";
     document.getElementById(targetID).innerHTML = html;
     
     document.getElementById('ncr-create-form').addEventListener('submit', (e)=>{e.preventDefault()});

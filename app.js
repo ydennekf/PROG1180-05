@@ -14,11 +14,13 @@ import { initApp } from './AppState.js';
 import { ModifyNcrView } from './Components/NcrFormView/ModifyNcrView.js';
 import { app } from './AppState.js';
 import { AccessibilityPanel } from './Components/AccesibilityPanel.js';
-import { RealNav } from './Components/NavBar.js';
+import { NavBar } from './Components/NavBar.js';
+import Index from './Components/Views/Index.js';
 
 
 let RedirectToIndex = (employee, reports) => {
-    initApp(employee, ReportList, ['root', employee, reports, 1])
+    // initApp(employee, ReportList, ['root', employee, reports, 1])
+    initApp(employee, Index, [])
    
 }
 
@@ -71,7 +73,7 @@ export let handleLogin = (event) => {
 
 
 window.onload = () => {
-    RealNav();
+    NavBar();
     createLogin("root", handleLogin);
     AccessibilityPanel()
 }

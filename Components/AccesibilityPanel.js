@@ -4,7 +4,7 @@ import { append, injectOrReturn } from "./utils/utils.js"
 
 export let revealed = false;
 
-//swapListener()
+swapListener()
 function reveal(){
         revealed = !revealed;
         AccessibilityPanel()

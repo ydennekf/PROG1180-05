@@ -1,15 +1,21 @@
 import { app } from "../../AppState.js";
+import { mapComponents } from "../utils/utils.js";
+import { previewBindings, reportPreview } from "../ReportPreview.js";
+import { injectOrReturn } from "../utils/utils.js";
+import { redirectNewReport, redirectViewAllReports } from "../../redirection/redirect.js";
 
 export default function Index(){
 
 
     const html = `
         ${RoleIndexButtons()}
-
+        ${RecentReports()}
     `
     // Shows most recent and some buttons based on the logged in users role
 
     document.getElementById('root').innerHTML = html;
+    previewBindings()
+    indexButtonBindings()
     
 }
 
@@ -19,15 +25,20 @@ function RoleIndexButtons(){
     }
 
     switch(app.employee.department){
-        case "QA":
+        default: // This will be for QA I just need to figure out whaat each ones buttons will be
             return `
         <div>
-            <button>Create NCR</button>
-            <button>View NCRs</button>
+            <button id="create-report-btn">Create NCR</button>
+            <button id="view-reports">View NCRs</button>
         </div>`
     }
 
     
+}
+
+function indexButtonBindings(){
+    document.getElementById('view-reports').addEventListener('click', redirectViewAllReports)
+    document.getElementById('create-report-btn').addEventListener('click', redirectNewReport)
 }
 
 export function RecentReports(targetID = null){
@@ -36,7 +47,7 @@ export function RecentReports(targetID = null){
     <table>
     ${UnsortedHeader()}
         <tbody>
-        <tr><button>Recent Reports</button></tr>
+        <tr><h2>Recent Reports</h2></tr>
         ${mapComponents(recent, reportPreview)}
         </tbody>
     </table>

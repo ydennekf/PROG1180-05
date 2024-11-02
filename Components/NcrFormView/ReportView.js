@@ -24,7 +24,7 @@ export function ReportView(report){
             purchaseReadOnly === true;
             exportReadOnly === true;
 
-            $( "#accordion" ).accordion("option", "active", 0)
+            $( "#accordion" ).accordion({ active: 0})
         }
 
         if(app.employee.department === "engineering"){
@@ -33,7 +33,7 @@ export function ReportView(report){
             purchaseReadOnly === true;
             exportReadOnly === true;
 
-            $( "#accordion" ).accordion( "option", "active", 1)
+            $( "#accordion" ).accordion({ active: 1})
         }
         if(app.employee.department === "sales"){
             QAReadOnly === true;
@@ -41,7 +41,7 @@ export function ReportView(report){
             purchaseReadOnly === false;
             exportReadOnly === true;
 
-            $( "#accordion" ).accordion( "option", "active", 2)
+            $( "#accordion" ).accordion({ active: 2})
         }
         if(app.employee.department === "admin"){
              QAReadOnly === false;
@@ -49,7 +49,7 @@ export function ReportView(report){
             purchaseReadOnly === false;
             exportReadOnly === false;
 
-            $( "#accordion" ).accordion( "option", "active", 0)
+            $( "#accordion" ).accordion({ active: 0})
         }
 
 
@@ -60,12 +60,12 @@ export function ReportView(report){
     const html = `
 <h1 class="Report-view-header">Report Details</h1>
 <div class="iso-header">
-    <div class="iso-row">
+    <div class="iso-row col-3">
         <div><label>Document No.</label><p>OPS-00011</p></div>
         <div><label>Document Title:</label><p>Non-Conformance Report</p></div>
         <div><label>NCR No: ${report.ncrNumber}</label></div>
     </div>
-    <div class="iso-row">
+    <div class="iso-row col-5">
         <div><label>Document Author:</label><p>M. Hunt</p></div>
         <div><label>Document Date:</label><p>August 12, 2023</p></div>
         <div><label>Approved By:</label><p>J. Fish, Operations Manager</p></div>
@@ -139,7 +139,7 @@ export function ReportView(report){
                             value="${report?.supplierName || ''}"/>
                             <label id="supplier-error" class="error-label"></label>
                         </div>
-                        <div>
+                        <div class="col-2">
                             <div>
                                 <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP No</label>
                                 <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
@@ -168,45 +168,53 @@ export function ReportView(report){
                 <div class="engi-left-container">
                     
                     
-                        <H3>Review by CF Engineering</H3>
-                        
-                        <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
-                        <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
-                        ${report.engineeringReview === "useAsIs"? 'checked' : ''}>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
-                        
-                        <label for="rad-repair" id="lbl-repair">Repair</label>
-                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                        ${report.engineeringReview === "Repair"? 'checked' : ''}>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
-                        
-                        <label for="rad-rework" id="lbl-rework">Rework</label>
-                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                        ${report.engineeringReview === "Rework"? 'checked' : ''}>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
-                        
-                        <label for="rad-scrap" id="lbl-scrap">Scrap</label>
-                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                        ${report.engineeringReview === "Scrap"? 'checked' : ''}>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
-             
-                        <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
-                        <input ${engiReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
-                        ${report.customerNotification ? 'checked' : ''}/>
+                        <label>Review by CF Engineering</label>
+                        <ul>
                     
-                
-                </div>
-                <div class="engi-right-container">
-                        <div>
+                        <li>
+                            <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
+                            <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
+                            ${report.engineeringReview === "useAsIs"? 'checked' : ''}>
+                            <label id="engineering-review-radio-error" class="error-label"></label>
+                        </li>
+                        <li>
+                            <label for="rad-repair" id="lbl-repair">Repair</label>
+                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
+                            ${report.engineeringReview === "Repair"? 'checked' : ''}>
+                            <label id="engineering-review-radio-error" class="error-label"></label>
+                        </li>
+                        <li>
+                            <label for="rad-rework" id="lbl-rework">Rework</label>
+                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
+                            ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                            <label id="engineering-review-radio-error" class="error-label"></label>
+                        </li>
+                        <li>
+                            <label for="rad-scrap" id="lbl-scrap">Scrap</label>
+                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
+                            ${report.engineeringReview === "Scrap"? 'checked' : ''}>
+                            <label id="engineering-review-radio-error" class="error-label"></label>
+                        </li>
+                        <li>
+                            <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
+                            <input ${engiReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
+                            ${report.customerNotification ? 'checked' : ''}/>
+                        </li>
+                        <li>
                             <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
                             <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
                             ${report.drawingToUpdate ? 'checked' : ''}/>
-                            </div>
+                        </li>
+                </ul>
+
+                </div>
+                <div class="engi-right-container">
+                        <div class="col-2">
                             <div>
                                 <label class="required" for="txt-orig-rev-number" id="lbl-orig-rev-number">Orig Rev. Number</label>
                                 <input readonly aria-errormessage="orig-rev-number-error" name="orig-rev-number" required type="number" aria-describedby="lbl-orig-rev-number" id="txt-orig-rev-number"
                                 value="${report?.origRevNum || 1 }"/>
-                                <label id="sap-number-error" class="error-label"></label>
+                                <label id="orig-rev-number-error" class="error-label"></label>
                             </div>
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
@@ -214,6 +222,9 @@ export function ReportView(report){
                                 value="${safeTruthy(report?.NameOfEngineer, app.employee.name)}"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
+                        
+                        </div>
+                        <div class="col-2">
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" required type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
@@ -226,20 +237,21 @@ export function ReportView(report){
                                 value="${safeTruthy(report?.RevisionDate, Date.now())}"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
-                            
+                        </div>
+   
                         <div>
                             <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition">Disposition</label>
                             <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
                             <label id="Engineering-disposition-error" class="error-label"></label>
                         </div>
-                   
+                   </div>
             </div>
         
     <h2>Purchasing</h2>
-        <div>
+        
             <div class="purchasing-inputs">
                 <div class="purchasing-left-container">
-                    <h3>Purchasing's Preliminary Decision</h3>
+                    <label>Purchasing's Preliminary Decision</label>
                     <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label>
                         <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
                         ${report.engineeringReview === "Rework"? 'checked' : ''}>
@@ -262,13 +274,15 @@ export function ReportView(report){
                 
                 </div>
                 <div class="purchasing-right-container">
-                
+                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition">Disposition</label>
+                            <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
+                            <label id="Engineering-disposition-error" class="error-label"></label>
                 </div>     
             </div>
-        </div>
+        
     <h2>Export</h2>
         <div>
-        
+            <p>placeholder content</p>
         </div>
         
 </div>
@@ -278,7 +292,7 @@ export function ReportView(report){
     
     `;
 
-    $( function() {
+    $(document).ready( function() {
         $( "#accordion" ).accordion({
             collapsible: true
         });

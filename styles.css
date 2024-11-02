@@ -739,10 +739,58 @@ label{
     /* background-color: var(--color-secondary); */
     /* grid-column: 1/9; */
 }
+/* NEW NCR FORM SETUP */
+/* basic form layout */
 
-.qa-left-container {
+.quality-assurance-inputs, .engineering-inputs, .purchasing-inputs {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+.col-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.qa-right-container, .engi-right-container {
+    grid-template-rows: 1fr 3fr;
+}
+
+.qa-right-container label, .qa-right-container div:nth-child(2) textarea,
+.engi-right-container textarea{
+    width: 100%;
+}
+
+.qa-right-container textarea, .engi-right-container textarea {
+    min-height: 200px;
+}
+
+.qa-left-container li , .engi-left-container{
+    min-width: 200px;
+    width: 100%
+}
+/* NCR header */
+.iso-header{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
 
 }
+.iso-row {
+    min-height: 1.5vh;
+    justify-content: center;
+}
+.col-3 {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.col-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+
 
 
 /* Media Queries */

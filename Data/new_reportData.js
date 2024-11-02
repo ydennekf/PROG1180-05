@@ -51,7 +51,16 @@ export let reportData = [
         RevisionDate: "july 4 2022",
         engineeringSignoff: null,
         Date: "Nov 1st 2024",
-        Disposition: "this is the work that was done for this item"
+        Disposition: "this is the work that was done for this item",
+        purchaseDecision: "Rework",
+        CarRaised: true,
+        CarNum: 100,
+        FollowReq: false,
+        followUpType: "phone",
+        followUpDate: "march 8 2025",
+        operationManager: "J B Goode",
+        purchaseDate: "Nov 10 2024"
+
     },
 
     {

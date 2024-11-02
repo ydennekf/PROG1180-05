@@ -3,6 +3,7 @@ import { DetailsNcrView } from "./NcrFormView/DetailsNcrView.js";
 import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 
 import { app } from "../AppState.js";
+import {ReportView} from "./NcrFormView/ReportView.js";
 
 
 export function reportPreview  (reportData) {
@@ -90,7 +91,7 @@ function openReportDetails(ncrNumber){
     }
     console.log("loading details for Report numbered: " + ncrNumber)  
     
-    DetailsNcrView('root', getReport(ncrNumber))
+    ReportView( getReport(ncrNumber))
     app.history.flush()
     app.history.newPath({component:'DetailsNcrView', data:['root', getReport(ncrNumber)]})
     app.storage.pushRecentReport(ncrNumber)

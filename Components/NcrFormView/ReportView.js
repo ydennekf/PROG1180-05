@@ -1,5 +1,5 @@
-import {injectOrReturn} from "../utils/utils";
-import {app} from "../../AppState";
+import {injectOrReturn} from "../utils/utils.js";
+import {app} from "../../AppState.js";
 import { generateNcrNumber } from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
 
@@ -201,6 +201,7 @@ export function ReportView(report){
                             <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
                             <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
                             ${report.drawingToUpdate ? 'checked' : ''}/>
+                            </div>
                             <div>
                                 <label class="required" for="txt-orig-rev-number" id="lbl-orig-rev-number">Orig Rev. Number</label>
                                 <input readonly aria-errormessage="orig-rev-number-error" name="orig-rev-number" required type="number" aria-describedby="lbl-orig-rev-number" id="txt-orig-rev-number"
@@ -231,14 +232,33 @@ export function ReportView(report){
                             <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
                             <label id="Engineering-disposition-error" class="error-label"></label>
                         </div>
-                </div>     
+                   
             </div>
         
     <h2>Purchasing</h2>
         <div>
             <div class="purchasing-inputs">
                 <div class="purchasing-left-container">
-                    
+                    <h3>Purchasing's Preliminary Decision</h3>
+                    <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label>
+                        <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
+                        ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                        <label id="purchase-decision-rework-error" class="error-label"></label>
+                        
+                        <label for="rad-repair" id="lbl-repair">Repair</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
+                        ${report.engineeringReview === "Repair"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <label for="rad-rework" id="lbl-rework">Rework</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
+                        ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <label for="rad-scrap" id="lbl-scrap">Scrap</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
+                        ${report.engineeringReview === "Scrap"? 'checked' : ''}>
+                        <label id="engineering-review-radio-error" class="error-label"></label>
                 
                 </div>
                 <div class="purchasing-right-container">

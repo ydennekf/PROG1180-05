@@ -1,12 +1,12 @@
 import { trapFocus } from "./utils/utils.js";
 
-export let createLogin = (targetID, onLogin) => {
+export let  createLogin = (targetID, onLogin) => {
 
     
     let login =
         `
             
-        <img id='login-logo' class='login-logo' src="../image/crossfire-logo-no-bkg.png" alt="crossfire's logo" />
+
 
         <form id="loginForm" action="#" method="post" aria-label="loginForm"  class="login-form">
             <div class="col-1 input-effect">

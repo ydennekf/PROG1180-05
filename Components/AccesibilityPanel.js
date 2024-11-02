@@ -4,8 +4,7 @@ import { append, injectOrReturn } from "./utils/utils.js"
 
 export let revealed = false;
 
-swapListener()
-
+//swapListener()
 function reveal(){
         revealed = !revealed;
         AccessibilityPanel()
@@ -76,7 +75,7 @@ export function AccessibilityPanel(){
 
 
 
-function swapListener(){
+export function swapListener(){
     const e= document.getElementById("accessibility-toggle")
     document.getElementById("accessibility-toggle").removeEventListener('click', reveal)
     document.getElementById("accessibility-toggle").addEventListener('click',reveal)

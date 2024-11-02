@@ -1,7 +1,7 @@
 import { mapComponents } from "./utils/utils.js"
 import { reportData } from "../Data/new_reportData.js";
 import { previewBindings, reportPreview } from "./ReportPreview.js"
-import { NavBar } from "./NavBar.js";
+import { SearchBar } from "./NavBar.js";
 import { RecentReports } from "./RecentReports.js";
 
 
@@ -32,6 +32,7 @@ export function ReportList(targetID, user, Reports, page = 1){
     }
 
     let ReportList = `
+    <div id="report-filtering"></div>
     <table class ="ncr-list">
         ${reportListHeader()}
        
@@ -46,12 +47,13 @@ export function ReportList(targetID, user, Reports, page = 1){
     }
 
     document.getElementById(targetID).innerHTML = ReportList;
+    SearchBar('report-filtering')
 
     renderPaginationControls(totalPages, currentPage, reportData);
     applySortListeners(reportData, targetID)
     previewBindings();
 
-    NavBar("navbar");
+
     
     document.getElementById('create-report-btn').style.display = 'block';
     document.getElementById('report-search').style.display = 'block';

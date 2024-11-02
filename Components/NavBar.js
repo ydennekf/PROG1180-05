@@ -7,7 +7,26 @@ import { reportData } from "./../Data/new_reportData.js";
 import { ReportList } from "./ReportList.js";
 import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 
-export function NavBar(targetID){ 
+export function RealNav(){
+    const html = `
+    <nav>
+            <ul class='nav-list'>
+                <li>
+                    <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
+                </li>
+                <li>
+                <div id="emp-info"></div>
+                </li>
+            </ul>
+    </nav>
+            <div id="bread-crumbs"> </div>
+            
+    `
+
+    document.getElementById('nav-wrapper').innerHTML = html;
+}
+
+export function SearchBar(targetID){ 
 
     if(document.getElementById("report-search")){
         // its a messy fix but it disables the continuous rerender of the search bar
@@ -19,12 +38,6 @@ export function NavBar(targetID){
     let html = `
     
         <ul class='nav-list'>
-            <li>
-                <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
-            </li>
-            <li>
-                <div id="bread-crumbs"></div>
-            </li>
             <li id='new-report-container' class='new-report-container'>
                 <button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button>
             </li>
@@ -37,14 +50,6 @@ export function NavBar(targetID){
                         <label for="report-search" style="display:inline;" id="lbl-search">Find a report</label>
                     
             </li>
-            <li class='user-info'>
-                <span id="user-info">
-                    <span id="user-name-label">Logged in as: <strong id="user-name">${app?.employee.username}</strong></span>
-                    <span id="user-department">- ${app?.employee.department}</span>
-                </span>
-            </li>
-            
-            
         </ul>
         
     `

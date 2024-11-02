@@ -38,7 +38,7 @@ export function _HistoryContext(){
         }
     })
 
-    return { // not using lambdas because you cannot access this with lambdas ( shit language )
+    return { // not using lambdas because you cannot access "this" with lambdas ( shit language )
         setInitialView:function (view) { // called once to set the index
             state.push(view);      
             BreadCrumbs(state, currentIDX, 'bread-crumbs')
@@ -91,7 +91,7 @@ export function _HistoryContext(){
 
 
 function BreadCrumbs(data, current, targetID=null){
-
+    // TODO refresh current page each time this is called.
     let mapped = ""
     data.forEach((element, idx) => {
         mapped += idx === current ? `<li><a aria-current="page" class="bread-crumb selected-view" data-view-id="${idx}" href="#">${breadCrumbText(element)}</li></a>` :

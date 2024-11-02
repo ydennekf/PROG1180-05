@@ -1,7 +1,9 @@
 
-import { generateNcrNumber } from "../Components/NcrFormView/utils.js";
+import { handleLogin } from "../app.js";
+import { bindLogin, createLogin } from "../Components/Login.js";
+import { Page, PageContext } from "../Components/Page.js";
 
 
 
-console.log(generateNcrNumber())
-
+PageContext.init(createLogin());
+bindLogin("loginForm", handleLogin)

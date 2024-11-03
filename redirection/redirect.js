@@ -2,6 +2,8 @@ import { ReportList } from "../Components/ReportList.js"
 import { app } from "../AppState.js"
 import { reportData } from "../Data/new_reportData.js"
 import { ModifyNcrView } from "../Components/NcrFormView/ModifyNcrView.js"
+import {ReportView} from "../Components/NcrFormView/ReportView.js";
+
 export function redirectHome(){
     Index()
     app.history.flush()
@@ -16,9 +18,9 @@ export function redirectViewAllReports(newPath = true){
 }
 
 export function redirectNewReport(newPath=true){
-    ModifyNcrView("root", app.employee, null)
+    ReportView(null, "Create")
     newPath ? 
-        app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, null]})
+        app.history.newPath({component:'ReportView', data:[null, "Create"]})
         :
-        app.history.push({component:'ModifyNcrView', data:['root', app.employee, null]})
+        app.history.push({component:'ReportView', data:[null, "Create"]})
 }

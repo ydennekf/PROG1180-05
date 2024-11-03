@@ -11,6 +11,11 @@ export function ReportView(report){
     let engiReadOnly = false;
     let purchaseReadOnly = false;
     let exportReadOnly = false;
+    let newNCR;
+
+    if(report === null){
+        newNCR = generateNcrNumber();
+    }
 
 
 
@@ -63,7 +68,7 @@ export function ReportView(report){
     <div class="iso-row col-3">
         <div><label>Document No.</label><p>OPS-00011</p></div>
         <div><label>Document Title:</label><p>Non-Conformance Report</p></div>
-        <div><label>NCR No: ${report.ncrNumber}</label></div>
+        <div><label>NCR No: ${report?.ncrNumber || newNCR}</label></div>
     </div>
     <div class="iso-row col-5">
         <div><label>Document Author:</label><p>M. Hunt</p></div>
@@ -84,7 +89,7 @@ export function ReportView(report){
                         <li>
                             <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label><br>
                             <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
-                            value="${report?.ncrNumber || generateNcrNumber()}"/>
+                            value="${report?.ncrNumber || newNCR}"/>
                             <label id="ncr-number-error" class="error-label"></label>
                         </li>
                         
@@ -115,17 +120,17 @@ export function ReportView(report){
                         <li>
                             <label id="lbl-supplier-or-rec" for="chk-supplier-or-rec">Supplier or Rec-Insp</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="checkbox" id="chk-supplier-or-rec" 
-                            ${ report.supplierOrRec? 'checked' : ''}/>
+                            ${ report?.supplierOrRec ? 'checked' : ''}/>
                         </li>
                         <li>
                             <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
-                               ${report.nonConforming ? 'checked' : ''}/>
+                               ${report?.nonConforming ? 'checked' : ''}/>
                         </li>
                         <li>
                             <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
-                                ${report.productionOrder ? 'checked' : ''}/>
+                                ${report?.productionOrder ? 'checked' : ''}/>
                         </li>                    
                     </ul>
                         
@@ -174,36 +179,36 @@ export function ReportView(report){
                         <li>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
                             <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
-                            ${report.engineeringReview === "useAsIs"? 'checked' : ''}>
+                            ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
                             <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                            ${report.engineeringReview === "Repair"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Repair"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-rework" id="lbl-rework">Rework</label>
                             <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                            ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-scrap" id="lbl-scrap">Scrap</label>
                             <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                            ${report.engineeringReview === "Scrap"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
                             <input ${engiReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
-                            ${report.customerNotification ? 'checked' : ''}/>
+                            ${report?.customerNotification ? 'checked' : ''}/>
                         </li>
                         <li>
                             <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
                             <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
-                            ${report.drawingToUpdate ? 'checked' : ''}/>
+                            ${report?.drawingToUpdate ? 'checked' : ''}/>
                         </li>
                 </ul>
 
@@ -219,7 +224,7 @@ export function ReportView(report){
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
                                 <input readonly aria-errormessage="name-engineer-error" name="name-engineer" required type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
-                                value="${safeTruthy(report?.NameOfEngineer, app.employee.name)}"/>
+                                value="${safeTruthy(report?.NameOfEngineer, app.employee.firstName + " " + app.employee.lastName)}"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                         
@@ -254,22 +259,22 @@ export function ReportView(report){
                     <label>Purchasing's Preliminary Decision</label>
                     <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label>
                         <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
-                        ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                        ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                         <label id="purchase-decision-rework-error" class="error-label"></label>
                         
                         <label for="rad-repair" id="lbl-repair">Repair</label>
                         <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                        ${report.engineeringReview === "Repair"? 'checked' : ''}>
+                        ${report?.engineeringReview === "Repair"? 'checked' : ''}>
                         <label id="engineering-review-radio-error" class="error-label"></label>
                         
                         <label for="rad-rework" id="lbl-rework">Rework</label>
                         <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                        ${report.engineeringReview === "Rework"? 'checked' : ''}>
+                        ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                         <label id="engineering-review-radio-error" class="error-label"></label>
                         
                         <label for="rad-scrap" id="lbl-scrap">Scrap</label>
                         <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                        ${report.engineeringReview === "Scrap"? 'checked' : ''}>
+                        ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
                         <label id="engineering-review-radio-error" class="error-label"></label>
                 
                 </div>

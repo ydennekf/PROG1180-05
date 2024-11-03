@@ -103,7 +103,7 @@ function openReportEditor(ncrNumber){
         return;
     }
     console.log("loading editor for report numbered: " + ncrNumber)
-    ModifyNcrView('root', app.employee, getReport(ncrNumber))
+    ReportView(getReport(ncrNumber))
     app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, getReport(ncrNumber)]})
     app.storage.pushRecentReport(ncrNumber)
 }

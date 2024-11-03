@@ -286,6 +286,11 @@ export function ReportView(report){
         </div>
         
 </div>
+<div>
+<button id="submitBtn" >Save</button>
+<button id="cancelNtn" >Cancel</button>
+</div>
+
 </form>
     
     

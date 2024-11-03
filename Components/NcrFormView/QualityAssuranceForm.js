@@ -9,45 +9,45 @@ export function qualityAssuranceForm(targetID=null,
     // Can be passed a report to load its details ( for edit view)
     // If a report is passed it assumes we are editing a report.
     const html = `
-            <div class= "grid">
+            <div class= "ncr_grid">
 
-                <div class= "head">
-                    <div class= "box">                        
+                <div class= "ncr_iso_header">
+                    <div class= "iso">                        
                         <label id="lbl-ncr-doc-no">Document No.:</label>
                         <p>OPS-00011</p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-doc-title">Document Title:</label>
                         <p>Non-Conformance Report</p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-doc-qa"></label>
                         <p>Quality Assurance <br>Section</br></p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-doc-auth">Document Author:</label>
                         <p>J. Snow</p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-doc-date">Document Date:</label>
                         <p>August 12, 2023</p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-approve">Approved By:</label>
                         <p>W. Green, Operations Manager</p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-rev-date">Revision Date:</label>
                         <p>July 14, 2020</p>
                     </div>
 
-                    <div class= "box">
+                    <div class= "iso">
                         <label id="lbl-ncr-rev-no">Revision No:</label>
                         <p>013</p>
                     </div>
@@ -90,18 +90,6 @@ export function qualityAssuranceForm(targetID=null,
                         <label id="quantity-defective-error" class="error-label"></label>
                     </div>
    
-                    <div class= "box1 checkbox">
-                        ${labeledCheckbox(
-                            'chk-non-conforming', 
-                            'non-conforming', 
-                            '', 
-                            'lbl-non-conforming', 
-                            'Item Non-Conforming?', 
-                            '',
-                            null,
-                            report?.nonConforming || false,
-                            readonly)}
-                    </div>
                     
                     <div class= "box1 checkbox">
                         ${labeledCheckbox(
@@ -123,6 +111,19 @@ export function qualityAssuranceForm(targetID=null,
                             '', 
                             'lbl-production-order', 
                             'WIP (Production Order)', 
+                            '',
+                            null,
+                            report?.nonConforming || false,
+                            readonly)}
+                    </div>
+
+                    <div class= "box1 checkbox">
+                        ${labeledCheckbox(
+                            'chk-non-conforming', 
+                            'non-conforming', 
+                            '', 
+                            'lbl-non-conforming', 
+                            'Item Non-Conforming?', 
                             '',
                             null,
                             report?.nonConforming || false,

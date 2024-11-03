@@ -6,6 +6,7 @@ import {safeTruthy} from "../utils/utils.js";
 
 export function ReportView(report){
     // take the employee's role to determine what sections are editable and what is read only
+    
 
     let QAReadOnly = false;
     let engiReadOnly = false;

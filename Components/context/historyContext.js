@@ -129,7 +129,8 @@ const viewMap = {
     'ModifyNcrView':ModifyNcrView,
     "DetailsNcrView":DetailsNcrView,
     'ReportList':ReportList,
-    "Index": Index
+    "Index": Index,
+   
 }
 
 function breadCrumbText(historyState){

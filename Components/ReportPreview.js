@@ -10,74 +10,33 @@ export function reportPreview  (reportData) {
 
     let startDate = new Date(reportData.date);
 
-    if (window.innerWidth <= 768) {
+
         return`
         <tr>
             <td>
                 ${reportData.ncrNumber}
             </td>
-            <td>
-                ${reportData.sapNumber}
-            </td>
-            <td>
-                ${reportData.status}
-            </td>
-            <td>
-                ${reportData.itemName}
-            </td>
-            <td>
+           <td>
             ${startDate.getFullYear()}/${startDate.getMonth()}/${startDate.getDate()}
             </td>
             <td>
                 ${reportData.supplierName}
             </td>
             <td>
-                ${reportData.startedBy}
-            </td>
-            <td>
-                <div class='index-view-table-buttons'>
-                    <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">View</button>
-                    <button class="edit-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
-                </div>
-            </td>
-        </tr>
-    `;
-    } else {
-        return`
-        <tr>
-            <td>
-                ${reportData.ncrNumber}
-            </td>
-            <td>
-                ${reportData.sapNumber}
-            </td>
-            <td>
                 ${reportData.status}
             </td>
-            <td>
-                ${reportData.itemName}
-            </td>
-            <td>
-            ${startDate.getFullYear()}/${startDate.getMonth()}/${startDate.getDate()}
-            </td>
-            <td>
-                ${reportData.supplierName}
-            </td>
-            <td>
-                ${reportData.startedBy}
-            </td>
-            <td class='ncr-description'>
-                ${reportData.defectDescription}
-            </td>
+         
             <td>
                 <div class='index-view-table-buttons'>
                     <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">View</button>
                     <button class="edit-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
+                    <button class="archive-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Archive</button>
+                    
                 </div>
             </td>
         </tr>
     `;
-    }
+
    
   
     
@@ -91,7 +50,7 @@ function openReportDetails(ncrNumber){
     }
     console.log("loading details for Report numbered: " + ncrNumber)  
     
-    ReportView( getReport(ncrNumber))
+    ReportView( getReport(ncrNumber), "View")
     app.history.flush()
     app.history.newPath({component:'DetailsNcrView', data:['root', getReport(ncrNumber)]})
     app.storage.pushRecentReport(ncrNumber)
@@ -103,7 +62,7 @@ function openReportEditor(ncrNumber){
         return;
     }
     console.log("loading editor for report numbered: " + ncrNumber)
-    ReportView(getReport(ncrNumber))
+    ReportView(getReport(ncrNumber), "Edit")
     app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, getReport(ncrNumber)]})
     app.storage.pushRecentReport(ncrNumber)
 }

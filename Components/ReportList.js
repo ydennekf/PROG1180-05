@@ -11,13 +11,9 @@ let reportsPerPage = 10;
 let currentPage = 1
 const sortOrder = {
     ncrNumber: 'desc',
-    sapNum: 'desc',
     status: 'desc',
-    itemName: 'desc',
     date: 'desc',
-    supplierName: 'desc',
-    startedBy: 'desc',
-    description: 'desc',
+    supplierName: 'desc'
 };
 
 
@@ -34,6 +30,7 @@ export function ReportList(targetID, user, Reports, page = 1){
     let ReportList = `
     <div id="report-filtering"></div>
     <table class ="ncr-list">
+    
         ${reportListHeader()}
        
         <tbody class="report-view">
@@ -47,7 +44,10 @@ export function ReportList(targetID, user, Reports, page = 1){
     }
 
     document.getElementById(targetID).innerHTML = ReportList;
-    SearchBar('report-filtering')
+
+        SearchBar('report-filtering')
+
+
 
     renderPaginationControls(totalPages, currentPage, reportData);
     applySortListeners(reportData, targetID)
@@ -181,39 +181,20 @@ function goToPage(page, reports){
 }
 
 function reportListHeader(){ 
-    if (window.innerWidth <= 768) {
+
         return `
         <thead>
         <tr>
-            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">Report</th>
-            <th data-column="sapNum" tabindex="4" data-order="${sortOrder.sapNum}">SAP</th>
-            <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
-            <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>
+            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">NCR no.</th>
             <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>
             <th data-column="supplierName" tabindex="4" data-order="${sortOrder.supplierName}">Supplier</th>
-            <th data-column="startedBy" tabindex="4" data-order="${sortOrder.startedBy}">Started</th>
-         
+            <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
+
             <th></th>
         </tr>
         </thead>
     `;
-    } else {
-        return `
-        <thead>
-        <tr>
-            <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">Report</th>
-            <th data-column="sapNum" tabindex="4" data-order="${sortOrder.sapNum}">SAP</th>
-            <th data-column="status" tabindex="4" data-order="${sortOrder.status}">Status</th>
-            <th data-column="itemName" tabindex="4" data-order="${sortOrder.itemName}">Item Name</th>
-            <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>
-            <th data-column="supplierName" tabindex="4" data-order="${sortOrder.supplierName}">Supplier</th>
-            <th data-column="startedBy" tabindex="4" data-order="${sortOrder.startedBy}">Started</th>
-            <th data-column="description" tabindex="4" data-order="${sortOrder.description}">Description</th>
-            <th></th>
-        </tr>
-        </thead>
-    `;
-    }
+
    
 
     

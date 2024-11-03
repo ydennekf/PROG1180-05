@@ -2,9 +2,11 @@ import {injectOrReturn} from "../utils/utils.js";
 import {app} from "../../AppState.js";
 import { generateNcrNumber } from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
+import {ReportList} from "../ReportList.js";
+import {reportData} from "../../Data/new_reportData.js";
 
 
-export function ReportView(report){
+export function ReportView(report, action){
     // take the employee's role to determine what sections are editable and what is read only
 
     let QAReadOnly = false;
@@ -17,13 +19,17 @@ export function ReportView(report){
         newNCR = generateNcrNumber();
     }
 
-
+    let returnToList = () => {
+        ReportList('root', app.employee, reportData)
+        app.history.flush()
+    }
 
     let DisplayView = () => {
         // uses the app.employee to determine a role and sets appropriate sections to but readonly
 
-
-        if(app.employee.department === "QA"){
+        if(action === "Edit" || action === "Create"){
+            // this limits the create and edit functions to only be emplolyee role specific
+            if(app.employee.department === "QA"){
             QAReadOnly === false;
             engiReadOnly === true;
             purchaseReadOnly === true;
@@ -56,6 +62,15 @@ export function ReportView(report){
 
             $( "#accordion" ).accordion({ active: 0})
         }
+        }
+        else{
+            // this means its set to View
+            QAReadOnly === true;
+            engiReadOnly === true;
+            purchaseReadOnly === true;
+            exportReadOnly === true;
+        }
+
 
 
     }
@@ -292,8 +307,8 @@ export function ReportView(report){
         
 </div>
 <div>
-<button id="submitBtn" >Save</button>
-<button id="cancelNtn" >Cancel</button>
+<button id="submitBtn" >${action}</button>
+<button id="cancelBtn" >Cancel</button>
 </div>
 
 </form>
@@ -309,6 +324,8 @@ export function ReportView(report){
     });
 
 // add event listeners
+
 document.getElementById("root").innerHTML = html;
+document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 DisplayView();
 }

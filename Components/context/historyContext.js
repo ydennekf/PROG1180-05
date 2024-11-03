@@ -5,6 +5,7 @@ import '../../node_modules/popstate-direction/index.js'
 import { ReportList } from "../ReportList.js";
 import { app } from "../../AppState.js";
 import Index from "../Views/Index.js";
+import {ReportView} from "../NcrFormView/ReportView.js";
 
 
 
@@ -129,12 +130,13 @@ const viewMap = {
     'ModifyNcrView':ModifyNcrView,
     "DetailsNcrView":DetailsNcrView,
     'ReportList':ReportList,
-    "Index": Index
+    "Index": Index,
+    "ReportView": ReportView
 }
 
 function breadCrumbText(historyState){
     switch(historyState.component){
-        case 'ModifyNcrView':
+        case 'ReportView':
             console.log(historyState.data)
             if(!historyState.data[2]){ // because this component handles both creating and editing
                 console.log("wow")

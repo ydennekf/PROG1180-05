@@ -56,43 +56,25 @@ export function RecentReports(targetID = null){
     return injectOrReturn(html, targetID)
 }
 
-function UnsortedHeader(){ 
-    if (window.innerWidth <= 768) {
+function UnsortedHeader(){
+
         return `
+        
         <thead>
         <tr>
-            <th data-column="ncrNumber" tabindex="4">Report</th>
-            <th data-column="sapNum" tabindex="4">SAP</th>
-            <th data-column="status" tabindex="4">Status</th>
-            <th data-column="itemName" tabindex="4">Item Name</th>
-            <th data-column="date" tabindex="4">Date</th>
+            <th data-column="ncrNumber" tabindex="4">NCR no.</th>
+            <th data-column="date" tabindex="4" >Date</th>
             <th data-column="supplierName" tabindex="4">Supplier</th>
-            <th data-column="startedBy" tabindex="4">Started</th>
-         
+            <th data-column="status" tabindex="4">Status</th>
+
             <th></th>
         </tr>
         </thead>
     `;
-    } else {
-        return `
-        <thead>
-        <tr>
-            <th data-column="ncrNumber" tabindex="4">Report</th>
-            <th data-column="sapNum" tabindex="4">SAP</th>
-            <th data-column="status" tabindex="4">Status</th>
-            <th data-column="itemName" tabindex="4">Item Name</th>
-            <th data-column="date" tabindex="4">Date</th>
-            <th data-column="supplierName" tabindex="4">Supplier</th>
-            <th data-column="startedBy" tabindex="4">Started</th>
-            <th data-column="description" tabindex="4">Description</th>
-            <th></th>
-        </tr>
-        </thead>
-    `;
-    }
-   
 
-    
 
-    
+
+
+
+
 }

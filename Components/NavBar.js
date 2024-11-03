@@ -6,6 +6,7 @@ import { reportData } from "./../Data/new_reportData.js";
 
 import { ReportList } from "./ReportList.js";
 import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
+import {ReportView} from "./NcrFormView/ReportView.js";
 
 export function NavBar(){
     const html = `
@@ -59,7 +60,7 @@ export function SearchBar(targetID){
     document.getElementById(targetID).innerHTML = html;
     document.getElementById("create-report-btn").addEventListener("click", () => {
         app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, null]})
-        ModifyNcrView("root",app.employee, null);
+        ReportView(null);
     })  
 
     $(function () {

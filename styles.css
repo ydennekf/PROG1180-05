@@ -772,9 +772,16 @@ label{
 .iso-header{
     display: grid;
     grid-template-rows: 1fr 1fr;
-
-
 }
+.iso-header label{
+    font-size: small;
+}
+.iso-header p{
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+}
+ 
 .iso-row {
     min-height: 1.5vh;
     justify-content: center;

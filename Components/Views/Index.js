@@ -38,7 +38,7 @@ function RoleIndexButtons(){
 
 function indexButtonBindings(){
     document.getElementById('view-reports').addEventListener('click', redirectViewAllReports)
-    document.getElementById('create-report-btn').addEventListener('click', redirectNewReport)
+    document.getElementById('create-report-btn').addEventListener('click',redirectNewReport)
 }
 
 export function RecentReports(targetID = null){

@@ -79,8 +79,8 @@ export function SearchBar(targetID) {
 
     document.getElementById(targetID).innerHTML = html;
     document.getElementById("create-report-btn").addEventListener("click", () => {
-        app.history.newPath({component: 'ModifyNcrView', data: ['root', app.employee, null]})
-        ReportView(null);
+        app.history.branchPath({component: 'ReportView', data: [null, "Create"]})
+        ReportView(null, "Create");
     });
 
      $("#start-date, #end-date").datepicker({

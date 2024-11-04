@@ -4,6 +4,7 @@ import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
 
 import { app } from "../AppState.js";
 import {ReportView} from "./NcrFormView/ReportView.js";
+import { redirectViewAllReports } from "../redirection/redirect.js";
 
 
 export function reportPreview  (reportData) {
@@ -51,8 +52,11 @@ function openReportDetails(ncrNumber){
     console.log("loading details for Report numbered: " + ncrNumber)  
     
     ReportView( getReport(ncrNumber), "View")
-    app.history.flush()
-    app.history.newPath({component:'DetailsNcrView', data:['root', getReport(ncrNumber)]})
+    if(app.currentView === "ReportList"){
+        app.history.branchPath({component:'ReportView', data:[getReport(ncrNumber), "View"]})
+    } else {
+        app.history.newPath({component:'ReportView', data:[getReport(ncrNumber), "View"]})
+    }
     app.storage.pushRecentReport(ncrNumber)
 }
 
@@ -63,7 +67,12 @@ function openReportEditor(ncrNumber){
     }
     console.log("loading editor for report numbered: " + ncrNumber)
     ReportView(getReport(ncrNumber), "Edit")
-    app.history.newPath({component:'ModifyNcrView', data:['root', app.employee, getReport(ncrNumber)]})
+    if(app.currentView === "ReportList"){
+        app.history.branchPath({component:'ReportView', data:[getReport(ncrNumber), "Edit"]})
+    } else {
+        app.history.newPath({component:'ReportView', data:[getReport(ncrNumber), "Edit"]})
+    }
+
     app.storage.pushRecentReport(ncrNumber)
 }
 

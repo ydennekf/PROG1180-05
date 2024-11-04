@@ -13,6 +13,7 @@ export function _HistoryContext(){
     let currentIDX = 0;
     let state=[]
   
+    document.getElementById('branch-test').addEventListener('click', () => app.history.branchPath())
     // Injects the breadcrumb component
     // Returns an object with a method to update the breadcrumbs whenever we move to a new view ( Called at the top of all view functions )
     // Also listens for back/forward button clicks and returns the user to their previous/next view.
@@ -87,6 +88,13 @@ export function _HistoryContext(){
         },
         length:() =>{
             return state.length
+        },
+        branchPath:function (s){
+            // remove everything ahead of our current idx
+            // push this new state 
+            state = state.slice(0, currentIDX+1)
+            console.log(state)
+            this.push(s)
         }
     }
 }
@@ -137,29 +145,17 @@ const viewMap = {
 function breadCrumbText(historyState){
     switch(historyState.component){
         case 'ReportView':
-            console.log(historyState.data)
-            if(!historyState.data[2]){ // because this component handles both creating and editing
-                console.log("wow")
-                return "New" 
-            }else{
-                return "Edit";
-            }
+            console.log(historyState.data + "WOW")
+            return historyState.data[1]
 
         case "DetailsNcrView":
             return "View";
 
-        case "ReportList", "Index":
+        case "ReportList":
             return "List"
+
+        case "Index":
+            return "Home"
     }
 }
 
-
-export function redirect(view, args){ // view should be a function or string
-    if(!app){
-        console.log('Error Redirecting before login ' + view.name)
-        return;
-    }
-
-    app.newPath({component:view.name || view, data:args})
-
-}

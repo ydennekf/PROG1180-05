@@ -11,6 +11,7 @@ export function initApp(employee, initialView, initialArgs=[]){ // call after lo
     app ={
         history:_HistoryContext(),
         employee,
+        currentView:"Index"
 
     }
     const storage = _StorageContext(app.employee)

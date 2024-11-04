@@ -777,8 +777,8 @@ label{
     grid-template-rows: 1fr 1fr;
     max-width: 80%;
     margin: auto;
-    background-color: var(--color-form);
-    padding: 5px;
+    background-color: var(--color-primary);
+    gap: 1px;
 }
 .iso-header label{
     font-size: small;
@@ -796,11 +796,17 @@ label{
 .col-3 {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    background-color: var(--color-form);
+    column-gap: 1px;
+    padding: 5px;
 }
 
 .col-5 {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    background-color: var(--color-form);
+    gap: 1px;
+    padding: 5px;
 }
 
 

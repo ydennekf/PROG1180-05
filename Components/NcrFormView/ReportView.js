@@ -81,21 +81,23 @@ export function ReportView(report, action){
     const html = `
 <h1 class="Report-view-header">Report Details</h1>
 
-<div class="iso-header">
-    <div class="iso-row col-3">
-        <div><label>Document No.</label><p>OPS-00011</p></div>
-        <div><label>Document Title:</label><p>Non-Conformance Report</p></div>
-        <div><label>NCR No: ${report?.ncrNumber || newNCR}</label></div>
+<div>    
+    <div class="iso-header">
+        <div class="iso-row col-3">
+            <div><label>Document No.</label><p>OPS-00011</p></div>
+            <div><label>Document Title:</label><p>Non-Conformance Report</p></div>
+            <div><label>NCR No: ${report?.ncrNumber || newNCR}</label></div>
+        </div>
+        <div class="iso-row col-5">
+            <div><label>Document Author:</label><p>M. Hunt</p></div>
+            <div><label>Document Date:</label><p>August 12, 2023</p></div>
+            <div><label>Approved By:</label><p>J. Fish, Operations Manager</p></div>
+            <div><label>Revision Date:</label><p>July 14, 2024</p></div>
+            <div><label>Revision No:</label><p>013</p></div>
+        </div>
     </div>
-    <div class="iso-row col-5">
-        <div><label>Document Author:</label><p>M. Hunt</p></div>
-        <div><label>Document Date:</label><p>August 12, 2023</p></div>
-        <div><label>Approved By:</label><p>J. Fish, Operations Manager</p></div>
-        <div><label>Revision Date:</label><p>July 14, 2024</p></div>
-        <div><label>Revision No:</label><p>013</p></div>
-    </div>
-
 </div>
+
 <form class="ncr-report">    
 <div id="accordion">
     <h2>Quality Assurance</h2>

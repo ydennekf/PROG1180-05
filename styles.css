@@ -739,7 +739,10 @@ label{
 /* } */
 /* NEW NCR FORM SETUP */
 /* basic form layout */
-
+.ncr-report{
+    max-width: 80%;
+    margin: auto;
+}
 .quality-assurance-inputs, .engineering-inputs, .purchasing-inputs {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -772,6 +775,10 @@ label{
 .iso-header{
     display: grid;
     grid-template-rows: 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
+    background-color: var(--color-form);
+    padding: 5px;
 }
 .iso-header label{
     font-size: small;

@@ -80,6 +80,7 @@ export function ReportView(report, action){
 
     const html = `
 <h1 class="Report-view-header">Report Details</h1>
+
 <div class="iso-header">
     <div class="iso-row col-3">
         <div><label>Document No.</label><p>OPS-00011</p></div>
@@ -95,7 +96,7 @@ export function ReportView(report, action){
     </div>
 
 </div>
-<form>    
+<form class="ncr-report">    
 <div id="accordion">
     <h2>Quality Assurance</h2>
                    

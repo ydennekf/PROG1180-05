@@ -39,16 +39,56 @@
     --color-form: #1b3b5e;
     --color-background: #222;
     --color-white: #f8f4f4;
-    --color-black: #fff;
+    --color-black: #000;
     --color-red: #ff4c4c;
     --color-midblue: #3d5a80;
     --color-warning:#fff29e;
     --color-bread-crumb-after:white;
     --color-login-input:#fff;
+
+.purchasing-right-container,
+.purchasing-left-container,    
+.engi-right-container,
+.engi-left-container,
+.qa-left-container,
+.qa-right-container{
+    background-color: var(--color-form);
+ } 
+
+ .view-form{
+    background-color: var(--color-form);
+    padding: 8px;
+    border-radius: 10px;
+    margin: auto;
+ }
+
  
- 
+
+.purchasing-inputs,
+.engineering-inputs,
+.quality-assurance-inputs{
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
  
+.required{
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    color: var(--color-white);
+}
+
+
+.iso-header,
+.Report-view-header{
+    color: var(--color-white);
+   }
+
+}
+ 
+
+
+
 /* Body Styles */
 body {
     background-color: var( --color-background);
@@ -568,10 +608,83 @@ label{
     }
 }
  
+
+
+/* =========================
+   Header Report-Details
+   ========================= */
+   .Report-view-header{
+    color: var(--color-black);
+   }
+
+
+
+
+
 /* =========================
    Quality Assurance (QA) Form Layout
    ========================= */
+
  
+.view-form{
+    background-color: var(--color-white);
+    padding: 8px;
+    border-radius: 10px;
+    margin: auto;
+ }
+
+.purchasing-right-container,
+.purchasing-left-container,
+.engi-right-container,
+.engi-left-container,
+.qa-left-container,
+.qa-right-container{
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--color-black);
+ }
+
+.engi-left-container{
+    max-width: 300px;
+    margin: auto;
+ }
+ .qa-left-container{
+    max-width: 500px;
+    margin: auto;
+ }
+
+.purchasing-left-container{
+    max-width: 300px;
+    margin: auto;
+}
+
+.purchasing-inputs,
+.engineering-inputs,
+.quality-assurance-inputs{
+    background-color: var(--color-white);
+    color: var(--color-white);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+   }
+
+.error-label{
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        color: #333;
+   }
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--color-black);
+}
  
 /* This section is for layout of the Quality Assurance input form*/
 /* .ncr_grid {

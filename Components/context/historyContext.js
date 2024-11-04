@@ -13,7 +13,7 @@ export function _HistoryContext(){
     let currentIDX = 0;
     let state=[]
   
-    document.getElementById('branch-test').addEventListener('click', () => app.history.branchPath())
+
     // Injects the breadcrumb component
     // Returns an object with a method to update the breadcrumbs whenever we move to a new view ( Called at the top of all view functions )
     // Also listens for back/forward button clicks and returns the user to their previous/next view.

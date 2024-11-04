@@ -5,7 +5,7 @@ export function mapComponents(
 ){
    
     if(!data || data.length === 0){
-        return "<tr><td>No results found</td></tr>"
+        return ""
     }
     return data.reduce((prev, cur)=> {
         return prev + component(cur, ...additionalArgs)

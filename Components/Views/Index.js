@@ -48,7 +48,9 @@ export function RecentReports(targetID = null){
     ${UnsortedHeader()}
         <tbody>
         <tr><h2>Recent Reports</h2></tr>
-        ${mapComponents(recent, reportPreview)}
+        ${recent.length > 0 ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"}
+        
+        WTF
         </tbody>
     </table>
     `

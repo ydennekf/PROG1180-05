@@ -161,20 +161,21 @@ export function ReportView(report, action){
                             value="${report?.supplierName || ''}"/>
                             <label id="supplier-error" class="error-label"></label>
                         </div>
-                        <div class="col-2">
+                        <fieldset class="col-2">
+                            <legend>Description of Item</legend>
                             <div>
-                                <label class="required" for="txt-sap-number" id="lbl-sap-number">Description of Item</label>
+                                <label class="required" for="txt-sap-number" id="lbl-sap-number"></label>
                                 <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                                 value="${safeTruthy(report?.sapNumber, '')}" placeholder="SAP No"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                             <div>
-                                <label class="required" for="txt-item-name" id="lbl-item-name"> - </label>
+                                <label class="required" for="txt-item-name" id="lbl-item-name"></label>
                                 <input ${QAReadOnly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
                                 value="${report?.itemName || ''}" placeholder="Item Name"/>
                                 <label id="item-name-error" class="error-label"></label>
                             </div>
-                        </div>
+                        </field>
                     </div>
                     <div>
                         <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>

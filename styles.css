@@ -688,8 +688,6 @@ textarea {
  
 /* This section is for layout of the Quality Assurance input form*/
 
-/* NEW NCR FORM SETUP */
-/* basic form layout */
 .ncr-report{
     max-width: 80%;
     margin: auto;
@@ -703,6 +701,11 @@ textarea {
 .col-2{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border: 0;
+}
+
+legend{
+    color: var(--color-black);
 }
 
 .qa-right-container, .engi-right-container {
@@ -722,6 +725,9 @@ textarea {
     min-width: 200px;
     width: 100%
 }
+
+
+
 /* NCR header */
 
 .iso-header{

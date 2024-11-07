@@ -80,23 +80,21 @@ export function ReportView(report, action){
 
     const html = `
 <h1 class="Report-view-header">Report Details</h1>
-
-<div>    
+   
     <div class="iso-header">
-        <div class="iso-row col-3">
+       
             <div><label>Document No.</label><p>OPS-00011</p></div>
             <div><label>Document Title:</label><p>Non-Conformance Report</p></div>
             <div><label>NCR No: ${report?.ncrNumber || newNCR}</label></div>
-        </div>
-        <div class="iso-row col-5">
+
             <div><label>Document Author:</label><p>M. Hunt</p></div>
             <div><label>Document Date:</label><p>August 12, 2023</p></div>
             <div><label>Approved By:</label><p>J. Fish, Operations Manager</p></div>
             <div><label>Revision Date:</label><p>July 14, 2024</p></div>
             <div><label>Revision No:</label><p>013</p></div>
-        </div>
+    
     </div>
-</div>
+
 
 <form class="ncr-report">    
 <div id="accordion">
@@ -165,15 +163,15 @@ export function ReportView(report, action){
                         </div>
                         <div class="col-2">
                             <div>
-                                <label class="required" for="txt-sap-number" id="lbl-sap-number">SAP No</label>
+                                <label class="required" for="txt-sap-number" id="lbl-sap-number">Description of Item</label>
                                 <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
-                                value="${safeTruthy(report?.sapNumber, '')}"/>
+                                value="${safeTruthy(report?.sapNumber, '')}" placeholder="SAP No"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                             <div>
-                                <label class="required" for="txt-item-name" id="lbl-item-name">Item Name</label>
+                                <label class="required" for="txt-item-name" id="lbl-item-name"> - </label>
                                 <input ${QAReadOnly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
-                                value="${report?.itemName || ''}"/>
+                                value="${report?.itemName || ''}" placeholder="Item Name"/>
                                 <label id="item-name-error" class="error-label"></label>
                             </div>
                         </div>

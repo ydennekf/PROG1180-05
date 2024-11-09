@@ -20,6 +20,10 @@
     --font-primary: 'Poppins', sans-serif;
     --color-bread-crumb-after:black;
     --color-login-input:#333
+    --color-breadcrumb:black;
+    --color-breadcrumb-selected:#204d7a;
+    --color-breadcrumb-after:black;
+    
  
    
 }
@@ -45,6 +49,9 @@
     --color-warning:#fff29e;
     --color-bread-crumb-after:white;
     --color-login-input:#fff;
+    --color-breadcrumb:white;
+    --color-breadcrumb-selected:#9fb7df;
+    --color-breadcrumb-after:#acddf1;
 
 .purchasing-right-container,
 .purchasing-left-container,    
@@ -170,8 +177,12 @@ nav ul li button{
 }
  
 .bread-crumb{
-    color:var(--color-white) !important;
+    color:var(--color-breadcrumb) !important;
     text-decoration:none !important;
+}
+
+.bread-crumb:hover{
+    opacity:0.7
 }
  
 #bread-crumbs ul li{
@@ -180,7 +191,7 @@ nav ul li button{
 }
  
 a.selected-view {
-    color:var(--color-white) !important;
+    color:var(--color-breadcrumb-selected) !important;
     text-decoration:none;
     cursor:not-allowed;
 }
@@ -191,7 +202,7 @@ a.selected-view {
  
 #bread-crumbs ul li:after{
     content:" /";
-    color: #acddf1;
+    color: var(--color-breadcrumb-after);
 }
  
  

@@ -11,14 +11,21 @@ function reveal(){
 }
 
 export function AccessibilityPanel(){
+    let theme = localStorage.getItem('theme')
+    if(!theme){
+        localStorage.setItem('theme', "light")
+        theme = localStorage.getItem('theme')
+    }
+
     console.log(revealed)
     if(revealed){
+        document.getElementById('accessibility-toggle').innerText = "Close"
         const html = `
     <section id="accessibilityControls" role="region">
             <h3 id="accessibilityControllsTitle">Accessibility Controls</h3>
             <div class="chkBox">
                 <label class="white" for="darkModeToggle">Enable Dark Mode</label>
-                <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle">
+                <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle" ${theme === "light" ? '' : 'checked'}>
             </div>
     
             <div class="select-container">
@@ -35,6 +42,7 @@ export function AccessibilityPanel(){
     }else{
         try{
             document.getElementById("accessibilityControls").remove()
+            document.getElementById('accessibility-toggle').innerText = "Accessibility"
         } catch{
             // this only happens on startup since the div has never been created yet
         }
@@ -77,6 +85,6 @@ export function AccessibilityPanel(){
 
 export function swapListener(){
     const e= document.getElementById("accessibility-toggle")
-    document.getElementById("accessibility-toggle").removeEventListener('click', reveal)
-    document.getElementById("accessibility-toggle").addEventListener('click',reveal)
+    e.removeEventListener('click', reveal)
+    e.addEventListener('click',reveal)
 }

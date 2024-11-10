@@ -1,6 +1,6 @@
 import { getEmployeeByUsername } from "../../Data/employeeData.js";
 import {injectOrReturn} from "../utils/utils.js";
-import { ModifyNcrView } from "./ModifyNcrView.js";
+
 import { app } from "../../AppState.js";
 import { qualityAssuranceForm } from "./QualityAssuranceForm.js";
 import { redirectHome } from "../../redirection/redirect.js";
@@ -68,5 +68,5 @@ function QualityAssuranceNcrView(report, targetID=null){
 function GoToEdit(report){
 
     app.history.push({component:"ModifyNcrView", data:['root', app.employee, report]})
-    ModifyNcrView('root', app.employee, report)
+
 }

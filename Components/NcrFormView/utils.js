@@ -1,6 +1,16 @@
 import {ReportStatus, getReport, reportData} from "../../Data/new_reportData.js";
 
 export function getReportFormData(){
+
+    let engiRadBtns = document.querySelectorAll('input[name ="rad-engiReview"]');
+    let engiReviewValue;
+    for(let choice of engiRadBtns){
+        if(choice.checked){
+            engiReviewValue = choice.value;
+            break;
+        }
+    }
+
     return {
         itemName:document.getElementById('txt-item-name'),
         ncrNumber: document.getElementById("txt-ncr-number"),
@@ -16,7 +26,24 @@ export function getReportFormData(){
         nonConforming : document.getElementById('chk-non-conforming'),
         productionOrder:  document.getElementById("chk-production-order"),
         sapNumber: document.getElementById('txt-sap-number'),
-        engineeringRequired:document.getElementById('chk-engineering-required')
+        engineeringRequired:document.getElementById('chk-engineering-required'),
+        customerNotification: document.getElementById('chk-customer-notification'),
+        drawingToUpdate: document.getElementById('chk-drawing-to-update'),
+        engineeringReview: engiReviewValue,
+        origRevNum: document.getElementById('txt-orig-rev-number'),
+        nameOfEngineer: document.getElementById('txt-name-engineer'),
+        updatedRev: document.getElementById('txt-updated-rev'),
+        RevisionDate: document.getElementById('txt-revision-date'),
+        Disposition: document.getElementById('txt-engi-disposition'),
+        purchaseDecision: null,
+        CarRaised: null,
+        CarNum: null,
+        FollowReq: false,
+        followUpType: null,
+        followUpDate: null,
+        operationManager: null,
+        purchaseDate: null
+
     }
 
 }
@@ -36,7 +63,7 @@ export function generateNcrNumber(){
 
 
 
-export function createQAReport(employee){
+export function createReport(employee){
     // DOESN'T VALIDATE USE THE VALIDATORS BEFORE CREATING THE REPORT
     const formData = getReportFormData()
     return {
@@ -56,7 +83,24 @@ export function createQAReport(employee){
         status:formData.engineeringRequired.checked ? ReportStatus.AwaitingEngineering : ReportStatus.Closed, // defualts to closed cuz we aren't at the next stage
         date:new Date(Date.now()).toDateString(),
         itemName:formData.itemName.value,
-        sapNumber:formData.sapNumber.value
+        sapNumber:formData.sapNumber.value,
+        engineeringRequired:false,
+        customerNotification:false,
+        drawingToUpdate: false,
+        engineeringReview: null,
+        origRevNum: "",
+        nameOfEngineer:"",
+        updatedRev: "",
+        RevisionDate:"",
+        Disposition:"",
+        purchaseDecision: null,
+        CarRaised: null,
+        CarNum: null,
+        FollowReq: false,
+        followUpType: null,
+        followUpDate: null,
+        operationManager: null,
+        purchaseDate: null
     }
 }
 
@@ -79,7 +123,7 @@ export function errorLog(){
 }
 
 
-export function validateQualityAssuranceForm(updating=false, report=undefined){
+export function validateForm(){
     const data = getReportFormData();
     const errors = errorLog()
     const validNcr = parseInt(data.ncrNumber.value);

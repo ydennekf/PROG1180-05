@@ -5,7 +5,7 @@ import { qualityAssuranceForm } from "./NcrFormView/QualityAssuranceForm.js";
 import { reportData } from "./../Data/new_reportData.js";
 
 import { ReportList } from "./ReportList.js";
-import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
+
 import {ReportView} from "./NcrFormView/ReportView.js";
 
 export function NavBar(){

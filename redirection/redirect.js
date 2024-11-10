@@ -1,7 +1,7 @@
 import { ReportList } from "../Components/ReportList.js"
 import { app } from "../AppState.js"
 import { reportData } from "../Data/new_reportData.js"
-import { ModifyNcrView } from "../Components/NcrFormView/ModifyNcrView.js"
+
 import {ReportView} from "../Components/NcrFormView/ReportView.js";
 
 

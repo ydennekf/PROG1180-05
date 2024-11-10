@@ -1,9 +1,10 @@
 import {injectOrReturn} from "../utils/utils.js";
 import {app} from "../../AppState.js";
-import { generateNcrNumber } from "./utils.js";
+import {createReport, generateNcrNumber, getReportFormData} from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
 import {ReportList} from "../ReportList.js";
-import {reportData} from "../../Data/new_reportData.js";
+import {reportData, updateReport} from "../../Data/new_reportData.js";
+import {validateForm} from "./utils.js";
 
 
 export function ReportView(report, action){
@@ -15,6 +16,7 @@ export function ReportView(report, action){
     let purchaseReadOnly = false;
     let exportReadOnly = false;
     let newNCR;
+    let empAction;
 
     if(report === null){
         newNCR = generateNcrNumber();
@@ -25,11 +27,38 @@ export function ReportView(report, action){
         app.history.flush()
     }
 
+    let saveReport = (action) => {
+    let errors = validateForm()
+
+    if(errors.get().length === 0){ // check if there are any errors if not then we can save or update the NCR form.
+        if(action === "Create"){
+            const newReport = createReport(app.employee)
+            newReport.status = "Engineering"
+            app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
+            updateReport(newReport.ncrNumber, newReport);
+            ReportList('root', app.employee, reportData)
+            app.history.flush()
+
+        }
+        if(action === "Edit"){
+            let ncrNum = document.getElementById('txt-ncr-number')
+            let report = getReportFormData();
+
+
+
+            updateReport(ncrNum, report);
+            ReportList('root', app.employee, reportData)
+            app.history.flush()
+        }
+    }
+}
+
     let DisplayView = () => {
         // uses the app.employee to determine a role and sets appropriate sections to but readonly
 
         if(action === "Edit" || action === "Create"){
             // this limits the create and edit functions to only be emplolyee role specific
+            empAction = app.employee.department;
             if(app.employee.department === "QA"){
             QAReadOnly === false;
             engiReadOnly === true;
@@ -229,7 +258,7 @@ export function ReportView(report, action){
                         </li>
                         <li>
                             <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
-                            <input ${engiReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
+                            <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 
                             ${report?.customerNotification ? 'checked' : ''}/>
                         </li>
                         <li>
@@ -338,6 +367,8 @@ export function ReportView(report, action){
 // add event listeners
 
 document.getElementById("root").innerHTML = html;
+document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 DisplayView();
 }
+

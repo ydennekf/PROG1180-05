@@ -11,7 +11,7 @@ import { reportData } from './Data/new_reportData.js';
 // import utility functions
 import { append, insert, resetForm } from './Components/utils/utils.js';
 import { initApp } from './AppState.js';
-import { ModifyNcrView } from './Components/NcrFormView/ModifyNcrView.js';
+
 import { app } from './AppState.js';
 import { AccessibilityPanel } from './Components/AccesibilityPanel.js';
 import { NavBar } from './Components/NavBar.js';
@@ -76,4 +76,5 @@ window.onload = () => {
     NavBar();
     createLogin("root", handleLogin);
     AccessibilityPanel()
+    console.log(employees);
 }

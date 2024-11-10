@@ -1,4 +1,5 @@
 
+
 export class ReportStatus{
     static AwaitingEngineering = "Awaiting Engineering"
     static Closed = "Closed"
@@ -8,12 +9,13 @@ export function getReport(ncrNumber){
     return reportData.find(i => i.ncrNumber === ncrNumber)
 }
 
-export function updateReport(ncrNumber, updatedReport){ // returns old report
+export function updateReport(ncrNumber, newReport){ // returns old report
     // can implement some sort of rollback feature with this
+
     const idx = reportData.findIndex(i => i.ncrNumber === ncrNumber)
     const oldReport = {...reportData[idx]}
 
-    reportData.splice(idx, 1, updatedReport)
+    reportData.splice(idx, 1, newReport)
     console.log(reportData)
 
     return oldReport;

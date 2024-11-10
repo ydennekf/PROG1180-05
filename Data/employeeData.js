@@ -10,8 +10,10 @@ export let employees = [
             "darkMode": false,
             "preferredLanguage": "en",
             "recentReports":[],
-            "pageLength": 10
+            "pageLength": 10,
+            "newReports": []
         },
+
         
     },
     {
@@ -24,8 +26,10 @@ export let employees = [
             "darkMode": true,
             "preferredLanguage": "es",
             "recentReports":[],
-            "pageLength": 10
+            "pageLength": 10,
+            "newReports": []
         },
+
     },
     {
         "username": "btaylor",
@@ -37,8 +41,10 @@ export let employees = [
             "darkMode": false,
             "preferredLanguage": "fr",
             "recentReports":[],
-            "pageLength": 10
+            "pageLength": 10,
+            "newReports": []
         },
+
     
     },
     {
@@ -51,8 +57,10 @@ export let employees = [
             "darkMode": true,
             "preferredLanguage": "en",
             "recentReports":[],
-            "pageLength": 10
+            "pageLength": 10,
+            "newReports": []
         },
+
     }
 ];
 

@@ -1,6 +1,6 @@
 import { getReport } from "../Data/new_reportData.js";
 import { DetailsNcrView } from "./NcrFormView/DetailsNcrView.js";
-import { ModifyNcrView } from "./NcrFormView/ModifyNcrView.js";
+
 
 import { app } from "../AppState.js";
 import {ReportView} from "./NcrFormView/ReportView.js";

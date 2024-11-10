@@ -3,6 +3,7 @@
 import { employees } from "../../Data/employeeData.js"
 import { getReport } from "../../Data/new_reportData.js"
 import { safeTruthy } from "../utils/utils.js"
+import {generateNcrNumber} from "../NcrFormView/utils.js";
 
 
 export default function _StorageContext(employee){ // stored as {employeeUsername:preferencesObj}
@@ -58,6 +59,21 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
 
     }
 
+    function pushNewReport(reportNumber, department){
+
+        for(let emp in employees){
+            if(emp.department === department){
+                let reports = empPreferences[emp.username].newReports
+                reports.unshift(getReport(reportNumber))
+                reports = reports.filter(item => item.status !== employee.department)
+                empPreferences[emp.username].newReports = reports;
+            }
+        }
+
+        save()
+
+    }
+
     function save(){
         localStorage.setItem('preferences', JSON.stringify(empPreferences))
     }
@@ -72,7 +88,9 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
         pushRecentReport,
         print:() => console.log(empPreferences),
         getRecentReports:() => empPreferences[employee.username].recentReports,
-        getLangPreference:() => empPreferences[employee.username].preferredLanguage
+        getLangPreference:() => empPreferences[employee.username].preferredLanguage,
+        getNewReports:() => empPreferences[employee.username].newReports,
+        pushNewReport
     }
     
 }

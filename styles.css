@@ -266,12 +266,30 @@ table.ncr-list a:hover {
 /* Index View Table Buttons */
 .index-view-table-buttons {
     display: inline-flex;
+    gap: 5px; 
+    width: 100%; 
 }
- 
+
 .index-view-table-buttons button {
-    margin: 5px;
+    flex: 1; 
+    padding: 10px; 
     border: 2px solid var(--color-white);
+    text-align: center; 
 }
+
+/* Container for radio buttons */
+
+  .radio-group {
+    display: flex ;
+    align-items: center;
+    gap: 10px;
+  }
+  
+ 
+  input[type="radio"] {
+    margin-left: 0; /* Remove any unwanted margin */
+  }
+    
  
  
 /* Pagination Container */
@@ -340,6 +358,7 @@ input[type="search"]:focus {
  
 /* Buttons */
 button {
+    width: 100px;
     padding: 10px 15px;
     font-size: 12px;
     cursor: pointer;
@@ -348,12 +367,15 @@ button {
     border: solid 1px var(--color-white);
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    max-width: 150px;
+    max-width: 150px; 
+    text-align: center;
+    box-sizing: border-box; 
 }
- 
+
 button:hover {
     background-color: var(--color-secondary);
 }
+
  
 /* Headings */
 h1 {
@@ -372,7 +394,9 @@ h3 {
     font-size: 35px;
     text-align: center;
 }
- 
+
+
+
 /* Input Styles */
 input[type="text"],
 input[type="password"] {
@@ -656,6 +680,7 @@ label{
     box-shadow: 0 4px 8px var(--color-black);
  }
 
+ .engi-right-container
 .engi-left-container{
     max-width: 300px;
     margin: auto;

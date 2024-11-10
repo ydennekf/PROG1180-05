@@ -197,26 +197,26 @@ export function ReportView(report, action){
                         <li>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
                             <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
-                            ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
+                            ${report?.engineeringReview === "useAsIs"? 'checked' : ''} class="radio-group">
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
                             <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                            ${report?.engineeringReview === "Repair"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Repair"? 'checked' : ''} class="radio-group">
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-rework" id="lbl-rework">Rework</label>
                             <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                            ${report?.engineeringReview === "Rework"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Rework"? 'checked' : ''} class="radio-group">
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label for="rad-scrap" id="lbl-scrap">Scrap</label>
-                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                            ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
-                            <label id="engineering-review-radio-error" class="error-label"></label>
+                        <label for="rad-scrap" id="lbl-scrap">Scrap</label>
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
+                        ${report?.engineeringReview === "Scrap"? 'checked' : ''} class="radio-group">
+                        <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>

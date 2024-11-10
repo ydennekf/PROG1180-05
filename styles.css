@@ -11,6 +11,7 @@
     --color-secondary: #5897c9;
     --color-offblack: #222222;
     --color-form: #f8f4f4;
+    --color-iso: #d9d4d4;
     --color-background: #fff;
     --color-white: #fff;
     --color-black: #000;
@@ -19,7 +20,7 @@
     --color-warning:#993333;
     --font-primary: 'Poppins', sans-serif;
     --color-bread-crumb-after:black;
-    --color-login-input:#333
+    --color-login-input:#333;
     --color-breadcrumb:black;
     --color-breadcrumb-selected:#204d7a;
     --color-breadcrumb-after:black;
@@ -86,7 +87,6 @@
 }
 
 
-.iso-header,
 .Report-view-header{
     color: var(--color-white);
    }
@@ -209,7 +209,7 @@ a.selected-view {
  
 /* Main content */
 main.ncr-view {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: var( --color-form);
@@ -700,7 +700,7 @@ textarea {
 /* This section is for layout of the Quality Assurance input form*/
 
 .ncr-report{
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
 }
 .quality-assurance-inputs, .engineering-inputs, .purchasing-inputs {
@@ -745,14 +745,21 @@ legend{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr 1fr;
-    max-width: 80%;
+    max-width: 90%;
     margin: 20px auto 0;
-    background-color: var(--color-primary); 
+    background-color: var(--color-iso); 
     gap: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--color-iso);
+    border-radius: 5px;
+   
 }
 
 .iso-header div{
-    background-color: var(--color-form);
+    border-width: 6px;
+    background-color:var(--color-background);
+    
 }
 
 .iso-header label{

@@ -134,11 +134,7 @@ export function ReportView(report, action){
                             value="${safeTruthy(report?.qtyDefective, '')}"/>
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
-                        <li>
-                            <label id="lbl-supplier-or-rec" for="chk-supplier-or-rec">Supplier or Rec-Insp</label>
-                            <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="checkbox" id="chk-supplier-or-rec" 
-                            ${ report?.supplierOrRec ? 'checked' : ''}/>
-                        </li>
+                        
                         <li>
                             <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
@@ -148,7 +144,20 @@ export function ReportView(report, action){
                             <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
                                 ${report?.productionOrder ? 'checked' : ''}/>
-                        </li>                    
+                            
+                        </li>
+                        <li>
+                            <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
+                            <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
+                            ${ report?.supplierOrRec ? 'checked' : ''}/>
+                            <label id="QA-supplier-or-rec-radio-error" class="error-label"></label>
+                        </li>
+                        <li>
+                            <label id="lbl-wip" for="rad-wip">WIP</label>
+                            <input ${QAReadOnly ? "disabled" : ''} name="wip" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
+                            ${ report?.supplierOrRec === false ? 'checked' : ''}/>
+                            <label id="QA-wip-radio-error" class="error-label"></label>
+                        </li>                     
                     </ul>
                         
                 
@@ -196,25 +205,25 @@ export function ReportView(report, action){
                     
                         <li>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
-                            <input ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
+                            <input ${engiReadOnly? "readonly" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
                             ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
-                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
+                            <input required ${engiReadOnly? "readonly" : ""} id="rad-repair" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
                             ${report?.engineeringReview === "Repair"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-rework" id="lbl-rework">Rework</label>
-                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
+                            <input required ${engiReadOnly? "readonly" : ""} id="rad-rework" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
                             ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <label for="rad-scrap" id="lbl-scrap">Scrap</label>
-                            <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
+                            <input required ${engiReadOnly? "readonly" : ""} id="rad-scrap" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
                             ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>

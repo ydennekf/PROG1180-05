@@ -696,14 +696,6 @@ label{
     white-space: nowrap;
  }
 
- .checkbox-align{
-    border: 1px solid transparent;
-    text-align: right;
- }
- .checkbox-align input[type="checkbox"]{
-    float: right;
- }
-
 .purchasing-left-container{
     max-width: 300px;
     margin: auto;
@@ -775,11 +767,20 @@ legend{
 }
 
 .qa-left-container li , .engi-left-container{
-    min-width: 200px;
+    min-width: 230px;
     width: 100%
 }
 
+ .qa-left-container input[type="number"], .qa-left-container input[type="text"] {
+    width: 40%;
+    float: right;
+}
 
+.checkbox-align label {
+    display: inline-block;
+    vertical-align:top;
+    width: 210px;
+}
 
 .qa-left-container input[type="radio"] {
     height: 20px;

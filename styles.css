@@ -759,6 +759,8 @@ legend{
     color: var(--color-black);
 }
 
+
+
 .qa-right-container, .engi-right-container {
     grid-template-rows: 1fr 3fr;
 }
@@ -789,8 +791,9 @@ legend{
   }
 
   .qa-left-container fieldset{
+    margin: 5px -5px;
     border-radius: 5px;
-    padding: 5px 0 0 5px;
+    padding: 5px 5px 0 5px;
   }
 
 

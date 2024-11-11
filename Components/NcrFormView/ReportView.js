@@ -163,7 +163,9 @@ export function ReportView(report, action){
                             value="${safeTruthy(report?.qtyDefective, '')}"/>
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
-                        
+                    </ul>  
+
+                    <ul class= ".checkbox-align">      
                         <li>
                             <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
@@ -175,6 +177,9 @@ export function ReportView(report, action){
                                 ${report?.productionOrder ? 'checked' : ''}/>
                             
                         </li>
+                    </ul>  
+                    <fieldset>
+                    <ul class= ".checkbox-align">    
                         <li>
                             <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
@@ -188,7 +193,7 @@ export function ReportView(report, action){
                             <label id="QA-wip-radio-error" class="error-label"></label>
                         </li>                     
                     </ul>
-                        
+                    </fieldset>     
                 
                 </div>
                 <div class="qa-right-container">

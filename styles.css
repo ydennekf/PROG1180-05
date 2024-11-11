@@ -209,7 +209,7 @@ a.selected-view {
  
 /* Main content */
 main.ncr-view {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: var( --color-form);
@@ -290,6 +290,9 @@ table.ncr-list a:hover {
     margin-left: 0; /* Remove any unwanted margin */
   }
     
+  input[type="text"], input[type="number"] {
+    height: 25px;
+  }
  
  
 /* Pagination Container */

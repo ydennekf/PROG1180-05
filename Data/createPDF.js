@@ -43,7 +43,7 @@ function qaFooter(report){
                 { width:200, table:{body:[
                     [{text:"Identify Process Applicable\n", style:"header", fontSize:14, fillColor:"#5897c9"}, ""],
                             ["Supplier or Rec-Insp", report.supplierOrRec ? checkBox() : ""],
-                            ["WIP (Production Order)", report.productionOrder ? checkBox() : ""]
+                            ["WIP (Production Order)", /*report.productionOrder ? checkBox() :*/ ""] // TODO Change
                         ]}},
                 topRightTable(report)
                 //{table: {body: [[{text: "Supplier Name"}, ""], [`${report.supplierName}`, ""]]}}
@@ -95,13 +95,13 @@ function engHeader(report){
 function engDisposition(report){
     return [
         {text:"Disposition", style:"header", fontSize:14},
-        {text:"This is an example of disposition as I have yet to hook it up to the sample data we have."},
+        {text:report.disposition || engTemp.disposition},
         {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ], margin:[0, 0, 0, 10]},
         {table:{body:[
                     ["Does the Drawing Require Updating", report.supplierOrRec ? checkBox() : ""],
-                    ["Original Rev. Number", "123"],
-                    ["Updated Rev. Number", "123"],
-                    ["Revision Date", "123"]
+                    ["Original Rev. Number", report.originalRevNo || engTemp.originalRevNo],
+                    ["Updated Rev. Number", report.updatedRevNo || engTemp.updatedRevNo],
+                    ["Revision Date", report.date]
                 ]}}
     ]
 }
@@ -164,4 +164,14 @@ export function qaDescriptions(report) {
             // alignment: 'justify'
         }
     }
+}
+
+export const engTemp= {
+    disposition:"This is a sample disposition because we haven't updated our sample data yet. "
+    + "This is a sample disposition because we haven't updated our sample data yet. "
+    +"This is a sample disposition because we haven't updated our sample data yet.\n",
+    originalRevNo:"7",
+    updatedRevNo:"8",
+    engName:"Steve Guyman"
+    
 }

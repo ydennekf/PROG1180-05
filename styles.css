@@ -98,10 +98,16 @@
 
 /* Body Styles */
 body {
+    display: flex;
     background-color: var( --color-background);
     color: var(--color-black);
     font-family: var(--font-primary);
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
     transition: all 0.3s ease-in-out;
+    
+
 }
  
 /* Nav Bar */
@@ -209,6 +215,7 @@ a.selected-view {
  
 /* Main content */
 main.ncr-view {
+    flex: 1;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -533,17 +540,24 @@ input[type="checkbox"]:checked:before{
  
 /* Footer Styling */
  
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    flex: 1;
+}
+
 footer {
     background-color: var(--color-primary);
     color: var( --color-white);
     text-align: center;
     padding: 15px 10px 0;
-    /* position: fixed;
-    bottom: 0; */
     width: 100%;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
-    margin-top:120px; /*This isn't responsive but its a bandage for today*/
+    /*margin-top:300px; This isn't responsive but its a bandage for today*/
 }
  
 /* General Label Styling */
@@ -684,6 +698,7 @@ label{
     box-shadow: 0 4px 8px var(--color-black);
  }
 
+ .engi-left-container
  .engi-right-container{
     max-width: 500px;
     margin: auto;

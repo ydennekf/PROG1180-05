@@ -787,7 +787,7 @@ legend{
     display: inline-block;
     vertical-align: middle;
     width: 210px;
-    /* white-space: normal; */
+    white-space: normal;
 }
 
 .qa-left-container input[type="radio"], .engi-left-container input[type="radio"] {

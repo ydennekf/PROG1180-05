@@ -5,6 +5,11 @@ import { DetailsNcrView } from "./NcrFormView/DetailsNcrView.js";
 import { app } from "../AppState.js";
 import {ReportView} from "./NcrFormView/ReportView.js";
 import { redirectViewAllReports } from "../redirection/redirect.js";
+import { convertToPDF } from "../Data/createPDF.js";
+
+
+
+
 
 
 export function reportPreview  (reportData) {
@@ -81,6 +86,7 @@ export function previewBindings(){ // Called after mapComponents completes on re
     // for now this works though.
     const viewBtns = document.querySelectorAll('.view-report');
     const editBtns = document.querySelectorAll('.edit-report');
+    const archiveBtns = document.querySelectorAll('.archive-report')
     
     viewBtns.forEach(e => {
         e.addEventListener('click', (ev) => openReportDetails(ev.target.dataset.ncrNumber))
@@ -90,5 +96,28 @@ export function previewBindings(){ // Called after mapComponents completes on re
         e.addEventListener('click', (ev) => openReportEditor(ev.target.dataset.ncrNumber))
     })
 
+    // archiveBtns.forEach(e => {
+    //     e.addEventListener('click', pdfMake.createPdf(convertToPDF("2024-001")).open())
+    // })
+    // THIS IS INCREDIBLY SHIT CODE
+    var s = document.createElement('script');
+    s.type = 'module';
+    let code = `
+    import { convertToPDF } from "../Data/createPDF.js";
+     const archiveBtns = document.querySelectorAll('.archive-report')
+         archiveBtns.forEach(e => {
+        e.addEventListener('click', (ev) =>  pdfMake.createPdf(convertToPDF(ev.target.dataset.ncrNumber)).open())
+    })
+    `
+    try {
+        s.appendChild(document.createTextNode(code));
+        document.body.appendChild(s);
+      } catch (e) {
+        s.text = code;
+        document.body.appendChild(s);
+      }   
+
 }
+
+
 

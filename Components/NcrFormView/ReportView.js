@@ -228,14 +228,18 @@ export function ReportView(report, action){
                 
                 </div>     
             </div>
+
+
     <h2>Engineering</h2>
         
             <div class="engineering-inputs">
                 <div class="engi-left-container">
                     
-                    
-                        <label>Review by CF Engineering</label>
-                        <ul>
+                <fieldset>
+                    <legend>Review by CF Engineering</legend>
+
+                        
+                    <ul>
                     
                         <li>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
@@ -261,6 +265,13 @@ export function ReportView(report, action){
                             ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
+                    </ul>    
+
+                </fieldset>
+                    
+                
+
+                <ul class= "eng-checkbox-align">
                         <li>
                             <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
                             <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 

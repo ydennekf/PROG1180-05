@@ -684,13 +684,14 @@ label{
     box-shadow: 0 4px 8px var(--color-black);
  }
 
- .engi-right-container
-.engi-left-container{
-    max-width: 300px;
+ .engi-right-container{
+    max-width: 500px;
     margin: auto;
  }
- .qa-left-container{
-    max-width: 500px;
+ .qa-left-container, .engi-left-container {
+    max-width: 300px;
+    width: 280px;
+    min-height: 400px;
     margin: auto;
     display: inline-block;
     white-space: nowrap;
@@ -766,9 +767,9 @@ legend{
     min-height: 200px;
 }
 
-.qa-left-container li , .engi-left-container{
+.qa-left-container li , .engi-left-container li{
     min-width: 230px;
-    width: 100%
+    width: 100%;
 }
 
  .qa-left-container input[type="number"], .qa-left-container input[type="text"] {
@@ -778,11 +779,18 @@ legend{
 
 .checkbox-align label {
     display: inline-block;
-    vertical-align:top;
+    vertical-align: top;
     width: 210px;
 }
 
-.qa-left-container input[type="radio"] {
+.eng-checkbox-align label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 210px;
+    /* white-space: normal; */
+}
+
+.qa-left-container input[type="radio"], .engi-left-container input[type="radio"] {
     height: 20px;
     width: 20px;
     vertical-align: middle;
@@ -791,7 +799,7 @@ legend{
    margin-right: 5px;
   }
 
-  .qa-left-container fieldset{
+  .qa-left-container fieldset, .engi-left-container fieldset{
     margin: 5px -5px;
     border-radius: 5px;
     padding: 5px 5px 0 5px;

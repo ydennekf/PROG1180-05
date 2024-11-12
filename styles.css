@@ -209,7 +209,7 @@ a.selected-view {
  
 /* Main content */
 main.ncr-view {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     background-color: var( --color-form);
@@ -290,7 +290,11 @@ table.ncr-list a:hover {
     margin-left: 0; /* Remove any unwanted margin */
   }
     
+  input[type="text"], input[type="number"] {
+    height: 25px;
+  }
  
+  
  
 /* Pagination Container */
 .pagination-container {
@@ -688,6 +692,8 @@ label{
  .qa-left-container{
     max-width: 500px;
     margin: auto;
+    display: inline-block;
+    white-space: nowrap;
  }
 
 .purchasing-left-container{
@@ -731,6 +737,7 @@ textarea {
 .quality-assurance-inputs, .engineering-inputs, .purchasing-inputs {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    gap: 20px;
 }
 
 
@@ -743,6 +750,8 @@ textarea {
 legend{
     color: var(--color-black);
 }
+
+
 
 .qa-right-container, .engi-right-container {
     grid-template-rows: 1fr 3fr;
@@ -758,10 +767,35 @@ legend{
 }
 
 .qa-left-container li , .engi-left-container{
-    min-width: 200px;
+    min-width: 230px;
     width: 100%
 }
 
+ .qa-left-container input[type="number"], .qa-left-container input[type="text"] {
+    width: 40%;
+    float: right;
+}
+
+.checkbox-align label {
+    display: inline-block;
+    vertical-align:top;
+    width: 210px;
+}
+
+.qa-left-container input[type="radio"] {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    
+   float: right;
+   margin-right: 5px;
+  }
+
+  .qa-left-container fieldset{
+    margin: 5px -5px;
+    border-radius: 5px;
+    padding: 5px 5px 0 5px;
+  }
 
 
 /* NCR header */

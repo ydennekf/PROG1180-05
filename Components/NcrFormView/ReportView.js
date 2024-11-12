@@ -133,37 +133,39 @@ export function ReportView(report, action){
                 <div class="qa-left-container">
                     <ul>
                         <li>
-                            <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label><br>
+                            <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label>
                             <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                             value="${report?.ncrNumber || newNCR}"/>
                             <label id="ncr-number-error" class="error-label"></label>
                         </li>
                         
                         <li>
-                            <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label><br>
+                            <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                             value="${safeTruthy(report?.prodNumber, '')}"/>
                             <label id="prod-number-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label><br>
+                            <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                             value="${safeTruthy(report?.salesNumber, '')}"/>
                             <label id="sales-number-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label><br>
+                            <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                             value="${safeTruthy(report?.qtyReceived, '')}"/>
                             <label id="quantity-received-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label><br>
+                            <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                             value="${safeTruthy(report?.qtyDefective, '')}"/>
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
-                        
+                    </ul>  
+
+                    <ul class= "checkbox-align">      
                         <li>
                             <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
@@ -175,6 +177,9 @@ export function ReportView(report, action){
                                 ${report?.productionOrder ? 'checked' : ''}/>
                             
                         </li>
+                    </ul>  
+                    <fieldset>
+                    <ul>    
                         <li>
                             <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
@@ -188,7 +193,7 @@ export function ReportView(report, action){
                             <label id="QA-wip-radio-error" class="error-label"></label>
                         </li>                     
                     </ul>
-                        
+                    </fieldset>     
                 
                 </div>
                 <div class="qa-right-container">

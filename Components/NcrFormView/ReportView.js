@@ -11,10 +11,10 @@ export function ReportView(report, action){
     // take the employee's role to determine what sections are editable and what is read only
 
 
-    let QAReadOnly = false;
-    let engiReadOnly = false;
-    let purchaseReadOnly = false;
-    let exportReadOnly = false;
+    let QAReadOnly = true;
+    let engiReadOnly = true;
+    let purchaseReadOnly = true;
+    let exportReadOnly = true;
     let newNCR;
     let empAction;
 
@@ -28,6 +28,9 @@ export function ReportView(report, action){
     }
 
     let saveReport = (action) => {
+        // when we save the report check which section recieved edits and based on the section update the status to the next position
+        // when the status changes send notification to the job role
+        // when the notification sends send the email to the job role employee
     let errors = validateForm()
 
     if(errors.get().length === 0){ // check if there are any errors if not then we can save or update the NCR form.
@@ -106,7 +109,8 @@ export function ReportView(report, action){
     }
 
 
-
+// within the QA form, add the autocomplete to the supplier name
+    // if the supplier name does not exsist add a button to create a new supplier with the data needed from the data model
     const html = `
 <h1 class="Report-view-header">Report Details</h1>
    
@@ -373,7 +377,11 @@ export function ReportView(report, action){
     
     
     `;
+ // fix the text to better describe the submit action ie. save, create
+ // number inputs changed to text fields
 
+
+// add functionality to allow multiple sections to be open here.
     $(document).ready( function() {
         $( "#accordion" ).accordion({
             collapsible: true

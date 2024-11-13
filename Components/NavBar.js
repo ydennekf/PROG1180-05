@@ -9,6 +9,7 @@ import { ReportList } from "./ReportList.js";
 import {ReportView} from "./NcrFormView/ReportView.js";
 
 export function NavBar(){
+    // add navigation links here make the image direct to the dashboard.
     const html = `
     <nav>
             <ul class='nav-list'>
@@ -36,11 +37,13 @@ export function SearchBar(targetID) {
         console.log("testing-search");
     }
 
-
+    // separate the search box for NCR num and Supplier
+    // set the search text to update on keypress again.
     let html = `
         <div><button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button></div>
         <ul class='nav-list'>
             <li><h2>Filter</h2></li>
+            
             <li id='search-container' class='search-container'>
                     
                     <label for="report-search" style="display:inline;" id="lbl-search">search by supplier or ncr no.</label>
@@ -94,7 +97,7 @@ function applyFilters() {
         const statusFilter = $("#status-filter").val();
         const startDate = $("#start-date").datepicker("getDate");
         const endDate = $("#end-date").datepicker("getDate");
-
+        console.log(searchTerm + " " + statusFilter + " " + startDate + " " + endDate);
         const filteredReports = reportData.filter(report => {
             // Convert report date to Date object
             const reportDate = new Date(report.date);

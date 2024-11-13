@@ -23,7 +23,7 @@ export function updateReport(ncrNumber, newReport){ // returns old report
 
 // Eventually I want to reformat the reports so that each respective field is in a nested object
 // eg: {qualityAssurance : { itemName, defectDescription, supplierName, etc } }.
-
+// revise the values to reflect updated NCR forms
 
 export let reportData = [
     {

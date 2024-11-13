@@ -796,7 +796,10 @@ legend{
     width: 40%;
     float: right;
 }
-
+.checkbox-align {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .checkbox-align label {
     display: inline-block;
     vertical-align: top;

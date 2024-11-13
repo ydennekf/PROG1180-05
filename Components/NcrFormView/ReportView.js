@@ -169,6 +169,8 @@ export function ReportView(report, action){
                         </li>
                     </ul>  
 
+                    <hr>
+
                     <ul class= "checkbox-align">      
                         <li>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
@@ -182,8 +184,10 @@ export function ReportView(report, action){
                         </li>
                     </ul>
 
-                    <fieldset>
-                        <ul>    
+                    <hr>
+
+                    
+                        <ul class= "checkbox-align">    
                             <li>
                                
                                 <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
@@ -199,7 +203,7 @@ export function ReportView(report, action){
                                 <label id="QA-wip-radio-error" class="error-label"></label>
                             </li>                     
                         </ul>
-                    </fieldset>     
+                         
                 
                 </div>
                 <div class="qa-right-container">

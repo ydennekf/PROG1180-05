@@ -171,32 +171,34 @@ export function ReportView(report, action){
 
                     <ul class= "checkbox-align">      
                         <li>
-                            <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
                                ${report?.nonConforming ? 'checked' : ''}/>
+                            <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>   
                         </li>
                         <li>
-                            <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>
                             <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
                                 ${report?.productionOrder ? 'checked' : ''}/>
-                            
+                            <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>                     
                         </li>
-                    </ul>  
-                    <fieldset>
-                    <ul>    
-                        <li>
-                            <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
-                            <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
-                            ${ report?.supplierOrRec ? 'checked' : ''}/>
-                            <label id="QA-supplier-or-rec-radio-error" class="error-label"></label>
-                        </li>
-                        <li>
-                            <label id="lbl-wip" for="rad-wip">WIP</label>
-                            <input ${QAReadOnly ? "disabled" : ''} name="wip" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
-                            ${ report?.supplierOrRec === false ? 'checked' : ''}/>
-                            <label id="QA-wip-radio-error" class="error-label"></label>
-                        </li>                     
                     </ul>
+
+                    <fieldset>
+                        <ul>    
+                            <li>
+                               
+                                <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
+                                ${ report?.supplierOrRec ? 'checked' : ''}/>
+                                 <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
+                                <label id="QA-supplier-or-rec-radio-error" class="error-label"></label>
+                            </li>
+                            <li>
+                                
+                                <input ${QAReadOnly ? "disabled" : ''} name="wip" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
+                                ${ report?.supplierOrRec === false ? 'checked' : ''}/>
+                                <label id="lbl-wip" for="rad-wip">WIP</label>
+                                <label id="QA-wip-radio-error" class="error-label"></label>
+                            </li>                     
+                        </ul>
                     </fieldset>     
                 
                 </div>

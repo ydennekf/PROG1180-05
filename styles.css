@@ -210,8 +210,7 @@ a.selected-view {
     content:" /";
     color: var(--color-breadcrumb-after);
 }
- 
- 
+
  
 /* Main content */
 main.ncr-view {
@@ -293,9 +292,9 @@ table.ncr-list a:hover {
   }
   
  
-  input[type="radio"] {
-    margin-left: 0; /* Remove any unwanted margin */
-  }
+  /* input[type="radio"] {
+    margin-left: 0; /* Remove any unwanted margin
+  } */
     
   input[type="text"], input[type="number"] {
     height: 25px;
@@ -795,8 +794,27 @@ legend{
  .qa-left-container input[type="number"], .qa-left-container input[type="text"] {
     width: 40%;
 }
-.checkbox-align {
+
+
+.qa-left-container input[type="radio"], .engi-left-container input[type="radio"] {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+   margin-left: 5px;
+   margin-right: 7px;
+  }
+
+  .checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .checkbox-align, .eng-checkbox-align {
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox-align li, .eng-checkbox-align li{
     margin-bottom: 10px;
 }
 .checkbox-align label {
@@ -807,19 +825,9 @@ legend{
 
 .eng-checkbox-align label {
     display: inline-block;
-    vertical-align: middle;
-    width: 210px;
-    white-space: normal;
+    vertical-align:middle;
+    white-space: normal; /* allows label to stay inside fieldset*/
 }
-
-.qa-left-container input[type="radio"], .engi-left-container input[type="radio"] {
-    height: 20px;
-    width: 20px;
-    vertical-align: middle;
-    
-   /* float: right; */
-   margin-left: 5px;
-  }
 
   .qa-left-container fieldset, .engi-left-container fieldset{
     margin: 5px -5px;
@@ -832,7 +840,7 @@ legend{
 
 .iso-header{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
     max-width: 90%;
     width: 1200px;
@@ -863,7 +871,7 @@ legend{
 }
 
 .iso-header :nth-child(2){
-    grid-column: 3/5;
+    grid-column: 3/4;
     grid-row: 1/2;
 }
 .iso-header :nth-child(4){
@@ -872,12 +880,12 @@ legend{
 }
  
 .iso-header :nth-child(6){
-    grid-column: 3/5;
+    grid-column: 3/4;
     grid-row: 2/3;
 }
 
 .iso-header :nth-child(8){
-    grid-column: 5/6;
+    grid-column: 4/5;
     grid-row: 1/2;
 }
  

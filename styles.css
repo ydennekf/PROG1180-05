@@ -794,7 +794,6 @@ legend{
 
  .qa-left-container input[type="number"], .qa-left-container input[type="text"] {
     width: 40%;
-    float: right;
 }
 .checkbox-align {
     margin-top: 10px;
@@ -803,7 +802,7 @@ legend{
 .checkbox-align label {
     display: inline-block;
     vertical-align: top;
-    width: 210px;
+    width: 100%;
 }
 
 .eng-checkbox-align label {

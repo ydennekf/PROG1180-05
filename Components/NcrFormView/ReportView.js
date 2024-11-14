@@ -173,7 +173,18 @@ export function ReportView(report, action){
                     </ul>  
 
                     <hr>
-
+                    <ul class= "checkbox-align">      
+                        <li>
+                            <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
+                               ${report?.nonConforming ? 'checked' : ''}/>
+                            <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>   
+                        </li>
+                        <li>
+                            <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
+                                ${report?.productionOrder ? 'checked' : ''}/>
+                            <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>                     
+                        </li>
+                    </ul>
                     
 
                     <hr>
@@ -227,19 +238,9 @@ export function ReportView(report, action){
                         <textarea ${QAReadOnly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
-                    <div class= "checkbox-align">     
-                        <div>
-                            <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
-                            ${report?.nonConforming ? 'checked' : ''}/>
-                            <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>   
-                        </div>
-                        <div>
-                            <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
-                                ${report?.productionOrder ? 'checked' : ''}/>
-                            <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>                     
-                        </div>
-                        
-                    </div>
+        
+                    
+                
                 </div>     
             </div>
 

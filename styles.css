@@ -809,7 +809,13 @@ legend{
     margin-right: 5px;
   }
 
-  .checkbox-align, .eng-checkbox-align {
+  .checkbox-align {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.eng-checkbox-align {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -818,7 +824,7 @@ legend{
     margin-bottom: 10px;
 }
 .checkbox-align label {
-    display: inline-block;
+    display: inline;
     vertical-align: top;
     width: 100%;
 }

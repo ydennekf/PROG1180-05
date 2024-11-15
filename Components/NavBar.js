@@ -1,4 +1,4 @@
-import { app } from "../AppState.js"
+import { app, initApp } from "../AppState.js"
 
 import { qualityAssuranceForm } from "./NcrFormView/QualityAssuranceForm.js";
 
@@ -7,15 +7,58 @@ import { reportData } from "./../Data/new_reportData.js";
 import { ReportList } from "./ReportList.js";
 
 import {ReportView} from "./NcrFormView/ReportView.js";
+import { redirectHome, redirectNewReport as redirectNewNCR, redirectViewAllReports } from "../redirection/redirect.js";
+
+function bindNav(){
+    const home = document.getElementById('_home')
+    const create = document.getElementById("_create-ncr")
+    const view = document.getElementById("_view-ncr")
+
+    view.addEventListener("click", e => {
+        if(!app){
+            return;
+        }
+        redirectViewAllReports(true)
+    })
+    home.addEventListener('click', e =>{
+        if(!app){
+            return;
+        } 
+        redirectHome(true)
+    })
+    create.addEventListener('click', e => {
+        if(!app){
+            return;
+        }
+        redirectNewNCR(true)
+    })
+}
+
 
 export function NavBar(){
     // add navigation links here make the image direct to the dashboard.
     const html = `
     <nav>
+    <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
             <ul class='nav-list'>
-                <li>
-                    <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
+               
+            
+                <li id="_home">
+                    Home
                 </li>
+
+                <li id="_create-ncr">
+                    New NCR
+                </li>
+
+                <li id="_view-ncr">
+                    View NCR's
+                </li>
+
+                <li id="_view_report">
+                    Reports
+                </li>
+
                 <li>
                 <div id="emp-info"></div>
                 </li>
@@ -26,6 +69,7 @@ export function NavBar(){
     `
 
     document.getElementById('nav-wrapper').innerHTML = html;
+    bindNav()
 }
 
 export function SearchBar(targetID) {

@@ -117,10 +117,14 @@ nav {
     color: var(--color-white);
     background-color: var( --color-primary);
     position:relative; /*Bandage fix for breadcrumbs in header*/
+    display:flex;
+    flex-direction:row;
+    gap:10px;
 }
  
 nav .logo {
     height: 7vh;
+
 }
  
 nav span{
@@ -129,9 +133,12 @@ nav span{
  
 .nav-list {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 2px;
+    display: flex;
+    align-items:center;
+    gap: 15px;
+}
+.nav-list li{
+    cursor:pointer;
 }
  
 nav ul li a {

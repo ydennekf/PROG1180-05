@@ -32,11 +32,14 @@ function bindNav(){
         }
         redirectNewNCR(true)
     })
+
+
 }
 
 
 export function NavBar(){
     // add navigation links here make the image direct to the dashboard.
+    
     const html = `
     <nav>
     <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
@@ -61,6 +64,10 @@ export function NavBar(){
 
                 <li>
                 <div id="emp-info"></div>
+                </li>
+
+                <li id="logout">
+                    
                 </li>
             </ul>
     </nav>

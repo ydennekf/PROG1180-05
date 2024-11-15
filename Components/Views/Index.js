@@ -1,4 +1,5 @@
 import { app } from "../../AppState.js";
+import { createSVG, viewSVG, eyeSVG } from "../svgs.js";
 import { mapComponents } from "../utils/utils.js";
 import { previewBindings, reportPreview } from "../ReportPreview.js";
 import { injectOrReturn } from "../utils/utils.js";
@@ -31,8 +32,14 @@ function RoleIndexButtons(){
         default: // This will be for QA I just need to figure out whaat each ones buttons will be
             return `
         <div>
-            <button id="create-report-btn">Create NCR</button>
-            <button id="view-reports">View NCRs</button>
+            <button id="create-report-btn">
+                ${createSVG()}
+                Create NCR
+            </button>
+            <button id="view-reports">
+                ${eyeSVG()}
+                View NCRs
+            </button>
         </div>`
     }
 

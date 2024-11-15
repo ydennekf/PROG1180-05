@@ -1064,3 +1064,16 @@ label {
 }
  
 /* =============
+
+
+
+/* Svg Styles for the button ICONS
+
+
+*/
+
+#create-report-btn svg, #view-reports svg{
+    width:40px;
+    height:40px;
+    fill:white;
+}

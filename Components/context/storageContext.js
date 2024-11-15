@@ -59,20 +59,38 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
 
     }
 
-    function pushNewReport(reportNumber, department){
+    function pushNewReport(reportNumber, status){
 
-        for(let emp in employees){
-            if(emp.department === department){
-                let reports = empPreferences[emp.username].newReports
+
+            if(employee.department === status){
+
+                let reports = empPreferences[employee.username].newReports
+                   
+                    const curTotal = reports.length
+                   const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
+
+                   if(idx >= 0){ // if the reports already in recent it removes the report and then pushes it to the front
+
+                    reports = reports.filter(r => r.ncrNumber !== reportNumber)
+                   }
                 reports.unshift(getReport(reportNumber))
-                reports = reports.filter(item => item.status !== employee.department)
-                empPreferences[emp.username].newReports = reports;
+                console.log(reports)
+                reports = reports.filter(item => item.status === employee.department)
+                console.log(curTotal)
+                if(curTotal >= 5){
+                    console.log("Pop")
+                   reports.pop()
+                }
+                empPreferences[employee.username].newReports = reports;
+                save()
             }
-        }
 
-        save()
+
+
 
     }
+
+
 
     function save(){
         localStorage.setItem('preferences', JSON.stringify(empPreferences))

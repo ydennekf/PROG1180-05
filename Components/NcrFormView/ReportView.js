@@ -466,7 +466,6 @@ $(document).ready(function(){
   $("#accordion").multiAccordion({
     header: "> h2",
     collapsible: true,
-    heightStyle: "content",
     animate: 200,
     icons: null,
     multiple: true // Enable multiple sections open

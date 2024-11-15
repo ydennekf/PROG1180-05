@@ -80,7 +80,7 @@ export function createReport(employee){
         productionOrder:formData.productionOrder.checked,
         supplierOrRec:formData.supplierOrRec.checked,
         startedBy:employee.username,
-        status:formData.engineeringRequired.checked ? ReportStatus.AwaitingEngineering : ReportStatus.Closed, // defualts to closed cuz we aren't at the next stage
+        status:formData.engineeringRequired.checked ? ReportStatus.engineering : ReportStatus.sales, // defualts to closed cuz we aren't at the next stage
         date:new Date(Date.now()).toDateString(),
         itemName:formData.itemName.value,
         sapNumber:formData.sapNumber.value,

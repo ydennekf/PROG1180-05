@@ -3,8 +3,10 @@ import { mapComponents } from "../utils/utils.js";
 import { previewBindings, reportPreview } from "../ReportPreview.js";
 import { injectOrReturn } from "../utils/utils.js";
 import { redirectNewReport, redirectViewAllReports } from "../../redirection/redirect.js";
+import {reportData } from "../../Data/new_reportData.js";
 
 export default function Index(){
+    setNotifications()
     document.getElementById("root").classList.add("ncr-view")
 
     const html = `
@@ -16,6 +18,7 @@ export default function Index(){
     document.getElementById('root').innerHTML = html;
     previewBindings()
     indexButtonBindings()
+
     
 }
 
@@ -43,14 +46,18 @@ function indexButtonBindings(){
 
 export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()
+    const notifications = app.storage.getNewReports()
     const html = `
     <table>
     ${UnsortedHeader()}
         <tbody>
         <tr><h2>Recent Reports</h2></tr>
         ${recent.length > 0 ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"}
+        <tr><td>Notifications</td></tr>
+         ${mapComponents(notifications, reportPreview)}
         </tbody>
     </table>
+  
     `
 
     return injectOrReturn(html, targetID)
@@ -77,4 +84,15 @@ function UnsortedHeader(){
 
 
 
+}
+
+function setNotifications() {
+
+    for(let r = 0; reportData.length > r ; r++){
+
+        if(reportData[r].status === app.employee.department){
+
+            app.storage.pushNewReport(reportData[r].ncrNumber, reportData[r].status)
+        }
+    }
 }

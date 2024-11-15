@@ -1,7 +1,7 @@
 import { ReportList } from "../Components/ReportList.js"
 import { app } from "../AppState.js"
 import { reportData } from "../Data/new_reportData.js"
-
+import Index from "../Components/Views/Index.js";
 import {ReportView} from "../Components/NcrFormView/ReportView.js";
 
 

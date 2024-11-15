@@ -23,10 +23,7 @@
     --color-login-input:#333;
     --color-breadcrumb:black;
     --color-breadcrumb-selected:#204d7a;
-    --color-breadcrumb-after:black;
-    
- 
-   
+    --color-breadcrumb-after:black;  
 }
  
 /* Light Theme */
@@ -69,12 +66,11 @@
     border-radius: 10px;
     margin: auto;
  }
-
  
-
-.purchasing-inputs,
+.iso-header,
+.quality-assurance-inputs,
 .engineering-inputs,
-.quality-assurance-inputs{
+.purchasing-inputs {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
@@ -86,15 +82,12 @@
     color: var(--color-white);
 }
 
-
 .Report-view-header{
     color: var(--color-white);
    }
 
 }
  
-
-
 
 /* Body Styles */
 body {
@@ -106,8 +99,6 @@ body {
     margin: 0;
     min-height: 100vh;
     transition: all 0.3s ease-in-out;
-    
-
 }
  
 /* Nav Bar */
@@ -116,7 +107,7 @@ nav {
     margin-bottom: 20px;
     color: var(--color-white);
     background-color: var( --color-primary);
-    position:relative; /*Bandage fix for breadcrumbs in header*/
+    position: relative; /*Bandage fix for breadcrumbs in header*/
     display:flex;
     flex-direction:row;
     gap:10px;
@@ -124,7 +115,6 @@ nav {
  
 nav .logo {
     height: 7vh;
-
 }
  
 nav span{
@@ -137,6 +127,7 @@ nav span{
     align-items:center;
     gap: 15px;
 }
+
 .nav-list li{
     cursor:pointer;
 }
@@ -275,7 +266,6 @@ table.ncr-list a:hover {
 }
  
  
- 
 /* Index View Table Buttons */
 .index-view-table-buttons {
     display: inline-flex;
@@ -298,16 +288,13 @@ table.ncr-list a:hover {
     gap: 10px;
   }
   
- 
   /* input[type="radio"] {
     margin-left: 0; /* Remove any unwanted margin
   } */
     
   input[type="text"], input[type="number"] {
     height: 25px;
-  }
- 
-  
+  } 
  
 /* Pagination Container */
 .pagination-container {
@@ -546,14 +533,14 @@ input[type="checkbox"]:checked:before{
  
 /* Footer Styling */
  
-.container{
+/* .container{
     display: flex;
     flex-direction: column;
-}
+} */
 
-.main-content{
+/* .main-content{
     flex: 1;
-}
+} */
 
 footer {
     background-color: var(--color-primary);
@@ -563,7 +550,7 @@ footer {
     width: 100%;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
-    /*margin-top:300px; This isn't responsive but its a bandage for today*/
+    margin-top:30px; 
 }
  
 /* General Label Styling */
@@ -666,8 +653,6 @@ label{
         transform: rotate(45deg) scale(0);
     }
 }
- 
-
 
 /* =========================
    Header Report-Details
@@ -676,15 +661,10 @@ label{
     color: var(--color-black);
    }
 
-
-
-
-
 /* =========================
    NCR Form Layout
    ========================= */
-   
-   
+
    .ncr-report{
     max-width: 90%;
     margin: auto;
@@ -718,7 +698,6 @@ label{
     justify-content: center;
     padding: 5px 0 5px 10px;
 }
-
 
 .qa-left-container,
 .qa-right-container,
@@ -786,11 +765,10 @@ legend{
 
 
 
-.qa-right-container, .engi-right-container {
-    grid-template-rows: 1fr 3fr;
-}
 
-.qa-right-container label, .qa-right-container div:nth-child(2) textarea,
+
+.qa-right-container label, 
+.qa-right-container div:nth-child(2) textarea,
 .engi-right-container textarea{
     width: 100%;
 }
@@ -799,17 +777,19 @@ legend{
     min-height: 200px;
 }
 
-.qa-left-container li , .engi-left-container li{
+.qa-left-container li , 
+.engi-left-container li{
     min-width: 230px;
     width: 100%;
 }
 
- .qa-left-container input[type="number"], .qa-left-container input[type="text"] {
+ .qa-left-container input[type="number"], 
+ .qa-left-container input[type="text"] {
     width: 40%;
 }
 
-
-.qa-left-container input[type="radio"], .engi-left-container input[type="radio"] {
+.qa-left-container input[type="radio"], 
+.engi-left-container input[type="radio"] {
     height: 20px;
     width: 20px;
     vertical-align: middle;
@@ -817,20 +797,27 @@ legend{
    margin-right: 7px;
   }
 
-  .checkbox-align input[type="checkbox"]{
+  .qa-left-container fieldset, 
+  .engi-left-container fieldset{
+    margin: 5px -5px;
+    border-radius: 5px;
+    padding: 5px 5px 0 5px;
+  }
+
+  .qa-checkbox-align input[type="checkbox"]{
     vertical-align: middle;
     margin-right: 5px;
   }
 
-  .checkbox-align, .eng-checkbox-align {
+  .qa-checkbox-align, .eng-checkbox-align {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.checkbox-align li, .eng-checkbox-align li{
+.qa-checkbox-align li, .eng-checkbox-align li{
     margin-bottom: 10px;
 }
-.checkbox-align label {
+.qa-checkbox-align label {
     display: inline-block;
     vertical-align: top;
     width: 100%;
@@ -842,21 +829,7 @@ legend{
     white-space: normal; /* allows label to stay inside fieldset*/
 }
 
-  .qa-left-container fieldset, .engi-left-container fieldset{
-    margin: 5px -5px;
-    border-radius: 5px;
-    padding: 5px 5px 0 5px;
-  }
-
-
-
- 
-/* .iso-row {
-    min-height: 1.5vh;
-    justify-content: center;
-    background-color: var(--color-primary);
-    gap: 1px; */
-/* }
+ /*
 .col-3 {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -879,7 +852,12 @@ legend{
     margin: auto;
  } */
 
-/* Media Queries */
+
+
+/*  ==================
+      Media Queries 
+    ==================*/
+
 
 @media screen and (min-width: 1024px) {
  
@@ -934,7 +912,8 @@ legend{
 /* This section is for layout of the NCR form*/
 
 
-.quality-assurance-inputs, .purchasing-inputs {
+.quality-assurance-inputs, 
+.purchasing-inputs {
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 20px;
@@ -946,11 +925,21 @@ legend{
     gap: 20px;
 }
 
+.qa-right-container, 
+.purchasing-right-container {
+    grid-template-rows: 1fr 3fr;
+}
+
+.engi-left-container{
+    grid-template-columns: 1fr 1fr;
+}
+
 .col-2{
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: 0;
 }
+
 }
 
 

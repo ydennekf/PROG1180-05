@@ -286,7 +286,7 @@ export function ReportView(report, action){
                     <legend><span class="required-marker">*</span> Review by CF Engineering</legend>
 
                         
-                    <ul>
+                    <ul class= "col-2">
                     
                         <li>
                             <input ${engiReadOnly? "readonly" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
@@ -318,7 +318,7 @@ export function ReportView(report, action){
                     
                 
 
-                <ul class= "eng-checkbox-align">
+                <ul class= "eng-checkbox-align col-2">
                         <li>
                             <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 
                             ${report?.customerNotification ? 'checked' : ''}/>

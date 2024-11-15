@@ -720,21 +720,12 @@ label{
 }
 
 
-
- 
-/* .view-form{
-    background-color: var(--color-white);
-    padding: 8px;
-    border-radius: 10px;
-    margin: auto;
- } */
-
-.purchasing-right-container,
-.purchasing-left-container,
+.qa-left-container,
+.qa-right-container,
 .engi-right-container,
 .engi-left-container,
-.qa-left-container,
-.qa-right-container{
+.purchasing-left-container, 
+.purchasing-right-container {
     background-color: var(--color-white);
     padding: 20px;
     border-radius: 8px;
@@ -787,26 +778,7 @@ textarea {
     color: var(--color-black);
 }
  
-/* This section is for layout of the Quality Assurance input form*/
 
-
-.quality-assurance-inputs, .purchasing-inputs {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
-}
-
-.engineering-inputs {
-    display: grid;
-    grid-template-columns: 4fr;
-    gap: 20px;
-}
-
-.col-2{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 0;
-}
 
 legend{
     color: var(--color-black);
@@ -900,6 +872,12 @@ legend{
 }
  */
 
+ /* .view-form{
+    background-color: var(--color-white);
+    padding: 8px;
+    border-radius: 10px;
+    margin: auto;
+ } */
 
 /* Media Queries */
 
@@ -920,6 +898,11 @@ legend{
   nav span {
     font-size: 14px;
   }
+
+
+  /*==================
+        NCR Report
+    ==================*/    
 
   .iso-header{
     display: grid;
@@ -946,6 +929,27 @@ legend{
 .iso-header :nth-child(8){
     grid-column: 4/5;
     grid-row: 1/2;
+}
+
+/* This section is for layout of the NCR form*/
+
+
+.quality-assurance-inputs, .purchasing-inputs {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+}
+
+.engineering-inputs {
+    display: grid;
+    grid-template-columns: 4fr;
+    gap: 20px;
+}
+
+.col-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 0;
 }
 }
 

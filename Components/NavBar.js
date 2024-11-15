@@ -95,12 +95,21 @@ export function SearchBar(targetID) {
         <ul class='nav-list'>
             <li><h2>Filter</h2></li>
             
-            <li id='search-container' class='search-container'>
+            <li id='ncr-search-container' class='search-container'>
                     
-                    <label for="report-search" style="display:inline;" id="lbl-search">search by supplier or ncr no.</label>
+                    <label for="report-search" style="display:inline;" id="lbl-search">search by ncr no.</label>
                     <input type="text"  id="report-search" placeholder="search ncr reports ..."
                         aria-label="search-description" aria-autocomplete="list" 
-                         tabindex="1">   
+                         tabindex="1">
+                            
+            </li>
+            <li id='supplier-search-container' class='search-container'>
+                    
+                    <label for="supplier-search" style="display:inline;" id="lbl-search">search by supplier</label>
+                    <input type="text"  id="report-search" placeholder="search suppliers ..."
+                        aria-label="search-description" aria-autocomplete="list" 
+                         tabindex="1">
+                            
             </li>
             <li>
                 <label for="status-filter">Status:</label>
@@ -108,8 +117,8 @@ export function SearchBar(targetID) {
                     <option value="">All</option>
                     <option value="Open">Open</option>
                     <option value="Closed">Closed</option>
-                    <option value="Awaiting Engineering">Awaiting Engineering</option>
-                    <option value="Awaiting Purchasing">Awaiting Purchasing</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Purchasing">Purchasing</option>
                     <option value="Pending Signoff">Pending Signoff</option>
                 </select>
             </li>

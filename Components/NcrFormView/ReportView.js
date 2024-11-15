@@ -11,12 +11,13 @@ export function ReportView(report, action){
     // take the employee's role to determine what sections are editable and what is read only
 
 
-    let QAReadOnly = true;
-    let engiReadOnly = true;
-    let purchaseReadOnly = true;
-    let exportReadOnly = true;
+    let QAReadOnly;
+    let engiReadOnly;
+    let purchaseReadOnly;
+    let exportReadOnly;
     let newNCR;
     let empAction;
+    let btnAction;
 
     if(report === null){
         newNCR = generateNcrNumber();
@@ -35,6 +36,7 @@ export function ReportView(report, action){
 
     if(errors.get().length === 0){ // check if there are any errors if not then we can save or update the NCR form.
         if(action === "Create"){
+
             const newReport = createReport(app.employee)
             newReport.status = "Engineering"
             app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
@@ -44,6 +46,7 @@ export function ReportView(report, action){
 
         }
         if(action === "Edit"){
+            btnAction = "Save";
             let ncrNum = document.getElementById('txt-ncr-number')
             let report = getReportFormData();
 
@@ -62,38 +65,56 @@ export function ReportView(report, action){
         if(action === "Edit" || action === "Create"){
             // this limits the create and edit functions to only be emplolyee role specific
             empAction = app.employee.department;
+
+            console.log("Edit or saved")
             if(app.employee.department === "QA"){
             QAReadOnly === false;
             engiReadOnly === true;
             purchaseReadOnly === true;
             exportReadOnly === true;
+            $("#accordion").multiAccordion({
 
-            $( "#accordion" ).accordion({ active: 0})
+                active: 0
+
+              });
         }
 
         if(app.employee.department === "engineering"){
+            console.log("testing emp engineer")
             QAReadOnly === true;
             engiReadOnly === false;
             purchaseReadOnly === true;
             exportReadOnly === true;
+             $("#accordion").multiAccordion({
 
-            $( "#accordion" ).accordion({ active: 1})
+                active: 1
+
+              });
+
         }
         if(app.employee.department === "sales"){
             QAReadOnly === true;
             engiReadOnly === true;
             purchaseReadOnly === false;
             exportReadOnly === true;
+            $("#accordion").multiAccordion({
 
-            $( "#accordion" ).accordion({ active: 2})
+                active: 2
+
+              });
+
         }
         if(app.employee.department === "admin"){
              QAReadOnly === false;
             engiReadOnly === false;
             purchaseReadOnly === false;
             exportReadOnly === false;
+            $("#accordion").multiAccordion({
 
-            $( "#accordion" ).accordion({ active: 0})
+                active: 0
+
+              });
+
         }
         }
         else{
@@ -102,10 +123,20 @@ export function ReportView(report, action){
             engiReadOnly === true;
             purchaseReadOnly === true;
             exportReadOnly === true;
+                  if(app.employee.department === "QA"){
+            $("#accordion").multiAccordion({ active: 0});
         }
 
+        if(app.employee.department === "engineering"){
+             $("#accordion").multiAccordion({active: 1});
 
-
+        }
+        if(app.employee.department === "sales"){
+            $("#accordion").multiAccordion({active: 2});
+        }
+        if(app.employee.department === "admin"){
+            $("#accordion").multiAccordion({ active: 0});
+        }}
     }
 
 
@@ -134,7 +165,7 @@ export function ReportView(report, action){
 
 <form class="ncr-report">    
 <div id="accordion">
-    <h2>Quality Assurance</h2>
+    <h2 data-role="QA">Quality Assurance</h2>
                    
             <div class="quality-assurance-inputs">
                 <div class="qa-left-container">
@@ -147,25 +178,25 @@ export function ReportView(report, action){
                         </li>
                         
                         <li>
-                            <label class="required" for="txt-prod-number" id="lbl-prod-number">Product No:</label>
+                            <label class="required" for="txt-prod-number" id="lbl-prod-number"><span class="required-marker">*</span> Product No:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
                             value="${safeTruthy(report?.prodNumber, '')}"/>
                             <label id="prod-number-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-sales-number" id="lbl-sales-number">Sales Order No:</label>
+                            <label class="required" for="txt-sales-number" id="lbl-sales-number"><span class="required-marker">*</span>Sales Order No:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
                             value="${safeTruthy(report?.salesNumber, '')}"/>
                             <label id="sales-number-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-quantity-received" id="lbl-quantity-received">Qty. Received:</label>
+                            <label class="required" for="txt-quantity-received" id="lbl-quantity-received"><span class="required-marker">*</span>Qty. Received:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                             value="${safeTruthy(report?.qtyReceived, '')}"/>
                             <label id="quantity-received-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective">Qty. Defective:</label>
+                            <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective"><span class="required-marker">*</span>Qty. Defective:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                             value="${safeTruthy(report?.qtyDefective, '')}"/>
                             <label id="quantity-defective-error" class="error-label"></label>
@@ -177,12 +208,12 @@ export function ReportView(report, action){
                         <li>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
                                ${report?.nonConforming ? 'checked' : ''}/>
-                            <label id="lbl-non-conforming" for="chk-non-conforming">Item Non-Conforming?</label>   
+                            <label id="lbl-non-conforming" for="chk-non-conforming"><span class="required-marker">*</span>Item Non-Conforming?</label>   
                         </li>
                         <li>
                             <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
                                 ${report?.productionOrder ? 'checked' : ''}/>
-                            <label id="lbl-engineering-required" for="chk-engineering-required">Engineering Required?</label>                     
+                            <label id="lbl-engineering-required" for="chk-engineering-required"><span class="required-marker">*</span>Engineering Required?</label>                     
                         </li>
                     </ul>
                     
@@ -190,7 +221,8 @@ export function ReportView(report, action){
                     <hr>
 
                     
-                        <ul class= "checkbox-align">    
+                        <ul class= "checkbox-align">
+                        <span class="required-marker">*</span>    
                             <li>
                                
                                 <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
@@ -212,13 +244,13 @@ export function ReportView(report, action){
                 <div class="qa-right-container">
                     <div>
                         <div>
-                            <label class="required" for="txt-supplier" id="lbl-supplier">Supplier Name</label>
+                            <label class="required" for="txt-supplier" id="lbl-supplier"><span class="required-marker">*</span> Supplier Name</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                             value="${report?.supplierName || ''}"/>
                             <label id="supplier-error" class="error-label"></label>
                         </div>
                         <fieldset class="col-2">
-                            <legend>Description of Item</legend>
+                            <legend><span class="required-marker">*</span> Description of Item</legend>
                             <div>
                                 <label class="required" for="txt-sap-number" id="lbl-sap-number"></label>
                                 <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
@@ -234,7 +266,7 @@ export function ReportView(report, action){
                         </field>
                     </div>
                     <div>
-                        <label class="required" for="txt-item-defect" id="lbl-item-defect">Description of Defect</label>
+                        <label class="required" for="txt-item-defect" id="lbl-item-defect"><span class="required-marker">*</span> Description of Defect</label>
                         <textarea ${QAReadOnly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
@@ -245,13 +277,13 @@ export function ReportView(report, action){
             </div>
 
 
-    <h2>Engineering</h2>
+    <h2 data-role="engineering">Engineering</h2>
         
             <div class="engineering-inputs">
                 <div class="engi-left-container">
                     
                 <fieldset>
-                    <legend>Review by CF Engineering</legend>
+                    <legend><span class="required-marker">*</span> Review by CF Engineering</legend>
 
                         
                     <ul>
@@ -290,12 +322,12 @@ export function ReportView(report, action){
                         <li>
                             <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 
                             ${report?.customerNotification ? 'checked' : ''}/>
-                            <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
+                            <label id="lbl-customer-notification" for="chk-customer-notification"><span class="required-marker">*</span> Does Customer Require Notification of NCR?</label>
                         </li>
                         <li>
                             <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
                             ${report?.drawingToUpdate ? 'checked' : ''}/>
-                            <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
+                            <label id="lbl-drawing-to-update" for="chk-drawing-to-update"><span class="required-marker">*</span> Does the drawing require updating?</label>
                         </li>
                 </ul>
 
@@ -332,14 +364,14 @@ export function ReportView(report, action){
                         </div>
    
                         <div>
-                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition">Disposition</label>
+                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition"><span class="required-marker">*</span> Disposition</label>
                             <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
                             <label id="Engineering-disposition-error" class="error-label"></label>
                         </div>
                    </div>
             </div>
         
-    <h2>Purchasing</h2>
+    <h2 data-role="sales">Purchasing</h2>
         
             <div class="purchasing-inputs">
                 <div class="purchasing-left-container">
@@ -387,7 +419,7 @@ export function ReportView(report, action){
         
 </div>
 <div>
-<button id="submitBtn" >${action}</button>
+<button id="submitBtn" >Save</button>
 <button id="cancelBtn" >Cancel</button>
 </div>
 
@@ -401,11 +433,47 @@ export function ReportView(report, action){
 
 
 // add functionality to allow multiple sections to be open here.
-    $(document).ready( function() {
-        $( "#accordion" ).accordion({
-            collapsible: true
-        });
+$.widget("custom.multiAccordion", $.ui.accordion, {
+  options: {
+    // Custom option to allow multiple sections open
+    multiple: true
+  },
+  _create: function() {
+    this._super();
+    var self = this;
+
+    // Modify the click handler to support multiple sections
+    this.headers.unbind("keydown").unbind("click").on("click", function(event) {
+      self._clickHandler(event, $(this));
     });
+  },
+  _clickHandler: function(event, header) {
+    var options = this.options;
+    var active = header.next();
+
+    // Toggle the active panel
+    if (options.multiple) {
+      header.toggleClass("ui-accordion-header-active ui-state-active ui-corner-top")
+            .next().toggleClass("ui-accordion-content-active").slideToggle();
+    } else {
+      this._super(event, header);
+    }
+  }
+});
+
+// Initialize the custom multiAccordion
+$(document).ready(function(){
+  $("#accordion").multiAccordion({
+    header: "> h2",
+    collapsible: true,
+    heightStyle: "content",
+    animate: 200,
+    icons: null,
+    multiple: true // Enable multiple sections open
+  });
+});
+
+
 
 // add event listeners
 

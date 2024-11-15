@@ -105,6 +105,11 @@ li{
     color: var(--color-white);
    }
 
+#accessibilityControls{
+    background-color: var(--color-primary);
+   }
+
+
 }
  
 
@@ -871,7 +876,41 @@ legend{
     margin: auto;
  } */
 
+ #accessibility-toggle{
+    margin-left: 10px;
+    padding: 8px 12px;
+    bottom: 0;
+    position: sticky;
+    right: 10000px;
+    transition: opacity 0.3s ease;
+ }
+ 
+ #accessibility-toggle:sticky {
+    opacity: 1;
+}
 
+ #accessibilityControls {
+    position: fixed;
+    left: 10px; /* Aligns the section to the left */
+    bottom: 80px; /* Adjust this distance from the bottom  */
+    padding: 10px;
+    background-color: var(--color-midblue);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.chkBox {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-right: 5px; /* Space between label and checkbox */
+}
+
+#darkModeToggle {
+    cursor: pointer;
+}
 
 /*  ==================
       Media Queries 

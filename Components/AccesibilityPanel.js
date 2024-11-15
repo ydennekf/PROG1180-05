@@ -21,22 +21,12 @@ export function AccessibilityPanel(){
     if(revealed){
         document.getElementById('accessibility-toggle').innerText = "Close"
         const html = `
-    <section id="accessibilityControls" role="region">
-            <h3 id="accessibilityControllsTitle">Accessibility Controls</h3>
+     <section id="accessibilityControls" role="region">
+            <h3 id="accessibilityControllsTitle"></h3>
             <div class="chkBox">
                 <label class="white" for="darkModeToggle">Enable Dark Mode</label>
                 <input type="checkbox" id="darkModeToggle" aria-label="Dark Mode Toggle" ${theme === "light" ? '' : 'checked'}>
             </div>
-    
-            <div class="select-container">
-                <label for="languageSelect">Language Select</label>
-                <select class="select-box" id="languageSelect" name="language" aria-label="Language Select">
-                    <option value="en">English</option>
-                    <option value="es">Spanish</option>
-                    <option value="fr">French</option>
-                </select>
-            </div>
-        
         </section>`
         append('accessibility-menu', html)
     }else{

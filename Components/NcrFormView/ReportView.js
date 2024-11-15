@@ -169,7 +169,7 @@ export function ReportView(report, action){
                    
             <div class="quality-assurance-inputs">
                 <div class="qa-left-container">
-                    <ul>
+                    <ul class="qa-labels">
                         <li>
                             <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label>
                             <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
@@ -202,10 +202,8 @@ export function ReportView(report, action){
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
                     </ul>  
-
-                    <hr>
                                      
-                    <ul class= "checkbox-align">
+                    <ul class= "qa-checkbox-align">
                         <span class="required-marker">*</span>    
                             <li>  
                                 <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
@@ -271,7 +269,7 @@ export function ReportView(report, action){
     <h2 data-role="engineering">Engineering</h2>
         
             <div class="engineering-inputs">
-                <div class="engi-left-container">
+                <div class="engi-top-container">
                     
                 <fieldset>
                     <legend><span class="required-marker">*</span> Review by CF Engineering</legend>
@@ -309,7 +307,7 @@ export function ReportView(report, action){
                     
                 
 
-                <ul class= "eng-checkbox-align col-2">
+                <ul class= "eng-checkbox-align">
                         <li>
                             <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 
                             ${report?.customerNotification ? 'checked' : ''}/>

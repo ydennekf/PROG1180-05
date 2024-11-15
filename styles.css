@@ -54,7 +54,7 @@
 .purchasing-right-container,
 .purchasing-left-container,    
 .engi-right-container,
-.engi-left-container,
+.engi-top-container,
 .qa-left-container,
 .qa-right-container{
     background-color: var(--color-form);
@@ -725,19 +725,25 @@ label{
 .qa-left-container,
 .qa-right-container,
 .engi-right-container,
-.engi-left-container,
+.engi-top-container,
 .purchasing-left-container, 
 .purchasing-right-container {
+    
     background-color: var(--color-white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--color-black);
  }
 
- .engi-left-container
+ .qa-left-container,
+.qa-right-container,
+.purchasing-left-container, 
+.purchasing-right-container{
+    margin: 10px 0;
+}
+ .engi-top-container
  .engi-right-container{
     width: 90%;
-    margin: auto;
  }
  .qa-left-container, .purchasing-left-container {
     min-width: 300px;
@@ -779,6 +785,7 @@ textarea {
 
 legend{
     color: var(--color-black);
+    padding: 3px;
 }
 
 
@@ -796,18 +803,24 @@ legend{
 }
 
 .qa-left-container li , 
-.engi-left-container li{
+.engi-top-container li{
     min-width: 230px;
     width: 100%;
 }
 
  .qa-left-container input[type="number"], 
  .qa-left-container input[type="text"] {
-    width: 40%;
+    width: 60%;
+}
+
+.qa-labels label{
+    display:inline-block;
+    width: 100%;
+   
 }
 
 .qa-left-container input[type="radio"], 
-.engi-left-container input[type="radio"] {
+.engi-top-container input[type="radio"] {
     height: 20px;
     width: 20px;
     vertical-align: middle;
@@ -816,10 +829,15 @@ legend{
   }
 
   .qa-left-container fieldset, 
-  .engi-left-container fieldset{
+  .engi-top-container fieldset{
     margin: 5px -5px;
     border-radius: 5px;
     padding: 5px 5px 0 5px;
+  }
+
+  .engi-top-container fieldset{
+    border-radius: 5px;
+    
   }
 
   .qa-checkbox-align input[type="checkbox"]{
@@ -827,9 +845,12 @@ legend{
     margin-right: 5px;
   }
 
-  .qa-checkbox-align, .eng-checkbox-align {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  .qa-checkbox-align {
+    margin-bottom: 20px;
+}
+.eng-checkbox-align {
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .qa-checkbox-align li, .eng-checkbox-align li{
@@ -838,18 +859,12 @@ legend{
 
 
 .eng-checkbox-align label {
-    display: inline-block;
     vertical-align:top;
     white-space: normal; /* allows label to stay inside fieldset*/
 }
 
  /*
-.col-3 {
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    background-color: var(--color-form);
-    padding: 5px;
-}
+
 
 .col-5 {
     display: grid;
@@ -978,7 +993,8 @@ label {
     grid-template-rows: 1fr 1fr;
 } */
 
-.engi-left-container{
+.engi-top-container{
+    display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -986,6 +1002,11 @@ label {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: 0;
+}
+
+.col-3 {
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
 }
 
 }

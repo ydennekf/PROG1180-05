@@ -252,7 +252,7 @@ export function ReportView(report, action){
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
 
-                    <div class= "checkbox-align">      
+                    <div class= "qa-checkbox-align col-2">      
                         <div>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
                                ${report?.nonConforming ? 'checked' : ''}/>

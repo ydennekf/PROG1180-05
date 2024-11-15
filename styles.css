@@ -301,11 +301,11 @@ table.ncr-list a:hover {
 
 /* Container for radio buttons */
 
-  .radio-group {
+  /* .radio-group {
     display: flex ;
     align-items: center;
     gap: 10px;
-  }
+  } */
   
   /* input[type="radio"] {
     margin-left: 0; /* Remove any unwanted margin

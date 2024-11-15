@@ -204,43 +204,24 @@ export function ReportView(report, action){
                     </ul>  
 
                     <hr>
-                    <ul class= "checkbox-align">      
-                        <li>
-                            <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
-                               ${report?.nonConforming ? 'checked' : ''}/>
-                            <label id="lbl-non-conforming" for="chk-non-conforming"><span class="required-marker">*</span>Item Non-Conforming?</label>   
-                        </li>
-                        <li>
-                            <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
-                                ${report?.productionOrder ? 'checked' : ''}/>
-                            <label id="lbl-engineering-required" for="chk-engineering-required"><span class="required-marker">*</span>Engineering Required?</label>                     
-                        </li>
-                    </ul>
-                    
-
-                    <hr>
-
-                    
-                        <ul class= "checkbox-align">
+                                     
+                    <ul class= "checkbox-align">
                         <span class="required-marker">*</span>    
-                            <li>
-                               
+                            <li>  
                                 <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
                                 ${ report?.supplierOrRec ? 'checked' : ''}/>
                                  <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
                                 <label id="QA-supplier-or-rec-radio-error" class="error-label"></label>
                             </li>
                             <li>
-                                
                                 <input ${QAReadOnly ? "disabled" : ''} name="wip" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
                                 ${ report?.supplierOrRec === false ? 'checked' : ''}/>
                                 <label id="lbl-wip" for="rad-wip">WIP</label>
                                 <label id="QA-wip-radio-error" class="error-label"></label>
                             </li>                     
-                        </ul>
-                         
-                
+                        </ul>               
                 </div>
+
                 <div class="qa-right-container">
                     <div>
                         <div>
@@ -270,9 +251,19 @@ export function ReportView(report, action){
                         <textarea ${QAReadOnly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
-        
-                    
-                
+
+                    <div class= "checkbox-align">      
+                        <div>
+                            <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
+                               ${report?.nonConforming ? 'checked' : ''}/>
+                            <label id="lbl-non-conforming" for="chk-non-conforming"><span class="required-marker">*</span>Item Non-Conforming?</label>   
+                        </div>
+                        <div>
+                            <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
+                                ${report?.productionOrder ? 'checked' : ''}/>
+                            <label id="lbl-engineering-required" for="chk-engineering-required"><span class="required-marker">*</span>Engineering Required?</label>                     
+                        </div>
+                    </div>       
                 </div>     
             </div>
 

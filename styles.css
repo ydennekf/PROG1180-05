@@ -713,10 +713,10 @@ label{
 
  .engi-left-container
  .engi-right-container{
-    max-width: 500px;
+    width: 90%;
     margin: auto;
  }
- .qa-left-container, .engi-left-container {
+ .qa-left-container {
     max-width: 500px;
   
     min-height: 400px;

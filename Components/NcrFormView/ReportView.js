@@ -1,14 +1,30 @@
 import {injectOrReturn} from "../utils/utils.js";
 import {app} from "../../AppState.js";
-import {createReport, generateNcrNumber, getReportFormData} from "./utils.js";
+import {createReport, errorLog, generateNcrNumber, getReportFormData, validateEngiInputs, validateQANumberInputs, validateQAStringInputs} from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
 import {renderList, ReportList} from "../ReportList.js";
 import {reportData, updateReport} from "../../Data/new_reportData.js";
 import {validateForm} from "./utils.js";
 import { convertToPDF } from "../../Data/createPDF.js";
-import { redirectHome } from "../../redirection/redirect.js";
+import { redirectHome, redirectViewAllReports } from "../../redirection/redirect.js";
 import { createModal } from "../Modal.js";
 
+
+function departmentBasedValidation(){
+    const errors = errorLog()
+    const data = getReportFormData();
+    if(app.employee.department === "QA"){
+        validateQANumberInputs(errors, data)
+        validateQAStringInputs(errors, data)
+        return errors;
+    }
+
+    if(app.employee.department === "engineering"){
+        validateEngiInputs(errors, data)
+        return errors;
+    }
+   
+}
 
 export function ReportView(report, action){
     // take the employee's role to determine what sections are editable and what is read only
@@ -35,7 +51,7 @@ export function ReportView(report, action){
         // when we save the report check which section recieved edits and based on the section update the status to the next position
         // when the status changes send notification to the job role
         // when the notification sends send the email to the job role employee
-    let errors = validateForm()
+    let errors = departmentBasedValidation()
 
     if(errors.get().length === 0){ // check if there are any errors if not then we can save or update the NCR form.
         if(action === "Create"){
@@ -44,24 +60,25 @@ export function ReportView(report, action){
             newReport.status = "Engineering"
             app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
             updateReport(newReport.ncrNumber, newReport);
-            ReportList('root', app.employee, reportData)
-            app.history.flush()
+            app.storage.pushRecentReport(newReport.ncrNumber)
+           
 
         }
         if(action === "Edit"){
             btnAction = "Save";
             let ncrNum = document.getElementById('txt-ncr-number')
-            let report = getReportFormData();
+            let reportt = getReportFormData();
+            console.log(createReport(reportt), "wow")
+            var updatedReport = createReport(reportt)
+           
 
-
-
-            updateReport(ncrNum, report);
-            ReportList('root', app.employee, reportData)
-            app.history.flush()
+            
+            updateReport(ncrNum.value, updatedReport);
+            
         }
 
         // redirect code
-        redirectHome();
+        redirectViewAllReports(true);
         if(["Edit", "Create"].includes(action)){
             let msg = "Successfully ";
             if(action === "Create"){
@@ -225,13 +242,13 @@ export function ReportView(report, action){
                     <ul class= "qa-checkbox-align">
                         <span class="required-marker">*</span>    
                             <li>  
-                                <input ${QAReadOnly ? "disabled" : ''} name="supplier-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
+                                <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
                                 ${ report?.supplierOrRec ? 'checked' : ''}/>
                                  <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
                                 <label id="QA-supplier-or-rec-radio-error" class="error-label"></label>
                             </li>
                             <li>
-                                <input ${QAReadOnly ? "disabled" : ''} name="wip" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
+                                <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
                                 ${ report?.supplierOrRec === false ? 'checked' : ''}/>
                                 <label id="lbl-wip" for="rad-wip">WIP</label>
                                 <label id="QA-wip-radio-error" class="error-label"></label>
@@ -306,25 +323,25 @@ export function ReportView(report, action){
                     
                         <li>
                             <input ${engiReadOnly? "readonly" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
-                            ${report?.engineeringReview.value === "useAsIs"? 'checked' : ''}>
+                            ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-repair" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                            ${report?.engineeringReview.value === "Repair"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Repair"? 'checked' : ''}>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-rework" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                            ${report?.engineeringReview.value === "Rework"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                              <label for="rad-rework" id="lbl-rework">Rework</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-scrap" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                            ${report?.engineeringReview.value === "Scrap"? 'checked' : ''}>
+                            ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
                             <label for="rad-scrap" id="lbl-scrap">Scrap</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>

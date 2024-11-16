@@ -1,15 +1,37 @@
 import {ReportStatus, getReport, reportData} from "../../Data/new_reportData.js";
 
+function getEngReviewRAD(){
+    const asIs = document.getElementById('rad-use-as-is')
+    const repair = document.getElementById('rad-repair')
+    const rework = document.getElementById('rad-rework')
+    const scrap = document.getElementById('rad-scrap')
+
+    if(asIs.checked){
+        return "useAsIs"
+    }
+    if(repair.checked){
+        return "Repair"
+    }
+    if(rework.checked){
+        return 'Rework'
+    }
+    if(scrap.check){
+        return 'Scrap'
+    }
+
+}
+
 export function getReportFormData(){
 
     let engiRadBtns = document.querySelectorAll('input[name ="rad-engiReview"]');
     let engiReviewValue;
-    for(let choice of engiRadBtns){
-        if(choice.checked){
-            engiReviewValue = choice.value;
-            break;
-        }
-    }
+    // for(let choice of engiRadBtns){
+    //     if(choice.checked){
+    //         engiReviewValue = choice.value;
+    //         break;
+    //     }
+    // }
+    engiReviewValue = getEngReviewRAD()
 
     return {
         itemName:document.getElementById('txt-item-name'),
@@ -22,9 +44,10 @@ export function getReportFormData(){
         quantityDefective : document.getElementById("txt-quantity-defective"),
         //itemDescription : document.getElementById('txt-item-description'),
         defectDescription : document.getElementById('txt-item-defect'),
-        supplierOrRec : document.getElementById("chk-supplier-or-rec"),
+        supplierOrRec : document.getElementById("rad-supplier-or-rec"),
         nonConforming : document.getElementById('chk-non-conforming'),
-        productionOrder:  document.getElementById("chk-production-order"),
+        //productionOrder:  document.getElementById("chk-production-order"),
+        wip :document.getElementById('rad-wip'),
         sapNumber: document.getElementById('txt-sap-number'),
         engineeringRequired:document.getElementById('chk-engineering-required'),
         customerNotification: document.getElementById('chk-customer-notification'),
@@ -77,22 +100,21 @@ export function createReport(employee){
         qtyDefective:parseInt(formData.quantityDefective.value),
         //itemDescription: formData.itemDescription.value,
         nonConforming:formData.nonConforming.checked,
-        productionOrder:formData.productionOrder.checked,
         supplierOrRec:formData.supplierOrRec.checked,
         startedBy:employee.username,
         status:formData.engineeringRequired.checked ? ReportStatus.engineering : ReportStatus.sales, // defualts to closed cuz we aren't at the next stage
         date:new Date(Date.now()).toDateString(),
         itemName:formData.itemName.value,
         sapNumber:formData.sapNumber.value,
-        engineeringRequired:false,
+        engineeringRequired:formData.engineeringRequired.checked,
         customerNotification:false,
-        drawingToUpdate: false,
-        engineeringReview: null,
-        origRevNum: "",
+        drawingToUpdate: formData.drawingToUpdate.checked,
+        engineeringReview: formData.engineeringReview,
+        origRevNum: formData.origRevNum.value,
         nameOfEngineer:"",
-        updatedRev: "",
-        RevisionDate:"",
-        Disposition:"",
+        updatedRev: formData.updatedRev.value,
+        RevisionDate:formData.RevisionDate.value,
+        Disposition:formData.Disposition.value,
         purchaseDecision: null,
         CarRaised: null,
         CarNum: null,
@@ -134,7 +156,7 @@ export function validateForm(){
     validateQANumberInputs(errors, data)
     validateQAStringInputs(errors, data)
     validateEngiInputs(errors, data)
-    validatePurchasingInputs(errors, data)
+    //validatePurchasingInputs(errors, data)
 
     console.log(errors.get())
     return errors;
@@ -173,7 +195,7 @@ function validateNcrNumber(ncrNumber, errorList, updating=false, report=undefine
 
 }
 
-function validateQANumberInputs(errorList, data){
+export function validateQANumberInputs(errorList, data){
 
     const validQuantityRec = parseInt(data.quantityReceived.value)
     const validQuantityDef = parseInt(data.quantityDefective.value)
@@ -213,7 +235,7 @@ function validateQANumberInputs(errorList, data){
     }
 }
 
-function validateQAStringInputs(errors, data){
+export function validateQAStringInputs(errors, data){
       if(data.itemName.value === ""){
         data.itemName.ariaInvalid = true;
         errors.push('txt-item-name',"item-name-error", "Please submit the name of the supplier")
@@ -232,7 +254,7 @@ function validateQAStringInputs(errors, data){
     return errors
 }
 
-function validateEngiInputs(errors, data){
+export function validateEngiInputs(errors, data){
     if(data.drawingToUpdate.value === true){
         // validate drawing data if drawingToUpdate is true
         if(data.NameOfEngineer.value === ""){

@@ -21,7 +21,7 @@ export let employees = [
         "firstName": "Alice",
         "lastName": "Smith",
         "department": "engineering",
-        "password": "eningeer123",
+        "password": "engineer123",
         "accessibilityPreferences": {
             "darkMode": true,
             "preferredLanguage": "es",

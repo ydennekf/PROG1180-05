@@ -38,7 +38,8 @@ function logout(){
 
     NavBar();
     createLogin("root", handleLogin);
-
+   document.getElementById('root').classList.remove('ncr-view')
+   document.getElementById('footer').classList.add('abs-btm')
     app= null;
 }
 
@@ -49,5 +50,6 @@ function toggleLogout(){
     }
     else{
         document.getElementById('logout').innerHTML = ''
+       
     }
 }

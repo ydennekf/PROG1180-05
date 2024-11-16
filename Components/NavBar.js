@@ -129,7 +129,7 @@ export function SearchBar(targetID) {
                 <button id="filter-button">Apply Filters</button>
             </li>
         </ul>
-        
+        <div id="active-filters"></div>
     `
 
 
@@ -142,7 +142,7 @@ export function SearchBar(targetID) {
     });
 
      $("#start-date, #end-date").datepicker({
-        dateFormat: "mm/dd/yy",
+        dateFormat: "M/d/yy",
         changeMonth: true,
         changeYear: true
     });
@@ -155,23 +155,70 @@ function applyFilters() {
 
         const filteredReports = reportData.filter(report => {
             // Convert report date to Date object
-            const reportDate = new Date(report.date);
-            const data = [];
+            const reportDateStr = cleanDateString(report.date)
+            const reportDate = new Date(reportDateStr);
+
+            if(isNaN(reportDate.getTime())){
+                 console.error(`Invalid date for report ${report.ncrNumber}: ${report.date}`);
+                return false; // Exclude reports with invalid dates
+            }
+
             // Apply status filter
             const matchesStatus = !statusFilter || report.status === statusFilter;
-            data.push(matchesStatus);
+
             // Apply date range filter
             const matchesDateRange = (!startDate || reportDate >= startDate) &&
                                      (!endDate || reportDate <= endDate);
-            data.push(matchesDateRange);
-            console.log(data);
-                return data;
+
+                return matchesStatus && matchesDateRange;
         });
 
         // Render the filtered reports
 
-        renderList(filteredReports, Math.ceil(reportData.length / 10), 1);
+        renderList(filteredReports,  1);
+
+        clearFilterInputs();
+        displayActiveFilters(statusFilter, startDate, endDate);
     }
+
+    function clearFilterInputs(){
+              $("#status-filter").val("");
+
+            // Clear the date pickers
+            $("#start-date").datepicker("setDate", null);
+            $("#end-date").datepicker("setDate", null);
+    }
+
+
+    function displayActiveFilters(statusFilter, startDate, endDate){
+           const activeFiltersContainer = $("#active-filters");
+    let filters = [];
+
+    // Format the date for display
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    const formatDate = (date) => date ? date.toLocaleDateString(undefined, options) : null;
+
+    // Check which filters are active and add them to the array
+    if (statusFilter) {
+        filters.push(`Status: ${statusFilter}`);
+    }
+    if (startDate) {
+        filters.push(`Start Date: ${formatDate(startDate)}`);
+    }
+    if (endDate) {
+        filters.push(`End Date: ${formatDate(endDate)}`);
+    }
+
+    // If no filters are active, display a message
+    if (filters.length === 0) {
+        activeFiltersContainer.html("<p>No filters applied.</p>");
+    } else {
+        activeFiltersContainer.html(`<p>Active Filters: ${filters.join(', ')}</p>`);
+    }
+    }
+    function cleanDateString(dateStr) {
+    return dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
+}
 
     // Event listeners for filters
 
@@ -184,7 +231,7 @@ function applyFilters() {
                matcher.test(report.ncrNumber)
            ));
 
-            renderList(filteredSuggestions, Math.ceil(reportData.length / 10), 1);
+            renderList(filteredSuggestions, filteredSuggestions.length / 10, 1);
             response([]);
         },
         minLength: 0
@@ -197,7 +244,7 @@ function applyFilters() {
                matcher.test(report.supplierName)
            ));
 
-            renderList(filteredSuggestions, Math.ceil(reportData.length / 10), 1);
+            renderList(filteredSuggestions,  1);
             response([]);
         },
         minLength: 0

@@ -18,14 +18,18 @@ const sortOrder = {
 
 
 
+
+
 export function ReportList(targetID, user, Reports, page = 1){
-    
-    currentPage = page;
-    let totalPages = Math.ceil(reportData.length / reportsPerPage);  
-    
-    if(Reports.length > 10){
-        Reports = getReportsForPage(page, reportData);
+
+    let onlyOpenReports = [];
+    for(let i = 0; Reports.length > i; i++){
+        if(Reports[i].status !== "Closed"){
+            console.log(Reports[i])
+            onlyOpenReports.push(Reports[i]);
+        }
     }
+    currentPage = page;
 
     let ReportList = `
     <div id="report-filtering"></div>
@@ -44,7 +48,8 @@ export function ReportList(targetID, user, Reports, page = 1){
     }
 
     document.getElementById(targetID).innerHTML = ReportList;
-    renderList(Reports, totalPages, currentPage);
+    console.log(onlyOpenReports);
+    renderList(onlyOpenReports, currentPage);
         if(!document.getElementById("report-search")){
             SearchBar('report-filtering')
         document.getElementById('create-report-btn').style.display = 'block';
@@ -52,27 +57,19 @@ export function ReportList(targetID, user, Reports, page = 1){
         document.getElementById('lbl-search').style.display = "inline";
         }
 
-
-
-
-
-
-
     applySortListeners(reportData, targetID)
-
-
-
-    
-
 }
 
-export function renderList(reports, totalPages, currentPage){
+export function renderList(reports, currentPage = 1){
+    const totalPages = Math.ceil(reports.length / reportsPerPage);
+
+    const paginatedReports = getReportsForPage(currentPage, reports)
     const html = `
-    ${mapComponents(reports, reportPreview)}
+    ${mapComponents(paginatedReports, reportPreview)}
     `
     document.getElementById("ncr-report-list").innerHTML = html;
 
-    renderPaginationControls(totalPages, currentPage, reportData);
+    renderPaginationControls(totalPages, currentPage, reports);
      previewBindings();
 }
 
@@ -133,14 +130,7 @@ let sortReports = (reports, column, order) => {
 let getReportsForPage = (page, reports) => {
     let startIndex = (page - 1) * reportsPerPage;
     let endIndex = startIndex + reportsPerPage;
-    let paginatedReports = [];
-
-    for (let i = startIndex; i < endIndex && i < reports.length; i++) {
-        paginatedReports.push(reports[i]);
-    }
-
-    return paginatedReports;
-
+    return reports.slice(startIndex, endIndex);
 };
 
 function renderPaginationControls (totalPages, currentPage, reports) {
@@ -178,20 +168,20 @@ function renderPaginationControls (totalPages, currentPage, reports) {
         let target = event.target;
         
         if (target.id === 'previous-page') {
-            goToPage(currentPage - 1, getReportsForPage(currentPage -1, reports));
+            goToPage(currentPage - 1, reports);
         } else if (target.id === 'next-page') {
-            goToPage(currentPage + 1, getReportsForPage(currentPage +1 , reports));
+            goToPage(currentPage + 1, reports);
         } else if (target.classList.contains('page-btn')) {
             const selectedPage = parseInt(target.getAttribute('data-page'));
             if(selectedPage === currentPage) return;
-            goToPage(selectedPage, getReportsForPage(selectedPage, reports));
+            goToPage(selectedPage, reports);
         }
     });
 }
 
 function goToPage(page, reports){
    
-        ReportList("root",null, reports, page)
+        renderList(reports, page)
    
 }
 

@@ -109,6 +109,15 @@ li{
    }
 
 
+   /* Table Body Rows */
+tbody tr {
+    border-bottom: 1px solid var(--color-secondary); 
+    background-color: var(--color-primary);       
+}
+
+h2{
+    color: var(--color-white);
+}
 }
  
 
@@ -1115,3 +1124,48 @@ label {
     height:40px;
     fill:white;
 }
+
+
+
+/* =========================
+   Recent NCR'S Styling
+   ========================= */
+
+thead th {
+    background-color: var(--color-primary);   
+    color: var(--color-white);/* White text for contrast */
+    padding: 10px 15px;          
+    font-weight: bold;           
+    font-size: 16px;             
+    border-bottom: 2px solid var(--color-background); 
+}
+
+/* General Table Styling */
+table {
+    width: 100%;                  
+    border-collapse: collapse;    
+    margin-top: 20px;             
+    font-family: Arial, sans-serif; 
+}
+
+/* Styling for the H2 Header Inside the Table */
+table h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;               
+    
+}
+
+
+/* Table Cells */
+tbody td {
+    padding: 10px 15px;          
+    color: var(--color-offblack);               
+}
+
+/* Table Body Rows */
+tbody tr {
+    border-bottom: 1px solid var(--color-iso); 
+    background-color: #f9f9f9; /* Light grey background */
+}
+

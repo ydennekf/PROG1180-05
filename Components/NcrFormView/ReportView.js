@@ -2,7 +2,7 @@ import {injectOrReturn} from "../utils/utils.js";
 import {app} from "../../AppState.js";
 import {createReport, generateNcrNumber, getReportFormData} from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
-import {ReportList} from "../ReportList.js";
+import {renderList, ReportList} from "../ReportList.js";
 import {reportData, updateReport} from "../../Data/new_reportData.js";
 import {validateForm} from "./utils.js";
 
@@ -227,6 +227,13 @@ export function ReportView(report, action){
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                             value="${report?.supplierName || ''}"/>
                             <label id="supplier-error" class="error-label"></label>
+                            <div id="create-supplier-modal" title="Create New Supplier" style="display: none;">
+                                <form id="create-supplier-form">
+                                    <label for="new-supplier-name">Supplier Name:</label>
+                                    <input type="text" id="new-supplier-name" name="new-supplier-name">
+                                    <!-- Add more fields if necessary -->
+                                </form>
+                            </div>
                         </div>
                         <fieldset class="col-2">
                             <legend><span class="required-marker">*</span> Description of Item</legend>
@@ -469,4 +476,68 @@ document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 DisplayView();
+
+$("#txt-supplier").autocomplete({
+        source: function(request, response){
+              let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+           let filteredSuggestions = reportData.filter(report => (
+               matcher.test(report.supplierName)
+           ));
+            const supplierNames = filteredSuggestions.map(report => report.supplierName)
+            const uniqueNames = [...new Set(supplierNames)]
+
+            if(uniqueNames.length > 0) {
+                response(uniqueNames.slice(0,3).map(name => ({label: name, value: name})));
+            }
+            else{
+                response([{
+                    label: "Add new supplier",
+                    value: "",
+                    isAddNew: true
+                }]);
+            }
+
+        },
+    minLength: 0,
+     select: function (event, ui) {
+        if (ui.item.isAddNew) {
+            // Open the modal to create a new supplier
+            openCreateSupplierModal();
+            // Prevent default behavior
+            event.preventDefault();
+        } else {
+            // Set the input value to the selected supplier name
+            $(this).val(ui.item.value);
+        }
+    }
+    })
+
+    function openCreateSupplierModal() {
+    $("#create-supplier-modal").dialog({
+        modal: true,
+        buttons: {
+            "Create Supplier": function () {
+                // Get the supplier name from the form
+                var supplierName = $("#new-supplier-name").val().trim();
+                if (supplierName) {
+                    createNewSupplier(supplierName);
+                    $(this).dialog("close");
+                } else {
+                    alert("Please enter a supplier name.");
+                }
+            },
+            Cancel: function () {
+                $(this).dialog("close");
+            }
+        },
+        close: function () {
+            // Reset the form when the dialog is closed
+            $("#create-supplier-form")[0].reset();
+        }
+    });
+}
+
+function createNewSupplier(supplierName){
+    document.getElementById("txt-supplier").value = supplierName;
+}
 }

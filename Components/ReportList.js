@@ -33,8 +33,8 @@ export function ReportList(targetID, user, Reports, page = 1){
     
         ${reportListHeader()}
        
-        <tbody class="report-view">
-        ${mapComponents(Reports, reportPreview)}
+        <tbody id="ncr-report-list" class="report-view">
+        
         </tbody>
     </table>
     `;
@@ -44,22 +44,37 @@ export function ReportList(targetID, user, Reports, page = 1){
     }
 
     document.getElementById(targetID).innerHTML = ReportList;
+    renderList(Reports, totalPages, currentPage);
+        if(!document.getElementById("report-search")){
+            SearchBar('report-filtering')
+        document.getElementById('create-report-btn').style.display = 'block';
+        document.getElementById('report-search').style.display = 'block';
+        document.getElementById('lbl-search').style.display = "inline";
+        }
 
-        SearchBar('report-filtering')
 
 
 
-    renderPaginationControls(totalPages, currentPage, reportData);
+
+
+
     applySortListeners(reportData, targetID)
-    previewBindings();
+
 
 
     
-    document.getElementById('create-report-btn').style.display = 'block';
-    document.getElementById('report-search').style.display = 'block';
-    document.getElementById('lbl-search').style.display = "inline";
+
 }
 
+export function renderList(reports, totalPages, currentPage){
+    const html = `
+    ${mapComponents(reports, reportPreview)}
+    `
+    document.getElementById("ncr-report-list").innerHTML = html;
+
+    renderPaginationControls(totalPages, currentPage, reportData);
+     previewBindings();
+}
 
 
 let applySortListeners = (currentReports, targetID) => {

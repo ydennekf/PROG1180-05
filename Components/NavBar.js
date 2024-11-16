@@ -2,9 +2,9 @@ import { app, initApp } from "../AppState.js"
 
 import { qualityAssuranceForm } from "./NcrFormView/QualityAssuranceForm.js";
 
-import { reportData } from "./../Data/new_reportData.js";
+import { reportData } from "../Data/new_reportData.js";
 
-import { ReportList } from "./ReportList.js";
+import { ReportList, renderList } from "./ReportList.js";
 
 import {ReportView} from "./NcrFormView/ReportView.js";
 import { redirectHome, redirectNewReport as redirectNewNCR, redirectViewAllReports } from "../redirection/redirect.js";
@@ -81,12 +81,7 @@ export function NavBar(){
 
 export function SearchBar(targetID) {
 
-    if (document.getElementById("report-search")) {
-        // its a messy fix but it disables the continuous rerender of the search bar
-        return;
-    }else{
-        console.log("testing-search");
-    }
+
 
     // separate the search box for NCR num and Supplier
     // set the search text to update on keypress again.
@@ -106,7 +101,7 @@ export function SearchBar(targetID) {
             <li id='supplier-search-container' class='search-container'>
                     
                     <label for="supplier-search" style="display:inline;" id="lbl-search">search by supplier</label>
-                    <input type="text"  id="report-search" placeholder="search suppliers ..."
+                    <input type="text"  id="supplier-search" placeholder="search suppliers ..."
                         aria-label="search-description" aria-autocomplete="list" 
                          tabindex="1">
                             
@@ -117,8 +112,8 @@ export function SearchBar(targetID) {
                     <option value="">All</option>
                     <option value="Open">Open</option>
                     <option value="Closed">Closed</option>
-                    <option value="Engineering">Engineering</option>
-                    <option value="Purchasing">Purchasing</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="sales">Purchasing</option>
                     <option value="Pending Signoff">Pending Signoff</option>
                 </select>
             </li>
@@ -153,37 +148,60 @@ export function SearchBar(targetID) {
     });
 
 function applyFilters() {
-        const searchTerm = $("#report-search").val().toLowerCase();
+
         const statusFilter = $("#status-filter").val();
         const startDate = $("#start-date").datepicker("getDate");
         const endDate = $("#end-date").datepicker("getDate");
-        console.log(searchTerm + " " + statusFilter + " " + startDate + " " + endDate);
+
         const filteredReports = reportData.filter(report => {
             // Convert report date to Date object
             const reportDate = new Date(report.date);
-
-            // Apply search filter
-            const matchesSearch = !searchTerm ||
-                                  report.ncrNumber.toLowerCase().includes(searchTerm) ||
-                                  report.supplierName.toLowerCase().includes(searchTerm);
-
+            const data = [];
             // Apply status filter
             const matchesStatus = !statusFilter || report.status === statusFilter;
-
+            data.push(matchesStatus);
             // Apply date range filter
             const matchesDateRange = (!startDate || reportDate >= startDate) &&
                                      (!endDate || reportDate <= endDate);
-
-            // Return true if all conditions are met
-            return matchesSearch && matchesStatus && matchesDateRange;
+            data.push(matchesDateRange);
+            console.log(data);
+                return data;
         });
 
         // Render the filtered reports
-        ReportList("root", null, filteredReports, 1);
+
+        renderList(filteredReports, Math.ceil(reportData.length / 10), 1);
     }
 
     // Event listeners for filters
 
     $("#filter-button").on("click", applyFilters);
+
+    $("#report-search").autocomplete({
+        source: function(request, response){
+            let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+           let filteredSuggestions = reportData.filter(report => (
+               matcher.test(report.ncrNumber)
+           ));
+
+            renderList(filteredSuggestions, Math.ceil(reportData.length / 10), 1);
+            response([]);
+        },
+        minLength: 0
+    })
+
+    $("#supplier-search").autocomplete({
+        source: function(request, response){
+              let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+           let filteredSuggestions = reportData.filter(report => (
+               matcher.test(report.supplierName)
+           ));
+
+            renderList(filteredSuggestions, Math.ceil(reportData.length / 10), 1);
+            response([]);
+        },
+        minLength: 0
+    })
+
 
 }

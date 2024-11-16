@@ -6,6 +6,8 @@ import {renderList, ReportList} from "../ReportList.js";
 import {reportData, updateReport} from "../../Data/new_reportData.js";
 import {validateForm} from "./utils.js";
 import { convertToPDF } from "../../Data/createPDF.js";
+import { redirectHome } from "../../redirection/redirect.js";
+import { createModal } from "../Modal.js";
 
 
 export function ReportView(report, action){
@@ -57,6 +59,10 @@ export function ReportView(report, action){
             ReportList('root', app.employee, reportData)
             app.history.flush()
         }
+
+        // redirect code
+        redirectHome();
+        createModal('errorPanel', "Success", `Successfully ${action === "Create"? "created": "edited"} report${action === "Create" ? '.' : " " +report.ncrNumber}`, 10000)
     }
 }
 

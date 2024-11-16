@@ -731,7 +731,7 @@ label{
 .purchasing-right-container {
     
     background-color: var(--color-white);
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--color-black);
  }
@@ -740,7 +740,7 @@ label{
 .qa-right-container,
 .purchasing-left-container, 
 .purchasing-right-container{
-    margin: 10px 0;
+    /* margin: 10px 0; */
 }
  .engi-top-container
  .engi-right-container{
@@ -751,6 +751,7 @@ label{
     max-width: 500px;
     min-height: 300px;
     display: block;
+    /* padding-top: 25px; */
     /* white-space: nowrap; */
  }
 
@@ -786,6 +787,7 @@ textarea {
 legend{
     color: var(--color-black);
     padding: 3px;
+    font-size: 18px;
 }
 
 
@@ -815,12 +817,13 @@ legend{
  .qa-left-container input[type="number"], 
  .qa-left-container input[type="text"] {
     width: 60%;
+    /* margin-left: 20px; */
 }
 
 .qa-labels label{
     display:inline-block;
     width: 100%;
-   
+    /* margin-left: 20px; */
 }
 
 .qa-left-container input[type="radio"], 
@@ -828,7 +831,7 @@ legend{
     height: 20px;
     width: 20px;
     vertical-align: middle;
-   margin-left: 5px;
+   /* margin-left: 20px; */
    margin-right: 7px;
   }
 
@@ -837,9 +840,9 @@ legend{
     border: 0;
   }
 
-  .engi-top-container fieldset{
-    margin: 0 -30px 0 15px;
-  }
+  /* .engi-top-container fieldset{
+    margin: 0 0 0 5px;
+  } */
 
   .qa-checkbox-align input[type="checkbox"]{
     vertical-align: middle;
@@ -851,7 +854,7 @@ legend{
 }
 .eng-checkbox-align {
     margin-top: 20px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .qa-checkbox-align li, .eng-checkbox-align li{

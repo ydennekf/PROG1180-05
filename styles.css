@@ -789,14 +789,18 @@ legend{
 }
 
 
-
-
-
-.qa-right-container label, 
+.qa-right-container label,
 .qa-right-container div:nth-child(2) textarea,
 .engi-right-container textarea{
     width: 100%;
 }
+
+.engi-right-container label
+ {
+    display: inline-block;
+    width: 100%;
+}
+
 
 .qa-right-container textarea, .engi-right-container textarea {
     min-height: 200px;
@@ -830,14 +834,11 @@ legend{
 
   .qa-left-container fieldset, 
   .engi-top-container fieldset{
-    margin: 5px -5px;
-    border-radius: 5px;
-    padding: 5px 5px 0 5px;
+    border: 0;
   }
 
   .engi-top-container fieldset{
-    border-radius: 5px;
-    
+    border: 0;
   }
 
   .qa-checkbox-align input[type="checkbox"]{

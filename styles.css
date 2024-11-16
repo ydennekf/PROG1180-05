@@ -835,11 +835,34 @@ legend{
    margin-right: 7px;
   }
 
-  .qa-left-container fieldset, 
+  
+  .qa-left-container fieldset{
+    vertical-align: middle;
+    border: 0;
+  }
+   
   .engi-top-container fieldset{
     border: 0;
   }
 
+  .sap-width input[type="number"]{
+    width: 100px;
+    margin-right: 5px;
+  }
+
+  .item-width input[type="text"]{
+    width: 200px;
+  }
+
+  .no-border{
+    display:flex; /* align input boxes beside each other */
+    border: 0;
+  }
+
+  .hypen::after{
+    content: " - ";
+  }
+  
   /* .engi-top-container fieldset{
     margin: 0 0 0 5px;
   } */

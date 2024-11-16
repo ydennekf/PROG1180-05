@@ -252,18 +252,19 @@ export function ReportView(report, action){
                                 </form>
                             </div>
                         </div>
-                        <fieldset class="col-2">
+                        <fieldset class="no-border">
                             <legend><span class="required-marker">*</span> Description of Item</legend>
-                            <div>
-                                <label class="required" for="txt-sap-number" id="lbl-sap-number"></label>
+                            <div class="sap-width hypen">
                                 <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                                 value="${safeTruthy(report?.sapNumber, '')}" placeholder="SAP No"/>
+                                <label class="required" for="txt-sap-number" id="lbl-sap-number"></label>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
-                            <div>
-                                <label class="required" for="txt-item-name" id="lbl-item-name"></label>
+                            
+                            <div class= "item -width">
                                 <input ${QAReadOnly ? "readonly" : ''} name="item-name" type="text" required  id="txt-item-name" aria-errormessage="item-name-error" aria-describedby="lbl-item-name"
                                 value="${report?.itemName || ''}" placeholder="Item Name"/>
+                                <label class="required" for="txt-item-name" id="lbl-item-name"></label>
                                 <label id="item-name-error" class="error-label"></label>
                             </div>
                         </field>

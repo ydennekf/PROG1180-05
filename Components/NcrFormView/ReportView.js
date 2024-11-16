@@ -5,6 +5,7 @@ import {safeTruthy} from "../utils/utils.js";
 import {renderList, ReportList} from "../ReportList.js";
 import {reportData, updateReport} from "../../Data/new_reportData.js";
 import {validateForm} from "./utils.js";
+import { convertToPDF } from "../../Data/createPDF.js";
 
 
 export function ReportView(report, action){
@@ -410,7 +411,7 @@ export function ReportView(report, action){
         
     <h2>Export</h2>
         <div>
-            <p>placeholder content</p>
+            ${report ? `<button id="export-pdf" data-ncr-number="${report.ncrNumber}">Export as PDF</button>` : 'Cannot export a report in the creation stage!'}
         </div>
         
 </div>
@@ -468,6 +469,25 @@ $(document).ready(function(){
   });
 });
 
+function bindExport(){
+
+    var s = document.createElement('script');
+    s.type = 'module';
+    let code = `
+    import { convertToPDF } from "../Data/createPDF.js";
+     const archiveBtns = document.getElementById('export-pdf')
+         archiveBtns.addEventListener('click', (ev) =>  pdfMake.createPdf(convertToPDF(ev.target.dataset.ncrNumber)).open())
+    `
+    try {
+        s.appendChild(document.createTextNode(code));
+        document.body.appendChild(s);
+      } catch (e) {
+        s.text = code;
+        document.body.appendChild(s);
+      }   
+    
+}
+
 
 
 // add event listeners
@@ -476,6 +496,7 @@ document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 DisplayView();
+bindExport()
 
 $("#txt-supplier").autocomplete({
         source: function(request, response){

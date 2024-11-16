@@ -131,24 +131,13 @@ export function validateForm(){
 
     //validateNcrNumber(validNcr, errors, updating, report)
 
-    validateNumberInputs(errors)
+    validateQANumberInputs(errors, data)
+    validateQAStringInputs(errors, data)
+    validateEngiInputs(errors, data)
+    validatePurchasingInputs(errors, data)
 
-    if(data.itemName.value === ""){
-        data.itemName.ariaInvalid = true;
-        errors.push('txt-item-name',"item-name-error", "Please submit the name of the supplier")
-    }
-
-    if(data.supplier.value === ""){
-        data.ncrNumber.ariaInvalid = true;
-        errors.push('txt-supplier',"supplier-error", "Please submit the name of the supplier")
-    }
-
-  
-    if(data.defectDescription.value === ""){
-        data.defectDescription.ariaInvalid = true;
-        errors.push('txt-item-defect',"item-defect-error", "Please submit a description of the problem")
-    }   
-    return errors
+    console.log(errors.get())
+    return errors;
 
 }
 
@@ -184,8 +173,8 @@ function validateNcrNumber(ncrNumber, errorList, updating=false, report=undefine
 
 }
 
-function validateNumberInputs(errorList){
-    const data = getReportFormData()
+function validateQANumberInputs(errorList, data){
+
     const validQuantityRec = parseInt(data.quantityReceived.value)
     const validQuantityDef = parseInt(data.quantityDefective.value)
     const validProdNum = parseInt(data.prodNumber.value)
@@ -223,6 +212,49 @@ function validateNumberInputs(errorList){
         errorList.push('txt-quantity-defective', 'quantity-defective-error', "The defective amount cannot be greater than the received amount.")
     }
 }
+
+function validateQAStringInputs(errors, data){
+      if(data.itemName.value === ""){
+        data.itemName.ariaInvalid = true;
+        errors.push('txt-item-name',"item-name-error", "Please submit the name of the supplier")
+    }
+
+    if(data.supplier.value === ""){
+        data.ncrNumber.ariaInvalid = true;
+        errors.push('txt-supplier',"supplier-error", "Please submit the name of the supplier")
+    }
+
+
+    if(data.defectDescription.value === ""){
+        data.defectDescription.ariaInvalid = true;
+        errors.push('txt-item-defect',"item-defect-error", "Please submit a description of the problem")
+    }
+    return errors
+}
+
+function validateEngiInputs(errors, data){
+    if(data.drawingToUpdate.value === true){
+        // validate drawing data if drawingToUpdate is true
+        if(data.NameOfEngineer.value === ""){
+        data.NameOfEngineer.ariaInvalid = true;
+        errors.push('txt-name-engineer',"name-engineer-error", "Please submit the name of the Engineer")
+    }
+    if(data.updatedRev.value === ""){
+        data.updatedRev.ariaInvalid = true;
+        errors.push('txt-updated-rev',"updated-rev-error", "Please submit the updated revision number")
+    }
+    }
+
+    if(data.Disposition.value === ""){
+        data.Disposition.ariaInvalid = true;
+        errors.push('txt-engi-disposition', 'Engineering-disposition-error', "Please submit the Disposition")
+    }
+}
+
+function validatePurchasingInputs(errors, data){
+
+}
+
 
 
 

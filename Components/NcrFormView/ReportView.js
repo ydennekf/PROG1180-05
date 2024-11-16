@@ -73,6 +73,8 @@ export function ReportView(report, action){
             
             createModal('errorPanel', "Success", msg, 10000)
         }
+    } else{
+        errors.expose();
     }
 }
 
@@ -356,23 +358,23 @@ export function ReportView(report, action){
                             </div>
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
-                                <input readonly aria-errormessage="name-engineer-error" name="name-engineer" required type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
-                                value="${safeTruthy(report?.NameOfEngineer, app.employee.firstName + " " + app.employee.lastName)}"/>
-                                <label id="sap-number-error" class="error-label"></label>
+                                <input readonly aria-errormessage="name-engineer-error" name="name-engineer" type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
+                                value=""
+                                <label id="name-engineer-error" class="error-label"></label>
                             </div>
                         
                         </div>
                         <div class="col-2">
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
-                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" required type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
-                                value="${safeTruthy(report?.UpdatedRev, '')}"/>
+                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
+                                value=""/>
                                 <label id="updated-rev-error" class="error-label"></label>
                             </div>
                             <div>
                                 <label class="required" for="txt-revision-date" id="lbl-revision-date">Revision Date</label>
-                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" required type="datetime-local" aria-describedby="lbl-revision-date" id="txt-revision-date"
-                                value="${safeTruthy(report?.RevisionDate, Date.now())}"/>
+                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" type="text" aria-describedby="lbl-revision-date" id="txt-revision-date"
+                                value=""/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                         </div>
@@ -512,6 +514,7 @@ function bindExport(){
 document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
+document.getElementById(('chk-drawing-to-update')).addEventListener('click', (e) => {checkDrawingUpdate(e)});
 DisplayView();
 bindExport()
 
@@ -577,5 +580,31 @@ $("#txt-supplier").autocomplete({
 
 function createNewSupplier(supplierName){
     document.getElementById("txt-supplier").value = supplierName;
+}
+
+function checkDrawingUpdate(e) {
+    const updatedRevInput = document.getElementById('txt-updated-rev');
+    const revisionDateInput = document.getElementById('txt-revision-date');
+    const nameEngineerInput = document.getElementById('txt-name-engineer');
+
+    if (e.target.checked) {
+        // Set updated revision
+        updatedRevInput.value = report?.UpdatedRev ? parseInt(report.UpdatedRev) + 1 : 2;
+
+        // Set revision date as a formatted date
+        revisionDateInput.value = new Date().toISOString().slice(0, 10); // YYYY-MM-DD format
+
+        // Set engineer's name from app.employee
+        nameEngineerInput.value = `${app.employee.firstName} ${app.employee.lastName}`;
+    } else {
+        // Reset updated revision to its existing value or empty
+        updatedRevInput.value = report?.UpdatedRev ? report.UpdatedRev : "";
+
+        // Reset revision date to the existing value or empty
+        revisionDateInput.value = report?.RevisionDate || "";
+
+        // Reset engineer's name to the existing value or empty
+        nameEngineerInput.value = report?.NameOfEngineer || "";
+    }
 }
 }

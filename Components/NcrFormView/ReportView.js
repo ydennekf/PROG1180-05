@@ -160,7 +160,7 @@ export function ReportView(report, action){
 // within the QA form, add the autocomplete to the supplier name
     // if the supplier name does not exsist add a button to create a new supplier with the data needed from the data model
     const html = `
-<h1 class="Report-view-header">Report Details</h1>
+<h1 class="Report-view-header">New NCR Details</h1>
    
     <div class="iso-header">
        

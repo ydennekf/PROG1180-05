@@ -335,12 +335,12 @@ export function ReportView(report, action){
                         <li>
                             <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 
                             ${report?.customerNotification ? 'checked' : ''}/>
-                            <label id="lbl-customer-notification" for="chk-customer-notification"><span class="required-marker">*</span> Does Customer Require Notification of NCR?</label>
+                            <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
                         </li>
                         <li>
                             <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
                             ${report?.drawingToUpdate ? 'checked' : ''}/>
-                            <label id="lbl-drawing-to-update" for="chk-drawing-to-update"><span class="required-marker">*</span> Does the drawing require updating?</label>
+                            <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
                         </li>
                 </ul>
 

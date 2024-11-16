@@ -62,7 +62,17 @@ export function ReportView(report, action){
 
         // redirect code
         redirectHome();
-        createModal('errorPanel', "Success", `Successfully ${action === "Create"? "created": "edited"} report${action === "Create" ? '.' : " " +report.ncrNumber}`, 10000)
+        if(["Edit", "Create"].includes(action)){
+            let msg = "Successfully ";
+            if(action === "Create"){
+                msg += "created report."
+            }
+            else if(action === "Edit"){
+                msg += "edited report " + report.ncrNumber
+            }
+            
+            createModal('errorPanel', "Success", msg, 10000)
+        }
     }
 }
 

@@ -306,25 +306,25 @@ export function ReportView(report, action){
                     
                         <li>
                             <input ${engiReadOnly? "readonly" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
-                            ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
+                            ${report?.engineeringReview.value === "useAsIs"? 'checked' : ''}>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-repair" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                            ${report?.engineeringReview === "Repair"? 'checked' : ''}>
+                            ${report?.engineeringReview.value === "Repair"? 'checked' : ''}>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-rework" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                            ${report?.engineeringReview === "Rework"? 'checked' : ''}>
+                            ${report?.engineeringReview.value === "Rework"? 'checked' : ''}>
                              <label for="rad-rework" id="lbl-rework">Rework</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-scrap" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                            ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
+                            ${report?.engineeringReview.value === "Scrap"? 'checked' : ''}>
                             <label for="rad-scrap" id="lbl-scrap">Scrap</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>
                         </li>
@@ -359,7 +359,7 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
                                 <input readonly aria-errormessage="name-engineer-error" name="name-engineer" type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
-                                value=""
+                                value=""/>
                                 <label id="name-engineer-error" class="error-label"></label>
                             </div>
                         
@@ -397,34 +397,89 @@ export function ReportView(report, action){
                     
                     
                         <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
-                        ${report?.engineeringReview === "Rework"? 'checked' : ''}>
+                        ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
                         <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label>
-                        <label id="purchase-decision-rework-error" class="error-label"></label>
                         
                         
-                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
-                        ${report?.engineeringReview === "Repair"? 'checked' : ''}>
-                        <label for="rad-repair" id="lbl-repair">Repair</label>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
+                        ${report?.purchaseDecision === "Repair"? 'checked' : ''}>
+                        <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Repair</label>
                         
                         
-                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
-                        ${report?.engineeringReview === "Rework"? 'checked' : ''}>
-                        <label for="rad-rework" id="lbl-rework">Rework</label>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
+                        
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
+                        ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
+                        <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Rework</label>
+                      
                         
                         
-                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
-                        ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
-                        <label for="rad-scrap" id="lbl-scrap">Scrap</label>
-                        <label id="engineering-review-radio-error" class="error-label"></label>
-                    </fieldset>    
+                        <input required ${engiReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-scrap" value="Scrap" name="rad-purchaseReview"
+                        ${report?.purchaseDecision === "Scrap"? 'checked' : ''}>
+                        <label for="rad-purchaseReview-scrap" id="lbl-purchaseReview-scrap">Scrap</label>
+                        
+                        
+                        <label id="purchase-decision-error" class="error-label"></label>
+                    </fieldset>
+                        <div class="Car-container">
+                            <div>
+                                <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
+                            ${report?.CarRaised ? 'checked' : ''}/>
+                            <label id="lbl-car-raised" for="chk-car-raised">Car Raised?</label>
+                            </div>
+                            <div>
+                                <label class="required" for="txt-car-num" id="lbl-car-num">Car Number</label>
+                                <input readonly aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
+                                value=""
+                                <label id="car-num-error" class="error-label"></label>
+                            </div>
+                    
+                        </div>    
                 
                 </div>
                 <div class="purchasing-right-container">
-                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition">Disposition</label>
-                            <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
-                            <label id="Engineering-disposition-error" class="error-label"></label>
+                            <div class="purchase-followup-container">
+                                <div>
+                                <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
+                                    <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
+                                ${report?.FollowReq ? 'checked' : ''}/>
+                                
+                                </div>
+                                <div class="purchasing-followup-inputs" id="followup-inputs">
+                                    <div>
+                                        <label for="dtp-followup-date">Followup Date:</label>
+                                        <input ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
+                                        <label id="followup-date-error" class="error-label"></label>
+                                    </div>
+                                    <div>
+                                        <label for="followup-type">Followup Type:</label>
+                                        <label id="followup-type-error" class="error-label"></label>
+                                            <select id="cbo-followup-type" name="followup-type">
+                                                <option value="">Select a type</option>
+                                                <option value="Phone">Phone</option>
+                                                <option value="InPerson">In Person</option>
+                                                <option value="Virtual">Virtual Meet</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Fax">Fax</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="purchase-signoff-container">
+                                <div>
+                                    <label  for="txt-operation-manager" id="lbl-operation-manager">Operation Manager</label>
+                                    <input readonly name="operation-manager" type="text" aria-describedby="lbl-operation-manager" id="txt-operation-manager"
+                                    value="${report?.operationManager ? report?.operationManager : 'default operation manager'}"/>
+                                </div>
+                                
+                                <div>
+                                    <label for="dtp-purchase-date">Purchase Date:</label>
+                                    <input ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"  aria-describedby="lbl-purchase-date" type="text" id="dtp-purchase-date" placeholder="Select purchase date">
+                                    <label id="purchase-date-error" class="error-label"></label>
+                                </div>
+                                                           
+                                
+                            </div>
                 </div>     
             </div>
         
@@ -515,6 +570,8 @@ document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 document.getElementById(('chk-drawing-to-update')).addEventListener('click', (e) => {checkDrawingUpdate(e)});
+document.getElementById(("chk-car-raised" )).addEventListener('click', (e)=>{checkCarRaised(e)} );
+document.getElementById(("chk-followup-req" )).addEventListener('click', (e)=>{checkFollowup(e)});
 DisplayView();
 bindExport()
 
@@ -552,6 +609,12 @@ $("#txt-supplier").autocomplete({
         }
     }
     })
+
+    $("#dtp-purchase-date, #dtp-followup-date").datepicker({
+        dateFormat: "M/d/yy",
+        changeMonth: true,
+        changeYear: true
+    });
 
     function openCreateSupplierModal() {
     $("#create-supplier-modal").dialog({
@@ -607,4 +670,23 @@ function checkDrawingUpdate(e) {
         nameEngineerInput.value = report?.NameOfEngineer || "";
     }
 }
+function checkCarRaised(e) {
+    const CarNumContainer = document.getElementById("txt-car-num");
+
+    if(e.target.checked){
+        CarNumContainer.style.display = "block"
+    }else{
+        CarNumContainer.style.display = "none"
+    }
+}
+function checkFollowup(e) {
+    const followupContainer = document.getElementById("followupInputs");
+
+    if(e.target.checked){
+        followupContainer.style.display = "block"
+    }else{
+        followupContainer.style.display = "none"
+    }
+}
+
 }

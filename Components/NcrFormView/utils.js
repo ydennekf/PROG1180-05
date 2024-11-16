@@ -252,7 +252,37 @@ function validateEngiInputs(errors, data){
 }
 
 function validatePurchasingInputs(errors, data){
+  //check if followup req
+   const validCarNum =  parseInt(data.CarNum)
 
+    if(data.CarRaised === true){
+        if( isNaN(validCarNum)|| validCarNum < 0){
+            data.CarNum.ariaInvalid = true;
+            errors.push('txt-car-num', 'car-num-error', "please provide a valid car number.")
+        }
+    }
+    if(data.FollowReq === true){
+        const cboFollowType = document.getElementById("cbo-followup-type");
+        if(cboFollowType.value === ""){
+            data.followUpType.ariaInvalid = true;
+            errors.push('cbo-followup-type', 'followup-type-error', "please select a follow up type.")
+        }
+        if(data.followUpDate < Date.now() || data.followUpDate === ''){
+        data.followUpDate.ariaInvalid = true;
+        errors.push('dtp-followup-date', 'followup-date-error', 'please provide a followup date in the future.')
+    }
+    }
+    if(data.purchaseDate < Date.now() || data.purchaseDate === ''){
+        data.purchaseDate.ariaInvalid = true;
+        errors.push('dtp-purchase-date', 'purchase-date-error', 'please provide a purchase date in the future.')
+    }
+    //validate followup date
+    //validate value selected from follow up type
+  //check if car raised
+    //validate car num
+
+    //validate purchaseDate
+    // autofill operation manager
 }
 
 

@@ -109,6 +109,22 @@ li{
    }
 
 
+      /* Table Body Rows */
+tbody tr {
+    border-bottom: 1px solid var(--color-secondary); 
+    background-color: var(--color-primary);       
+}
+
+h2{
+    color: var(--color-white);
+}
+
+
+.search-container label{
+    color: var(--color-white);
+}
+
+
 }
  
 
@@ -1123,3 +1139,95 @@ label {
     height:40px;
     fill:white;
 }
+
+
+/* =========================
+   Recent NCR'S Styling
+   ========================= */
+
+   thead th {
+    background-color: var(--color-primary);   
+    color: var(--color-white);/* White text for contrast */
+    padding: 10px 15px;          
+    font-weight: bold;           
+    font-size: 16px;             
+    border-bottom: 2px solid var(--color-background); 
+}
+
+/* General Table Styling */
+table {
+    width: 100%;                  
+    border-collapse: collapse;    
+    margin-top: 20px;             
+    font-family: Arial, sans-serif; 
+}
+
+/* Styling for the H2 Header Inside the Table */
+table h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;               
+    
+}
+
+
+/* Table Cells */
+tbody td {
+    padding: 10px 15px;          
+    color: var(--color-offblack);               
+}
+
+/* Table Body Rows */
+tbody tr {
+    border-bottom: 1px solid var(--color-iso); 
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+
+/* =========================
+   View NCR's
+   ========================= */
+
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+#status-filter, 
+#end-date,
+#start-date,
+#supplier-search-container,
+#ncr-search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-white);
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#report-search:focus {
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+

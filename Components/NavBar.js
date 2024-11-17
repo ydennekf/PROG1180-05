@@ -89,6 +89,7 @@ export function SearchBar(targetID) {
     // separate the search box for NCR num and Supplier
     // set the search text to update on keypress again.
     let html = `
+  <h2>View NCR's</h2>
         <div><button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button></div>
         <ul class='nav-list'>
             <li><h2>Filter</h2></li>
@@ -109,8 +110,8 @@ export function SearchBar(targetID) {
                          tabindex="1">
                             
             </li>
-            <li>
-                <label for="status-filter">Status:</label>
+            <li id='supplier-search-container' class='search-container'>
+                <label for="status-filter" style="display:inline;" id="lbl-search">Status:</label>
                 <select id="status-filter" name="status-filter">
                     <option value="">All</option>
                     <option value="Open">Open</option>
@@ -120,12 +121,13 @@ export function SearchBar(targetID) {
                     <option value="Pending Signoff">Pending Signoff</option>
                 </select>
             </li>
-            <li>
+           <li id='supplier-search-container' class='search-container'>
                             
-                <label for="start-date">Start Date:</label>
+                <label for="start-date" style="display:inline;" id="lbl-search">Start Date:</label>
                 <input type="text" id="start-date" placeholder="Select start date">
-                
-                <label for="end-date">End Date:</label>
+                 </li>
+             <li id='supplier-search-container' class='search-container'>
+                <label for="end-date" style="display:inline;" id="lbl-search">End Date:</label>
                 <input type="text" id="end-date" placeholder="Select end date">
             </li>
             <li>

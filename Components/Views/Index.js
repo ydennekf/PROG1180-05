@@ -1,5 +1,5 @@
 import { app } from "../../AppState.js";
-import { createSVG, viewSVG, eyeSVG } from "../svgs.js";
+import { createSVG, viewSVG, eyeSVG, documentSVG } from "../svgs.js";
 import { mapComponents } from "../utils/utils.js";
 import { previewBindings, reportPreview } from "../ReportPreview.js";
 import { injectOrReturn } from "../utils/utils.js";
@@ -29,6 +29,24 @@ function RoleIndexButtons(){
     }
 
     switch(app.employee.department){
+
+        case "engineering":
+            return `
+            <div>
+                <button id="uploa">
+                    ${createSVG()}
+                    Create NCR
+                </button>
+                <button id="view-reports">
+                    ${eyeSVG()}
+                    View NCRs
+                </button>
+                <button>
+                    ${documentSVG()}
+                    Reports
+                </button>
+            </div>`
+            
         default: // This will be for QA I just need to figure out whaat each ones buttons will be
             return `
         <div>
@@ -40,6 +58,10 @@ function RoleIndexButtons(){
                 ${eyeSVG()}
                 View NCRs
             </button>
+            <button>
+                ${documentSVG()}
+                Reports
+            </button>
         </div>`
     }
 
@@ -48,7 +70,9 @@ function RoleIndexButtons(){
 
 function indexButtonBindings(){
     document.getElementById('view-reports').addEventListener('click', redirectViewAllReports)
-    document.getElementById('create-report-btn').addEventListener('click',redirectNewReport)
+    if(app.employee.department !== "engineering"){
+        document.getElementById('create-report-btn').addEventListener('click',redirectNewReport)
+    }
 }
 
 export function RecentReports(targetID = null){

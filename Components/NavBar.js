@@ -42,6 +42,8 @@ export function NavBar(){
     
     const html = `
     <nav>
+    <div class="centre">
+
     <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
             <ul class='nav-list'>
                
@@ -70,6 +72,7 @@ export function NavBar(){
                     
                 </li>
             </ul>
+            </div>
     </nav>
             <div id="bread-crumbs"> </div>
             

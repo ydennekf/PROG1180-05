@@ -1123,3 +1123,26 @@ label {
     height:40px;
     fill:white;
 }
+
+
+/* Styles for uploading images to the files
+
+*/
+
+
+#image-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:5px;
+    margin-top:10px;
+}
+
+.img-grid-item{
+    display:flex;
+    flex-direction:column;
+}
+
+.img-grid-item img{
+    max-width:125px;
+    max-height:125px;
+}

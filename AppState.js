@@ -6,6 +6,7 @@ import { _HistoryContext } from "./Components/context/historyContext.js";
 import _StorageContext from "./Components/context/storageContext.js";
 
 
+
 export let app;
 
 export function initApp(employee, initialView, initialArgs=[]){ // call after login 
@@ -14,7 +15,7 @@ export function initApp(employee, initialView, initialArgs=[]){ // call after lo
     app ={
         history:_HistoryContext(),
         employee,
-        currentView:"Index"
+        currentView:"Index",
 
     }
     const storage = _StorageContext(app.employee)

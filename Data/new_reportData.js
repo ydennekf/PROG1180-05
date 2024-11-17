@@ -1267,3 +1267,5 @@ export let reportData = [
 
 
 reportData = reportData.map(r => {return {...r, ncrNumber:r.ncrNumber.toString().substring(0, 4) + "-" + r.ncrNumber.toString().substring(4, 7)}})
+
+reportData = reportData.map(r => {return {...r, imageStorage:[]}})

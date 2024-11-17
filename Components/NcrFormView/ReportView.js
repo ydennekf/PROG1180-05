@@ -1,4 +1,4 @@
-import {injectOrReturn} from "../utils/utils.js";
+import {injectOrReturn, append} from "../utils/utils.js";
 import {app} from "../../AppState.js";
 import {createReport, errorLog, generateNcrNumber, getReportFormData, validateEngiInputs, validateQANumberInputs, validateQAStringInputs} from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
@@ -8,6 +8,17 @@ import {validateForm} from "./utils.js";
 import { convertToPDF } from "../../Data/createPDF.js";
 import { redirectHome, redirectViewAllReports } from "../../redirection/redirect.js";
 import { createModal } from "../Modal.js";
+
+let tempImageStorage = []
+function clearImageStorage(){
+    tempImageStorage= []
+}
+
+function addImagesToReport(report){
+    tempImageStorage.forEach(i => {
+        report.imageStorage.push(i)
+    })
+}
 
 
 function departmentBasedValidation(){
@@ -45,6 +56,7 @@ export function ReportView(report, action){
     let returnToList = () => {
         ReportList('root', app.employee, reportData)
         app.history.flush()
+        clearImageStorage()
     }
 
     let saveReport = (action) => {
@@ -58,10 +70,14 @@ export function ReportView(report, action){
 
             const newReport = createReport(app.employee)
             newReport.status = "Engineering"
+            // add any images to the report
+            addImagesToReport(newReport)
+            clearImageStorage()
             app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
+            
             updateReport(newReport.ncrNumber, newReport);
             app.storage.pushRecentReport(newReport.ncrNumber)
-           
+            
 
         }
         if(action === "Edit"){
@@ -71,7 +87,8 @@ export function ReportView(report, action){
             console.log(createReport(reportt), "wow")
             var updatedReport = createReport(reportt)
            
-
+            addImagesToReport(updatedReport)
+            clearImageStorage()
             
             updateReport(ncrNum.value, updatedReport);
             
@@ -94,6 +111,92 @@ export function ReportView(report, action){
         errors.expose();
     }
 }
+
+/* CODE FOR UPLOADING IMAGES  */
+    function imageUpload(){
+        // check if report has any images already and load them in
+        // add an imageStorage property to the report
+ 
+        return `
+            <div>
+                <form id="img-form">
+                    <label for="attach-img">Attach an image</label>
+                
+                    <input type="file" id="attach-img" required/>
+                    <label id="lbl-img-err" class="error-label"></label>
+                    <label for="alt-text">Alt text</label>
+                    <input type="text" required id="alt-text"/>
+                    <button>Add Image</button>
+                </form>
+            </div>
+            <div id="image-grid">
+            
+            </div>
+        `
+    }
+  
+    function attachImage(){
+        const files = document.getElementById('attach-img').files
+        if(files.length <= 0){return;}
+        // console.log(files[i])
+            var reader = new FileReader();
+            const img = new Image()
+            let src;
+            //let id;
+            reader.addEventListener(
+                "load",
+                () => {
+                    // convert image file to base64 string
+
+                    src = reader.result;
+                    const data = {img:src, addedBy:app.employee.username,alt:document.getElementById('alt-text').value}
+                    imgGridItem(data, 'image-grid');
+                    tempImageStorage.push(data)
+                    document.getElementById('alt-text').value = ""
+            const input = document.getElementById('attach-img')
+            input.value = null;
+                },
+                false,
+            );
+            reader.readAsDataURL(files[0]);
+            
+            
+    }
+
+    function bindUpload(tempStorage){
+        
+        document.getElementById('img-form').onsubmit = (e)=>{
+            e.preventDefault();
+            attachImage(tempStorage)
+           
+        };
+
+        if(report){
+            report.imageStorage.forEach(i =>{
+                imgGridItem(i, "image-grid")
+            })
+        }
+    }
+
+
+   
+
+    function imgGridItem(data, targetID=null, appendContent=true){
+        const html = `
+            <div class="img-grid-item">
+                <span>Attached by ${data.addedBy}</span>
+                <a href="${data.img}" target="_blank"><img id=${data.img.substring(25, 50)} src="${data.img}" alt="${data.alt}"/></a>
+            </div>
+        `
+
+        if(appendContent){
+            append(targetID, html)
+            
+        }
+
+        
+        return html;
+    }
 
     let DisplayView = () => {
         // uses the app.employee to determine a role and sets appropriate sections to but readonly
@@ -500,9 +603,11 @@ export function ReportView(report, action){
                 </div>     
             </div>
         
-    <h2>Export</h2>
+    <h2>Export & Upload</h2>
         <div>
             ${report ? `<button id="export-pdf" data-ncr-number="${report.ncrNumber}">Export as PDF</button>` : 'Cannot export a report in the creation stage!'}
+
+            ${imageUpload()}
         </div>
         
 </div>
@@ -566,8 +671,12 @@ function bindExport(){
     s.type = 'module';
     let code = `
     import { convertToPDF } from "../Data/createPDF.js";
+    try{
      const archiveBtns = document.getElementById('export-pdf')
          archiveBtns.addEventListener('click', (ev) =>  pdfMake.createPdf(convertToPDF(ev.target.dataset.ncrNumber)).open())
+         
+} catch{
+ }
     `
     try {
         s.appendChild(document.createTextNode(code));
@@ -591,6 +700,7 @@ document.getElementById(("chk-car-raised" )).addEventListener('click', (e)=>{che
 document.getElementById(("chk-followup-req" )).addEventListener('click', (e)=>{checkFollowup(e)});
 DisplayView();
 bindExport()
+bindUpload()
 
 $("#txt-supplier").autocomplete({
         source: function(request, response){

@@ -122,7 +122,8 @@ export function createReport(employee){
         followUpType: null,
         followUpDate: null,
         operationManager: null,
-        purchaseDate: null
+        purchaseDate: null,
+        imageStorage:[]
     }
 }
 

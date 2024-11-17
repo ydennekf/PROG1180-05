@@ -13,6 +13,8 @@ function bindNav(){
     const home = document.getElementById('_home')
     const create = document.getElementById("_create-ncr")
     const view = document.getElementById("_view-ncr")
+    const img = document.getElementById('crossfire-logo')
+    //document.getElementById('crossfire-logo')
 
     view.addEventListener("click", e => {
         if(!app){
@@ -31,6 +33,13 @@ function bindNav(){
             return;
         }
         redirectNewNCR(true)
+    })
+
+    img.addEventListener('click', e =>{
+        if(!app){
+            return;
+        }
+        redirectHome(true)
     })
 
 

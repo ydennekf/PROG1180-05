@@ -426,6 +426,10 @@ button:hover {
     background-color: var(--color-secondary);
 }
 
+#crossfire-logo{
+    cursor:pointer
+}
+
  
 /* Headings */
 h1 {

@@ -34,10 +34,7 @@ function RoleIndexButtons(){
             return `
             <div class= "home-button-centre">
                 <div class= "home-ncr-button">
-                    <button id="uploa">
-                        ${createSVG()}
-                        Create NCR
-                    </button>
+                   
                     <button id="view-reports">
                         ${eyeSVG()}
                         View NCRs

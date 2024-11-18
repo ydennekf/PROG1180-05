@@ -1300,7 +1300,10 @@ tbody tr {
 
 
 
-#txt-item-name, #txt-supplier, #txt-name-engineer, #txt-revision-date, #txt-updated-rev, #txt-orig-rev-number, #alt-text{
+#txt-item-name, #txt-supplier, #txt-name-engineer, 
+#txt-revision-date, #txt-updated-rev, #txt-orig-rev-number, 
+#alt-text, #txt-prod-number, #txt-sales-number,
+#txt-quantity-received, #txt-quantity-defective, #txt-sap-number{
     border:1px solid black
 
 }

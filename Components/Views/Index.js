@@ -49,19 +49,21 @@ function RoleIndexButtons(){
             
         default: // This will be for QA I just need to figure out whaat each ones buttons will be
             return `
-        <div>
-            <button id="create-report-btn">
-                ${createSVG()}
-                Create NCR
-            </button>
-            <button id="view-reports">
-                ${eyeSVG()}
-                View NCRs
-            </button>
-            <button>
-                ${documentSVG()}
-                Reports
-            </button>
+        <div class= "home-button-centre">
+            <div class= "home-ncr-button">
+                <button id="create-report-btn">
+                    ${createSVG()}
+                    Create NCR
+                </button>
+                <button id="view-reports">
+                    ${eyeSVG()}
+                    View NCRs
+                </button>
+                <button>
+                    ${documentSVG()}
+                    Reports
+                </button>
+            </div>    
         </div>`
     }
 

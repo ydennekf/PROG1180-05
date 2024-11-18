@@ -259,7 +259,7 @@ a.selected-view {
 /* Main content */
 main.ncr-view {
     flex: 1;
-    max-width: 1200px;
+    width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: var( --color-form);
@@ -271,7 +271,7 @@ main.ncr-view {
 /* NCR Index View */
  
 table.ncr-list {
-    width: 100%;
+    width: 1200;
     border-collapse: collapse;
     margin: 20px 0px;
 }
@@ -310,8 +310,20 @@ table.ncr-list a {
 table.ncr-list a:hover {
     text-decoration: underline;
 }
- 
- 
+ .home-button-centre{
+    display: flex;
+    width: 800px;
+    margin: auto;
+ }
+.home-ncr-button{
+    margin: auto;
+}
+
+.home-ncr-button button{
+    margin: 0 30px 20px;
+}
+
+
 /* Index View Table Buttons */
 .index-view-table-buttons {
     display: inline-flex;

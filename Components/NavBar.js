@@ -105,7 +105,7 @@ export function SearchBar(targetID) {
             
             <li id='ncr-search-container' class='search-container'>
                     
-                    <label for="report-search" style="display:inline;" id="lbl-search">search by ncr no.</label>
+                    <label for="report-search" style="display:inline;" id="lbl-search">Search by ncr no.</label>
                     <input type="text"  id="report-search" placeholder="search ncr reports ..."
                         aria-label="search-description" aria-autocomplete="list" 
                          tabindex="1">
@@ -113,7 +113,7 @@ export function SearchBar(targetID) {
             </li>
             <li id='supplier-search-container' class='search-container'>
                     
-                    <label for="supplier-search" style="display:inline;" id="lbl-search">search by supplier</label>
+                    <label for="supplier-search" style="display:inline;" id="lbl-search">Search by supplier</label>
                     <input type="text"  id="supplier-search" placeholder="search suppliers ..."
                         aria-label="search-description" aria-autocomplete="list" 
                          tabindex="1">

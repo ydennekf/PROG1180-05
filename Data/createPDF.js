@@ -45,6 +45,7 @@ function qaFooter(report){
     return [
         {text:"\nQuality Representative's Name: " + emp.firstName + " " + emp.lastName},
         {text:"Date: " + report.date},
+        {table:{body:[["Engineering Required", report.engineeringRequired ? checkBox() : ""]]}}
     
     ]
 }
@@ -72,6 +73,12 @@ function qaFooter(report){
 
     export function convertToPDF(reportNumber) {
         let report = getReport(reportNumber);
+
+        const engSection = report.Disposition ?  {
+            ...engHeader(report),
+            ...engDisposition(report),
+            ...engFooter(report)
+        } : {}
         let pdf = {
             content: [
                 logo(),
@@ -80,9 +87,7 @@ function qaFooter(report){
                 ...qaHeader(report),
                 qaDescriptions(report),
                 ...qaFooter(report),
-                ...engHeader(report),
-                ...engDisposition(report),
-                ...engFooter(report)
+                
             ]
         }
         return pdf;

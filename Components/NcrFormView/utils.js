@@ -89,6 +89,7 @@ export function generateNcrNumber(){
 export function createReport(employee){
     // DOESN'T VALIDATE USE THE VALIDATORS BEFORE CREATING THE REPORT
     const formData = getReportFormData()
+    console.log(formData.engineeringRequired.checked + "OWOWOWOWWO")
     return {
         ncrNumber: formData.ncrNumber.value,
         //title:formData.title.value,

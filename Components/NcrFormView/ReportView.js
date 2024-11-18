@@ -69,7 +69,12 @@ export function ReportView(report, action){
         if(action === "Create"){
 
             const newReport = createReport(app.employee)
-            newReport.status = "Engineering"
+            if(newReport.engineeringRequired){
+                newReport.status = "engineering"
+            }
+            else{
+                newReport.status = "Closed"
+            }
             // add any images to the report
             addImagesToReport(newReport)
             clearImageStorage()
@@ -81,12 +86,18 @@ export function ReportView(report, action){
 
         }
         if(action === "Edit"){
+            console.log('HELLO!?!??!?!')
             btnAction = "Save";
             let ncrNum = document.getElementById('txt-ncr-number')
             let reportt = getReportFormData();
-            console.log(createReport(reportt), "wow")
+
+
             var updatedReport = createReport(reportt)
-           
+            updatedReport.startedBy = report.startedBy;
+            if(report.status === "engineering" && app.employee.department === "engineering"){
+                updateReport.NameOfEngineer = app.employee.firstName + " " + app.employee.lastName
+            }
+
             addImagesToReport(updatedReport)
             clearImageStorage()
             
@@ -405,7 +416,7 @@ export function ReportView(report, action){
                         </div>
                         <div>
                             <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
-                                ${report?.productionOrder ? 'checked' : ''}/>
+                                ${report?.engineeringRequired ? 'checked' : ''}/>
                             <label id="lbl-engineering-required" for="chk-engineering-required"><span class="required-marker">*</span>Engineering Required?</label>                     
                         </div>
                     </div>       
@@ -479,7 +490,7 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
                                 <input readonly aria-errormessage="name-engineer-error" name="name-engineer" type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
-                                value=""/>
+                                value=${app.employee.department === "engineering" ? app.employee.username : ""}/>
                                 <label id="name-engineer-error" class="error-label"></label>
                             </div>
                         
@@ -488,7 +499,7 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
-                                value=""/>
+                                value=${report.UpdatedRev || 0}/>
                                 <label id="updated-rev-error" class="error-label"></label>
                             </div>
                             <div>

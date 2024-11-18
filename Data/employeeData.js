@@ -29,7 +29,9 @@ export let employees = [
             "pageLength": 10,
             "newReports": []
         },
-
+        getFormalName:function (){
+            return this.firstName + " " + this.lastName
+        }
     },
     {
         "username": "btaylor",

@@ -1269,6 +1269,22 @@ tbody tr {
     margin-bottom: 20px; 
 }
 
+#end-date:focus {
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+#start-date:focus {
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+#status-filter:focus {
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+#supplier-search:focus {
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
 #report-search:focus {
     box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
 }

@@ -273,7 +273,7 @@ main.ncr-view {
 table.ncr-list {
     width: 1200;
     border-collapse: collapse;
-    margin: 20px 0px;
+    margin: 15px 0px;
 }
  
 table.ncr-list th,
@@ -312,15 +312,17 @@ table.ncr-list a:hover {
 }
  .home-button-centre{
     display: flex;
-    width: 800px;
+    width: 1000px;
     margin: auto;
+    padding: 0 20px;
  }
-.home-ncr-button{
+/* .home-ncr-button{
     margin: auto;
-}
+} */
 
 .home-ncr-button button{
-    margin: 0 30px 20px;
+    margin: 0 10px 20px 0;
+    border-radius: 5px;
 }
 
 
@@ -786,8 +788,8 @@ label{
     width: 90%;
  }
  .qa-left-container, .purchasing-left-container {
-    min-width: 300px;
-    max-width: 500px;
+    min-width: 275px;
+    max-width: 400px;
     min-height: 300px;
     display: block;
     /* padding-top: 25px; */
@@ -890,7 +892,7 @@ legend{
   }
 
   .item-width input[type="text"]{
-    width: 200px;
+    width: 300px;
   }
 
   .no-border{
@@ -898,9 +900,10 @@ legend{
     border: 0;
   }
 
-  .hypen::after{
-    content: " - ";
-  }
+ .ncr-submit-cancel{
+    margin-top: 20px;
+    margin-left: 47px;
+ }
   
   /* .engi-top-container fieldset{
     margin: 0 0 0 5px;
@@ -908,15 +911,22 @@ legend{
 
   .qa-checkbox-align input[type="checkbox"]{
     vertical-align: middle;
-    margin-right: 5px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .eng-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 10px;
   }
 
   .qa-checkbox-align {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .eng-checkbox-align {
     margin-top: 20px;
-    /* margin-left: 10px; */
+   
 }
 
 .qa-checkbox-align li, .eng-checkbox-align li{
@@ -924,10 +934,9 @@ legend{
 }
 
 
-.eng-checkbox-align label {
-    vertical-align:top;
-    white-space: normal; /* allows label to stay inside fieldset*/
-}
+
+
+
 
  /*
 
@@ -1005,6 +1014,7 @@ label {
   nav span {
     font-size: 14px;
   }
+
 
 
   /*==================

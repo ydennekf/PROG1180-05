@@ -611,7 +611,7 @@ export function ReportView(report, action){
         </div>
         
 </div>
-<div>
+<div class="ncr-submit-cancel">
 <button id="submitBtn" >Save</button>
 <button id="cancelBtn" >Cancel</button>
 </div>

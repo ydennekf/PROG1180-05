@@ -144,22 +144,21 @@ export function qaDescriptions(report) {
     return {
 
                 style: 'tableExample',
-                color: '#555',
                 margin:[ 0, 20, 0, 0 ],
                 table: {
 
                     body: [
                         [
-                            {text: "Description of Defect"},
+                            {text: "Description of Defect", fillColor:blue},
                             {text: report.defectDescription},
                         ],
 
                         [
-                            {text: "Description of Item"},
+                            {text: "Description of Item", fillColor:blue},
                             {text:report.itemName},
                         ],
                         [
-                            {text:"SAP No."},
+                            {text:"SAP No.", fillColor:blue},
                             {text:report.sapNumber}
                         ]
                     ]

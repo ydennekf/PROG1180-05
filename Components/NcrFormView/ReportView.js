@@ -499,7 +499,7 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
-                                value=${report.UpdatedRev || 0}/>
+                                value=${report?.UpdatedRev || 0}/>
                                 <label id="updated-rev-error" class="error-label"></label>
                             </div>
                             <div>

@@ -45,7 +45,7 @@ function qaFooter(report){
     return [
         {text:"\nQuality Representative's Name: " + emp.firstName + " " + emp.lastName},
         {text:"Date: " + report.date},
-        {table:{body:[["Engineering Required", report.engineeringRequired ? checkBox() : ""]]}}
+        {table:{body:[[{text:"Engineering Required", fillColor:blue}, report.engineeringRequired ? checkBox() : ""]]}}
     
     ]
 }

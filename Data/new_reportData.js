@@ -1273,6 +1273,12 @@ reportData = reportData.map(r => {return {...r, imageStorage:[]}})
 reportData = reportData.map(r => {
     if(r.status === "engineering" || "Engineering"){
         r.engineeringRequired = true;
+        r.Disposition = ""
+        r.engineeringReview = ""
+        r.origRevNum = ""
+       
+        r.drawingToUpdate = ""
+        r.customerNotification = ""
     }
     return r;
 })

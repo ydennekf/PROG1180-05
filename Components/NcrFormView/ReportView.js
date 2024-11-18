@@ -13,6 +13,11 @@ let tempImageStorage = []
 function clearImageStorage(){
     tempImageStorage= []
 }
+let QAReadOnly;
+let engiReadOnly;
+let purchaseReadOnly;
+let exportReadOnly;
+let newNCR;
 
 function addImagesToReport(report){
     tempImageStorage.forEach(i => {
@@ -41,11 +46,11 @@ export function ReportView(report, action){
     // take the employee's role to determine what sections are editable and what is read only
 
 
-    let QAReadOnly;
-    let engiReadOnly;
-    let purchaseReadOnly;
-    let exportReadOnly;
-    let newNCR;
+    // let QAReadOnly;
+    // let engiReadOnly;
+    // let purchaseReadOnly;
+    // let exportReadOnly;
+    // let newNCR;
     let empAction;
     let btnAction;
 
@@ -86,7 +91,7 @@ export function ReportView(report, action){
 
         }
         if(action === "Edit"){
-            console.log('HELLO!?!??!?!')
+       
             btnAction = "Save";
             let ncrNum = document.getElementById('txt-ncr-number')
             let reportt = getReportFormData();
@@ -95,25 +100,29 @@ export function ReportView(report, action){
             var updatedReport = createReport(reportt)
             updatedReport.startedBy = report.startedBy;
             if(report.status === "engineering" && app.employee.department === "engineering"){
-                updateReport.NameOfEngineer = app.employee.firstName + " " + app.employee.lastName
+                updatedReport.nameOfEngineer = app.employee.firstName + " " + app.employee.lastName
+                updatedReport.status = "purchasing"
             }
 
             addImagesToReport(updatedReport)
             clearImageStorage()
             
             updateReport(ncrNum.value, updatedReport);
+            app.storage.pushRecentReport(updatedReport.ncrNumber)
             
         }
 
         // redirect code
-        redirectViewAllReports(true);
-        if(["Edit", "Create"].includes(action)){
+        redirectHome()
+        if(["Edit", "Create", "Save"].includes(action)){
             let msg = "Successfully ";
             if(action === "Create"){
                 msg += "created report."
+             
             }
-            else if(action === "Edit"){
+            else if(action === "Edit" || action =="Save"){
                 msg += "edited report " + report.ncrNumber
+                
             }
             
             createModal('errorPanel', "Success", msg, 10000)
@@ -209,6 +218,63 @@ export function ReportView(report, action){
         return html;
     }
 
+    function setReadonly(){
+        
+        if(action === "Edit" || action === "Create"){
+            // this limits the create and edit functions to only be emplolyee role specific
+            empAction = app.employee.department;
+
+            console.log("Edit or saved")
+            if(app.employee.department === "QA"){
+            QAReadOnly = false;
+            engiReadOnly = true;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
+            
+        }
+
+        if(app.employee.department === "engineering"){
+            console.log("testing emp engineer")
+            QAReadOnly = true;
+            engiReadOnly = false;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
+            
+
+        }
+
+        if(app.employee.department === "sales"){
+            QAReadOnly = true;
+            engiReadOnly = true;
+            purchaseReadOnly = false;
+            exportReadOnly = true;
+        
+
+        }
+
+        if(app.employee.department === "admin"){
+            QAReadOnly = false;
+           engiReadOnly = false;
+           purchaseReadOnly = false;
+           exportReadOnly = false;
+           
+
+       }
+
+       if(report?.status === "closed" || report?.status === "Closed" || (action !== "Edit" && action !== "Create"))
+        {
+            console.log("Status")
+            QAReadOnly = true;
+            engiReadOnly = true;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
+            
+        }
+
+        
+    }
+}
+
     let DisplayView = () => {
         // uses the app.employee to determine a role and sets appropriate sections to but readonly
 
@@ -218,10 +284,10 @@ export function ReportView(report, action){
 
             console.log("Edit or saved")
             if(app.employee.department === "QA"){
-            QAReadOnly === false;
-            engiReadOnly === true;
-            purchaseReadOnly === true;
-            exportReadOnly === true;
+            QAReadOnly = false;
+            engiReadOnly = true;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
             $("#accordion").multiAccordion({
 
                 active: 0
@@ -231,10 +297,10 @@ export function ReportView(report, action){
 
         if(app.employee.department === "engineering"){
             console.log("testing emp engineer")
-            QAReadOnly === true;
-            engiReadOnly === false;
-            purchaseReadOnly === true;
-            exportReadOnly === true;
+            QAReadOnly = true;
+            engiReadOnly = false;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
              $("#accordion").multiAccordion({
 
                 active: 1
@@ -243,10 +309,10 @@ export function ReportView(report, action){
 
         }
         if(app.employee.department === "sales"){
-            QAReadOnly === true;
-            engiReadOnly === true;
-            purchaseReadOnly === false;
-            exportReadOnly === true;
+            QAReadOnly = true;
+            engiReadOnly = true;
+            purchaseReadOnly = false;
+            exportReadOnly = true;
             $("#accordion").multiAccordion({
 
                 active: 2
@@ -255,10 +321,10 @@ export function ReportView(report, action){
 
         }
         if(app.employee.department === "admin"){
-             QAReadOnly === false;
-            engiReadOnly === false;
-            purchaseReadOnly === false;
-            exportReadOnly === false;
+             QAReadOnly = false;
+            engiReadOnly = false;
+            purchaseReadOnly = false;
+            exportReadOnly = false;
             $("#accordion").multiAccordion({
 
                 active: 0
@@ -266,13 +332,22 @@ export function ReportView(report, action){
               });
 
         }
+        if(report?.status === "closed" || report?.status === "Closed")
+        {
+            console.log("Status")
+            QAReadOnly = true;
+            engiReadOnly = true;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
+            
+        }
         }
         else{
             // this means its set to View
-            QAReadOnly === true;
-            engiReadOnly === true;
-            purchaseReadOnly === true;
-            exportReadOnly === true;
+            QAReadOnly = true;
+            engiReadOnly = true;
+            purchaseReadOnly = true;
+            exportReadOnly = true;
                   if(app.employee.department === "QA"){
             $("#accordion").multiAccordion({ active: 0});
         }
@@ -287,11 +362,14 @@ export function ReportView(report, action){
         if(app.employee.department === "admin"){
             $("#accordion").multiAccordion({ active: 0});
         }}
+        
     }
 
 
+setReadonly()
 // within the QA form, add the autocomplete to the supplier name
     // if the supplier name does not exsist add a button to create a new supplier with the data needed from the data model
+    console.log(QAReadOnly, "come the fuck on")
     const html = `
 <h1 class="Report-view-header">New NCR Details</h1>
    
@@ -309,6 +387,7 @@ export function ReportView(report, action){
             <div><label>Approved By:</label><p>J. Fish, Oper. Manager</p></div>
             <div><label>Revision Date:</label><p>July 14, 2024</p></div>
             <div><label>Revision No:</label><p>013</p></div>
+            ${report?.status !== "Closed"  && report?.status !== "Archived" && action !== "View" && report ?`<div><button id="close-ncr">Close NCR</button></div>` : ''}
     
     </div>
 
@@ -439,19 +518,19 @@ export function ReportView(report, action){
                             <input ${engiReadOnly? "readonly" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
                             ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
-                            <label id="engineering-review-radio-error" class="error-label"></label>
+                            <label class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-repair" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
                             ${report?.engineeringReview === "Repair"? 'checked' : ''}>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
-                            <label id="engineering-review-radio-error" class="error-label"></label>
+                            <label  class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-rework" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
                             ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                              <label for="rad-rework" id="lbl-rework">Rework</label>
-                            <label id="engineering-review-radio-error" class="error-label"></label>
+                            <label  class="error-label"></label>
                         </li>
                         <li>
                             <input required ${engiReadOnly? "readonly" : ""} id="rad-scrap" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
@@ -490,7 +569,7 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
                                 <input readonly aria-errormessage="name-engineer-error" name="name-engineer" type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
-                                value=${app.employee.department === "engineering" ? app.employee.username : ""}/>
+                                value="${report?.nameOfEngineer || ""}"/>
                                 <label id="name-engineer-error" class="error-label"></label>
                             </div>
                         
@@ -499,13 +578,13 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
-                                value=${report?.UpdatedRev || 0}/>
+                                value=${report?.updatedRev || ""}/>
                                 <label id="updated-rev-error" class="error-label"></label>
                             </div>
                             <div>
                                 <label class="required" for="txt-revision-date" id="lbl-revision-date">Revision Date</label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" type="text" aria-describedby="lbl-revision-date" id="txt-revision-date"
-                                value=${report?.RevisionDate || ""}/>
+                                value="${report?.RevisionDate || ""}"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                         </div>
@@ -702,7 +781,7 @@ function bindExport(){
 
 
 // add event listeners
-
+//DisplayView()
 document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
@@ -712,6 +791,15 @@ document.getElementById(("chk-followup-req" )).addEventListener('click', (e)=>{c
 DisplayView();
 bindExport()
 bindUpload()
+try{
+    document.getElementById('close-ncr').addEventListener('click', ()=> {
+        report.status = "Closed"
+        redirectViewAllReports(true)
+        createModal('errorPanel', "Success", "You have closed report " + report.ncrNumber, 10000)
+    })
+}catch{
+
+}
 
 $("#txt-supplier").autocomplete({
         source: function(request, response){
@@ -827,4 +915,4 @@ function checkFollowup(e) {
     }
 }
 
-}
+    }

@@ -7,17 +7,22 @@ function getEngReviewRAD(){
     const scrap = document.getElementById('rad-scrap')
 
     if(asIs.checked){
+        console.log('use')
         return "useAsIs"
     }
     if(repair.checked){
+        console.log('rep')
         return "Repair"
     }
     if(rework.checked){
+        console.log('rew')
         return 'Rework'
     }
-    if(scrap.check){
+    if(scrap.checked){
+        console.log('scrap')
         return 'Scrap'
     }
+    console.log('getting passed ')
 
 }
 
@@ -112,9 +117,9 @@ export function createReport(employee){
         drawingToUpdate: formData.drawingToUpdate.checked,
         engineeringReview: formData.engineeringReview,
         origRevNum: formData.origRevNum.value,
-        nameOfEngineer:"",
-        updatedRev: formData.updatedRev.value,
-        RevisionDate:formData.RevisionDate.value,
+        nameOfEngineer:formData.nameOfEngineer.value || "",
+        updatedRev: formData.updatedRev.value || "",
+        RevisionDate:formData.RevisionDate.value || "",
         Disposition:formData.Disposition.value,
         purchaseDecision: null,
         CarRaised: null,
@@ -272,6 +277,13 @@ export function validateEngiInputs(errors, data){
     if(data.Disposition.value === ""){
         data.Disposition.ariaInvalid = true;
         errors.push('txt-engi-disposition', 'Engineering-disposition-error', "Please submit the Disposition")
+    }
+
+
+    if(!data.engineeringReview){
+        console.log(data.engineeringReview)
+        //document.getElementById("engineering-review-radio-error").innerHTML = "Please select an Review value"
+        errors.push("engineering-review-radio-error", "engineering-review-radio-error", "Please select an Review value")
     }
 }
 

@@ -79,14 +79,19 @@ export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()
     const notifications = app.storage.getNewReports()
     const html = `
+
+    
     <table>
     ${UnsortedHeader()}
-        <tbody>
-        <tr><h2>Recent NCR'S</h2></tr>
-        ${recent.length > 0 ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"}
-        <tr><td>Notifications</td></tr>
-         ${mapComponents(notifications, reportPreview)}
+     <tbody>
+          
+        ${recent.length > 0 ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"} 
         </tbody>
+    </table>
+    <table>
+        <thead><tr><th colspan="5">Notifications</th> </tr></thead>
+        <tbody>
+        ${mapComponents(notifications, reportPreview)}</tbody>
     </table>
   
     `
@@ -99,6 +104,7 @@ function UnsortedHeader(){
         return `
         
         <thead>
+        <tr><th colspan="5" scope="colgroup" id="RecentReports">Recent Reports</th></tr>
         <tr>
             <th data-column="ncrNumber" tabindex="4">NCR no.</th>
             <th data-column="date" tabindex="4" >Date</th>
@@ -107,6 +113,7 @@ function UnsortedHeader(){
 
             <th></th>
         </tr>
+        
         </thead>
     `;
 

@@ -1244,6 +1244,8 @@ tbody tr {
     color: var(--color-white);
 }
 
+
+
 #status-filter, 
 #end-date,
 #start-date,
@@ -1253,18 +1255,31 @@ tbody tr {
     align-items: center;
     border: 1px solid var(--color-white);
     border-radius: 8px;
-    padding: 10px;
+    padding: 8px;
     max-width: 500px;
     margin: 0 auto; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
+.button-container {
+    display: flex;
+    gap: 10px; 
+    justify-content: start; 
+    margin-bottom: 20px; 
+}
 
 #report-search:focus {
     box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
 }
 
+
+ input, select {
+    height: 40px;
+    border: 1px solid var(--color-white); /* Match borders */
+    border-radius: 6px; /* Smooth corners */
+    padding: 5px 10px; /* Adjust internal spacing */
+}
 
 
 

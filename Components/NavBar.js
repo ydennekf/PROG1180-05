@@ -99,7 +99,7 @@ export function SearchBar(targetID) {
     // set the search text to update on keypress again.
     let html = `
   <h2>View NCR's</h2>
-        <div><button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button></div>
+        <div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button></div>
         <ul class='nav-list'>
             <li><h2>Filter</h2></li>
             

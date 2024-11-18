@@ -32,7 +32,7 @@ export function AccessibilityPanel(){
     }else{
         try{
             document.getElementById("accessibilityControls").remove()
-            document.getElementById('accessibility-toggle').innerText = "Accessibility"
+            document.getElementById('accessibility-toggle').innerText = "Dark Mode"
         } catch{
             // this only happens on startup since the div has never been created yet
         }

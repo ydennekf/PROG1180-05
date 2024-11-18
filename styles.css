@@ -1300,7 +1300,7 @@ tbody tr {
 
 
 
-#txt-item-name, #txt-supplier, #txt-name-engineer, #txt-revision-date, #txt-updated-rev, #txt-orig-rev-number{
+#txt-item-name, #txt-supplier, #txt-name-engineer, #txt-revision-date, #txt-updated-rev, #txt-orig-rev-number, #alt-text{
     border:1px solid black
 
 }

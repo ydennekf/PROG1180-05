@@ -79,8 +79,8 @@ export function ReportView(report, action){
             addImagesToReport(newReport)
             clearImageStorage()
             app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
-            
-            updateReport(newReport.ncrNumber, newReport);
+            reportData.push(newReport)
+            //updateReport(newReport.ncrNumber, newReport);
             app.storage.pushRecentReport(newReport.ncrNumber)
             
 
@@ -505,7 +505,7 @@ export function ReportView(report, action){
                             <div>
                                 <label class="required" for="txt-revision-date" id="lbl-revision-date">Revision Date</label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" type="text" aria-describedby="lbl-revision-date" id="txt-revision-date"
-                                value=""/>
+                                value=${report?.RevisionDate || ""}/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
                         </div>

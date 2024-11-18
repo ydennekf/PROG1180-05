@@ -89,7 +89,7 @@ export function RecentReports(targetID = null){
         </tbody>
     </table>
     <table>
-        <thead><tr><th colspan="5">Notifications</th> </tr></thead>
+        <thead><tr><th>Notifications</th> </tr></thead>
         <tbody>
         ${mapComponents(notifications, reportPreview)}</tbody>
     </table>
@@ -104,7 +104,7 @@ function UnsortedHeader(){
         return `
         
         <thead>
-        <tr><th colspan="5" scope="colgroup" id="RecentReports">Recent Reports</th></tr>
+        <tr><th colspan="5">Recent Reports</th></tr>
         <tr>
             <th data-column="ncrNumber" tabindex="4">NCR no.</th>
             <th data-column="date" tabindex="4" >Date</th>

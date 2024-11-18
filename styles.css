@@ -777,12 +777,7 @@ label{
     box-shadow: 0 4px 8px var(--color-black);
  }
 
- .qa-left-container,
-.qa-right-container,
-.purchasing-left-container, 
-.purchasing-right-container{
-    /* margin: 10px 0; */
-}
+
  .engi-top-container
  .engi-right-container{
     width: 90%;

@@ -295,7 +295,7 @@ export function ReportView(report, action){
 
             <div><label>Document Author:</label><p>M. Hunt</p></div>
             <div><label>Document Date:</label><p>August 12, 2023</p></div>
-            <div><label>Approved By:</label><p>J. Fish, Operations Manager</p></div>
+            <div><label>Approved By:</label><p>J. Fish, Oper. Manager</p></div>
             <div><label>Revision Date:</label><p>July 14, 2024</p></div>
             <div><label>Revision No:</label><p>013</p></div>
     

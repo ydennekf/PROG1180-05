@@ -32,19 +32,21 @@ function RoleIndexButtons(){
 
         case "engineering":
             return `
-            <div>
-                <button id="uploa">
-                    ${createSVG()}
-                    Create NCR
-                </button>
-                <button id="view-reports">
-                    ${eyeSVG()}
-                    View NCRs
-                </button>
-                <button>
-                    ${documentSVG()}
-                    Reports
-                </button>
+            <div class= "home-button-centre">
+                <div class= "home-ncr-button">
+                    <button id="uploa">
+                        ${createSVG()}
+                        Create NCR
+                    </button>
+                    <button id="view-reports">
+                        ${eyeSVG()}
+                        View NCRs
+                    </button>
+                    <button>
+                        ${documentSVG()}
+                        Reports
+                    </button>
+                </div>    
             </div>`
             
         default: // This will be for QA I just need to figure out whaat each ones buttons will be

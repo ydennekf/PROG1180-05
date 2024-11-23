@@ -1,9 +1,10 @@
 // just doing this because passing extra variables to each component is time consuming nd I just wanna get this working for now. Can do it / clean up l8r
-import { NavBar } from "./Components/NavBar.js";
+import { clearNavOnLogout, NavBar } from "./Components/NavBar.js";
 import { createLogin } from "./Components/Login.js";
 import { handleLogin } from "./app.js";
 import { _HistoryContext } from "./Components/context/historyContext.js";
 import _StorageContext from "./Components/context/storageContext.js";
+import { loadNavOnLogin } from "./Components/NavBar.js";
 
 
 
@@ -24,6 +25,7 @@ export function initApp(employee, initialView, initialArgs=[]){ // call after lo
     initialView(...initialArgs)
   
     app.history.setInitialView({component:initialView.name, data:initialArgs})
+    loadNavOnLogin()
     toggleLogout()
 
     
@@ -37,11 +39,12 @@ function logout(){
         return;
     }
 
-    NavBar();
+    //NavBar();
     createLogin("root", handleLogin);
    document.getElementById('root').classList.remove('ncr-view')
    document.getElementById('footer').classList.add('abs-btm')
     app= null;
+    clearNavOnLogout()
 }
 
 function toggleLogout(){

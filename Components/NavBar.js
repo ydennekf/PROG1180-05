@@ -8,6 +8,7 @@ import { ReportList, renderList } from "./ReportList.js";
 
 import {ReportView} from "./NcrFormView/ReportView.js";
 import { redirectHome, redirectNewReport as redirectNewNCR, redirectViewAllReports } from "../redirection/redirect.js";
+import { append } from "./utils/utils.js";
 
 function bindNav(){
     const home = document.getElementById('_home')
@@ -45,16 +46,9 @@ function bindNav(){
 
 }
 
-
-export function NavBar(){
-    // add navigation links here make the image direct to the dashboard.
-    
+export function loadNavOnLogin(){
     const html = `
-    <nav>
-    <div class="centre">
-
-    <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
-            <ul class='nav-list'>
+    <ul class='nav-list'>
                
             
                 <li id="_home">
@@ -62,7 +56,7 @@ export function NavBar(){
                 </li>
 
                 <li id="_create-ncr">
-                    New NCR
+                    Create NCR
                 </li>
 
                 <li id="_view-ncr">
@@ -80,6 +74,34 @@ export function NavBar(){
                 <li id="logout">
                     
                 </li>
+            </ul>`
+
+           append("main-nav", html)
+           bindNav()
+}
+
+export function clearNavOnLogout(){
+    document.getElementById("_home").remove()
+    document.getElementById("_create-ncr").remove()
+    document.getElementById("_view-ncr").remove()
+    document.getElementById("_view_report").remove()
+    document.getElementById("logout").remove()
+    document.getElementById("emp-info").remove()
+}
+
+
+export function NavBar(){
+    // add navigation links here make the image direct to the dashboard.
+    
+    const html = `
+    <nav id="main-nav">
+    <div class="centre">
+
+    <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
+            <ul class='nav-list'>
+               
+            
+               
             </ul>
             </div>
     </nav>
@@ -88,7 +110,7 @@ export function NavBar(){
     `
 
     document.getElementById('nav-wrapper').innerHTML = html;
-    bindNav()
+    
 }
 
 export function SearchBar(targetID) {

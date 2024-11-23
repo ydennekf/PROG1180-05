@@ -74,11 +74,11 @@ function qaFooter(report){
     export function convertToPDF(reportNumber) {
         let report = getReport(reportNumber);
 
-        const engSection = report.Disposition ?  {
+        const engSection = report.Disposition ?  [{
             ...engHeader(report),
             ...engDisposition(report),
             ...engFooter(report)
-        } : {}
+        }] : {"text":""}
         let pdf = {
             content: [
                 logo(),
@@ -88,10 +88,43 @@ function qaFooter(report){
                 qaDescriptions(report),
                 ...qaFooter(report),
                 
+                
             ]
         }
         return pdf;
 
+}
+
+function createQaPDF(reportNumber){ // if only QA section is complete
+    let report = getReport(reportNumber);
+    let pdf = {
+        content: [
+            logo(),
+            topTable(report),
+            ...qaHeader(report),
+            qaDescriptions(report),
+            ...qaFooter(report),
+        ]
+    }
+    return pdf;
+}
+
+function createEngPDF(reportNumber){ // if eng section is complete but purchasing is not
+    let report = getReport(reportNumber);
+    let pdf = {
+        content: [
+            logo(),
+            topTable(report),
+            ...qaHeader(report),
+            qaDescriptions(report),
+            ...qaFooter(report),
+            
+            ...engHeader(report),
+            ...engDisposition(report),
+            ...engFooter(report)
+        ]
+    }
+    return pdf;
 }
 /* ENGINEERING */
 
@@ -134,7 +167,7 @@ function engDisposition(report){
 function engFooter(report){
     return [
 
-                {text:"\nName of Engineer: " + report.NameOfEngineer},
+                {text:"\nName of Engineer: " + report.nameOfEngineer},
                 {text:"Date " + report.date}
             ]
 

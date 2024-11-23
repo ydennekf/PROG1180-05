@@ -14,7 +14,7 @@ import { initApp } from './AppState.js';
 
 import { app } from './AppState.js';
 import { AccessibilityPanel } from './Components/AccesibilityPanel.js';
-import { NavBar } from './Components/NavBar.js';
+import { loadNavOnLogin, NavBar } from './Components/NavBar.js';
 import Index from './Components/Views/Index.js';
 
 
@@ -54,6 +54,7 @@ export let handleLogin = (event) => {
                     <span id="user-department">- ${app.employee.department}</span>
  
                 </span>`
+                
            
             // fire methods to display the index view of the NCR reports.
         }

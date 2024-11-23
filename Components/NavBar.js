@@ -115,13 +115,13 @@ export function NavBar(){
 
 export function SearchBar(targetID) {
 
-
+    console.log(["QA", "admin"].includes(app.employee.department))
 
     // separate the search box for NCR num and Supplier
     // set the search text to update on keypress again.
     let html = `
   <h2>View NCR's</h2>
-        <div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">New Report</button></div>
+        ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
         <ul class='nav-list'>
             <li><h2>Filter</h2></li>
             
@@ -172,10 +172,14 @@ export function SearchBar(targetID) {
 
 
     document.getElementById(targetID).innerHTML = html;
+    try{
     document.getElementById("create-report-btn").addEventListener("click", () => {
         app.history.branchPath({component: 'ReportView', data: [null, "Create"]})
         ReportView(null, "Create");
     });
+    }catch{
+    // only happens if the user logged in is NOT an admin/qa person
+    }
 
      $("#start-date, #end-date").datepicker({
         dateFormat: "M/d/yy",

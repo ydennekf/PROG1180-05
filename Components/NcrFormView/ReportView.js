@@ -421,13 +421,13 @@ setReadonly()
                         <li>
                             <label class="required" for="txt-quantity-received" id="lbl-quantity-received"><span class="required-marker">*</span>Qty. Received:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
-                            value="${safeTruthy(report?.qtyReceived, '')}"/>
+                            value="${safeTruthy(report?.qtyReceived, '')}" min="1"/>
                             <label id="quantity-received-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective"><span class="required-marker">*</span>Qty. Defective:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
-                            value="${safeTruthy(report?.qtyDefective, '')}"/>
+                            value="${safeTruthy(report?.qtyDefective, '')}" min="1"/>
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
                     </ul>  

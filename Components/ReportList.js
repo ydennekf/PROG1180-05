@@ -52,7 +52,11 @@ export function ReportList(targetID, user, Reports, page = 1){
     renderList(onlyOpenReports, currentPage);
         if(!document.getElementById("report-search")){
             SearchBar('report-filtering')
-        document.getElementById('create-report-btn').style.display = 'block';
+            try{document.getElementById('create-report-btn').style.display = 'block';}
+            catch{
+                // only happens if logged in user is not QA or Admin
+            }
+        
         document.getElementById('report-search').style.display = 'block';
         document.getElementById('lbl-search').style.display = "inline";
         }

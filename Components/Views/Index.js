@@ -37,7 +37,8 @@ function RoleIndexButtons(){
                    
                     <button id="view-reports">
                         ${eyeSVG()}
-                        View NCRs
+                        <br/>
+                        NCR Log
                     </button>
                     <button>
                         ${documentSVG()}
@@ -56,7 +57,8 @@ function RoleIndexButtons(){
                 </button>
                 <button id="view-reports">
                     ${eyeSVG()}
-                    View NCRs
+                    <br/>
+                    NCR Log
                 </button>
                 <button>
                     ${documentSVG()}

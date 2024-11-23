@@ -433,6 +433,7 @@ setReadonly()
                     </ul>  
                                      
                     <ul class= "qa-checkbox-align">
+                        <label for="wip-or-rec">Supplier or Rec Insp?</label>
                         <span class="required-marker">*</span>    
                             <li>  
                                 <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 

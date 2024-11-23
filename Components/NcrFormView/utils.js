@@ -99,9 +99,9 @@ export function createReport(employee){
         ncrNumber: formData.ncrNumber.value,
         //title:formData.title.value,
         supplierName:formData.supplier.value,
-        prodNumber:parseInt(formData.prodNumber.value),
+        prodNumber:formData.prodNumber.value,
         defectDescription:formData.defectDescription.value,
-        salesNumber:parseInt(formData.salesNumber.value),
+        salesNumber:formData.salesNumber.value,
         qtyReceived:parseInt(formData.quantityReceived.value),
         qtyDefective:parseInt(formData.quantityDefective.value),
         //itemDescription: formData.itemDescription.value,
@@ -206,13 +206,13 @@ export function validateQANumberInputs(errorList, data){
 
     const validQuantityRec = parseInt(data.quantityReceived.value)
     const validQuantityDef = parseInt(data.quantityDefective.value)
-    const validProdNum = parseInt(data.prodNumber.value)
-    const validSalesNumber = parseInt(data.salesNumber.value)
+    const validProdNum = data.prodNumber.value
+    const validSalesNumber = data.salesNumber.value
 
     
-    if(isNaN(validSalesNumber) || validSalesNumber <0){
+    if(validSalesNumber === "" || validSalesNumber === " "){
         data.salesNumber.ariaInvalid = true;
-        errorList.push('txt-sales-number', 'sales-number-error', "Please submit a positive number.")
+        errorList.push('txt-sales-number', 'sales-number-error', "Please submit a valid sales number.")
     }
 
 
@@ -231,9 +231,9 @@ export function validateQANumberInputs(errorList, data){
         errorList.push('txt-quantity-defective', 'quantity-defective-error', "Please submit a positive number.")
     }
 
-    if(isNaN(validProdNum) || validProdNum < 0){
+    if(validProdNum === "" || validProdNum === " "){
         data.prodNumber.ariaInvalid = true;
-        errorList.push('txt-prod-number', 'prod-number-error', "Please submit a positive number.")
+        errorList.push('txt-prod-number', 'prod-number-error', "Please submit a prod number.")
     }
 
     if(validQuantityDef > validQuantityRec){
@@ -245,7 +245,7 @@ export function validateQANumberInputs(errorList, data){
 export function validateQAStringInputs(errors, data){
       if(data.itemName.value === ""){
         data.itemName.ariaInvalid = true;
-        errors.push('txt-item-name',"item-name-error", "Please submit the name of the supplier")
+        errors.push('txt-item-name',"item-name-error", "Please submit the name of the item")
     }
 
     if(data.supplier.value === ""){

@@ -408,26 +408,26 @@ setReadonly()
                         
                         <li>
                             <label class="required" for="txt-prod-number" id="lbl-prod-number"><span class="required-marker">*</span> Product No:</label>
-                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="number" aria-describedby="lbl-prod-number" id="txt-prod-number"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="text" aria-describedby="lbl-prod-number" id="txt-prod-number"
                             value="${safeTruthy(report?.prodNumber, '')}"/>
                             <label id="prod-number-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-sales-number" id="lbl-sales-number"><span class="required-marker">*</span>Sales Order No:</label>
-                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="number" aria-describedby="lbl-sales-number" id="txt-sales-number"
+                            <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="text" aria-describedby="lbl-sales-number" id="txt-sales-number"
                             value="${safeTruthy(report?.salesNumber, '')}"/>
                             <label id="sales-number-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-quantity-received" id="lbl-quantity-received"><span class="required-marker">*</span>Qty. Received:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
-                            value="${safeTruthy(report?.qtyReceived, '')}"/>
+                            value="${safeTruthy(report?.qtyReceived, '')}" min="1"/>
                             <label id="quantity-received-error" class="error-label"></label>
                         </li>
                         <li>
                             <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective"><span class="required-marker">*</span>Qty. Defective:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
-                            value="${safeTruthy(report?.qtyDefective, '')}"/>
+                            value="${safeTruthy(report?.qtyDefective, '')}" min="1"/>
                             <label id="quantity-defective-error" class="error-label"></label>
                         </li>
                     </ul>  

@@ -392,7 +392,7 @@ setReadonly()
     </div>
 
 
-<form class="ncr-report">    
+<form class="ncr-report">   
 <div id="accordion">
     <h2 data-role="QA">Quality Assurance</h2>
                    

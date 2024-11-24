@@ -123,7 +123,7 @@ export function SearchBar(targetID) {
   <h2>View NCR's</h2>
         ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
         <ul class='nav-list'>
-            <li><h2>Filter</h2></li>
+           
             
             <li id='ncr-search-container' class='search-container'>
                     

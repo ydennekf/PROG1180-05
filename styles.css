@@ -4,8 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
  
 /*Variables*/
 :root {
@@ -144,28 +142,15 @@ body {
  
 /* Nav Bar */
 nav {
-    /* height: 100px;
+    height: 100px;
     margin-bottom: 20px;
     color: var(--color-white);
     background-color: var( --color-primary);
     position: relative; 
     /*Bandage fix for breadcrumbs in header*/
-    /* display:flex;
+    display:flex;
     flex-direction:row;
-    gap:10px;   */
-    height: 100px;
-    margin-bottom: 20px;
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+    gap:10px;
 }
  
 nav .logo {
@@ -270,6 +255,7 @@ a.selected-view {
     color: var(--color-breadcrumb-after);
 }
 
+
  
 /* Main content */
 main.ncr-view {
@@ -331,9 +317,7 @@ table.ncr-list a:hover {
     margin: auto;
     padding: 0 20px;
  }
-/* .home-ncr-button{
-    margin: auto;
-} */
+
 
 .home-ncr-button button{
     margin: 0 10px 20px 0;
@@ -356,17 +340,6 @@ table.ncr-list a:hover {
 }
 
 /* Container for radio buttons */
-
-  /* .radio-group {
-    display: flex ;
-    align-items: center;
-    gap: 10px;
-  } */
-  
-  /* input[type="radio"] {
-    margin-left: 0; /* Remove any unwanted margin
-  } */
-    
   input[type="text"], input[type="number"] {
     height: 25px;
   } 
@@ -380,40 +353,7 @@ table.ncr-list a:hover {
     margin-bottom: 70px;
 }
  
- 
-/* Form Styles */
-.login-form {
-    /* max-width: 400px;
-    margin: 0 auto;
-    background: var(--color-form);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-    max-width: 400px;
-    width: 100%;
-    background: var(--color-form);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
- 
-.login-logo {
-    display: block;
-    justify-self: center;
-    height: 8vh;
-    width: auto;
-    padding-bottom: 2vh;
-}
 
-.login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 100px);
-    margin-top: 40px;
-}
- 
 /* Search Form */
 .search-record {
     display: flex;
@@ -503,11 +443,6 @@ input[type="password"] {
     box-sizing: border-box;
     letter-spacing: 1px;
 }
-
-/* Username-specific additional spacing */
-input#username {
-    margin-top: 15px;
-}
  
 input[type="password"], #username{
     color: var(--color-login-input);
@@ -516,7 +451,7 @@ input[type="password"], #username{
    Animation Styles (Global)
    ========================= */
  
-/* New effect-16 animation */
+/* New effect-1 animation */
 .effect-1 {
     border: 0;
     padding: 4px 0;
@@ -635,7 +570,6 @@ input[type="checkbox"]:checked:before{
 .container{
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .main-content{
@@ -698,6 +632,33 @@ label{
 /* =========================
    Login Form Styles
    ========================= */
+   /* Form Styles */
+
+   input#username {
+    margin-top: 15px;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--color-form);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-container {
+    background-color: var(--color-white);
+    margin-top: 80px;
+}
+ 
+.login-logo {
+    display: block;
+    justify-self: center;
+    height: 8vh;
+    width: auto;
+    padding-bottom: 2vh;
+}
  
 .remember-me {
     display: flex;
@@ -768,11 +729,14 @@ label{
    .ncr-report{
     max-width: 90%;
     margin: auto;
+    
 }
+
 
     /*===============
         NCR header 
       ===============*/
+
 
 .iso-header{
     margin: 20px auto 0;
@@ -823,8 +787,6 @@ label{
     max-width: 400px;
     min-height: 300px;
     display: block;
-    /* padding-top: 25px; */
-    /* white-space: nowrap; */
  }
 
 .purchasing-inputs,
@@ -886,16 +848,14 @@ legend{
     width: 100%;
 }
 
- .qa-left-container input[type="number"], 
- .qa-left-container input[type="text"] {
-    /* margin-left: 20px; */
-    width: 90%;
+.qa-left-container input[type="number"], 
+.qa-left-container input[type="text"] {
+   width: 90%;
 }
 
 .qa-labels label{
     display:inline-block;
     width: 100%;
-    /* margin-left: 20px; */
 }
 
 .qa-left-container input[type="radio"], 
@@ -903,7 +863,6 @@ legend{
     height: 20px;
     width: 20px;
     vertical-align: middle;
-   /* margin-left: 20px; */
    margin-right: 7px;
   }
 
@@ -965,27 +924,6 @@ legend{
 }
 
 
-
-
-
-
- /*
-
-
-.col-5 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    background-color: var(--color-form);
-    padding: 5px;
-}
- */
-
- /* .view-form{
-    background-color: var(--color-white);
-    padding: 8px;
-    border-radius: 10px;
-    margin: auto;
- } */
 
  #accessibility-toggle{
     margin-left: 10px;
@@ -1100,10 +1038,7 @@ label {
     gap: 20px;
 }
 
-/* .qa-right-container, 
-.purchasing-right-container {
-    grid-template-rows: 1fr 1fr;
-} */
+
 
 .engi-top-container{
     display: grid;
@@ -1276,7 +1211,7 @@ tbody tr {
     border-radius: 8px;
     max-width: 400px;
     margin: 0 auto;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--color-black);
 }
 
 /* Label styling */
@@ -1285,6 +1220,7 @@ tbody tr {
     font-weight: bold;
     color: var(--color-white);
     margin-bottom: 4px; /* Adds space between label and input field */
+    width: 50%;
 }
 
 
@@ -1298,13 +1234,10 @@ tbody tr {
     font-size: 95%;
     flex-direction: column; /* Aligns label above input field */
     align-items: flex-start; /* Aligns items to the left */
-    border: 1px solid var(--color-white);
-    border-radius: 8px;
-    padding: 8px;
-    max-width: 500px;
     margin: 0 auto; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
+
 
 
 .button-container {
@@ -1315,24 +1248,10 @@ tbody tr {
 }
 
 #end-date:focus {
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+    box-shadow: var();
 }
 
-#start-date:focus {
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
-}
 
-#status-filter:focus {
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
-}
-
-#supplier-search:focus {
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
-}
-
-#report-search:focus {
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
-}
 
 
  input, select {
@@ -1358,13 +1277,13 @@ tbody tr {
 
 
 #modal {
-    position: absolute;
-    top: 10%;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    width: fit-content;
-    background-color: white;
+    position:absolute;
+    top:10%;
+    left: 0; 
+  right: 0; 
+  margin-inline: auto; 
+  width: fit-content;
+    background-color:white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border: 1px solid var(--color-primary);
+    border:1px solid var(--color-primary)
 }

@@ -5,16 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Crossfire - NCR</title>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="prototype-styles.css">
     </head>
 <body>
-    <div id="nav-wrapper" >
-        
-      
-    </div>
+    <header>
+        <div id="nav-wrapper" class="centre-s centre-m centre-l"></div>
+    </header>
 
-
-    <main id="root">   
+    <main> 
+        <div id="root" class="centre-s centre-m centre-l"></div>  
     </main>
     
     <div aria-labelledby="errorPanel" id="errorPanel" role="alert">
@@ -22,22 +21,21 @@
     </div>
     
     
-    <footer id="footer" class="abs-btm">
-        <button id="accessibility-toggle" aria-label="Open-Accesibility-Menu">Dark Mode</button>
-        <p>&copy; 2024 Crossfire. All rights reserved.</p>
-       
-       
-        <div id="accessibility-menu" >
-
+    <footer>
+        <div id="footer" class="abs-btm centre-s centre-m centre-l"">
+            <button id="accessibility-toggle" aria-label="Open-Accesibility-Menu">Dark Mode</button>
+            <p>&copy; 2024 Crossfire. All rights reserved.</p>
+            <div id="accessibility-menu" ></div>
         </div>
-
+        
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script src="node_modules/pdfmake/build/pdfmake.min.js"></script>
    
-  <script src="node_modules/pdfmake/build/vfs_fonts.js"></script>
-     <script id="pdfMake" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.min.js" integrity="sha512-EFlschXPq/G5zunGPRSYqazR1CMKj0cQc8v6eMrQwybxgIbhsfoO5NAMQX3xFDQIbFlViv53o7Hy+yCWw6iZxA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="node_modules/pdfmake/build/vfs_fonts.js"></script>
+    <script id="pdfMake" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.min.js" integrity="sha512-EFlschXPq/G5zunGPRSYqazR1CMKj0cQc8v6eMrQwybxgIbhsfoO5NAMQX3xFDQIbFlViv53o7Hy+yCWw6iZxA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="app.js"></script>
 </body>
 </html>

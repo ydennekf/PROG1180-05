@@ -644,7 +644,8 @@ label{
     background: var(--color-form);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border:none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .login-container {

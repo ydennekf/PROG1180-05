@@ -82,16 +82,24 @@
     color: var(--color-white);
 }
 
+body{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
 header{
     display:flex;
     flex-direction: column;
+    position: sticky;
+    top: 0;
     margin: 0;
-    height: 10vh; 
+    height: 5rem; 
     background-color: var(--color-primary);
 }
 
 nav {
-    height: 10vh;
+    height: 5rem;
     color: var(--color-white);
     background-color: var(--color-primary);
     align-items: center;
@@ -103,7 +111,7 @@ nav {
 }
 
 nav .logo {
-    height: 7vh;
+    height: 4rem;
 }
 
 .nav-list {
@@ -137,27 +145,47 @@ nav ul li button{
 main {
     display: flex;
     flex-direction: column;
+    flex: 1;
     background-color: var( --color-background);
     color: var(--color-black);
     font-family: var(--font-primary);
     margin: 0;
-    min-height: 85vh;
+    min-height: calc(100vh - 9rem);
     transition: all 0.3s ease-in-out;
 }
 
 footer {
+    display: inline-block;
     background-color: var(--color-primary);
     color: var(--color-white);
-    height: 5vh;
-    padding: 15px 25px 0;
-    font-size: 14px;
+    height: 4rem;
+    padding: 1rem;
+    font-size: 1rem;
     font-family: var(--font-secondary);
-    align-items: center;
     text-align: center;
 }
 
 footer button{
     float: left;
+}
+
+/* Buttons */
+button {       
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: solid 3px var(--color-white);
+    text-align: center;
+    width: 7rem;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; 
+}
+
+button:hover {
+    background-color: var(--color-secondary);
 }
 
 @media screen and (min-width: 480px){

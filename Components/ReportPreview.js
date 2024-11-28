@@ -35,9 +35,9 @@ export function reportPreview  (reportData) {
          
             <td>
                 <div class='index-view-table-buttons'>
-                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.eyeSVG()}<br/>Details</button>
-                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.editSVG()}Edit</button>
-                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.folderSVG()}Archive</button>
+                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Details</button>
+                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
+                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Archive</button>
                     
                 </div>
             </td>

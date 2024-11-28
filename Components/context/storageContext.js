@@ -61,33 +61,51 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
 
     function pushNewReport(reportNumber, status){
 
+        for(let e in employees){
+            if(e.department === status){
 
-            if(employee.department === status){
+                let reports = empPreferences[e.username].newReports
 
-                let reports = empPreferences[employee.username].newReports
-                   
-                    const curTotal = reports.length
+
                    const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
 
-                   if(idx >= 0){ // if the reports already in recent it removes the report and then pushes it to the front
+                   if(idx >= 0){ // if the reports already in notifications it removes the report and then pushes it to the front
 
                     reports = reports.filter(r => r.ncrNumber !== reportNumber)
                    }
                 reports.unshift(getReport(reportNumber))
+
+                reports = reports.filter(item => item.status === e.department)
                 console.log(reports)
-                reports = reports.filter(item => item.status === employee.department)
-                console.log(curTotal)
-                if(curTotal >= 5){
-                    console.log("Pop")
-                   reports.pop()
-                }
-                empPreferences[employee.username].newReports = reports;
+                empPreferences[e.username].newReports = reports;
+
+               // sendEmailToDepartment(e, getReport(reportNumber), "Operations Manager") //
                 save()
             }
+        }
+    }
+
+    function sendEmailToDepartment(employee, report, fromDept){
+            emailjs.init({
+                publicKey: 'WlGCHQ8tggwCZYvBQ'
+            })
 
 
 
+            var templateParams = {
+                    reply_to:"ydennekrf@gmail.com",
+                    to_name:employee.name,
+                    from_name:fromDept,
+                    message:`There is a new report for the ${employee.department} department.`
+            }
 
+            emailjs.send('service_z1gy9ta', 'template_57gd15a', templateParams)
+                .then((response) => {
+                    console.log("SUCCESS", response.status, response.text);
+                },
+                    (error) => {
+                    console.log("FAILED....", error);
+                    });
     }
 
 

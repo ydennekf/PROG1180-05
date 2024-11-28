@@ -1,5 +1,6 @@
 import { getReport } from "../Data/new_reportData.js";
 import { DetailsNcrView } from "./NcrFormView/DetailsNcrView.js";
+import * as SVG from "./svgs.js";
 
 
 import { app } from "../AppState.js";
@@ -34,9 +35,9 @@ export function reportPreview  (reportData) {
          
             <td>
                 <div class='index-view-table-buttons'>
-                    <button class="view-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Details</button>
-                    <button class="edit-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
-                    <button class="archive-report" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Archive</button>
+                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.eyeSVG()}<br/>Details</button>
+                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.editSVG()}Edit</button>
+                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.folderSVG()}Archive</button>
                     
                 </div>
             </td>

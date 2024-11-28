@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "pdfmake": "^0.2.15",
     "popstate-direction": "^1.0.0"
   }

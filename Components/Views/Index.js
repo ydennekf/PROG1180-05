@@ -35,14 +35,14 @@ function RoleIndexButtons(){
             <div class= "home-button-centre">
                 <div class= "home-ncr-button">
                    
-                    <button id="view-reports">
+                    <button id="view-reports" class="large-icon">
                         ${eyeSVG()}
                         <br/>
                         NCR Log
                     </button>
-                    <button>
+                    <button class="large-icon">
                         ${documentSVG()}
-                        Reports
+                        Reporting
                     </button>
                 </div>    
             </div>`
@@ -51,18 +51,18 @@ function RoleIndexButtons(){
             return `
         <div class= "home-button-centre">
             <div class= "home-ncr-button">
-                <button id="create-report-btn">
+                <button id="create-report-btn" class="large-icon">
                     ${createSVG()}
                     Create NCR
                 </button>
-                <button id="view-reports">
+                <button id="view-reports" class="large-icon">
                     ${eyeSVG()}
                     <br/>
                     NCR Log
                 </button>
-                <button>
+                <button class="large-icon">
                     ${documentSVG()}
-                    Reports
+                    Reporting
                 </button>
             </div>    
         </div>`
@@ -80,7 +80,7 @@ function indexButtonBindings(){
 
 export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()
-    const notifications = app.storage.getNewReports()
+
     const html = `
 
     
@@ -91,12 +91,7 @@ export function RecentReports(targetID = null){
         ${recent.length > 0 ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"} 
         </tbody>
     </table>
-    <table>
-        <thead><tr><th>Notifications</th> </tr></thead>
-        <tbody>
-        ${mapComponents(notifications, reportPreview)}</tbody>
-    </table>
-  
+      
     `
 
     return injectOrReturn(html, targetID)

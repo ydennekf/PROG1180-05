@@ -47,13 +47,7 @@ export let handleLogin = (event) => {
             // success
             document.getElementById('footer').classList.remove('abs-btm') // another bandage fix for the footer :(
             RedirectToIndex(employeeData, reportData)
-            document.getElementById("emp-info").innerHTML = `
-            <span id="user-info">
 
-                    <span id="user-name-label">Logged in as: <strong id="user-name">${app.employee.username}</strong></span>
-                    <span id="user-department">- ${app.employee.department}</span>
- 
-                </span>`
                 
            
             // fire methods to display the index view of the NCR reports.

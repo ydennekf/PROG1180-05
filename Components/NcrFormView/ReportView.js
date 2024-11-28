@@ -872,31 +872,7 @@ function createNewSupplier(supplierName){
     document.getElementById("txt-supplier").value = supplierName;
 }
 
-function checkDrawingUpdate(e) {
-    const updatedRevInput = document.getElementById('txt-updated-rev');
-    const revisionDateInput = document.getElementById('txt-revision-date');
-    const nameEngineerInput = document.getElementById('txt-name-engineer');
 
-    if (e.target.checked) {
-        // Set updated revision
-        updatedRevInput.value = report?.UpdatedRev ? parseInt(report.UpdatedRev) + 1 : 2;
-
-        // Set revision date as a formatted date
-        revisionDateInput.value = new Date().toISOString().slice(0, 10); // YYYY-MM-DD format
-
-        // Set engineer's name from app.employee
-        nameEngineerInput.value = `${app.employee.firstName} ${app.employee.lastName}`;
-    } else {
-        // Reset updated revision to its existing value or empty
-        updatedRevInput.value = report?.UpdatedRev ? report.UpdatedRev : "";
-
-        // Reset revision date to the existing value or empty
-        revisionDateInput.value = report?.RevisionDate || "";
-
-        // Reset engineer's name to the existing value or empty
-        nameEngineerInput.value = report?.NameOfEngineer || "";
-    }
-}
 function checkCarRaised(e) {
     const CarNumContainer = document.getElementById("txt-car-num");
 

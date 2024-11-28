@@ -19,6 +19,7 @@
     --color-midblue:#2f6ba7;
     --color-warning:#993333;
     --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Lato', Arial, sans-serif;
     --color-bread-crumb-after:black;
     --color-login-input:#333;
     --color-breadcrumb:black;
@@ -394,12 +395,12 @@ input[type="search"]:focus {
 button {
     width: 100px;
     padding: 10px 15px;
-    font-size: 12px;
+    font-size: 1rem;
     cursor: pointer;
     background-color: var(--color-primary);
     color: var(--color-white);
     border: solid 1px var(--color-white);
-    border-radius: 4px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
     max-width: 150px; 
     text-align: center;
@@ -671,26 +672,18 @@ label{
     margin-right: 10px;
 }
  
-.login-btn {
-   
-    width: 100%;
-    background-color: var(--color-primary);
-    color: var( --color-white);
+/* .login-btn {
     border: solid 1px var(--color-white);
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
+} */
+ 
 .login-btn-container{
     display: flex;
     justify-content: center;
 }
  
-.login-btn:hover {
+/* .login-btn:hover {
     background-color: #407bbf;
-}
+} */
  
 .forgot-password {
     text-align: center;

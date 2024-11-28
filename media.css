@@ -1,0 +1,52 @@
+
+
+@media screen and (min-width: 480px){
+
+    .centre-s{
+        width: 100%;
+        margin: auto;
+        background: lightblue;
+      }
+}
+
+@media screen and (min-width:481px) and (max-width:767px){
+    
+   
+    .centre-s{
+        
+        max-width: 100%;
+        margin: auto;
+        background: purple;
+       
+      }
+
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+
+    .centre-m{
+        min-width: 800px;
+        max-width: 1023px;
+        margin: auto;
+        background: yellow;
+        
+      }
+
+
+}
+    
+
+@media screen and (min-width:1024px){
+
+
+    .centre-l{
+        min-width: 800px;
+        max-width: 1200px;
+        margin: auto;
+        background: greenyellow;
+        
+      }
+
+    
+}
+

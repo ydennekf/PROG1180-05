@@ -19,7 +19,6 @@
     --color-midblue:#2f6ba7;
     --color-warning:#993333;
     --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Lato', Arial, sans-serif;
     --color-bread-crumb-after:black;
     --color-login-input:#333;
     --color-breadcrumb:black;
@@ -791,7 +790,7 @@ label{
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px 8px 0 0;
-    max-height: 60vh;
+    /* max-height: 60vh; */
    }
 
 .error-label{

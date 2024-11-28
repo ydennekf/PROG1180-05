@@ -4,17 +4,22 @@
     box-sizing: border-box;
 }
 
-.iso-header {
-    color: var(--color-white);
-}
-
-.iso-header div{
-    background-color: var(--color-primary);
-}
 
 label {
     color: var(--color-white);
+    font-size: 1.1rem;
+    user-select: none;
 }
+
+.search-container label{
+    color: var(--color-white);
+}
+
+/* label{
+    color: var(--color-black);
+    font-size: 1.1rem;
+    user-select: none;
+} */
 
 legend {
     color: var(--color-white);
@@ -44,18 +49,10 @@ tbody tr {
     background-color: var(--color-primary);       
 }
 
-h2{
+/* h2{
     color: var(--color-white);
 }
-
-
-.search-container label{
-    color: var(--color-white);
-}
-
-
-
- 
+ */
 
 /* Body Styles */
 /* body {
@@ -134,6 +131,7 @@ nav span{
 }
  
 .search-container label{
+    color: var(--color-black);
     font-size:12px;
 }
  
@@ -345,7 +343,7 @@ input[type="search"]:focus {
 
  
 /* Headings */
-h1 {
+/* h1 {
     margin-top: 0;
     text-align: center;
 }
@@ -353,7 +351,7 @@ h1 {
 h2 {
     text-align: center;
     color: var(--color-secondary);
-}
+} */
  
 h3 {
     font-family: "Montserrat", cursive;
@@ -505,7 +503,7 @@ input[type="checkbox"]:checked:before{
     flex: 1;
 }
 
-footer {
+/* footer {
     background-color: var(--color-primary);
     color: var( --color-white);
     text-align: center;
@@ -515,14 +513,10 @@ footer {
     font-family: 'Lato', sans-serif;
     margin-top:30px; 
 }
- 
+  */
 /* General Label Styling */
  
-label{
-    color: var(--color-black);
-    font-size: 1.1rem;
-    user-select: none;
-}
+
  
 /* =========================
    Dropdown & Select Styling
@@ -662,13 +656,16 @@ label{
 
 .iso-header{
     margin: 20px auto 0;
+    color: var(--color-black);
     background-color: var(--color-iso); 
+    outline-color: var(--color-iso);
     gap: 1px;
     outline-style: solid;
     outline-width: 1px;
-    outline-color: var(--color-iso);
+    
     border-radius: 5px; 
 }
+
 
 .iso-header div{
     border-width: 6px;
@@ -677,6 +674,7 @@ label{
 }
 
 .iso-header label{
+    color: var(--color-black);
     font-size: small;
     padding: 0 0 20px;
 }
@@ -693,7 +691,6 @@ label{
 .purchasing-left-container, 
 .purchasing-right-container {
     
-    background-color: var(--color-white);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--color-black);
@@ -715,12 +712,17 @@ label{
 .engineering-inputs,
 .quality-assurance-inputs{
     background-color: var(--color-white);
-    color: var(--color-white);
     font-size: 16px;
     font-weight: bold;
     border-radius: 8px 8px 0 0;
     /* max-height: 60vh; */
    }
+
+.purchasing-inputs label,
+.engineering-inputs label,
+.quality-assurance-inputs label{
+    color: var(--color-black);
+}
 
 .error-label{
         font-weight: bold;
@@ -728,6 +730,8 @@ label{
         margin-top: 15px;
         color: #333;
    }
+
+
 
 textarea {
     width: 100%;
@@ -776,6 +780,7 @@ legend{
 }
 
 .qa-labels label{
+    color: var(--color-black);
     display:inline-block;
     width: 100%;
 }
@@ -790,11 +795,13 @@ legend{
 
   
   .qa-left-container fieldset{
+    color: var(--color-black);
     vertical-align: middle;
     border: 0;
   }
    
   .engi-top-container fieldset{
+    color: var(--color-black);
     border: 0;
   }
 
@@ -883,136 +890,8 @@ label {
     cursor: pointer;
 }
 
-/*  ==================
-      Media Queries 
-    ==================*/
 
-
-@media screen and (min-width: 1024px) {
- 
-    nav .logo{
-        height: 8vh;
-    }
-  .nav-list{
-    grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;
-  }
- 
-  #bread-crumbs a{
-    font-size: 14px;
-  }
- 
- 
-  nav span {
-    font-size: 14px;
-  }
-
-
-
-  /*==================
-        NCR Report
-    ==================*/    
-
-  .iso-header{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
-    max-width: 90%;
-    width: 1200px;
-  }
-
-  .iso-header :nth-child(2){
-    grid-column: 3/4;
-    grid-row: 1/2;
-}
-.iso-header :nth-child(4){
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
- 
-.iso-header :nth-child(6){
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
-
-.iso-header :nth-child(8){
-    grid-column: 4/5;
-    grid-row: 1/2;
-}
-.iso-header :nth-child(9){
-    grid-column: 1/5;
-    grid-row: 3/4;
-   padding-bottom: 5px;
-}
-
-/* This section is for layout of the NCR form*/
-
-
-.quality-assurance-inputs, 
-.purchasing-inputs {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
-}
-
-.engineering-inputs {
-    display: grid;
-    grid-template-columns: 4fr;
-    gap: 20px;
-}
-
-
-
-.engi-top-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.col-2{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 0;
-}
-
-.col-3 {
-    display: grid;
-    grid-template-columns: repeat(3 1fr);
-}
-
-}
-
-
- 
-@media screen and (min-width: 1440px){
-   nav {
-    justify-self: center;
-    width: 100%;
-   }
- 
-   .user-info{
-    justify-self: end;
-   }
-   .foot #btn-cancel {
-    margin-right: 500px;
-}
-}
- 
- 
-/* =========================
-   Responsive Layout Adjustments (Medium Screens)
-   ========================= */
- 
-@media screen and (min-width:768px) and (max-width:1024px){
-    footer{
-        margin-top:30px;
-        position:static;
-    }
- 
-    .foot #btn-cancel {
-        margin-right: 400px;
-    }
-}
- 
-/* =========================
+* =========================
    Error Label Styling
    ========================= */
  
@@ -1184,8 +1063,6 @@ tbody tr {
 }
 
 
-
-
 #txt-item-name, #txt-supplier, #txt-name-engineer, 
 #txt-revision-date, #txt-updated-rev, #txt-orig-rev-number, 
 #alt-text, #txt-prod-number, #txt-sales-number,
@@ -1209,3 +1086,18 @@ tbody tr {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border:1px solid var(--color-primary)
 }
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 

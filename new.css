@@ -20,7 +20,7 @@
     --color-warning:#993333;
 
     --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Lato', sans-serif;
+    --font-secondary: 'Lato', Arial, sans-serif;
 
     --color-bread-crumb-after:black;
     --color-login-input:#333;
@@ -76,7 +76,10 @@
     background-color: var(--color-form);
  } 
 
- /* Headings */
+
+/*********************** 
+        Headings 
+************************/
 h1 {
     margin-top: 0;
     text-align: center;

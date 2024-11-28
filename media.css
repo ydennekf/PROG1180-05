@@ -1,11 +1,14 @@
 
+/*  ==================
+      Media Queries 
+    ==================*/
 
 @media screen and (min-width: 480px){
 
     .centre-s{
         width: 100%;
         margin: auto;
-        background: lightblue;
+        /* background: lightblue; */
       }
 }
 
@@ -16,11 +19,17 @@
         
         max-width: 100%;
         margin: auto;
-        background: purple;
+        /* background: purple; */
        
       }
 
 }
+
+
+/* =========================
+   Responsive Layout Adjustments 
+   (Medium Screens)
+   ========================= */
 
 @media screen and (min-width:768px) and (max-width:1023px){
 
@@ -28,12 +37,30 @@
         min-width: 800px;
         max-width: 1023px;
         margin: auto;
-        background: yellow;
+        /* background: yellow; */
         
       }
 
 
+/********************
+        OLD
+*********************/
+footer{
+    margin-top:30px;
+    position:static;
 }
+
+.foot #btn-cancel {
+    margin-right: 400px;
+}
+
+
+}
+
+/* =========================
+   Responsive Layout Adjustments 
+   (Large Screens)
+   ========================= */
     
 
 @media screen and (min-width:1024px){
@@ -43,10 +70,115 @@
         min-width: 800px;
         max-width: 1200px;
         margin: auto;
-        background: greenyellow;
+        /* background: greenyellow; */
         
       }
 
     
+
+
+/********************
+        OLD
+*********************/
+      nav {
+        justify-self: center;
+        width: 100%;
+       }
+
+       nav .logo{
+        height: 8vh;
+    }
+
+    nav span {
+        font-size: 14px;
+      }
+    .nav-list{
+        grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;
+    }
+    
+    #bread-crumbs a{
+        font-size: 14px;
+    }
+ 
+    .user-info{
+        justify-self: end;
+    }
+
+    .foot #btn-cancel {
+        margin-right: 500px; 
+    }
+
+
+      /*==================
+        NCR Report
+    ==================*/    
+
+  .iso-header{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    max-width: 90%;
+    width: 1200px;
+  }
+
+  .iso-header :nth-child(2){
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.iso-header :nth-child(4){
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+ 
+.iso-header :nth-child(6){
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.iso-header :nth-child(8){
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+.iso-header :nth-child(9){
+    grid-column: 1/5;
+    grid-row: 3/4;
+   padding-bottom: 5px;
+}
+
+/* This section is for layout of the NCR form*/
+
+
+.quality-assurance-inputs, 
+.purchasing-inputs {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+}
+
+.engineering-inputs {
+    display: grid;
+    grid-template-columns: 4fr;
+    gap: 20px;
+}
+
+
+
+.engi-top-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.col-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 0;
+}
+
+.col-3 {
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+}
+
+
 }
 

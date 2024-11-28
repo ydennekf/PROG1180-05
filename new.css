@@ -4,8 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
  
 /*Variables*/
 :root {
@@ -57,31 +55,42 @@
     --color-breadcrumb-after:#acddf1;
 }
 
-.purchasing-right-container,
-.purchasing-left-container,    
-.engi-right-container,
-.engi-top-container,
-.qa-left-container,
-.qa-right-container{
-    background-color: var(--color-form);
- } 
+/***************************
+        Colour Settings
+****************************/
 
- .view-form{
-    background-color: var(--color-form);
-    /* padding: 8px;
-    border-radius: 10px;
-    margin: auto; */
- }
-
-
- .quality-assurance-inputs,
+.quality-assurance-inputs,
 .engineering-inputs,
 .purchasing-inputs {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
 
-/* Buttons */
+.qa-left-container,
+.qa-right-container,   
+.engi-right-container,
+.engi-top-container,
+.purchasing-right-container,
+.purchasing-left-container, 
+.view-form{
+    background-color: var(--color-form);
+ } 
+
+ /* Headings */
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+ 
+h2 {
+    text-align: center;
+    color: var(--color-secondary);
+}
+
+/***********************
+        Buttons 
+************************/
+
 button {       
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -102,7 +111,10 @@ button:hover {
 
 nav ul li button{
     margin-top: 1.5vh;
-    /* min-width: 100px; */
+}
+
+footer button{
+    float: left;
 }
 
 
@@ -194,7 +206,4 @@ footer {
     text-align: center;
 }
 
-footer button{
-    float: left;
-}
 

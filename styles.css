@@ -575,7 +575,7 @@ input[type="checkbox"]:checked:before{
 }
 
 .login-container {
-    background-color: var(--color-primary);
+    background-color: var(--color-white);
     height: 40vh;
     /* margin-top: 60px; */
 }

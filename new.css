@@ -80,6 +80,17 @@
     color: var(--color-white);
 }
 
+.chkBox label{
+    color: var(--color-secondary);
+}
+
+/*Header Report-Details*/
+   .Report-view-header{
+    color: var(--color-black);
+   }
+
+ 
+
 /*********************** 
         Headings 
 ************************/
@@ -129,14 +140,68 @@ footer button{
 
 label {
     color: var(--color-white);
-    font-size: 1.1rem;
+    font-size: 1rem;
     user-select: none;
+}
+
+.search-container label{
+    color: var(--color-black);
+}
+
+/* Checkbox label container */
+.chkBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color:inherit;  
+}
+ 
+
+
+input:focus {
+    outline: none;
 }
 
 input[type="text"], input[type="number"] {
     height: 1.5rem;
   } 
  
+
+/* Custom Checkbox Style */
+input[type="checkbox"] {
+    border: solid 0.063rem var(--color-offblack);
+    position: relative;
+    width: 1.75rem;
+    height:1.75rem;
+    background-color: #f1f1f1;
+    border-radius: 0.25rem;
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #334b63
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.563rem;
+    width: 0.313rem;
+    height: 0.813rem;
+    border: 0.25rem solid transparent;
+    border-left: none;
+    border-top: none ;
+    transform: rotate(45deg) scale(1);
+}
+ 
+input[type="checkbox"]:checked:before{
+    border-color: var( --color-white);
+    animation: checkAnim .5s ease;
+}
 
 
 /**************************
@@ -157,7 +222,8 @@ header{
     margin: 0;
     height: 5rem; 
     background-color: var(--color-primary);
-    z-index:1000
+    z-index:1000;
+    margin-bottom: 1rem;
 }
 
 nav {
@@ -217,7 +283,7 @@ main {
     color: var(--color-black);
     font-family: var(--font-primary);
     margin: 0;
-    min-height: calc(100vh - 9rem);
+    min-height: calc(100vh - 10rem);
     transition: all 0.3s ease-in-out;
 }
 
@@ -233,3 +299,46 @@ footer {
 }
 
 
+/* ===================================
+            NCR Form Layout
+   =================================== */
+
+   .ncr-report{
+    max-width: 90%;
+    margin: auto;
+    
+}
+
+/*===================================
+            NCR header 
+=====================================*/
+
+
+.iso-header{
+    margin: 20px auto 0;
+    color: var(--color-black);
+    background-color: var(--color-iso); 
+    outline-color: var(--color-iso);
+    gap: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 5px; 
+}
+
+
+.iso-header div{
+    border-width: 6px;
+    background-color:var(--color-background);
+    padding: 10px 0 0 15px;  
+}
+
+.iso-header label{
+    color: var(--color-black);
+    font-size: 1rem;
+    padding: 0 0 20px;
+}
+.iso-header p{
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 0 15px 0;
+}

@@ -373,7 +373,7 @@ setReadonly()
     console.log(QAReadOnly, "come the fuck on")
     
     const html = `
-<h1 class="Report-view-header">New NCR Details</h1>
+<h1 class="Report-view-header">Create NCR</h1>
    
     <div class="iso-header">
        

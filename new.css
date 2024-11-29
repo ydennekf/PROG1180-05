@@ -76,6 +76,9 @@
     background-color: var(--color-form);
  } 
 
+ legend {
+    color: var(--color-white);
+}
 
 /*********************** 
         Headings 
@@ -120,6 +123,20 @@ footer button{
     float: left;
 }
 
+/**************************
+    Labels and Inputs
+**************************/
+
+label {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    user-select: none;
+}
+
+input[type="text"], input[type="number"] {
+    height: 1.5rem;
+  } 
+ 
 
 
 /**************************
@@ -140,6 +157,7 @@ header{
     margin: 0;
     height: 5rem; 
     background-color: var(--color-primary);
+    z-index:1000
 }
 
 nav {
@@ -157,6 +175,11 @@ nav {
 nav .logo {
     height: 4rem;
 }
+
+#crossfire-logo{
+    cursor:pointer
+}
+
 
 .nav-list {
     list-style: none;

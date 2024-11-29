@@ -5,11 +5,11 @@
 }
 
 
-label {
+/* label {
     color: var(--color-white);
     font-size: 1.1rem;
     user-select: none;
-}
+} */
 
 .search-container label{
     color: var(--color-white);
@@ -21,9 +21,9 @@ label {
     user-select: none;
 } */
 
-legend {
+/* legend {
     color: var(--color-white);
-}
+} */
 
 li{
     list-style-type: none
@@ -267,10 +267,10 @@ table.ncr-list a:hover {
 }
 
 /* Container for radio buttons */
-  input[type="text"], input[type="number"] {
-    height: 25px;
+ /*  input[type="text"], input[type="number"] {
+    height: 1.5rem;
   } 
- 
+  */
 /* Pagination Container */
 .pagination-container {
     display: flex;
@@ -337,9 +337,9 @@ input[type="search"]:focus {
     background-color: var(--color-secondary);
 } */
 
-#crossfire-logo{
+/* #crossfire-logo{
     cursor:pointer
-}
+} */
 
  
 /* Headings */
@@ -365,10 +365,10 @@ h3 {
 /* Input Styles */
 input[type="text"],
 input[type="password"] {
-    font: 15px/24px 'Lato', Arial, sans-serif;
+    font: 15px/24px var(--font-secondary);
     width: 100%;
     box-sizing: border-box;
-    letter-spacing: 1px;
+    letter-spacing: 0.063rem;
 }
  
 input[type="password"], #username{
@@ -635,7 +635,9 @@ input[type="checkbox"]:checked:before{
    Header Report-Details
    ========================= */
    .Report-view-header{
-    color: var(--color-black);
+    color: var(--colo
+    
+    r-black);
    }
 
 /* =========================
@@ -662,7 +664,6 @@ input[type="checkbox"]:checked:before{
     gap: 1px;
     outline-style: solid;
     outline-width: 1px;
-    
     border-radius: 5px; 
 }
 
@@ -675,7 +676,7 @@ input[type="checkbox"]:checked:before{
 
 .iso-header label{
     color: var(--color-black);
-    font-size: small;
+    font-size: 1rem;
     padding: 0 0 20px;
 }
 .iso-header p{
@@ -882,9 +883,7 @@ legend{
     align-items: center;
 }
 
-label {
-    margin-right: 5px; /* Space between label and checkbox */
-}
+
 
 #darkModeToggle {
     cursor: pointer;

@@ -112,27 +112,28 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null){
                         <legend>Purchasing's Preliminary Decision</legend>
                     
                     
+                        <div>
                         <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
-                        <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label>
+                        <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label> </div>
                         
                         
-                        
+                        <div>
                         <input required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Repair"? 'checked' : ''}>
-                        <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Repair</label>
+                        <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Repair</label> </div>
                         
                         
-                        
+                        <div>
                         <input required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
-                        <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Rework</label>
+                        <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Rework</label></div>
                       
                         
-                        
+                        <div>
                         <input required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-scrap" value="Scrap" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Scrap"? 'checked' : ''}>
-                        <label for="rad-purchaseReview-scrap" id="lbl-purchaseReview-scrap">Scrap</label>
+                        <label for="rad-purchaseReview-scrap" id="lbl-purchaseReview-scrap">Scrap</label> </div>
                         
                         
                         <label id="purchase-decision-error" class="error-label"></label>

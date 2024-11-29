@@ -725,6 +725,60 @@ input[type="checkbox"]:checked:before{
     color: var(--color-black);
 }
 
+/* Purchasing Left Fieldset */
+.purchasing-left-container fieldset {
+    flex-direction: column;
+    gap: 10px;
+    border: none;
+    padding: 10px 0;
+    margin: 0 0 20px;
+}
+
+.purchasing-left-container fieldset div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.purchasing-left-container input[type="radio"] {
+    margin: 0;
+    vertical-align: middle;
+    width: 20px;
+    height: 24px;
+}
+
+.Car-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.Car-container>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Car-container input[type="checkbox"] {
+    margin: 0px;
+}
+
+.Car-container label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Car-container input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-black);
+    margin-top: 0px;
+}
+
+
+/*  Purchasing Left Fieldset End */
+
 .error-label{
         font-weight: bold;
         display: block;

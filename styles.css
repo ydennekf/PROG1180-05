@@ -715,21 +715,9 @@ input[type="checkbox"]:checked:before{
     display: block;
  }
 
-.purchasing-inputs,
-.engineering-inputs,
-.quality-assurance-inputs{
-    background-color: var(--color-white);
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px 8px 0 0;
-    /* max-height: 60vh; */
-   }
 
-.purchasing-inputs label,
-.engineering-inputs label,
-.quality-assurance-inputs label{
-    color: var(--color-black);
-}
+
+
 
 /* Purchasing Left Fieldset */
 .purchasing-left-container fieldset {

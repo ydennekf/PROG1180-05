@@ -148,6 +148,12 @@ label {
     color: var(--color-black);
 }
 
+.purchasing-inputs label,
+.engineering-inputs label,
+.quality-assurance-inputs label{
+    color: var(--color-black);
+}
+
 /* Checkbox label container */
 .chkBox{
     display: flex;
@@ -203,6 +209,17 @@ input[type="checkbox"]:checked:before{
     animation: checkAnim .5s ease;
 }
 
+
+
+.purchasing-inputs,
+.engineering-inputs,
+.quality-assurance-inputs{
+    background-color: var(--color-white);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    /* max-height: 60vh; */
+   }
 
 /**************************
         MAIN Section

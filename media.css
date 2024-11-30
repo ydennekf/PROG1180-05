@@ -3,7 +3,7 @@
    Animations (Global)
    ========================= */
 
-@keyframes checkAnim {
+   @keyframes checkAnim {
     from {
         transform: rotate(45deg) scale(0);
     }

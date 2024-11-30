@@ -6,6 +6,7 @@ import { injectOrReturn } from "../utils/utils.js";
 import { redirectNewReport, redirectViewAllReports } from "../../redirection/redirect.js";
 import {reportData } from "../../Data/new_reportData.js";
 
+
 export default function Index(){
     setNotifications()
     document.getElementById("root").classList.add("ncr-view")
@@ -77,6 +78,8 @@ function indexButtonBindings(){
         document.getElementById('create-report-btn').addEventListener('click',redirectNewReport)
     }
 }
+
+
 
 export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()

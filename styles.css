@@ -716,9 +716,6 @@ input[type="checkbox"]:checked:before{
  }
 
 
-
-
-
 /* Purchasing Left Fieldset */
 .purchasing-left-container fieldset {
     display: flex;
@@ -726,7 +723,7 @@ input[type="checkbox"]:checked:before{
     gap: 10px;
     border: none;
     padding: 10px 0;
-    margin: 0 0 0px;
+    margin: 0;
 }
 
 .purchasing-left-container fieldset div {
@@ -746,7 +743,7 @@ input[type="checkbox"]:checked:before{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .Car-container>div:first-child {
@@ -756,12 +753,10 @@ input[type="checkbox"]:checked:before{
 }
 
 .Car-container input[type="checkbox"] {
-    margin: 0px;
+    margin: 0;
 }
 
 .Car-container label {
-    /* display: inline-block;
-    vertical-align: middle; */
     font-size: 1rem;
     color: var(--color-black);
 }
@@ -770,33 +765,37 @@ input[type="checkbox"]:checked:before{
     width: 100%;
     padding: 8px;
     border: 1px solid var(--color-black);
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /* Purchasing Right Fieldset */
 .purchase-followup-container > div:first-child {
     display: flex; 
     align-items: center; 
-    gap: 10px; 
+    gap: 8px; 
+    margin-bottom: 10px;
+}
+
+.purchasing-followup-inputs div {
+    margin-top: 0;
+    gap: 0;
 }
 
 .purchasing-followup-inputs div:first-child {
-    margin-top: 20px; 
+    margin-top: 10px; 
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 
 .purchasing-followup-inputs div:nth-child(2) {
     display: flex;
     flex-direction: column;
-    gap: 0px; 
 }
 
 .purchase-signoff-container > div {
     display: flex;
     flex-direction: column;
-    gap: 5px; 
+    margin-top: 10px;
 }
 
 .purchase-signoff-container>div:first-child {
@@ -806,8 +805,10 @@ input[type="checkbox"]:checked:before{
 .purchasing-right-container input[type="text"],
 .purchasing-right-container select {
     width: 100%; 
+    height: 2.4rem;
     padding: 8px; 
     border: 1px solid var(--color-black); 
+    box-sizing: border-box;
 }
 
 .purchasing-right-container input[type="checkbox"] {
@@ -815,8 +816,9 @@ input[type="checkbox"]:checked:before{
 }
 
 .purchase-signoff-container>div:last-child {
-    margin-top: 20px;
+    margin-top: 15px;
 }
+
 /* Purchasing Right Fieldset End */
 
 .error-label{

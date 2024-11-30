@@ -80,9 +80,7 @@
     color: var(--color-white);
 }
 
-.chkBox label{
-    color: var(--color-secondary);
-}
+
 
 /*Header Report-Details*/
    .Report-view-header{
@@ -152,6 +150,10 @@ label {
 .engineering-inputs label,
 .quality-assurance-inputs label{
     color: var(--color-black);
+}
+
+.chkBox label{
+    color: var(--color-secondary);
 }
 
 /* Checkbox label container */
@@ -296,13 +298,17 @@ main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: var( --color-background);
+    background-color: var( --color-form);
     color: var(--color-black);
     font-family: var(--font-primary);
-    margin: 0;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     min-height: calc(100vh - 10rem);
     transition: all 0.3s ease-in-out;
 }
+
 
 footer {
     display: inline-block;
@@ -325,6 +331,18 @@ footer {
     margin: auto;
     
 }
+
+/*  Accordian   */
+
+/* .ui-state-active{
+    color: var(--color-secondary);
+} */
+.ui-state-default{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+
 
 /*===================================
             NCR header 

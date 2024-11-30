@@ -187,15 +187,7 @@ a.selected-view {
 
  
 /* Main content */
-main.ncr-view {
-    flex: 1;
-    width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var( --color-form);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-}
+
  
  
 /* NCR Index View */

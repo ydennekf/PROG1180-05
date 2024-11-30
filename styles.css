@@ -721,37 +721,38 @@ input[type="checkbox"]:checked:before{
 
 /* Purchasing Left Fieldset */
 .purchasing-left-container fieldset {
+    display: flex;
     flex-direction: column;
     gap: 10px;
     border: none;
     padding: 10px 0;
-    margin: 0 0 20px;
+    margin: 0 0 0px;
 }
 
 .purchasing-left-container fieldset div {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .purchasing-left-container input[type="radio"] {
     margin: 0;
     vertical-align: middle;
-    width: 20px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
 }
 
 .Car-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 0px;
 }
 
 .Car-container>div:first-child {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .Car-container input[type="checkbox"] {
@@ -759,8 +760,10 @@ input[type="checkbox"]:checked:before{
 }
 
 .Car-container label {
-    display: inline-block;
-    vertical-align: middle;
+    /* display: inline-block;
+    vertical-align: middle; */
+    font-size: 1rem;
+    color: var(--color-black);
 }
 
 .Car-container input[type="text"] {

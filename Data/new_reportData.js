@@ -2,7 +2,7 @@
 
 export class ReportStatus{
     static engineering = "engineering"
-    static sales = "sales"
+    static purchasing = "purchasing"
 }
 
 export function getReport(ncrNumber){

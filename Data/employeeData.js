@@ -53,7 +53,7 @@ export let employees = [
         "username": "lwhite",
         "firstName": "Linda",
         "lastName": "White",
-        "department": "sales",
+        "department": "purchasing",
         "password": "sales123",
         "accessibilityPreferences": {
             "darkMode": true,

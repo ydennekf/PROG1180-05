@@ -1,6 +1,6 @@
 import {injectOrReturn, append} from "../utils/utils.js";
 import {app} from "../../AppState.js";
-import {createReport, errorLog, generateNcrNumber, getReportFormData, validateEngiInputs, validateQANumberInputs, validateQAStringInputs} from "./utils.js";
+import {createReport, errorLog, generateNcrNumber, getEngFormData, getPurchasingFormData, getReportFormData, validateEngiInputs, validatePurchasingInputs, validateQANumberInputs, validateQAStringInputs} from "./utils.js";
 import {safeTruthy} from "../utils/utils.js";
 import {renderList, ReportList} from "../ReportList.js";
 import {reportData, updateReport} from "../../Data/new_reportData.js";
@@ -9,9 +9,11 @@ import { convertToPDF } from "../../Data/createPDF.js";
 import { redirectHome, redirectViewAllReports } from "../../redirection/redirect.js";
 import { createModal } from "../Modal.js";
 import { EngineeringReport, PurchasingReport } from "./Reports.js";
+import { checkEngineeringInProgress, validateAdmin, addEngButton, addPurchasingButton, checkPurchasingInProgress, bindAdditionButtons, shouldRevealPurchasing, shouldRevealEngineering, createQAReport, addEngReportData } from "./admin.js";
+import { RedirectWithSuccessModal } from "./successModal.js";
 
-let tempImageStorage = []
-function clearImageStorage(){
+export let tempImageStorage = []
+export function clearImageStorage(){
     tempImageStorage= []
 }
 let QAReadOnly;
@@ -20,14 +22,14 @@ let purchaseReadOnly;
 let exportReadOnly;
 let newNCR;
 
-function addImagesToReport(report){
+export function addImagesToReport(report){
     tempImageStorage.forEach(i => {
         report.imageStorage.push(i)
     })
 }
 
 
-function departmentBasedValidation(){
+function departmentBasedValidation(action, report){
     const errors = errorLog()
     const data = getReportFormData();
     if(app.employee.department === "QA"){
@@ -40,6 +42,18 @@ function departmentBasedValidation(){
         validateEngiInputs(errors, data)
         return errors;
     }
+
+    if(app.employee.department === "purchasing"){
+        validatePurchasingInputs(errors)
+        return errors;
+    }
+
+    if(app.employee.department === "admin"){
+        validateAdmin(errors, action,report)
+        return errors;
+    }
+
+   
    
 }
 
@@ -69,25 +83,18 @@ export function ReportView(report, action){
         // when we save the report check which section recieved edits and based on the section update the status to the next position
         // when the status changes send notification to the job role
         // when the notification sends send the email to the job role employee
-    let errors = departmentBasedValidation()
+    let errors = departmentBasedValidation(action, report)
+
+    if(app.employee.department === "admin"){
+        return; // handled else where
+    }
 
     if(errors.get().length === 0){ // check if there are any errors if not then we can save or update the NCR form.
         if(action === "Create"){
 
-            const newReport = createReport(app.employee)
-            if(newReport.engineeringRequired){
-                newReport.status = "engineering"
-            }
-            else{
-                newReport.status = "Closed"
-            }
-            // add any images to the report
-            addImagesToReport(newReport)
-            clearImageStorage()
-            app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
-            reportData.push(newReport)
-            //updateReport(newReport.ncrNumber, newReport);
-            app.storage.pushRecentReport(newReport.ncrNumber)
+            const newReport = createQAReport(app.employee)
+            
+           
             
 
         }
@@ -98,36 +105,49 @@ export function ReportView(report, action){
             let reportt = getReportFormData();
 
 
-            var updatedReport = createReport(reportt)
-            updatedReport.startedBy = report.startedBy;
-            if(report.status === "engineering" && app.employee.department === "engineering"){
-                updatedReport.nameOfEngineer = app.employee.firstName + " " + app.employee.lastName
-                updatedReport.status = "purchasing"
+            // var updatedReport = createReport(reportt)
+            // updatedReport.startedBy = report.startedBy;
+            if(report.status === "engineering" && (app.employee.department === "engineering")){
+                const eData = getEngFormData()
+                const newReport = {...report}
+                addEngReportData(newReport)
+                // newReport.Disposition = eData.Disposition.value
+                // newReport.engineeringReview = eData.engineeringReview
+                // newReport.nameOfEngineer = app.employee.firstName + " " + app.employee.lastName
+                // newReport.origRevNum = eData.origRevNum.value
+                // newReport.updatedRev = eData.updatedRev.value
+                // newReport.RevisionDate = eData.RevisionDate.value
+                // newReport.drawingToUpdate = eData.drawingToUpdate.checked
+                // newReport.customerNotification = eData.customerNotification.checked
+                // newReport.status = "purchasing"
+                // app.storage.pushRecentReport(newReport.ncrNumber)
             }
 
-            addImagesToReport(updatedReport)
-            clearImageStorage()
+            if(report.status === "purchasing" && (app.employee.department === "purchasing")){
+                const pData = getPurchasingFormData()
+                const newReport = {...report}
+                newReport.purchaseDecision = pData.purchaseDecision
+                newReport.CarRaised = pData.CarRaised.checked
+                newReport.CarNum = pData.CarNum.value
+                newReport.operationManager = app.employee.firstName +  " " + app.employee.lastName
+                newReport.followUpType = pData.followUpType.options[pData.followUpType.selectedIndex]
+                newReport.followUpRequired = pData.followUpRequired.checked
+                newReport.purchaseData = pData.purchaseDate.value
+                newReport.status = "closed"
+
+                addImagesToReport(newReport)
+                clearImageStorage()
             
-            updateReport(ncrNum.value, updatedReport);
-            app.storage.pushRecentReport(updatedReport.ncrNumber)
+                updateReport(ncrNum.value, newReport);
+                app.storage.pushRecentReport(newReport.ncrNumber)
+            }
+
+      
+            
             
         }
 
-        // redirect code
-        redirectHome()
-        if(["Edit", "Create", "Save"].includes(action)){
-            let msg = "Successfully ";
-            if(action === "Create"){
-                msg += "created report."
-             
-            }
-            else if(action === "Edit" || action =="Save"){
-                msg += "edited report " + report.ncrNumber
-                
-            }
-            
-            createModal('errorPanel', "Success", msg, 10000)
-        }
+        RedirectWithSuccessModal(action, report)
     } else{
         errors.expose();
     }
@@ -296,7 +316,7 @@ export function ReportView(report, action){
               });
         }
 
-        if(app.employee.department === "engineering"){
+        else if(app.employee.department === "engineering"){
             console.log("testing emp engineer")
             QAReadOnly = true;
             engiReadOnly = false;
@@ -309,7 +329,8 @@ export function ReportView(report, action){
               });
 
         }
-        if(app.employee.department === "sales"){
+        else if(app.employee.department === "purchasing"){
+            console.log("purchasing")
             QAReadOnly = true;
             engiReadOnly = true;
             purchaseReadOnly = false;
@@ -321,7 +342,7 @@ export function ReportView(report, action){
               });
 
         }
-        if(app.employee.department === "admin"){
+        else if(app.employee.department === "admin"){
              QAReadOnly = false;
             engiReadOnly = false;
             purchaseReadOnly = false;
@@ -333,7 +354,7 @@ export function ReportView(report, action){
               });
 
         }
-        if(report?.status === "closed" || report?.status === "Closed")
+        else if(report?.status === "closed" || report?.status === "Closed")
         {
             console.log("Status")
             QAReadOnly = true;
@@ -345,6 +366,7 @@ export function ReportView(report, action){
         }
         else{
             // this means its set to View
+            console.log("ELSING????")
             QAReadOnly = true;
             engiReadOnly = true;
             purchaseReadOnly = true;
@@ -370,7 +392,7 @@ export function ReportView(report, action){
 setReadonly()
 // within the QA form, add the autocomplete to the supplier name
     // if the supplier name does not exsist add a button to create a new supplier with the data needed from the data model
-    console.log(QAReadOnly, "come the fuck on")
+    console.log(purchaseReadOnly, "come the fuck on")
     
     const html = `
 <h1 class="Report-view-header">Create NCR</h1>
@@ -506,10 +528,13 @@ setReadonly()
             </div>
 
            
-            ${action === "View" || ["admin", "purchasing", "engineering"].includes(app.employee.department) ? `${EngineeringReport(report, engiReadOnly)}` : ""}
+            ${EngineeringReport(report, engiReadOnly)}
             
-             ${action === "View" || ["admin", "purchasing"].includes(app.employee.department) ? `${PurchasingReport(report, purchaseReadOnly)}` : ""}
+            ${PurchasingReport(report, purchaseReadOnly)}
     
+
+             
+            
     <h2>Export & Upload</h2>
         <div>
             ${report ? `<button id="export-pdf" data-ncr-number="${report.ncrNumber}">Export as PDF</button>` : 'Cannot export a report in the creation stage!'}
@@ -521,6 +546,8 @@ setReadonly()
 <div class="ncr-submit-cancel">
 <button id="submitBtn" >Save</button>
 <button id="cancelBtn" >Cancel</button>
+${app.employee.department === "admin" && (action === "Create" || action === "Edit") && !checkEngineeringInProgress() ? `${addEngButton()}` : ""}
+${app.employee.department === "admin" &&  (action === "Create" || action === "Edit") && !checkPurchasingInProgress() ? `${addPurchasingButton()}` : ""}
 </div>
 
 </form>
@@ -603,7 +630,7 @@ document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
 document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 try{
-document.getElementById(('chk-drawing-to-update')).addEventListener('click', (e) => {checkDrawingUpdate(e)});
+
 
 document.getElementById(("chk-car-raised" )).addEventListener('click', (e)=>{checkCarRaised(e)} );
 document.getElementById(("chk-followup-req" )).addEventListener('click', (e)=>{checkFollowup(e)});
@@ -613,6 +640,9 @@ document.getElementById(("chk-followup-req" )).addEventListener('click', (e)=>{c
 DisplayView();
 bindExport()
 bindUpload()
+bindAdditionButtons()
+shouldRevealPurchasing(action, report, purchaseReadOnly)
+shouldRevealEngineering(action, report, engiReadOnly)
 try{
     document.getElementById('close-ncr').addEventListener('click', ()=> {
         report.status = "Closed"
@@ -704,7 +734,7 @@ function checkCarRaised(e) {
     }
 }
 function checkFollowup(e) {
-    const followupContainer = document.getElementById("followupInputs");
+    const followupContainer = document.getElementById("followup-inputs");
 
     if(e.target.checked){
         followupContainer.style.display = "block"

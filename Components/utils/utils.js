@@ -104,3 +104,15 @@ export function insert(targetID, html){
 export function append(targetID, html){
     document.getElementById(targetID).innerHTML += html;
 }
+
+
+export function tryGetElementById(id){
+try{
+    var e =  document.getElementById(id)
+    console.log(e)
+    return e || document.createElement('input');
+}
+catch{
+    return document.createElement("input")
+}
+}

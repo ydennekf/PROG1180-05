@@ -1,10 +1,12 @@
 import {ReportStatus, getReport, reportData} from "../../Data/new_reportData.js";
-
+import { tryGetElementById } from "../utils/utils.js";
+import { app } from "../../AppState.js";
 function getEngReviewRAD(){
-    const asIs = document.getElementById('rad-use-as-is')
-    const repair = document.getElementById('rad-repair')
-    const rework = document.getElementById('rad-rework')
-    const scrap = document.getElementById('rad-scrap')
+    const asIs = tryGetElementById('rad-use-as-is')
+    const repair = tryGetElementById('rad-repair')
+    const rework = tryGetElementById('rad-rework')
+    const scrap = tryGetElementById('rad-scrap')
+
 
     if(asIs.checked){
         console.log('use')
@@ -28,53 +30,133 @@ function getEngReviewRAD(){
 
 export function getReportFormData(){
 
-    let engiRadBtns = document.querySelectorAll('input[name ="rad-engiReview"]');
-    let engiReviewValue;
+  
+    let engiReviewValue = getEngReviewRAD()
     // for(let choice of engiRadBtns){
     //     if(choice.checked){
     //         engiReviewValue = choice.value;
     //         break;
     //     }
     // }
-    engiReviewValue = getEngReviewRAD()
 
-    return {
-        itemName:document.getElementById('txt-item-name'),
-        ncrNumber: document.getElementById("txt-ncr-number"),
-        //title : document.getElementById("txt-ncr-title"),
-        supplier : document.getElementById("txt-supplier"),
-        prodNumber : document.getElementById("txt-prod-number"),
-        salesNumber : document.getElementById('txt-sales-number'),
-        quantityReceived : document.getElementById("txt-quantity-received"),
-        quantityDefective : document.getElementById("txt-quantity-defective"),
-        //itemDescription : document.getElementById('txt-item-description'),
-        defectDescription : document.getElementById('txt-item-defect'),
-        supplierOrRec : document.getElementById("rad-supplier-or-rec"),
-        nonConforming : document.getElementById('chk-non-conforming'),
-        //productionOrder:  document.getElementById("chk-production-order"),
-        wip :document.getElementById('rad-wip'),
-        sapNumber: document.getElementById('txt-sap-number'),
-        engineeringRequired:document.getElementById('chk-engineering-required'),
-        customerNotification: document.getElementById('chk-customer-notification'),
-        drawingToUpdate: document.getElementById('chk-drawing-to-update'),
+    return { 
+        itemName:tryGetElementById('txt-item-name'),
+        ncrNumber: tryGetElementById("txt-ncr-number"),
+        //title : tryGetElementById("txt-ncr-title"),
+        supplier : tryGetElementById("txt-supplier"),
+        prodNumber : tryGetElementById("txt-prod-number"),
+        salesNumber : tryGetElementById('txt-sales-number'),
+        quantityReceived : tryGetElementById("txt-quantity-received"),
+        quantityDefective : tryGetElementById("txt-quantity-defective"),
+        //itemDescription : tryGetElementById('txt-item-description'),
+        defectDescription : tryGetElementById('txt-item-defect'),
+        supplierOrRec : tryGetElementById("rad-supplier-or-rec"),
+        nonConforming : tryGetElementById('chk-non-conforming'),
+        //productionOrder:  tryGetElementById("chk-production-order"),
+        wip :tryGetElementById('rad-wip'),
+        sapNumber: tryGetElementById('txt-sap-number'),
+        engineeringRequired:tryGetElementById('chk-engineering-required'),
+        customerNotification: tryGetElementById('chk-customer-notification'),
+        drawingToUpdate: tryGetElementById('chk-drawing-to-update'),
         engineeringReview: engiReviewValue,
-        origRevNum: document.getElementById('txt-orig-rev-number'),
-        nameOfEngineer: document.getElementById('txt-name-engineer'),
-        updatedRev: document.getElementById('txt-updated-rev'),
-        RevisionDate: document.getElementById('txt-revision-date'),
-        Disposition: document.getElementById('txt-engi-disposition'),
+        origRevNum: tryGetElementById('txt-orig-rev-number'),
+        nameOfEngineer: tryGetElementById('txt-name-engineer'),
+        updatedRev: tryGetElementById('txt-updated-rev'),
+        RevisionDate: tryGetElementById('txt-revision-date'),
+        Disposition: tryGetElementById('txt-engi-disposition'),
         purchaseDecision: null,
         CarRaised: null,
         CarNum: null,
         FollowReq: false,
-        followUpType: null,
-        followUpDate: null,
+        followUpType: tryGetElementById(''),
+        followUpDate: tryGetElementById('dtp-followup-date'),
         operationManager: null,
         purchaseDate: null
 
     }
 
 }
+
+
+
+export function getQAFormData(){
+    return {
+        itemName:tryGetElementById('txt-item-name'),
+        ncrNumber: tryGetElementById("txt-ncr-number"),
+        //title : tryGetElementById("txt-ncr-title"),
+        supplier : tryGetElementById("txt-supplier"),
+        prodNumber : tryGetElementById("txt-prod-number"),
+        salesNumber : tryGetElementById('txt-sales-number'),
+        quantityReceived : tryGetElementById("txt-quantity-received"),
+        quantityDefective : tryGetElementById("txt-quantity-defective"),
+        //itemDescription : tryGetElementById('txt-item-description'),
+        defectDescription : tryGetElementById('txt-item-defect'),
+        supplierOrRec : tryGetElementById("rad-supplier-or-rec"),
+        nonConforming : tryGetElementById('chk-non-conforming'),
+        //productionOrder:  tryGetElementById("chk-production-order"),
+        wip :tryGetElementById('rad-wip'),
+        sapNumber: tryGetElementById('txt-sap-number'),
+        engineeringRequired:tryGetElementById('chk-engineering-required'),
+    }
+}
+
+
+export function getEngFormData(){
+    
+    let engiReviewValue = getEngReviewRAD()
+
+    return {
+        customerNotification: tryGetElementById('chk-customer-notification'),
+        drawingToUpdate: tryGetElementById('chk-drawing-to-update'),
+        engineeringReview: engiReviewValue,
+        origRevNum: tryGetElementById('txt-orig-rev-number'),
+        nameOfEngineer: tryGetElementById('txt-name-engineer'),
+        updatedRev: tryGetElementById('txt-updated-rev'),
+        RevisionDate: tryGetElementById('txt-revision-date'),
+        Disposition: tryGetElementById('txt-engi-disposition'),
+    }
+}
+
+export function getPurchasingFormData(){
+    let followUpType = document.getElementById('cbo-followup-type')
+
+    const inHouse = tryGetElementById('rad-purchase-decision-rework')
+    const repair = tryGetElementById('rad-purchaseReview-repair')
+    const rework = tryGetElementById('rad-purchaseReview-rework')
+    const scrap = tryGetElementById('rad-purchaseReview-scrap')
+    let decision;
+
+
+    if(inHouse.checked){
+        console.log('use')
+        decision="Rework In-House"
+    }
+    if(repair.checked){
+        console.log('rep')
+        decision= "Repair"
+    }
+    if(rework.checked){
+        console.log('rew')
+        decision='Rework'
+    }
+    if(scrap.checked){
+        console.log('scrap')
+        decision='Scrap'
+    }
+    console.log('getting passed ')
+    return {
+        purchaseDecision: decision,
+        CarRaised: document.getElementById('chk-car-raised'),
+        CarNum: document.getElementById('txt-car-num'),
+        FollowReq: document.getElementById('chk-followup-req'),
+        followUpType: followUpType.options[followUpType.selectedIndex].value,
+        followUpDate: tryGetElementById('dtp-followup-date'),
+        operationManager: app.employee.username,
+        purchaseDate: tryGetElementById('dtp-purchase-date')
+    }
+}
+
+
 
 export function generateNcrNumber(){
     const num = reportData.length +1
@@ -95,6 +177,7 @@ export function createReport(employee){
     // DOESN'T VALIDATE USE THE VALIDATORS BEFORE CREATING THE REPORT
     const formData = getReportFormData()
     console.log(formData.engineeringRequired.checked + "OWOWOWOWWO")
+  
     return {
         ncrNumber: formData.ncrNumber.value,
         //title:formData.title.value,
@@ -108,12 +191,12 @@ export function createReport(employee){
         nonConforming:formData.nonConforming.checked,
         supplierOrRec:formData.supplierOrRec.checked,
         startedBy:employee.username,
-        status:formData.engineeringRequired.checked ? ReportStatus.engineering : ReportStatus.sales, // defualts to closed cuz we aren't at the next stage
+        status:formData.engineeringRequired.checked ? ReportStatus.engineering : ReportStatus.purchasing, // defualts to closed cuz we aren't at the next stage
         date:new Date(Date.now()).toDateString(),
         itemName:formData.itemName.value,
         sapNumber:formData.sapNumber.value,
         engineeringRequired:formData.engineeringRequired.checked,
-        customerNotification:false,
+        customerNotification:formData.customerNotification.checked,
         drawingToUpdate: formData.drawingToUpdate.checked,
         engineeringReview: formData.engineeringReview,
         origRevNum: formData.origRevNum.value,
@@ -121,8 +204,8 @@ export function createReport(employee){
         updatedRev: formData.updatedRev.value || "",
         RevisionDate:formData.RevisionDate.value || "",
         Disposition:formData.Disposition.value,
-        purchaseDecision: null,
-        CarRaised: null,
+        purchaseDecision: formData.purchaseDecision?.options[formData.purchaseDecision.selectedIndex],
+        CarRaised: formData.CarRaised?.checked,
         CarNum: null,
         FollowReq: false,
         followUpType: null,
@@ -144,8 +227,8 @@ export function errorLog(){
         get:() => errors,
         expose:() => {
             errors.forEach(error => {
-                document.getElementById(error.targetID).ariaInvalid = true;
-                document.getElementById(error.errorTarget).innerText = error.msg;
+                tryGetElementById(error.targetID).ariaInvalid = true;
+                tryGetElementById(error.errorTarget).innerText = error.msg;
             });
         }
     }
@@ -261,11 +344,13 @@ export function validateQAStringInputs(errors, data){
     return errors
 }
 
-export function validateEngiInputs(errors, data){
+export function validateEngiInputs(errors){
+
+    const data = getEngFormData()
     if(data.drawingToUpdate.value === true){
         // validate drawing data if drawingToUpdate is true
-        if(data.NameOfEngineer.value === ""){
-        data.NameOfEngineer.ariaInvalid = true;
+        if(data.nameOfEngineer.value === ""){
+        data.nameOfEngineer.ariaInvalid = true;
         errors.push('txt-name-engineer',"name-engineer-error", "Please submit the name of the Engineer")
     }
     if(data.updatedRev.value === ""){
@@ -275,43 +360,46 @@ export function validateEngiInputs(errors, data){
     }
 
     if(data.Disposition.value === ""){
-        data.Disposition.ariaInvalid = true;
+        data.disposition.ariaInvalid = true;
         errors.push('txt-engi-disposition', 'Engineering-disposition-error', "Please submit the Disposition")
     }
 
 
     if(!data.engineeringReview){
         console.log(data.engineeringReview)
-        //document.getElementById("engineering-review-radio-error").innerHTML = "Please select an Review value"
+        //tryGetElementById("engineering-review-radio-error").innerHTML = "Please select an Review value"
         errors.push("engineering-review-radio-error", "engineering-review-radio-error", "Please select an Review value")
     }
 }
 
-function validatePurchasingInputs(errors, data){
+export function validatePurchasingInputs(errors){
   //check if followup req
-   const validCarNum =  parseInt(data.CarNum)
+  const data = getPurchasingFormData()
+   const validCarNum =  parseInt(data.CarNum.value)
 
-    if(data.CarRaised === true){
+    if(data.CarRaised.checked){
         if( isNaN(validCarNum)|| validCarNum < 0){
             data.CarNum.ariaInvalid = true;
             errors.push('txt-car-num', 'car-num-error', "please provide a valid car number.")
         }
     }
-    if(data.FollowReq === true){
-        const cboFollowType = document.getElementById("cbo-followup-type");
+    if(data.FollowReq.checked){
+        const cboFollowType = tryGetElementById("cbo-followup-type");
         if(cboFollowType.value === ""){
             data.followUpType.ariaInvalid = true;
             errors.push('cbo-followup-type', 'followup-type-error', "please select a follow up type.")
         }
-        if(data.followUpDate < Date.now() || data.followUpDate === ''){
+        if(data.followUpDate.value < Date.now() || data.followUpDate === ''){
         data.followUpDate.ariaInvalid = true;
         errors.push('dtp-followup-date', 'followup-date-error', 'please provide a followup date in the future.')
     }
     }
-    if(data.purchaseDate < Date.now() || data.purchaseDate === ''){
+    if(data.purchaseDate.value < Date.now() || data.purchaseDate === ''){
         data.purchaseDate.ariaInvalid = true;
         errors.push('dtp-purchase-date', 'purchase-date-error', 'please provide a purchase date in the future.')
     }
+
+    
     //validate followup date
     //validate value selected from follow up type
   //check if car raised

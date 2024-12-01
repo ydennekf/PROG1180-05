@@ -1,15 +1,16 @@
 import { injectOrReturn } from "../utils/utils.js"
+import { app } from "../../AppState.js"
 
-export function EngineeringReport(report, engiReadOnly, targetID = null){
+export function EngineeringReport(report, engiReadOnly, targetID = null, hidden=false){
     const html = `
-    <h2 data-role="engineering">Engineering</h2>
+    <h2 data-role="engineering" id="engineering-header">Engineering</h2>
         
             <div class="engineering-inputs">
                 <div class="engi-top-container">
                     
                 <fieldset>
                     <legend><span class="required-marker">*</span> Review by CF Engineering</legend>
-
+                    <div id="engineering-exists" style="display:none;"></div>
                         
                     <ul class= "col-2">
                     
@@ -68,7 +69,7 @@ export function EngineeringReport(report, engiReadOnly, targetID = null){
                             <div>
                                 <label class="required" for="txt-name-engineer" id="lbl-name-engineer">Name of Engineer</label>
                                 <input readonly aria-errormessage="name-engineer-error" name="name-engineer" type="text" aria-describedby="lbl-name-engineer" id="txt-name-engineer"
-                                value="${report?.nameOfEngineer || ""}"/>
+                                value="${report?.nameOfEngineer || ["engineering", "admin"].includes(app.employee.department)  ? app.employee.username : ""}"/>
                                 <label id="name-engineer-error" class="error-label"></label>
                             </div>
                         
@@ -77,12 +78,12 @@ export function EngineeringReport(report, engiReadOnly, targetID = null){
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
-                                value=${report?.updatedRev || ""}/>
+                                value="${report?.updatedRev || 0}"/>
                                 <label id="updated-rev-error" class="error-label"></label>
                             </div>
                             <div>
                                 <label class="required" for="txt-revision-date" id="lbl-revision-date">Revision Date</label>
-                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" type="text" aria-describedby="lbl-revision-date" id="txt-revision-date"
+                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" type="date" aria-describedby="lbl-revision-date" id="txt-revision-date"
                                 value="${report?.RevisionDate || ""}"/>
                                 <label id="sap-number-error" class="error-label"></label>
                             </div>
@@ -101,37 +102,37 @@ export function EngineeringReport(report, engiReadOnly, targetID = null){
 }
 
 
-export function PurchasingReport(report, purchaseReadOnly, targetID=null){
+export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden=false){
     const html = `
-    <h2 data-role="sales">Purchasing</h2>
-        
+    <h2 data-role="sales" id="purchasing-header">Purchasing</h2>
+
             <div class="purchasing-inputs">
                 <div class="purchasing-left-container">
 
                     <fieldset>
                         <legend>Purchasing's Preliminary Decision</legend>
-                    
+                        <div id="purchasing-exists" style="display:none;"></div>
                     
                         <div>
-                        <input ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
+                        <input id="rad-purchase-decision-rework" ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
                         <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label> </div>
                         
                         
                         <div>
-                        <input required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
+                        <input id="rad-purchaseReview-repair" required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Repair"? 'checked' : ''}>
                         <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Repair</label> </div>
                         
                         
                         <div>
-                        <input required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
+                        <input id="rad-purchaseReview-rework" required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
                         <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Rework</label></div>
                       
                         
                         <div>
-                        <input required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-scrap" value="Scrap" name="rad-purchaseReview"
+                        <input id="rad-purchaseReview-scrap" required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-scrap" value="Scrap" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Scrap"? 'checked' : ''}>
                         <label for="rad-purchaseReview-scrap" id="lbl-purchaseReview-scrap">Scrap</label> </div>
                         
@@ -146,8 +147,8 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null){
                             </div>
                             <div>
                                 <label class="required" for="txt-car-num" id="lbl-car-num">Car Number</label>
-                                <input readonly aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
-                                value=""
+                                <input  aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
+                                value="${report?.CarNum || ""}"/>
                                 <label id="car-num-error" class="error-label"></label>
                             </div>
                     
@@ -155,6 +156,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null){
                 
                 </div>
                 <div class="purchasing-right-container">
+                
                             <div class="purchase-followup-container">
                                 <div>
                                 <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
@@ -172,12 +174,12 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null){
                                         <label for="followup-type">Followup Type:</label>
                                         <label id="followup-type-error" class="error-label"></label>
                                             <select id="cbo-followup-type" name="followup-type">
-                                                <option value="">Select a type</option>
-                                                <option value="Phone">Phone</option>
-                                                <option value="InPerson">In Person</option>
-                                                <option value="Virtual">Virtual Meet</option>
-                                                <option value="Email">Email</option>
-                                                <option value="Fax">Fax</option>
+                                                <option ${!report?.followUpType? "selected" :"" } value="">Select a type</option>
+                                                <option ${report?.followUpType === "Phone"? "selected" :"" } value="Phone">Phone</option>
+                                                <option ${report?.followUpType === "InPerson"? "selected" :"" } value="InPerson">In Person</option>
+                                                <option ${report?.followUpType === "Virtual Meet"? "selected" :"" } value="Virtual">Virtual Meet</option>
+                                                <option ${report?.followUpType === "Email"? "selected" :"" } value="Email">Email</option>
+                                                <option ${report?.followUpType === "Fax"? "selected" :"" } value="Fax">Fax</option>
                                             </select>
                                     </div>
                                 </div>
@@ -186,12 +188,12 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null){
                                 <div>
                                     <label  for="txt-operation-manager" id="lbl-operation-manager">Operation Manager</label>
                                     <input readonly name="operation-manager" type="text" aria-describedby="lbl-operation-manager" id="txt-operation-manager"
-                                    value="${report?.operationManager ? report?.operationManager : 'default operation manager'}"/>
+                                    value="${report?.operationManager || app.employee.username}"/>
                                 </div>
                                 
                                 <div>
                                     <label for="dtp-purchase-date">Purchase Date:</label>
-                                    <input ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"  aria-describedby="lbl-purchase-date" type="text" id="dtp-purchase-date" placeholder="Select purchase date">
+                                    <input value="${report?.purchaseDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"  aria-describedby="lbl-purchase-date" type="text" id="dtp-purchase-date" placeholder="Select purchase date">
                                     <label id="purchase-date-error" class="error-label"></label>
                                 </div>
                                                            

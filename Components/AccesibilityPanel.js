@@ -10,6 +10,25 @@ function reveal(){
         AccessibilityPanel()
 }
 
+function swapTheme(){
+    let theme = localStorage.getItem('theme')
+    if(!theme){
+        localStorage.setItem('theme', "light")
+        theme = localStorage.getItem('theme')
+    }
+    const e = document.getElementById("accessibility-toggle")
+
+    if(theme === "light"){
+        localStorage.setItem('theme', "dark")
+        e.innerText = "Enable Light Mode"
+        document.documentElement.setAttribute('data-theme', "dark");
+    }else{
+        localStorage.setItem('theme', "light")
+        e.innerText = "Enable Dark Mode"
+        document.documentElement.setAttribute('data-theme', "light"); 
+    }
+}
+
 export function AccessibilityPanel(){
     let theme = localStorage.getItem('theme')
     if(!theme){
@@ -75,6 +94,6 @@ export function AccessibilityPanel(){
 
 export function swapListener(){
     const e= document.getElementById("accessibility-toggle")
-    e.removeEventListener('click', reveal)
-    e.addEventListener('click',reveal)
+    e.removeEventListener('click', swapTheme)
+    e.addEventListener('click',swapTheme)
 }

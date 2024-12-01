@@ -280,6 +280,8 @@ nav .logo {
     align-items: center;
     gap: 1rem;
     margin: auto;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .nav-list li{

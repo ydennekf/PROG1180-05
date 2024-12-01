@@ -77,15 +77,15 @@ export function EngineeringReport(report, engiReadOnly, targetID = null, hidden=
                         <div class="col-2">
                             <div>
                                 <label class="required" for="txt-updated-rev" id="lbl-updated-rev">Updated Rev. Number </label>
-                                <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
-                                value="${report?.updatedRev || 0}"/>
+                                <input ${engiReadOnly ? "readonly" : ''} min="1" aria-errormessage="updated-rev-error" name="updated-rev" type="number" aria-describedby="lbl-updated-rev" id="txt-updated-rev"
+                                value="${report?.updatedRev || 1}"/>
                                 <label id="updated-rev-error" class="error-label"></label>
                             </div>
                             <div>
                                 <label class="required" for="txt-revision-date" id="lbl-revision-date">Revision Date</label>
                                 <input ${engiReadOnly ? "readonly" : ''} aria-errormessage="revision-date-error" name="revision-date" type="date" aria-describedby="lbl-revision-date" id="txt-revision-date"
                                 value="${report?.RevisionDate || ""}"/>
-                                <label id="sap-number-error" class="error-label"></label>
+                                <label id="revision-date-error" class="error-label"></label>
                             </div>
                         </div>
    
@@ -114,25 +114,25 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                         <div id="purchasing-exists" style="display:none;"></div>
                     
                         <div>
-                        <input id="rad-purchase-decision-rework" ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
+                        <input id="rad-purchase-decision-rework" ${purchaseReadOnly? "disabled" : ""} aria-errormessage="purchase-decision-rework-error" type="radio" aria-describedby="lbl-purchase-decision-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
                         <label for="rad-purchase-decision-rework" id="lbl-purchase-decision-rework">Rework "In-House"</label> </div>
                         
                         
                         <div>
-                        <input id="rad-purchaseReview-repair" required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
+                        <input id="rad-purchaseReview-repair" required ${purchaseReadOnly? "disabled" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Repair"? 'checked' : ''}>
                         <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Repair</label> </div>
                         
                         
                         <div>
-                        <input id="rad-purchaseReview-rework" required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
+                        <input id="rad-purchaseReview-rework" required ${purchaseReadOnly? "disabled" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
                         <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Rework</label></div>
                       
                         
                         <div>
-                        <input id="rad-purchaseReview-scrap" required ${purchaseReadOnly? "readonly" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-scrap" value="Scrap" name="rad-purchaseReview"
+                        <input id="rad-purchaseReview-scrap" required ${purchaseReadOnly? "disabled" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-scrap" value="Scrap" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Scrap"? 'checked' : ''}>
                         <label for="rad-purchaseReview-scrap" id="lbl-purchaseReview-scrap">Scrap</label> </div>
                         
@@ -147,7 +147,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                             </div>
                             <div>
                                 <label class="required" for="txt-car-num" id="lbl-car-num">CAR Number</label>
-                                <input  aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
+                                <input ${purchaseReadOnly ? "disabled" : ''} aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
                                 value="${report?.CarNum || ""}"/>
                                 <label id="car-num-error" class="error-label"></label>
                             </div>
@@ -161,23 +161,23 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                                 <div>
                                 
                                     <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
-                                    ${report?.FollowReq ? 'checked' : ''}/>
+                                    ${report?.followUpRequired ? 'checked' : ''}/>
                                     <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
                                 </div>
                                 <div class="purchasing-followup-inputs" id="followup-inputs">
                                     <div>
                                         <label for="dtp-followup-date">Followup Date:</label>
-                                        <input ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
+                                        <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
                                         <label id="followup-date-error" class="error-label"></label>
                                     </div>
                                     <div>
                                         <label for="followup-type">Followup Type:</label>
                                         <label id="followup-type-error" class="error-label"></label>
-                                            <select id="cbo-followup-type" name="followup-type">
+                                            <select id="cbo-followup-type" name="followup-type" ${purchaseReadOnly ? "disabled" : ''}>
                                                 <option ${!report?.followUpType? "selected" :"" } value="">Select a type</option>
                                                 <option ${report?.followUpType === "Phone"? "selected" :"" } value="Phone">Phone</option>
                                                 <option ${report?.followUpType === "InPerson"? "selected" :"" } value="InPerson">In Person</option>
-                                                <option ${report?.followUpType === "Virtual Meet"? "selected" :"" } value="Virtual">Virtual Meet</option>
+                                                <option ${report?.followUpType === "Virtual"? "selected" :"" } value="Virtual">Virtual Meet</option>
                                                 <option ${report?.followUpType === "Email"? "selected" :"" } value="Email">Email</option>
                                                 <option ${report?.followUpType === "Fax"? "selected" :"" } value="Fax">Fax</option>
                                             </select>

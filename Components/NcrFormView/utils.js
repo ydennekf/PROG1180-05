@@ -120,6 +120,8 @@ export function getEngFormData(){
 export function getPurchasingFormData(){
     let followUpType = document.getElementById('cbo-followup-type')
 
+    console.log(followUpType)
+
     const inHouse = tryGetElementById('rad-purchase-decision-rework')
     const repair = tryGetElementById('rad-purchaseReview-repair')
     const rework = tryGetElementById('rad-purchaseReview-rework')
@@ -148,8 +150,8 @@ export function getPurchasingFormData(){
         purchaseDecision: decision,
         CarRaised: document.getElementById('chk-car-raised'),
         CarNum: document.getElementById('txt-car-num'),
-        FollowReq: document.getElementById('chk-followup-req'),
-        followUpType: followUpType.options[followUpType.selectedIndex].value,
+        followUpRequired: document.getElementById('chk-followup-req'),
+        followUpType: followUpType,
         followUpDate: tryGetElementById('dtp-followup-date'),
         operationManager: app.employee.username,
         purchaseDate: tryGetElementById('dtp-purchase-date')
@@ -347,29 +349,42 @@ export function validateQAStringInputs(errors, data){
 export function validateEngiInputs(errors){
 
     const data = getEngFormData()
-    if(data.drawingToUpdate.value === true){
+    const numericUpdatedRev = parseInt(data.updatedRev.value)
+    const numericRev = parseInt(data.origRevNum.value)
+    if(data.drawingToUpdate.checked){
         // validate drawing data if drawingToUpdate is true
         if(data.nameOfEngineer.value === ""){
         data.nameOfEngineer.ariaInvalid = true;
         errors.push('txt-name-engineer',"name-engineer-error", "Please submit the name of the Engineer")
-    }
-    if(data.updatedRev.value === ""){
-        data.updatedRev.ariaInvalid = true;
-        errors.push('txt-updated-rev',"updated-rev-error", "Please submit the updated revision number")
-    }
+        }
+        console.log('Updated rev ' + numericUpdatedRev)
+        if(data.updatedRev.value === "" || isNaN(numericUpdatedRev)){
+            data.updatedRev.ariaInvalid = true;
+            errors.push('txt-updated-rev',"updated-rev-error", "Please submit the updated revision number")
+        }
     }
 
     if(data.Disposition.value === ""){
-        data.disposition.ariaInvalid = true;
+        data.Disposition.ariaInvalid = true;
         errors.push('txt-engi-disposition', 'Engineering-disposition-error', "Please submit the Disposition")
     }
 
 
     if(!data.engineeringReview){
-        console.log(data.engineeringReview)
-        //tryGetElementById("engineering-review-radio-error").innerHTML = "Please select an Review value"
         errors.push("engineering-review-radio-error", "engineering-review-radio-error", "Please select an Review value")
     }
+
+    console.log(data.RevisionDate.value + "wowo")
+    if(!data.RevisionDate.value){
+        
+        errors.push("txt-revision-date", "revision-date-error", "Please submit a revision date")
+    }
+
+    if(data.RevisionDate.value < Date.now()){
+        errors.push("txt-revision-date", "revision-date-error", "Please submit a date equal to or after today.")
+    }
+
+    
 }
 
 export function validatePurchasingInputs(errors){
@@ -383,9 +398,9 @@ export function validatePurchasingInputs(errors){
             errors.push('txt-car-num', 'car-num-error', "please provide a valid car number.")
         }
     }
-    if(data.FollowReq.checked){
+    if(data.followUpRequired.checked){
         const cboFollowType = tryGetElementById("cbo-followup-type");
-        if(cboFollowType.value === ""){
+        if(data.followUpType.selectedIndex === 0){
             data.followUpType.ariaInvalid = true;
             errors.push('cbo-followup-type', 'followup-type-error', "please select a follow up type.")
         }

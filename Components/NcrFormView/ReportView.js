@@ -80,6 +80,10 @@ export function ReportView(report, action){
     }
 
     let saveReport = (action) => {
+        if(action === "View"){
+            redirectViewAllReports()
+            return;
+        }
         // when we save the report check which section recieved edits and based on the section update the status to the next position
         // when the status changes send notification to the job role
         // when the notification sends send the email to the job role employee
@@ -264,7 +268,7 @@ export function ReportView(report, action){
 
         }
 
-        if(app.employee.department === "sales"){
+        if(app.employee.department === "purchasing"){
             QAReadOnly = true;
             engiReadOnly = true;
             purchaseReadOnly = false;
@@ -545,7 +549,7 @@ setReadonly()
         
 </div>
 <div class="ncr-submit-cancel">
-<button id="submitBtn" >Save</button>
+<button id="submitBtn">${action === "View" ? "Back" : "Save"}</button>
 <button id="cancelBtn" >Cancel</button>
 ${app.employee.department === "admin" && (action === "Create" || action === "Edit") && !checkEngineeringInProgress() ? `${addEngButton()}` : ""}
 ${app.employee.department === "admin" &&  (action === "Create" || action === "Edit") && !checkPurchasingInProgress() ? `${addPurchasingButton()}` : ""}
@@ -629,7 +633,12 @@ function bindExport(){
 //DisplayView()
 document.getElementById("root").innerHTML = html;
 document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
-document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
+try{
+    document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
+}
+catch{ // removing this button if its irrelevant 
+
+}
 try{
 
 

@@ -10,6 +10,26 @@ import { reportData, updateReport } from "../../Data/new_reportData.js";
 import { RedirectWithSuccessModal } from "./successModal.js";
 import { addImagesToReport, clearImageStorage } from "./ReportView.js";
 
+
+
+
+
+/* TODOS
+ TODO admin add form portion buttons
+ TODO finalize purchasing validation
+ TODO dummy buttons for filling each portions data
+*/
+
+
+
+
+
+
+
+
+
+
+
 export function createQAReport(){
     const formData = getQAFormData()
     const newReport ={
@@ -75,10 +95,11 @@ export function addPurchasingReportData(report){
     newReport.CarRaised = pData.CarRaised.checked
     newReport.CarNum = pData.CarNum.value
     newReport.operationManager = app.employee.firstName +  " " + app.employee.lastName
-    newReport.followUpType = pData.followUpType.options[pData.followUpType.selectedIndex]
+    newReport.followUpType = pData.followUpType.options[pData.followUpType.selectedIndex].value
     newReport.followUpRequired = pData.followUpRequired.checked
-    newReport.purchaseData = pData.purchaseDate.value
+    newReport.purchaseDate = pData.purchaseDate.value
     newReport.status = "closed"
+    newReport.followUpDate = pData.followUpDate.value
 
     updateReport(newReport.ncrNumber, newReport)
     app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
@@ -136,12 +157,14 @@ export function validateAdmin(errors, action, report=null){
     console.log("Working")
     if(engineeringNeedsValidtion.style.display!=="none"){
         addEngReportData(newReport)
-        RedirectWithSuccessModal(action, report)
+        
     }
     if(purchasingNeedsValidation.style.display!=="none"){
+        console.log("Working Here")
         addPurchasingReportData(newReport)
-        RedirectWithSuccessModal(action, report)
+        
     }
+    RedirectWithSuccessModal(action, newReport)
     
     app.storage.pushRecentReport(newReport.ncrNumber)
    }else{
@@ -221,6 +244,9 @@ export function shouldRevealPurchasing(action, report=null){
         ((["admin", "purchasing"].includes(app.employee.department)) && report?.status === "purchasing")){
         return;
    }
+   if(report?.status === "closed" || report?.status === "Closed"){
+        return;
+    }
 
 
     //if(app.employee.department !== "purchasing" && ["Edit", "Create"].includes(action)){
@@ -240,6 +266,11 @@ export function shouldRevealEngineering(action, report=null){
          // should be shown do nothing
          return;
      }
+
+     if(report?.status === "closed" || report?.status === "Closed"){
+        return;
+    }
+
 
 
      

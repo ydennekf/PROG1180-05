@@ -60,7 +60,7 @@ export function loadNavOnLogin(){
                 </li>
 
                 <li id="_view-ncr">
-                    View NCR's
+                    NCR's Log
                 </li>
 
                 <li id="_view_report">
@@ -120,7 +120,7 @@ export function SearchBar(targetID) {
     // separate the search box for NCR num and Supplier
     // set the search text to update on keypress again.
     let html = `
-  <h2>View NCR's</h2>
+  <h2>NCR's LOG</h2>
         ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
         <ul class='nav-list'>
            

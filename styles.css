@@ -34,9 +34,6 @@ li{
     color: var(--color-white);
 }
 
-.Report-view-header{
-    color: var(--color-white);
-   }
 
 #accessibilityControls{
     background-color: var(--color-primary);
@@ -139,6 +136,7 @@ tbody tr {
   */
 .search-container input{
     max-width: 210px;
+    height: 40px;
 }
  
  
@@ -187,15 +185,7 @@ a.selected-view {
 
  
 /* Main content */
-main.ncr-view {
-    flex: 1;
-    width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var( --color-form);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-}
+
  
  
 /* NCR Index View */
@@ -716,84 +706,80 @@ input[type="checkbox"]:checked:before{
  }
 
 
-
-
-
 /* Purchasing Left Fieldset */
 .purchasing-left-container fieldset {
+    display: flex;
     flex-direction: column;
     gap: 10px;
     border: none;
     padding: 10px 0;
-    margin: 0 0 20px;
+    margin: 0;
 }
 
 .purchasing-left-container fieldset div {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .purchasing-left-container input[type="radio"] {
     margin: 0;
     vertical-align: middle;
-    width: 20px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
 }
 
 .Car-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 15px;
+    margin-top: 0;
 }
 
 .Car-container>div:first-child {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .Car-container input[type="checkbox"] {
-    margin: 0px;
+    margin: 0;
 }
 
 .Car-container label {
-    display: inline-block;
-    vertical-align: middle;
+    font-size: 1rem;
+    color: var(--color-black);
 }
 
 .Car-container input[type="text"] {
     width: 100%;
     padding: 8px;
     border: 1px solid var(--color-black);
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /* Purchasing Right Fieldset */
-.purchase-followup-container > div:first-child {
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
+.purchase-followup-container>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.purchasing-followup-inputs div {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .purchasing-followup-inputs div:first-child {
-    margin-top: 20px; 
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    margin-top: 10px;
 }
 
-.purchasing-followup-inputs div:nth-child(2) {
+.purchase-signoff-container>div {
     display: flex;
     flex-direction: column;
-    gap: 0px; 
-}
-
-.purchase-signoff-container > div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; 
+    margin-top: 10px;
 }
 
 .purchase-signoff-container>div:first-child {
@@ -802,18 +788,32 @@ input[type="checkbox"]:checked:before{
 
 .purchasing-right-container input[type="text"],
 .purchasing-right-container select {
-    width: 100%; 
-    padding: 8px; 
-    border: 1px solid var(--color-black); 
+    width: 100%;
+    height: 1.5rem;
+    padding: 0 4px;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
 }
 
 .purchasing-right-container input[type="checkbox"] {
-    margin: 0; 
+    margin: 0;
+}
+
+.purchasing-right-container>div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.purchasing-right-container>div>div {
+    width: 48%;
 }
 
 .purchase-signoff-container>div:last-child {
-    margin-top: 20px;
+    margin-top: 15px;
 }
+
 /* Purchasing Right Fieldset End */
 
 .error-label{
@@ -945,19 +945,15 @@ legend{
 }
 
 
-
- #accessibility-toggle{
-    margin-left: 10px;
-    padding: 8px 12px;
-    bottom: 0;
-    position: sticky;
-    right: 10000px;
-    transition: opacity 0.3s ease;
- }
- 
- #accessibility-toggle:sticky {
-    opacity: 1;
+.button-container {
+    display: flex;
+    gap: 0.25rem; 
+    justify-content: end; 
+    margin-bottom: 0.25rem;
 }
+
+
+
 
  #accessibilityControls {
     position: fixed;
@@ -981,7 +977,7 @@ legend{
 }
 
 
-* =========================
+/* =========================
    Error Label Styling
    ========================= */
  
@@ -1131,13 +1127,13 @@ tbody tr {
 
 
 
-.button-container {
-    display: flex;
-    gap: 10px; 
-    justify-content: start; 
-    margin-bottom: 20px; 
+#create-report-btn {
+    margin-top:2.35vh
 }
-
+ 
+#accessibilityControls chkbox label{
+    color:white !important;
+}
 #end-date:focus {
     box-shadow: var();
 }

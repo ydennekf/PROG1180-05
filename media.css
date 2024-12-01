@@ -22,7 +22,7 @@
     }
 
     main{
-        min-width: 27rem;
+        min-width: 90%;
         background-color: blue;
     }
 
@@ -55,7 +55,7 @@
     }
 
     main {
-        width: 700px;
+        width: 90%;
         background-color: greenyellow;
     }
 
@@ -84,15 +84,14 @@
 @media screen and (min-width:768px) and (max-width:1023px){
 
     .centre-m{
-        min-width: 800px;
-        max-width: 1023px;
+        max-width: 100%;
         margin: auto;
         /* background: yellow; */
         
       }
 
       main {
-        width: 900px;
+        width: 90%;
         background-color: yellow;
     }
 
@@ -134,8 +133,7 @@
 
 
     .centre-l{
-        min-width: 800px;
-        max-width: 1200px;
+        max-width: 100%;
         margin: auto;
         /* background: greenyellow; */
         
@@ -143,7 +141,8 @@
 
     
     main {
-        width: 1300px;
+        width: 90%;
+        max-width: 1200px;
         background-color: lightsalmon;
     }
 

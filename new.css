@@ -303,15 +303,9 @@ main {
     color: var(--color-black);
     font-family: var(--font-primary);
     margin: 0 auto;
-<<<<<<< Updated upstream
     padding: 1.25rem;
     box-shadow: 0 0 0.938rem rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
-=======
-    padding: 2vw;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
->>>>>>> Stashed changes
     min-height: calc(100vh - 10rem);
     transition: all 0.3s ease-in-out;
 }
@@ -365,11 +359,7 @@ footer {
 
 
 .iso-header{
-<<<<<<< Updated upstream
     margin: 1.25rem auto 0;
-=======
-    margin: 2px auto 0;
->>>>>>> Stashed changes
     color: var(--color-black);
     background-color: var(--color-iso); 
     outline-color: var(--color-iso);
@@ -383,11 +373,7 @@ footer {
 .iso-header div{
     border-width: 0.375rem;
     background-color:var(--color-background);
-<<<<<<< Updated upstream
     padding: 0.625rem 0 0 0.938rem;  
-=======
-    padding: 0.625rem 0 0 15px;  
->>>>>>> Stashed changes
 }
 
 .iso-header label{
@@ -398,7 +384,6 @@ footer {
 .iso-header p{
     font-weight: bold;
     justify-content: center;
-<<<<<<< Updated upstream
     padding: 0 0 0.938rem 0;
 }
 
@@ -411,7 +396,3 @@ footer {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 } */
-=======
-    padding: 0 0 10px 0;
-}
->>>>>>> Stashed changes

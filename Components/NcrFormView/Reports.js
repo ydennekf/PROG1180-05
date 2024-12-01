@@ -143,10 +143,10 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                             <div>
                                 <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
                             ${report?.CarRaised ? 'checked' : ''}/>
-                            <label id="lbl-car-raised" for="chk-car-raised">Car Raised?</label>
+                            <label id="lbl-car-raised" for="chk-car-raised">CAR Raised?</label>
                             </div>
                             <div>
-                                <label class="required" for="txt-car-num" id="lbl-car-num">Car Number</label>
+                                <label class="required" for="txt-car-num" id="lbl-car-num">CAR Number</label>
                                 <input  aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
                                 value="${report?.CarNum || ""}"/>
                                 <label id="car-num-error" class="error-label"></label>
@@ -159,10 +159,10 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                 
                             <div class="purchase-followup-container">
                                 <div>
-                                <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
-                                    <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
-                                ${report?.FollowReq ? 'checked' : ''}/>
                                 
+                                    <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
+                                    ${report?.FollowReq ? 'checked' : ''}/>
+                                    <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
                                 </div>
                                 <div class="purchasing-followup-inputs" id="followup-inputs">
                                     <div>

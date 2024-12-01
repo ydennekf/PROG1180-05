@@ -424,7 +424,7 @@ setReadonly()
                 <div class="qa-left-container">
                     <ul class="qa-labels">
                         <li>
-                            <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">NCR No:</label>
+                            <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">&nbsp; NCR No:</label>
                             <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                             value="${report?.ncrNumber || newNCR}"/>
                             <label id="ncr-number-error" class="error-label"></label>
@@ -457,8 +457,9 @@ setReadonly()
                     </ul>  
                                      
                     <ul class= "qa-checkbox-align">
-                        <label for="wip-or-rec">Supplier or Rec Insp?</label>
-                        <span class="required-marker">*</span>    
+                        <span class="required-marker">*</span>
+                        <label for="wip-or-rec">Identify Process Applicable:</label>
+                            
                             <li>  
                                 <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
                                 ${ report?.supplierOrRec ? 'checked' : ''}/>

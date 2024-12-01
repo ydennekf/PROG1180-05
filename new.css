@@ -243,13 +243,19 @@ header{
     height: 5rem; 
     background-color: var(--color-primary);
     z-index:1000;
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
 }
+
+#nav-wrapper{
+    width: 90%;
+    max-width: 1200px;
+}
+
 
 nav {
     height: 5rem;
     color: var(--color-white);
-    background-color: var(--color-primary);
+    /* background-color: var(--color-primary); */
     align-items: center;
     z-index: 1000;
     display: flex;
@@ -268,6 +274,7 @@ nav .logo {
 
 
 .nav-list {
+    padding-top: 0.75rem;
     list-style: none;
     display: flex;
     align-items: center;
@@ -289,10 +296,9 @@ nav ul li:hover {
 }
  
 nav ul li button{
-    margin-top: 1.5vh;
+   /*  margin-top: 1.5vh; */
     min-width: 6.25rem;
 }
-
 
 /* Body Styles */
 main {
@@ -322,8 +328,13 @@ footer {
     font-family: var(--font-secondary);
     text-align: center;
     /* width: 100%; */
-    
-   
+}
+
+#footer{
+
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
 }
 
 

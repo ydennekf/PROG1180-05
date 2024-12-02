@@ -77,6 +77,9 @@ export function addEngReportData(report, ){
     newReport.drawingToUpdate = eData.drawingToUpdate.checked
     newReport.customerNotification = eData.customerNotification.checked
     newReport.status = "purchasing"
+    newReport.engDate = new Date(Date.now()).toDateString(),
+    addImagesToReport(newReport)
+    clearImageStorage()
 
     updateReport(newReport.ncrNumber, newReport)
 
@@ -100,6 +103,9 @@ export function addPurchasingReportData(report){
     newReport.purchaseDate = pData.purchaseDate.value
     newReport.status = "closed"
     newReport.followUpDate = pData.followUpDate.value
+    newReport.purDate =new Date(Date.now()).toDateString()
+    addImagesToReport(newReport)
+    clearImageStorage()
 
     updateReport(newReport.ncrNumber, newReport)
     app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
@@ -126,11 +132,11 @@ export function validateAdmin(errors, action, report=null){
             report = createQAReport()
             if(engineeringNeedsValidtion.style.display !== "none"){
                 validateEngiInputs(errors)
-                addEngReportData(report)
+                report = addEngReportData(report)
             }
             if(purchasingNeedsValidation.style.display !== 'none' && engineeringNeedsValidtion.style.display !== 'none'){
                 validatePurchasingInputs(errors) // requires the admin to do the engineering portion first
-                addPurchasingReportData(report)
+                report = addPurchasingReportData(report)
             }
 
             RedirectWithSuccessModal(action, report)

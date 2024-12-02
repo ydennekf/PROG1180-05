@@ -74,23 +74,24 @@ function qaFooter(report){
 
     export function convertToPDF(reportNumber) {
         let report = getReport(reportNumber);
-        let pdf = createQaPDF();
-
+        let pdf = createQaPDF(report);
+        console.log(report)
 
        if(report.Disposition){
-        pdf = createEngPDF()
+        pdf = createEngPDF(report)
        }
 
        if(report.purchaseDecision){
-
+            pdf = createPurchasingPDF(report)
        }
         
+       console.log(pdf)
         return pdf;
 
 }
 
-function createQaPDF(reportNumber){ // if only QA section is complete
-    let report = getReport(reportNumber);
+function createQaPDF(report){ // if only QA section is complete
+    
     let pdf = {
         content: [
             logo(),
@@ -103,8 +104,8 @@ function createQaPDF(reportNumber){ // if only QA section is complete
     return pdf;
 }
 
-function createEngPDF(reportNumber){ // if eng section is complete but purchasing is not
-    let report = getReport(reportNumber);
+function createEngPDF(report){ // if eng section is complete but purchasing is not
+ 
     let pdf = {
         content: [
             logo(),
@@ -121,8 +122,7 @@ function createEngPDF(reportNumber){ // if eng section is complete but purchasin
     return pdf;
 }
 
-function createPurchasingPDF(reportNumber){
-    let report = getReport(reportNumber);
+function createPurchasingPDF(report){
     let pdf = {
         content: [
             logo(),
@@ -132,13 +132,16 @@ function createPurchasingPDF(reportNumber){
             ...qaFooter(report),   
             ...engHeader(report),
             ...engDisposition(report),
-            ...engFooter(report)
+            ...engFooter(report),
+            ...purchasingPreliminaryDecision(report),
+            ...purchasingFollowUpType(report),
+            ...PurchasingFooter(report)
         ]
     }
     return pdf;
 }
 
-function createPurchasingFooter(report){
+function PurchasingFooter(report){
     return [
         {columns:[
             {table:{body:[
@@ -177,8 +180,8 @@ function engDisposition(report){
         {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ], margin:[0, 5, 0, 25]},
         {table:{body:[
                     ["Does the Drawing Require Updating", report.drawingToUpdate ? checkBox() : ""],
-                    ["Original Rev. Number", report.origRevNo || engTemp.originalRevNo],
-                    ["Updated Rev. Number", report.UpdatedRev || engTemp.updatedRevNo],
+                    ["Original Rev. Number", report.origRevNum || engTemp.originalRevNo],
+                    ["Updated Rev. Number", report.updatedRev || engTemp.updatedRevNo],
                     ["Revision Date", report.RevisionDate]
                 ], margin: [0, 0, 40, 0]}}
     ]
@@ -188,7 +191,7 @@ function engFooter(report){
     return [
 
                 {text:"\nName of Engineer: " + report.nameOfEngineer},
-                {text:"Date " + report.date}
+                {text:"Date: " + report.engDate}
             ]
 
 }
@@ -196,7 +199,6 @@ function engFooter(report){
 export function qaDescriptions(report) {
     return {
 
-                style: 'tableExample',
                 margin:[ 0, 20, 0, 0 ],
                 table: {
 
@@ -216,27 +218,6 @@ export function qaDescriptions(report) {
                         ]
                     ]
                 },
-                layout: {
-                    //hLineWidth: function(i, node) {
-                    //  return (i === 0 || i === node.table.body.length) ? 2 : 1;
-                    //},
-                    //vLineWidth: function(i, node) {
-                    //  return (i === 0 || i === node.table.widths.length) ? 2 : 1;
-                    //},
-                    hLineColor: function (i, node) {
-                        return (i === 0 || i === node.table.body.length) ? 'black' : 'gray';
-                    },
-                    vLineColor: function (i, node) {
-                        return (i === 0 || i === node.table.widths.length) ? 'black' : 'gray';
-                    },
-                   //  paddingLeft: function(i, node) { return 40; },
-                   //   paddingRight: function(i, node) { return 40; },
-                   //   paddingTop: function(i, node) { return 20; },
-                   // paddingBottom: function(i, node) { return 20; }
-                }
-
-        ,
-
         defaultStyle: {
             // alignment: 'justify'
         }
@@ -322,4 +303,51 @@ function topTable(report){
             {text: report.status, style:"header", bold:true},
         ],]}}
     ],  margin:[0, 0, 0, 45]}
+}
+
+function purchasingPreliminaryDecision(report){
+    return [{canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ], margin:[0, 5, 0, 40]},
+        {text:"Purchasings Preliminary Decision", style:"header", fontSize:16, color:blue},
+        {columns:[
+            {table:{body:[
+                        [{text:"Use As-Is",fillColor:blue}, report.purchaseDecision === "In-House Rework" ? checkBox() : ""]
+                    ]}},
+            {table:{body:[
+                        [{text:"Repair",fillColor:blue}, report.purchaseDecision === "Repair" ? checkBox() : ""]
+                    ]}},
+            {table:{body:[
+                        [{text:"Rework",fillColor:blue}, report.purchaseDecision === "Rework" ? checkBox() : ""]
+                    ]}},
+            {table:{body:[
+                        [{text:"Scrap",fillColor:blue}, report.purchaseDecision === "Scrap" ? checkBox() : ""]
+                    ]}}
+        ], margin:[0, 5, 0, 0]}
+    ]
+}
+
+
+function purchasingFollowUpType(report){
+if(report.followUpRequired){
+    console.log(report.followUpDate)
+    console.log(report.followUpType)
+    console.log(report.followUpRequired)
+    return [
+        {text:"Followup Required: Yes", style:"header"},
+        {table:{body:[
+            [{text:"Followup Date",fillColor:blue}, report.followUpDate]
+        ]}},
+        {table:{body:[
+            [{text:"Followup Type",fillColor:blue}, report.followUpType]
+        ]}},
+        {table:{body:[
+            [{text:"Purchase Date",fillColor:blue}, report.purchaseDate]
+        ]}},
+       
+    ]
+}
+else{
+    return [
+        {text:"Followup Required: No" },
+    ]
+}
 }

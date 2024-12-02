@@ -9,7 +9,7 @@ import { convertToPDF } from "../../Data/createPDF.js";
 import { redirectHome, redirectViewAllReports } from "../../redirection/redirect.js";
 import { createModal } from "../Modal.js";
 import { EngineeringReport, PurchasingReport } from "./Reports.js";
-import { checkEngineeringInProgress, validateAdmin, addEngButton, addPurchasingButton, checkPurchasingInProgress, bindAdditionButtons, shouldRevealPurchasing, shouldRevealEngineering, createQAReport, addEngReportData } from "./admin.js";
+import { checkEngineeringInProgress, validateAdmin, addEngButton, addPurchasingButton, checkPurchasingInProgress, bindAdditionButtons, shouldRevealPurchasing, shouldRevealEngineering, createQAReport, addEngReportData, addPurchasingReportData } from "./admin.js";
 import { RedirectWithSuccessModal } from "./successModal.js";
 
 export let tempImageStorage = []
@@ -130,14 +130,7 @@ export function ReportView(report, action){
             if(report.status === "purchasing" && (app.employee.department === "purchasing")){
                 const pData = getPurchasingFormData()
                 const newReport = {...report}
-                newReport.purchaseDecision = pData.purchaseDecision
-                newReport.CarRaised = pData.CarRaised.checked
-                newReport.CarNum = pData.CarNum.value
-                newReport.operationManager = app.employee.firstName +  " " + app.employee.lastName
-                newReport.followUpType = pData.followUpType.options[pData.followUpType.selectedIndex]
-                newReport.followUpRequired = pData.followUpRequired.checked
-                newReport.purchaseData = pData.purchaseDate.value
-                newReport.status = "closed"
+                addPurchasingReportData(newReport)
 
                 addImagesToReport(newReport)
                 clearImageStorage()

@@ -15,25 +15,25 @@ export function EngineeringReport(report, engiReadOnly, targetID = null, hidden=
                     <ul class= "col-2">
                     
                         <li>
-                            <input ${engiReadOnly? "readonly" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
+                            <input ${engiReadOnly? "disabled" : ""} id="rad-use-as-is" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-use-as-is" value="useAsIs" name="rad-engiReview"
                             ${report?.engineeringReview === "useAsIs"? 'checked' : ''}>
                             <label for="rad-use-as-is" id="lbl-use-as-is">Use as is</label>
                             <label class="error-label"></label>
                         </li>
                         <li>
-                            <input required ${engiReadOnly? "readonly" : ""} id="rad-repair" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
+                            <input required ${engiReadOnly? "disabled" : ""} id="rad-repair" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-repair" value="Repair" name="rad-engiReview"
                             ${report?.engineeringReview === "Repair"? 'checked' : ''}>
                             <label for="rad-repair" id="lbl-repair">Repair</label>
                             <label  class="error-label"></label>
                         </li>
                         <li>
-                            <input required ${engiReadOnly? "readonly" : ""} id="rad-rework" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
+                            <input required ${engiReadOnly? "disabled" : ""} id="rad-rework" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-rework" value="Rework" name="rad-engiReview"
                             ${report?.engineeringReview === "Rework"? 'checked' : ''}>
                              <label for="rad-rework" id="lbl-rework">Rework</label>
                             <label  class="error-label"></label>
                         </li>
                         <li>
-                            <input required ${engiReadOnly? "readonly" : ""} id="rad-scrap" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
+                            <input required ${engiReadOnly? "disabled" : ""} id="rad-scrap" aria-errormessage="engineering-review-radio-error" type="radio" aria-describedby="lbl-scrap" value="Scrap" name="rad-engiReview"
                             ${report?.engineeringReview === "Scrap"? 'checked' : ''}>
                             <label for="rad-scrap" id="lbl-scrap">Scrap</label>
                             <label id="engineering-review-radio-error" class="error-label"></label>

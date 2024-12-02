@@ -141,7 +141,7 @@ tbody tr {
  
  
 /*Bread crumb stuff*/
-#bread-crumbs{    
+/* #bread-crumbs{    
    padding:0.125rem;
 }
  
@@ -180,7 +180,7 @@ a.selected-view {
 #bread-crumbs ul li:after{
     content:" /";
     color: var(--color-breadcrumb-after);
-}
+} */
 
 
  
@@ -271,6 +271,7 @@ table.ncr-list a:hover {
     justify-content: center;
     align-items: center;
     gap: 0.3125rem;
+    margin-top: 1rem;
     margin-bottom: 4.375rem;
 }
  
@@ -347,17 +348,17 @@ h2 {
     color: var(--color-secondary);
 } */
  
-h3 {
+/* h3 {
     font-family: "Montserrat", cursive;
     font-weight: 400;
     font-size: 2.1875rem;
     text-align: center;
 }
-
+ */
 
 
 /* Input Styles */
-input[type="text"],
+/* input[type="text"],
 input[type="password"] {
     font: 0.9375rem/1.5rem var(--font-secondary);
     width: 100%;
@@ -367,7 +368,7 @@ input[type="password"] {
  
 input[type="password"], #username{
     color: var(--color-login-input);
-}
+} */
 /* =========================
    Animation Styles (Global)
    ========================= */
@@ -550,11 +551,11 @@ input[type="checkbox"]:checked:before{
    ========================= */
    /* Form Styles */
 
-   input#username {
+/*    input#username {
     margin-top: 0.938rem;
-}
+} */
 
-.login-form {
+/* .login-form {
     max-width: 25rem;
     min-height: 18.75rem;
     margin: 0 auto;
@@ -562,25 +563,25 @@ input[type="checkbox"]:checked:before{
     padding: 3.125rem 2.5rem;
     border-radius: 0.5rem;
     border:none;
-   /*  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0.375rem 0.9375rem var(--color-black);
     height: 40vh;
-}
+} */
 
 /* .login-container {
     background-color: var(--color-white);
     height: 40vh;
 } */
  
-.login-logo {
+/* .login-logo {
     display: block;
     justify-self: center;
     height: 8vh;
     width: auto;
     padding-bottom: 2vh;
 }
- 
-.remember-me {
+  */
+/* .remember-me {
     display: flex;
     align-items: center;
     margin-bottom: 1.25rem;
@@ -592,34 +593,34 @@ input[type="checkbox"]:checked:before{
 
 .remember-me label {
     color: var(--color-black);
-}
+} */
  
 /* .login-btn {
     border: solid 1px var(--color-white);
 } */
- 
+/*  
 .login-btn-container{
     display: flex;
     justify-content: center;
 }
- 
+  */
 /* .login-btn:hover {
     background-color: #407bbf;
 } */
  
-.forgot-password {
+/* .forgot-password {
     text-align: center;
     margin-top: 0.625rem;
-}
+} */
  
-.forgot-password a {
+/* .forgot-password a {
     color: var(--color-login-input);
     text-decoration: none;
 }
  
 .forgot-password a:hover {
     text-decoration: underline;
-}
+} */
  
 /* =========================
    Animations (Global)
@@ -683,7 +684,7 @@ input[type="checkbox"]:checked:before{
     padding: 0 0 15px 0;
 } */
 
-.qa-left-container,
+/* .qa-left-container,
 .qa-right-container,
 .engi-right-container,
 .engi-top-container,
@@ -693,13 +694,15 @@ input[type="checkbox"]:checked:before{
     padding: 1.875rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.25rem 0.5rem var(--color-black);
- }
+ } */
 
 
- .engi-top-container
+/*  .engi-top-container
  .engi-right-container{
     width: 90%;
- }
+ } */
+
+
  .qa-left-container, .purchasing-left-container {
     min-width: 17.1875rem;
     max-width: 25rem;
@@ -838,14 +841,14 @@ textarea {
  
 
 
-legend{
+/* legend{
     color: var(--color-black);
     padding: 0.1875rem;
     font-size: 1.125rem;
-}
+} */
 
 
-.qa-right-container label,
+/* qa-right-container label,
 .qa-right-container div:nth-child(2) textarea,
 .engi-right-container textarea{
     width: 100%;
@@ -874,7 +877,7 @@ legend{
 }
 
 .qa-labels label{
-    color: var(--color-black);
+    color: var(--color-ncr); 
     display:inline-block;
     width: 100%;
 }
@@ -885,28 +888,18 @@ legend{
     width: 1.25rem;
     vertical-align: middle;
    margin-right: 0.438rem;
-  }
+  } */
 
   
-  .qa-left-container fieldset{
-    color: var(--color-black);
-    vertical-align: middle;
-    border: 0;
-  }
-   
-  .engi-top-container fieldset{
-    color: var(--color-black);
-    border: 0;
-  }
 
-  .sap-width input[type="number"]{
+ /*  .sap-width input[type="number"]{
     width: 6.25rem;
     margin-right: 0.313rem;
   }
 
   .item-width input[type="text"]{
     width: 18.75rem;
-  }
+  } */
 
   .no-border{
     display:flex; /* align input boxes beside each other */
@@ -922,7 +915,7 @@ legend{
     margin: 0 0 0 5px;
   } */
 
-  .qa-checkbox-align input[type="checkbox"]{
+ /*  .qa-checkbox-align input[type="checkbox"]{
     vertical-align: middle;
     float: left;
     margin-right: 0.625rem;
@@ -932,9 +925,9 @@ legend{
     vertical-align: middle;
     float: left;
     margin-right: 0.625rem;
-  }
+  } */
 
-  .qa-checkbox-align {
+  /* .qa-checkbox-align {
     margin-bottom: 0.625rem;
 }
 .eng-checkbox-align {
@@ -944,15 +937,15 @@ legend{
 
 .qa-checkbox-align li, .eng-checkbox-align li{
     margin-bottom: 0.625rem;
-}
+} */
 
 
-.button-container {
+/* .button-container {
     display: flex;
     gap: 0.25rem; 
     justify-content: end; 
     margin-bottom: 0.25rem;
-}
+} */
 
 
 

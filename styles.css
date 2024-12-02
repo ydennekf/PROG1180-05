@@ -234,7 +234,7 @@ table.ncr-list a:hover {
 }
  .home-button-centre{
     display: flex;
-    width: 62.5rem;
+    width: 100%;
     margin: auto;
     padding: 0 1.25rem;
  }
@@ -1165,7 +1165,7 @@ tbody tr {
   width: fit-content;
     background-color:white;
     box-shadow: rgba(149, 157, 165, 0.2) 0rem 0.5rem 1.5rem;
-    border:063rem solid var(--color-primary)
+    border:0.63rem solid var(--color-primary)
 }
 
 

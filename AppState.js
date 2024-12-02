@@ -5,6 +5,7 @@ import { handleLogin } from "./app.js";
 import { _HistoryContext } from "./Components/context/historyContext.js";
 import _StorageContext from "./Components/context/storageContext.js";
 import { loadNavOnLogin } from "./Components/NavBar.js";
+import * as SVG from "./Components/svgs.js";
 
 
 
@@ -49,7 +50,7 @@ function logout(){
 
 function toggleLogout(){
     if(app){
-        document.getElementById('logout').innerHTML = '<button id="logout-btn">Logout</button>'
+        document.getElementById('logout').innerHTML = `<div id="logout-btn" class="nav-icon">${SVG.logoutSVG()}</div>`;
         document.getElementById('logout-btn').addEventListener('click', logout)
     }
     else{

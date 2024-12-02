@@ -4,8 +4,8 @@ import * as SVG from "../svgs.js";
 export function notificationBell(){
     const count =  app.storage.getNewReports().length;
 
-    return`
-        <span class="notification-count">${count}<span>
+    return `
+        ${count === 0 ? "" : `<strong className="notification-count">${count}</strong>`}
         ${SVG.bellSVG()}
     `
 }

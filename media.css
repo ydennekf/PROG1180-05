@@ -23,7 +23,7 @@
 
     main{
         min-width: 90%;
-        background-color: blue;
+       /*  background-color: blue; */
     }
 
 /*  ==================
@@ -56,7 +56,7 @@
 
     main {
         width: 90%;
-        background-color: greenyellow;
+       /*  background-color: greenyellow; */
     }
 
 
@@ -92,7 +92,7 @@
 
       main {
         width: 90%;
-        background-color: yellow;
+       /*  background-color: yellow; */
     }
 
     .iso-header{
@@ -143,7 +143,7 @@
     main {
         width: 90%;
         max-width: 1200px;
-        background-color: lightsalmon;
+        /* background-color: lightsalmon; */
     }
 
     /********************

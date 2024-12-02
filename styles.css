@@ -191,9 +191,11 @@ a.selected-view {
 /* NCR Index View */
  
 table.ncr-list {
-    width: 75rem;
+    width: 90%;
+   /*  width: 75rem; */
     border-collapse: collapse;
-    margin: 0.9375rem 0rem;
+    margin: auto;
+    /* margin: 0.9375rem 0rem; */
 }
  
 table.ncr-list th,
@@ -1057,7 +1059,7 @@ legend{
 
 /* General Table Styling */
 table {
-    width: 100%;                  
+    width: 90%;                  
     border-collapse: collapse;    
     margin-top: 1.25rem;             
     font-family: Arial, sans-serif; 

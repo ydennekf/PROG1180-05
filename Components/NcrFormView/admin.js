@@ -117,12 +117,22 @@ export function validateAdmin(errors, action, report=null){
     // check each portion of the form for data
     // based on the ones with data validate tht portion
     // THIS IS GOING TO BE FUCKING DISGUSTING CODE BRACE YOURSELF IF YOU READ IT :D
-
+    const engineeringNeedsValidtion = document.getElementById('engineering-header')
+    const purchasingNeedsValidation = document.getElementById('purchasing-header')
     if(action === "Create"){
         validateQANumberInputs(errors, getQAFormData())
         validateQAStringInputs(errors, getQAFormData())
         if(errors.get().length === 0){
             report = createQAReport()
+            if(engineeringNeedsValidtion.style.display !== "none"){
+                validateEngiInputs(errors)
+                addEngReportData(report)
+            }
+            if(purchasingNeedsValidation.style.display !== 'none' && engineeringNeedsValidtion.style.display !== 'none'){
+                validatePurchasingInputs(errors) // requires the admin to do the engineering portion first
+                addPurchasingReportData(report)
+            }
+
             RedirectWithSuccessModal(action, report)
         }else{
             errors.expose()
@@ -133,13 +143,6 @@ export function validateAdmin(errors, action, report=null){
 
     validateQANumberInputs(errors, getQAFormData())
     validateQAStringInputs(errors, getQAFormData())
-
-    
-
-   const engineeringNeedsValidtion = document.getElementById('engineering-header')
-   const purchasingNeedsValidation = document.getElementById('purchasing-header')
-
-   
 
    if(engineeringNeedsValidtion.style.display!=="none"){
     

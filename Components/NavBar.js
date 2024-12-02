@@ -145,8 +145,8 @@ export function SearchBar(targetID) {
     let html = `
   <h2>NCR's LOG</h2>
         ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
-        <div class='nav-search'>
-        <ul class='nav-list'>
+        <div class='nav-list'>
+        <ul class='nav-search'>
            
             
          

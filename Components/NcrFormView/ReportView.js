@@ -80,7 +80,8 @@ export function ReportView(report, action){
         clearImageStorage()
     }
 
-    let saveReport = (action) => {
+    let saveReport = (e, action) => {
+        e.preventDefault()
         if(action === "View"){
             redirectViewAllReports()
             return;
@@ -627,7 +628,7 @@ function bindExport(){
 // add event listeners
 //DisplayView()
 document.getElementById("root").innerHTML = html;
-document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(action)});
+document.getElementById('submitBtn').addEventListener('click', (e) => {saveReport(e, action)});
 try{
     document.getElementById(('cancelBtn')).addEventListener('click', (e) => {returnToList()});
 }

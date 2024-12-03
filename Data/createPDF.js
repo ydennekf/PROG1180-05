@@ -335,7 +335,7 @@ if(report.followUpRequired){
         {text:"Followup Required: Yes", style:"header"},
         {table:{body:[
             [{text:"Followup Date",fillColor:blue}, report.followUpDate]
-        ]}, margin:[]},
+        ]}, margin:[0, 25, 0, 0]},
         {table:{body:[
             [{text:"Followup Type",fillColor:blue}, report.followUpType]
         ]}},

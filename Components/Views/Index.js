@@ -8,7 +8,7 @@ import {reportData } from "../../Data/new_reportData.js";
 
 
 export default function Index(){
-    setNotifications()
+
     document.getElementById("root").classList.add("ncr-view")
 
     const html = `
@@ -83,7 +83,7 @@ function indexButtonBindings(){
 
 export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()
-
+    console.log(recent[0])
     const html = `
 
     
@@ -91,7 +91,7 @@ export function RecentReports(targetID = null){
     ${UnsortedHeader()}
      <tbody>
           
-        ${recent.length > 0 ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"} 
+        ${recent.length > 0 && recent[0] != null ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"} 
         </tbody>
     </table>
       
@@ -123,15 +123,4 @@ function UnsortedHeader(){
 
 
 
-}
-
-function setNotifications() {
-
-    for(let r = 0; reportData.length > r ; r++){
-
-        if(reportData[r].status === app.employee.department){
-
-            app.storage.pushNewReport(reportData[r].ncrNumber, reportData[r].status)
-        }
-    }
 }

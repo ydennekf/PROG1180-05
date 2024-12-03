@@ -1,4 +1,5 @@
 import { append, injectOrReturn } from "./utils/utils.js"
+import * as SVG from "./svgs.js";
 
 
 
@@ -18,13 +19,14 @@ function swapTheme(){
     }
     const e = document.getElementById("accessibility-toggle")
 
-    if(theme === "light"){
+    if(theme === "light") {
         localStorage.setItem('theme', "dark")
-        e.innerText = "Enable Light Mode"
+        e.innerText = `dark`
+
         document.documentElement.setAttribute('data-theme', "dark");
-    }else{
+    } else {
         localStorage.setItem('theme', "light")
-        e.innerText = "Enable Dark Mode"
+        e.innerText = `light`
         document.documentElement.setAttribute('data-theme', "light"); 
     }
 }

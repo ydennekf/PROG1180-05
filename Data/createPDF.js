@@ -1,5 +1,5 @@
 import { getEmployeeByUsername } from "./employeeData.js";
-import { getReport } from "./new_reportData.js"
+import { getReport } from "./new_reportData.js";
 import { app } from "../AppState.js";
 
 function logo(){

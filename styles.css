@@ -1140,9 +1140,8 @@ h2 {
 
 #modal {
     position:absolute;
-    top:10%;
-    left: 0; 
-  right: 0; 
+    bottom:10%;
+    left: 20px;
   margin-inline: auto; 
   width: fit-content;
     background-color:white;

@@ -22,7 +22,7 @@
     }
 
     main{
-        min-width: 90%;
+        /*min-width: 90%;*/
        /*  background-color: blue; */
     }
 
@@ -55,7 +55,7 @@
     }
 
     main {
-        width: 90%;
+        /*width: 90%;*/
        /*  background-color: greenyellow; */
     }
 
@@ -91,7 +91,7 @@
       }
 
       main {
-        width: 90%;
+        /*width: 90%;*/
        /*  background-color: yellow; */
     }
 
@@ -141,8 +141,8 @@
 
     
     main {
-        width: 90%;
-        max-width: 1200px;
+        /*width: 90%;*/
+        /*max-width: 1200px;*/
         /* background-color: lightsalmon; */
     }
 
@@ -161,17 +161,15 @@
     nav span {
         font-size: 14px;
       }
-    .nav-list{
-        grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;
-    }
+    /*.nav-list{*/
+    /*    grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;*/
+    /*}*/
     
     #bread-crumbs a{
         font-size: 14px;
     }
  
-    .user-info{
-        justify-self: end;
-    }
+
 
     .foot #btn-cancel {
         margin-right: 500px; 

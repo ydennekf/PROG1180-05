@@ -15,7 +15,10 @@ import { convertToPDF } from "../Data/createPDF.js";
 
 export function reportPreview  (reportData) {
 
-    let startDate = new Date(reportData.date);
+
+
+
+let  startDate = new Date(reportData.date);
 
 
         return`

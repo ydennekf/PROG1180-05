@@ -17,7 +17,7 @@ function bindNav() {
     const create = document.getElementById("_create-ncr")
     const view = document.getElementById("_view-ncr")
     const img = document.getElementById('crossfire-logo')
-    const bell = document.getElementById('notifications')
+    const bell = document.getElementById('_notifications')
     //document.getElementById('crossfire-logo')
 
     view.addEventListener("click", e => {
@@ -54,7 +54,7 @@ function bindNav() {
 
 export function loadNavOnLogin() {
     const html = `
-    <ul class='nav-list'>
+    <ul class='nav-link-list'>
                
             
                 <li id="_home" class="nav-icon">

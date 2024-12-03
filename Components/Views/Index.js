@@ -53,7 +53,7 @@ function RoleIndexButtons(){
         <div class= "home-button-centre">
             <div class= "home-ncr-button">
                 <button id="create-report-btn" class="large-icon">
-                    ${createSVG()}
+                    ${createSVG()}<br/>
                     Create NCR
                 </button>
                 <button id="view-reports" class="large-icon">
@@ -62,7 +62,7 @@ function RoleIndexButtons(){
                     NCR Log
                 </button>
                 <button class="large-icon">
-                    ${documentSVG()}
+                    ${documentSVG()}<br/>
                     Reporting
                 </button>
             </div>    
@@ -83,7 +83,7 @@ function indexButtonBindings(){
 
 export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()
-    console.log(recent[0])
+
     const html = `
 
     

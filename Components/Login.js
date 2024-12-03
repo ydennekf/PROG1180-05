@@ -25,11 +25,12 @@ export let  createLogin = (targetID, onLogin) => {
                 </div>
                 <div class="login-btn-container">
                     <button type="submit" class="login-btn">LOG IN</button>
-                </div>  
-            </form>
-            <div class="forgot-password">
+                </div>
+                <div class="forgot-password">
                 <a href="#">Forgot Password?</a>
-            </div>`;
+            </div>  
+            </form>
+            `;
     document.getElementById(targetID).className.replace()
     document.getElementById(targetID).innerHTML = login;
     let component = document.getElementById(targetID);

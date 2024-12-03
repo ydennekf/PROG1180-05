@@ -46,7 +46,7 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
        const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
        console.log(idx + "Index")
        if(idx >= 0){ // if the reports already in recent it removes the report and then pushes it to the front
-        console.log("working")
+
         reports = reports.filter(r => r.ncrNumber !== reportNumber)
        }
        

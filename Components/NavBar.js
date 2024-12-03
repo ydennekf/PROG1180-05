@@ -10,14 +10,14 @@ import {ReportList, renderList} from "./ReportList.js";
 
 import {ReportView} from "./NcrFormView/ReportView.js";
 import {redirectHome, redirectNewReport as redirectNewNCR, redirectViewAllReports} from "../redirection/redirect.js";
-import {append} from "./utils/utils.js";
+import {append, setMobileMediaQuery} from "./utils/utils.js";
 
 function bindNav() {
     const home = document.getElementById('_home')
     const create = document.getElementById("_create-ncr")
     const view = document.getElementById("_view-ncr")
     const img = document.getElementById('crossfire-logo')
-    const bell = document.getElementById('notifications')
+    const bell = document.getElementById('_notifications')
     //document.getElementById('crossfire-logo')
 
     view.addEventListener("click", e => {
@@ -54,7 +54,7 @@ function bindNav() {
 
 export function loadNavOnLogin() {
     const html = `
-    <ul class='nav-list'>
+    <ul class='nav-link-list'>
                
             
                 <li id="_home" class="nav-icon">
@@ -108,7 +108,7 @@ export function clearNavOnLogout() {
     document.getElementById("_view-ncr").remove()
     document.getElementById("_view_report").remove()
     document.getElementById("logout").remove()
-    document.getElementById("emp-info").remove()
+    document.getElementById("_notifications").remove()
 }
 
 
@@ -133,6 +133,8 @@ export function NavBar() {
     `
 
     document.getElementById('nav-wrapper').innerHTML = html;
+
+    setMobileMediaQuery();
 
 }
 
@@ -320,6 +322,3 @@ export function SearchBar(targetID) {
 
 }
 
-// <div id="emp-info" className="nav-icon">
-//     <label> logged in as - ${app.employee.name} - ${app.employee.department}</label>
-// </div>

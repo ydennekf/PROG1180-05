@@ -32,7 +32,7 @@ export function ReportList(targetID, user, Reports, page = 1){
     currentPage = page;
 
     let ReportList = `
-    <div id="report-filtering"></div>
+    <div id="report-filtering" class="filter-container"></div>
     <table class ="ncr-list">
     
         ${reportListHeader()}

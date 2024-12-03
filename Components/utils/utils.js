@@ -116,3 +116,23 @@ catch{
     return document.createElement("input")
 }
 }
+export function setMobileMediaQuery(){
+    const mediaQuery = window.matchMedia("(max-width: 425px)");
+    mediaQuery.addEventListener("change", (event) => {
+        updateImage(event)
+    });
+}
+
+
+export function updateImage(e) {
+    const target = document.getElementById("crossfire-logo");
+    if(e.matches){
+        target.src = "./image/crossfire-logo-no-bkg-darkmode-mobile.png"
+    }
+    else{
+        target.src = "./image/crossfire-logo-no-bkg-darkmode.png"
+    }
+}
+
+
+

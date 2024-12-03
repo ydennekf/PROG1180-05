@@ -5,7 +5,7 @@ export let  createLogin = (targetID, onLogin) => {
     
     let login =
         `
-        <div class="login-container">
+        
             <form id="loginForm" action="#" method="post" aria-label="loginForm"  class="login-form">
                 <div class="col-1 input-effect">
                     <div class="input-wrapper">
@@ -25,12 +25,12 @@ export let  createLogin = (targetID, onLogin) => {
                 </div>
                 <div class="login-btn-container">
                     <button type="submit" class="login-btn">LOG IN</button>
-                </div>  
-            </form>
-            <div class="forgot-password">
+                </div>
+                <div class="forgot-password">
                 <a href="#">Forgot Password?</a>
-            </div>
-        </div>`;
+            </div>  
+            </form>
+            `;
     document.getElementById(targetID).className.replace()
     document.getElementById(targetID).innerHTML = login;
     let component = document.getElementById(targetID);

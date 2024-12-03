@@ -46,7 +46,7 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
        const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
        console.log(idx + "Index")
        if(idx >= 0){ // if the reports already in recent it removes the report and then pushes it to the front
-        console.log("working")
+
         reports = reports.filter(r => r.ncrNumber !== reportNumber)
        }
        
@@ -60,11 +60,12 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
     }
 
     function pushNewReport(reportNumber, status){
-
+        console.log(reportNumber + " " + status);
         for(let e in employees){
-            if(e.department === status){
+            console.log("Checking! --" + employees[e].department + "-- " + status)
+            if(employees[e].department === status){
 
-                let reports = empPreferences[e.username].newReports
+                let reports = empPreferences[employees[e].username].newReports
 
 
                    const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
@@ -73,13 +74,14 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
 
                     reports = reports.filter(r => r.ncrNumber !== reportNumber)
                    }
+                   console.log(reportNumber)
                 reports.unshift(getReport(reportNumber))
-
+                console.log(reports)
                 reports = reports.filter(item => item.status === e.department)
                 console.log(reports)
-                empPreferences[e.username].newReports = reports;
-
-               // sendEmailToDepartment(e, getReport(reportNumber), "Operations Manager") //
+                empPreferences[employees[e].username].newReports = reports;
+                console.log("Well we made it this far");
+               sendEmailToDepartment(employees[e], getReport(reportNumber), "Operations Manager") //
                 save()
             }
         }
@@ -99,13 +101,13 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
                     message:`There is a new report for the ${employee.department} department.`
             }
 
-            emailjs.send('service_z1gy9ta', 'template_57gd15a', templateParams)
-                .then((response) => {
-                    console.log("SUCCESS", response.status, response.text);
-                },
-                    (error) => {
-                    console.log("FAILED....", error);
-                    });
+            // emailjs.send('service_z1gy9ta', 'template_57gd15a', templateParams)
+            //     .then((response) => {
+            //         console.log("SUCCESS", response.status, response.text);
+            //     },
+            //         (error) => {
+            //         console.log("FAILED....", error);
+            //         });
     }
 
 

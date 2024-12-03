@@ -15,7 +15,10 @@ import { convertToPDF } from "../Data/createPDF.js";
 
 export function reportPreview  (reportData) {
 
-    let startDate = new Date(reportData.date);
+
+
+
+let  startDate = new Date(reportData.date);
 
 
         return`
@@ -35,9 +38,9 @@ export function reportPreview  (reportData) {
          
             <td>
                 <div class='index-view-table-buttons'>
-                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Details</button>
-                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Edit</button>
-                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">Archive</button>
+                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.viewSVG()}<br/>Details</button>
+                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.editSVG()}<br/>Edit</button>
+                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.folderSVG()}<br/>Archive</button>
                     
                 </div>
             </td>

@@ -14,7 +14,11 @@
       Media Queries 
     ==================*/
 
-@media screen and (min-width: 320px) and (max-width:480px){
+@media screen and (min-width: 320px) and (max-width:425px){
+
+    .nav-logo{
+        margin-left: 10px;
+    }
 
     .centre-s{
         margin: auto;
@@ -22,7 +26,8 @@
     }
 
     main{
-        min-width: 90%;
+        padding: 0;
+        /*min-width: 90%;*/
        /*  background-color: blue; */
     }
 
@@ -55,7 +60,7 @@
     }
 
     main {
-        width: 90%;
+        /*width: 90%;*/
        /*  background-color: greenyellow; */
     }
 
@@ -91,7 +96,7 @@
       }
 
       main {
-        width: 90%;
+        /*width: 90%;*/
        /*  background-color: yellow; */
     }
 
@@ -133,16 +138,17 @@
 
 
     .centre-l{
-        max-width: 100%;
-        margin: auto;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
         /* background: greenyellow; */
         
     }
 
     
     main {
-        width: 90%;
-        max-width: 1200px;
+        /*width: 90%;*/
+        /*max-width: 1200px;*/
         /* background-color: lightsalmon; */
     }
 
@@ -161,17 +167,15 @@
     nav span {
         font-size: 14px;
       }
-    .nav-list{
-        grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;
-    }
+    /*.nav-list{*/
+    /*    grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;*/
+    /*}*/
     
     #bread-crumbs a{
         font-size: 14px;
     }
  
-    .user-info{
-        justify-self: end;
-    }
+
 
     .foot #btn-cancel {
         margin-right: 500px; 

@@ -511,6 +511,7 @@ main {
 footer {
     display: inline-block;
     text-align: center;
+    position: static;
     background-color: var(--color-primary);
     color: var(--color-white);
     /* height: 4rem; */ /*this is the cause of the extra space on the bottom of the Footer */
@@ -666,9 +667,9 @@ footer {
     padding: 0 0 0.938rem 0;
 }
 
-.ncr-list{
+/* .ncr-list{
     box-shadow: 0 0.25rem 0.5rem var(--color-black);
-}
+} */
 
 .qa-left-container,
 .qa-right-container,

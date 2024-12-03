@@ -16,6 +16,10 @@
 
 @media screen and (min-width: 320px) and (max-width:480px){
 
+    .nav-logo{
+        margin-left: 10px;
+    }
+
     .centre-s{
         margin: auto;
         /* background: lightblue; */

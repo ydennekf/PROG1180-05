@@ -10,7 +10,7 @@ import {ReportList, renderList} from "./ReportList.js";
 
 import {ReportView} from "./NcrFormView/ReportView.js";
 import {redirectHome, redirectNewReport as redirectNewNCR, redirectViewAllReports} from "../redirection/redirect.js";
-import {append} from "./utils/utils.js";
+import {append, setMobileMediaQuery} from "./utils/utils.js";
 
 function bindNav() {
     const home = document.getElementById('_home')
@@ -108,7 +108,7 @@ export function clearNavOnLogout() {
     document.getElementById("_view-ncr").remove()
     document.getElementById("_view_report").remove()
     document.getElementById("logout").remove()
-    document.getElementById("emp-info").remove()
+    document.getElementById("_notifications").remove()
 }
 
 
@@ -133,6 +133,8 @@ export function NavBar() {
     `
 
     document.getElementById('nav-wrapper').innerHTML = html;
+
+    setMobileMediaQuery();
 
 }
 
@@ -320,6 +322,3 @@ export function SearchBar(targetID) {
 
 }
 
-// <div id="emp-info" className="nav-icon">
-//     <label> logged in as - ${app.employee.name} - ${app.employee.department}</label>
-// </div>

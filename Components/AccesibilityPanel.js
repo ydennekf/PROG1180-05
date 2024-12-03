@@ -26,7 +26,7 @@ function swapTheme(){
         document.documentElement.setAttribute('data-theme', "dark");
     } else {
         localStorage.setItem('theme', "light")
-        e.innerText = `light`
+        e.innerText = 'light'
         document.documentElement.setAttribute('data-theme', "light"); 
     }
 }

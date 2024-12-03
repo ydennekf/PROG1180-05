@@ -461,12 +461,12 @@ nav ul li button{
 ***************************/
 main {
     display: flex;
-    flex-direction: column;
+    margin: auto;
     flex: 1;
-    /*background-color: var( --color-background);*/
+    background-color: var( --color-background);
     color: var(--color-black);
     font-family: var(--font-primary);
-    /*margin: 0 auto;*/
+    margin: auto;
     padding: 2.25rem;
     /*box-shadow: 0 0 0.938rem rgba(0, 0, 0, 0.2);*/
     /*border-radius: 0.5rem;*/
@@ -558,6 +558,17 @@ footer {
  
 .forgot-password a:hover {
     text-decoration: underline;
+}
+
+/**************************************
+        Landing Page
+***************************************/
+
+.ncr-view{
+    max-width: 90%;
+    margin: auto;
+    background-color: var(--color-form);
+    box-shadow: 0 0.25rem 0.5rem var(--color-black);
 }
 
 

@@ -338,7 +338,7 @@ input#username {
 
 body{
     display: flex;
-    height: 100vh;
+    /*height: 100vh;*/
     flex-direction: column;
     -ms-flex-direction: column;
     background-color: var(--color-background);
@@ -543,7 +543,7 @@ nav ul li button{
 ***************************/
 main {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     flex: 1;
     background-color: var( --color-background);
     color: var(--color-black);
@@ -554,7 +554,7 @@ main {
     /*border-radius: 0.5rem;*/
     /*min-height: calc(100vh - 10rem);*/
     transition: all 0.3s ease-in-out;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 

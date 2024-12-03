@@ -50,7 +50,15 @@ function logout(){
 
 function toggleLogout(){
     if(app){
-        document.getElementById('logout').innerHTML = `<div id="logout-btn" class="nav-icon">${SVG.logoutSVG()}</div>`;
+        document.getElementById('logout').innerHTML = `
+               <div id="logout-btn" class="nav-icon">
+                    <div class="tooltip-container">
+                        ${SVG.logoutSVG()}
+                        Logout
+                        <div class="tooltip">Logout User</div>
+                    </div>
+                   
+                </div>`;
         document.getElementById('logout-btn').addEventListener('click', logout)
     }
     else{

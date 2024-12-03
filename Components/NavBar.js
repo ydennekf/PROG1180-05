@@ -59,37 +59,50 @@ export function loadNavOnLogin() {
             
                 <li id="_home" class="nav-icon">
                     
-                    
+                    <div class="tooltip-container">
                     ${SVG.homeSVG()}
                     
                     Home
+                    <div class="tooltip">Return Home</div>
+                    </div>
+                    
+                    
                 </li>
 
                 <li id="_create-ncr" class="nav-icon">
-                   
-                    ${SVG.createSVG()}
+                   <div class="tooltip-container">
+                     ${SVG.createSVG()}
                     
                      Create
+                     <div class="tooltip">Create New NCR</div>
+                   </div>
+                   
+                  
                 </li>
 
                 <li id="_view-ncr" class="nav-icon">
-                    
+                    <div class="tooltip-container">
                     ${SVG.eyeSVG()}
                     
                     Log
+                    <div class="tooltip">NCR Log</div>
+                    </div>
                 </li>
 
                 <li id="_view_report" class="nav-icon">
-                    
+                    <div class="tooltip-container">
                     ${SVG.documentSVG()}
                     
                     Report
+                    <div class="tooltip">View Reporting</div>
+                    </div>
+                    
                 </li>
 
                 <li>
                 
                 <div id="_notifications" class="nav-icon">
-                    <div id="dropdownTrigger">
+                    <div id="dropdownTrigger" class="tooltip-container">
                         ${notificationBell()}
                     </div>
                     <div class="dropdown-content">

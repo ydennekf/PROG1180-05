@@ -122,23 +122,7 @@ tbody tr {
     justify-self: right;
 }
  
-/* Search Container */
-.search-container{
-  display: flex;
-  align-items: center;
-  gap: 0.3125rem;  
-}
- 
-/* .search-container label{
-    color: var(--color-black);
-    font-size:1rem;
-}
-  */
-.search-container input{
-    max-width: 13.125rem;
-    height: 2.5rem;
-}
- 
+
  
 /*Bread crumb stuff*/
 /* #bread-crumbs{    
@@ -276,41 +260,7 @@ table.ncr-list a:hover {
 }
  
 
-/* Search Form */
-.search-record {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.625rem;
-    margin-bottom: 1.25rem;
-}
- 
-input[type="search"] {
-    position: relative;
-    padding: 0.625rem 0.625rem 0.625rem 2.1875rem; /* Combined padding */
-    width: 12.5rem;
-    border: 0.125rem solid #ccc;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
- 
-input[type="search"]::before {
-    content: '';
-    position: absolute;
-    left: 0.625rem;
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
-    width: 0.9375rem;
-    height: 0.9375rem;
-    border: 0.125rem solid #888;
-    border-radius: 50%;
-    border-right: none;
-    border-bottom: none;
-}
- 
-input[type="search"]:focus {
-    border-color: #888;
-}
+
  
 /* Buttons */
 /* button {
@@ -1084,41 +1034,73 @@ tbody tr {
    View NCR's
    ========================= */
 
-
-.filter-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.625rem;
-    border-radius: 0.5rem;
-    max-width: 25rem;
-    margin: 0 auto;
-    box-shadow: var(--color-black);
+/* Container for the entire form */
+h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Label styling */
-.filter-container label {
-    font-size: 0.875rem;
+.nav-search {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 1.25rem; 
+    padding: 1.25rem; 
+}
+
+/* Styling for each search field container */
+.search-container {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.search-container label {
     font-weight: bold;
+    margin-bottom: 0.313rem;
+}
+
+
+.search-container select,
+ .search-container input {
+    height: 2.5rem; 
+    padding: 0.5rem; 
+    font-size: 1rem;
+}
+
+/* Button styling */
+#filter-button {
+    background-color: var(--color-primary);
     color: var(--color-white);
-    margin-bottom: 0.25rem; /* Adds space between label and input field */
-    width: 50%;
+    padding: 0.625rem ;
+    border: none;
+    border-radius: 0.313rem;
+    font-size: 0.875rem;
+    cursor: pointer;
 }
 
 
-
-#status-filter,
-#end-date,
-#start-date,
-#supplier-search-container,
-#ncr-search-container {
+.button-container {
     display: flex;
-    font-size: 95%;
-    flex-direction: column; /* Aligns label above input field */
-    align-items: flex-start; /* Aligns items to the left */
-    margin: 0 auto; 
-    width: 100%;
+    gap: 0.5rem; 
+    justify-content: end; 
+    margin-bottom: 0.5rem;
 }
+
+#filter-button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Optional container styling for better aesthetics */
+#active-filters {
+    margin-top: 1.25rem;
+}
+
+
+
+
 
 
 

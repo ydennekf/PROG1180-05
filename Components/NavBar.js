@@ -145,25 +145,12 @@ export function SearchBar(targetID) {
     let html = `
   <h2>NCR's LOG</h2>
         ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
-        <ul class='filter-list'>
+        <div class='nav-list'>
+        <ul class='nav-search'>
            
             
-            <li id='ncr-search-container' class='search-container'>
-                    
-                    <label for="report-search" style="display:inline;" id="lbl-search">Search by ncr no.</label>
-                    <input type="text"  id="report-search" placeholder="search ncr reports ..."
-                        aria-label="search-description" aria-autocomplete="list" 
-                         tabindex="1">
-                            
-            </li>
-            <li id='supplier-search-container' class='search-container'>
-                    
-                    <label for="supplier-search" style="display:inline;" id="lbl-search">Search by supplier</label>
-                    <input type="text"  id="supplier-search" placeholder="search suppliers ..."
-                        aria-label="search-description" aria-autocomplete="list" 
-                         tabindex="1">
-                            
-            </li>
+         
+           
             <li id='supplier-search-container' class='search-container'>
                 <label for="status-filter" style="display:inline;" id="lbl-search">Status:</label>
                 <select id="status-filter" name="status-filter">
@@ -183,6 +170,24 @@ export function SearchBar(targetID) {
              <li id='supplier-search-container' class='search-container'>
                 <label for="end-date" style="display:inline;" id="lbl-search">End Date:</label>
                 <input type="text" id="end-date" placeholder="Select end date">
+            </li>
+
+             <li id='supplier-search-container' class='search-container'>
+                    
+                    <label for="supplier-search" style="display:inline;" id="lbl-search">Search by supplier</label>
+                    <input type="text"  id="supplier-search" placeholder="search suppliers ..."
+                        aria-label="search-description" aria-autocomplete="list" 
+                         tabindex="1">
+                            
+            </li>
+
+               <li id='ncr-search-container' class='search-container'>
+                    
+                    <label for="report-search" style="display:inline;" id="lbl-search">Search by ncr no.</label>
+                    <input type="text"  id="report-search" placeholder="search ncr reports ..."
+                        aria-label="search-description" aria-autocomplete="list" 
+                         tabindex="1">
+                            
             </li>
             <li>
                 <button id="filter-button">Apply Filters</button>

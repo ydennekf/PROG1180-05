@@ -10,6 +10,7 @@ export function notificationBell(){
     return `
         ${count === 0 ? "" : `<strong class="notification-count">${count}</strong>`}
         ${SVG.bellSVG()}
+        <div class="tooltip">Notifications</div>
     `
 }
 

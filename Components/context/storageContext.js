@@ -77,7 +77,7 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
                    console.log(reportNumber)
                 reports.unshift(getReport(reportNumber))
                 console.log(reports)
-                reports = reports.filter(item => item.status === e.department)
+                // reports = reports.filter(item => item.status === e.department)
                 console.log(reports)
                 empPreferences[employees[e].username].newReports = reports;
                 console.log("Well we made it this far");

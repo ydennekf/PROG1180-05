@@ -43,11 +43,8 @@ export function setNotifyListeners(){
 }
 
 function populateNotifications(notificationList) {
-    const notifications = [
-    { ncrNumber: "NCR001", details: "Issue in production line." },
-    { ncrNumber: "NCR002", details: "Inventory mismatch." },
-    { ncrNumber: "NCR003", details: "Supplier delay reported." },
-];
+    console.log("clicked the bell")
+    const notifications = app.storage.getNewReports();
     notificationList.innerHTML = "";
     notifications.forEach((notification, index) => {
         notificationList.appendChild(notificationItem(notification))

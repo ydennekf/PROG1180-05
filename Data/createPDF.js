@@ -310,7 +310,7 @@ function purchasingPreliminaryDecision(report){
         {text:"Purchasings Preliminary Decision", style:"header", fontSize:16, color:blue},
         {columns:[
             {table:{body:[
-                        [{text:"Use As-Is",fillColor:blue}, report.purchaseDecision === "In-House Rework" ? checkBox() : ""]
+                        [{text:"In-House",fillColor:blue}, report.purchaseDecision === "In-House Rework" ? checkBox() : ""]
                     ]}},
             {table:{body:[
                         [{text:"Repair",fillColor:blue}, report.purchaseDecision === "Repair" ? checkBox() : ""]
@@ -335,7 +335,7 @@ if(report.followUpRequired){
         {text:"Followup Required: Yes", style:"header"},
         {table:{body:[
             [{text:"Followup Date",fillColor:blue}, report.followUpDate]
-        ]}},
+        ]}, margin:[]},
         {table:{body:[
             [{text:"Followup Type",fillColor:blue}, report.followUpType]
         ]}},

@@ -11,19 +11,19 @@ export function createSVG(height=40, width=40, color='#fff'){
     `
 }
 
-export function viewSVG(height=40, width=40, color='#fff'){
+export function viewSVG(ncrNumber){
 
     return `
-<svg width="64px" height="64px" viewBox="0 0 16 16" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg3049" fill="#000000"><g id="SVGRepo_bgCarrier1" stroke-width="0"></g><g id="SVGRepo_tracerCarrier1" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier1"> <metadata id="metadata3054"> <rdf:rdf> <cc:work> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title></dc:title> <dc:date>2021</dc:date> <dc:creator> <cc:agent> <dc:title>Timothée Giet</dc:title> </cc:agent> </dc:creator> <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"></cc:license> </cc:work> <cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"> <cc:permits rdf:resource="http://creativecommons.org/ns#fffReproduction"></cc:permits> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDistribution"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffNotice"></cc:requires> <cc:requires rdf:resource="http://creativecommons.org/ns#fffAttribution"></cc:requires> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDerivativeWorks"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffShareAlike"></cc:requires> </cc:license> </rdf:rdf> </metadata> <g transform="translate(-421.714 -531.79)" id="layer1"> <g id="layer1-4" transform="translate(418.714 -501.571)"> <g id="layer1-9" transform="matrix(-1 0 0 1 22 0)"> <g transform="matrix(-1 0 0 1 22 0)" id="layer1-2"> <path style="opacity:1;fill:#fff;fill-opacity:1;stroke:none" d="M4 1033.362v1h14v-1zm0 2v1h8v-1zm0 4v1h14v-1zm0 2v1h9v-1zm0 4v1h14v-1zm0 2v1h12v-1z" id="path4174"></path> </g> </g> </g> </g> </g></svg>
+<svg data-ncr-number="${ncrNumber}" width="64px" height="64px" viewBox="0 0 16 16" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg3049" fill="#000000"><g id="SVGRepo_bgCarrier1" stroke-width="0"></g><g id="SVGRepo_tracerCarrier1" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier1"> <metadata id="metadata3054"> <rdf:rdf> <cc:work> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title></dc:title> <dc:date>2021</dc:date> <dc:creator> <cc:agent> <dc:title>Timothée Giet</dc:title> </cc:agent> </dc:creator> <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"></cc:license> </cc:work> <cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"> <cc:permits rdf:resource="http://creativecommons.org/ns#fffReproduction"></cc:permits> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDistribution"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffNotice"></cc:requires> <cc:requires rdf:resource="http://creativecommons.org/ns#fffAttribution"></cc:requires> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDerivativeWorks"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffShareAlike"></cc:requires> </cc:license> </rdf:rdf> </metadata> <g transform="translate(-421.714 -531.79)" id="layer1"> <g id="layer1-4" transform="translate(418.714 -501.571)"> <g id="layer1-9" transform="matrix(-1 0 0 1 22 0)"> <g transform="matrix(-1 0 0 1 22 0)" id="layer1-2"> <path style="opacity:1;fill:#fff;fill-opacity:1;stroke:none" d="M4 1033.362v1h14v-1zm0 2v1h8v-1zm0 4v1h14v-1zm0 2v1h9v-1zm0 4v1h14v-1zm0 2v1h12v-1z" id="path4174"></path> </g> </g> </g> </g> </g></svg>
    `
 }
 
-export function eyeSVG(){
-    return `<svg fill="#fff" viewBox="-3.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier2" stroke-width="0"></g><g id="SVGRepo_tracerCarrier2" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier2"> <title>view</title> <path d="M12.406 13.844c1.188 0 2.156 0.969 2.156 2.156s-0.969 2.125-2.156 2.125-2.125-0.938-2.125-2.125 0.938-2.156 2.125-2.156zM12.406 8.531c7.063 0 12.156 6.625 12.156 6.625 0.344 0.438 0.344 1.219 0 1.656 0 0-5.094 6.625-12.156 6.625s-12.156-6.625-12.156-6.625c-0.344-0.438-0.344-1.219 0-1.656 0 0 5.094-6.625 12.156-6.625zM12.406 21.344c2.938 0 5.344-2.406 5.344-5.344s-2.406-5.344-5.344-5.344-5.344 2.406-5.344 5.344 2.406 5.344 5.344 5.344z"></path> </g></svg>`
+export function eyeSVG(ncrNumber){
+    return `<svg data-ncr-number="${ncrNumber}" fill="#fff" viewBox="-3.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier2" stroke-width="0"></g><g id="SVGRepo_tracerCarrier2" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier2"> <title>view</title> <path d="M12.406 13.844c1.188 0 2.156 0.969 2.156 2.156s-0.969 2.125-2.156 2.125-2.125-0.938-2.125-2.125 0.938-2.156 2.125-2.156zM12.406 8.531c7.063 0 12.156 6.625 12.156 6.625 0.344 0.438 0.344 1.219 0 1.656 0 0-5.094 6.625-12.156 6.625s-12.156-6.625-12.156-6.625c-0.344-0.438-0.344-1.219 0-1.656 0 0 5.094-6.625 12.156-6.625zM12.406 21.344c2.938 0 5.344-2.406 5.344-5.344s-2.406-5.344-5.344-5.344-5.344 2.406-5.344 5.344 2.406 5.344 5.344 5.344z"></path> </g></svg>`
 }
 
-export function documentSVG(){
-    return `<svg width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g id="SVGRepo_bgCarrier3" stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
+export function documentSVG(ncrNumber){
+    return `<svg data-ncr-number="${ncrNumber}" width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g id="SVGRepo_bgCarrier3" stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
 }
 
 export function bellSVG() {
@@ -46,8 +46,8 @@ export function logoutSVG(){
 </svg>`
 }
 
-export function editSVG() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+export function editSVG(ncrNumber) {
+    return `<svg data-ncr-number="${ncrNumber}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
   <g id="Edit">
     <g>
@@ -253,8 +253,8 @@ export function userSVG() {
 </svg>`
 }
 
-export function folderSVG() {
-    return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+export function folderSVG(ncrNumber) {
+    return`<svg data-ncr-number="${ncrNumber}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
   <g id="Folder_On" data-name="Folder On">
     <path d="M19.435,19.94H4.565a2.5,2.5,0,0,1-2.5-2.5V6.56a2.5,2.5,0,0,1,2.5-2.5h5.27A2.5,2.5,0,0,1,12.292,6.1l.042.222a.5.5,0,0,0,.491.408h6.61a2.5,2.5,0,0,1,2.5,2.5v8.21A2.5,2.5,0,0,1,19.435,19.94ZM4.565,5.06a1.5,1.5,0,0,0-1.5,1.5V17.44a1.5,1.5,0,0,0,1.5,1.5h14.87a1.5,1.5,0,0,0,1.5-1.5V9.23a1.5,1.5,0,0,0-1.5-1.5h-6.61a1.5,1.5,0,0,1-1.474-1.225l-.042-.221A1.5,1.5,0,0,0,9.835,5.06Z"/>

@@ -135,6 +135,7 @@ function createPurchasingPDF(report){
             ...engFooter(report),
             ...purchasingPreliminaryDecision(report),
             ...purchasingFollowUpType(report),
+            ...purchasingCAR(report),
             ...PurchasingFooter(report)
         ]
     }
@@ -143,10 +144,9 @@ function createPurchasingPDF(report){
 
 function PurchasingFooter(report){
     return [
-        {columns:[
-            {table:{body:[
-                [{text:"Operations Manager",fillColor:blue}, report.operationManager]]}}
-        ]}
+
+        {text:"\nOperations Manager: " + report.operationManager},
+        {text:"Date: " + report.purDate}
     ]
 }
 /* ENGINEERING */
@@ -332,7 +332,9 @@ if(report.followUpRequired){
     console.log(report.followUpType)
     console.log(report.followUpRequired)
     return [
-        {text:"Followup Required: Yes", style:"header"},
+        {table:{body:[
+            [{text:"Followup Required?",fillColor:blue}, "Yes"]
+        ]}},
         {table:{body:[
             [{text:"Followup Date",fillColor:blue}, report.followUpDate]
         ]}, margin:[0, 25, 0, 0]},
@@ -347,7 +349,21 @@ if(report.followUpRequired){
 }
 else{
     return [
-        {text:"Followup Required: No" },
+        {table:{body:[
+            [{text:"Followup Required?",fillColor:blue}, "No"]
+        ]}}
     ]
 }
+}
+
+function purchasingCAR(report){
+    return [
+        {table:{body:[
+            [{text:"Car Raised",fillColor:blue}, report.engineeringReview === "useAsIs" ? checkBox() : ""]
+        ]}},
+        {table:{body:[
+            [{text:"Car Number",fillColor:blue}, report.CarNumber || checkBox()]
+        ]}}
+        ]
+    
 }

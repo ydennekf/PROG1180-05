@@ -56,7 +56,7 @@ function populateNotifications(notificationList) {
     console.log("clicked the bell")
     const notifications = app.storage.getNewReports();
     notificationList.innerHTML = "";
-    notifications.forEach((notification, index) => {
+    notifications.forEach((notification) => {
         notificationList.appendChild(notificationItem(notification))
     })
 

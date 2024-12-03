@@ -1,6 +1,6 @@
 import {app, initApp} from "../AppState.js"
 import * as SVG from "./svgs.js";
-import {notificationBell} from "./NavBar/notificationBell.js"
+import {notificationBell, setNotifyListeners} from "./NavBar/notificationBell.js"
 import {notificationItem} from "./NavBar/notificationItem.js";
 import {qualityAssuranceForm} from "./NcrFormView/QualityAssuranceForm.js";
 
@@ -89,7 +89,13 @@ export function loadNavOnLogin() {
                 <li>
                 
                 <div id="_notifications" class="nav-icon">
-                ${notificationBell()}
+                    <div id="dropdownTrigger">
+                        ${notificationBell()}
+                    </div>
+                    <div class="dropdown-content">
+                        <ul id="notificationList">
+                        </ul>
+                    </div>
                 </div>
                 </li>
 
@@ -100,6 +106,7 @@ export function loadNavOnLogin() {
     document.getElementById("nav-links").innerHTML = "";
     append("nav-links", html)
     bindNav()
+    setNotifyListeners()
 }
 
 export function clearNavOnLogout() {

@@ -69,7 +69,7 @@ function openReportDetails(ncrNumber){
     app.storage.pushRecentReport(ncrNumber)
 }
 
-function openReportEditor(ncrNumber){
+export function openReportEditor(ncrNumber){
     if(app === undefined){
         // user not logged in
         return;

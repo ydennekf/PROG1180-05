@@ -2,11 +2,13 @@ import {app} from "../../AppState.js";
 import * as SVG from "../svgs.js";
 
 export function notificationItem(notification) {
-    return `
-    <li class="notification-list-item">
-        
-        <button>${notification.ncrNumber}</button>
-        <button class="icon remove-item">${SVG.minusSVG()}</button>
-    </li>
-    `
+    const listItem = document.createElement("li");
+    listItem.className = "notification-list-item";
+
+    listItem.innerHTML = `
+        <button class="notify-ncr-number" data-ncr="${notification.ncrNumber}">${notification.ncrNumber}</button>
+        <button class="icon remove-item" data-minus-ncr="${notification.ncrNumber}">${SVG.minusSVG()}</button>
+    `;
+
+    return listItem;
 }

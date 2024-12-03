@@ -11,6 +11,7 @@ import { createModal } from "../Modal.js";
 import { EngineeringReport, PurchasingReport } from "./Reports.js";
 import { checkEngineeringInProgress, validateAdmin, addEngButton, addPurchasingButton, checkPurchasingInProgress, bindAdditionButtons, shouldRevealPurchasing, shouldRevealEngineering, createQAReport, addEngReportData, addPurchasingReportData } from "./admin.js";
 import { RedirectWithSuccessModal } from "./successModal.js";
+import { AutoFillButtons, bindAutoFillButtons } from "./AutoFillButtons.js";
 
 export let tempImageStorage = []
 export function clearImageStorage(){
@@ -546,6 +547,7 @@ setReadonly()
 <button id="cancelBtn" >Cancel</button>
 ${app.employee.department === "admin" && (action === "Create" || action === "Edit") && !checkEngineeringInProgress() ? `${addEngButton()}` : ""}
 ${app.employee.department === "admin" &&  (action === "Create" || action === "Edit") && !checkPurchasingInProgress() ? `${addPurchasingButton()}` : ""}
+${AutoFillButtons()}
 </div>
 
 </form>
@@ -646,6 +648,7 @@ bindUpload()
 bindAdditionButtons()
 shouldRevealPurchasing(action, report, purchaseReadOnly)
 shouldRevealEngineering(action, report, engiReadOnly)
+bindAutoFillButtons()
 try{
     document.getElementById('close-ncr').addEventListener('click', ()=> {
         report.status = "Closed"

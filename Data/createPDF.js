@@ -359,10 +359,10 @@ else{
 function purchasingCAR(report){
     return [
         {table:{body:[
-            [{text:"Car Raised",fillColor:blue}, report.engineeringReview === "useAsIs" ? checkBox() : ""]
+            [{text:"Car Raised",fillColor:blue}, report.CarRaised ? checkBox() : ""]
         ]}},
         {table:{body:[
-            [{text:"Car Number",fillColor:blue}, report.CarNumber || checkBox()]
+            [{text:"Car Number",fillColor:blue}, report.CarNum || ""]
         ]}}
         ]
     

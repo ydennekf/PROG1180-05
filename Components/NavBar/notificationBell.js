@@ -8,8 +8,10 @@ export function notificationBell(){
     const count =  app.storage.getNewReports().length;
 
     return `
-        ${count === 0 ? "" : `<strong class="notification-count">${count}</strong>`}
+       
         ${SVG.bellSVG()}
+        New
+        ${count === 0 ? "" : `<strong class="notification-count">${count}</strong>`}
         <div class="tooltip">Notifications</div>
     `
 }

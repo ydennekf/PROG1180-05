@@ -2,6 +2,7 @@ import {app} from "../../AppState.js";
 import * as SVG from "../svgs.js";
 import {notificationItem} from "./notificationItem.js";
 import {openReportEditor} from "../ReportPreview.js";
+import {employees} from "../../Data/employeeData.js";
 
 export function notificationBell(){
     const count =  app.storage.getNewReports().length;
@@ -34,7 +35,16 @@ export function setNotifyListeners(){
         })
         closeBtns.forEach(e => {
             e.addEventListener('click', (ev) => {
-                ev.target.parentElement.remove();
+                const targetA = ev.target.parentElement;
+                targetA.parentElement.remove();
+                let notes = app.storage.getNewReports();
+                notes = notes.filter(r => r.ncrNumber === ev.target.dataset.ncr);
+                let empPref = localStorage.getItem('preferences')
+                const index = employees.findIndex((c) => c.username === app.employee.username);
+                console.log(index);
+                console.log(empPref[index]);
+
+
                 // also remove this report from the newReport list in emp prefs
             })
         })

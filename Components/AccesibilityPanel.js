@@ -21,12 +21,12 @@ function swapTheme(){
 
     if(theme === "light") {
         localStorage.setItem('theme', "dark")
-        e.innerText = `dark`
+        e.innerHTML = `${SVG.moonSVG()}`
 
         document.documentElement.setAttribute('data-theme', "dark");
     } else {
         localStorage.setItem('theme', "light")
-        e.innerText = 'light'
+        e.innerHTML = `${SVG.sunSVG()}`
         document.documentElement.setAttribute('data-theme', "light"); 
     }
 }
@@ -37,7 +37,12 @@ export function AccessibilityPanel(){
         localStorage.setItem('theme', "light")
         theme = localStorage.getItem('theme')
     }
-
+     if(theme === "light"){
+                document.getElementById('accessibility-toggle').innerHTML = SVG.sunSVG();
+            }
+            else{
+                document.getElementById('accessibility-toggle').innerHTML = SVG.moonSVG();
+            }
     console.log(revealed)
     if(revealed){
         document.getElementById('accessibility-toggle').innerText = "Close"
@@ -53,7 +58,9 @@ export function AccessibilityPanel(){
     }else{
         try{
             document.getElementById("accessibilityControls").remove()
-            document.getElementById('accessibility-toggle').innerText = "Dark Mode"
+            console.log("FIRST SET THEME")
+
+
         } catch{
             // this only happens on startup since the div has never been created yet
         }

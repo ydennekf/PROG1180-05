@@ -565,8 +565,8 @@ footer {
 ***************************************/
 
 .ncr-view{
-    max-width: 90%;
-    margin: auto;
+   /*  max-width: 90%;
+    margin: auto; */
     background-color: var(--color-form);
     box-shadow: 0 0.25rem 0.5rem var(--color-black);
 }

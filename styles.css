@@ -218,9 +218,9 @@ table.ncr-list a:hover {
 }
  .home-button-centre{
     display: flex;
-    width: 100%;
+    width: 90%;
     margin: auto;
-    padding: 0 1.25rem;
+    /* padding: 0 1.25rem; */
  }
 
 
@@ -1003,8 +1003,9 @@ textarea {
 /* General Table Styling */
 table {
     width: 90%;                  
-    border-collapse: collapse;    
-    margin-top: 1.25rem;             
+    border-collapse: collapse; 
+    margin: 1.25rem auto 0;   
+   /*  margin-top: 1.25rem;   */           
     font-family: Arial, sans-serif; 
 }
 

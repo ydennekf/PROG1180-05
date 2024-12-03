@@ -56,8 +56,9 @@ export function createQAReport(){
     addImagesToReport(newReport)
     clearImageStorage()
     // TODO whenever fraser does his notification stuff need to add it here
-    app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
     reportData.push(newReport)
+    app.storage.pushNewReport(newReport.ncrNumber, newReport.status);
+    
     //updateReport(newReport.ncrNumber, newReport);
     app.storage.pushRecentReport(newReport.ncrNumber)
 

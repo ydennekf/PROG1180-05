@@ -41,7 +41,7 @@ tbody tr {
 /* NCR Index View */
  
 table.ncr-list {
-    width: 90%;
+    width: 100%;
    /*  width: 75rem; */
     border-collapse: collapse;
     margin: auto;
@@ -548,7 +548,8 @@ table h2 {
 /* Table Cells */
 tbody td {
     padding: 0.625rem 0.938rem;
-    color: var(--color-offblack);               
+    color: var(--color-offblack);
+    text-wrap: nowrap;
 }
 
 /* Table Body Rows */

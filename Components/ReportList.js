@@ -193,7 +193,7 @@ function reportListHeader(){
 
         return `
         <thead>
-        <tr>
+        <tr class="report-preview-row">
             <th data-column="ncrNumber" tabindex="4" data-order="${sortOrder.ncrNumber}">NCR no.</th>
             <th data-column="date" tabindex="4" data-order="${sortOrder.date}">Date</th>
             <th data-column="supplierName" tabindex="4" data-order="${sortOrder.supplierName}">Supplier</th>

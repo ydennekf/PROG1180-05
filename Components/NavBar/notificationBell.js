@@ -12,7 +12,7 @@ export function notificationBell(){
         ${SVG.bellSVG()}
         New
         ${count === 0 ? "" : `<strong class="notification-count">${count}</strong>`}
-        <div class="tooltip">Notifications</div>
+        <div class="tooltip bottom-tooltip">Notifications</div>
     `
 }
 

@@ -22,7 +22,7 @@ let  startDate = new Date(reportData.date);
 
 
         return`
-        <tr>
+        <tr class="report-preview-row">
             <td>
                 ${reportData.ncrNumber}
             </td>
@@ -38,9 +38,21 @@ let  startDate = new Date(reportData.date);
          
             <td>
                 <div class='index-view-table-buttons'>
-                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.viewSVG(reportData.ncrNumber)}Details</button>
-                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.editSVG(reportData.ncrNumber)}Edit</button>
-                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.folderSVG(reportData.ncrNumber)}Archive</button>
+                <div class="tooltip-container view-report" data-ncr-number="${reportData.ncrNumber}">
+                <button class="icon" tabindex="5" >${SVG.viewSVG(reportData.ncrNumber)}</button>
+                <div class="tooltip top-tooltip">Details</div>
+                </div>
+                <div class="tooltip-container edit-report" data-ncr-number="${reportData.ncrNumber}">
+                <button class="icon" tabindex="5" >${SVG.editSVG(reportData.ncrNumber)}</button>
+                <div class="tooltip top-tooltip">Edit</div>
+                </div>
+                <div class="tooltip-container archive-report" data-ncr-number="${reportData.ncrNumber}">
+                <button class="icon" tabindex="5" >${SVG.folderSVG(reportData.ncrNumber)}</button>
+                <div class="tooltip top-tooltip">Archive</div>
+                </div>
+                    
+                    
+                    
                     
                 </div>
             </td>

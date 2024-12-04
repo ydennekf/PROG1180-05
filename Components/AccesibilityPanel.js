@@ -23,7 +23,7 @@ function swapTheme(){
         localStorage.setItem('theme', "dark")
         e.innerHTML = ` <div class="tooltip-container">
              ${SVG.moonSVG()}
-             <div class="tooltip">Enable Dark Mode</div>`
+             <div class="tooltip top-tooltip">Enable Dark Mode</div>`
 
         document.documentElement.setAttribute('data-theme', "dark");
     } else {

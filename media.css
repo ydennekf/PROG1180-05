@@ -19,13 +19,27 @@
     * {
        font-size: 12px;
    }
+    #bread-crumbs a {
+        font-size: 12px;
+    }
+    table{
+        width: 100%;
+    }
+
+    #root {
+        padding: 1rem;
+    }
+    .login-form {
+        width: 100%;
+    }
 
     .nav-logo{
         margin-left: 10px;
     }
 
     .centre-s{
-        margin: 0 auto;
+        /*margin: 0 auto;*/
+
         /* background: lightblue; */
     }
 

@@ -1,6 +1,6 @@
 import {app, initApp} from "../AppState.js"
 import * as SVG from "./svgs.js";
-import {notificationBell} from "./NavBar/notificationBell.js"
+import {notificationBell, setNotifyListeners} from "./NavBar/notificationBell.js"
 import {notificationItem} from "./NavBar/notificationItem.js";
 import {qualityAssuranceForm} from "./NcrFormView/QualityAssuranceForm.js";
 
@@ -59,37 +59,56 @@ export function loadNavOnLogin() {
             
                 <li id="_home" class="nav-icon">
                     
-                    
+                    <div class="tooltip-container">
                     ${SVG.homeSVG()}
                     
                     Home
+                    <div class="tooltip">Return Home</div>
+                    </div>
+                    
+                    
                 </li>
 
                 <li id="_create-ncr" class="nav-icon">
-                   
-                    ${SVG.createSVG()}
+                   <div class="tooltip-container">
+                     ${SVG.createSVG()}
                     
                      Create
+                     <div class="tooltip">Create New NCR</div>
+                   </div>
+                   
+                  
                 </li>
 
                 <li id="_view-ncr" class="nav-icon">
-                    
+                    <div class="tooltip-container">
                     ${SVG.eyeSVG()}
                     
                     Log
+                    <div class="tooltip">NCR Log</div>
+                    </div>
                 </li>
 
                 <li id="_view_report" class="nav-icon">
-                    
+                    <div class="tooltip-container">
                     ${SVG.documentSVG()}
                     
                     Report
+                    <div class="tooltip">View Reporting</div>
+                    </div>
+                    
                 </li>
 
                 <li>
                 
                 <div id="_notifications" class="nav-icon">
-                ${notificationBell()}
+                    <div id="dropdownTrigger" class="tooltip-container">
+                        ${notificationBell()}
+                    </div>
+                    <div class="dropdown-content">
+                        <ul id="notificationList">
+                        </ul>
+                    </div>
                 </div>
                 </li>
 
@@ -100,6 +119,7 @@ export function loadNavOnLogin() {
     document.getElementById("nav-links").innerHTML = "";
     append("nav-links", html)
     bindNav()
+    setNotifyListeners()
 }
 
 export function clearNavOnLogout() {

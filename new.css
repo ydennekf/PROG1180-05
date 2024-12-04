@@ -165,6 +165,49 @@ footer .nav-icon{
 /**************************
     Labels and Inputs
 **************************/
+/*************************
+    ToolTip styling
+ ************************/
+.tooltip-container {
+    /*position: relative;*/
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+/* The tooltip text */
+.tooltip {
+    visibility: hidden; /* Hidden by default */
+    position: relative;
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: 5;
+    width: fit-content;
+
+    /* Positioning */
+    bottom: 3rem; /* Position above the container */
+    left: 5rem;
+    transform: translateX(-50%);
+    margin-bottom: 8px; /* Spacing between the tooltip and the container */
+
+}
+
+/* Show tooltip on hover */
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
 
 label {
     color: var(--color-white);
@@ -295,7 +338,7 @@ input#username {
 
 body{
     display: flex;
-    height: 100vh;
+    /*height: 100vh;*/
     flex-direction: column;
     -ms-flex-direction: column;
     background-color: var(--color-background);
@@ -338,10 +381,16 @@ body{
     fill: var(--color-white);
     justify-self: center;
     text-align: center;
+    padding: 0;
 }
-.nav-icon svg, .icon svg{
-    height: 1.5rem;
-    width: 1.5rem;
+.nav-icon svg{
+    height: 100%;
+    width: 100%;
+}
+
+.icon svg{
+    height: 80%;
+    width: 80%;
 }
 
 .notification-count{
@@ -350,6 +399,7 @@ body{
     color: #f3e0e0;
     font-size: 10px;
     position: relative;
+    bottom: 1.2rem;
     padding: 3px;
     z-index: 2;
 
@@ -364,9 +414,9 @@ body{
     transition: background-color 0.3s ease;
     box-sizing: border-box;
     font-size: 0.5rem;
-    height: 2.1rem;
-    width: 2.1rem;
-    padding: 5px;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.2rem;
 }
 
 /*#nav-wrapper{*/
@@ -493,7 +543,7 @@ nav ul li button{
 ***************************/
 main {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     flex: 1;
     background-color: var( --color-background);
     color: var(--color-black);
@@ -504,13 +554,14 @@ main {
     /*border-radius: 0.5rem;*/
     /*min-height: calc(100vh - 10rem);*/
     transition: all 0.3s ease-in-out;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 
 footer {
     display: inline-block;
     text-align: center;
+    position: static;
     background-color: var(--color-primary);
     color: var(--color-white);
     /* height: 4rem; */ /*this is the cause of the extra space on the bottom of the Footer */
@@ -666,9 +717,9 @@ footer {
     padding: 0 0 0.938rem 0;
 }
 
-.ncr-list{
+/* .ncr-list{
     box-shadow: 0 0.25rem 0.5rem var(--color-black);
-}
+} */
 
 .qa-left-container,
 .qa-right-container,

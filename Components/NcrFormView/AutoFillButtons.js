@@ -46,8 +46,8 @@ export function AutoFillButtons(targetID){
     const html = `
         <div>
             <button id="fill-qa">Fill QA</button>
-            <button id="fill-eng">Fill Engineering</button>
-            <button id="fill-pur">Fill Purchasing</button>
+            <button id="fill-eng">Fill Eng</button>
+            <button id="fill-pur">Fill Pur</button>
         </div>
     `
 

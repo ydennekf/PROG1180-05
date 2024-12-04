@@ -202,15 +202,13 @@ export function checkEngineeringInProgress(){
     return false;
 }
 
-
 export function addEngButton(){
-    return '<button id="bind-eng-start">Start Engineering</button>'
+    return '<button id="bind-eng-start">Start Eng</button>'
 }
 
 export function addPurchasingButton(){
-    return '<button id="bind-pur-start">Start Purchasing</button>'
+    return '<button id="bind-pur-start">Start Pur</button>'
 }
-
 
 
 export function bindAdditionButtons(){
@@ -222,10 +220,10 @@ export function bindAdditionButtons(){
 
             if(p.style.display === "none"){
                 p.style.display = "block"
-                 e.target.innerHTML = "Remove Engineering"
+                 e.target.innerHTML = "Remove Eng"
             }else{
                 p.style.display="none"
-                e.target.innerHTML = "Add Engineering"
+                e.target.innerHTML = "Add Eng"
             }
         })
         document.getElementById('bind-pur-start').addEventListener('click', (e) => {
@@ -234,10 +232,10 @@ export function bindAdditionButtons(){
             const p = document.getElementById('purchasing-header')
             if(p.style.display === "none"){
                 p.style.display = "block"
-                 e.target.innerHtml = "Remove Purchasing"
+                 e.target.innerHtml = "Remove Pur"
             }else{
                 p.style.display="none"
-                e.target.innerHtml = "Add Purchasing"
+                e.target.innerHtml = "Add Pur"
             }
         })
     }

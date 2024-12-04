@@ -38,9 +38,9 @@ let  startDate = new Date(reportData.date);
          
             <td>
                 <div class='index-view-table-buttons'>
-                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.viewSVG(reportData.ncrNumber)}<br/>Details</button>
-                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.editSVG(reportData.ncrNumber)}<br/>Edit</button>
-                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.folderSVG(reportData.ncrNumber)}<br/>Archive</button>
+                    <button class="view-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.viewSVG(reportData.ncrNumber)}Details</button>
+                    <button class="edit-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.editSVG(reportData.ncrNumber)}Edit</button>
+                    <button class="archive-report icon" tabindex="5" data-ncr-number="${reportData.ncrNumber}">${SVG.folderSVG(reportData.ncrNumber)}Archive</button>
                     
                 </div>
             </td>
@@ -69,7 +69,7 @@ function openReportDetails(ncrNumber){
     app.storage.pushRecentReport(ncrNumber)
 }
 
-function openReportEditor(ncrNumber){
+export function openReportEditor(ncrNumber){
     if(app === undefined){
         // user not logged in
         return;

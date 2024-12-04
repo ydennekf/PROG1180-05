@@ -16,12 +16,16 @@
 
 @media screen and (min-width: 320px) and (max-width:425px){
 
+    * {
+       font-size: 10px;
+   }
+
     .nav-logo{
         margin-left: 10px;
     }
 
     .centre-s{
-        margin: auto;
+        margin: 0 auto;
         /* background: lightblue; */
     }
 
@@ -50,7 +54,7 @@
 
 @media screen and (min-width:481px) and (max-width:767px){
     
-   
+
     .centre-s{
         
         max-width: 100%;

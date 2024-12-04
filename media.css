@@ -144,7 +144,7 @@
     .centre-l{
         max-width: 1200px;
         width: 100%;
-        margin: 0 auto;
+        margin: auto;
         /* background: greenyellow; */
         
     }
@@ -153,7 +153,7 @@
     main {
         width: 100%;
         /*max-width: 1200px;*/
-        /* background-color: lightsalmon; */
+        background-color: lightsalmon;
     }
 
     /********************
@@ -187,14 +187,14 @@
 
 
     /*==================
-        NCR Report
-    ==================*/    
+       NCR Report
+    ==================*/  
 
     .iso-header{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
-        max-width: 90%;
+        max-width: 100%;
         width: 1200px;
     }
 

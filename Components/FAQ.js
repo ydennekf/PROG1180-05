@@ -2,6 +2,7 @@ export let createFAQ = (targetID) => {
     let faqContent = `
         <div class="faq-container">
             <h2>Frequently Asked Questions (FAQ) - NCR Reports</h2>
+            // FAQ lists
             <div class="faq-item">
                 <h3 class="faq-question">1. What is an NCR (Non-Conformance Report)?</h3>
                 <div class="faq-answer">

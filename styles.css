@@ -5,6 +5,26 @@
 }
 
 
+/* label {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    user-select: none;
+} */
+
+/* .search-container label{
+    color: var(--color-white);
+} */
+
+/* label{
+    color: var(--color-black);
+    font-size: 1.1rem;
+    user-select: none;
+} */
+
+/* legend {
+    color: var(--color-white);
+} */
+
 li{
     list-style-type: none
 }
@@ -33,13 +53,125 @@ tbody tr {
     margin: auto;
    
 }
+/* h2{
+    color: var(--color-white);
+}
+ */
 
+/* Body Styles */
+/* body {
+    display: flex;
+    background-color: var( --color-background);
+    color: var(--color-black);
+    font-family: var(--font-primary);
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    transition: all 0.3s ease-in-out;
+} */
+ 
+/* Nav Bar */
+/* nav {
+    height: 100px;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    background-color: var( --color-primary);
+    position: relative;  */
+    /*Bandage fix for breadcrumbs in header*/
+/*     display:flex;
+    flex-direction:row;
+    gap:10px;
+} */
+ 
+/* nav .logo {
+    height: 7vh;
+} */
+ 
+/* nav span{
+    font-size: 10px;
+} */
+ 
 
+/* .nav-list {
+    list-style: none;
+    display: flex;
+    align-items:center;
+    gap: 15px;
+    margin: auto;
+} */
+
+/* .nav-list li{
+    cursor:pointer;
+} */
+ 
+/* nav ul li a {
+    color: var( --color-white);
+    text-decoration: none;
+} */
+ 
+/* nav ul li:hover {
+    text-decoration: underline;
+} */
+ 
+/* nav ul li button{
+    margin-top: 1.5vh;
+    min-width: 100px;
+} */
+ 
 .new-report-container{
     justify-self: right;
 }
+ 
+
+ 
+/*Bread crumb stuff*/
+/* #bread-crumbs{    
+   padding:0.125rem;
+}
+ 
+#bread-crumbs a{
+    font-size:0.625rem;
+ }
+ 
+ #bread-crumbs ul {
+    display: inline-flex;
+}
+ 
+.bread-crumb{
+    color:var(--color-breadcrumb) !important;
+    text-decoration:none !important;
+}
+
+.bread-crumb:hover{
+    opacity:0.7
+}
+ 
+#bread-crumbs ul li{
+    margin-left:0.25rem;
+    list-style-type: none;
+}
+ 
+a.selected-view {
+    color:var(--color-breadcrumb-selected) !important;
+    text-decoration:none;
+    cursor:not-allowed;
+}
+ 
+#bread-crumbs ul li:first-child{
+    margin-left:0;
+}
+ 
+#bread-crumbs ul li:after{
+    content:" /";
+    color: var(--color-breadcrumb-after);
+} */
 
 
+ 
+/* Main content */
+
+ 
+ 
 /* NCR Index View */
  
 table.ncr-list {
@@ -99,20 +231,14 @@ table.ncr-list a:hover {
 
 
 /* Index View Table Buttons */
-.index-view-table-buttons {
-    display: inline-flex;
-    gap: 0.3125rem; 
-    width: 100%; 
-}
-
-.index-view-table-buttons button {
-    flex: 1; 
-    /*padding: 0.625rem; */
-    border: 0.125rem solid var(--color-white);
-    text-align: center; 
-}
 
 
+/* Container for radio buttons */
+ /*  input[type="text"], input[type="number"] {
+    height: 1.5rem;
+  } 
+  */
+/* Pagination Container */
 .pagination-container {
     display: flex;
     justify-content: center;
@@ -123,6 +249,65 @@ table.ncr-list a:hover {
 }
  
 
+
+ 
+/* Buttons */
+/* button {
+    width: 100px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: solid 1px var(--color-white);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    max-width: 150px; 
+    text-align: center;
+    box-sizing: border-box; 
+} */
+
+/* button:hover {
+    background-color: var(--color-secondary);
+} */
+
+/* #crossfire-logo{
+    cursor:pointer
+} */
+
+ 
+/* Headings */
+/* h1 {
+    margin-top: 0;
+    text-align: center;
+}
+ 
+h2 {
+    text-align: center;
+    color: var(--color-secondary);
+} */
+ 
+/* h3 {
+    font-family: "Montserrat", cursive;
+    font-weight: 400;
+    font-size: 2.1875rem;
+    text-align: center;
+}
+ */
+
+
+/* Input Styles */
+/* input[type="text"],
+input[type="password"] {
+    font: 0.9375rem/1.5rem var(--font-secondary);
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 0.063rem;
+}
+ 
+input[type="password"], #username{
+    color: var(--color-login-input);
+} */
 /* =========================
    Animation Styles (Global)
    ========================= */
@@ -185,9 +370,63 @@ table.ncr-list a:hover {
     position: relative;
     margin-bottom: 1.875rem; /* Spacing between the input fields */
 }
-
-
-
+ 
+/* input:focus {
+    outline: none;
+} */
+ 
+/* Custom Checkbox Style */
+/* input[type="checkbox"] {
+    border: solid 0.063rem var(--color-offblack);
+    position: relative;
+    width: 1.75rem;
+    height:1.75rem;
+    background-color: #f1f1f1;
+    border-radius: 0.25rem;
+    appearance: none;
+    cursor: pointer;
+} */
+ 
+/* input[type="checkbox"]:checked{
+    background-color: #334b63
+}
+  */
+/* Checkbox icon */
+ 
+/* input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.563rem;
+    width: 0.313rem;
+    height: 0.813rem;
+    border: 0.25rem solid transparent;
+    border-left: none;
+    border-top: none ;
+    transform: rotate(45deg) scale(1);
+}
+ 
+input[type="checkbox"]:checked:before{
+    border-color: var( --color-white);
+    animation: checkAnim .5s ease;
+} */
+ 
+/* Checkbox label container */
+/* .chkBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color:inherit;  
+} */
+ 
+/* .chkBox label{
+    color: var(--color-secondary);
+}
+  */
+/* Footer Styling */
+ 
 .container{
     display: flex;
     flex-direction: column;
@@ -197,11 +436,26 @@ table.ncr-list a:hover {
     flex: 1;
 }
 
+/* footer {
+    background-color: var(--color-primary);
+    color: var( --color-white);
+    text-align: center;
+    padding: 15px 10px 0;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    margin-top:30px; 
+}
+  */
+/* General Label Styling */
+ 
+
+ 
 /* =========================
    Dropdown & Select Styling
    ========================= */
  
-   .select-container {
+.select-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,177 +484,396 @@ table.ncr-list a:hover {
     outline: none;
     border-color: #007bff;
 }
+ 
+/* =========================
+   Login Form Styles
+   ========================= */
+   /* Form Styles */
 
+/*    input#username {
+    margin-top: 0.938rem;
+} */
 
+/* .login-form {
+    max-width: 25rem;
+    min-height: 18.75rem;
+    margin: 0 auto;
+    background: var(--color-form);
+    padding: 3.125rem 2.5rem;
+    border-radius: 0.5rem;
+    border:none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.375rem 0.9375rem var(--color-black);
+    height: 40vh;
+} */
 
-#fill-pur,
-#bind-eng-start,
-#bind-pur-start{
-    width: 110px; 
-    height: 40px; 
-    font-size: 14px; 
-    padding: 5px; 
+/* .login-container {
+    background-color: var(--color-white);
+    height: 40vh;
+} */
+ 
+/* .login-logo {
+    display: block;
+    justify-self: center;
+    height: 8vh;
+    width: auto;
+    padding-bottom: 2vh;
+}
+  */
+/* .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+ 
+.remember-me input {
+    margin-right: 0.625rem;
 }
 
-#cancelBtn{
-    width: 100px; 
-    height: 40px; 
-    font-size: 14px; 
-    padding: 5px; 
-    gap: 90px;
+.remember-me label {
+    color: var(--color-black);
+} */
+ 
+/* .login-btn {
+    border: solid 1px var(--color-white);
+} */
+/*  
+.login-btn-container{
+    display: flex;
+    justify-content: center;
+}
+  */
+/* .login-btn:hover {
+    background-color: #407bbf;
+} */
+ 
+/* .forgot-password {
+    text-align: center;
+    margin-top: 0.625rem;
+} */
+ 
+/* .forgot-password a {
+    color: var(--color-login-input);
+    text-decoration: none;
+}
+ 
+.forgot-password a:hover {
+    text-decoration: underline;
+} */
+ 
+/* =========================
+   Animations (Global)
+   ========================= */
+ 
+/* @keyframes checkAnim {
+    from {
+        transform: rotate(45deg) scale(0);
+    }
+} */
+
+/* =========================
+   Header Report-Details
+   ========================= */
+  /*  .Report-view-header{
+    color: var(--color-black);
+   } */
+
+/* =========================
+   NCR Form Layout
+   ========================= */
+
+/*    .ncr-report{
+    max-width: 90%;
+    margin: auto;
+    
+}
+ */
+
+    /*===============
+        NCR header 
+      ===============*/
+
+
+/* .iso-header{
+    margin: 20px auto 0;
+    color: var(--color-black);
+    background-color: var(--color-iso); 
+    outline-color: var(--color-iso);
+    gap: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 5px; 
 }
 
-#submitBtn,
-#fill-qa,
-#fill-eng{
-    width: 100px; 
-    height: 38px; 
-    font-size: 14px; 
-    padding: 5px; 
-    gap: 90px;
+
+.iso-header div{
+    border-width: 6px;
+    background-color:var(--color-background);
+    padding: 10px 0 0 15px;  
 }
 
-
-
-
-
-
-
-.qa-left-container, .purchasing-left-container {
-   min-width: 17.1875rem;
-   max-width: 25rem;
-   min-height: 18.75rem;
-   display: block;
+.iso-header label{
+    color: var(--color-black);
+    font-size: 1rem;
+    padding: 0 0 20px;
 }
+.iso-header p{
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 0 15px 0;
+} */
+
+/* .qa-left-container,
+.qa-right-container,
+.engi-right-container,
+.engi-top-container,
+.purchasing-left-container, 
+.purchasing-right-container {
+    
+    padding: 1.875rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem var(--color-black);
+ } */
+
+
+/*  .engi-top-container
+ .engi-right-container{
+    width: 90%;
+ } */
+
+
+ #fill-pur,
+ #bind-eng-start,
+ #bind-pur-start{
+     width: 110px; 
+     height: 40px; 
+     font-size: 14px; 
+     padding: 5px; 
+ }
+ 
+ #cancelBtn{
+     width: 100px; 
+     height: 40px; 
+     font-size: 14px; 
+     padding: 5px; 
+     gap: 90px;
+ }
+ 
+ #submitBtn,
+ #fill-qa,
+ #fill-eng{
+     width: 100px; 
+     height: 38px; 
+     font-size: 14px; 
+     padding: 5px; 
+     gap: 90px;
+ }
+ 
+
+
+
+
+
+
+ .qa-left-container, .purchasing-left-container {
+    min-width: 17.1875rem;
+    max-width: 25rem;
+    min-height: 18.75rem;
+    display: block;
+ }
 
 
 /* Purchasing Left Fieldset */
 .purchasing-left-container fieldset {
-   display: flex;
-   flex-direction: column;
-   gap: 0.625rem;
-   border: none;
-   padding: 0.625rem 0;
-   margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    border: none;
+    padding: 0.625rem 0;
+    margin: 0;
 }
 
 .purchasing-left-container fieldset div {
-   display: flex;
-   align-items: center;
-   gap: 0.625rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
 }
 
 .purchasing-left-container input[type="radio"] {
-   margin: 0;
-   vertical-align: middle;
-   width: 1rem;
-   height: 1rem;
+    margin: 0;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
 }
 
 .Car-container {
-   display: flex;
-   flex-direction: column;
-   gap: 0.9375rem;
-   margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+    margin-top: 0;
 }
 
 .Car-container>div:first-child {
-   display: flex;
-   align-items: center;
-   gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .Car-container input[type="checkbox"] {
-   margin: 0;
+    margin: 0;
 }
 
 .Car-container label {
-   font-size: 1rem;
-   color: var(--color-black);
+    font-size: 1rem;
+    color: var(--color-black);
 }
 
 .Car-container input[type="text"] {
-   width: 100%;
-   padding: 0.5rem;
-   border: 0.063rem solid var(--color-black);
-   margin-top: 0;
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.063rem solid var(--color-black);
+    margin-top: 0;
 }
 
 /* Purchasing Right Fieldset */
 .purchase-followup-container>div:first-child {
-   display: flex;
-   align-items: center;
-   gap: 0.5rem;
-   margin-bottom: 0.625rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
 }
 
 .purchasing-followup-inputs div {
-   margin-top: 0;
-   display: flex;
-   flex-direction: column;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .purchasing-followup-inputs div:first-child {
-   margin-top: 0.625rem;
+    margin-top: 0.625rem;
 }
 
 .purchase-signoff-container>div {
-   display: flex;
-   flex-direction: column;
-   margin-top: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.625rem;
 }
 
 .purchase-signoff-container>div:first-child {
-   margin-top: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .purchasing-right-container input[type="text"],
 .purchasing-right-container select {
-   width: 100%;
-   height: 1.5rem;
-   padding: 0 0.25rem;
-   font-size: 0.9rem;
-   border: 0.063rem solid var(--color-black);
-   box-sizing: border-box;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0 0.25rem;
+    font-size: 0.9rem;
+    border: 0.063rem solid var(--color-black);
+    box-sizing: border-box;
 }
 
 .purchasing-right-container input[type="checkbox"] {
-   margin: 0;
+    margin: 0;
 }
 
 .purchasing-right-container>div {
-   display: flex;
-   justify-content: space-between;
-   gap: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
 }
 
 .purchasing-right-container>div>div {
-   width: 48%;
+    width: 48%;
 }
 
 .purchase-signoff-container>div:last-child {
-   margin-top: 0.9375rem;
+    margin-top: 0.9375rem;
 }
 
 /* Purchasing Right Fieldset End */
 
 .error-label{
-       font-weight: bold;
-       display: block;
-       margin-top: 0.9375rem;
-       color: #333;
-  }
+        font-weight: bold;
+        display: block;
+        margin-top: 0.9375rem;
+        color: #333;
+   }
+
+
 
 textarea {
-   width: 100%;
-   padding: 0.5rem;
-   border: 0.0625rem solid #ccc;
-   border-radius: 0.25rem;
-   font-size: 0.875rem;
-   color: var(--color-black);
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--color-black);
+}
+ 
+
+
+/* legend{
+    color: var(--color-black);
+    padding: 0.1875rem;
+    font-size: 1.125rem;
+} */
+
+
+/* qa-right-container label,
+.qa-right-container div:nth-child(2) textarea,
+.engi-right-container textarea{
+    width: 100%;
 }
 
-.no-border{
+.engi-right-container label
+ {
+    display: inline-block;
+    width: 100%;
+}
+
+
+.qa-right-container textarea, .engi-right-container textarea {
+    min-height: 12.5rem;
+}
+
+.qa-left-container li , 
+.engi-top-container li{
+    min-width: 14.375rem;
+    width: 100%;
+}
+
+.qa-left-container input[type="number"], 
+.qa-left-container input[type="text"] {
+   width: 90%;
+}
+
+.qa-labels label{
+    color: var(--color-ncr); 
+    display:inline-block;
+    width: 100%;
+}
+
+.qa-left-container input[type="radio"], 
+.engi-top-container input[type="radio"] {
+    height: 1.25rem;
+    width: 1.25rem;
+    vertical-align: middle;
+   margin-right: 0.438rem;
+  } */
+
+  
+
+ /*  .sap-width input[type="number"]{
+    width: 6.25rem;
+    margin-right: 0.313rem;
+  }
+
+  .item-width input[type="text"]{
+    width: 18.75rem;
+  } */
+
+  .no-border{
     display:flex; /* align input boxes beside each other */
     border: 0;
   }
@@ -409,6 +882,43 @@ textarea {
     margin-top: 1.25rem;
     margin-left: 2.94rem;
  }
+  
+  /* .engi-top-container fieldset{
+    margin: 0 0 0 5px;
+  } */
+
+ /*  .qa-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 0.625rem;
+  }
+
+  .eng-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 0.625rem;
+  } */
+
+  /* .qa-checkbox-align {
+    margin-bottom: 0.625rem;
+}
+.eng-checkbox-align {
+    margin-top: 1.25rem;
+   
+}
+
+.qa-checkbox-align li, .eng-checkbox-align li{
+    margin-bottom: 0.625rem;
+} */
+
+
+/* .button-container {
+    display: flex;
+    gap: 0.25rem; 
+    justify-content: end; 
+    margin-bottom: 0.25rem;
+} */
+
 
 
 
@@ -612,12 +1122,20 @@ h2 {
 }
 
 
+
+
+
+
+
+
 #accessibilityControls chkbox label{
     color:white !important;
 }
 #end-date:focus {
     box-shadow: var();
 }
+
+
 
 
  input, select {
@@ -653,536 +1171,15 @@ h2 {
 
 
 
-/* label {
-    color: var(--color-white);
-    font-size: 1.1rem;
-    user-select: none;
-} */
-
-/* .search-container label{
-    color: var(--color-white);
-} */
-
-/* label{
-    color: var(--color-black);
-    font-size: 1.1rem;
-    user-select: none;
-} */
-
-/* legend {
-    color: var(--color-white);
-} */
 
 
-/* h2{
-    color: var(--color-white);
-}
- */
 
-/* Body Styles */
-/* body {
-    display: flex;
-    background-color: var( --color-background);
-    color: var(--color-black);
-    font-family: var(--font-primary);
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-    transition: all 0.3s ease-in-out;
-} */
- 
-/* Nav Bar */
-/* nav {
-    height: 100px;
-    margin-bottom: 20px;
-    color: var(--color-white);
-    background-color: var( --color-primary);
-    position: relative;  */
-    /*Bandage fix for breadcrumbs in header*/
-/*     display:flex;
-    flex-direction:row;
-    gap:10px;
-} */
- 
-/* nav .logo {
-    height: 7vh;
-} */
- 
-/* nav span{
-    font-size: 10px;
-} */
- 
-
-/* .nav-list {
-    list-style: none;
-    display: flex;
-    align-items:center;
-    gap: 15px;
-    margin: auto;
-} */
-
-/* .nav-list li{
-    cursor:pointer;
-} */
- 
-/* nav ul li a {
-    color: var( --color-white);
-    text-decoration: none;
-} */
- 
-/* nav ul li:hover {
-    text-decoration: underline;
-} */
- 
-/* nav ul li button{
-    margin-top: 1.5vh;
-    min-width: 100px;
-} */
- 
-
- 
-/*Bread crumb stuff*/
-/* #bread-crumbs{    
-   padding:0.125rem;
-}
- 
-#bread-crumbs a{
-    font-size:0.625rem;
- }
- 
- #bread-crumbs ul {
-    display: inline-flex;
-}
- 
-.bread-crumb{
-    color:var(--color-breadcrumb) !important;
-    text-decoration:none !important;
-}
-
-.bread-crumb:hover{
-    opacity:0.7
-}
- 
-#bread-crumbs ul li{
-    margin-left:0.25rem;
-    list-style-type: none;
-}
- 
-a.selected-view {
-    color:var(--color-breadcrumb-selected) !important;
-    text-decoration:none;
-    cursor:not-allowed;
-}
- 
-#bread-crumbs ul li:first-child{
-    margin-left:0;
-}
- 
-#bread-crumbs ul li:after{
-    content:" /";
-    color: var(--color-breadcrumb-after);
-} */
 
 
  
-/* Main content */
 
  
- 
-
-
-/* Container for radio buttons */
- /*  input[type="text"], input[type="number"] {
-    height: 1.5rem;
-  } 
-  */
-/* Pagination Container */
-
 
  
-/* Buttons */
-/* button {
-    width: 100px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: solid 1px var(--color-white);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    max-width: 150px; 
-    text-align: center;
-    box-sizing: border-box; 
-} */
-
-/* button:hover {
-    background-color: var(--color-secondary);
-} */
-
-/* #crossfire-logo{
-    cursor:pointer
-} */
 
  
-/* Headings */
-/* h1 {
-    margin-top: 0;
-    text-align: center;
-}
- 
-h2 {
-    text-align: center;
-    color: var(--color-secondary);
-} */
- 
-/* h3 {
-    font-family: "Montserrat", cursive;
-    font-weight: 400;
-    font-size: 2.1875rem;
-    text-align: center;
-}
- */
-
-
-/* Input Styles */
-/* input[type="text"],
-input[type="password"] {
-    font: 0.9375rem/1.5rem var(--font-secondary);
-    width: 100%;
-    box-sizing: border-box;
-    letter-spacing: 0.063rem;
-}
- 
-input[type="password"], #username{
-    color: var(--color-login-input);
-} */
-
- 
-/* input:focus {
-    outline: none;
-} */
- 
-/* Custom Checkbox Style */
-/* input[type="checkbox"] {
-    border: solid 0.063rem var(--color-offblack);
-    position: relative;
-    width: 1.75rem;
-    height:1.75rem;
-    background-color: #f1f1f1;
-    border-radius: 0.25rem;
-    appearance: none;
-    cursor: pointer;
-} */
- 
-/* input[type="checkbox"]:checked{
-    background-color: #334b63
-}
-  */
-/* Checkbox icon */
- 
-/* input[type="checkbox"]::before {
-    content: '';
-    position: absolute;
-    top: 0.25rem;
-    left: 0.563rem;
-    width: 0.313rem;
-    height: 0.813rem;
-    border: 0.25rem solid transparent;
-    border-left: none;
-    border-top: none ;
-    transform: rotate(45deg) scale(1);
-}
- 
-input[type="checkbox"]:checked:before{
-    border-color: var( --color-white);
-    animation: checkAnim .5s ease;
-} */
- 
-/* Checkbox label container */
-/* .chkBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    margin-bottom: 1rem;
-    color:inherit;  
-} */
- 
-/* .chkBox label{
-    color: var(--color-secondary);
-}
-  */
-/* Footer Styling */
- 
-
-/* footer {
-    background-color: var(--color-primary);
-    color: var( --color-white);
-    text-align: center;
-    padding: 15px 10px 0;
-    width: 100%;
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-    margin-top:30px; 
-}
-  */
-/* General Label Styling */
- 
- 
-/* =========================
-   Login Form Styles
-   ========================= */
-   /* Form Styles */
-
-/*    input#username {
-    margin-top: 0.938rem;
-} */
-
-/* .login-form {
-    max-width: 25rem;
-    min-height: 18.75rem;
-    margin: 0 auto;
-    background: var(--color-form);
-    padding: 3.125rem 2.5rem;
-    border-radius: 0.5rem;
-    border:none;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0.375rem 0.9375rem var(--color-black);
-    height: 40vh;
-} */
-
-/* .login-container {
-    background-color: var(--color-white);
-    height: 40vh;
-} */
- 
-/* .login-logo {
-    display: block;
-    justify-self: center;
-    height: 8vh;
-    width: auto;
-    padding-bottom: 2vh;
-}
-  */
-/* .remember-me {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.25rem;
-}
- 
-.remember-me input {
-    margin-right: 0.625rem;
-}
-
-.remember-me label {
-    color: var(--color-black);
-} */
- 
-/* .login-btn {
-    border: solid 1px var(--color-white);
-} */
-/*  
-.login-btn-container{
-    display: flex;
-    justify-content: center;
-}
-  */
-/* .login-btn:hover {
-    background-color: #407bbf;
-} */
- 
-/* .forgot-password {
-    text-align: center;
-    margin-top: 0.625rem;
-} */
- 
-/* .forgot-password a {
-    color: var(--color-login-input);
-    text-decoration: none;
-}
- 
-.forgot-password a:hover {
-    text-decoration: underline;
-} */
- 
-/* =========================
-   Animations (Global)
-   ========================= */
- 
-/* @keyframes checkAnim {
-    from {
-        transform: rotate(45deg) scale(0);
-    }
-} */
-
-/* =========================
-   Header Report-Details
-   ========================= */
-  /*  .Report-view-header{
-    color: var(--color-black);
-   } */
-
-/* =========================
-   NCR Form Layout
-   ========================= */
-
-/*    .ncr-report{
-    max-width: 90%;
-    margin: auto;
-    
-}
- */
-
-    /*===============
-        NCR header 
-      ===============*/
-
-
-/* .iso-header{
-    margin: 20px auto 0;
-    color: var(--color-black);
-    background-color: var(--color-iso); 
-    outline-color: var(--color-iso);
-    gap: 1px;
-    outline-style: solid;
-    outline-width: 1px;
-    border-radius: 5px; 
-}
-
-
-.iso-header div{
-    border-width: 6px;
-    background-color:var(--color-background);
-    padding: 10px 0 0 15px;  
-}
-
-.iso-header label{
-    color: var(--color-black);
-    font-size: 1rem;
-    padding: 0 0 20px;
-}
-.iso-header p{
-    font-weight: bold;
-    justify-content: center;
-    padding: 0 0 15px 0;
-} */
-
-/* .qa-left-container,
-.qa-right-container,
-.engi-right-container,
-.engi-top-container,
-.purchasing-left-container, 
-.purchasing-right-container {
-    
-    padding: 1.875rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.5rem var(--color-black);
- } */
-
-
-/*  .engi-top-container
- .engi-right-container{
-    width: 90%;
- } */
-
-
-/* legend{
-    color: var(--color-black);
-    padding: 0.1875rem;
-    font-size: 1.125rem;
-} */
-
-
-/* qa-right-container label,
-.qa-right-container div:nth-child(2) textarea,
-.engi-right-container textarea{
-    width: 100%;
-}
-
-.engi-right-container label
- {
-    display: inline-block;
-    width: 100%;
-}
-
-
-.qa-right-container textarea, .engi-right-container textarea {
-    min-height: 12.5rem;
-}
-
-.qa-left-container li , 
-.engi-top-container li{
-    min-width: 14.375rem;
-    width: 100%;
-}
-
-.qa-left-container input[type="number"], 
-.qa-left-container input[type="text"] {
-   width: 90%;
-}
-
-.qa-labels label{
-    color: var(--color-ncr); 
-    display:inline-block;
-    width: 100%;
-}
-
-.qa-left-container input[type="radio"], 
-.engi-top-container input[type="radio"] {
-    height: 1.25rem;
-    width: 1.25rem;
-    vertical-align: middle;
-   margin-right: 0.438rem;
-  } */
-
-  
-
- /*  .sap-width input[type="number"]{
-    width: 6.25rem;
-    margin-right: 0.313rem;
-  }
-
-  .item-width input[type="text"]{
-    width: 18.75rem;
-  } */
-
-  
-  /* .engi-top-container fieldset{
-    margin: 0 0 0 5px;
-  } */
-
- /*  .qa-checkbox-align input[type="checkbox"]{
-    vertical-align: middle;
-    float: left;
-    margin-right: 0.625rem;
-  }
-
-  .eng-checkbox-align input[type="checkbox"]{
-    vertical-align: middle;
-    float: left;
-    margin-right: 0.625rem;
-  } */
-
-  /* .qa-checkbox-align {
-    margin-bottom: 0.625rem;
-}
-.eng-checkbox-align {
-    margin-top: 1.25rem;
-   
-}
-
-.qa-checkbox-align li, .eng-checkbox-align li{
-    margin-bottom: 0.625rem;
-} */
-
-
-/* .button-container {
-    display: flex;
-    gap: 0.25rem; 
-    justify-content: end; 
-    margin-bottom: 0.25rem;
-} */
-
-
-

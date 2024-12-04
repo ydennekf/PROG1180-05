@@ -4,27 +4,6 @@
     box-sizing: border-box;
 }
 
-
-/* label {
-    color: var(--color-white);
-    font-size: 1.1rem;
-    user-select: none;
-} */
-
-/* .search-container label{
-    color: var(--color-white);
-} */
-
-/* label{
-    color: var(--color-black);
-    font-size: 1.1rem;
-    user-select: none;
-} */
-
-/* legend {
-    color: var(--color-white);
-} */
-
 li{
     list-style-type: none
 }
@@ -53,123 +32,10 @@ tbody tr {
     margin: auto;
    
 }
-/* h2{
-    color: var(--color-white);
-}
- */
-
-/* Body Styles */
-/* body {
-    display: flex;
-    background-color: var( --color-background);
-    color: var(--color-black);
-    font-family: var(--font-primary);
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-    transition: all 0.3s ease-in-out;
-} */
- 
-/* Nav Bar */
-/* nav {
-    height: 100px;
-    margin-bottom: 20px;
-    color: var(--color-white);
-    background-color: var( --color-primary);
-    position: relative;  */
-    /*Bandage fix for breadcrumbs in header*/
-/*     display:flex;
-    flex-direction:row;
-    gap:10px;
-} */
- 
-/* nav .logo {
-    height: 7vh;
-} */
- 
-/* nav span{
-    font-size: 10px;
-} */
- 
-
-/* .nav-list {
-    list-style: none;
-    display: flex;
-    align-items:center;
-    gap: 15px;
-    margin: auto;
-} */
-
-/* .nav-list li{
-    cursor:pointer;
-} */
- 
-/* nav ul li a {
-    color: var( --color-white);
-    text-decoration: none;
-} */
- 
-/* nav ul li:hover {
-    text-decoration: underline;
-} */
- 
-/* nav ul li button{
-    margin-top: 1.5vh;
-    min-width: 100px;
-} */
  
 .new-report-container{
     justify-self: right;
 }
- 
-
- 
-/*Bread crumb stuff*/
-/* #bread-crumbs{    
-   padding:0.125rem;
-}
- 
-#bread-crumbs a{
-    font-size:0.625rem;
- }
- 
- #bread-crumbs ul {
-    display: inline-flex;
-}
- 
-.bread-crumb{
-    color:var(--color-breadcrumb) !important;
-    text-decoration:none !important;
-}
-
-.bread-crumb:hover{
-    opacity:0.7
-}
- 
-#bread-crumbs ul li{
-    margin-left:0.25rem;
-    list-style-type: none;
-}
- 
-a.selected-view {
-    color:var(--color-breadcrumb-selected) !important;
-    text-decoration:none;
-    cursor:not-allowed;
-}
- 
-#bread-crumbs ul li:first-child{
-    margin-left:0;
-}
- 
-#bread-crumbs ul li:after{
-    content:" /";
-    color: var(--color-breadcrumb-after);
-} */
-
-
- 
-/* Main content */
-
  
  
 /* NCR Index View */
@@ -229,15 +95,6 @@ table.ncr-list a:hover {
     border-radius: 0.3125rem;
 }
 
-
-/* Index View Table Buttons */
-
-
-/* Container for radio buttons */
- /*  input[type="text"], input[type="number"] {
-    height: 1.5rem;
-  } 
-  */
 /* Pagination Container */
 .pagination-container {
     display: flex;
@@ -249,65 +106,6 @@ table.ncr-list a:hover {
 }
  
 
-
- 
-/* Buttons */
-/* button {
-    width: 100px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: solid 1px var(--color-white);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    max-width: 150px; 
-    text-align: center;
-    box-sizing: border-box; 
-} */
-
-/* button:hover {
-    background-color: var(--color-secondary);
-} */
-
-/* #crossfire-logo{
-    cursor:pointer
-} */
-
- 
-/* Headings */
-/* h1 {
-    margin-top: 0;
-    text-align: center;
-}
- 
-h2 {
-    text-align: center;
-    color: var(--color-secondary);
-} */
- 
-/* h3 {
-    font-family: "Montserrat", cursive;
-    font-weight: 400;
-    font-size: 2.1875rem;
-    text-align: center;
-}
- */
-
-
-/* Input Styles */
-/* input[type="text"],
-input[type="password"] {
-    font: 0.9375rem/1.5rem var(--font-secondary);
-    width: 100%;
-    box-sizing: border-box;
-    letter-spacing: 0.063rem;
-}
- 
-input[type="password"], #username{
-    color: var(--color-login-input);
-} */
 /* =========================
    Animation Styles (Global)
    ========================= */
@@ -370,62 +168,7 @@ input[type="password"], #username{
     position: relative;
     margin-bottom: 1.875rem; /* Spacing between the input fields */
 }
- 
-/* input:focus {
-    outline: none;
-} */
- 
-/* Custom Checkbox Style */
-/* input[type="checkbox"] {
-    border: solid 0.063rem var(--color-offblack);
-    position: relative;
-    width: 1.75rem;
-    height:1.75rem;
-    background-color: #f1f1f1;
-    border-radius: 0.25rem;
-    appearance: none;
-    cursor: pointer;
-} */
- 
-/* input[type="checkbox"]:checked{
-    background-color: #334b63
-}
-  */
-/* Checkbox icon */
- 
-/* input[type="checkbox"]::before {
-    content: '';
-    position: absolute;
-    top: 0.25rem;
-    left: 0.563rem;
-    width: 0.313rem;
-    height: 0.813rem;
-    border: 0.25rem solid transparent;
-    border-left: none;
-    border-top: none ;
-    transform: rotate(45deg) scale(1);
-}
- 
-input[type="checkbox"]:checked:before{
-    border-color: var( --color-white);
-    animation: checkAnim .5s ease;
-} */
- 
-/* Checkbox label container */
-/* .chkBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    margin-bottom: 1rem;
-    color:inherit;  
-} */
- 
-/* .chkBox label{
-    color: var(--color-secondary);
-}
-  */
-/* Footer Styling */
+
  
 .container{
     display: flex;
@@ -435,21 +178,6 @@ input[type="checkbox"]:checked:before{
 .main-content{
     flex: 1;
 }
-
-/* footer {
-    background-color: var(--color-primary);
-    color: var( --color-white);
-    text-align: center;
-    padding: 15px 10px 0;
-    width: 100%;
-    font-size: 14px;
-    font-family: 'Lato', sans-serif;
-    margin-top:30px; 
-}
-  */
-/* General Label Styling */
- 
-
  
 /* =========================
    Dropdown & Select Styling
@@ -484,162 +212,6 @@ input[type="checkbox"]:checked:before{
     outline: none;
     border-color: #007bff;
 }
- 
-/* =========================
-   Login Form Styles
-   ========================= */
-   /* Form Styles */
-
-/*    input#username {
-    margin-top: 0.938rem;
-} */
-
-/* .login-form {
-    max-width: 25rem;
-    min-height: 18.75rem;
-    margin: 0 auto;
-    background: var(--color-form);
-    padding: 3.125rem 2.5rem;
-    border-radius: 0.5rem;
-    border:none;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0.375rem 0.9375rem var(--color-black);
-    height: 40vh;
-} */
-
-/* .login-container {
-    background-color: var(--color-white);
-    height: 40vh;
-} */
- 
-/* .login-logo {
-    display: block;
-    justify-self: center;
-    height: 8vh;
-    width: auto;
-    padding-bottom: 2vh;
-}
-  */
-/* .remember-me {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.25rem;
-}
- 
-.remember-me input {
-    margin-right: 0.625rem;
-}
-
-.remember-me label {
-    color: var(--color-black);
-} */
- 
-/* .login-btn {
-    border: solid 1px var(--color-white);
-} */
-/*  
-.login-btn-container{
-    display: flex;
-    justify-content: center;
-}
-  */
-/* .login-btn:hover {
-    background-color: #407bbf;
-} */
- 
-/* .forgot-password {
-    text-align: center;
-    margin-top: 0.625rem;
-} */
- 
-/* .forgot-password a {
-    color: var(--color-login-input);
-    text-decoration: none;
-}
- 
-.forgot-password a:hover {
-    text-decoration: underline;
-} */
- 
-/* =========================
-   Animations (Global)
-   ========================= */
- 
-/* @keyframes checkAnim {
-    from {
-        transform: rotate(45deg) scale(0);
-    }
-} */
-
-/* =========================
-   Header Report-Details
-   ========================= */
-  /*  .Report-view-header{
-    color: var(--color-black);
-   } */
-
-/* =========================
-   NCR Form Layout
-   ========================= */
-
-/*    .ncr-report{
-    max-width: 90%;
-    margin: auto;
-    
-}
- */
-
-    /*===============
-        NCR header 
-      ===============*/
-
-
-/* .iso-header{
-    margin: 20px auto 0;
-    color: var(--color-black);
-    background-color: var(--color-iso); 
-    outline-color: var(--color-iso);
-    gap: 1px;
-    outline-style: solid;
-    outline-width: 1px;
-    border-radius: 5px; 
-}
-
-
-.iso-header div{
-    border-width: 6px;
-    background-color:var(--color-background);
-    padding: 10px 0 0 15px;  
-}
-
-.iso-header label{
-    color: var(--color-black);
-    font-size: 1rem;
-    padding: 0 0 20px;
-}
-.iso-header p{
-    font-weight: bold;
-    justify-content: center;
-    padding: 0 0 15px 0;
-} */
-
-/* .qa-left-container,
-.qa-right-container,
-.engi-right-container,
-.engi-top-container,
-.purchasing-left-container, 
-.purchasing-right-container {
-    
-    padding: 1.875rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.5rem var(--color-black);
- } */
-
-
-/*  .engi-top-container
- .engi-right-container{
-    width: 90%;
- } */
 
 
  #fill-pur,
@@ -843,69 +415,7 @@ textarea {
     color: var(--color-black);
 }
  
-
-
-/* legend{
-    color: var(--color-black);
-    padding: 0.1875rem;
-    font-size: 1.125rem;
-} */
-
-
-/* qa-right-container label,
-.qa-right-container div:nth-child(2) textarea,
-.engi-right-container textarea{
-    width: 100%;
-}
-
-.engi-right-container label
- {
-    display: inline-block;
-    width: 100%;
-}
-
-
-.qa-right-container textarea, .engi-right-container textarea {
-    min-height: 12.5rem;
-}
-
-.qa-left-container li , 
-.engi-top-container li{
-    min-width: 14.375rem;
-    width: 100%;
-}
-
-.qa-left-container input[type="number"], 
-.qa-left-container input[type="text"] {
-   width: 90%;
-}
-
-.qa-labels label{
-    color: var(--color-ncr); 
-    display:inline-block;
-    width: 100%;
-}
-
-.qa-left-container input[type="radio"], 
-.engi-top-container input[type="radio"] {
-    height: 1.25rem;
-    width: 1.25rem;
-    vertical-align: middle;
-   margin-right: 0.438rem;
-  } */
-
-  
-
- /*  .sap-width input[type="number"]{
-    width: 6.25rem;
-    margin-right: 0.313rem;
-  }
-
-  .item-width input[type="text"]{
-    width: 18.75rem;
-  } */
-
-  .no-border{
+.no-border{
     display:flex; /* align input boxes beside each other */
     border: 0;
   }
@@ -914,43 +424,6 @@ textarea {
     margin-top: 1.25rem;
     margin-left: 2.94rem;
  }
-  
-  /* .engi-top-container fieldset{
-    margin: 0 0 0 5px;
-  } */
-
- /*  .qa-checkbox-align input[type="checkbox"]{
-    vertical-align: middle;
-    float: left;
-    margin-right: 0.625rem;
-  }
-
-  .eng-checkbox-align input[type="checkbox"]{
-    vertical-align: middle;
-    float: left;
-    margin-right: 0.625rem;
-  } */
-
-  /* .qa-checkbox-align {
-    margin-bottom: 0.625rem;
-}
-.eng-checkbox-align {
-    margin-top: 1.25rem;
-   
-}
-
-.qa-checkbox-align li, .eng-checkbox-align li{
-    margin-bottom: 0.625rem;
-} */
-
-
-/* .button-container {
-    display: flex;
-    gap: 0.25rem; 
-    justify-content: end; 
-    margin-bottom: 0.25rem;
-} */
-
 
 
 
@@ -1154,21 +627,12 @@ h2 {
 }
 
 
-
-
-
-
-
-
 #accessibilityControls chkbox label{
     color:white !important;
 }
 #end-date:focus {
     box-shadow: var();
 }
-
-
-
 
  input, select {
     height: 2.5rem;
@@ -1202,9 +666,532 @@ h2 {
 }
 
 
+/* label {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    user-select: none;
+} */
+
+/* .search-container label{
+    color: var(--color-white);
+} */
+
+/* label{
+    color: var(--color-black);
+    font-size: 1.1rem;
+    user-select: none;
+} */
+
+/* legend {
+    color: var(--color-white);
+} */
+
+/* h2{
+    color: var(--color-white);
+}
+ */
+
+/* Body Styles */
+/* body {
+    display: flex;
+    background-color: var( --color-background);
+    color: var(--color-black);
+    font-family: var(--font-primary);
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    transition: all 0.3s ease-in-out;
+} */
+ 
+/* Nav Bar */
+/* nav {
+    height: 100px;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    background-color: var( --color-primary);
+    position: relative;  */
+    /*Bandage fix for breadcrumbs in header*/
+/*     display:flex;
+    flex-direction:row;
+    gap:10px;
+} */
+ 
+/* nav .logo {
+    height: 7vh;
+} */
+ 
+/* nav span{
+    font-size: 10px;
+} */
+ 
+
+/* .nav-list {
+    list-style: none;
+    display: flex;
+    align-items:center;
+    gap: 15px;
+    margin: auto;
+} */
+
+/* .nav-list li{
+    cursor:pointer;
+} */
+ 
+/* nav ul li a {
+    color: var( --color-white);
+    text-decoration: none;
+} */
+ 
+/* nav ul li:hover {
+    text-decoration: underline;
+} */
+ 
+/* nav ul li button{
+    margin-top: 1.5vh;
+    min-width: 100px;
+} */
 
 
 
+
+ 
+/*Bread crumb stuff*/
+/* #bread-crumbs{    
+   padding:0.125rem;
+}
+ 
+#bread-crumbs a{
+    font-size:0.625rem;
+ }
+ 
+ #bread-crumbs ul {
+    display: inline-flex;
+}
+ 
+.bread-crumb{
+    color:var(--color-breadcrumb) !important;
+    text-decoration:none !important;
+}
+
+.bread-crumb:hover{
+    opacity:0.7
+}
+ 
+#bread-crumbs ul li{
+    margin-left:0.25rem;
+    list-style-type: none;
+}
+ 
+a.selected-view {
+    color:var(--color-breadcrumb-selected) !important;
+    text-decoration:none;
+    cursor:not-allowed;
+}
+ 
+#bread-crumbs ul li:first-child{
+    margin-left:0;
+}
+ 
+#bread-crumbs ul li:after{
+    content:" /";
+    color: var(--color-breadcrumb-after);
+} */
+
+
+ 
+/* Main content */
+
+ 
+
+/* Index View Table Buttons */
+
+
+/* Container for radio buttons */
+ /*  input[type="text"], input[type="number"] {
+    height: 1.5rem;
+  } 
+  */
+
+/* Buttons */
+/* button {
+    width: 100px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: solid 1px var(--color-white);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    max-width: 150px; 
+    text-align: center;
+    box-sizing: border-box; 
+} */
+
+/* button:hover {
+    background-color: var(--color-secondary);
+} */
+
+/* #crossfire-logo{
+    cursor:pointer
+} */
+
+ 
+/* Headings */
+/* h1 {
+    margin-top: 0;
+    text-align: center;
+}
+ 
+h2 {
+    text-align: center;
+    color: var(--color-secondary);
+} */
+ 
+/* h3 {
+    font-family: "Montserrat", cursive;
+    font-weight: 400;
+    font-size: 2.1875rem;
+    text-align: center;
+}
+ */
+
+
+/* Input Styles */
+/* input[type="text"],
+input[type="password"] {
+    font: 0.9375rem/1.5rem var(--font-secondary);
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 0.063rem;
+}
+ 
+input[type="password"], #username{
+    color: var(--color-login-input);
+} */
+
+/* input:focus {
+    outline: none;
+} */
+ 
+/* Custom Checkbox Style */
+/* input[type="checkbox"] {
+    border: solid 0.063rem var(--color-offblack);
+    position: relative;
+    width: 1.75rem;
+    height:1.75rem;
+    background-color: #f1f1f1;
+    border-radius: 0.25rem;
+    appearance: none;
+    cursor: pointer;
+} */
+ 
+/* input[type="checkbox"]:checked{
+    background-color: #334b63
+}
+  */
+/* Checkbox icon */
+ 
+/* input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.563rem;
+    width: 0.313rem;
+    height: 0.813rem;
+    border: 0.25rem solid transparent;
+    border-left: none;
+    border-top: none ;
+    transform: rotate(45deg) scale(1);
+}
+ 
+input[type="checkbox"]:checked:before{
+    border-color: var( --color-white);
+    animation: checkAnim .5s ease;
+} */
+ 
+/* Checkbox label container */
+/* .chkBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color:inherit;  
+} */
+ 
+/* .chkBox label{
+    color: var(--color-secondary);
+}
+  */
+/* Footer Styling */
+
+
+/* footer {
+    background-color: var(--color-primary);
+    color: var( --color-white);
+    text-align: center;
+    padding: 15px 10px 0;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    margin-top:30px; 
+}
+  */
+/* General Label Styling */
+ 
+/* =========================
+   Login Form Styles
+   ========================= */
+   /* Form Styles */
+
+/*    input#username {
+    margin-top: 0.938rem;
+} */
+
+/* .login-form {
+    max-width: 25rem;
+    min-height: 18.75rem;
+    margin: 0 auto;
+    background: var(--color-form);
+    padding: 3.125rem 2.5rem;
+    border-radius: 0.5rem;
+    border:none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.375rem 0.9375rem var(--color-black);
+    height: 40vh;
+} */
+
+/* .login-container {
+    background-color: var(--color-white);
+    height: 40vh;
+} */
+ 
+/* .login-logo {
+    display: block;
+    justify-self: center;
+    height: 8vh;
+    width: auto;
+    padding-bottom: 2vh;
+}
+  */
+/* .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+ 
+.remember-me input {
+    margin-right: 0.625rem;
+}
+
+.remember-me label {
+    color: var(--color-black);
+} */
+ 
+/* .login-btn {
+    border: solid 1px var(--color-white);
+} */
+/*  
+.login-btn-container{
+    display: flex;
+    justify-content: center;
+}
+  */
+/* .login-btn:hover {
+    background-color: #407bbf;
+} */
+ 
+/* .forgot-password {
+    text-align: center;
+    margin-top: 0.625rem;
+} */
+ 
+/* .forgot-password a {
+    color: var(--color-login-input);
+    text-decoration: none;
+}
+ 
+.forgot-password a:hover {
+    text-decoration: underline;
+} */
+ 
+/* =========================
+   Animations (Global)
+   ========================= */
+ 
+/* @keyframes checkAnim {
+    from {
+        transform: rotate(45deg) scale(0);
+    }
+} */
+
+/* =========================
+   Header Report-Details
+   ========================= */
+  /*  .Report-view-header{
+    color: var(--color-black);
+   } */
+
+/* =========================
+   NCR Form Layout
+   ========================= */
+
+/*    .ncr-report{
+    max-width: 90%;
+    margin: auto;
+    
+}
+ */
+
+    /*===============
+        NCR header 
+      ===============*/
+
+
+/* .iso-header{
+    margin: 20px auto 0;
+    color: var(--color-black);
+    background-color: var(--color-iso); 
+    outline-color: var(--color-iso);
+    gap: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 5px; 
+}
+
+
+.iso-header div{
+    border-width: 6px;
+    background-color:var(--color-background);
+    padding: 10px 0 0 15px;  
+}
+
+.iso-header label{
+    color: var(--color-black);
+    font-size: 1rem;
+    padding: 0 0 20px;
+}
+.iso-header p{
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 0 15px 0;
+} */
+
+/* .qa-left-container,
+.qa-right-container,
+.engi-right-container,
+.engi-top-container,
+.purchasing-left-container, 
+.purchasing-right-container {
+    
+    padding: 1.875rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem var(--color-black);
+ } */
+
+
+/*  .engi-top-container
+ .engi-right-container{
+    width: 90%;
+ } */
+
+/* legend{
+    color: var(--color-black);
+    padding: 0.1875rem;
+    font-size: 1.125rem;
+} */
+
+
+/* qa-right-container label,
+.qa-right-container div:nth-child(2) textarea,
+.engi-right-container textarea{
+    width: 100%;
+}
+
+.engi-right-container label
+ {
+    display: inline-block;
+    width: 100%;
+}
+
+
+.qa-right-container textarea, .engi-right-container textarea {
+    min-height: 12.5rem;
+}
+
+.qa-left-container li , 
+.engi-top-container li{
+    min-width: 14.375rem;
+    width: 100%;
+}
+
+.qa-left-container input[type="number"], 
+.qa-left-container input[type="text"] {
+   width: 90%;
+}
+
+.qa-labels label{
+    color: var(--color-ncr); 
+    display:inline-block;
+    width: 100%;
+}
+
+.qa-left-container input[type="radio"], 
+.engi-top-container input[type="radio"] {
+    height: 1.25rem;
+    width: 1.25rem;
+    vertical-align: middle;
+   margin-right: 0.438rem;
+  } */
+
+  
+
+ /*  .sap-width input[type="number"]{
+    width: 6.25rem;
+    margin-right: 0.313rem;
+  }
+
+  .item-width input[type="text"]{
+    width: 18.75rem;
+  } */
+
+  
+  /* .engi-top-container fieldset{
+    margin: 0 0 0 5px;
+  } */
+
+ /*  .qa-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 0.625rem;
+  }
+
+  .eng-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 0.625rem;
+  } */
+
+  /* .qa-checkbox-align {
+    margin-bottom: 0.625rem;
+}
+.eng-checkbox-align {
+    margin-top: 1.25rem;
+   
+}
+
+.qa-checkbox-align li, .eng-checkbox-align li{
+    margin-bottom: 0.625rem;
+} */
+
+
+/* .button-container {
+    display: flex;
+    gap: 0.25rem; 
+    justify-content: end; 
+    margin-bottom: 0.25rem;
+} */
 
 
 

@@ -84,16 +84,12 @@ table.ncr-list a:hover {
 }
  .home-button-centre{
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: auto;
+     height: 6rem;
     /* padding: 0 1.25rem; */
  }
 
-
-.home-ncr-button button{
-    margin: 0 0.625rem 1.25rem 0;
-    border-radius: 0.3125rem;
-}
 
 /* Pagination Container */
 .pagination-container {
@@ -353,11 +349,11 @@ textarea {
     max-height:7.813rem;
 }
 
-#create-report-btn svg, #view-reports svg{
-    width:2.5rem;
-    height:2.5rem;
-    fill:white;
-}
+/*.large-icon{*/
+/*    width:2.5rem;*/
+/*    height:2.5rem;*/
+/*    fill:white;*/
+/*}*/
 
 
 /* =========================
@@ -375,7 +371,7 @@ textarea {
 
 /* General Table Styling */
 table {
-    width: 90%;                  
+
     border-collapse: collapse; 
     margin: 1.25rem auto 0;   
    /*  margin-top: 1.25rem;   */           

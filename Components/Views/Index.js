@@ -34,7 +34,7 @@ function RoleIndexButtons(){
         case "engineering":
             return `
             <div class= "home-button-centre">
-                <div class= "home-ncr-button">
+                
                    
                     <button id="view-reports" class="large-icon">
                         ${eyeSVG()}
@@ -45,7 +45,7 @@ function RoleIndexButtons(){
                         ${documentSVG()}
                         Reporting
                     </button>
-                </div>    
+                 
             </div>`
             
         default: // This will be for QA I just need to figure out whaat each ones buttons will be
@@ -91,7 +91,7 @@ export function RecentReports(targetID = null){
     ${UnsortedHeader()}
      <tbody>
           
-        ${recent.length > 0 && recent[0] != null ? mapComponents(recent, reportPreview) : "<tr><td>You haven't viewed any reports recently!</td></tr>"} 
+        ${recent.length > 0 && recent[0] != null ? mapComponents(recent, reportPreview) : "<tr><td colspan='5'>You haven't viewed any reports recently!</td></tr>"} 
         </tbody>
     </table>
       

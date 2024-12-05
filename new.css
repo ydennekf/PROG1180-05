@@ -158,9 +158,14 @@ footer .nav-icon{
     border-radius: 0.375rem;
     transition: background-color 0.3s ease;
     box-sizing: border-box;
-    font-size: 0.7rem;
+    font-size: 1rem;
     height: 5.5rem;
     width: 5.5rem;
+}
+
+.large-icon svg{
+    height: 3rem;
+    width: 3rem;
 }
 
 
@@ -361,11 +366,12 @@ body{
     display: flex;
     height: 100%;
     min-height: 100vh;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     flex-direction: column;
     /*-ms-flex-direction: column;*/
-    background-color: var(--color-background);
+    background-color: var(--color-form);
     overflow: auto;
     scrollbar-gutter: stable;
 }
@@ -570,7 +576,7 @@ nav ul li button{
  }
   
  #bread-crumbs a{
-     font-size:0.625rem;
+     font-size:12px;
   }
   
   #bread-crumbs ul {
@@ -619,7 +625,7 @@ main {
     background-color: var( --color-form);
     color: var(--color-black);
     font-family: var(--font-primary);
-    /*padding: 1.25rem;*/
+    padding: 5%;
     /*box-shadow: 0 0 0.938rem rgba(0, 0, 0, 0.2);*/
     /*border-radius: 0.5rem;*/
     /*min-height: calc(100vh - 10rem);*/
@@ -714,6 +720,7 @@ footer {
     background-color: var(--color-form);
    /*  box-shadow: 0 0.25rem 0.5rem var(--color-black); */
     overflow: visible;
+
 }
 
 
@@ -731,7 +738,7 @@ footer {
 
 
 #root{
-    padding: 5%;
+    /*padding: 5%;*/
     /*background-color: var(--color-);*/
     /*box-shadow: 0 0.25rem 0.5rem var(--color-black);*/
         

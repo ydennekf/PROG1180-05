@@ -15,7 +15,9 @@
     ==================*/
 
 @media screen and (min-width: 320px) and (max-width:425px){
-
+    h1{
+        font-size: 1.3rem;
+    }
     * {
        font-size: 12px;
    }
@@ -57,13 +59,26 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, 1fr);
-        max-width: 90%;
-        width: 25rem;
+        max-width: 100%;
+        /* width: 25rem; */
     }
 
     .iso-header :nth-child(3){
         grid-row: 8;
     }
+
+    .qa-left-container{
+        min-width: 100%;
+    }
+
+    .quality-assurance-inputs, 
+    .purchasing-inputs {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 20px;
+    }
+
 }
 
 @media screen and (min-width:426px) and (max-width:767px){
@@ -76,7 +91,9 @@
         /* background: purple; */
        
     }
-
+    body{
+        background-color: blueviolet;
+    }
     main {
         /*width: 90%;*/
        /*  background-color: greenyellow; */
@@ -87,11 +104,21 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
-        max-width: 90%;
-        width: 600px;
+        max-width: 100%;
+       /*  width: 600px; */
     }
 
-    
+    .qa-left-container{
+        min-width: 100%;
+    }
+
+    .quality-assurance-inputs, 
+    .purchasing-inputs {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 20px;
+    }
    
 
     
@@ -115,15 +142,18 @@
 
       main {
         /*width: 90%;*/
-       /*  background-color: yellow; */
+       /*  bckground-color: yellow;a */
+    }
+    body{
+        background-color: yellow;
     }
 
     .iso-header{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        max-width: 90%;
-        width: 800px;
+        max-width: 100%;
+       /*  width: 800px; */
     }
 
 
@@ -162,12 +192,13 @@
         /* background: greenyellow; */
         
     }
-
+    body{
+        background-color: lightsalmon;
+    }
     
     main {
         width: 100%;
         /*max-width: 1200px;*/
-        background-color: lightsalmon;
     }
 
     /********************
@@ -239,14 +270,14 @@
     /* This section is for layout of the NCR form*/
 
 
-    .quality-assurance-inputs, 
-    .purchasing-inputs {
+    .quality-assurance-inputs {
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 2fr 5fr;
         gap: 20px;
     }
 
-    .engineering-inputs {
+    .engineering-inputs,
+    .purchasing-inputs {
         display: grid;
         grid-template-columns: 4fr;
         gap: 20px;
@@ -254,7 +285,8 @@
 
 
 
-    .engi-top-container{
+    .engi-top-container,
+    .purchasing-left-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -270,6 +302,6 @@
         grid-template-columns: repeat(3 1fr);
     }
 
-
+    *{font-size: 16px;}
 }
 

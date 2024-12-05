@@ -139,23 +139,25 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                         
                         <label id="purchase-decision-error" class="error-label"></label>
                     </fieldset>
-                        <div class="Car-container">
-                            <div>
-                                <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
-                            ${report?.CarRaised ? 'checked' : ''}/>
-                            <label id="lbl-car-raised" for="chk-car-raised">CAR Raised?</label>
-                            </div>
-                            <div>
-                                <label class="required" for="txt-car-num" id="lbl-car-num">CAR Number</label>
-                                <input ${purchaseReadOnly ? "disabled" : ''} aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
-                                value="${report?.CarNum || ""}"/>
-                                <label id="car-num-error" class="error-label"></label>
-                            </div>
-                    
-                        </div>    
+                          
                 
                 </div>
                 <div class="purchasing-right-container">
+
+                     <div class="Car-container">
+                        <div>
+                            <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
+                            ${report?.CarRaised ? 'checked' : ''}/>
+                            <label id="lbl-car-raised" for="chk-car-raised">CAR Raised?</label>
+                        </div>
+                        <div>
+                            <label class="required" for="txt-car-num" id="lbl-car-num">CAR Number</label>
+                            <input ${purchaseReadOnly ? "disabled" : ''} aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
+                            value="${report?.CarNum || ""}"/>
+                            <label id="car-num-error" class="error-label"></label>
+                        </div>
+                    
+                    </div> 
                     <div class="purchase-followup-container">
                         <div>
                             <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 

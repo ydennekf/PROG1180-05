@@ -248,9 +248,9 @@ table.ncr-list a:hover {
 
 
  .qa-left-container, .purchasing-left-container {
-    min-width: 17.1875rem;
-    max-width: 25rem;
-    min-height: 18.75rem;
+   /*  min-width: 17.1875rem; */
+   /*  max-width: 25rem; */
+   /*  min-height: 18.75rem; */
     display: block;
  }
 

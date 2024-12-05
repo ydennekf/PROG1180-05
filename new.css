@@ -421,9 +421,8 @@ body{
     background-color: var(--color-red);
     color: #f3e0e0;
     font-size: 12px;
-    position: static;
-    top: 0;
-    left: 0;
+    position: relative;
+
 
     padding: 3px;
     z-index: 2;
@@ -529,6 +528,11 @@ nav .logo {
     max-width: 1200px;
 }
 
+.filter-button-container{
+    height: 3rem;
+    width: 100%;
+}
+
 .nav-list li{
     cursor:pointer;
 }
@@ -549,6 +553,7 @@ nav ul li button{
 
 
 
+
 /**************************
     Bread crumb stuff
 ***************************/
@@ -557,6 +562,7 @@ nav ul li button{
     max-width: 1200px;
     width: 100%;
     margin: auto;
+
  }
   
  #bread-crumbs a{

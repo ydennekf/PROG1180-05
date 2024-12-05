@@ -577,6 +577,10 @@ h2 {
     gap: 1.25rem; 
     padding: 1.25rem; 
 }
+.nav-search.collapsed{
+    display: none;
+
+}
 
 /* Styling for each search field container */
 .search-container {

@@ -79,6 +79,8 @@ export function renderList(reports, currentPage = 1){
 
 
 let applySortListeners = (currentReports, targetID) => {
+
+    document.getElementById("filter-reveal-button").addEventListener('click', showFilterPanel)
     document.querySelectorAll('#' + targetID + ' th').forEach(header => {
         header.addEventListener('click', function(){
             let column = this.getAttribute('data-column');
@@ -95,6 +97,19 @@ let applySortListeners = (currentReports, targetID) => {
     });
     
 };
+
+let showFilterPanel = () => {
+    let filterPanel = document.getElementById('search-filters');
+    let filterTooltip = document.getElementById('filter-tooltip');
+
+    filterPanel.classList.toggle("collapsed");
+
+      if (filterPanel.classList.contains("collapsed")) {
+        filterTooltip.innerText = "Show Filters";
+    } else {
+        filterTooltip.innerText = "Hide Filters";
+    }
+}
 
 let sortReports = (reports, column, order) => {
     return reports.sort((a,b) => {

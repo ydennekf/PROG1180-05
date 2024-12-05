@@ -34,7 +34,11 @@
     .login-form {
         width: 100%;
     }
-
+    .notification-count{
+        position: relative;
+        bottom: 4.2rem;
+        left: 1rem;
+    }
     .nav-logo{
         margin-left: 10px;
     }
@@ -78,12 +82,22 @@
         grid-template-rows: 1fr 1fr;
         row-gap: 20px;
     }
+     .notification-count{
+        position: relative;
+        bottom: 4rem;
+        left: 0.9rem;
+    }
+     /*.report-preview-row {*/
+     /*    grid-template-columns: 4.8rem 4.9rem 7.2rem 5.8rem auto;*/
+     /*}*/
 
 }
 
-@media screen and (min-width:426px) and (max-width:767px){
+@media screen and (min-width:426px) and (max-width:768px){
     
-
+*{
+    font-size: 14px;
+}
     .centre-s{
         
         max-width: 100%;
@@ -131,7 +145,7 @@
    (Medium Screens)
    ========================= */
 
-@media screen and (min-width:768px) and (max-width:1023px){
+@media screen and (min-width:769px) and (max-width:1024px){
 
     .centre-m{
         max-width: 100%;
@@ -154,6 +168,11 @@
         grid-template-rows: repeat(3, 1fr);
         max-width: 100%;
        /*  width: 800px; */
+    }
+     .notification-count{
+        position: relative;
+        bottom: 2.5rem;
+        left: 0.2rem;
     }
 
 
@@ -182,7 +201,7 @@
    ========================= */
     
 
-@media screen and (min-width:1024px){
+@media screen and (min-width:1025px){
 
 
     .centre-l{
@@ -200,7 +219,11 @@
         width: 100%;
         /*max-width: 1200px;*/
     }
-
+     .notification-count{
+        position: relative;
+        bottom: 2.5rem;
+        left: 0.2rem;
+    }
     /********************
             OLD
     *********************/

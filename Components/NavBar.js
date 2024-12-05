@@ -165,10 +165,15 @@ export function SearchBar(targetID) {
     // separate the search box for NCR num and Supplier
     // set the search text to update on keypress again.
     let html = `
-  <h2>NCR's LOG</h2>
+  <h2>NCR LOG</h2>
         ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
         <div class='nav-list'>
-        <ul class='nav-search'>
+        <div class="tooltip-container filter-button-container">
+        <button id="filter-reveal-button" class="nav-icon" aria-label="Filter Toggle">${SVG.filterSVG()}</button>
+        <div id="filter-tooltip" class="tooltip bottom-tooltip">Toggle Filter Options</div>
+        </div>
+        
+        <ul class='nav-search collapsed' id="search-filters">
            
             
          
@@ -216,6 +221,7 @@ export function SearchBar(targetID) {
             </li>
         </ul>
         <div id="active-filters"></div>
+        </div>
     `
 
 

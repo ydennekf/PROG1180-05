@@ -293,25 +293,29 @@
     /* This section is for layout of the NCR form*/
 
 
-    .quality-assurance-inputs {
+    .quality-assurance-inputs,
+    .purchasing-inputs {
         display: grid;
         grid-template-columns: 2fr 5fr;
         gap: 20px;
     }
 
-    .engineering-inputs,
-    .purchasing-inputs {
+    .engineering-inputs {
         display: grid;
         grid-template-columns: 4fr;
         gap: 20px;
     }
 
-
-
-    .engi-top-container,
-    .purchasing-left-container{
+    .engi-top-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .purchasing-right-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row: repeat(3, 1fr);
+        border: 0;
     }
 
     .col-2{

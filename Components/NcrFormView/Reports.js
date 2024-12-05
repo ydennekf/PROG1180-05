@@ -122,13 +122,13 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                         <div>
                         <input id="rad-purchaseReview-repair" required ${purchaseReadOnly? "disabled" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-repair" value="Repair" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Repair"? 'checked' : ''}>
-                        <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Repair</label> </div>
+                        <label for="rad-purchaseReview-repair" id="lbl-purchaseReview-repair">Defer</label> </div>
                         
                         
                         <div>
                         <input id="rad-purchaseReview-rework" required ${purchaseReadOnly? "disabled" : ""} aria-errormessage="purchaseReview-radio-error" type="radio" aria-describedby="lbl-purchaseReview-rework" value="Rework" name="rad-purchaseReview"
                         ${report?.purchaseDecision === "Rework"? 'checked' : ''}>
-                        <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Rework</label></div>
+                        <label for="rad-purchaseReview-rework" id="lbl-purchaseReview-rework">Return</label></div>
                       
                         
                         <div>
@@ -144,7 +144,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                 </div>
                 <div class="purchasing-right-container">
 
-                     <div class="Car-container">
+                     <div class="Car-container col-2">
                         <div>
                             <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
                             ${report?.CarRaised ? 'checked' : ''}/>
@@ -158,21 +158,13 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                         </div>
                     
                     </div> 
-                    <div class="purchase-followup-container">
+                    <div class="purchase-followup-container col-2">
                         <div>
                             <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
                             ${report?.followUpRequired ? 'checked' : ''}/>
                             <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
                         </div>
-                        <div class="purchase-foollowupdate-container">
-                            <label for="dtp-followup-date">Followup Date:</label>
-                            <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
-                            <label id="followup-date-error" class="error-label"></label>
-                        </div>
-                    </div>
-
-                    <div class="purchase-signoff-container">
-                        <div>
+                         <div>
                             <label for="followup-type">Followup Type:</label>
                             <label id="followup-type-error" class="error-label"></label>
                             <select id="cbo-followup-type" name="followup-type" ${purchaseReadOnly ? "disabled" : ''}>
@@ -184,6 +176,14 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                                 <option ${report?.followUpType === "Fax" ? "selected" : "" } value="Fax">Fax</option>
                             </select>
                         </div>
+                        <div class="purchase-foollowupdate-container">
+                            <label for="dtp-followup-date">Followup Date:</label>
+                            <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
+                            <label id="followup-date-error" class="error-label"></label>
+                        </div>
+                    </div>
+
+                    <div class="purchase-signoff-container col-2">
 
                         <div>
                             <label for="txt-operation-manager" id="lbl-operation-manager">Operation Manager</label>

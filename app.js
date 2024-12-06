@@ -13,7 +13,7 @@ import { append, insert, resetForm } from './Components/utils/utils.js';
 import { initApp } from './AppState.js';
 import  {setMobileMediaQuery} from "./Components/utils/utils.js";
 import { app } from './AppState.js';
-import { AccessibilityPanel } from './Components/AccesibilityPanel.js';
+import {AccessibilityPanel, renderFAQLink} from './Components/AccesibilityPanel.js';
 import { loadNavOnLogin, NavBar } from './Components/NavBar.js';
 import Index from './Components/Views/Index.js';
 
@@ -71,9 +71,10 @@ export let handleLogin = (event) => {
 
 window.onload = () => {
     NavBar();
-
+    renderFAQLink()
     createLogin("root", handleLogin);
     AccessibilityPanel()
+
 
     console.log(employees);
 }

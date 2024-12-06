@@ -406,7 +406,7 @@ body{
     max-width: 1200px;
 }
 
-.nav-icon{
+.nav-icon, .faq-icon{
     height: 2rem;
     width: 2rem;
     font-size: 0.5rem;
@@ -416,10 +416,15 @@ body{
     text-align: center;
     padding: 0;
 }
-.nav-icon svg{
+.nav-icon svg, .faq-icon svg {
     height: 100%;
     width: 100%;
 }
+.faq-icon{
+    float: right;
+}
+
+
 
 .icon svg{
     height: 80%;
@@ -635,7 +640,7 @@ main {
 
 
 footer {
-    display: inline-block;
+    display: inline-flex;
     background-color: var(--color-primary);
     color: var(--color-white);
     padding: 0.625rem;
@@ -644,6 +649,8 @@ footer {
     text-align: center;
     width: 100%;
     margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
 
 }
 

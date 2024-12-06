@@ -1,6 +1,7 @@
 import { append, injectOrReturn } from "./utils/utils.js"
 import * as SVG from "./svgs.js";
-import {createFAQ} from "./FAQ.js";
+
+import {redirectFAQ} from "../redirection/redirect.js";
 
 
 
@@ -125,7 +126,7 @@ export function renderFAQLink() {
     <div class="tooltip top-tooltip">Frequently asked questions</div>
     `;
 
-    document.getElementById("faq-link").addEventListener("click", createFAQ)
+    document.getElementById("faq-link").addEventListener("click", redirectFAQ)
 }
 
 

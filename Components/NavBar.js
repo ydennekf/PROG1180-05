@@ -139,8 +139,9 @@ export function NavBar() {
     const html = `
     <nav id="main-nav" class="main-nav">
     
-    <div class="nav-logo">
+    <div class="nav-logo tooltip-container">
          <img id='crossfire-logo' class='logo' src="../image/crossfire-logo-no-bkg-darkmode.png" alt="crossfire's logo" />
+         <div class="tooltip bottom-tooltip">Return Home</div>
     </div>
     <div id="nav-links">
     

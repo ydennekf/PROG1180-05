@@ -1,6 +1,6 @@
 export function createSVG(height=40, width=40, color='#fff'){
     return `
-    <svg fill="${color}" viewBox="0 0 64 64" version="1.1" 
+    <svg class="create-svg" fill="${color}" viewBox="0 0 64 64" version="1.1" 
     xmlns="http://www.w3.org/2000/svg" 
     xml:space="preserve"  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
@@ -23,7 +23,7 @@ export function eyeSVG(ncrNumber){
 }
 
 export function documentSVG(ncrNumber){
-    return `<svg data-ncr-number="${ncrNumber}" width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g id="SVGRepo_bgCarrier3" stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
+    return `<svg class="report-svg"  "${ncrNumber}" width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g id="SVGRepo_bgCarrier3" stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
 }
 
 export function bellSVG() {
@@ -157,7 +157,7 @@ export function exportSVG() {
 }
 
 export function filterSVG() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    return `<svg class="filter-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
   <g id="Filter">
     <path d="M14.037,20.937a1.015,1.015,0,0,1-.518-.145l-3.334-2a2.551,2.551,0,0,1-1.233-2.176V12.091a1.526,1.526,0,0,0-.284-.891L4.013,4.658a1.01,1.01,0,0,1,.822-1.6h14.33a1.009,1.009,0,0,1,.822,1.6h0L15.332,11.2a1.527,1.527,0,0,0-.285.891v7.834a1.013,1.013,0,0,1-1.01,1.012ZM4.835,4.063,9.482,10.62a2.515,2.515,0,0,1,.47,1.471v4.524a1.543,1.543,0,0,0,.747,1.318l3.334,2,.014-7.843a2.516,2.516,0,0,1,.471-1.471l4.654-6.542,0,0Z"/>

@@ -3,6 +3,7 @@ import { app } from "../AppState.js"
 import { reportData } from "../Data/new_reportData.js"
 import Index from "../Components/Views/Index.js";
 import {ReportView} from "../Components/NcrFormView/ReportView.js";
+import {createFAQ} from "../Components/FAQ.js";
 
 
 
@@ -30,4 +31,13 @@ export function redirectNewReport(newPath=true){
         app.history.push({component:'ReportView', data:[null, "Create"]})
 
     app.currentView = "ReportView"
+}
+
+export function redirectFAQ(newPath=true){
+    createFAQ()
+    newPath ?
+        app.history.newPath({component:'createFAQ', data:[]})
+        :
+        app.history.push({component: 'createFAQ', data:[]})
+    app.currentView = "FAQ"
 }

@@ -39,7 +39,7 @@ function RoleIndexButtons(){
                     <button id="view-reports" class="large-icon">
                         ${eyeSVG()}
                         <br/>
-                        NCR Log
+                        Log
                     </button>
                     <button class="large-icon">
                         ${documentSVG()}
@@ -51,21 +51,21 @@ function RoleIndexButtons(){
         default: // This will be for QA I just need to figure out whaat each ones buttons will be
             return `
         <div class= "home-button-centre">
-            <div class= "home-ncr-button">
+            
                 <button id="create-report-btn" class="large-icon">
                     ${createSVG()}<br/>
-                    Create NCR
+                    Create
                 </button>
                 <button id="view-reports" class="large-icon">
                     ${eyeSVG()}
                     <br/>
-                    NCR Log
+                    Log
                 </button>
                 <button class="large-icon">
                     ${documentSVG()}<br/>
                     Reporting
                 </button>
-            </div>    
+            
         </div>`
     }
 

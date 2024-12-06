@@ -87,6 +87,7 @@ table.ncr-list a:hover {
     width: 100%;
     margin: auto;
      height: 6rem;
+     font-size: 12px;
     /* padding: 0 1.25rem; */
  }
 
@@ -314,10 +315,10 @@ textarea {
    Button and Accessibility Controls
    ========================= */
  
-#create-report-btn {
-    margin-top:2.35vh
-}
- 
+/*#create-report-btn {*/
+/*    margin-top:2.35vh*/
+/*}*/
+/* */
 #accessibilityControls chkbox label{
     color:white !important;
 }

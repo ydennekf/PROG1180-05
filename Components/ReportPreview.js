@@ -112,17 +112,25 @@ export function previewBindings(){ // Called after mapComponents completes on re
         e.addEventListener('click', (ev) => openReportEditor(ev.target.dataset.ncrNumber))
     })
 
-    // archiveBtns.forEach(e => {
-    //     e.addEventListener('click', pdfMake.createPdf(convertToPDF("2024-001")).open())
-    // })
-    // THIS IS INCREDIBLY SHIT CODE
+    archiveBtns.forEach(e => {
+        e.addEventListener('click', (e) => {
+            pdfMake.createPdf(convertToPDF(e.target.dataset.ncrNumber)).open()
+            getReport(e.target.dataset.ncrNumber).status = "archived"
+        })
+    })
+    //THIS IS INCREDIBLY SHIT CODE
     // var s = document.createElement('script');
     // s.type = 'module';
     // let code = `
     // import { convertToPDF } from "../Data/createPDF.js";
+   
     //  const archiveBtns = document.querySelectorAll('.archive-report')
     //      archiveBtns.forEach(e => {
-    //     e.addEventListener('click', (ev) =>  pdfMake.createPdf(convertToPDF(ev.target.dataset.ncrNumber)).open())
+            
+    //     e.addEventListener('click', function(ev)  {ev.preventDefault();pdfMake.createPdf(convertToPDF(ev.target.dataset.ncrNumber)).open()
+           
+    //     })
+        
     // })
     // `
     // try {

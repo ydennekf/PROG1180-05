@@ -806,6 +806,12 @@ footer {
 /* .ncr-list{
     box-shadow: 0 0.25rem 0.5rem var(--color-black);
 } */
+
+.ui-accordion-content{
+    height: auto !important;
+    min-height: 0 !important;
+}
+
 .qa-left-container{
      display: block;
   }
@@ -818,6 +824,7 @@ footer {
     
     padding: 1.875rem;
     border-radius: 0.5rem;
+
    /*  box-shadow: 0 0.25rem 0.5rem var(--color-black); */
  }
 

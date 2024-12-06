@@ -599,7 +599,7 @@ $(document).ready(function(){
     animate: 200,
     icons: null,
     multiple: true, // Enable multiple sections open
-      heightStyle: "content"
+      heightStyle: "auto"
   });
 });
 

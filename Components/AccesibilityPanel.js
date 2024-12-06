@@ -1,5 +1,6 @@
 import { append, injectOrReturn } from "./utils/utils.js"
 import * as SVG from "./svgs.js";
+import {createFAQ} from "./FAQ.js";
 
 
 
@@ -114,5 +115,17 @@ export function AccessibilityPanel(){
              e.removeEventListener('click', swapTheme)
              e.addEventListener('click',swapTheme)
          }
+
+
+export function renderFAQLink() {
+    console.log("FAQ SHOULD BE HERE NOW")
+    const e = document.getElementById("faq-link");
+    e.innerHTML = `
+    ${SVG.faqSVG()}
+    <div class="tooltip top-tooltip">Frequently asked questions</div>
+    `;
+
+    document.getElementById("faq-link").addEventListener("click", createFAQ)
+}
 
 

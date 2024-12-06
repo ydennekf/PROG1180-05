@@ -4,7 +4,7 @@ import { mapComponents } from "../utils/utils.js";
 import { previewBindings, reportPreview } from "../ReportPreview.js";
 import { injectOrReturn } from "../utils/utils.js";
 import { redirectNewReport, redirectViewAllReports } from "../../redirection/redirect.js";
-import {reportData } from "../../Data/new_reportData.js";
+import {getReport, reportData } from "../../Data/new_reportData.js";
 
 
 export default function Index(){
@@ -84,6 +84,18 @@ function indexButtonBindings(){
 export function RecentReports(targetID = null){
     const recent = app.storage.getRecentReports()
 
+    // Iterate through recent reports 
+    // if the report isnt in reportData we skip
+    const reports = []
+    recent.forEach(element => {
+        console.log(element)
+        const e = getReport(element)
+        if(e){
+            reports.push(e)
+        }
+    });
+
+
     const html = `
 
     
@@ -91,7 +103,7 @@ export function RecentReports(targetID = null){
     ${UnsortedHeader()}
      <tbody>
           
-        ${recent.length > 0 && recent[0] != null ? mapComponents(recent, reportPreview) : "<tr><td colspan='5'>You haven't viewed any reports recently!</td></tr>"} 
+        ${reports.length > 0  ? mapComponents(reports, reportPreview) : "<tr><td colspan='5'>You haven't viewed any reports recently!</td></tr>"} 
         </tbody>
     </table>
       

@@ -40,15 +40,15 @@ let  startDate = new Date(reportData.date);
                 <div class='index-view-table-buttons'>
                 <div class="tooltip-container view-report" data-ncr-number="${reportData.ncrNumber}">
                 <button class="icon" tabindex="5" >${SVG.viewSVG(reportData.ncrNumber)}</button>
-                <div class="tooltip top-tooltip">Details</div>
+                <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Details</div>
                 </div>
                 <div class="tooltip-container edit-report" data-ncr-number="${reportData.ncrNumber}">
                 <button class="icon" tabindex="5" >${SVG.editSVG(reportData.ncrNumber)}</button>
-                <div class="tooltip top-tooltip">Edit</div>
+                <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Edit</div>
                 </div>
                 <div class="tooltip-container archive-report" data-ncr-number="${reportData.ncrNumber}">
                 <button class="icon" tabindex="5" >${SVG.folderSVG(reportData.ncrNumber)}</button>
-                <div class="tooltip top-tooltip">Archive</div>
+                <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Archive</div>
                 </div>
                     
                     

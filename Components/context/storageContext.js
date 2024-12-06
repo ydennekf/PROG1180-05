@@ -42,15 +42,16 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
 
     function pushRecentReport(reportNumber){
         let reports =empPreferences[employee.username].recentReports
+        console.log(reports, reportNumber)
        const curTotal = reports.length
-       const idx = reports.findIndex((c) => c.ncrNumber === reportNumber)
+       const idx = reports.findIndex((c) => c === reportNumber)
        console.log(idx + "Index")
        if(idx >= 0){ // if the reports already in recent it removes the report and then pushes it to the front
 
-        reports = reports.filter(r => r.ncrNumber !== reportNumber)
+        reports = reports.filter(r => r !== reportNumber)
        }
        
-       reports.unshift(getReport(reportNumber)) // add to front
+       reports.unshift(reportNumber) // add to front
        if(curTotal === 5){
            reports.pop()
        }

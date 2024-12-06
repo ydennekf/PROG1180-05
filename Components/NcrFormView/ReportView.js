@@ -562,9 +562,11 @@ ${AutoFillButtons()}
 
 // add functionality to allow multiple sections to be open here.
 $.widget("custom.multiAccordion", $.ui.accordion, {
+
   options: {
     // Custom option to allow multiple sections open
-    multiple: true
+    multiple: true,
+
   },
   _create: function() {
     this._super();
@@ -596,7 +598,8 @@ $(document).ready(function(){
     collapsible: true,
     animate: 200,
     icons: null,
-    multiple: true // Enable multiple sections open
+    multiple: true, // Enable multiple sections open
+      heightStyle: "content"
   });
 });
 

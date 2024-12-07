@@ -423,32 +423,32 @@ setReadonly()
                 <div class="qa-left-container">
                     <ul class="qa-labels">
                         <li>
-                            <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">&nbsp; NCR No:</label>
+                            <label class= "required" for="txt-ncr-number" id="lbl-ncr-number">&nbsp;&nbsp;NCR No:</label>
                             <input readonly aria-errormessage="ncr-number-error" name="ncr-number" required type="text" aria-describedby="lbl-ncr-number" id="txt-ncr-number"
                             value="${report?.ncrNumber || newNCR}"/>
                             <label id="ncr-number-error" class="error-label"></label>
                         </li>
                         
                         <li>
-                            <label class="required" for="txt-prod-number" id="lbl-prod-number"><span class="required-marker">*</span> Product No:</label>
+                            <label class="required" for="txt-prod-number" id="lbl-prod-number"><span class="required-marker">*</span>&nbsp;Product No:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="prod-number-error" name="prod-number" required type="text" aria-describedby="lbl-prod-number" id="txt-prod-number"
                             value="${safeTruthy(report?.prodNumber, '')}"/>
                             <label id="prod-number-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-sales-number" id="lbl-sales-number"><span class="required-marker">*</span>Sales Order No:</label>
+                            <label class="required" for="txt-sales-number" id="lbl-sales-number"><span class="required-marker">*</span>&nbsp;Sales Order No:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sales-number-error" name="sales-number" required type="text" aria-describedby="lbl-sales-number" id="txt-sales-number"
                             value="${safeTruthy(report?.salesNumber, '')}"/>
                             <label id="sales-number-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-quantity-received" id="lbl-quantity-received"><span class="required-marker">*</span>Qty. Received:</label>
+                            <label class="required" for="txt-quantity-received" id="lbl-quantity-received"><span class="required-marker">*</span>&nbsp;Qty. Received:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-received-error" name="quantity-received" required type="number" aria-describedby="lbl-quantity-received" id="txt-quantity-received"
                             value="${safeTruthy(report?.qtyReceived, '')}" min="1"/>
                             <label id="quantity-received-error" class="error-label"></label>
                         </li>
                         <li>
-                            <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective"><span class="required-marker">*</span>Qty. Defective:</label>
+                            <label class="required" for="txt-quantity-defective" id="lbl-quantity-defective"><span class="required-marker">*</span>&nbsp;Qty. Defective:</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="quantity-defective-error" name="quantity-defective" required type="number" aria-describedby="lbl-quantity-defective" id="txt-quantity-defective"
                             value="${safeTruthy(report?.qtyDefective, '')}" min="1"/>
                             <label id="quantity-defective-error" class="error-label"></label>
@@ -456,16 +456,15 @@ setReadonly()
                     </ul>  
                                      
                     <ul class= "qa-checkbox-align">
-                        <span class="required-marker">*</span>
-                        <label for="wip-or-rec">Identify Process Applicable:</label>
+                        <label for="wip-or-rec"><span class="required-marker">*</span>&nbsp;Identify Process Applicable:</label>
                             
-                            <li>  
+                            <li class= "chkBox2">  
                                 <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 
                                 ${ report?.supplierOrRec ? 'checked' : ''}/>
                                  <label id="lbl-supplier-or-rec" for="rad-supplier-or-rec">Supplier or Rec-Insp</label>
                                 <label id="QA-supplier-or-rec-radio-error" class="error-label"></label>
                             </li>
-                            <li>
+                            <li class= "chkBox2">
                                 <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-wip" type="radio" id="rad-wip" 
                                 ${ report?.supplierOrRec === false ? 'checked' : ''}/>
                                 <label id="lbl-wip" for="rad-wip">WIP</label>
@@ -477,7 +476,7 @@ setReadonly()
                 <div class="qa-right-container">
                     <div>
                         <div>
-                            <label class="required" for="txt-supplier" id="lbl-supplier"><span class="required-marker">*</span> Supplier Name</label>
+                            <label class="required" for="txt-supplier" id="lbl-supplier"><span class="required-marker">*</span>&nbsp;Supplier Name</label>
                             <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="supplier-error" name="supplier-name" required type="text" aria-describedby="lbl-supplier" id="txt-supplier"
                             value="${report?.supplierName || ''}"/>
                             <label id="supplier-error" class="error-label"></label>
@@ -490,7 +489,7 @@ setReadonly()
                             </div>
                         </div>
                         <fieldset class="no-border">
-                            <legend><span class="required-marker">*</span> Description of Item</legend>
+                            <legend><span class="required-marker">*</span>&nbsp;Description of Item</legend>
                             <div class="sap-width hypen">
                                 <input ${QAReadOnly ? "readonly" : ''} aria-errormessage="sap-number-error" name="sap-number" required type="number" aria-describedby="lbl-sap-number" id="txt-sap-number"
                                 value="${safeTruthy(report?.sapNumber, '')}" placeholder="SAP No"/>
@@ -507,7 +506,7 @@ setReadonly()
                         </field>
                     </div>
                     <div>
-                        <label class="required" for="txt-item-defect" id="lbl-item-defect"><span class="required-marker">*</span> Description of Defect</label>
+                        <label class="required" for="txt-item-defect" id="lbl-item-defect"><span class="required-marker">*</span>&nbsp;Description of Defect</label>
                         <textarea ${QAReadOnly ? "readonly" : ''} required aria-errormessage="item-defect-error"  aria-describedby="lbl-item-defect" id="txt-item-defect">${report?.defectDescription || ''}</textarea>
                         <label id="item-defect-error" class="error-label"></label>
                     </div>
@@ -516,12 +515,12 @@ setReadonly()
                         <div>
                             <input ${QAReadOnly ? "disabled" : ''} name="non-conforming" aria-describedby="lbl-non-conforming" type="checkbox" id="chk-non-conforming" 
                                ${report?.nonConforming ? 'checked' : ''}/>
-                            <label id="lbl-non-conforming" for="chk-non-conforming"><span class="required-marker">*</span>Item Non-Conforming?</label>   
+                            <label id="lbl-non-conforming" for="chk-non-conforming"><span class="required-marker">*</span>&nbsp;Item Non-Conforming?</label>   
                         </div>
                         <div>
                             <input ${QAReadOnly ? "disabled" : ''} name="engineering-required" aria-describedby="lbl-engineering-required" type="checkbox" id="chk-engineering-required" 
                                 ${report?.engineeringRequired ? 'checked' : ''}/>
-                            <label id="lbl-engineering-required" for="chk-engineering-required"><span class="required-marker">*</span>Engineering Required?</label>                     
+                            <label id="lbl-engineering-required" for="chk-engineering-required"><span class="required-marker">*</span>&nbsp;Engineering Required?</label>                     
                         </div>
                     </div>       
                 </div>     

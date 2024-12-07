@@ -14,7 +14,7 @@
       Media Queries 
     ==================*/
 
-@media screen and (min-width: 320px) and (max-width:425px){
+@media screen and (max-width:425px){
     h1{
         font-size: 1.3rem;
     }
@@ -35,12 +35,6 @@
 
     .nav-logo{
         margin-left: 10px;
-    }
-
-    .centre-s{
-        /*margin: 0 auto;*/
-
-        /* background: lightblue; */
     }
 
     main{
@@ -85,7 +79,27 @@
         gap: 0.5rem;
     }
 
-  /*   .qa-left-container,
+    .chkBox2{
+        
+        margin-bottom: 0rem;
+    }
+
+    .purchasing-right-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .followup-date{
+        margin-top: 0rem;
+    }
+
+     .notification-count{
+        position: relative;
+        bottom: 4rem;
+        left: 0.9rem;
+    }
+
+    /*   .qa-left-container,
     .qa-right-container,   
     .engi-right-container,
     .engi-top-container,
@@ -93,12 +107,6 @@
     .purchasing-left-container{
         height: fit-content;
     } */
-
-     .notification-count{
-        position: relative;
-        bottom: 4rem;
-        left: 0.9rem;
-    }
      /*.report-preview-row {*/
      /*    grid-template-columns: 4.8rem 4.9rem 7.2rem 5.8rem auto;*/
      /*}*/
@@ -107,9 +115,15 @@
 
 @media screen and (min-width:426px) and (max-width:768px){
     
-*{
-    font-size: 14px;
-}
+    h1{
+        font-size: 1.3rem;
+    }
+    * {
+       font-size: 12px;
+   }
+    #bread-crumbs a {
+        font-size: 12px;
+    }
 
 .notification-count{
     bottom: 4rem;
@@ -135,7 +149,7 @@
     .iso-header{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         max-width: 100%;
        /*  width: 600px; */
     }
@@ -154,6 +168,25 @@
         row-gap: 20px;
     }
 
+    .qa-checkbox-align{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .chkBox2{
+        
+        margin-bottom: 0rem;
+    }
+
+    .purchasing-right-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .followup-date{
+        margin-top: 0rem;
+    }
 
 }
 
@@ -164,6 +197,16 @@
    ========================= */
 
 @media screen and (min-width:769px) and (max-width:1024px){
+
+    h1{
+        font-size: 1.5rem;
+    }
+    * {
+       font-size: 14px;
+   }
+    #bread-crumbs a {
+        font-size: 14px;
+    }
 
     .centre-m{
         max-width: 100%;
@@ -187,6 +230,12 @@
         max-width: 100%;
        /*  width: 800px; */
     }
+
+}
+.iso-header :nth-child(8){
+    grid-column: 2/4;
+    grid-row: 3/4;
+}
      .notification-count{
         position: relative;
         bottom: 3.5rem;
@@ -194,13 +243,40 @@
     }
 
 
-    .quality-assurance-inputs, 
-    .purchasing-inputs,
-    .engineering-inputs{
+    
+    .quality-assurance-inputs,
+    .engineering-inputs,
+    .purchasing-inputs{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        /* grid-template-rows: 1fr 1fr; */
+        gap: 20px;
+    }
+
+     .qa-checkbox-align{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        row-gap: 20px;
+        gap: 0.5rem;
+    }
+
+    .chkBox2{
+        
+        margin-bottom: 0rem;
+    }
+
+  /*   .purchasing-right-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: repeat(4, 1fr); */
+    } */
+    .followup-date{
+        margin-top: 0rem;
+    }
+
+     .notification-count{
+        position: relative;
+        bottom: 4rem;
+        left: 0.9rem;
     }
 
 

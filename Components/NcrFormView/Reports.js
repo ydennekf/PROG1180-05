@@ -9,7 +9,7 @@ export function EngineeringReport(report, engiReadOnly, targetID = null, hidden=
                 <div class="engi-top-container">
                     
                 <fieldset>
-                    <legend><span class="required-marker">*</span> Review by CF Engineering</legend>
+                    <legend><span class="required-marker">*</span>&nbsp;Review by CF Engineering</legend>
                     <div id="engineering-exists" style="display:none;"></div>
                         
                     <ul class= "col-2">
@@ -45,12 +45,12 @@ export function EngineeringReport(report, engiReadOnly, targetID = null, hidden=
                 
 
                 <ul class= "eng-checkbox-align">
-                        <li>
+                        <li class= "chkBox2">
                             <input ${engiReadOnly ? "disabled" : ''} name="customer-notification" aria-describedby="lbl-customer-notification" type="checkbox" id="chk-customer-notification" 
                             ${report?.customerNotification ? 'checked' : ''}/>
                             <label id="lbl-customer-notification" for="chk-customer-notification">Does Customer Require Notification of NCR?</label>
                         </li>
-                        <li>
+                        <li class= "chkBox2">
                             <input ${engiReadOnly ? "disabled" : ''} name="drawing-to-update" aria-describedby="lbl-drawing-to-update" type="checkbox" id="chk-drawing-to-update" 
                             ${report?.drawingToUpdate ? 'checked' : ''}/>
                             <label id="lbl-drawing-to-update" for="chk-drawing-to-update">Does the drawing require updating?</label>
@@ -90,7 +90,7 @@ export function EngineeringReport(report, engiReadOnly, targetID = null, hidden=
                         </div>
    
                         <div>
-                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition"><span class="required-marker">*</span> Disposition</label>
+                            <label class="required" for="txt-engi-disposition" id="lbl-engi-disposition"><span class="required-marker">*</span>&nbsp;Disposition</label>
                             <textarea ${engiReadOnly ? "readonly" : ''} required aria-errormessage="Engineering-disposition-error"  aria-describedby="lbl-engi-disposition" id="txt-engi-disposition">${report?.Disposition || ''}</textarea>
                             <label id="Engineering-disposition-error" class="error-label"></label>
                         </div>
@@ -110,7 +110,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                 <div class="purchasing-left-container">
 
                     <fieldset>
-                        <legend>Purchasing's Preliminary Decision</legend>
+                        <legend><span class="required-marker">*</span>&nbsp;Purchasing's Preliminary Decision</legend>
                         <div id="purchasing-exists" style="display:none;"></div>
                     
                         <div>
@@ -145,27 +145,27 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                 <div class="purchasing-right-container COL-2">
 
                      
-                        <div>
+                        <div class= "chkBox2">
                             <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
                             ${report?.CarRaised ? 'checked' : ''}/>
-                            <label id="lbl-car-raised" for="chk-car-raised">CAR Raised?</label>
+                            <label id="lbl-car-raised" for="chk-car-raised"><span class="required-marker">*</span>&nbsp;CAR Raised?</label>
                         </div>
                         <div>
-                            <label class="required" for="txt-car-num" id="lbl-car-num">CAR Number</label>
+                            <label class="required" for="txt-car-num" id="lbl-car-num"><span class="required-marker">*</span>&nbsp;CAR Number</label>
                             <input ${purchaseReadOnly ? "disabled" : ''} aria-errormessage="car-num-error" name="car-num" type="text" aria-describedby="lbl-car-num" id="txt-car-num"
                             value="${report?.CarNum || ""}"/>
                             <label id="car-num-error" class="error-label"></label>
                         </div>
                     
                   
-                        <div>
+                        <div class= "chkBox2">
                             <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
                             ${report?.followUpRequired ? 'checked' : ''}/>
-                            <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
+                            <label id="lbl-follwup-req" for="chk-followup-req"><span class="required-marker">*</span>&nbsp;Followup Required?</label>
                         </div>
                          <div>
                             <fieldset class="no-border">
-                                <legend for="followup-type">Followup Type:</legend>
+                                <legend for="followup-type"><span class="required-marker">*</span>&nbsp;Followup Type:</legend>
                                 <label id="followup-type-error" class="error-label"></label>
                                 <select id="cbo-followup-type" name="followup-type" ${purchaseReadOnly ? "disabled" : ''}>
                                     <option ${!report?.followUpType ? "selected" : "" } value="">Select a type</option>
@@ -177,21 +177,21 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                                 </select>
                             </fieldset>
                         </div>
-                        <div>
-                            <label for="dtp-followup-date">Followup Date:</label>
+                        <div class="followup-date">
+                            <label for="dtp-followup-date"><span class="required-marker">*</span>&nbsp;Followup Date:</label>
                             <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
                             <label id="followup-date-error" class="error-label"></label>
                         </div>
                    
 
                         <div>
-                            <label for="txt-operation-manager" id="lbl-operation-manager">Operation Manager</label>
+                            <label for="txt-operation-manager" id="lbl-operation-manager"><span class="required-marker">*</span>&nbsp;Operation Manager</label>
                             <input readonly name="operation-manager" type="text" aria-describedby="lbl-operation-manager" id="txt-operation-manager"
                             value="${report?.operationManager || app.employee.username}"/>
                         </div>
 
                         <div>
-                            <label for="dtp-purchase-date">Purchase Date:</label>
+                            <label for="dtp-purchase-date"><span class="required-marker">*</span>&nbsp;Purchase Date:</label>
                             <input value="${report?.purchaseDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"  aria-describedby="lbl-purchase-date" type="text" id="dtp-purchase-date" placeholder="Select purchase date">
                             <label id="purchase-date-error" class="error-label"></label>
                         </div>

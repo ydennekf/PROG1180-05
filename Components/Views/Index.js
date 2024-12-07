@@ -118,7 +118,7 @@ function UnsortedHeader(){
         
         <thead>
         <tr><th colspan="5">Recent Reports</th></tr>
-        <tr>
+        <tr class="report-preview-row">
             <th data-column="ncrNumber" tabindex="4">NCR no.</th>
             <th data-column="date" tabindex="4" >Date</th>
             <th data-column="supplierName" tabindex="4">Supplier</th>

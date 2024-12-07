@@ -170,15 +170,18 @@ export function SearchBar(targetID) {
   <h2>NCR LOG</h2>
         
         <div class='nav-list'>
-        <div class="tooltip-container filter-button-container">
-        <button id="filter-reveal-button" class="nav-icon" aria-label="Filter Toggle">${SVG.filterSVG()}</button>
+        <div class="filter-container-buttons"> 
+                <div class="tooltip-container filter-button-container">
+                    <button id="filter-reveal-button" class="nav-icon" aria-label="Filter Toggle">${SVG.filterSVG()}</button>
+            
+            <div id="filter-tooltip" class="tooltip bottom-tooltip">Toggle Filter Options</div>
+            </div>
+            
+            ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container tooltip-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button><div id="create-filter-tooltip" class="tooltip bottom-tooltip">Create NCR</div></div>' : ""}
+        </div>
         
-        <div id="filter-tooltip" class="tooltip bottom-tooltip">Toggle Filter Options</div>
-        </div>
-        <div class="tooltip-container">
-        ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button></div>' : ""}
-        <div id="create-filter-tooltip" class="tooltip bottom-tooltip">Create NCR</div>
-        </div>
+        
+        
         
         <ul class='nav-search collapsed' id="search-filters">
            

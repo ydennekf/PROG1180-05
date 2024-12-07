@@ -81,7 +81,7 @@
 
     .chkBox2{
         
-        margin-bottom: 0rem;
+        margin-bottom: 0;
     }
 
     .purchasing-right-container{
@@ -90,7 +90,7 @@
         grid-template-rows: repeat(7, 1fr);
     }
     .followup-date{
-        margin-top: 0rem;
+        margin-top: 0;
     }
 
      .notification-count{
@@ -132,13 +132,11 @@
     .centre-s{
         
         max-width: 100%;
-        margin: auto;
+        margin: 0 auto;
         /* background: purple; */
        
     }
-    body{
-        background-color: blueviolet;
-    }
+
     main {
         padding: 1rem;
         /*width:100%;*/
@@ -159,14 +157,14 @@
     }
    
 
-    .quality-assurance-inputs, 
-    .purchasing-inputs,
-    .engineering-inputs{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        row-gap: 20px;
-    }
+    /*.quality-assurance-inputs, */
+    /*.purchasing-inputs,*/
+    /*.engineering-inputs{*/
+    /*    display: grid;*/
+    /*    grid-template-columns: 1fr;*/
+    /*    grid-template-rows: 1fr 1fr;*/
+    /*    row-gap: 20px;*/
+    /*}*/
 
     .qa-checkbox-align{
         display: grid;
@@ -176,7 +174,7 @@
 
     .chkBox2{
         
-        margin-bottom: 0rem;
+        margin-bottom: 0;
     }
 
     .purchasing-right-container{
@@ -185,7 +183,7 @@
         grid-template-rows: repeat(7, 1fr);
     }
     .followup-date{
-        margin-top: 0rem;
+        margin-top: 0;
     }
 
 }
@@ -210,7 +208,7 @@
 
     .centre-m{
         max-width: 100%;
-        margin: auto;
+        margin: 0 auto;
         /* background: yellow; */
         
       }
@@ -219,9 +217,7 @@
         /*width: 90%;*/
        /*  bckground-color: yellow;a */
     }
-    body{
-        background-color: yellow;
-    }
+
 
     .iso-header{
         display: grid;
@@ -261,16 +257,16 @@
 
     .chkBox2{
         
-        margin-bottom: 0rem;
+        margin-bottom: 0;
     }
 
   /*   .purchasing-right-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
         /* grid-template-rows: repeat(4, 1fr); */
-    } */
+
     .followup-date{
-        margin-top: 0rem;
+        margin-top: 0;
     }
 
      .notification-count{
@@ -294,7 +290,7 @@
 }
 
 
-}
+
 
 /* =========================
    Responsive Layout Adjustments 
@@ -312,9 +308,7 @@
         /* background: greenyellow; */
         
     }
-    body{
-        background-color: lightsalmon;
-    }
+
     
     main {
         width: 100%;

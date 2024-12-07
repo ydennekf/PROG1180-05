@@ -23,6 +23,7 @@
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Lato', Arial, sans-serif;
 
+    --breadcrumb-background:lightskyblue;
     --color-bread-crumb-after:black;
     --color-login-input:#333;
     --color-breadcrumb:black;
@@ -50,6 +51,7 @@
     --color-red: #ff4c4c;
     --color-midblue: #3d5a80;
     --color-warning:#fff29e;
+    --breadcrumb-background:#1b3b5e;
     --color-bread-crumb-after:white;
     --color-login-input:#fff;
     --color-breadcrumb:white;
@@ -382,6 +384,10 @@ body{
     background-color: var(--color-form);
     overflow: auto;
     scrollbar-gutter: stable;
+}
+
+header{
+    background-color: var(--breadcrumb-background);
 }
 /*header{*/
 /*    display:flex;*/

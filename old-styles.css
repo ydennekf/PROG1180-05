@@ -1,0 +1,1203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none
+}
+.required{
+    font-weight: bold;
+    display: block;
+    color: var(--color-white);
+}
+
+
+#accessibilityControls{
+    background-color: var(--color-primary);
+   }
+
+
+      /* Table Body Rows */
+tbody tr {
+    border-bottom: 0.0625rem solid var(--color-secondary); 
+    background-color: var(--color-primary);       
+}
+
+
+.centre{
+    display: flex;
+    width: 75rem;
+    margin: auto;
+   
+}
+ 
+.new-report-container{
+    justify-self: right;
+}
+ 
+ 
+/* NCR Index View */
+ 
+table.ncr-list {
+    width: 100%;
+   /*  width: 75rem; */
+    border-collapse: collapse;
+    margin: auto;
+    /* margin: 0.9375rem 0rem; */
+}
+ 
+table.ncr-list th,
+table.ncr-list td {
+    padding: 0.3125rem 0.3125rem;
+    text-align: left;
+    border-bottom: 0.0625rem solid #ddd;
+}
+ 
+table.ncr-list th {
+    background-color: var(--color-primary);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+ 
+table.ncr-list tr:nth-child(even) {
+    background-color: var(--color-form);
+}
+ 
+table.ncr-list tr:hover {
+    background-color: var(--color-secondary);
+}
+ 
+ 
+/* NCR Index View Links */
+ 
+table.ncr-list a {
+    color: var( --color-white);
+    text-decoration: none;
+    margin-right: 0.625rem;
+}
+ 
+table.ncr-list a:hover {
+    text-decoration: underline;
+}
+ .home-button-centre{
+    display: flex;
+    width: 100%;
+    margin: auto;
+     height: 6rem;
+     font-size: 12px;
+    /* padding: 0 1.25rem; */
+ }
+
+
+/* Pagination Container */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3125rem;
+    margin-top: 1rem;
+    margin-bottom: 4.375rem;
+}
+ 
+
+/* =========================
+   Animation Styles (Global)
+   ========================= */
+ 
+/* New effect-1 animation */
+.effect-1 {
+    border: 0;
+    padding: 0.25rem 0;
+    border-bottom: 0.063rem solid #ccc;
+    background-color: transparent;
+    width: 100%;
+    font-size: 1rem;
+}
+ 
+/* Focus border animation */
+.effect-1 ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: var(--color-secondary);
+    transition: width 0.4s ease;
+}
+ 
+/* When input is focused or contains content, expand the focus border */
+.effect-1:focus ~ .focus-border,
+.has-content.effect-1 ~ .focus-border {
+    width: 100%;
+    transition: width 0.4s ease;
+}
+ 
+/* Label animation */
+.effect-1 ~ label {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0.563rem;
+    color: var(--color-login-input);
+    transition: 0.3s ease;
+    z-index: 1;
+    letter-spacing: 0.031rem;
+}
+ 
+/* When input is focused or contains content, move the label */
+.effect-1:focus ~ label,
+.has-content.effect-1 ~ label {
+    top: -1rem;
+    font-size: 0.75rem;
+    color: var(--color-primary); /* Same green color as focus border */
+    transition: 0.3s ease;
+}
+ 
+/* =========================
+   Input and Checkbox Styles
+   ========================= */
+ 
+/* Input wrapper to handle relative positioning */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1.875rem; /* Spacing between the input fields */
+}
+
+ 
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    flex: 1;
+}
+ 
+/* =========================
+   Dropdown & Select Styling
+   ========================= */
+ 
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 12.5rem;
+    position: relative;
+}
+ 
+.select-container label {
+    margin-right: 0.625rem;
+    color: #fff;
+}
+ 
+.select-box {
+    border: 0.063rem solid #ccc
+    ;
+    appearance: none;
+    padding: 0.313rem 0.625rem;
+    width: auto;
+    color: #173451;
+    background-color: #f1f1f1;
+    border-radius: 0.313rem;
+    font-family: "Montserrat", sans-serif;
+}
+ 
+.select-box:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+
+ #fill-pur,
+ #bind-eng-start,
+ #bind-pur-start{
+     width: 110px; 
+     height: 40px; 
+     font-size: 14px; 
+     padding: 5px; 
+ }
+ 
+ #cancelBtn{
+     width: 100px; 
+     height: 40px; 
+     font-size: 14px; 
+     padding: 5px; 
+     gap: 90px;
+ }
+ 
+ #submitBtn,
+ #fill-qa,
+ #fill-eng{
+     width: 100px; 
+     height: 38px; 
+     font-size: 14px; 
+     padding: 5px; 
+     gap: 90px;
+ }
+ 
+
+
+.error-label{
+        font-weight: bold;
+        display: block;
+        margin-top: 0.9375rem;
+        color: #333;
+   }
+
+
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--color-black);
+}
+ 
+.no-border{
+    display:flex; /* align input boxes beside each other */
+    border: 0;
+  }
+
+ .ncr-submit-cancel{
+    margin-top: 1.25rem;
+    margin-left: 2.94rem;
+ }
+
+
+
+ #accessibilityControls {
+    position: fixed;
+    left: 0.625rem; /* Aligns the section to the left */
+    bottom: 5rem; /* Adjust this distance from the bottom  */
+    padding: 0.625rem;
+    background-color: var(--color-midblue);
+    border: 0.063rem solid #ddd;
+    border-radius: 0.313rem;
+}
+
+.chkBox {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#darkModeToggle {
+    cursor: pointer;
+}
+
+
+/* =========================
+   Error Label Styling
+   ========================= */
+ 
+.error-label{
+    color:var(--color-warning) !important;
+    font-size:75%;
+    display:block;
+}
+ 
+/* =========================
+   Positioning Utilities
+   ========================= */
+ 
+.abs-btm{
+    position:absolute;
+    bottom:0;
+}
+ 
+/* =========================
+   Button and Accessibility Controls
+   ========================= */
+ 
+/*#create-report-btn {*/
+/*    margin-top:2.35vh*/
+/*}*/
+/* */
+#accessibilityControls chkbox label{
+    color:white !important;
+}
+ 
+/* =============
+
+
+
+/* Svg Styles for the button ICONS
+
+
+*/
+
+
+#image-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:0.313rem;
+    margin-top:0.625rem;
+}
+
+.img-grid-item{
+    display:flex;
+    flex-direction:column;
+}
+
+.img-grid-item img{
+    max-width:7.813rem;
+    max-height:7.813rem;
+}
+
+/*.large-icon{*/
+/*    width:2.5rem;*/
+/*    height:2.5rem;*/
+/*    fill:white;*/
+/*}*/
+
+
+/* =========================
+   Recent NCR'S Styling
+   ========================= */
+
+   thead th {
+    background-color: var(--color-primary);   
+    color: var(--color-white);/* White text for contrast */
+    padding: 0.625rem 0.9375rem;
+    font-weight: bold;           
+    font-size: 1rem;             
+    border-bottom: 0.125rem solid var(--color-background); 
+}
+
+/* General Table Styling */
+table {
+
+    border-collapse: collapse; 
+    margin: 1.25rem auto 0;   
+   /*  margin-top: 1.25rem;   */           
+    font-family: Arial, sans-serif; 
+}
+
+/* Styling for the H2 Header Inside the Table */
+/* table h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.938rem 0;               
+    
+}
+ */
+
+/* Table Cells */
+/* tbody td {
+    padding: 0.625rem 0.938rem;
+    color: var(--color-offblack);
+    text-wrap: nowrap;
+} */
+
+/* Table Body Rows */
+/* tbody tr {
+    border-bottom: 0.063rem solid var(--color-iso); 
+    background-color: #f9f9f9; /* Light grey background */
+/* } */
+
+
+/* =========================
+   View NCR's
+   ========================= */
+
+/* Container for the entire form */
+/* h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.nav-search {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 1.25rem; 
+    padding: 1.25rem; 
+}
+.nav-search.collapsed{
+    display: none;
+
+} */
+
+/* Styling for each search field container */
+/* .search-container {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.search-container label {
+    font-weight: bold;
+    margin-bottom: 0.313rem;
+}
+
+
+.search-container select,
+ .search-container input {
+    height: 2.5rem; 
+    padding: 0.5rem; 
+    font-size: 1rem;
+} */
+
+/* Button styling */
+/* #filter-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.625rem ;
+    border: none;
+    border-radius: 0.313rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+
+.button-container {
+    display: flex;
+    gap: 0.5rem; 
+    justify-content: end; 
+    margin-bottom: 0.5rem;
+}
+
+#filter-button:hover {
+    background-color: var(--color-secondary);
+} */
+
+/* Optional container styling for better aesthetics */
+/* #active-filters {
+    margin-top: 1.25rem;
+}
+
+
+#accessibilityControls chkbox label{
+    color:white !important;
+}
+#end-date:focus {
+    box-shadow: var();
+} */
+
+/*  input, select {
+    height: 2.5rem;
+    border: 0.063rem solid var(--color-white);  */
+    /* Match borders */
+   /*  border-radius: 0.375rem;  */
+    /* Smooth corners */
+ /*    padding: 0.313rem 0.625rem;  */
+    /* Adjust internal spacing */
+/* } */
+
+/* 
+#txt-item-name, #txt-supplier, #txt-name-engineer, 
+#txt-revision-date, #txt-updated-rev, #txt-orig-rev-number, 
+#alt-text, #txt-prod-number, #txt-sales-number,
+#txt-quantity-received, #txt-quantity-defective, #txt-sap-number{
+    border:0.063rem solid black
+
+}
+
+.required-marker{color:red;}
+
+
+
+#modal {
+    position:absolute;
+    bottom:10%;
+    left: 20px;
+  margin-inline: auto; 
+  width: fit-content;
+    background-color:white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0rem 0.5rem 1.5rem;
+    border:0.63rem solid var(--color-primary)
+} */
+
+
+/* label {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    user-select: none;
+} */
+
+/* .search-container label{
+    color: var(--color-white);
+} */
+
+/* label{
+    color: var(--color-black);
+    font-size: 1.1rem;
+    user-select: none;
+} */
+
+/* legend {
+    color: var(--color-white);
+} */
+
+/* h2{
+    color: var(--color-white);
+}
+ */
+
+/* Body Styles */
+/* body {
+    display: flex;
+    background-color: var( --color-background);
+    color: var(--color-black);
+    font-family: var(--font-primary);
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    transition: all 0.3s ease-in-out;
+} */
+ 
+/* Nav Bar */
+/* nav {
+    height: 100px;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    background-color: var( --color-primary);
+    position: relative;  */
+    /*Bandage fix for breadcrumbs in header*/
+/*     display:flex;
+    flex-direction:row;
+    gap:10px;
+} */
+ 
+/* nav .logo {
+    height: 7vh;
+} */
+ 
+/* nav span{
+    font-size: 10px;
+} */
+ 
+
+/* .nav-list {
+    list-style: none;
+    display: flex;
+    align-items:center;
+    gap: 15px;
+    margin: auto;
+} */
+
+/* .nav-list li{
+    cursor:pointer;
+} */
+ 
+/* nav ul li a {
+    color: var( --color-white);
+    text-decoration: none;
+} */
+ 
+/* nav ul li:hover {
+    text-decoration: underline;
+} */
+ 
+/* nav ul li button{
+    margin-top: 1.5vh;
+    min-width: 100px;
+} */
+
+
+
+
+ 
+/*Bread crumb stuff*/
+/* #bread-crumbs{    
+   padding:0.125rem;
+}
+ 
+#bread-crumbs a{
+    font-size:0.625rem;
+ }
+ 
+ #bread-crumbs ul {
+    display: inline-flex;
+}
+ 
+.bread-crumb{
+    color:var(--color-breadcrumb) !important;
+    text-decoration:none !important;
+}
+
+.bread-crumb:hover{
+    opacity:0.7
+}
+ 
+#bread-crumbs ul li{
+    margin-left:0.25rem;
+    list-style-type: none;
+}
+ 
+a.selected-view {
+    color:var(--color-breadcrumb-selected) !important;
+    text-decoration:none;
+    cursor:not-allowed;
+}
+ 
+#bread-crumbs ul li:first-child{
+    margin-left:0;
+}
+ 
+#bread-crumbs ul li:after{
+    content:" /";
+    color: var(--color-breadcrumb-after);
+} */
+
+
+ 
+/* Main content */
+
+ 
+
+/* Index View Table Buttons */
+
+
+/* Container for radio buttons */
+ /*  input[type="text"], input[type="number"] {
+    height: 1.5rem;
+  } 
+  */
+
+/* Buttons */
+/* button {
+    width: 100px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: solid 1px var(--color-white);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    max-width: 150px; 
+    text-align: center;
+    box-sizing: border-box; 
+} */
+
+/* button:hover {
+    background-color: var(--color-secondary);
+} */
+
+/* #crossfire-logo{
+    cursor:pointer
+} */
+
+ 
+/* Headings */
+/* h1 {
+    margin-top: 0;
+    text-align: center;
+}
+ 
+h2 {
+    text-align: center;
+    color: var(--color-secondary);
+} */
+ 
+/* h3 {
+    font-family: "Montserrat", cursive;
+    font-weight: 400;
+    font-size: 2.1875rem;
+    text-align: center;
+}
+ */
+
+
+/* Input Styles */
+/* input[type="text"],
+input[type="password"] {
+    font: 0.9375rem/1.5rem var(--font-secondary);
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 0.063rem;
+}
+ 
+input[type="password"], #username{
+    color: var(--color-login-input);
+} */
+
+/* input:focus {
+    outline: none;
+} */
+ 
+/* Custom Checkbox Style */
+/* input[type="checkbox"] {
+    border: solid 0.063rem var(--color-offblack);
+    position: relative;
+    width: 1.75rem;
+    height:1.75rem;
+    background-color: #f1f1f1;
+    border-radius: 0.25rem;
+    appearance: none;
+    cursor: pointer;
+} */
+ 
+/* input[type="checkbox"]:checked{
+    background-color: #334b63
+}
+  */
+/* Checkbox icon */
+ 
+/* input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.563rem;
+    width: 0.313rem;
+    height: 0.813rem;
+    border: 0.25rem solid transparent;
+    border-left: none;
+    border-top: none ;
+    transform: rotate(45deg) scale(1);
+}
+ 
+input[type="checkbox"]:checked:before{
+    border-color: var( --color-white);
+    animation: checkAnim .5s ease;
+} */
+ 
+/* Checkbox label container */
+/* .chkBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    color:inherit;  
+} */
+ 
+/* .chkBox label{
+    color: var(--color-secondary);
+}
+  */
+/* Footer Styling */
+
+
+/* footer {
+    background-color: var(--color-primary);
+    color: var( --color-white);
+    text-align: center;
+    padding: 15px 10px 0;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    margin-top:30px; 
+}
+  */
+/* General Label Styling */
+ 
+/* =========================
+   Login Form Styles
+   ========================= */
+   /* Form Styles */
+
+/*    input#username {
+    margin-top: 0.938rem;
+} */
+
+/* .login-form {
+    max-width: 25rem;
+    min-height: 18.75rem;
+    margin: 0 auto;
+    background: var(--color-form);
+    padding: 3.125rem 2.5rem;
+    border-radius: 0.5rem;
+    border:none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.375rem 0.9375rem var(--color-black);
+    height: 40vh;
+} */
+
+/* .login-container {
+    background-color: var(--color-white);
+    height: 40vh;
+} */
+ 
+/* .login-logo {
+    display: block;
+    justify-self: center;
+    height: 8vh;
+    width: auto;
+    padding-bottom: 2vh;
+}
+  */
+/* .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+ 
+.remember-me input {
+    margin-right: 0.625rem;
+}
+
+.remember-me label {
+    color: var(--color-black);
+} */
+ 
+/* .login-btn {
+    border: solid 1px var(--color-white);
+} */
+/*  
+.login-btn-container{
+    display: flex;
+    justify-content: center;
+}
+  */
+/* .login-btn:hover {
+    background-color: #407bbf;
+} */
+ 
+/* .forgot-password {
+    text-align: center;
+    margin-top: 0.625rem;
+} */
+ 
+/* .forgot-password a {
+    color: var(--color-login-input);
+    text-decoration: none;
+}
+ 
+.forgot-password a:hover {
+    text-decoration: underline;
+} */
+ 
+/* =========================
+   Animations (Global)
+   ========================= */
+ 
+/* @keyframes checkAnim {
+    from {
+        transform: rotate(45deg) scale(0);
+    }
+} */
+
+/* =========================
+   Header Report-Details
+   ========================= */
+  /*  .Report-view-header{
+    color: var(--color-black);
+   } */
+
+/* =========================
+   NCR Form Layout
+   ========================= */
+
+/*    .ncr-report{
+    max-width: 90%;
+    margin: auto;
+    
+}
+ */
+
+    /*===============
+        NCR header 
+      ===============*/
+
+
+/* .iso-header{
+    margin: 20px auto 0;
+    color: var(--color-black);
+    background-color: var(--color-iso); 
+    outline-color: var(--color-iso);
+    gap: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    border-radius: 5px; 
+}
+
+
+.iso-header div{
+    border-width: 6px;
+    background-color:var(--color-background);
+    padding: 10px 0 0 15px;  
+}
+
+.iso-header label{
+    color: var(--color-black);
+    font-size: 1rem;
+    padding: 0 0 20px;
+}
+.iso-header p{
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 0 15px 0;
+} */
+
+/* .qa-left-container,
+.qa-right-container,
+.engi-right-container,
+.engi-top-container,
+.purchasing-left-container, 
+.purchasing-right-container {
+    
+    padding: 1.875rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem var(--color-black);
+ } */
+
+
+/*  .engi-top-container
+ .engi-right-container{
+    width: 90%;
+ } */
+
+/* legend{
+    color: var(--color-black);
+    padding: 0.1875rem;
+    font-size: 1.125rem;
+} */
+
+
+/* qa-right-container label,
+.qa-right-container div:nth-child(2) textarea,
+.engi-right-container textarea{
+    width: 100%;
+}
+
+.engi-right-container label
+ {
+    display: inline-block;
+    width: 100%;
+}
+
+
+.qa-right-container textarea, .engi-right-container textarea {
+    min-height: 12.5rem;
+}
+
+.qa-left-container li , 
+.engi-top-container li{
+    min-width: 14.375rem;
+    width: 100%;
+}
+
+.qa-left-container input[type="number"], 
+.qa-left-container input[type="text"] {
+   width: 90%;
+}
+
+.qa-labels label{
+    color: var(--color-ncr); 
+    display:inline-block;
+    width: 100%;
+}
+
+.qa-left-container input[type="radio"], 
+.engi-top-container input[type="radio"] {
+    height: 1.25rem;
+    width: 1.25rem;
+    vertical-align: middle;
+   margin-right: 0.438rem;
+  } */
+
+  
+
+ /*  .sap-width input[type="number"]{
+    width: 6.25rem;
+    margin-right: 0.313rem;
+  }
+
+  .item-width input[type="text"]{
+    width: 18.75rem;
+  } */
+
+  
+  /* .engi-top-container fieldset{
+    margin: 0 0 0 5px;
+  } */
+
+ /*  .qa-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 0.625rem;
+  }
+
+  .eng-checkbox-align input[type="checkbox"]{
+    vertical-align: middle;
+    float: left;
+    margin-right: 0.625rem;
+  } */
+
+  /* .qa-checkbox-align {
+    margin-bottom: 0.625rem;
+}
+.eng-checkbox-align {
+    margin-top: 1.25rem;
+   
+}
+
+.qa-checkbox-align li, .eng-checkbox-align li{
+    margin-bottom: 0.625rem;
+} */
+
+
+/* .button-container {
+    display: flex;
+    gap: 0.25rem; 
+    justify-content: end; 
+    margin-bottom: 0.25rem;
+} */
+
+ /* .qa-left-container{
+    min-width: 17.1875rem;
+    max-width: 25rem;
+    min-height: 18.75rem;
+    display: block;
+ } */
+
+
+/* Purchasing Left Fieldset */
+/* .purchasing-left-container fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    border: none;
+    padding: 0.625rem 0;
+    margin: 0;
+}
+
+.purchasing-left-container fieldset div {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.purchasing-left-container input[type="radio"] {
+    margin: 0;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+}
+
+.Car-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+    margin-top: 0;
+}
+
+.Car-container>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.Car-container input[type="checkbox"] {
+    margin: 0;
+}
+
+.Car-container label {
+    font-size: 1rem;
+    color: var(--color-black);
+}
+
+.Car-container input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.063rem solid var(--color-black);
+    margin-top: 0;
+} */
+
+/* Purchasing Right Fieldset */
+/* .purchasing-right-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.purchase-followup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 48%;
+}
+
+.purchase-followup-container>div {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    gap: 0.5rem;
+}
+
+.purchase-followup-container>div:nth-child(2) {
+    flex-direction: column;
+    gap: 0;
+}
+
+.purchase-signoff-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 48%;
+}
+
+.purchase-signoff-container>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.purchase-signoff-container>div:nth-child(1),
+.purchase-signoff-container>div:nth-child(2) {
+    margin-top: 0;
+}
+
+.purchasing-right-container input[type="text"],
+.purchasing-right-container select {
+    width: 100%;
+    height: 1.5rem;
+    padding: 0 0.25rem;
+    font-size: 0.9rem;
+    border: 0.063rem solid var(--color-black);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.purchasing-right-container input[type="checkbox"] {
+    margin: 0;
+}
+
+.purchase-followup-container>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.purchase-followup-inputs div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+   
+}
+.purchase-followup-inputs div:first-child {
+    margin-top: 0.625rem;
+}
+
+.purchase-signoff-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+    width: 48%;
+}
+
+.purchase-signoff-container > div:nth-child(2), .purchase-signoff-container>div:nth-child(3) {
+    margin-top:1rem;
+} */
+
+
+/* Purchasing Right Fieldset End */
+
+ 
+
+ 
+
+ 
+
+ 

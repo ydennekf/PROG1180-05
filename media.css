@@ -62,15 +62,12 @@
         grid-template-columns: 1fr;
         grid-template-rows: repeat(8, 1fr);
         max-width: 100%;
+        gap: 0.1rem;
         /* width: 25rem; */
     }
 
     .iso-header :nth-child(3){
         grid-row: 8;
-    }
-
-    .qa-left-container{
-        min-width: 100%;
     }
 
     .quality-assurance-inputs, 
@@ -82,6 +79,20 @@
         row-gap: 20px;
     }
 
+    .qa-checkbox-align{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+  /*   .qa-left-container,
+    .qa-right-container,   
+    .engi-right-container,
+    .engi-top-container,
+    .purchasing-right-container,
+    .purchasing-left-container{
+        height: fit-content;
+    } */
 
      .notification-count{
         position: relative;

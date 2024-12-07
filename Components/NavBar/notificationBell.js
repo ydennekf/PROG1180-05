@@ -46,8 +46,9 @@ export function setNotifyListeners(){
                 const index = employees.findIndex((c) => c.username === app.employee.username);
                 console.log(index);
                 console.log(empPref[index]);
-
-
+                console.log(ev.target)
+                app.storage.removeNewReport(ev.target.dataset.ncr)
+                populateNotifications(theList)
                 // also remove this report from the newReport list in emp prefs
             })
         })

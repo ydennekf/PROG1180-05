@@ -62,7 +62,7 @@ function qaFooter(report){
 
                 { width:200, table:{body:[
                     [{text:"Identify Process Applicable\n", style:"header", fontSize:14, fillColor:blue}, ""],
-                            ["Supplier or Rec-Insp", report.supplierOrRec ? checkBox() : ""],
+                            [{text:"Supplier or Rec-Insp",style:"header", fontSize:14, fillColor:blue}, report.supplierOrRec ? checkBox() : ""],
                             ["WIP (Production Order)", !report.supplierOrRec ? checkBox() : ""] // TODO Change
                         ]}},
                 topRightTable(report)
@@ -179,10 +179,10 @@ function engDisposition(report){
         {text:report.Disposition},
         {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ], margin:[0, 5, 0, 25]},
         {table:{body:[
-                    ["Does the Drawing Require Updating", report.drawingToUpdate ? checkBox() : ""],
-                    ["Original Rev. Number", report.origRevNum || engTemp.originalRevNo],
-                    ["Updated Rev. Number", report.updatedRev || engTemp.updatedRevNo],
-                    ["Revision Date", report.RevisionDate]
+                    [{text:"Does the Drawing Require Updating", fillColor:blue}, report.drawingToUpdate ? checkBox() : ""],
+                    [{text:"Original Rev. Number",fillColor:blue}, report.origRevNum || engTemp.originalRevNo],
+                    [{text:"Updated Rev. Number",fillColor:blue}, report.updatedRev || engTemp.updatedRevNo],
+                    [{text:"Revision Date",fillColor:blue}, report.RevisionDate]
                 ], margin: [0, 0, 40, 0]}}
     ]
 }
@@ -235,45 +235,7 @@ export const engTemp= {
 }
 
 
-// function topTable(report){
-//     return {
-            
-//                 table: {
 
-//                     body: [
-//                         [
-//                             {text: "Document No.", fillColor:blue},
-//                             {text: "OPS-00011"},
-//                         ],
-        
-//                         [
-//                             {text: "Document Author", fillColor:blue},
-//                             {text:"M. Hunt"},
-//                         ],
-//                         [
-//                             {text:"Document Title", fillColor:blue},
-//                             {text:"Non-Conformance Report"}
-//                         ],
-//                         [
-//                             {text:"Revision No.", fillColor:blue},
-//                             {text:"013"}
-//                         ],
-//                         [
-//                             {text:"Revision Date", fillColor:blue},
-//                             {text:"July 14, 2024"}
-//                         ],
-//                         [
-//                             {text: "Report Status", fillColor:blue},
-//                             {text: report.status, style:"header", bold:true},
-//                         ],
-//                     ],
-                    
-                    
-//                 },
-//                 width:"*" ,
-//                 margin:[0, 0, 0, 25]
-//     }
-// }
 
 function topTable(report){
     return {columns:[
@@ -332,12 +294,13 @@ if(report.followUpRequired){
     console.log(report.followUpType)
     console.log(report.followUpRequired)
     return [
+        {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ], margin:[0, 10, 0, 15]},
         {table:{body:[
             [{text:"Followup Required?",fillColor:blue}, "Yes"]
         ]}},
         {table:{body:[
             [{text:"Followup Date",fillColor:blue}, report.followUpDate]
-        ]}, margin:[0, 25, 0, 0]},
+        ]}},
         {table:{body:[
             [{text:"Followup Type",fillColor:blue}, report.followUpType]
         ]}},
@@ -351,19 +314,30 @@ else{
     return [
         {table:{body:[
             [{text:"Followup Required?",fillColor:blue}, "No"]
-        ]}}
+        ]}, margin:[0, 25, 0, 0]}
     ]
 }
 }
 
 function purchasingCAR(report){
-    return [
-        {table:{body:[
-            [{text:"Car Raised",fillColor:blue}, report.CarRaised ? checkBox() : ""]
-        ]}},
-        {table:{body:[
-            [{text:"Car Number",fillColor:blue}, report.CarNum || ""]
-        ]}}
-        ]
+
+    if(report.CarRaised){
+        return [
+            
+            {table:{body:[
+                [{text:"Car Raised",fillColor:blue}, report.CarRaised ? "Yes" : ""]
+            ]}, margin:[0, 25, 0, 0]},
+            {table:{body:[
+                [{text:"Car Number",fillColor:blue}, report.CarNum || ""]
+            ]}}
+            ]
+    }
+    else{
+        return [
+            {table:{body:[
+                [{text:"Car Raised",fillColor:blue}, report.CarRaised ? "No" : "No"]
+            ]}, margin:[0, 25, 0, 0]}]
+    }
+    
     
 }

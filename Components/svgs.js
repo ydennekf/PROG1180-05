@@ -262,8 +262,8 @@ export function folderSVG(ncrNumber) {
 </svg>`
 }
 
-export function  minusSVG() {
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+export function  minusSVG(ncrNumber) {
+    return `<svg data-ncr="${ncrNumber}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <g id="Circle_Minus" data-name="Circle Minus">
     <g>
       <path d="M15,11.5h0a.5.5,0,0,1,0,1H9a.5.5,0,0,1,0-1Z"/>

@@ -4,6 +4,7 @@ import { employees } from "../../Data/employeeData.js"
 import { getReport } from "../../Data/new_reportData.js"
 import { safeTruthy } from "../utils/utils.js"
 import {generateNcrNumber} from "../NcrFormView/utils.js";
+import { app } from "../../AppState.js";
 
 
 export default function _StorageContext(employee){ // stored as {employeeUsername:preferencesObj}
@@ -88,6 +89,16 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
         }
     }
 
+    function removeNewReport(reportNumber){
+        let reports = empPreferences[app.employee.username].newReports
+        console.log(reportNumber)
+        reports = reports.filter(c => c.ncrNumber !== reportNumber)
+        console.log(reports)
+        
+        empPreferences[app.employee.username].newReports = reports;
+        save()
+    }
+
     function sendEmailToDepartment(employee, report, fromDept){
             emailjs.init({
                 publicKey: 'WlGCHQ8tggwCZYvBQ'
@@ -129,7 +140,8 @@ export default function _StorageContext(employee){ // stored as {employeeUsernam
         getRecentReports:() => empPreferences[employee.username].recentReports,
         getLangPreference:() => empPreferences[employee.username].preferredLanguage,
         getNewReports:() => empPreferences[employee.username].newReports,
-        pushNewReport
+        pushNewReport,
+        removeNewReport
     }
     
 }

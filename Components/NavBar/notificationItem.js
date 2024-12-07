@@ -7,7 +7,7 @@ export function notificationItem(notification) {
 
     listItem.innerHTML = `
         <button class="notify-ncr-number" data-ncr="${notification.ncrNumber}">${notification.ncrNumber}</button>
-        <button class="icon remove-item" data-minus-ncr="${notification.ncrNumber}">${SVG.minusSVG()}</button>
+        <button class="icon remove-item" data-minus-ncr="${notification.ncrNumber}">${SVG.minusSVG(notification.ncrNumber)}</button>
     `;
 
     return listItem;

@@ -114,8 +114,9 @@ export function previewBindings(){ // Called after mapComponents completes on re
 
     archiveBtns.forEach(e => {
         e.addEventListener('click', (e) => {
-            pdfMake.createPdf(convertToPDF(e.target.dataset.ncrNumber)).open()
             getReport(e.target.dataset.ncrNumber).status = "archived"
+            pdfMake.createPdf(convertToPDF(e.target.dataset.ncrNumber)).open()
+            
         })
     })
     //THIS IS INCREDIBLY SHIT CODE

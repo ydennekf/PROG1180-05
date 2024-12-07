@@ -928,6 +928,9 @@ footer {
     box-sizing: border-box;
 }
 
+.purchasing-right-container div{
+    padding-right: 3rem;
+}
 
 textarea {
     width: 100%;

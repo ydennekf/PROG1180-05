@@ -142,9 +142,9 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                           
                 
                 </div>
-                <div class="purchasing-right-container">
+                <div class="purchasing-right-container COL-2">
 
-                     <div class="Car-container col-2">
+                     
                         <div>
                             <input ${purchaseReadOnly ? "disabled" : ''} name="car-raised" aria-describedby="lbl-car-raised" type="checkbox" id="chk-car-raised" 
                             ${report?.CarRaised ? 'checked' : ''}/>
@@ -157,33 +157,32 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                             <label id="car-num-error" class="error-label"></label>
                         </div>
                     
-                    </div> 
-                    <div class="purchase-followup-container col-2">
+                  
                         <div>
                             <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
                             ${report?.followUpRequired ? 'checked' : ''}/>
                             <label id="lbl-follwup-req" for="chk-followup-req">Followup Required?</label>
                         </div>
                          <div>
-                            <label for="followup-type">Followup Type:</label>
-                            <label id="followup-type-error" class="error-label"></label>
-                            <select id="cbo-followup-type" name="followup-type" ${purchaseReadOnly ? "disabled" : ''}>
-                                <option ${!report?.followUpType ? "selected" : "" } value="">Select a type</option>
-                                <option ${report?.followUpType === "Phone" ? "selected" : "" } value="Phone">Phone</option>
-                                <option ${report?.followUpType === "InPerson" ? "selected" : "" } value="InPerson">In Person</option>
-                                <option ${report?.followUpType === "Virtual" ? "selected" : "" } value="Virtual">Virtual Meet</option>
-                                <option ${report?.followUpType === "Email" ? "selected" : "" } value="Email">Email</option>
-                                <option ${report?.followUpType === "Fax" ? "selected" : "" } value="Fax">Fax</option>
-                            </select>
+                            <fieldset class="no-border">
+                                <legend for="followup-type">Followup Type:</legend>
+                                <label id="followup-type-error" class="error-label"></label>
+                                <select id="cbo-followup-type" name="followup-type" ${purchaseReadOnly ? "disabled" : ''}>
+                                    <option ${!report?.followUpType ? "selected" : "" } value="">Select a type</option>
+                                    <option ${report?.followUpType === "Phone" ? "selected" : "" } value="Phone">Phone</option>
+                                    <option ${report?.followUpType === "InPerson" ? "selected" : "" } value="InPerson">In Person</option>
+                                    <option ${report?.followUpType === "Virtual" ? "selected" : "" } value="Virtual">Virtual Meet</option>
+                                    <option ${report?.followUpType === "Email" ? "selected" : "" } value="Email">Email</option>
+                                    <option ${report?.followUpType === "Fax" ? "selected" : "" } value="Fax">Fax</option>
+                                </select>
+                            </fieldset>
                         </div>
-                        <div class="purchase-foollowupdate-container">
+                        <div>
                             <label for="dtp-followup-date">Followup Date:</label>
                             <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
                             <label id="followup-date-error" class="error-label"></label>
                         </div>
-                    </div>
-
-                    <div class="purchase-signoff-container col-2">
+                   
 
                         <div>
                             <label for="txt-operation-manager" id="lbl-operation-manager">Operation Manager</label>
@@ -196,7 +195,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                             <input value="${report?.purchaseDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"  aria-describedby="lbl-purchase-date" type="text" id="dtp-purchase-date" placeholder="Select purchase date">
                             <label id="purchase-date-error" class="error-label"></label>
                         </div>
-                    </div>
+                   
                 </div>
      
             </div>`

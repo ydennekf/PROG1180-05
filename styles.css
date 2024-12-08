@@ -1550,3 +1550,10 @@ tbody tr {
   display:block;
   min-width:40px;
 }
+
+.faq-container{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+

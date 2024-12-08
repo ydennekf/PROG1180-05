@@ -67,7 +67,6 @@
     .engineering-inputs{
         display: grid;
         grid-template-columns: 1fr;
-       /*  grid-template-rows: 1fr 1fr; */
         row-gap: 20px;
     }
 
@@ -129,18 +128,12 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
     }
-
-    /* .qa-left-container{
-        min-width: 100%;
-    } */
    
-
     .quality-assurance-inputs,
     .purchasing-inputs,
     .engineering-inputs{
        display: grid;
        grid-template-columns: 1fr;
-      /*  grid-template-rows: 1fr 1fr; */
        row-gap: 20px;
     }
 
@@ -212,7 +205,6 @@
     .purchasing-inputs{
         display: grid;
         grid-template-columns: 2fr 3fr;
-        /* grid-template-rows: 1fr 1fr; */
         gap: 20px;
     }
 
@@ -225,11 +217,6 @@
     .chkBox2{
         margin-bottom: 0;
     }
-
-  /*   .purchasing-right-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* grid-template-rows: repeat(4, 1fr); */
 
     .followup-date{
         margin-top: 0;
@@ -271,14 +258,11 @@
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
-        /* background: greenyellow; */
-        
     }
 
     
     main {
         width: 100%;
-        /*max-width: 1200px;*/
     }
      .notification-count{
         position: relative;
@@ -293,27 +277,17 @@
         width: 100%;
        }
 
-    /*    nav .logo{
-        height: 8vh;
-    } */
-
     nav span {
         font-size: 14px;
       }
-    /*.nav-list{*/
-    /*    grid-template-columns: 1fr 2fr 0.9fr 3fr 1.5fr;*/
-    /*}*/
     
     #bread-crumbs a{
         font-size: 14px;
     }
- 
-
 
     .foot #btn-cancel {
         margin-right: 500px; 
     }
-
 
     /*==================
        NCR Report
@@ -372,8 +346,6 @@
         grid-template-columns: 1fr 1fr;
     }
 
-
-
     .purchasing-right-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -394,7 +366,6 @@
         grid-column: 2/3;
         grid-row: 4/5;
     } 
-
 
     .col-2{
         display: grid;

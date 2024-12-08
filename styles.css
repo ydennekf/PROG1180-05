@@ -1507,7 +1507,7 @@ tbody tr {
 
 .notification-list-item{
     display:flex;
-    flex-directio:row;
+    flex-direction:row;
 }
 
 #notificationList{

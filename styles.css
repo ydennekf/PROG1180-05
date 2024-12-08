@@ -547,6 +547,9 @@ nav .logo {
     /*position: relative;*/
     /*bottom: 1.5rem;*/
 }
+#logo-container{
+    height: 4rem;
+}
 
 #crossfire-logo{
     cursor:pointer

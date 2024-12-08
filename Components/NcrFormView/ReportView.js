@@ -410,7 +410,7 @@ setReadonly()
             <div><label>Approved By:</label><p>J. Fish, Oper. Manager</p></div>
             <div><label>Revision Date:</label><p>July 14, 2024</p></div>
             <div><label>Revision No:</label><p>013</p></div>
-            ${report?.status !== "Closed"  && report?.status !== "Archived" && action !== "View" && report ?`<div><button id="close-ncr">Close NCR</button></div>` : ''}
+            
     
     </div>
 
@@ -545,9 +545,11 @@ setReadonly()
 <div class="ncr-submit-cancel">
 <button id="submitBtn">${action === "View" ? "Back" : "Save"}</button>
 <button id="cancelBtn" >Cancel</button>
+${report?.status !== "Closed"  && report?.status !== "Archived" && action !== "View" && report ?`<button id="close-ncr">Close NCR</button>` : ''}
 ${app.employee.department === "admin" && (action === "Create" || action === "Edit") && !checkEngineeringInProgress() ? `${addEngButton()}` : ""}
 ${app.employee.department === "admin" &&  (action === "Create" || action === "Edit") && !checkPurchasingInProgress() ? `${addPurchasingButton()}` : ""}
 ${AutoFillButtons()}
+
 </div>
 
 </form>

@@ -135,12 +135,12 @@
     } */
    
 
-    .quality-assurance-inputs/*, 
-    .purchasing-inputs,*/
+    .quality-assurance-inputs,
+    .purchasing-inputs,
     .engineering-inputs{
        display: grid;
        grid-template-columns: 1fr;
-       /* grid-template-rows: 1fr 1fr; */
+      /*  grid-template-rows: 1fr 1fr; */
        row-gap: 20px;
     }
 

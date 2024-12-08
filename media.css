@@ -39,9 +39,8 @@
 
     main{
         padding: 1rem;
-        /*min-width: 90%;*/
-       /*  background-color: blue; */
     }
+
     .nav-search{
         display: grid;
         grid-template-columns: 1fr;
@@ -57,12 +56,11 @@
         grid-template-rows: repeat(8, 1fr);
         max-width: 100%;
         gap: 0.1rem;
-        /* width: 25rem; */
     }
 
     .iso-header :nth-child(3){
         grid-row: 8;
-    }
+    } 
 
     .quality-assurance-inputs, 
     .purchasing-inputs,
@@ -79,8 +77,7 @@
         gap: 0.5rem;
     }
 
-    .chkBox2{
-        
+    .chkBox2{ 
         margin-bottom: 0;
     }
 
@@ -99,18 +96,6 @@
         left: 0.9rem;
     }
 
-    /*   .qa-left-container,
-    .qa-right-container,   
-    .engi-right-container,
-    .engi-top-container,
-    .purchasing-right-container,
-    .purchasing-left-container{
-        height: fit-content;
-    } */
-     /*.report-preview-row {*/
-     /*    grid-template-columns: 4.8rem 4.9rem 7.2rem 5.8rem auto;*/
-     /*}*/
-
 }
 
 @media screen and (min-width:426px) and (max-width:768px){
@@ -125,46 +110,39 @@
         font-size: 12px;
     }
 
-.notification-count{
-    bottom: 4rem;
-    left: 0.9rem;
-}
+    .notification-count{
+        bottom: 4rem;
+        left: 0.9rem;
+    }
     .centre-s{
-        
         max-width: 100%;
-        margin: 0 auto;
-        /* background: purple; */
-       
+        margin: 0 auto;  
     }
 
     main {
         padding: 1rem;
-        /*width:100%;*/
-       /*  background-color: greenyellow; */
     }
 
 
     .iso-header{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        max-width: 100%;
-       /*  width: 600px; */
+        grid-template-rows: repeat(4, 1fr);
     }
 
-    .qa-left-container{
+    /* .qa-left-container{
         min-width: 100%;
-    }
+    } */
    
 
-    /*.quality-assurance-inputs, */
-    /*.purchasing-inputs,*/
-    /*.engineering-inputs{*/
-    /*    display: grid;*/
-    /*    grid-template-columns: 1fr;*/
-    /*    grid-template-rows: 1fr 1fr;*/
-    /*    row-gap: 20px;*/
-    /*}*/
+    .quality-assurance-inputs/*, 
+    .purchasing-inputs,*/
+    /*.engineering-inputs*/{
+       display: grid;
+       grid-template-columns: 1fr;
+       /* grid-template-rows: 1fr 1fr; */
+       row-gap: 20px;
+    }
 
     .qa-checkbox-align{
         display: grid;
@@ -172,19 +150,18 @@
         gap: 0.5rem;
     }
 
-    .chkBox2{
-        
+    .chkBox2{ 
         margin-bottom: 0;
     }
 
-    .purchasing-right-container{
+   /*  .purchasing-right-container{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(7, 1fr);
     }
     .followup-date{
         margin-top: 0;
-    }
+    } */
 
 }
 
@@ -209,37 +186,27 @@
     .centre-m{
         max-width: 100%;
         margin: 0 auto;
-        /* background: yellow; */
-        
       }
-
-      main {
-        /*width: 90%;*/
-       /*  bckground-color: yellow;a */
-    }
-
 
     .iso-header{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
         max-width: 100%;
-       /*  width: 800px; */
     }
 
-}
-.iso-header :nth-child(8){
+
+    .iso-header :nth-child(8){
     grid-column: 2/4;
     grid-row: 3/4;
-}
+    }
+    
      .notification-count{
         position: relative;
         bottom: 3.5rem;
         left: 0.9rem;
     }
 
-
-    
     .quality-assurance-inputs,
     .engineering-inputs,
     .purchasing-inputs{
@@ -256,7 +223,6 @@
     }
 
     .chkBox2{
-        
         margin-bottom: 0;
     }
 
@@ -277,19 +243,19 @@
 
 
 
-/********************
-        OLD
-*********************/
-/* footer{
-    margin-top:30px;
-    position:static;
-} */
+    /********************
+            OLD
+    *********************/
+    /* footer{
+        margin-top:30px;
+        position:static;
+    } */
 
-.foot #btn-cancel {
-    margin-right: 400px;
+    .foot #btn-cancel {
+        margin-right: 400px;
+    }
+
 }
-
-
 
 
 /* =========================

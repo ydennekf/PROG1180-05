@@ -6,6 +6,7 @@ import { ReportList } from "../ReportList.js";
 import { app } from "../../AppState.js";
 import Index from "../Views/Index.js";
 import {ReportView} from "../NcrFormView/ReportView.js";
+import { createFAQ } from "../FAQ.js";
 
 
 
@@ -139,7 +140,8 @@ const viewMap = {
     "DetailsNcrView":DetailsNcrView,
     'ReportList':ReportList,
     "Index": Index,
-    "ReportView": ReportView
+    "ReportView": ReportView,
+    'createFAQ': createFAQ
 }
 
 function breadCrumbText(historyState){
@@ -156,6 +158,9 @@ function breadCrumbText(historyState){
 
         case "Index":
             return "Home"
+
+        case "createFAQ":
+            return "FAQ"
     }
 }
 

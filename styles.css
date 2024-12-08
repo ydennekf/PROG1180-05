@@ -1506,18 +1506,28 @@ tbody tr {
 
 .notification-list-item{
     display:flex;
-    flex-directio:row;
+    flex-direction:row;
 }
 
 #notificationList{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: absolute;
-  right: 0;
-  top: 60px;
+  
 }
 
-@media screen and(min-width:720px) {
+@media screen and (min-width:768px) and (max-width:1023px){
+    #notificationList{
+        right: 3px;
+        top: 60px;
+    }
+}
 
+
+@media screen and (min-width:426px) and (max-width:767px){
+    #notificationList{
+        right: 3px;
+        top: 60px;
+    }
 }
 
 .notify-ncr-number{

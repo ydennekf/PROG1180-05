@@ -249,7 +249,12 @@
    Responsive Layout Adjustments 
    (Large Screens)
    ========================= */
-    
+ @media screen and (min-width:1024px){
+      .filter-nav-icon{
+        height: 37.5px;
+
+    }
+ }
 
 @media screen and (min-width:1025px){
 
@@ -378,6 +383,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+
     *{font-size: 16px;}
 }
 
@@ -400,22 +406,37 @@
         margin: auto auto auto 13.5rem;
     }
 
-    #filter-reveal-button{
-        margin-left: 20%;
-        margin-top: 20px;
-    }
+
     #filter-tooltip{
         position: absolute;
-        left: 22rem;
-        top: 12rem;
+        left: 8rem;
+        top: 15.5rem;
+    }
+    .filter-nav-icon{
+        height: 44px;
+
+    }
+    .filter-container-buttons{
+        margin-left: 210px;
     }
 }
 
 @media screen  and (min-width: 2550px){
     #filter-tooltip{
         position: absolute;
-        left: 57rem;
-        top: 17rem;
+        left: 44rem;
+        top: 16rem;
+    }
+    .filter-button-container{
+    height: 44px;
+    width: 4rem;
+}
+    .filter-container-buttons{
+        margin-left: 210px;
+    }
+    .filter-nav-icon{
+        height: 44px;
+
     }
 }
 

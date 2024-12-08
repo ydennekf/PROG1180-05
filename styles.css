@@ -441,6 +441,11 @@ header{
     text-align: center;
     padding: 0;
 }
+.filter-nav-icon{
+    height: 3rem;
+    width: 3rem;
+}
+
 .nav-icon svg, .faq-icon svg {
     height: 100%;
     width: 100%;
@@ -574,7 +579,7 @@ nav .logo {
 
 .filter-button-container{
     height: 3rem;
-    width: 100%;
+    width: 4rem;
 }
 
 .nav-list li{

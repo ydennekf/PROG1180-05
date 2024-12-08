@@ -172,7 +172,10 @@ export function SearchBar(targetID) {
         <div class='nav-list'>
         <div class="filter-container-buttons"> 
                 <div class="tooltip-container filter-button-container">
-                    <button id="filter-reveal-button" class="nav-icon" aria-label="Filter Toggle">${SVG.filterSVG()}</button>
+                
+                    <button id="filter-reveal-button" class="nav-icon filter-nav-icon" aria-label="Filter Toggle">${SVG.filterSVG()}</button>
+                
+                    
             
             <div id="filter-tooltip" class="tooltip bottom-tooltip">Toggle Filter Options</div>
             </div>

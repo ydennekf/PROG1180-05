@@ -1211,6 +1211,7 @@ table.ncr-list a:hover {
  }
  
  #submitBtn,
+ #close-ncr,
  #fill-qa,
  #fill-eng{
      width: 100px; 

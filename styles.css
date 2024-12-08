@@ -1070,6 +1070,7 @@ table.ncr-list a:hover {
     margin: auto;
      height: 6rem;
      font-size: 12px;
+     gap: 1.5rem;
     /* padding: 0 1.25rem; */
  }
 

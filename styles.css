@@ -30,6 +30,7 @@
     --color-breadcrumb:black;
     --color-breadcrumb-selected:#204d7a;
     --color-breadcrumb-after:black;  
+    --color-border-hover:rgb(27, 81, 231);
 }
  
 /* Light Theme */
@@ -59,6 +60,7 @@
     --color-breadcrumb-selected:#9fb7df;
     --color-breadcrumb-after:#acddf1;
     --color-border: #5897c9;
+    --color-border-hover:white;
 }
 
 /***************************
@@ -145,6 +147,8 @@ button {
 
 button:hover {
     background-color: var(--color-secondary);
+    border-color: var(--color-border-hover);
+    border-width: 5px;      
 }
 
 nav ul li button{
@@ -280,6 +284,16 @@ label {
 
 input:focus {
     outline: none;
+}
+
+input:focus{
+    background-color: lightskyblue;
+    border-color: var(--color-border-hover);
+    border-width: 3px;  
+}
+
+input[type="checkbox"]:focus{
+    background-color: lightskyblue;
 }
 
 input[type="text"], input[type="number"], input[type="password"] {
@@ -792,12 +806,12 @@ footer {
 
 
 
-#root{
+/* #root{ */
     /*padding: 5%;*/
     /*background-color: var(--color-);*/
     /*box-shadow: 0 0.25rem 0.5rem var(--color-black);*/
         
-}
+/* } */
 
 /*  Accordian   */
 
@@ -809,10 +823,16 @@ footer {
     color: var(--color-white);
 }
 
+.ui-accordion-header-active{
+    border-color: var(--color-white);
+}
 .ui-state-default:hover{
     background-color: var(--color-secondary);
     color: var(--color-white);
+    border-color: var(--color-border-hover);
+    border-width: 3px;
 }
+
 
 
 /*===================================

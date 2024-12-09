@@ -401,6 +401,14 @@ input[type="checkbox"]:checked:before{
     border-radius: 0.1rem; 
   }
 
+  .search-container input,
+  .search-container select{
+    outline-color: var(--color-black);
+    outline-style: solid;
+    outline-width: 0.1rem;
+    border-radius: 0.1rem; 
+  }
+
 /**************************
         MAIN Section
 **************************/

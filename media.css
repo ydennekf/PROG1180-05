@@ -431,11 +431,11 @@
 }
 
 @media screen  and (min-width: 2550px){
-    #filter-tooltip{
-        position: absolute;
-        left: 57rem;
-        top: 16rem;
-    }
+    /*#filter-tooltip{*/
+    /*    position: absolute;*/
+    /*    left: 57rem;*/
+    /*    top: 16rem;*/
+    /*}*/
     .filter-button-container{
     height: 44px;
     width: 4rem;

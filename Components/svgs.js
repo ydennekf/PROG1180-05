@@ -3,27 +3,27 @@ export function createSVG(height=40, width=40, color='#fff'){
     <svg class="create-svg" fill="${color}" viewBox="0 0 64 64" version="1.1" 
     xmlns="http://www.w3.org/2000/svg" 
     xml:space="preserve"  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> 
-    <rect id="Icons" x="-768" y="-64" width="${width}" height="${height}" style="fill:none;"></rect> <g id="Icons1" > <g id="Strike"> </g> <g id="H1"> </g> 
-    <g id="H2"> </g> <g id="H3"> </g> <g id="list-ul"> </g> <g id="hamburger-1"> </g> <g id="hamburger-2"> </g> <g id="list-ol"> </g> <g id="list-task"> </g> <g id="trash"> 
-    </g> <g id="vertical-menu"> </g> <g id="horizontal-menu"> </g> <g id="sidebar-2"> </g> <g id="Pen"> </g> <g id="Pen1" > </g> <g id="clock"> </g> 
-    <g id="external-link"> </g> <g id="hr"> </g> <g id="info"> </g> <g id="warning"> </g> <g id="plus-circle"> <path d="M16.118,29.968l13.754,0l0,-13.747l3.961,0l0,13.747l14.239,0l0,3.961l-14.239,0l0,14.246l-3.961,0l0,-14.246l-13.754,0l0,-3.961Z"></path> <path d="M32.142,56.083c6.179,-0.059 12.297,-2.619 16.696,-6.966c5.225,-5.164 7.916,-12.803 6.978,-20.096c-1.609,-12.499 -11.883,-20.98 -23.828,-20.98c-9.075,0 -17.896,5.677 -21.765,13.909c-2.961,6.302 -2.967,13.911 0,20.225c3.842,8.174 12.517,13.821 21.61,13.908c0.103,0.001 0.206,0.001 0.309,0Zm-0.283,-4.003c-9.23,-0.089 -17.841,-7.227 -19.553,-16.378c-1.208,-6.452 1.071,-13.433 5.818,-18.015c5.543,-5.35 14.253,-7.143 21.496,-4.11c6.481,2.714 11.331,9.014 12.225,15.955c0.766,5.949 -1.369,12.184 -5.565,16.48c-3.68,3.767 -8.841,6.016 -14.164,6.068c-0.085,0 -0.171,0 -0.257,0Z" style="fill-rule:nonzero;"></path> </g> <g id="minus-circle"> </g> <g id="vue"> </g> <g id="cog"> </g> <g id="logo"> </g> <g id="radio-check"> </g> <g id="eye-slash"> </g> <g id="eye"> </g> <g id="toggle-off"> </g> <g id="shredder"> </g> <g id="spinner--loading--dots-"> </g> <g id="react"> </g> <g id="check-selected"> </g> <g id="turn-off"> </g> <g id="code-block"> </g> <g id="user"> </g> <g id="coffee-bean"> </g> <g id="coffee-beans"> <g id="coffee-bean1" > </g> </g> <g id="coffee-bean-filled"> </g> <g id="coffee-beans-filled"> <g id="coffee-bean2"> </g> </g> <g id="clipboard"> </g> <g id="clipboard-paste"> </g> <g id="clipboard-copy"> </g> <g id="Layer1"> </g> </g> </g></svg>
+    <g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> 
+    <rect x="-768" y="-64" width="${width}" height="${height}" style="fill:none;"></rect> <g> <g> </g> <g> </g> 
+    <g> </g> <g> </g> <g > </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> 
+    </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> 
+    <g> </g> <g> </g> <g> </g> <g> </g> <g> <path d="M16.118,29.968l13.754,0l0,-13.747l3.961,0l0,13.747l14.239,0l0,3.961l-14.239,0l0,14.246l-3.961,0l0,-14.246l-13.754,0l0,-3.961Z"></path> <path d="M32.142,56.083c6.179,-0.059 12.297,-2.619 16.696,-6.966c5.225,-5.164 7.916,-12.803 6.978,-20.096c-1.609,-12.499 -11.883,-20.98 -23.828,-20.98c-9.075,0 -17.896,5.677 -21.765,13.909c-2.961,6.302 -2.967,13.911 0,20.225c3.842,8.174 12.517,13.821 21.61,13.908c0.103,0.001 0.206,0.001 0.309,0Zm-0.283,-4.003c-9.23,-0.089 -17.841,-7.227 -19.553,-16.378c-1.208,-6.452 1.071,-13.433 5.818,-18.015c5.543,-5.35 14.253,-7.143 21.496,-4.11c6.481,2.714 11.331,9.014 12.225,15.955c0.766,5.949 -1.369,12.184 -5.565,16.48c-3.68,3.767 -8.841,6.016 -14.164,6.068c-0.085,0 -0.171,0 -0.257,0Z" style="fill-rule:nonzero;"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> <g> </g> </g> <g> </g> <g> <g> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
     `
 }
 
 export function viewSVG(ncrNumber){
 
     return `
-<svg data-ncr-number="${ncrNumber}" width="64px" height="64px" viewBox="0 0 16 16" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg3049" fill="#000000"><g id="SVGRepo_bgCarrier1" stroke-width="0"></g><g id="SVGRepo_tracerCarrier1" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier1"> <metadata id="metadata3054"> <rdf:rdf> <cc:work> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title></dc:title> <dc:date>2021</dc:date> <dc:creator> <cc:agent> <dc:title>Timothée Giet</dc:title> </cc:agent> </dc:creator> <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"></cc:license> </cc:work> <cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"> <cc:permits rdf:resource="http://creativecommons.org/ns#fffReproduction"></cc:permits> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDistribution"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffNotice"></cc:requires> <cc:requires rdf:resource="http://creativecommons.org/ns#fffAttribution"></cc:requires> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDerivativeWorks"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffShareAlike"></cc:requires> </cc:license> </rdf:rdf> </metadata> <g transform="translate(-421.714 -531.79)" id="layer1"> <g id="layer1-4" transform="translate(418.714 -501.571)"> <g id="layer1-9" transform="matrix(-1 0 0 1 22 0)"> <g transform="matrix(-1 0 0 1 22 0)" id="layer1-2"> <path style="opacity:1;fill:#fff;fill-opacity:1;stroke:none" d="M4 1033.362v1h14v-1zm0 2v1h8v-1zm0 4v1h14v-1zm0 2v1h9v-1zm0 4v1h14v-1zm0 2v1h12v-1z" id="path4174"></path> </g> </g> </g> </g> </g></svg>
+<svg data-ncr-number="${ncrNumber}" width="64px" height="64px" viewBox="0 0 16 16" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#000000"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <metadata id="metadata3054"> <rdf:rdf> <cc:work> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title></dc:title> <dc:date>2021</dc:date> <dc:creator> <cc:agent> <dc:title>Timothée Giet</dc:title> </cc:agent> </dc:creator> <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"></cc:license> </cc:work> <cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"> <cc:permits rdf:resource="http://creativecommons.org/ns#fffReproduction"></cc:permits> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDistribution"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffNotice"></cc:requires> <cc:requires rdf:resource="http://creativecommons.org/ns#fffAttribution"></cc:requires> <cc:permits rdf:resource="http://creativecommons.org/ns#fffDerivativeWorks"></cc:permits> <cc:requires rdf:resource="http://creativecommons.org/ns#fffShareAlike"></cc:requires> </cc:license> </rdf:rdf> </metadata> <g transform="translate(-421.714 -531.79)"> <g transform="translate(418.714 -501.571)"> <gtransform="matrix(-1 0 0 1 22 0)"> <g transform="matrix(-1 0 0 1 22 0)"> <path style="opacity:1;fill:#fff;fill-opacity:1;stroke:none" d="M4 1033.362v1h14v-1zm0 2v1h8v-1zm0 4v1h14v-1zm0 2v1h9v-1zm0 4v1h14v-1zm0 2v1h12v-1z"></path> </g> </g> </g> </g> </g></svg>
    `
 }
 
 export function eyeSVG(ncrNumber){
-    return `<svg data-ncr-number="${ncrNumber}" fill="#fff" viewBox="-3.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier2" stroke-width="0"></g><g id="SVGRepo_tracerCarrier2" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier2"> <title>view</title> <path d="M12.406 13.844c1.188 0 2.156 0.969 2.156 2.156s-0.969 2.125-2.156 2.125-2.125-0.938-2.125-2.125 0.938-2.156 2.125-2.156zM12.406 8.531c7.063 0 12.156 6.625 12.156 6.625 0.344 0.438 0.344 1.219 0 1.656 0 0-5.094 6.625-12.156 6.625s-12.156-6.625-12.156-6.625c-0.344-0.438-0.344-1.219 0-1.656 0 0 5.094-6.625 12.156-6.625zM12.406 21.344c2.938 0 5.344-2.406 5.344-5.344s-2.406-5.344-5.344-5.344-5.344 2.406-5.344 5.344 2.406 5.344 5.344 5.344z"></path> </g></svg>`
+    return `<svg data-ncr-number="${ncrNumber}" fill="#fff" viewBox="-3.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <title>view</title> <path d="M12.406 13.844c1.188 0 2.156 0.969 2.156 2.156s-0.969 2.125-2.156 2.125-2.125-0.938-2.125-2.125 0.938-2.156 2.125-2.156zM12.406 8.531c7.063 0 12.156 6.625 12.156 6.625 0.344 0.438 0.344 1.219 0 1.656 0 0-5.094 6.625-12.156 6.625s-12.156-6.625-12.156-6.625c-0.344-0.438-0.344-1.219 0-1.656 0 0 5.094-6.625 12.156-6.625zM12.406 21.344c2.938 0 5.344-2.406 5.344-5.344s-2.406-5.344-5.344-5.344-5.344 2.406-5.344 5.344 2.406 5.344 5.344 5.344z"></path> </g></svg>`
 }
 
 export function documentSVG(ncrNumber){
-    return `<svg class="report-svg"  "${ncrNumber}" width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
+    return `<svg class="report-svg"   width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
 }
 
 export function bellSVG() {
@@ -37,7 +37,7 @@ export function bellSVG() {
 export function logoutSVG(){
     return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Logout">
+  <g>
     <g>
       <path  d="M20.968,18.448a2.577,2.577,0,0,1-2.73,2.5c-2.153.012-4.306,0-6.459,0a.5.5,0,0,1,0-1c2.2,0,4.4.032,6.6,0,1.107-.016,1.589-.848,1.589-1.838V5.647A1.546,1.546,0,0,0,19,4.175a3.023,3.023,0,0,0-1.061-.095H11.779a.5.5,0,0,1,0-1c2.224,0,4.465-.085,6.687,0a2.567,2.567,0,0,1,2.5,2.67Z"/>
       <path  d="M3.176,11.663a.455.455,0,0,0-.138.311c0,.015,0,.028-.006.043s0,.027.006.041a.457.457,0,0,0,.138.312l3.669,3.669a.5.5,0,0,0,.707-.707L4.737,12.516H15.479a.5.5,0,0,0,0-1H4.737L7.552,8.7a.5.5,0,0,0-.707-.707Z"/>
@@ -49,7 +49,7 @@ export function logoutSVG(){
 export function editSVG(ncrNumber) {
     return `<svg data-ncr-number="${ncrNumber}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Edit">
+  <g>
     <g>
       <path  d="M3.548,20.938h16.9a.5.5,0,0,0,0-1H3.548a.5.5,0,0,0,0,1Z"/>
       <path  d="M9.71,17.18a2.587,2.587,0,0,0,1.12-.65l9.54-9.54a1.75,1.75,0,0,0,0-2.47l-.94-.93a1.788,1.788,0,0,0-2.47,0L7.42,13.12a2.473,2.473,0,0,0-.64,1.12L6.04,17a.737.737,0,0,0,.19.72.767.767,0,0,0,.53.22Zm.41-1.36a1.468,1.468,0,0,1-.67.39l-.97.26-1-1,.26-.97a1.521,1.521,0,0,1,.39-.67l.38-.37,1.99,1.99Zm1.09-1.08L9.22,12.75l6.73-6.73,1.99,1.99Zm8.45-8.45L18.65,7.3,16.66,5.31l1.01-1.02a.748.748,0,0,1,1.06,0l.93.94A.754.754,0,0,1,19.66,6.29Z"/>
@@ -60,7 +60,7 @@ export function editSVG(ncrNumber) {
 
 export function bookmarkSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Bookmark">
+  <g>
     <path d="M17.6,21.945a1.483,1.483,0,0,1-1.01-.4l-4.251-3.9a.5.5,0,0,0-.68,0L7.409,21.545a1.5,1.5,0,0,1-2.516-1.1V4.57a2.5,2.5,0,0,1,2.5-2.5h9.214a2.5,2.5,0,0,1,2.5,2.5V20.442a1.481,1.481,0,0,1-.9,1.374A1.507,1.507,0,0,1,17.6,21.945ZM12,16.51a1.5,1.5,0,0,1,1.018.395l4.251,3.9a.5.5,0,0,0,.839-.368V4.57a1.5,1.5,0,0,0-1.5-1.5H7.393a1.5,1.5,0,0,0-1.5,1.5V20.442a.5.5,0,0,0,.839.368L10.983,16.9A1.5,1.5,0,0,1,12,16.51Z"/>
   </g>
 </svg>`
@@ -68,7 +68,7 @@ export function bookmarkSVG() {
 
 export function checkmarkSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Circle_Check" data-name="Circle Check">
+  <g  data-name="Circle Check">
     <g>
       <path d="M15.81,10.4a.5.5,0,0,0-.71-.71l-3.56,3.56L9.81,11.52a.5.5,0,0,0-.71.71l2.08,2.08a.513.513,0,0,0,.71,0Z"/>
       <path d="M12,21.934A9.934,9.934,0,1,1,21.933,12,9.945,9.945,0,0,1,12,21.934ZM12,3.067A8.934,8.934,0,1,0,20.933,12,8.944,8.944,0,0,0,12,3.067Z"/>
@@ -79,7 +79,7 @@ export function checkmarkSVG() {
 
 export function chevLeftSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> 
-  <g id="Circle_Chev_Left" data-name="Circle Chev Left">
+  <g  data-name="Circle Chev Left">
     <g>
       <path d="M10.15,12.35a.492.492,0,0,1,0-.7l3-3a.495.495,0,0,1,.7.7L11.21,12l2.64,2.65a.495.495,0,0,1-.7.7Z"/>
       <path d="M12,21.933A9.933,9.933,0,1,1,21.933,12,9.944,9.944,0,0,1,12,21.933ZM12,3.067A8.933,8.933,0,1,0,20.933,12,8.943,8.943,0,0,0,12,3.067Z"/>
@@ -90,7 +90,7 @@ export function chevLeftSVG() {
 
 export function chevRightSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Circle_Chev_Right" data-name="Circle Chev Right">
+  <g  data-name="Circle Chev Right">
     <g>
       <path d="M13.85,11.65a.492.492,0,0,1,0,.7l-3,3a.495.495,0,0,1-.7-.7L12.79,12,10.15,9.35a.495.495,0,0,1,.7-.7Z"/>
       <path d="M12,2.067A9.933,9.933,0,1,1,2.067,12,9.944,9.944,0,0,1,12,2.067Zm0,18.866A8.933,8.933,0,1,0,3.067,12,8.943,8.943,0,0,0,12,20.933Z"/>
@@ -101,7 +101,7 @@ export function chevRightSVG() {
 
 export function helpSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Circle_Info" data-name="Circle Info">
+  <g  data-name="Circle Info">
     <g>
       <g>
         <path d="M11.5,15a.5.5,0,0,0,1,0h0V10.981a.5.5,0,0,0-1,0Z"/>
@@ -115,7 +115,7 @@ export function helpSVG() {
 
 export function faqSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Circle_Question" data-name="Circle Question">
+  <g  data-name="Circle Question">
     <g>
       <g>
         <path d="M11.411,12.459a1.547,1.547,0,0,1,.341-.6,2.644,2.644,0,0,1,.535-.417,2.2,2.2,0,0,0,.363-.286,1.2,1.2,0,0,0,.256-.363A1.084,1.084,0,0,0,13,10.341a.923.923,0,0,0-.142-.517.938.938,0,0,0-.374-.338,1.123,1.123,0,0,0-.519-.119,1.173,1.173,0,0,0-.495.107.934.934,0,0,0-.389.335.884.884,0,0,0-.111.224.516.516,0,0,1-.483.359h0a.506.506,0,0,1-.479-.675,1.661,1.661,0,0,1,.178-.349,1.8,1.8,0,0,1,.748-.634,2.437,2.437,0,0,1,1.031-.215,2.4,2.4,0,0,1,1.082.231,1.737,1.737,0,0,1,.721.641,1.772,1.772,0,0,1,.257.96,1.841,1.841,0,0,1-.118.678,1.685,1.685,0,0,1-.334.536,2.289,2.289,0,0,1-.52.417,2.277,2.277,0,0,0-.462.369,1.113,1.113,0,0,0-.256.455,2.344,2.344,0,0,0-.045.283.487.487,0,0,1-.483.429h0a.484.484,0,0,1-.483-.531A2.931,2.931,0,0,1,11.411,12.459Z"/>
@@ -129,7 +129,7 @@ export function faqSVG() {
 
 export function moonSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Dark">
+  <g>
     <path d="M12.741,20.917a9.389,9.389,0,0,1-1.395-.105,9.141,9.141,0,0,1-1.465-17.7,1.177,1.177,0,0,1,1.21.281,1.273,1.273,0,0,1,.325,1.293,8.112,8.112,0,0,0-.353,2.68,8.266,8.266,0,0,0,4.366,6.857,7.628,7.628,0,0,0,3.711.993,1.242,1.242,0,0,1,.994,1.963h0A9.148,9.148,0,0,1,12.741,20.917ZM10.261,4.05a.211.211,0,0,0-.065.011,8.137,8.137,0,1,0,9.131,12.526h0a.224.224,0,0,0,.013-.235.232.232,0,0,0-.206-.136A8.619,8.619,0,0,1,14.946,15.1a9.274,9.274,0,0,1-4.883-7.7,9.123,9.123,0,0,1,.4-3.008.286.286,0,0,0-.069-.285A.184.184,0,0,0,10.261,4.05Z"/>
   </g>
 </svg>`
@@ -138,7 +138,7 @@ export function moonSVG() {
 export function eraseSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Eraser">
+  <g>
     <path  d="M20.454,19.028h-7.01l6.62-6.63a2.935,2.935,0,0,0,.87-2.09,2.844,2.844,0,0,0-.87-2.05l-3.42-3.44a2.93,2.93,0,0,0-4.13.01L3.934,13.4a2.946,2.946,0,0,0,0,4.14l1.48,1.49H3.554a.5.5,0,0,0,0,1h16.9A.5.5,0,0,0,20.454,19.028Zm-7.24-13.5a1.956,1.956,0,0,1,2.73,0l3.42,3.44a1.868,1.868,0,0,1,.57,1.35,1.93,1.93,0,0,1-.57,1.37l-5.64,5.64-6.15-6.16Zm-1.19,13.5h-5.2l-2.18-2.2a1.931,1.931,0,0,1,0-2.72l2.23-2.23,6.15,6.15Z"/>
   </g>
 </svg>`
@@ -147,7 +147,7 @@ export function eraseSVG() {
 export function exportSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Export">
+  <g>
     <g>
       <path  d="M5.552,20.968a2.577,2.577,0,0,1-2.5-2.73c-.012-2.153,0-4.306,0-6.459a.5.5,0,0,1,1,0c0,2.2-.032,4.4,0,6.6.016,1.107.848,1.589,1.838,1.589H18.353A1.546,1.546,0,0,0,19.825,19a3.023,3.023,0,0,0,.1-1.061V11.779h0a.5.5,0,0,1,1,0c0,2.224.085,4.465,0,6.687a2.567,2.567,0,0,1-2.67,2.5Z"/>
       <path  d="M12.337,3.176a.455.455,0,0,0-.311-.138c-.015,0-.028,0-.043-.006s-.027,0-.041.006a.457.457,0,0,0-.312.138L7.961,6.845a.5.5,0,0,0,.707.707l2.816-2.815V15.479a.5.5,0,0,0,1,0V4.737L15.3,7.552a.5.5,0,0,0,.707-.707Z"/>
@@ -159,7 +159,7 @@ export function exportSVG() {
 export function filterSVG() {
     return `<svg class="filter-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Filter">
+  <g>
     <path d="M14.037,20.937a1.015,1.015,0,0,1-.518-.145l-3.334-2a2.551,2.551,0,0,1-1.233-2.176V12.091a1.526,1.526,0,0,0-.284-.891L4.013,4.658a1.01,1.01,0,0,1,.822-1.6h14.33a1.009,1.009,0,0,1,.822,1.6h0L15.332,11.2a1.527,1.527,0,0,0-.285.891v7.834a1.013,1.013,0,0,1-1.01,1.012ZM4.835,4.063,9.482,10.62a2.515,2.515,0,0,1,.47,1.471v4.524a1.543,1.543,0,0,0,.747,1.318l3.334,2,.014-7.843a2.516,2.516,0,0,1,.471-1.471l4.654-6.542,0,0Z"/>
   </g>
 </svg>`
@@ -168,7 +168,7 @@ export function filterSVG() {
 export function saveSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Floppy_Disk" data-name="Floppy Disk">
+  <g data-name="Floppy Disk">
     <path d="M20.015,7.015l-4.15-3.39a2.54,2.54,0,0,0-1.58-.56H4.565a1.5,1.5,0,0,0-1.5,1.5v14.87a1.5,1.5,0,0,0,1.5,1.5h14.87a1.5,1.5,0,0,0,1.5-1.5V8.955A2.507,2.507,0,0,0,20.015,7.015ZM6.565,4.065h5.75v1.37a.5.5,0,0,1-.5.5H7.065a.5.5,0,0,1-.5-.5Zm0,15.87v-5.93a1.5,1.5,0,0,1,1.5-1.5h7.87a1.5,1.5,0,0,1,1.5,1.5v5.93Zm13.37-.5a.5.5,0,0,1-.5.5h-1v-5.93a2.507,2.507,0,0,0-2.5-2.5H8.065a2.5,2.5,0,0,0-2.5,2.5v5.93h-1a.5.5,0,0,1-.5-.5V4.565a.5.5,0,0,1,.5-.5h1v1.37a1.5,1.5,0,0,0,1.5,1.5h4.75a1.5,1.5,0,0,0,1.5-1.5V4.065h.97a1.514,1.514,0,0,1,.95.34l4.14,3.38a1.483,1.483,0,0,1,.56,1.17Z"/>
   </g>
 </svg>`
@@ -177,7 +177,7 @@ export function saveSVG() {
 export function homeSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Home">
+  <g>
     <path  d="M19.37,10.22l-6.2-7.6a1.5,1.5,0,0,0-2.33-.01L4.63,10.22a2.5,2.5,0,0,0-.57,1.59v7.63a2.507,2.507,0,0,0,2.5,2.5H17.44a2.507,2.507,0,0,0,2.5-2.5V11.81A2.5,2.5,0,0,0,19.37,10.22ZM10,20.94v-5.5a1.5,1.5,0,0,1,1.5-1.5h1a1.5,1.5,0,0,1,1.5,1.5v5.5Zm8.94-1.5a1.511,1.511,0,0,1-1.5,1.5H15v-5.5a2.5,2.5,0,0,0-2.5-2.5h-1A2.5,2.5,0,0,0,9,15.44v5.5H6.56a1.511,1.511,0,0,1-1.5-1.5V11.81a1.474,1.474,0,0,1,.34-.95l6.22-7.61A.474.474,0,0,1,12,3.06a.479.479,0,0,1,.39.19l6.21,7.61a1.474,1.474,0,0,1,.34.95Z"/>
   </g>
 </svg>`
@@ -185,7 +185,7 @@ export function homeSVG() {
 
 export function hambugerSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <g id="Menu_Burger">
+    <g>
         <path d="M3.563,4.063c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.001c0.276,-0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.001Z"/>
         <path d="M3.563,12.501c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.002c0.276,0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.002Z"/>
         <path d="M3.563,20.939c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.002c0.276,0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.002Z"/>
@@ -195,7 +195,7 @@ export function hambugerSVG() {
 
 export function searchSVG() {
     return `<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"">
-<g id="search">
+<g>
 <path d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31
 c0-4.39-3.57-7.96-7.96-7.96s-7.96,3.57-7.96,7.96c0,4.39,3.57,7.96,7.96,7.96c1.98,0,3.81-0.73,5.21-1.94L20.031,20.79z
 M4.11,11.02c0-3.84,3.13-6.96,6.96-6.96c3.84,0,6.96,3.12,6.96,6.96c0,3.84-3.12,6.96-6.96,6.96C7.24,17.98,4.11,14.86,4.11,11.02
@@ -207,7 +207,7 @@ z"/>
 export function purchaseSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Shopping_Tag" data-name="Shopping Tag">
+  <g  data-name="Shopping Tag">
     <g>
       <path d="M20.605,5.988a2.8,2.8,0,0,0-2.6-2.59l-4.56-.32a2.842,2.842,0,0,0-2.17.81L3.9,11.278a2.794,2.794,0,0,0,0,3.95l4.87,4.88a2.8,2.8,0,0,0,3.96,0l7.38-7.39a2.779,2.779,0,0,0,.81-2.17ZM12.015,19.4a1.8,1.8,0,0,1-2.54,0l-4.87-4.87a1.793,1.793,0,0,1,0-2.55l1.17-1.17,7.42,7.42Zm7.38-7.38-5.5,5.5L6.485,10.1l5.5-5.5a1.786,1.786,0,0,1,1.27-.53c.04,0,.08.01.12.01l4.56.32a1.8,1.8,0,0,1,1.67,1.66l.32,4.56A1.829,1.829,0,0,1,19.4,12.018Z"/>
       <circle cx="17" cy="6.999" r="0.862"/>
@@ -219,7 +219,7 @@ export function purchaseSVG() {
 export function qaSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Ruler">
+  <g>
     <g>
       <path  d="M9.479,3.5a1.5,1.5,0,0,0-2.12,0L3.5,7.35a1.516,1.516,0,0,0-.44,1.06A1.5,1.5,0,0,0,3.5,9.47L14.519,20.5a1.509,1.509,0,0,0,2.13,0l3.85-3.86a1.491,1.491,0,0,0,0-2.12ZM8.359,7.08a.5.5,0,0,0,0,.71.524.524,0,0,0,.71,0c.55-.56,1.09-1.1,1.65-1.64l1.25,1.25-.9.9a.483.483,0,0,0,0,.7.5.5,0,0,0,.71,0c.29-.3.6-.6.9-.89l1.25,1.25-1.64,1.65a.495.495,0,0,0,.7.7c.56-.55,1.1-1.09,1.65-1.64l1.25,1.25-.9.9a.524.524,0,0,0-.14.36.5.5,0,0,0,.14.35.513.513,0,0,0,.71,0l.9-.9,1.26,1.26-1.65,1.64a.5.5,0,0,0,.71.71c.55-.56,1.09-1.1,1.65-1.64l1.23,1.23a.5.5,0,0,1,0,.7l-3.86,3.86a.5.5,0,0,1-.71,0L4.209,8.77a.491.491,0,0,1-.15-.36.485.485,0,0,1,.15-.35L8.069,4.2a.508.508,0,0,1,.7,0l1.24,1.24Z"/>
       <path  d="M18.939,12.96l-.04-.04c.01,0,.01,0,.02.01S18.939,12.95,18.939,12.96Z"/>
@@ -231,7 +231,7 @@ export function qaSVG() {
 export function garbageSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Trash" data-name="Trash">
+  <gdata-name="Trash">
     <g>
       <path  d="M19.45,4.06H15.27v-.5a1.5,1.5,0,0,0-1.5-1.5H10.23a1.5,1.5,0,0,0-1.5,1.5v.5H4.55a.5.5,0,0,0,0,1h.72l.42,14.45a2.493,2.493,0,0,0,2.5,2.43h7.62a2.493,2.493,0,0,0,2.5-2.43l.42-14.45h.72A.5.5,0,0,0,19.45,4.06Zm-9.72-.5a.5.5,0,0,1,.5-.5h3.54a.5.5,0,0,1,.5.5v.5H9.73Zm7.58,15.92a1.5,1.5,0,0,1-1.5,1.46H8.19a1.5,1.5,0,0,1-1.5-1.46L6.26,5.06H17.74Z"/>
       <path  d="M8.375,8h0a.5.5,0,0,1,1,0l.25,10a.5.5,0,0,1-1,0Z"/>
@@ -244,7 +244,7 @@ export function garbageSVG() {
 export function userSVG() {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="User">
+  <g>
     <g>
       <path  d="M17.438,21.937H6.562a2.5,2.5,0,0,1-2.5-2.5V18.61c0-3.969,3.561-7.2,7.938-7.2s7.938,3.229,7.938,7.2v.827A2.5,2.5,0,0,1,17.438,21.937ZM12,12.412c-3.826,0-6.938,2.78-6.938,6.2v.827a1.5,1.5,0,0,0,1.5,1.5H17.438a1.5,1.5,0,0,0,1.5-1.5V18.61C18.938,15.192,15.826,12.412,12,12.412Z"/>
       <path  d="M12,9.911a3.924,3.924,0,1,1,3.923-3.924A3.927,3.927,0,0,1,12,9.911Zm0-6.847a2.924,2.924,0,1,0,2.923,2.923A2.926,2.926,0,0,0,12,3.064Z"/>
@@ -256,7 +256,7 @@ export function userSVG() {
 export function folderSVG(ncrNumber) {
     return`<svg data-ncr-number="${ncrNumber}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   
-  <g id="Folder_On" data-name="Folder On">
+  <g data-name="Folder On">
     <path d="M19.435,19.94H4.565a2.5,2.5,0,0,1-2.5-2.5V6.56a2.5,2.5,0,0,1,2.5-2.5h5.27A2.5,2.5,0,0,1,12.292,6.1l.042.222a.5.5,0,0,0,.491.408h6.61a2.5,2.5,0,0,1,2.5,2.5v8.21A2.5,2.5,0,0,1,19.435,19.94ZM4.565,5.06a1.5,1.5,0,0,0-1.5,1.5V17.44a1.5,1.5,0,0,0,1.5,1.5h14.87a1.5,1.5,0,0,0,1.5-1.5V9.23a1.5,1.5,0,0,0-1.5-1.5h-6.61a1.5,1.5,0,0,1-1.474-1.225l-.042-.221A1.5,1.5,0,0,0,9.835,5.06Z"/>
   </g>
 </svg>`
@@ -264,7 +264,7 @@ export function folderSVG(ncrNumber) {
 
 export function  minusSVG(ncrNumber) {
     return `<svg data-ncr="${ncrNumber}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Circle_Minus" data-name="Circle Minus">
+  <g data-name="Circle Minus">
     <g>
       <path d="M15,11.5h0a.5.5,0,0,1,0,1H9a.5.5,0,0,1,0-1Z"/>
       <path d="M12,21.934A9.933,9.933,0,1,1,21.932,12,9.945,9.945,0,0,1,12,21.934ZM12,3.068A8.933,8.933,0,1,0,20.932,12,8.944,8.944,0,0,0,12,3.068Z"/>

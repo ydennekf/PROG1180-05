@@ -23,12 +23,12 @@ export function eyeSVG(ncrNumber){
 }
 
 export function documentSVG(ncrNumber){
-    return `<svg class="report-svg"  "${ncrNumber}" width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g id="SVGRepo_bgCarrier3" stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
+    return `<svg class="report-svg"  "${ncrNumber}" width="40px" height="40px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#FFF" stroke="#FFF"><g stroke-width="0"></g><g id="SVGRepo_tracerCarrier3" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier3"><defs><style>.a{fill:none;stroke:#FFF;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M14,4.5H10.5a2,2,0,0,0-2,2v35a2,2,0,0,0,2,2h27a2,2,0,0,0,2-2V6.5a2,2,0,0,0-2-2H24"></path><path class="a" d="M12,4.5l1.4142-1.4142A2,2,0,0,1,14.8284,2.5H23a1,1,0,0,1,1,1v25l-5-5-5,5V4.5"></path><line class="a" x1="14" y1="38" x2="34" y2="38"></line><line class="a" x1="24" y1="10" x2="34" y2="10"></line><line class="a" x1="24" y1="17" x2="34" y2="17"></line><line class="a" x1="24" y1="24" x2="34" y2="24"></line><line class="a" x1="14" y1="31" x2="34" y2="31"></line></g></svg>`
 }
 
 export function bellSVG() {
     return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <g id="Bell_On" data-name="Bell On">
+  <g>
     <path d="M18.79,15.34a2.087,2.087,0,0,0-1.26-.61V10.19a5.5,5.5,0,0,0-1.62-3.91,5.826,5.826,0,0,0-2.15-1.33V4.89a1.8,1.8,0,0,0-1.61-1.81,1.749,1.749,0,0,0-1.91,1.75v.12a5.547,5.547,0,0,0-3.77,5.24v4.54a2.122,2.122,0,0,0-1.88,2.11v.53a2.121,2.121,0,0,0,2.12,2.12H10.3a1.725,1.725,0,0,0,3.4,0h3.59a2.121,2.121,0,0,0,2.12-2.12v-.53A2.1,2.1,0,0,0,18.79,15.34Zm-.38,2.03a1.118,1.118,0,0,1-1.12,1.12H6.71a1.118,1.118,0,0,1-1.12-1.12v-.53a1.118,1.118,0,0,1,1.12-1.12.762.762,0,0,0,.76-.77V10.19a4.555,4.555,0,0,1,3.24-4.34.729.729,0,0,0,.53-.71V4.83a.735.735,0,0,1,.25-.56.744.744,0,0,1,.51-.2h.07a.807.807,0,0,1,.69.82v.25a.729.729,0,0,0,.53.71A4.668,4.668,0,0,1,15.2,6.99a4.468,4.468,0,0,1,1.33,3.2v4.76a.8.8,0,0,0,.22.55.773.773,0,0,0,.54.22,1.127,1.127,0,0,1,1.12,1.12Z"/>
   </g>
 </svg>`

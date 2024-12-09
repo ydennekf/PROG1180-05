@@ -193,8 +193,8 @@ export function hambugerSVG() {
 </svg>`
 }
 
-export function searchSVG() {
-    return `<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"">
+export function searchSVG(ncrNumber) {
+    return `<svg data-ncr-number="${ncrNumber}"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 <g>
 <path d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31
 c0-4.39-3.57-7.96-7.96-7.96s-7.96,3.57-7.96,7.96c0,4.39,3.57,7.96,7.96,7.96c1.98,0,3.81-0.73,5.21-1.94L20.031,20.79z

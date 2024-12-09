@@ -39,7 +39,7 @@ let  startDate = new Date(reportData.date);
             <td data-ncr-number="${reportData.ncrNumber}">
                 <div data-ncr-number="${reportData.ncrNumber}" class='index-view-table-buttons'>
                 <div class="tooltip-container view-report" data-ncr-number="${reportData.ncrNumber}">
-                <button data-ncr-number="${reportData.ncrNumber}" class="icon" tabindex="5" >${SVG.viewSVG(reportData.ncrNumber)}</button>
+                <button data-ncr-number="${reportData.ncrNumber}" class="icon" tabindex="5" >${SVG.searchSVG(reportData.ncrNumber)}</button>
                 <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Details</div>
                 </div>
                 <div class="tooltip-container edit-report" data-ncr-number="${reportData.ncrNumber}">

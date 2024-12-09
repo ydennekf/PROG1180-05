@@ -161,7 +161,7 @@ export function ReportView(report, action){
  
         return `
             <div>
-                <form id="img-form">
+                <div id="img-form">
                     <label for="attach-img">Attach an image</label>
                 
                     <input type="file" id="attach-img" required/>
@@ -169,7 +169,7 @@ export function ReportView(report, action){
                     <label for="alt-text">Alt text</label>
                     <input type="text" required id="alt-text"/>
                     <button>Add Image</button>
-                </form>
+                </div>
             </div>
             <div id="image-grid">
             
@@ -458,7 +458,7 @@ setReadonly()
                     </ul>  
                                      
                     <ul class= "qa-checkbox-align">
-                        <label for="wip-or-rec"><span class="required-marker">*</span>&nbsp;Identify Process Applicable:</label>
+                        <li><label><span class="required-marker">*</span>&nbsp;Identify Process Applicable:</label></li>
                             
                             <li class= "chkBox2">  
                                 <input ${QAReadOnly ? "disabled" : ''} name="wip-or-rec" aria-describedby="lbl-supplier-or-rec" type="radio" id="rad-supplier-or-rec" 

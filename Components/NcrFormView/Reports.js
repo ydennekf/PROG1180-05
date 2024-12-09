@@ -159,13 +159,13 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                     
                   
                         <div class= "chkBox2">
-                            <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req" aria-describedby="lbl-followup-req" type="checkbox" id="chk-followup-req" 
+                            <input ${purchaseReadOnly ? "disabled" : ''} name="followup-req"  type="checkbox" id="chk-followup-req" 
                             ${report?.followUpRequired ? 'checked' : ''}/>
                             <label id="lbl-follwup-req" for="chk-followup-req"><span class="required-marker">*</span>&nbsp;Followup Required?</label>
                         </div>
                          <div>
                             <fieldset class="no-border">
-                                <legend for="followup-type"><span class="required-marker">*</span>&nbsp;Followup Type:</legend>
+                                <legend><span class="required-marker">*</span>&nbsp;Followup Type:</legend>
                                 <label id="followup-type-error" class="error-label"></label>
                                 <select id="cbo-followup-type" name="followup-type" ${purchaseReadOnly ? "disabled" : ''}>
                                     <option ${!report?.followUpType ? "selected" : "" } value="">Select a type</option>
@@ -179,7 +179,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
                         </div>
                         <div class="followup-date">
                             <label for="dtp-followup-date"><span class="required-marker">*</span>&nbsp;Followup Date:</label>
-                            <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  aria-describedby="lbl-followup-date" type="text" id="dtp-followup-date" placeholder="Select followup date">
+                            <input value="${report?.followUpDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="followup-date"  type="text" id="dtp-followup-date" placeholder="Select followup date">
                             <label id="followup-date-error" class="error-label"></label>
                         </div>
                    
@@ -192,7 +192,7 @@ export function PurchasingReport(report, purchaseReadOnly, targetID=null, hidden
 
                         <div>
                             <label for="dtp-purchase-date"><span class="required-marker">*</span>&nbsp;Purchase Date:</label>
-                            <input value="${report?.purchaseDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"  aria-describedby="lbl-purchase-date" type="text" id="dtp-purchase-date" placeholder="Select purchase date">
+                            <input value="${report?.purchaseDate || ""}" ${purchaseReadOnly ? "disabled" : ''} name="purchase-date"   type="text" id="dtp-purchase-date" placeholder="Select purchase date">
                             <label id="purchase-date-error" class="error-label"></label>
                         </div>
                    

@@ -107,12 +107,13 @@ export function previewBindings(){ // Called after mapComponents completes on re
     viewBtns.forEach(e => {
         console.log(e.dataset.ncrNumber)
         console.log(getReport(e.dataset.ncrNumber))
-        e.addEventListener('click', (ev) => {console.log(ev);openReportDetails(ev.target.dataset.ncrNumber)})
+        e.addEventListener('click', (ev) => {openReportDetails(ev.target.dataset.ncrNumber)})
         
     })
 
     editBtns.forEach(e =>{
         if(getReport(e.dataset.ncrNumber)?.status === "archived"){
+            e.classList.add("disabled-preview-btn")
             e.disabled = true;
             return;
         }

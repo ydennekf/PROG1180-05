@@ -133,6 +133,8 @@ function createPurchasingPDF(report){
             ...engHeader(report),
             ...engDisposition(report),
             ...engFooter(report),
+            {canvas: [ { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 1 } ], margin:[0, 5, 0, 40]},
+        {text:"Review By Purchasing", style:"header", fontSize:16, color:blue},
             ...purchasingPreliminaryDecision(report),
             ...purchasingFollowUpType(report),
             ...purchasingCAR(report),

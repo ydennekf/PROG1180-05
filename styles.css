@@ -2052,3 +2052,6 @@ tbody tr {
 }
 
 
+.disabled-preview-btn{
+    cursor:not-allowed;
+}

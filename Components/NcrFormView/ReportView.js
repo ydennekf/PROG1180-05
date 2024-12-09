@@ -134,10 +134,10 @@ export function ReportView(report, action){
                 const pData = getPurchasingFormData()
                 const newReport = {...report}
                 addPurchasingReportData(newReport)
-
+                console.log("wow + purchasing")
                 addImagesToReport(newReport)
                 clearImageStorage()
-                report.status = "closed";
+                newReport.status = "closed";
                 updateReport(ncrNum.value, newReport);
                 app.storage.pushRecentReport(newReport.ncrNumber)
             }

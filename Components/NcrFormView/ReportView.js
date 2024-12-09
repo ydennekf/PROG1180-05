@@ -136,7 +136,7 @@ export function ReportView(report, action){
 
                 addImagesToReport(newReport)
                 clearImageStorage()
-            
+                report.status = "closed";
                 updateReport(ncrNum.value, newReport);
                 app.storage.pushRecentReport(newReport.ncrNumber)
             }

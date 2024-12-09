@@ -6,9 +6,7 @@ import {employees} from "../../Data/employeeData.js";
 
 export function notificationBell(){
     const count =  app.storage.getNewReports().length;
-
-    return `
-       
+    document.getElementById("dropdownTrigger").innerHTML = `       
         ${SVG.bellSVG()}
         New
         ${count === 0 ? "" : `<strong class="notification-count">${count}</strong>`}
@@ -58,6 +56,7 @@ export function setNotifyListeners(){
 
 function populateNotifications(notificationList) {
     console.log("clicked the bell")
+    notificationBell();
     const notifications = app.storage.getNewReports();
     notificationList.innerHTML = "";
     notifications.forEach((notification) => {

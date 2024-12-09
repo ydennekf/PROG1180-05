@@ -103,7 +103,7 @@ export function loadNavOnLogin() {
                 
                 <div id="_notifications" class="nav-icon">
                     <div id="dropdownTrigger" class="tooltip-container">
-                        ${notificationBell()}
+                        
                     </div>
                     <div class="dropdown-content">
                         <ul id="notificationList">
@@ -119,6 +119,7 @@ export function loadNavOnLogin() {
             </ul>`
     document.getElementById("nav-links").innerHTML = "";
     append("nav-links", html)
+    notificationBell()
     bindNav()
     setNotifyListeners()
 }

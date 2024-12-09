@@ -1554,20 +1554,183 @@ tbody tr {
   
 }
 
-@media screen and (min-width:768px) and (max-width:1023px){
-    #notificationList{
-        right: 3px;
-        top: 60px;
+
+
+/* =========================
+   Animations (Global)
+   ========================= */
+
+   @keyframes checkAnim {
+    from {
+        transform: rotate(45deg) scale(0);
     }
 }
 
 
-@media screen and (min-width:426px) and (max-width:767px){
+/*  ==================
+      Media Queries 
+    ==================*/
+
+@media screen and (max-width:425px){
+    h1{
+        font-size: 1.3rem;
+    }
+    * {
+       font-size: 12px;
+   }
+    #bread-crumbs a {
+        font-size: 12px;
+    }
+    table{
+        width: 100%;
+    }
+
+
+    .login-form {
+        width: 100%;
+    }
+
+    .nav-logo{
+        margin-left: 10px;
+    }
+
+    main{
+        padding: 1rem;
+    }
+
+    .nav-search{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+/*  ==================
+        NCR Report
+    ==================*/   
+
+    .iso-header{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        max-width: 100%;
+        gap: 0.1rem;
+    }
+
+    .iso-header :nth-child(3){
+        grid-row: 8;
+    } 
+
+    .quality-assurance-inputs, 
+    .purchasing-inputs,
+    .engineering-inputs{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    .qa-checkbox-align{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .chkBox2{ 
+        margin-bottom: 0;
+    }
+
+    .purchasing-right-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .followup-date{
+        margin-top: 0;
+    }
+
+     .notification-count{
+        position: relative;
+        bottom: 4rem;
+        left: 0.9rem;
+    }
+      .filter-tooltip{
+        bottom: 5.5rem;
+    }
+
+}
+
+
+
+
+
+
+@media screen and (min-width:426px) and (max-width:768px){
+
+    .filter-tooltip{
+        bottom: 5.5rem;
+    }
+    h1{
+        font-size: 1.3rem;
+    }
+    * {
+       font-size: 12px;
+   }
+    #bread-crumbs a {
+        font-size: 12px;
+    }
+
+    .notification-count{
+        bottom: 4rem;
+        left: 0.9rem;
+    }
+    .centre-s{
+        max-width: 100%;
+        margin: 0 auto;  
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+
+    .iso-header{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+   
+    .quality-assurance-inputs,
+    .purchasing-inputs,
+    .engineering-inputs{
+       display: grid;
+       grid-template-columns: 1fr;
+       row-gap: 20px;
+    }
+
+    .qa-checkbox-align{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .chkBox2{ 
+        margin-bottom: 0;
+    }
+
+    .purchasing-right-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .followup-date{
+        margin-top: 0;
+    } 
+
+
+
     #notificationList{
         right: 3px;
         top: 60px;
     }
-}
+
 
 .notify-ncr-number{
     font-size:90%;
@@ -1592,4 +1755,291 @@ tbody tr {
 .faq-container h2 {
     color: var(--color-offblack);
 }
+}
+
+/* =========================
+   Responsive Layout Adjustments 
+   (Medium Screens)
+   ========================= */
+
+@media screen and (min-width:769px) and (max-width:1024px){
+    #notificationList{
+        right: 3px;
+        top: 60px;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+    * {
+       font-size: 14px;
+   }
+    #bread-crumbs a {
+        font-size: 14px;
+    }
+
+    .centre-m{
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+    .iso-header{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 100%;
+    }
+
+
+    .iso-header :nth-child(8){
+    grid-column: 2/4;
+    grid-row: 3/4;
+    }
+    
+     .notification-count{
+        position: relative;
+        bottom: 3.5rem;
+        left: 0.9rem;
+    }
+
+    .quality-assurance-inputs,
+    .engineering-inputs,
+    .purchasing-inputs{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 20px;
+    }
+
+     .qa-checkbox-align{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .chkBox2{
+        margin-bottom: 0;
+    }
+
+    .followup-date{
+        margin-top: 0;
+    }
+
+     .notification-count{
+        position: relative;
+        bottom: 4rem;
+        left: 0.9rem;
+    }
+
+
+
+    /********************
+            OLD
+    *********************/
+    /* footer{
+        margin-top:30px;
+        position:static;
+    } */
+
+    .foot #btn-cancel {
+        margin-right: 400px;
+    }
+}
+
+
+/* =========================
+   Responsive Layout Adjustments 
+   (Large Screens)
+   ========================= */
+   @media screen and (min-width:1024px){
+    .filter-nav-icon{
+      height: 38px;
+
+  }
+     .filter-tooltip{
+      bottom: 5.5rem;
+  }
+}
+
+@media screen and (min-width:1025px){
+
+
+  .centre-l{
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  
+  main {
+      width: 100%;
+  }
+   .notification-count{
+      position: relative;
+      bottom: 2.5rem;
+      left: 0.2rem;
+  }
+  /********************
+          OLD
+  *********************/
+    nav {
+      justify-self: center;
+      width: 100%;
+     }
+
+  nav span {
+      font-size: 14px;
+    }
+  
+  #bread-crumbs a{
+      font-size: 14px;
+  }
+
+  .foot #btn-cancel {
+      margin-right: 500px; 
+  }
+
+  /*==================
+     NCR Report
+  ==================*/  
+
+  .iso-header{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr;
+      max-width: 100%;
+      width: 1200px;
+  }
+
+  .iso-header :nth-child(2){
+      grid-column: 3/4;
+      grid-row: 1/2;
+  }
+  .iso-header :nth-child(4){
+      grid-column: 2/3;
+      grid-row: 1/2;
+  }
+  
+  .iso-header :nth-child(6){
+      grid-column: 3/4;
+      grid-row: 2/3;
+  }
+
+  .iso-header :nth-child(8){
+      grid-column: 4/5;
+      grid-row: 1/2;
+  }
+  .iso-header :nth-child(9){
+      grid-column: 1/5;
+      grid-row: 3/4;
+  padding-bottom: 5px;
+  }
+
+  /* This section is for layout of the NCR form*/
+
+
+  .quality-assurance-inputs,
+  .purchasing-inputs {
+      display: grid;
+      grid-template-columns: 2fr 5fr;
+      gap: 20px;
+  }
+
+  .engineering-inputs {
+      display: grid;
+      grid-template-columns: 4fr;
+      gap: 20px;
+  }
+
+  .engi-top-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .purchasing-right-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2, 1fr) 3fr 1fr;
+  }
+
+  .purchasing-right-container :nth-child(4){
+      grid-column: 2/3;
+      grid-row: 2/4;
+  } 
+
+  .purchasing-right-container :nth-child(6){
+      grid-column: 1/2;
+      grid-row: 4/5;
+  } 
+
+  .purchasing-right-container :nth-child(7){
+      grid-column: 2/3;
+      grid-row: 4/5;
+  } 
+
+  .col-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 0;
+  }
+
+  .col-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  *{font-size: 16px;}
+}
+
+
+
+@media screen and (min-width:1440px){
+  .notification-count{
+      bottom: 4rem;
+      left: 1rem;
+  }
+
+  .report-preview-row{
+      grid-template-columns: 4.8rem 4.9rem 7.2rem 5.8rem 18rem;
+  }
+  table.ncr-list{
+      width: fit-content;
+  }
+
+  .home-button-centre{
+      margin: auto auto auto 13.5rem;
+  }
+
+
+     .filter-tooltip{
+      bottom: 5.5rem;
+  }
+  .filter-nav-icon{
+      height: 44px;
+
+  }
+  .filter-container-buttons{
+      margin-left: 210px;
+  }
+}
+
+@media screen  and (min-width: 2550px){
+  /*#filter-tooltip{*/
+  /*    position: absolute;*/
+  /*    left: 57rem;*/
+  /*    top: 16rem;*/
+  /*}*/
+  .filter-button-container{
+  height: 44px;
+  width: 4rem;
+}
+  .filter-container-buttons{
+      margin-left: 210px;
+  }
+  .filter-nav-icon{
+      height: 44px;
+
+  }
+}
+
 

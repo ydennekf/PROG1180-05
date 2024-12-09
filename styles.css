@@ -258,6 +258,7 @@ label {
     font-size: 1.125rem;
 }
 
+.nav-search label,
 .purchasing-inputs label,
 .engineering-inputs label,
 .quality-assurance-inputs label{

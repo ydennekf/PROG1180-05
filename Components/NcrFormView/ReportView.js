@@ -61,7 +61,8 @@ function departmentBasedValidation(action, report){
 export function ReportView(report, action){
     // take the employee's role to determine what sections are editable and what is read only
 
-
+    console.log(reportData + " HERE")
+    console.log(report + " HERE")
     // let QAReadOnly;
     // let engiReadOnly;
     // let purchaseReadOnly;
@@ -281,7 +282,7 @@ export function ReportView(report, action){
 
        }
 
-       if(report?.status === "closed" || report?.status === "Closed" || (action !== "Edit" && action !== "Create"))
+       if(report?.status === "closed" || report?.status === "Closed" ||  report?.status === "archived" || (action !== "Edit" && action !== "Create"))
         {
             console.log("Status")
             QAReadOnly = true;
@@ -353,7 +354,7 @@ export function ReportView(report, action){
               });
 
         }
-        else if(report?.status === "closed" || report?.status === "Closed")
+        else if(report?.status === "closed" || report?.status === "Closed" || report?.status === "archived")
         {
             console.log("Status")
             QAReadOnly = true;

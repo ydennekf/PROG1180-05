@@ -36,18 +36,18 @@ let  startDate = new Date(reportData.date);
                 ${reportData.status}
             </td>
          
-            <td>
-                <div class='index-view-table-buttons'>
+            <td data-ncr-number="${reportData.ncrNumber}">
+                <div data-ncr-number="${reportData.ncrNumber}" class='index-view-table-buttons'>
                 <div class="tooltip-container view-report" data-ncr-number="${reportData.ncrNumber}">
-                <button class="icon" tabindex="5" >${SVG.viewSVG(reportData.ncrNumber)}</button>
+                <button data-ncr-number="${reportData.ncrNumber}" class="icon" tabindex="5" >${SVG.viewSVG(reportData.ncrNumber)}</button>
                 <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Details</div>
                 </div>
                 <div class="tooltip-container edit-report" data-ncr-number="${reportData.ncrNumber}">
-                <button class="icon" tabindex="5" >${SVG.editSVG(reportData.ncrNumber)}</button>
+                <button data-ncr-number="${reportData.ncrNumber}" class="icon" tabindex="5" >${SVG.editSVG(reportData.ncrNumber)}</button>
                 <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Edit</div>
                 </div>
                 <div class="tooltip-container archive-report" data-ncr-number="${reportData.ncrNumber}">
-                <button class="icon" tabindex="5" >${SVG.folderSVG(reportData.ncrNumber)}</button>
+                <button data-ncr-number="${reportData.ncrNumber}" class="icon" tabindex="5" >${SVG.folderSVG(reportData.ncrNumber)}</button>
                 <div data-ncr-number="${reportData.ncrNumber}" class="tooltip top-tooltip">Archive</div>
                 </div>
                     
@@ -105,10 +105,19 @@ export function previewBindings(){ // Called after mapComponents completes on re
     const archiveBtns = document.querySelectorAll('.archive-report')
     
     viewBtns.forEach(e => {
-        e.addEventListener('click', (ev) => openReportDetails(ev.target.dataset.ncrNumber))
+        console.log(e.dataset.ncrNumber)
+        console.log(getReport(e.dataset.ncrNumber))
+        e.addEventListener('click', (ev) => {console.log(ev);openReportDetails(ev.target.dataset.ncrNumber)})
+        
     })
 
     editBtns.forEach(e =>{
+        if(getReport(e.dataset.ncrNumber)?.status === "archived"){
+            e.disabled = true;
+            return;
+        }
+        // console.log(e.dataset.ncrNumber)
+        // console.log(getReport(e.dataset.ncrNumber))
         e.addEventListener('click', (ev) => openReportEditor(ev.target.dataset.ncrNumber))
     })
 

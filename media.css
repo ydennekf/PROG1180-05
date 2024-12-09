@@ -94,11 +94,17 @@
         bottom: 4rem;
         left: 0.9rem;
     }
+      .filter-tooltip{
+        bottom: 5.5rem;
+    }
 
 }
 
 @media screen and (min-width:426px) and (max-width:768px){
-    
+
+    .filter-tooltip{
+        bottom: 5.5rem;
+    }
     h1{
         font-size: 1.3rem;
     }
@@ -165,6 +171,8 @@
    ========================= */
 
 @media screen and (min-width:769px) and (max-width:1024px){
+
+
 
     h1{
         font-size: 1.5rem;
@@ -251,8 +259,11 @@
    ========================= */
  @media screen and (min-width:1024px){
       .filter-nav-icon{
-        height: 37.5px;
+        height: 38px;
 
+    }
+       .filter-tooltip{
+        bottom: 5.5rem;
     }
  }
 
@@ -407,10 +418,8 @@
     }
 
 
-    #filter-tooltip{
-        position: absolute;
-        left: 8rem;
-        top: 15.5rem;
+       .filter-tooltip{
+        bottom: 5.5rem;
     }
     .filter-nav-icon{
         height: 44px;
@@ -424,7 +433,7 @@
 @media screen  and (min-width: 2550px){
     #filter-tooltip{
         position: absolute;
-        left: 44rem;
+        left: 57rem;
         top: 16rem;
     }
     .filter-button-container{

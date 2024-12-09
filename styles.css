@@ -19,6 +19,7 @@
     --color-red: red;
     --color-midblue:#2f6ba7; 
     --color-warning:#993333;
+    --color-border:#204d7a;
 
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Lato', Arial, sans-serif;
@@ -57,6 +58,7 @@
     --color-breadcrumb:white;
     --color-breadcrumb-selected:#9fb7df;
     --color-breadcrumb-after:#acddf1;
+    --color-border: #5897c9;
 }
 
 /***************************
@@ -332,15 +334,20 @@ input[type="checkbox"]:checked:before{
     animation: checkAnim .5s ease;
 }
 
-input#username {
-    margin-top: 0.938rem;
+/*input#username {*/
+/*    margin-top: 0.938rem;*/
+/*}*/
+.ui-state-active, .ui-widget-content{
+
+
+    border-color: var(--color-border);
 }
 
 
 .purchasing-inputs,
 .engineering-inputs,
 .quality-assurance-inputs{
-    background-color: var(--color-white);
+    background-color: var(--color-background);
     font-size: 1rem;
     font-weight: bold;
     border-radius: 0.5rem 0.5rem 0 0;
@@ -735,7 +742,7 @@ footer {
 }
 
 .remember-me label {
-    color: var(--color-black);
+    color: var(--color-login-input);
 }
 
 
@@ -1143,7 +1150,7 @@ table.ncr-list a:hover {
 .has-content.effect-1 ~ label {
     top: -1rem;
     font-size: 0.75rem;
-    color: var(--color-primary); /* Same green color as focus border */
+    color: var(--color-login-input); /* Same green color as focus border */
     transition: 0.3s ease;
 }
  
@@ -1379,7 +1386,9 @@ table h2 {
     
 }
 
-
+.ncr-log-header{
+    color: var(--color-ncr);
+}
 /* Table Cells */
 tbody td {
     /*padding: 0.625rem 0.938rem;*/
@@ -1390,7 +1399,7 @@ tbody td {
 /* Table Body Rows */
 tbody tr {
     border-bottom: 0.063rem solid var(--color-iso); 
-    background-color: #f9f9f9; /* Light grey background */
+    background-color: var(--color-background); /* Light grey background */
 }
 
 
@@ -1558,5 +1567,9 @@ tbody tr {
     display:flex;
     flex-direction:column;
     gap:15px;
+    color: var(--color-offblack);
+}
+.faq-container h2 {
+    color: var(--color-offblack);
 }
 

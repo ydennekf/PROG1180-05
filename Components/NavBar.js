@@ -167,7 +167,7 @@ export function SearchBar(targetID) {
     // separate the search box for NCR num and Supplier
     // set the search text to update on keypress again.
     let html = `
-  <h2>NCR LOG</h2>
+  <h1 class="ncr-log-header">NCR LOG</h1>
         
         <div class='nav-list'>
         <div class="filter-container-buttons"> 
@@ -177,7 +177,7 @@ export function SearchBar(targetID) {
                 
                     
             
-            <div id="filter-tooltip" class="tooltip bottom-tooltip">Toggle Filter Options</div>
+            <div id="filter-tooltip" class="tooltip filter-tooltip">Toggle Filter Options</div>
             </div>
             
             ${["QA", "admin"].includes(app.employee.department) ? '<div class="button-container tooltip-container" ><button id="create-report-btn" aria-label="create New Report" tabindex="1">Create NCR</button><div id="create-filter-tooltip" class="tooltip bottom-tooltip">Create NCR</div></div>' : ""}

@@ -203,30 +203,30 @@ export function SearchBar(targetID) {
                     <option value="Pending Signoff">Pending Signoff</option>
                 </select>
             </li>
-           <li id='supplier-search-container' class='search-container'>
+           <li id='start-date-container' class='search-container'>
                             
-                <label for="start-date" style="display:inline;" id="lbl-search">Start Date:</label>
+                <label for="start-date" style="display:inline;" id="lbl-start-date">Start Date:</label>
                 <input type="text" id="start-date" placeholder="Select start date">
                  </li>
-             <li id='supplier-search-container' class='search-container'>
-                <label for="end-date" style="display:inline;" id="lbl-search">End Date:</label>
+             <li id='end-date-container' class='search-container'>
+                <label for="end-date" style="display:inline;" id="lbl-end-date">End Date:</label>
                 <input type="text" id="end-date" placeholder="Select end date">
             </li>
 
              <li id='supplier-search-container' class='search-container'>
                     
-                    <label for="supplier-search" style="display:inline;" id="lbl-search">Search by supplier</label>
+                    <label for="supplier-search" style="display:inline;" id="lbl-supplier-search">Search by supplier</label>
                     <input type="text"  id="supplier-search" placeholder="search suppliers ..."
-                        aria-label="search-description" aria-autocomplete="list" 
+                        aria-label="search-supplier" aria-autocomplete="list" 
                          tabindex="1">
                             
             </li>
 
                <li id='ncr-search-container' class='search-container'>
                     
-                    <label for="report-search" style="display:inline;" id="lbl-search">Search by ncr no.</label>
+                    <label for="report-search" style="display:inline;" id="lbl-ncr-search">Search by ncr no.</label>
                     <input type="text"  id="report-search" placeholder="search ncr reports ..."
-                        aria-label="search-description" aria-autocomplete="list" 
+                        aria-label="search-ncr" aria-autocomplete="list" 
                          tabindex="1">
                             
             </li>
